@@ -69,6 +69,15 @@
   }
 }
 
+@keyframes bronya-back-animation {
+  0% {
+    transform: translate(-59.3%, -57.8%);
+  }
+  100% {
+    transform: translate(-51.1%, -58%);
+  }
+}
+
 @keyframes gepard-animation {
   0% {
     transform: translate(-70%, -63%);
@@ -80,10 +89,19 @@
 
 @keyframes himeko-animation {
   0% {
-    transform: translate(15%, -86%);
+    transform: translate(10%, -83%);
   }
   100% {
-    transform: translate(17%, -86%);
+    transform: translate(14%, -83%);
+  }
+}
+
+@keyframes himeko-back-animation {
+  0% {
+    transform: translate(-24.4%, -83%);
+  }
+  100% {
+    transform: translate(-20.4%, -83%);
   }
 }
 
@@ -99,5 +117,38 @@
   }
   to {
     transform: scale(1) translate(-32%, -52%);
+  }
+}
+
+@keyframes cone-1-animation {
+  0% {
+    transform: scale(1.2) translate(-220%, 30%) rotate(5deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(-280%, 40%) rotate(5deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cone-2-animation {
+  0% {
+    transform: scale(1.2) translate(-270%, 75%) rotate(20deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(-300%, 85%) rotate(20deg);
+    opacity: 1;
+  }
+}
+
+@keyframes cone-3-animation {
+  0% {
+    transform: scale(1.2) translate(-320%, 65%) rotate(-10deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translate(-400%, 75%) rotate(-10deg);
+    opacity: 1;
   }
 }

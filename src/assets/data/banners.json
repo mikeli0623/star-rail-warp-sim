@@ -1,10 +1,10 @@
 [
   {
     "vers": ["1.0"],
-    "type": "char-event",
+    "type": "char",
     "title": "Butterfly of Swordtip",
-    "mainBanner": "../assets/banner/1.0-char.webp",
-    "miniBanner": "../assets/banner/1.0-char-mini.webp",
+    "mainBanner": "../assets/banner/1.0/char.webp",
+    "miniBanner": "../assets/banner/1.0/char-mini.webp",
     "rateUpFive": ["seele"],
     "rateUpFour": ["natasha", "pela", "hook"],
     "poolFiveChar": [
@@ -53,10 +53,10 @@
   },
   {
     "vers": ["1.0"],
-    "type": "weap-event",
+    "type": "weap",
     "title": "Brilliant Fixation",
-    "mainBanner": "../assets/banner/1.0-weap-mini.webp",
-    "miniBanner": "../assets/banner/1.0-weap.webp",
+    "mainBanner": "../assets/banner/1.0/weap-mini.webp",
+    "miniBanner": "../assets/banner/1.0/weap.webp",
     "rateUpFive": ["in-the-night"],
     "rateUpFour": [
       "post-op-conversation",

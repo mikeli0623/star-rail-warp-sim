@@ -2,59 +2,59 @@ import { baseWeapons, json } from "./Constants";
 
 const randItem = (pool) => pool[Math.floor(Math.random() * pool.length)];
 
-export const CalcWarp = (vers, banner, setHasFive) => {
+export const CalcWarp = (vers, type, banner, setHasFive) => {
   const warpChance = Math.random();
   const rateUp = Math.random() < 0.5 ? true : false;
   let warpItem;
-  const bannerType = banner.type;
+  console.log(json.getRateUpFive(vers, type));
   if (warpChance < banner.rateFive || banner.pityFive >= banner.maxPity - 1) {
     // 5 star
     setHasFive(true);
     banner.pityFive = 0;
     banner.pityFour++;
-    if (!(bannerType === "standard")) {
+    if (!(type === "standard")) {
       // non-standard banner
       if (rateUp || banner.guaranteeFive) {
         // draw from rateUp
         banner.guaranteeFive = false;
-        warpItem = randItem(json.getRateUpFive(vers, bannerType));
+        warpItem = randItem(json.getRateUpFive(vers, type));
       } else {
         // drawing from normal 5 stars
         warpItem =
-          bannerType === "weap-event"
-            ? randItem(json.getPoolFiveWeap(vers, bannerType))
-            : randItem(json.getPoolFiveChar(vers, bannerType));
+          type === "weap"
+            ? randItem(json.getPoolFiveWeap(vers, type))
+            : randItem(json.getPoolFiveChar(vers, type));
         banner.guaranteeFive = true;
       }
     } else {
       // standard banner
       if (warpChance < banner.rateFive / 2)
-        warpItem = randItem(json.getPoolFiveChar(vers, bannerType));
-      else warpItem = randItem(json.getPoolFiveWeap(vers, bannerType));
+        warpItem = randItem(json.getPoolFiveChar(vers, type));
+      else warpItem = randItem(json.getPoolFiveWeap(vers, type));
     }
   } else if (warpChance < banner.rateFour || banner.pityFour >= 9) {
     // 4 star
     setHasFive(false);
     banner.pityFour = 0;
     banner.pityFive++;
-    if (!(bannerType === "standard")) {
+    if (!(type === "standard")) {
       // not standard banner
       if (rateUp || banner.guaranteeFour) {
         // draw from rateUp
         banner.guaranteeFour = false;
-        warpItem = randItem(json.getRateUpFour(vers, bannerType));
+        warpItem = randItem(json.getRateUpFour(vers, type));
       } else {
         // draw from non rate up
         banner.guaranteeFour = true;
         if (warpChance < banner.rateFour / 2)
-          warpItem = randItem(json.getPoolFourChar(vers, bannerType));
-        else warpItem = randItem(json.getPoolFourWeap(vers, bannerType));
+          warpItem = randItem(json.getPoolFourChar(vers, type));
+        else warpItem = randItem(json.getPoolFourWeap(vers, type));
       }
     } else {
       // standard banner
       if (warpChance < banner.rateFour / 2)
-        warpItem = randItem(json.getPoolFourChar(vers, bannerType));
-      else warpItem = randItem(json.getPoolFourWeap(vers, bannerType));
+        warpItem = randItem(json.getPoolFourChar(vers, type));
+      else warpItem = randItem(json.getPoolFourWeap(vers, type));
     }
   } else {
     // 3 stars

@@ -1,13 +1,13 @@
-import { useState, useEffect, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback } from "react";
 import "./css/App.css";
 import { CalcWarp } from "./classes/CalcWarp";
 import WarpVideo from "./components/WarpVideo";
 import WarpResults from "./components/WarpResults";
 import WarpButtons from "./components/WarpButtons";
 import useWindowSize from "./components/useWindowSize";
-import ButterflyOnSwordtip from "./components/banners/ButterflyOnSwordtip";
-import BrilliantFixation from "./components/banners/BrilliantFixation";
-import StellarWarp from "./components/banners/StellarWarp";
+import ButterflyOnSwordtip from "./banners/ButterflyOnSwordtip";
+import BrilliantFixation from "./banners/BrilliantFixation";
+import StellarWarp from "./banners/StellarWarp";
 import { json } from "./classes/Constants";
 
 function App() {
@@ -15,9 +15,17 @@ function App() {
 
   const [vers, setVers] = useState("1.0");
 
-  const [bannerState, setBannerState] = useState([
-    {
-      type: "char-event",
+  const [bannerState, setBannerState] = useState({
+    beginner: {
+      rateFive: 0.006,
+      rateFour: 0.051,
+      maxPity: 50,
+      guaranteeFive: false,
+      guaranteeFour: false,
+      pityFive: 0,
+      pityFour: 0,
+    },
+    char: {
       rateFive: 0.006,
       rateFour: 0.051,
       maxPity: 90,
@@ -26,8 +34,7 @@ function App() {
       pityFive: 0,
       pityFour: 0,
     },
-    {
-      type: "weap-event",
+    weap: {
       rateFive: 0.008,
       rateFour: 0.066,
       maxPity: 80,
@@ -36,8 +43,7 @@ function App() {
       pityFive: 0,
       pityFour: 0,
     },
-    {
-      type: "standard",
+    standard: {
       rateFive: 0.006,
       rateFour: 0.051,
       maxPity: 90,
@@ -46,7 +52,7 @@ function App() {
       pityFive: 0,
       pityFour: 0,
     },
-  ]);
+  });
 
   const size = useWindowSize();
 
@@ -76,7 +82,6 @@ function App() {
     };
   }, [getWidth, getHeight]);
 
-  const [bannerIndex, setBannerIndex] = useState(0);
   const [bannerType, setBannerType] = useState("char");
 
   const [hasFive, setHasFive] = useState(false);
@@ -88,11 +93,11 @@ function App() {
   const handleWarp = (warps) => {
     setNumWarps(warps);
     let warpResults = [];
-    let banner = bannerState[bannerIndex];
+    let banner = bannerState[bannerType];
     for (let i = 0; i < warps; i++)
-      warpResults.push(CalcWarp(vers, banner, setHasFive));
+      warpResults.push(CalcWarp(vers, bannerType, banner, setHasFive));
     let bannerStateClone = bannerState;
-    bannerStateClone[bannerIndex] = banner;
+    bannerStateClone[bannerType] = banner;
     setBannerState(bannerStateClone);
     setCurrentWarp(warpResults);
     setContent("video");
@@ -107,7 +112,7 @@ function App() {
         <div
           id="main-back"
           style={{
-            backgroundImage: `url(../assets/banner/1.0-${bannerType}-back.webp)`,
+            backgroundImage: `url(../assets/banner/${vers}/${bannerType}-back.webp)`,
           }}
         >
           <a
@@ -136,22 +141,51 @@ function App() {
               alt="rings"
               width={getWidth(550)}
             />
-            <div id="info">
+            <div
+              id="info"
+              style={{ width: getWidth(320), height: getHeight(44, 300) }}
+            >
               <div
                 id="warp-icon"
                 style={{
                   backgroundImage: "url(/assets/warp-icon.webp)",
-                  width: getWidth(41),
-                  height: getWidth(41),
-                  backgroundSize: getWidth(41),
+                  width: getWidth(44),
+                  height: getWidth(44),
+                  backgroundSize: getWidth(44),
                 }}
               />
-              <p id="title" style={{ fontSize: getWidth(22) }}>
-                Warp
-              </p>
-              <p id="warp-type" style={{ fontSize: getWidth(24) }}>
-                {json.getTitle(vers, bannerState[bannerIndex].type)}
-              </p>
+              <div
+                style={{
+                  height: getWidth(44),
+                  width: getWidth(240),
+                  display: "flex",
+                  flexDirection: "column",
+                  margin: 0,
+                  padding: 0,
+                }}
+              >
+                <div
+                  id="title"
+                  style={{
+                    fontSize: getWidth(22),
+                    height: getWidth(22),
+                    textAlign: "left",
+                    marginTop: `-${getWidth(8)}px`,
+                  }}
+                >
+                  Warp
+                </div>
+                <div
+                  id="warp-type"
+                  style={{
+                    textAlign: "left",
+                    fontSize: getWidth(24),
+                    height: getWidth(24),
+                  }}
+                >
+                  {json.getTitle(vers, bannerType)}
+                </div>
+              </div>
             </div>
             <img
               className="mini-banner"
@@ -160,10 +194,9 @@ function App() {
               width={getWidth(160)}
               style={{
                 transform: `translateY(180%)`,
-                opacity: `${bannerIndex === 0 ? 0 : 1}`,
+                opacity: `${bannerType === "char" ? 0 : 1}`,
               }}
               onClick={() => {
-                setBannerIndex(0);
                 setBannerType("char");
               }}
               draggable="false"
@@ -184,7 +217,7 @@ function App() {
               width={getWidth(180)}
               style={{
                 transform: `translateY(100%)`,
-                opacity: `${bannerIndex === 0 ? 1 : 0}`,
+                opacity: `${bannerType === "char" ? 1 : 0}`,
                 pointerEvents: "none",
               }}
               draggable="false"
@@ -196,7 +229,7 @@ function App() {
               width={getWidth(180)}
               style={{
                 transform: `translateY(200%)`,
-                opacity: `${bannerIndex === 1 ? 1 : 0}`,
+                opacity: `${bannerType === "weap" ? 1 : 0}`,
                 pointerEvents: "none",
               }}
               draggable="false"
@@ -208,10 +241,9 @@ function App() {
               width={getWidth(160)}
               style={{
                 transform: `translateY(320%)`,
-                opacity: `${bannerIndex === 1 ? 0 : 1}`,
+                opacity: `${bannerType === "weap" ? 0 : 1}`,
               }}
               onClick={() => {
-                setBannerIndex(1);
                 setBannerType("weap");
               }}
               draggable="false"
@@ -232,7 +264,7 @@ function App() {
               width={getWidth(180)}
               style={{
                 transform: `translateY(335%)`,
-                opacity: `${bannerIndex === 2 ? 1 : 0}`,
+                opacity: `${bannerType === "standard" ? 1 : 0}`,
               }}
               draggable="false"
             />
@@ -243,10 +275,9 @@ function App() {
               width={getWidth(160)}
               style={{
                 transform: `translateY(460%)`,
-                opacity: `${bannerIndex === 2 ? 0 : 1}`,
+                opacity: `${bannerType === "standard" ? 0 : 1}`,
               }}
               onClick={() => {
-                setBannerIndex(2);
                 setBannerType("standard");
               }}
               draggable="false"
@@ -267,7 +298,9 @@ function App() {
               width={getWidth(160)}
               style={{
                 transform: "translateY(170%)",
-                opacity: `${highlightIndex === 0 && bannerIndex !== 0 ? 1 : 0}`,
+                opacity: `${
+                  highlightIndex === 0 && bannerType !== "char" ? 1 : 0
+                }`,
               }}
             />
             <img
@@ -277,7 +310,9 @@ function App() {
               width={getWidth(160)}
               style={{
                 transform: "translateY(305%)",
-                opacity: `${highlightIndex === 1 && bannerIndex !== 1 ? 1 : 0}`,
+                opacity: `${
+                  highlightIndex === 1 && bannerType !== "weap" ? 1 : 0
+                }`,
               }}
             />
             <img
@@ -287,7 +322,9 @@ function App() {
               width={getWidth(160)}
               style={{
                 transform: "translateY(440%)",
-                opacity: `${highlightIndex === 2 && bannerIndex !== 2 ? 1 : 0}`,
+                opacity: `${
+                  highlightIndex === 2 && bannerType !== "standard" ? 1 : 0
+                }`,
               }}
             />
             {banners[vers][bannerType]}
@@ -307,7 +344,7 @@ function App() {
             />
             <WarpButtons
               onWarp={handleWarp}
-              event={bannerIndex !== 2}
+              event={bannerType !== "standard"}
               getHeight={getHeight}
               getWidth={getWidth}
             />
