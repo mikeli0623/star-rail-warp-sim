@@ -1,0 +1,130 @@
+[
+    {
+        "name": "Arlan",
+        "path": "The Destruction",
+        "element": "lightning",
+        "rarity": 4
+    },
+    {
+        "name": "Asta",
+        "path": "The Harmony",
+        "element": "fire",
+        "rarity": 4
+    },
+    {
+        "name": "Bailu",
+        "path": "The Abundance",
+        "element": "lightning",
+        "rarity": 5
+    },
+    {
+        "name": "Bronya",
+        "path": "The Harmony",
+        "element": "wind",
+        "rarity": 5
+    },
+    {
+        "name": "Clara",
+        "path": "The Destruction",
+        "element": "physical",
+        "rarity": 5
+    },
+    {
+        "id": "dan-heng",
+        "name": "Dan Heng",
+        "path": "The Hunt",
+        "element": "wind",
+        "rarity": 4
+    },
+    {
+        "name": "Gepard",
+        "path": "The Preservation",
+        "element": "ice",
+        "rarity": 5
+    },
+    {
+        "name": "Herta",
+        "path": "The Erudition",
+        "element": "ice",
+        "rarity": 4
+    },
+    {
+        "name": "Himeko",
+        "path": "The Erudition",
+        "element": "fire",
+        "rarity": 5
+    },
+    {
+        "name": "hook",
+        "path": "The Destruction",
+        "element": "fire",
+        "rarity": 4
+    },
+    {
+        "id": "march-7th",
+        "name": "March 7th",
+        "path": "The Preservation",
+        "element": "ice",
+        "rarity": 4
+    },
+    {
+        "name": "Natasha",
+        "path": "The Abundance",
+        "element": "physical",
+        "rarity": 4
+    },
+    {
+        "name": "Pela",
+        "path": "The Nihility",
+        "element": "ice",
+        "rarity": 4
+    },
+    {
+        "name": "Qingque",
+        "path": "The Erudition",
+        "element": "quantum",
+        "rarity": 4
+    },
+    {
+        "name": "Sampo",
+        "path": "The Nihility",
+        "element": "wind",
+        "rarity": 4
+    },
+    {
+        "name": "Seele",
+        "path": "The Hunt",
+        "element": "quantum",
+        "rarity": 5
+    },
+    {
+        "name": "Serval",
+        "path": "The Erudition",
+        "element": "lightning",
+        "rarity": 4
+    },
+    {
+        "name": "Sushang",
+        "path": "The Hunt",
+        "element": "physical",
+        "rarity": 4
+    },
+    {
+        "name": "Tingyun",
+        "path": "The Harmony",
+        "element": "lightning",
+        "rarity": 4
+    },
+    {
+        "name": "Welt",
+        "path": "The Nihility",
+        "element": "imaginary",
+        "rarity": 5
+    },
+    {
+        "name": "Yanqing",
+        "path": "The Hunt",
+        "element": "ice",
+        "rarity": 5
+    }
+]
