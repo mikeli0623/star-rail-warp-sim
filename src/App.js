@@ -1,14 +1,17 @@
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import "./css/App.css";
 import { CalcWarp } from "./classes/CalcWarp";
 import WarpVideo from "./components/WarpVideo";
 import WarpResults from "./components/WarpResults";
 import WarpButtons from "./components/WarpButtons";
 import useWindowSize from "./components/useWindowSize";
+import DepartureWarp from "./banners/DepartureWarp";
 import ButterflyOnSwordtip from "./banners/ButterflyOnSwordtip";
 import BrilliantFixation from "./banners/BrilliantFixation";
 import StellarWarp from "./banners/StellarWarp";
 import { json } from "./classes/Constants";
+import WarpSingle from "./components/WarpSingle";
+import MiniBanners from "./components/MiniBanners";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -72,28 +75,43 @@ function App() {
     [getWidth]
   );
 
-  const banners = useMemo(() => {
+  const resize = useMemo(() => {
     return {
-      "1.0": {
-        char: <ButterflyOnSwordtip getWidth={getWidth} getHeight={getHeight} />,
-        weap: <BrilliantFixation getWidth={getWidth} getHeight={getHeight} />,
-        standard: <StellarWarp getWidth={getWidth} getHeight={getHeight} />,
-      },
+      getWidth,
+      getHeight,
     };
   }, [getWidth, getHeight]);
 
-  const [bannerType, setBannerType] = useState("char");
+  const [remainingBeginner, setRemainingBeginner] = useState(50);
+
+  const banners = useMemo(() => {
+    return {
+      "1.0": {
+        beginner: (
+          <DepartureWarp remaining={remainingBeginner} resize={resize} />
+        ),
+        char: <ButterflyOnSwordtip resize={resize} />,
+        weap: <BrilliantFixation resize={resize} />,
+        standard: <StellarWarp resize={resize} />,
+      },
+    };
+  }, [resize, remainingBeginner]);
+
+  useEffect(() => {
+    if (remainingBeginner === 0) setBannerType("char");
+  }, [remainingBeginner]);
+
+  const [bannerType, setBannerType] = useState("beginner");
 
   const [hasFive, setHasFive] = useState(false);
-
-  const [numWarps, setNumWarps] = useState(0);
 
   const [currentWarp, setCurrentWarp] = useState([]);
 
   const handleWarp = (warps) => {
-    setNumWarps(warps);
+    if (bannerType === "beginner") setRemainingBeginner(remainingBeginner - 10);
     let warpResults = [];
     let banner = bannerState[bannerType];
+    console.log(banner);
     for (let i = 0; i < warps; i++)
       warpResults.push(CalcWarp(vers, bannerType, banner, setHasFive));
     let bannerStateClone = bannerState;
@@ -101,10 +119,7 @@ function App() {
     setBannerState(bannerStateClone);
     setCurrentWarp(warpResults);
     setContent("video");
-    // setContent("results");
   };
-
-  const [highlightIndex, setHighlightIndex] = useState(null);
 
   return (
     <div className="App">
@@ -113,6 +128,9 @@ function App() {
           id="main-back"
           style={{
             backgroundImage: `url(../assets/banner/${vers}/${bannerType}-back.webp)`,
+            backgroundColor: `${
+              bannerType === "beginner" ? "#1f2322" : "#0a162e"
+            }`,
           }}
         >
           <a
@@ -122,9 +140,9 @@ function App() {
           >
             <img
               id="plug"
-              src="/assets/github-mark.svg"
+              src="/assets/github-mark-white.svg"
               alt="github link"
-              width={getWidth(40)}
+              width={resize.getWidth(40)}
             />
           </a>
           <div id="main-back-cover" />
@@ -132,32 +150,38 @@ function App() {
             id="main-back-cover-pattern"
             style={{
               backgroundImage: "url(../assets/banner/cover-pattern.webp)",
-              backgroundSize: `${getWidth(10)}px ${getHeight(8, 10)}px`,
+              backgroundSize: `${resize.getWidth(10)}px ${resize.getHeight(
+                8,
+                10
+              )}px`,
             }}
           >
             <img
               className="ring"
               src="/assets/rings.webp"
               alt="rings"
-              width={getWidth(550)}
+              width={resize.getWidth(550)}
             />
             <div
               id="info"
-              style={{ width: getWidth(320), height: getHeight(44, 300) }}
+              style={{
+                width: resize.getWidth(320),
+                height: resize.getHeight(44, 300),
+              }}
             >
               <div
                 id="warp-icon"
                 style={{
                   backgroundImage: "url(/assets/warp-icon.webp)",
-                  width: getWidth(44),
-                  height: getWidth(44),
-                  backgroundSize: getWidth(44),
+                  width: resize.getWidth(44),
+                  height: resize.getWidth(44),
+                  backgroundSize: resize.getWidth(44),
                 }}
               />
               <div
                 style={{
-                  height: getWidth(44),
-                  width: getWidth(240),
+                  height: resize.getWidth(44),
+                  width: resize.getWidth(240),
                   display: "flex",
                   flexDirection: "column",
                   margin: 0,
@@ -167,10 +191,10 @@ function App() {
                 <div
                   id="title"
                   style={{
-                    fontSize: getWidth(22),
-                    height: getWidth(22),
+                    fontSize: resize.getWidth(22),
+                    height: resize.getWidth(24),
                     textAlign: "left",
-                    marginTop: `-${getWidth(8)}px`,
+                    marginTop: `-${resize.getWidth(5)}px`,
                   }}
                 >
                   Warp
@@ -179,153 +203,20 @@ function App() {
                   id="warp-type"
                   style={{
                     textAlign: "left",
-                    fontSize: getWidth(24),
-                    height: getWidth(24),
+                    fontSize: resize.getWidth(24),
+                    height: resize.getWidth(24),
                   }}
                 >
                   {json.getTitle(vers, bannerType)}
                 </div>
               </div>
             </div>
-            <img
-              className="mini-banner"
-              alt="mini character banner"
-              src={`../assets/banner/mini/mini-${vers}-char.webp`}
-              width={getWidth(160)}
-              style={{
-                transform: `translateY(180%)`,
-                opacity: `${bannerType === "char" ? 0 : 1}`,
-              }}
-              onClick={() => {
-                setBannerType("char");
-              }}
-              draggable="false"
-              onMouseDown={() => {
-                if (highlightIndex !== 0) setHighlightIndex(0);
-              }}
-              onMouseUp={() => {
-                setHighlightIndex(null);
-              }}
-              onMouseLeave={() => {
-                setHighlightIndex(null);
-              }}
-            />
-            <img
-              className="mini-banner"
-              alt="mini character banner"
-              src={`../assets/banner/mini/mini-${vers}-char-active.webp`}
-              width={getWidth(180)}
-              style={{
-                transform: `translateY(100%)`,
-                opacity: `${bannerType === "char" ? 1 : 0}`,
-                pointerEvents: "none",
-              }}
-              draggable="false"
-            />
-            <img
-              className="mini-banner"
-              alt="mini weapon banner"
-              src={`../assets/banner/mini/mini-${vers}-weap-active.webp`}
-              width={getWidth(180)}
-              style={{
-                transform: `translateY(200%)`,
-                opacity: `${bannerType === "weap" ? 1 : 0}`,
-                pointerEvents: "none",
-              }}
-              draggable="false"
-            />
-            <img
-              className="mini-banner"
-              alt="mini weapon banner"
-              src={`../assets/banner/mini/mini-${vers}-weap.webp`}
-              width={getWidth(160)}
-              style={{
-                transform: `translateY(320%)`,
-                opacity: `${bannerType === "weap" ? 0 : 1}`,
-              }}
-              onClick={() => {
-                setBannerType("weap");
-              }}
-              draggable="false"
-              onMouseDown={() => {
-                if (highlightIndex !== 1) setHighlightIndex(1);
-              }}
-              onMouseUp={() => {
-                setHighlightIndex(null);
-              }}
-              onMouseLeave={() => {
-                setHighlightIndex(null);
-              }}
-            />
-            <img
-              className="mini-banner"
-              alt="mini standard banner"
-              src={`../assets/banner/mini/mini-${vers}-standard-active.webp`}
-              width={getWidth(180)}
-              style={{
-                transform: `translateY(335%)`,
-                opacity: `${bannerType === "standard" ? 1 : 0}`,
-              }}
-              draggable="false"
-            />
-            <img
-              className="mini-banner"
-              alt="mini standard banner"
-              src={`../assets/banner/mini/mini-${vers}-standard.webp`}
-              width={getWidth(160)}
-              style={{
-                transform: `translateY(460%)`,
-                opacity: `${bannerType === "standard" ? 0 : 1}`,
-              }}
-              onClick={() => {
-                setBannerType("standard");
-              }}
-              draggable="false"
-              onMouseDown={() => {
-                if (highlightIndex !== 2) setHighlightIndex(2);
-              }}
-              onMouseUp={() => {
-                setHighlightIndex(null);
-              }}
-              onMouseLeave={() => {
-                setHighlightIndex(null);
-              }}
-            />
-            <img
-              className="mini-highlight"
-              src="../assets/banner/mini/mini-highlight.webp"
-              alt="highlight"
-              width={getWidth(160)}
-              style={{
-                transform: "translateY(170%)",
-                opacity: `${
-                  highlightIndex === 0 && bannerType !== "char" ? 1 : 0
-                }`,
-              }}
-            />
-            <img
-              className="mini-highlight"
-              src="../assets/banner/mini/mini-highlight.webp"
-              alt="highlight"
-              width={getWidth(160)}
-              style={{
-                transform: "translateY(305%)",
-                opacity: `${
-                  highlightIndex === 1 && bannerType !== "weap" ? 1 : 0
-                }`,
-              }}
-            />
-            <img
-              className="mini-highlight"
-              src="../assets/banner/mini/mini-highlight.webp"
-              alt="highlight"
-              width={getWidth(160)}
-              style={{
-                transform: "translateY(440%)",
-                opacity: `${
-                  highlightIndex === 2 && bannerType !== "standard" ? 1 : 0
-                }`,
-              }}
+            <MiniBanners
+              vers={vers}
+              bannerType={bannerType}
+              setBannerType={setBannerType}
+              hasBeginner={remainingBeginner > 0}
+              resize={resize}
             />
             {banners[vers][bannerType]}
             <img
@@ -333,20 +224,19 @@ function App() {
               alt="exchange"
               src="/assets/exchange.webp"
               draggable="false"
-              width={getWidth(178)}
+              width={resize.getWidth(178)}
             />
             <img
               id="view-details-button"
               alt="view details"
               src="/assets/view-details.webp"
               draggable="false"
-              width={getWidth(178)}
+              width={resize.getWidth(178)}
             />
             <WarpButtons
               onWarp={handleWarp}
-              event={bannerType !== "standard"}
-              getHeight={getHeight}
-              getWidth={getWidth}
+              event={bannerType}
+              resize={resize}
             />
           </div>
         </div>
@@ -355,11 +245,16 @@ function App() {
         <WarpVideo
           src={hasFive ? "/assets/five.mp4" : "/assets/normal.mp4"}
           onEnded={() => {
-            if (numWarps === 10) setContent("results");
-            else setContent("main");
+            setContent("single");
           }}
-          getHeight={getHeight}
-          getWidth={getWidth}
+          resize={resize}
+        />
+      )}
+      {content === "single" && (
+        <WarpSingle
+          currentWarp={currentWarp}
+          setContent={setContent}
+          resize={resize}
         />
       )}
       {content === "results" && (
@@ -368,13 +263,12 @@ function App() {
             className="ring"
             src="/assets/rings.webp"
             alt="rings"
-            width={getWidth(550)}
+            width={resize.getWidth(550)}
           />
           <WarpResults
             setContent={setContent}
             currentWarp={currentWarp}
-            getWidth={getWidth}
-            getHeight={getHeight}
+            resize={resize}
           />
         </>
       )}

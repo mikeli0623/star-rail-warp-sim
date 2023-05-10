@@ -1,13 +1,13 @@
 import React from "react";
 import "../css/Banners.css";
 
-const BrilliantFixation = ({ getWidth, getHeight }) => {
+const BrilliantFixation = ({ resize }) => {
   return (
     <React.Fragment>
       <div
         style={{
-          width: getWidth(764),
-          height: getHeight(677.33, 1100),
+          width: resize.getWidth(764),
+          height: resize.getHeight(677.33, 1100),
           background:
             "linear-gradient(to bottom, rgba(16, 20, 56, 1) 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
@@ -21,9 +21,12 @@ const BrilliantFixation = ({ getWidth, getHeight }) => {
         <div
           style={{
             backgroundImage: "url(../assets/banner/right-corner.webp)",
-            height: getHeight(200, 148),
-            width: getWidth(148),
-            backgroundSize: `${getWidth(148)}px ${getHeight(200, 148)}px`,
+            height: resize.getHeight(200, 148),
+            width: resize.getWidth(148),
+            backgroundSize: `${resize.getWidth(148)}px ${resize.getHeight(
+              200,
+              148
+            )}px`,
             position: "absolute",
             zIndex: "100",
             right: "0",
@@ -45,7 +48,7 @@ const BrilliantFixation = ({ getWidth, getHeight }) => {
       <img
         src="../assets/banner/1.0/weap-rate-1.webp"
         alt="The Moles Welcome You"
-        width={getWidth(135)}
+        width={resize.getWidth(135)}
         style={{
           position: "absolute",
           zIndex: 101,
@@ -59,7 +62,7 @@ const BrilliantFixation = ({ getWidth, getHeight }) => {
       <img
         src="../assets/banner/1.0/weap-rate-2.webp"
         alt="Post-Op Conversation"
-        width={getWidth(108)}
+        width={resize.getWidth(108)}
         style={{
           position: "absolute",
           zIndex: 101,
@@ -72,7 +75,7 @@ const BrilliantFixation = ({ getWidth, getHeight }) => {
       <img
         src="../assets/banner/1.0/weap-rate-3.webp"
         alt="Good Night and Sleep Well"
-        width={getWidth(108)}
+        width={resize.getWidth(108)}
         style={{
           position: "absolute",
           zIndex: 101,
@@ -84,7 +87,7 @@ const BrilliantFixation = ({ getWidth, getHeight }) => {
       />
       <img
         src="../assets/banner/1.0/weap-left.webp"
-        width={getWidth(1101.5)}
+        width={resize.getWidth(1101.5)}
         alt="left"
         draggable="false"
         style={{
@@ -99,7 +102,7 @@ const BrilliantFixation = ({ getWidth, getHeight }) => {
         className="ring"
         src="/assets/rings.webp"
         alt="rings"
-        width={getWidth(550)}
+        width={resize.getWidth(550)}
         style={{
           filter: "brightness(1.4)",
           top: "50%",
@@ -112,7 +115,7 @@ const BrilliantFixation = ({ getWidth, getHeight }) => {
       />
       <img
         src="../assets/magnify.webp"
-        width={getWidth(40)}
+        width={resize.getWidth(40)}
         alt="magnify"
         draggable="false"
         style={{

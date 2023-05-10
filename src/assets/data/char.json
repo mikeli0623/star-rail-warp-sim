@@ -2,129 +2,129 @@
     {
         "name": "Arlan",
         "path": "The Destruction",
-        "element": "lightning",
+        "element": "Lightning",
         "rarity": 4
     },
     {
         "name": "Asta",
         "path": "The Harmony",
-        "element": "fire",
+        "element": "Fire",
         "rarity": 4
     },
     {
         "name": "Bailu",
         "path": "The Abundance",
-        "element": "lightning",
+        "element": "Lightning",
         "rarity": 5
     },
     {
         "name": "Bronya",
         "path": "The Harmony",
-        "element": "wind",
+        "element": "Wind",
         "rarity": 5
     },
     {
         "name": "Clara",
         "path": "The Destruction",
-        "element": "physical",
+        "element": "Physical",
         "rarity": 5
     },
     {
         "id": "dan-heng",
         "name": "Dan Heng",
         "path": "The Hunt",
-        "element": "wind",
+        "element": "Wind",
         "rarity": 4
     },
     {
         "name": "Gepard",
         "path": "The Preservation",
-        "element": "ice",
+        "element": "Ice",
         "rarity": 5
     },
     {
         "name": "Herta",
         "path": "The Erudition",
-        "element": "ice",
+        "element": "Ice",
         "rarity": 4
     },
     {
         "name": "Himeko",
         "path": "The Erudition",
-        "element": "fire",
+        "element": "Fire",
         "rarity": 5
     },
     {
-        "name": "hook",
+        "name": "Hook",
         "path": "The Destruction",
-        "element": "fire",
+        "element": "Fire",
         "rarity": 4
     },
     {
         "id": "march-7th",
         "name": "March 7th",
         "path": "The Preservation",
-        "element": "ice",
+        "element": "Ice",
         "rarity": 4
     },
     {
         "name": "Natasha",
         "path": "The Abundance",
-        "element": "physical",
+        "element": "Physical",
         "rarity": 4
     },
     {
         "name": "Pela",
         "path": "The Nihility",
-        "element": "ice",
+        "element": "Ice",
         "rarity": 4
     },
     {
         "name": "Qingque",
         "path": "The Erudition",
-        "element": "quantum",
+        "element": "Quantum",
         "rarity": 4
     },
     {
         "name": "Sampo",
         "path": "The Nihility",
-        "element": "wind",
+        "element": "Wind",
         "rarity": 4
     },
     {
         "name": "Seele",
         "path": "The Hunt",
-        "element": "quantum",
+        "element": "Quantum",
         "rarity": 5
     },
     {
         "name": "Serval",
         "path": "The Erudition",
-        "element": "lightning",
+        "element": "Lightning",
         "rarity": 4
     },
     {
         "name": "Sushang",
         "path": "The Hunt",
-        "element": "physical",
+        "element": "Physical",
         "rarity": 4
     },
     {
         "name": "Tingyun",
         "path": "The Harmony",
-        "element": "lightning",
+        "element": "Lightning",
         "rarity": 4
     },
     {
         "name": "Welt",
         "path": "The Nihility",
-        "element": "imaginary",
+        "element": "Imaginary",
         "rarity": 5
     },
     {
         "name": "Yanqing",
         "path": "The Hunt",
-        "element": "ice",
+        "element": "Ice",
         "rarity": 5
     }
 ]

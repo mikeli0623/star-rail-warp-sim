@@ -6,13 +6,12 @@ export const CalcWarp = (vers, type, banner, setHasFive) => {
   const warpChance = Math.random();
   const rateUp = Math.random() < 0.5 ? true : false;
   let warpItem;
-  console.log(json.getRateUpFive(vers, type));
   if (warpChance < banner.rateFive || banner.pityFive >= banner.maxPity - 1) {
     // 5 star
     setHasFive(true);
     banner.pityFive = 0;
     banner.pityFour++;
-    if (!(type === "standard")) {
+    if (!(type === "standard" || type === "beginner")) {
       // non-standard banner
       if (rateUp || banner.guaranteeFive) {
         // draw from rateUp
@@ -27,17 +26,18 @@ export const CalcWarp = (vers, type, banner, setHasFive) => {
         banner.guaranteeFive = true;
       }
     } else {
-      // standard banner
-      if (warpChance < banner.rateFive / 2)
-        warpItem = randItem(json.getPoolFiveChar(vers, type));
-      else warpItem = randItem(json.getPoolFiveWeap(vers, type));
+      if (type === "standard")
+        if (warpChance < banner.rateFive / 2)
+          warpItem = randItem(json.getPoolFiveChar(vers, type));
+        else warpItem = randItem(json.getPoolFiveWeap(vers, type));
+      else warpItem = randItem(json.getPoolFiveChar(vers, type));
     }
   } else if (warpChance < banner.rateFour || banner.pityFour >= 9) {
     // 4 star
     setHasFive(false);
     banner.pityFour = 0;
     banner.pityFive++;
-    if (!(type === "standard")) {
+    if (!(type === "standard" || type === "beginner")) {
       // not standard banner
       if (rateUp || banner.guaranteeFour) {
         // draw from rateUp

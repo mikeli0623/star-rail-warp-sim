@@ -1,3 +1,78 @@
+/* Departure Warp */
+
+@keyframes beginner-bronya-animation {
+  0% {
+    transform: translate(-73%, -46%);
+  }
+  100% {
+    transform: translate(-73%, -56%);
+  }
+}
+@keyframes beginner-himeko-animation {
+  0% {
+    transform: translate(-11%, -33%);
+  }
+  100% {
+    transform: translate(-11%, -43%);
+  }
+}
+@keyframes welt-animation {
+  0% {
+    transform: translate(-41%, -26%);
+  }
+  100% {
+    transform: translate(-41%, -36%);
+  }
+}
+@keyframes yanqing-animation {
+  0% {
+    opacity: 0.2;
+    transform: translate(-115%, -45%);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-115%, -65%);
+  }
+}
+@keyframes beginner-gepard-animation {
+  0% {
+    opacity: 0.2;
+    transform: translate(-75%, -40%);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-75%, -60%);
+  }
+}
+@keyframes clara-animation {
+  0% {
+    opacity: 0.2;
+    transform: translate(104%, -46%);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(104%, -66%);
+  }
+}
+@keyframes bailu-animation {
+  0% {
+    opacity: 0.2;
+    transform: translate(95%, 0);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(95%, -50%);
+  }
+}
+
 .rate-up-char-icons {
   border-radius: 100px;
   position: absolute;

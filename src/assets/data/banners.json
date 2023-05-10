@@ -1,10 +1,60 @@
 [
   {
     "vers": ["1.0"],
+    "type": "beginner",
+    "title": "Departure Warp",
+    "poolFiveChar": [
+      "himeko",
+      "gepard",
+      "yanqing",
+      "welt",
+      "bailu",
+      "clara",
+      "bronya"
+    ],
+    "poolFourChar": [
+      "asta",
+      "hook",
+      "herta",
+      "march-7th",
+      "pela",
+      "arlan",
+      "serval",
+      "natasha",
+      "dan-heng",
+      "qingque",
+      "sampo",
+      "sushang",
+      "tingyun"
+    ],
+    "poolFourWeap": [
+      "perfect-timing",
+      "post-op-conversation",
+      "shared-feeling",
+      "a-secret-vow",
+      "the-moles-welcome-you",
+      "under-the-blue-sky",
+      "geniuses-repose",
+      "make-the-world-clamor",
+      "dance-dance-dance",
+      "the-birth-of-the-self",
+      "memories-of-the-past",
+      "planetary-rendezvous",
+      "only-silence-remains",
+      "subscribe-for-more",
+      "day-one-of-my-new-life",
+      "eyes-of-the-prey",
+      "good-night-and-sleep-well",
+      "landaus-choice",
+      "resolution-shines-as-pearls-of-sweat",
+      "swordplay",
+      "trend-of-the-universal-market"
+    ]
+  },
+  {
+    "vers": ["1.0"],
     "type": "char",
     "title": "Butterfly of Swordtip",
-    "mainBanner": "../assets/banner/1.0/char.webp",
-    "miniBanner": "../assets/banner/1.0/char-mini.webp",
     "rateUpFive": ["seele"],
     "rateUpFour": ["natasha", "pela", "hook"],
     "poolFiveChar": [
@@ -55,8 +105,6 @@
     "vers": ["1.0"],
     "type": "weap",
     "title": "Brilliant Fixation",
-    "mainBanner": "../assets/banner/1.0/weap-mini.webp",
-    "miniBanner": "../assets/banner/1.0/weap.webp",
     "rateUpFive": ["in-the-night"],
     "rateUpFour": [
       "post-op-conversation",
@@ -112,8 +160,6 @@
     "vers": ["1.0"],
     "type": "standard",
     "title": "Stellar Warp",
-    "mainBanner": "../assets/banner/standard.webp",
-    "miniBanner": "../assets/banner/standard-mini.webp",
     "poolFiveChar": [
       "himeko",
       "gepard",

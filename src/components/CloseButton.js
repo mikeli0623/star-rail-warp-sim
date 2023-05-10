@@ -1,29 +1,29 @@
-const CloseButton = ({ getWidth, getHeight, onClose, style }) => {
+const CloseButton = ({ resize, onClose, style }) => {
   return (
     <div
       className="close-button"
       style={{
         ...style,
-        width: getWidth(70),
-        height: getWidth(70),
-        paddingLeft: getWidth(12),
+        width: resize.getWidth(70),
+        height: resize.getWidth(70),
+        paddingLeft: resize.getWidth(12),
       }}
       onClick={onClose}
     >
-      <div style={{ marginRight: getWidth(16) }}>
+      <div style={{ marginRight: resize.getWidth(16) }}>
         <div
           className="button-leg top-left"
           style={{
-            width: getWidth(6),
-            height: getHeight(38, 6),
-            marginBottom: getWidth(10),
+            width: resize.getWidth(6),
+            height: resize.getHeight(38, 6),
+            marginBottom: resize.getWidth(10),
           }}
         />
         <div
           className="button-leg bottom-right"
           style={{
-            width: getWidth(6),
-            height: getHeight(38, 6),
+            width: resize.getWidth(6),
+            height: resize.getHeight(38, 6),
           }}
         />
       </div>
@@ -31,25 +31,25 @@ const CloseButton = ({ getWidth, getHeight, onClose, style }) => {
         <div
           id="button-dot"
           style={{
-            width: getWidth(10),
-            height: getWidth(10),
+            width: resize.getWidth(10),
+            height: resize.getWidth(10),
           }}
         />
       </div>
-      <div style={{ marginLeft: getWidth(16) }}>
+      <div style={{ marginLeft: resize.getWidth(16) }}>
         <div
           className="button-leg top-right"
           style={{
-            width: getWidth(6),
-            height: getHeight(38, 6),
-            marginBottom: getWidth(10),
+            width: resize.getWidth(6),
+            height: resize.getHeight(38, 6),
+            marginBottom: resize.getWidth(10),
           }}
         />
         <div
           className="button-leg bottom-left"
           style={{
-            width: getWidth(6),
-            height: getHeight(38, 6),
+            width: resize.getWidth(6),
+            height: resize.getHeight(38, 6),
           }}
         />
       </div>

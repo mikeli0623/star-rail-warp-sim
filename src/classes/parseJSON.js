@@ -25,6 +25,15 @@ class ParseJSON {
     const json = this.isChar(item) ? this.charJSON : this.weaponJSON;
     for (const key of json) if (cleanText(key.name) === item) return key.rarity;
   }
+  getPath(item) {
+    const json = this.isChar(item) ? this.charJSON : this.weaponJSON;
+    for (const key of json) if (cleanText(key.name) === item) return key.path;
+  }
+  getElement(name) {
+    for (const key of this.charJSON)
+      if (cleanText(key.name) === name) return key.element;
+    return "";
+  }
   getTitle(vers, type) {
     for (const key of this.bannerJSON) {
       if (key.vers.includes(vers) && key.type === type) return key.title;
