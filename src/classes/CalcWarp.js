@@ -26,15 +26,18 @@ export const CalcWarp = (vers, type, banner, setHasFive) => {
         banner.guaranteeFive = true;
       }
     } else {
+      console.log("5 star");
       if (type === "standard")
         if (warpChance < banner.rateFive / 2)
           warpItem = randItem(json.getPoolFiveChar(vers, type));
         else warpItem = randItem(json.getPoolFiveWeap(vers, type));
-      else warpItem = randItem(json.getPoolFiveChar(vers, type));
+      else {
+        console.log("5 star draw");
+        warpItem = randItem(json.getPoolFiveChar(vers, type));
+      }
     }
   } else if (warpChance < banner.rateFour || banner.pityFour >= 9) {
     // 4 star
-    setHasFive(false);
     banner.pityFour = 0;
     banner.pityFive++;
     if (!(type === "standard" || type === "beginner")) {
@@ -51,13 +54,18 @@ export const CalcWarp = (vers, type, banner, setHasFive) => {
         else warpItem = randItem(json.getPoolFourWeap(vers, type));
       }
     } else {
+      console.log("four star");
       // standard banner
       if (warpChance < banner.rateFour / 2)
         warpItem = randItem(json.getPoolFourChar(vers, type));
-      else warpItem = randItem(json.getPoolFourWeap(vers, type));
+      else {
+        console.log("4 star draw");
+        warpItem = randItem(json.getPoolFourWeap(vers, type));
+      }
     }
   } else {
     // 3 stars
+    console.log("3 star");
     banner.pityFive++;
     banner.pityFour++;
     warpItem = randItem(baseWeapons);

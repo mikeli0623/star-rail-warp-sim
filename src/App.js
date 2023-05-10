@@ -109,9 +109,9 @@ function App() {
 
   const handleWarp = (warps) => {
     if (bannerType === "beginner") setRemainingBeginner(remainingBeginner - 10);
+    setHasFive(false);
     let warpResults = [];
     let banner = bannerState[bannerType];
-    console.log(banner);
     for (let i = 0; i < warps; i++)
       warpResults.push(CalcWarp(vers, bannerType, banner, setHasFive));
     let bannerStateClone = bannerState;
