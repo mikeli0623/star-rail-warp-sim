@@ -4,7 +4,8 @@ const randItem = (pool) => pool[Math.floor(Math.random() * pool.length)];
 
 export const CalcWarp = (vers, type, banner, setHasFive) => {
   const warpChance = Math.random();
-  const rateUp = Math.random() < 0.5 ? true : false;
+  const rateUpChance = type === "char" ? 0.5 : 0.75;
+  const rateUp = Math.random() < rateUpChance ? true : false;
   let warpItem;
   if (warpChance < banner.rateFive || banner.pityFive >= banner.maxPity - 1) {
     // 5 star
@@ -61,5 +62,6 @@ export const CalcWarp = (vers, type, banner, setHasFive) => {
     banner.pityFour++;
     warpItem = randItem(baseWeapons);
   }
+
   return warpItem;
 };
