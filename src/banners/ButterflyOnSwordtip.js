@@ -71,7 +71,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
       >
         <div
           style={{
-            backgroundImage: "url(../../assets/splash/natasha.webp)",
+            backgroundImage: "url(../assets/banner/1.0/natasha.webp)",
             width: resize.getWidth(1000),
             height: resize.getWidth(1000),
             backgroundSize: resize.getWidth(1000),
@@ -98,7 +98,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
       >
         <div
           style={{
-            backgroundImage: "url(../../assets/splash/hook.webp)",
+            backgroundImage: "url(../assets/banner/1.0/hook.webp)",
             width: resize.getWidth(1000),
             height: resize.getWidth(1000),
             backgroundSize: resize.getWidth(1000),
@@ -125,7 +125,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
       >
         <div
           style={{
-            backgroundImage: "url(../../assets/splash/pela.webp)",
+            backgroundImage: "url(../assets/banner/1.0/pela.webp)",
             width: resize.getWidth(1100),
             height: resize.getWidth(1100),
             backgroundSize: resize.getWidth(1100),

@@ -70,7 +70,8 @@ const WarpSingle = ({ currentWarp, setContent, resize }) => {
       <CloseButton
         resize={resize}
         onClose={() => {
-          setContent("results");
+          if (currentWarp.length === 10) setContent("results");
+          else setContent("main");
         }}
       />
       <div

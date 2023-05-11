@@ -9,7 +9,8 @@ const WarpResult = ({ warp, style, resize }) => {
         rarity={warp ? json.getRarity(warp) : 0}
         style={{
           ...style,
-          backgroundImage: `url(${img_path["warpResult"]}${warp}.webp)`,
+          backgroundImage:
+            warp === "" ? "" : `url(${img_path["warpResult"]}${warp}.webp)`,
           width: resize.getWidth(440),
           height: resize.getHeight(230, 440),
           backgroundSize: `${resize.getWidth(440)}px ${resize.getHeight(
