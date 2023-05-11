@@ -18,6 +18,10 @@ function App() {
 
   const [vers, setVers] = useState("1.0");
 
+  const [bannerType, setBannerType] = useState("beginner");
+
+  const [currentWarp, setCurrentWarp] = useState([]);
+
   const [bannerState, setBannerState] = useState({
     beginner: {
       rateFive: 0.006,
@@ -101,11 +105,7 @@ function App() {
     if (remainingBeginner === 0) setBannerType("char");
   }, [remainingBeginner]);
 
-  const [bannerType, setBannerType] = useState("beginner");
-
   const [hasFive, setHasFive] = useState(false);
-
-  const [currentWarp, setCurrentWarp] = useState([]);
 
   const handleWarp = (warps) => {
     if (bannerType === "beginner") setRemainingBeginner(remainingBeginner - 10);

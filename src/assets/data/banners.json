@@ -67,15 +67,16 @@
       "bronya"
     ],
     "poolFourChar": [
-      "arlan",
       "asta",
-      "dan-heng",
+      "herta",
       "march-7th",
-      "qingque",
-      "sampo",
+      "arlan",
       "serval",
+      "tingyun",
       "sushang",
-      "tingyun"
+      "qingque",
+      "dan-heng",
+      "sampo"
     ],
     "poolFourWeap": [
       "a-secret-vow",
@@ -112,8 +113,8 @@
       "the-moles-welcome-you"
     ],
     "poolFiveWeap": [
-      "time-waits-for-no-one",
       "something-irreplaceable",
+      "time-waits-for-no-one",
       "night-on-the-milky-way",
       "but-the-battle-isnt-over",
       "sleep-like-the-dead",
@@ -170,6 +171,8 @@
       "bronya"
     ],
     "poolFiveWeap": [
+      "something-irreplaceable",
+      "time-waits-for-no-one",
       "night-on-the-milky-way",
       "but-the-battle-isnt-over",
       "sleep-like-the-dead",
@@ -200,18 +203,18 @@
       "under-the-blue-sky",
       "geniuses-repose",
       "make-the-world-clamor",
-      "dance-dance-dance",
       "the-birth-of-the-self",
+      "dance-dance-dance",
       "memories-of-the-past",
       "planetary-rendezvous",
       "only-silence-remains",
       "subscribe-for-more",
-      "day-one-of-my-new-life",
+      "swordplay",
       "eyes-of-the-prey",
       "good-night-and-sleep-well",
-      "landaus-choice",
       "resolution-shines-as-pearls-of-sweat",
-      "swordplay",
+      "day-one-of-my-new-life",
+      "landaus-choice",
       "trend-of-the-universal-market"
     ]
   }
