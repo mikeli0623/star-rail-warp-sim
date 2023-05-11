@@ -1,0 +1,30 @@
+.lazy-load-image-background.opacity {
+  opacity: 0;
+}
+
+.lazy-load-image-background.opacity.lazy-load-image-loaded {
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.lazy-load-image-background.opacity-200 {
+  opacity: 0;
+  z-index: 200;
+}
+
+.lazy-load-image-background.opacity-200.lazy-load-image-loaded {
+  opacity: 1;
+  transition: opacity 0.2s;
+  z-index: 200;
+}
+
+.lazy-load-image-background.opacity-100 {
+  opacity: 0;
+  z-index: 100;
+}
+
+.lazy-load-image-background.opacity-100.lazy-load-image-loaded {
+  opacity: 1;
+  transition: opacity 0.2s;
+  z-index: 100;
+}

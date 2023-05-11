@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Banners.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const StellarWarp = ({ resize }) => {
   return (
@@ -44,7 +45,8 @@ const StellarWarp = ({ resize }) => {
             right: 0,
           }}
         />
-        <img
+        <LazyLoadImage
+          effect="opacity"
           src="../assets/banner/1.0/himeko-back.webp"
           width={resize.getWidth(500)}
           alt="char"
@@ -58,14 +60,14 @@ const StellarWarp = ({ resize }) => {
             animationFillMode: "both",
           }}
         />
-        <img
+        <LazyLoadImage
+          effect="opacity"
           src="../assets/banner/1.0/bronya-back.webp"
           width={resize.getWidth(900)}
           alt="char"
           draggable="false"
           style={{
             position: "absolute",
-            zIndex: "1000",
             top: "50%",
             left: "50%",
             transform: "translate(-51.1%, -58%)",
@@ -75,7 +77,8 @@ const StellarWarp = ({ resize }) => {
           }}
         />
       </div>
-      <img
+      <LazyLoadImage
+        effect="opacity-100"
         src="../assets/banner/1.0/standard-left.webp"
         width={resize.getWidth(331)}
         alt="left"
@@ -94,7 +97,7 @@ const StellarWarp = ({ resize }) => {
         width={resize.getWidth(135)}
         style={{
           position: "absolute",
-          zIndex: "10",
+          zIndex: "100",
           transform: "translate(-280%, 40%) rotate(5deg)",
           animation: "cone-1-animation 0.3s 1",
           animationTimingFunction: "linear",
@@ -108,7 +111,7 @@ const StellarWarp = ({ resize }) => {
         width={resize.getWidth(108)}
         style={{
           position: "absolute",
-          zIndex: "10",
+          zIndex: "100",
           animationTimingFunction: "linear",
           animation: "cone-2-animation 0.3s 1",
           animationFillMode: "both",
@@ -121,7 +124,7 @@ const StellarWarp = ({ resize }) => {
         width={resize.getWidth(108)}
         style={{
           position: "absolute",
-          zIndex: "10",
+          zIndex: "100",
           animationTimingFunction: "linear",
           animation: "cone-3-animation 0.3s 1",
           animationFillMode: "both",
@@ -134,43 +137,12 @@ const StellarWarp = ({ resize }) => {
         width={resize.getWidth(240)}
         style={{
           position: "absolute",
-          zIndex: "10",
+          zIndex: "100",
           transform: "translate(-155%, 200%)",
         }}
       />
-      <img
-        src="../assets/banner/1.0/bronya.webp"
-        width={resize.getWidth(900)}
-        alt="char"
-        draggable="false"
-        style={{
-          position: "absolute",
-          zIndex: "11",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-32%, -58%)",
-          animation: "bronya-animation 2s 1",
-          animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-          animationFillMode: "both",
-        }}
-      />
-      <img
-        src="../assets/banner/1.0/gepard.webp"
-        width={resize.getWidth(800)}
-        alt="char"
-        draggable="false"
-        style={{
-          position: "absolute",
-          zIndex: "1",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-66%, -63%)",
-          animation: "gepard-animation 2s 1",
-          animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-          animationFillMode: "both",
-        }}
-      />
-      <img
+      <LazyLoadImage
+        effect="opacity"
         src="../assets/banner/1.0/himeko.webp"
         width={resize.getWidth(500)}
         alt="char"
@@ -184,7 +156,40 @@ const StellarWarp = ({ resize }) => {
           animationFillMode: "both",
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity"
+        src="../assets/banner/1.0/gepard.webp"
+        width={resize.getWidth(800)}
+        alt="char"
+        draggable="false"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-66%, -63%)",
+          animation: "gepard-animation 2s 1",
+          animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
+          animationFillMode: "both",
+        }}
+      />
+      <LazyLoadImage
+        effect="opacity"
+        src="../assets/banner/1.0/bronya.webp"
+        width={resize.getWidth(900)}
+        alt="char"
+        draggable="false"
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-32%, -58%)",
+          animation: "bronya-animation 2s 1",
+          animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
+          animationFillMode: "both",
+        }}
+      />
+      <LazyLoadImage
+        effect="opacity"
         src="../assets/banner/1.0/bronya-tag.webp"
         width={resize.getWidth(152)}
         alt="bronya tag"
@@ -197,7 +202,8 @@ const StellarWarp = ({ resize }) => {
           transform: "translate(136%, 20%)",
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity"
         src="../assets/banner/1.0/gepard-tag.webp"
         width={resize.getWidth(152)}
         alt="gepard tag"
@@ -210,7 +216,8 @@ const StellarWarp = ({ resize }) => {
           transform: "translate(-115%, -165%)",
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity"
         src="../assets/banner/1.0/himeko-tag.webp"
         width={resize.getWidth(152)}
         alt="himeko tag"

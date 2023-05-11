@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Banners.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ButterflyOnSwordtip = ({ resize }) => {
   return (
@@ -40,11 +41,12 @@ const ButterflyOnSwordtip = ({ resize }) => {
               148
             )}px`,
             position: "absolute",
-            zIndex: "1000",
+            zIndex: "1",
             right: "0",
           }}
         />
-        <img
+        <LazyLoadImage
+          effect="opacity"
           src="../assets/banner/1.0/char-banner-back.webp"
           height="100%"
           alt="right"
@@ -138,7 +140,8 @@ const ButterflyOnSwordtip = ({ resize }) => {
           }}
         />
       </div>
-      <img
+      <LazyLoadImage
+        effect="opacity-100"
         src="../assets/banner/1.0/char-left.webp"
         width={resize.getWidth(331)}
         alt="left"
@@ -151,7 +154,8 @@ const ButterflyOnSwordtip = ({ resize }) => {
           zIndex: "100",
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity"
         src="../assets/banner/1.0/seele.webp"
         width={resize.getWidth(1145)}
         alt="char"
@@ -165,7 +169,8 @@ const ButterflyOnSwordtip = ({ resize }) => {
           animationFillMode: "both",
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity"
         src="../assets/magnify.webp"
         width={resize.getWidth(40)}
         alt="magnify"
@@ -178,7 +183,8 @@ const ButterflyOnSwordtip = ({ resize }) => {
           filter: "brightness(0.4)",
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity"
         src="../assets/banner/1.0/seele-tag.webp"
         width={resize.getWidth(130)}
         alt="seele tag"

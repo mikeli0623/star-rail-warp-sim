@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const MiniBanners = ({
   vers,
@@ -13,7 +14,8 @@ const MiniBanners = ({
     <React.Fragment>
       {hasBeginner && (
         <React.Fragment>
-          <img
+          <LazyLoadImage
+            effect="opacity-200"
             className="mini-banner beginner"
             alt="mini beginner banner"
             src={`../assets/banner/mini/beginner.webp`}
@@ -36,7 +38,8 @@ const MiniBanners = ({
               setHighlightIndex(null);
             }}
           />
-          <img
+          <LazyLoadImage
+            effect="opacity-200"
             className="mini-banner"
             alt="mini beginner banner active"
             src={`../assets/banner/mini/beginner-active.webp`}
@@ -50,7 +53,8 @@ const MiniBanners = ({
           />
         </React.Fragment>
       )}
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-banner"
         alt="mini character banner active"
         src={`../assets/banner/mini/${vers}-char-active.webp`}
@@ -62,7 +66,8 @@ const MiniBanners = ({
         }}
         draggable="false"
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-banner"
         alt="mini character banner"
         src={`../assets/banner/mini/${vers}-char.webp`}
@@ -87,7 +92,8 @@ const MiniBanners = ({
           setHighlightIndex(null);
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-banner"
         alt="mini weapon banner active"
         src={`../assets/banner/mini/${vers}-weap-active.webp`}
@@ -99,7 +105,8 @@ const MiniBanners = ({
         }}
         draggable="false"
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-banner"
         alt="mini weapon banner"
         src={`../assets/banner/mini/${vers}-weap.webp`}
@@ -124,7 +131,8 @@ const MiniBanners = ({
           setHighlightIndex(null);
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-banner"
         alt="mini standard banner active"
         src={`../assets/banner/mini/${vers}-standard-active.webp`}
@@ -135,7 +143,8 @@ const MiniBanners = ({
         }}
         draggable="false"
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-banner"
         alt="mini standard banner"
         src={`../assets/banner/mini/${vers}-standard.webp`}
@@ -160,7 +169,8 @@ const MiniBanners = ({
           setHighlightIndex(null);
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-highlight"
         src="../assets/banner/mini/highlight.webp"
         alt="highlight"
@@ -172,7 +182,8 @@ const MiniBanners = ({
             : `${highlightIndex === 0 && bannerType !== "char" ? 1 : 0}`,
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-highlight"
         src="../assets/banner/mini/highlight.webp"
         alt="highlight"
@@ -184,7 +195,8 @@ const MiniBanners = ({
             : `${highlightIndex === 1 && bannerType !== "weap" ? 1 : 0}`,
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-highlight"
         src="../assets/banner/mini/highlight.webp"
         alt="highlight"
@@ -196,7 +208,8 @@ const MiniBanners = ({
             : `${highlightIndex === 2 && bannerType !== "standard" ? 1 : 0}`,
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-200"
         className="mini-highlight"
         src="../assets/banner/mini/highlight.webp"
         alt="highlight"

@@ -126,5 +126,35 @@
         "path": "The Hunt",
         "element": "Ice",
         "rarity": 5
+    },
+    {
+        "name": "Jing Yuan",
+        "path": "The Erudition",
+        "element": "Lightning",
+        "rarity": 5
+    },
+    {
+        "name": "Silver Wolf",
+        "path": "The Nihility",
+        "element": "Quantum",
+        "rarity": 5
+    },
+    {
+        "name": "Blade",
+        "path": "The Destruction",
+        "element": "Wind",
+        "rarity": 5
+    },
+    {
+        "name": "Kafka",
+        "path": "The Nihility",
+        "element": "Lightning",
+        "rarity": 5
+    },
+    {
+        "name": "Luocha",
+        "path": "The Abundance",
+        "element": "Imaginary",
+        "rarity": 5
     }
 ]

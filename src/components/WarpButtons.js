@@ -1,10 +1,12 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const WarpButtons = ({ onWarp, event, resize }) => {
   if (event === "beginner")
     return (
       <div id="warp-button-ten-hover">
-        <img
+        <LazyLoadImage
+          effect="opacity"
           className="warp-button beginner"
           onClick={() => onWarp(10)}
           src={"./assets/beginner-10.webp"}
@@ -18,7 +20,8 @@ const WarpButtons = ({ onWarp, event, resize }) => {
     return (
       <React.Fragment>
         <div id="warp-button-one-hover">
-          <img
+          <LazyLoadImage
+            effect="opacity"
             className="warp-button one"
             onClick={() => onWarp(1)}
             src={
@@ -32,7 +35,8 @@ const WarpButtons = ({ onWarp, event, resize }) => {
           />
         </div>
         <div id="warp-button-ten-hover">
-          <img
+          <LazyLoadImage
+            effect="opacity"
             className="warp-button ten"
             onClick={() => onWarp(10)}
             src={

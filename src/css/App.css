@@ -4,7 +4,7 @@
 }
 
 * {
-  cursor: url(../assets/cursor.webp), auto !important;
+  cursor: url(../assets/cursor.cur), auto !important;
   user-select: none;
 }
 
@@ -29,10 +29,11 @@ html * {
   transform: translate(-50%, -50%);
   z-index: 1000;
   transition: scale 0.2s;
+  transform-origin: top left;
 }
 
 #plug:hover {
-  scale: 0.9;
+  scale: 1.1;
 }
 
 .close-button {
@@ -397,7 +398,7 @@ html * {
 
 #single-info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   text-align: left;
   align-items: center;
   justify-content: flex-start;
@@ -420,12 +421,12 @@ html * {
   }
 }
 
-#single-info-shadow {
+.single-info-shadow {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(0, 0, 0, 0.4) 30%,
-    rgba(0, 0, 0, 0.4) 70%,
+    rgba(0, 0, 0, 0.5) 25%,
+    rgba(0, 0, 0, 0.5) 75%,
     rgba(255, 255, 255, 0) 100%
   );
   display: flex;
@@ -433,6 +434,19 @@ html * {
   text-align: left;
   align-items: center;
   justify-content: center;
+}
+
+.path-shadow {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.7) 0%,
+    rgba(0, 0, 0, 0.5) 75%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  color: #d0d5cf;
 }
 
 #info-pair {
@@ -479,8 +493,16 @@ html * {
   margin-top: 2%;
 }
 
+.warp-results-new-tag {
+  position: absolute;
+  right: 0;
+  transform: translateY(80%);
+}
+
 .warp-result-hover {
   transition: transform 0.1s;
+  display: flex;
+  position: relative;
 }
 
 .warp-result-hover:hover {

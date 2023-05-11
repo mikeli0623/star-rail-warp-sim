@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Banners.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const BrilliantFixation = ({ resize }) => {
   return (
@@ -32,13 +33,13 @@ const BrilliantFixation = ({ resize }) => {
             right: "0",
           }}
         />
-        <img
+        <LazyLoadImage
+          effect="opacity"
           src="../assets/banner/1.0/weap-banner-back.webp"
-          height="250%"
+          width={resize.getWidth(1200)}
           alt="right"
           draggable="false"
           style={{
-            position: "relative",
             animation: "seele-weap-back-animation 2s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
@@ -85,7 +86,8 @@ const BrilliantFixation = ({ resize }) => {
           animationDelay: "200ms",
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity-100"
         src="../assets/banner/1.0/weap-left.webp"
         width={resize.getWidth(1101.5)}
         alt="left"
@@ -98,7 +100,8 @@ const BrilliantFixation = ({ resize }) => {
           zIndex: "100",
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity"
         className="ring"
         src="/assets/rings.webp"
         alt="rings"
@@ -113,7 +116,8 @@ const BrilliantFixation = ({ resize }) => {
           )}deg)`,
         }}
       />
-      <img
+      <LazyLoadImage
+        effect="opacity"
         src="../assets/magnify.webp"
         width={resize.getWidth(40)}
         alt="magnify"
