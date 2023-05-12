@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import useSound from "use-sound";
 
 const MiniBanners = ({
   vers,
@@ -9,6 +10,10 @@ const MiniBanners = ({
   resize,
 }) => {
   const [highlightIndex, setHighlightIndex] = useState(null);
+
+  const [play] = useSound("../assets/audio/sfx/mini-select.mp3", {
+    volume: 0.6,
+  });
 
   return (
     <React.Fragment>
@@ -25,7 +30,10 @@ const MiniBanners = ({
               opacity: `${bannerType === "beginner" ? 0 : 1}`,
             }}
             onClick={() => {
-              setBannerType("beginner");
+              if (bannerType !== "beginner") {
+                setBannerType("beginner");
+                play();
+              }
             }}
             draggable="false"
             onMouseDown={() => {
@@ -77,7 +85,10 @@ const MiniBanners = ({
           opacity: `${bannerType === "char" ? 0 : 1}`,
         }}
         onClick={() => {
-          setBannerType("char");
+          if (bannerType !== "char") {
+            setBannerType("char");
+            play();
+          }
         }}
         draggable="false"
         onMouseDown={() => {
@@ -116,7 +127,10 @@ const MiniBanners = ({
           opacity: `${bannerType === "weap" ? 0 : 1}`,
         }}
         onClick={() => {
-          setBannerType("weap");
+          if (bannerType !== "weap") {
+            setBannerType("weap");
+            play();
+          }
         }}
         draggable="false"
         onMouseDown={() => {
@@ -154,7 +168,10 @@ const MiniBanners = ({
           opacity: `${bannerType === "standard" ? 0 : 1}`,
         }}
         onClick={() => {
-          setBannerType("standard");
+          if (bannerType !== "standard") {
+            setBannerType("standard");
+            play();
+          }
         }}
         draggable="false"
         onMouseDown={() => {

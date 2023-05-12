@@ -15,6 +15,7 @@ import WarpSingle from "./components/WarpSingle";
 import History from "./classes/History";
 import MiniBanners from "./components/MiniBanners";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import useSound from "use-sound";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -28,6 +29,8 @@ function App() {
   );
 
   const [currentWarp, setCurrentWarp] = useState([]);
+
+  const [playAudio, setPlayAudio] = useState(false);
 
   const [bannerState, setBannerState] = useState({
     beginner: {
@@ -211,6 +214,80 @@ function App() {
     setContent("video");
   };
 
+  const [playMainBGM, mainData] = useSound(
+    "/assets/audio/bgm/ooc-timeline.mp3",
+    { loop: true }
+  );
+
+  const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp.mp3", {
+    loop: true,
+  });
+
+  useEffect(() => {
+    if (!playAudio) {
+      mainData.stop();
+      return;
+    }
+
+    let mainTimeout;
+    let warpTimeout;
+
+    if (content === "main") {
+      if (!mainData.sound.playing()) {
+        if (warpData.sound.playing()) {
+          warpData.sound.fade(1, 0, 1000);
+          warpTimeout = setTimeout(() => {
+            warpData.stop();
+          }, 1000);
+        }
+        mainData.sound.fade(0, 1, 2000);
+        playMainBGM();
+      }
+    } else if (content === "video") {
+      mainData.sound.fade(1, 0, 500);
+      mainTimeout = setTimeout(() => {
+        mainData.pause();
+      }, 500);
+      if (hasFive)
+        warpTimeout = setTimeout(() => {
+          playWarpBGM();
+          warpData.sound.fade(0, 1, 1000);
+        }, 15000);
+      else
+        warpTimeout = setTimeout(() => {
+          playWarpBGM();
+          warpData.sound.fade(0, 1, 1000);
+        }, 14000);
+    } else if (content === "single" || content === "results") {
+      if (warpData.sound.playing()) return;
+      playWarpBGM();
+      warpData.sound.fade(0, 1, 1000);
+    }
+    return () => {
+      if (content === "main") clearTimeout(warpTimeout);
+
+      if (content === "video") {
+        clearTimeout(warpTimeout);
+        clearTimeout(mainTimeout);
+      }
+      if (content === "results") {
+        warpData.sound.fade(1, 0, 500);
+        setTimeout(() => {
+          warpData.stop();
+        }, 500);
+        clearTimeout(warpTimeout);
+      }
+    };
+  }, [
+    content,
+    playAudio,
+    playMainBGM,
+    mainData,
+    playWarpBGM,
+    warpData,
+    hasFive,
+  ]);
+
   return (
     <div className="App">
       {content === "main" && (
@@ -236,6 +313,13 @@ function App() {
               title="View source code"
             />
           </a>
+          <img
+            id="audio-toggle"
+            src={`./assets/audio-${playAudio ? "on" : "off"}.svg`}
+            alt="audio toggle"
+            width={resize.getWidth(50)}
+            onClick={() => setPlayAudio(!playAudio)}
+          />
           <div id="main-back-cover" />
           <div
             id="main-back-cover-pattern"

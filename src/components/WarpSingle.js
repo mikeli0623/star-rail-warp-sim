@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { allChars, json } from "../classes/Constants";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import useSound from "use-sound";
 
 const WarpSingle = ({
   currentWarp,
@@ -20,6 +21,9 @@ const WarpSingle = ({
   const [warpIndex, setWarpIndex] = useState(0);
 
   const [animateInfo, setAnimateInfo] = useState(false);
+
+  const [playThree] = useSound("./assets/audio/sfx/three.mp3", { volume: 0.8 });
+  const [playFour] = useSound("./assets/audio/sfx/four.mp3", { volume: 0.8 });
 
   const [item, setItem] = useState({
     name: json.getName(currentWarp[0]),
@@ -42,10 +46,17 @@ const WarpSingle = ({
   useEffect(() => {
     const length = currentWarp.length;
     if (warpIndex === length) {
-      if (length === 10) setContent("results");
-      else setContent("main");
+      if (length === 10) {
+        playFour();
+        setContent("results");
+      } else setContent("main");
     }
-  }, [warpIndex, currentWarp, setContent]);
+  }, [warpIndex, currentWarp, setContent, playFour]);
+
+  useEffect(() => {
+    if (item.rarity === 3) playThree();
+    else playFour();
+  }, [item, playFour, playThree]);
 
   const nextSingle = () => {
     setWarpIndex(warpIndex + 1);
@@ -78,8 +89,10 @@ const WarpSingle = ({
       <CloseButton
         resize={resize}
         onClose={() => {
-          if (currentWarp.length === 10) setContent("results");
-          else {
+          if (currentWarp.length === 10) {
+            playFour();
+            setContent("results");
+          } else {
             setContent("main");
             setNewItems([]);
           }
