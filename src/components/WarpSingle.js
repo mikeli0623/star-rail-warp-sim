@@ -62,7 +62,7 @@ const WarpSingle = ({
     if (item.rarity === 3) playThree();
     else if (item.rarity === 4) playFour();
     else playFive();
-  }, [item, playFour, playThree, sound]);
+  }, [item, playFour, playThree, playFive, sound]);
 
   const nextSingle = () => {
     setWarpIndex(warpIndex + 1);

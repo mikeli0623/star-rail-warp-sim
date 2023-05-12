@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useMemo,
-  useCallback,
-  useEffect,
-  useContext,
-} from "react";
+import React, { useState, useMemo, useCallback, useEffect } from "react";
 import "./css/App.css";
 import "./css/Lazy.css";
 import { CalcWarp } from "./classes/CalcWarp";
@@ -16,7 +10,7 @@ import DepartureWarp from "./banners/DepartureWarp";
 import ButterflyOnSwordtip from "./banners/ButterflyOnSwordtip";
 import BrilliantFixation from "./banners/BrilliantFixation";
 import StellarWarp from "./banners/StellarWarp";
-import { json, allChars, allWeapons, allBGM } from "./classes/Constants";
+import { json, allChars, allWeapons } from "./classes/Constants";
 import WarpSingle from "./components/WarpSingle";
 import History from "./classes/History";
 import MiniBanners from "./components/MiniBanners";
@@ -47,6 +41,7 @@ function App() {
       rateFive: 0.006,
       rateFour: 0.051,
       maxPity: 50,
+      softPity: 50,
       guaranteeFive: sessionStorage.getItem("begGuaranteeFive") === "true",
       guaranteeFour: sessionStorage.getItem("begGuaranteeFour") === "true",
       pityFive: parseInt(sessionStorage.getItem("beg")) || 0,
@@ -56,6 +51,7 @@ function App() {
       rateFive: 0.006,
       rateFour: 0.051,
       maxPity: 90,
+      softPity: 75,
       guaranteeFive: sessionStorage.getItem("charGuaranteeFive") === "true",
       guaranteeFour: sessionStorage.getItem("charGuaranteeFour") === "true",
       pityFive: parseInt(sessionStorage.getItem("charPityFive")) || 0,
@@ -65,6 +61,7 @@ function App() {
       rateFive: 0.008,
       rateFour: 0.066,
       maxPity: 80,
+      softPity: 65,
       guaranteeFive: sessionStorage.getItem("weapGuaranteeFive") === "true",
       guaranteeFour: sessionStorage.getItem("weapGuaranteeFour") === "true",
       pityFive: parseInt(sessionStorage.getItem("weapPityFive")) || 0,
@@ -74,6 +71,7 @@ function App() {
       rateFive: 0.006,
       rateFour: 0.051,
       maxPity: 90,
+      softPity: 75,
       guaranteeFive: sessionStorage.getItem("standGuaranteeFive") === "true",
       guaranteeFour: sessionStorage.getItem("standGuaranteeFour") === "true",
       pityFive: parseInt(sessionStorage.getItem("standPityFive")) || 0,
@@ -195,6 +193,7 @@ function App() {
   }, [totalBeginner]);
 
   const [hasFive, setHasFive] = useState(false);
+  const [hasFour, setHasFour] = useState(false);
 
   const handleWarp = (warps) => {
     if (bannerType === "beginner") {
@@ -202,10 +201,13 @@ function App() {
       sessionStorage.setItem("totalBeginner", totalBeginner + 1);
     }
     setHasFive(false);
+    setHasFour(false);
     let warpResults = [];
     let banner = bannerState[bannerType];
     for (let i = 0; i < warps; i++)
-      warpResults.push(CalcWarp(vers, bannerType, banner, setHasFive));
+      warpResults.push(
+        CalcWarp(vers, bannerType, banner, setHasFive, setHasFour)
+      );
 
     warpResults.map((item) => {
       updateStash(item);
@@ -238,7 +240,6 @@ function App() {
 
   const [playMainBGM, mainData] = useSound(`assets/audio/bgm/${bgm}.mp3`, {
     loop: true,
-    // interrupt: true,
   });
 
   const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp.mp3", {
@@ -247,7 +248,7 @@ function App() {
 
   useEffect(() => {
     if (!sound) {
-      mainData.stop();
+      mainData.pause();
       warpData.stop();
       return;
     }
@@ -265,16 +266,10 @@ function App() {
       mainTimeout = setTimeout(() => {
         mainData.pause();
       }, 500);
-      if (hasFive)
-        warpTimeout = setTimeout(() => {
-          playWarpBGM();
-          warpData.sound.fade(0, 1, 1000);
-        }, 15000);
-      else
-        warpTimeout = setTimeout(() => {
-          playWarpBGM();
-          warpData.sound.fade(0, 1, 1000);
-        }, 14000);
+      warpTimeout = setTimeout(() => {
+        playWarpBGM();
+        warpData.sound.fade(0, 1, 1000);
+      }, 14000);
     } else if (content === "single") {
       if (warpData.sound.playing()) return;
       playWarpBGM();
@@ -287,6 +282,13 @@ function App() {
         clearTimeout(warpTimeout);
         clearTimeout(mainTimeout);
       }
+      if (!hasFive && !hasFour && content === "single") {
+        clearTimeout(warpTimeout);
+        warpData.sound.fade(1, 0, 1000);
+        warpTimeout = setTimeout(() => {
+          warpData.stop();
+        }, 1000);
+      }
       if (content === "results") {
         clearTimeout(warpTimeout);
         warpData.sound.fade(1, 0, 1000);
@@ -295,7 +297,16 @@ function App() {
         }, 1000);
       }
     };
-  }, [content, sound, playMainBGM, mainData, playWarpBGM, warpData, hasFive]);
+  }, [
+    content,
+    sound,
+    playMainBGM,
+    mainData,
+    playWarpBGM,
+    warpData,
+    hasFive,
+    hasFour,
+  ]);
 
   return (
     <SoundProvider value={value}>
@@ -432,7 +443,13 @@ function App() {
         )}
         {content === "video" && (
           <WarpVideo
-            src={hasFive ? "/assets/five.mp4" : "/assets/normal.mp4"}
+            src={
+              hasFive
+                ? "/assets/five.mp4"
+                : hasFour
+                ? "/assets/four.mp4"
+                : "/assets/three.mp4"
+            }
             onEnded={() => {
               setContent("single");
             }}

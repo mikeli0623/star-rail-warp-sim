@@ -7,7 +7,12 @@ const WarpVideo = ({ src, onEnded, resize }) => {
   return (
     <section id="video-container">
       <CloseButton resize={resize} onClose={onEnded} />
-      <video autoPlay onEnded={onEnded} muted={!sound}>
+      <video
+        autoPlay
+        onEnded={onEnded}
+        muted={!sound}
+        onLoadStart={(e) => (e.target.volume = 0.5)}
+      >
         <source src={src} type="video/webm" />
       </video>
     </section>

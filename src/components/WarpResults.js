@@ -45,8 +45,8 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[0]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
-            animationDelay: "200ms",
+            } 1.2s 1`,
+            animationDelay: "100ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
@@ -61,8 +61,8 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[1]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
-            animationDelay: "100ms",
+            } 1.2s 1`,
+            animationDelay: "50ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
@@ -77,7 +77,7 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[2]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
+            } 1.2s 1`,
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
@@ -94,7 +94,7 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[3]) !== 3
                 ? "animate-result-middle"
                 : "animate-three-middle"
-            } 1.5s 1`,
+            } 1.2s 1`,
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
@@ -108,8 +108,8 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[4]) !== 3
                 ? "animate-result-middle"
                 : "animate-three-middle"
-            } 1.5s 1`,
-            animationDelay: "100ms",
+            } 1.2s 1`,
+            animationDelay: "50ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
@@ -123,8 +123,8 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[5]) !== 3
                 ? "animate-result-middle"
                 : "animate-three-middle"
-            } 1.5s 1`,
-            animationDelay: "200ms",
+            } 1.2s 1`,
+            animationDelay: "100ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
@@ -138,8 +138,8 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[6]) !== 3
                 ? "animate-result-middle"
                 : "animate-three-middle"
-            } 1.5s 1`,
-            animationDelay: "300ms",
+            } 1.2s 1`,
+            animationDelay: "150ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
@@ -157,8 +157,8 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[7]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
-            animationDelay: "200ms",
+            } 1.2s 1`,
+            animationDelay: "100ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
@@ -173,8 +173,8 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[8]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
-            animationDelay: "100ms",
+            } 1.2s 1`,
+            animationDelay: "50ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
@@ -189,7 +189,7 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[9]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
+            } 1.2s 1`,
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
