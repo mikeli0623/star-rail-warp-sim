@@ -2,7 +2,7 @@ import { baseWeapons, json } from "./Constants";
 
 const randItem = (pool) => pool[Math.floor(Math.random() * pool.length)];
 
-export const CalcWarp = (vers, type, banner, setHasFive) => {
+export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
   const warpChance = Math.random();
   const rateUpChance = type === "char" ? 0.5 : 0.75;
   const rateUp = Math.random() < rateUpChance ? true : false;
@@ -37,6 +37,7 @@ export const CalcWarp = (vers, type, banner, setHasFive) => {
     // 4 star
     banner.pityFour = 0;
     banner.pityFive++;
+    setHasFour(true);
     if (!(type === "standard" || type === "beginner")) {
       // not standard banner
       if (rateUp || banner.guaranteeFour) {

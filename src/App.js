@@ -175,6 +175,7 @@ function App() {
   }, [totalBeginner]);
 
   const [hasFive, setHasFive] = useState(false);
+  const [hasFour, setHasFour] = useState(false);
 
   const handleWarp = (warps) => {
     if (bannerType === "beginner") {
@@ -182,10 +183,13 @@ function App() {
       sessionStorage.setItem("totalBeginner", totalBeginner + 1);
     }
     setHasFive(false);
+    setHasFour(false);
     let warpResults = [];
     let banner = bannerState[bannerType];
     for (let i = 0; i < warps; i++)
-      warpResults.push(CalcWarp(vers, bannerType, banner, setHasFive));
+      warpResults.push(
+        CalcWarp(vers, bannerType, banner, setHasFive, setHasFour)
+      );
 
     warpResults.map((item) => {
       updateStash(item);
@@ -335,7 +339,13 @@ function App() {
       )}
       {content === "video" && (
         <WarpVideo
-          src={hasFive ? "/assets/five.mp4" : "/assets/normal.mp4"}
+          src={
+            hasFive
+              ? "/assets/five.mp4"
+              : hasFour
+              ? "/assets/four.mp4"
+              : "/assets/three.mp4"
+          }
           onEnded={() => {
             setContent("single");
           }}
