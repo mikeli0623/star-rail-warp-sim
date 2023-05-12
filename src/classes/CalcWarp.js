@@ -2,12 +2,39 @@ import { baseWeapons, json } from "./Constants";
 
 const randItem = (pool) => pool[Math.floor(Math.random() * pool.length)];
 
+const chanceFive = (currentPity, maxPity, softPity, baseRate) => {
+  if (currentPity < softPity) return baseRate;
+  else {
+    // soft pity thing idk man
+    const maxVal = 1;
+    const steps = maxPity - softPity;
+    const currentStep = currentPity - softPity;
+    const maxValueReached =
+      currentStep >= steps
+        ? maxVal
+        : baseRate + (maxVal - baseRate) * (currentStep / steps);
+    return maxValueReached;
+  }
+};
+
+const chanceFour = (currentPity, baseRate) => {
+  return currentPity < 10 ? baseRate : 1;
+};
+
 export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
   const warpChance = Math.random();
   const rateUpChance = type === "char" ? 0.5 : 0.75;
   const rateUp = Math.random() < rateUpChance ? true : false;
   let warpItem;
-  if (warpChance < banner.rateFive || banner.pityFive >= banner.maxPity - 1) {
+  if (
+    warpChance <
+    chanceFive(
+      banner.pityFive,
+      banner.maxPity,
+      banner.softPity,
+      banner.rateFive
+    )
+  ) {
     // 5 star
     setHasFive(true);
     banner.pityFive = 0;
@@ -33,7 +60,7 @@ export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
         else warpItem = randItem(json.getPoolFiveWeap(vers, type));
       } else warpItem = randItem(json.getPoolFiveChar(vers, type));
     }
-  } else if (warpChance < banner.rateFour || banner.pityFour >= 9) {
+  } else if (warpChance < chanceFour(banner.pityFour, banner.rateFour)) {
     // 4 star
     banner.pityFour = 0;
     banner.pityFive++;
