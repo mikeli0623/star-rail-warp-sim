@@ -1,7 +1,10 @@
+import { useContext } from "react";
+import SoundContext from "./SoundContext";
 import useSound from "use-sound";
 
 const CloseButton = ({ resize, onClose, style }) => {
   const [play] = useSound("/assets/audio/sfx/close-button.mp3");
+  const { sound } = useContext(SoundContext);
   return (
     <div
       className="close-button"
@@ -13,7 +16,7 @@ const CloseButton = ({ resize, onClose, style }) => {
       }}
       onClick={() => {
         onClose();
-        play();
+        if (sound) play();
       }}
     >
       <div style={{ marginRight: resize.getWidth(16) }}>

@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
+import SoundContext from "./SoundContext";
 
 const MiniBanners = ({
   vers,
@@ -14,6 +15,8 @@ const MiniBanners = ({
   const [play] = useSound("../assets/audio/sfx/mini-select.mp3", {
     volume: 0.6,
   });
+
+  const { sound } = useContext(SoundContext);
 
   return (
     <React.Fragment>
@@ -32,7 +35,7 @@ const MiniBanners = ({
             onClick={() => {
               if (bannerType !== "beginner") {
                 setBannerType("beginner");
-                play();
+                if (sound) play();
               }
             }}
             draggable="false"
@@ -87,7 +90,7 @@ const MiniBanners = ({
         onClick={() => {
           if (bannerType !== "char") {
             setBannerType("char");
-            play();
+            if (sound) play();
           }
         }}
         draggable="false"
@@ -129,7 +132,7 @@ const MiniBanners = ({
         onClick={() => {
           if (bannerType !== "weap") {
             setBannerType("weap");
-            play();
+            if (sound) play();
           }
         }}
         draggable="false"
@@ -170,7 +173,7 @@ const MiniBanners = ({
         onClick={() => {
           if (bannerType !== "standard") {
             setBannerType("standard");
-            play();
+            if (sound) play();
           }
         }}
         draggable="false"
