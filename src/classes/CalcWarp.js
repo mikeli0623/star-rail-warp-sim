@@ -3,11 +3,10 @@ import { baseWeapons, json } from "./Constants";
 const randItem = (pool) => pool[Math.floor(Math.random() * pool.length)];
 
 const chanceFive = (currentPity, maxPity, softPity, baseRate) => {
-  if (currentPity < softPity) return baseRate;
+  if (currentPity < softPity - 1) return baseRate;
   else {
-    // soft pity thing idk man
     const maxVal = 1;
-    const steps = maxPity - softPity;
+    const steps = maxPity - softPity - 1;
     const currentStep = currentPity - softPity;
     const maxValueReached =
       currentStep >= steps
@@ -18,7 +17,7 @@ const chanceFive = (currentPity, maxPity, softPity, baseRate) => {
 };
 
 const chanceFour = (currentPity, baseRate) => {
-  return currentPity < 10 ? baseRate : 1;
+  return currentPity < 9 ? baseRate : 1;
 };
 
 export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
