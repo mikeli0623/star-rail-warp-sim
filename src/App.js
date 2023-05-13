@@ -103,13 +103,6 @@ function App() {
     }
   };
 
-  // Howler sounds crash page if used before loaded
-  useEffect(() => {
-    setTimeout(() => {
-      setLockout(false);
-    }, 2000);
-  }, []);
-
   // creates stash
   useEffect(() => {
     if (JSON.parse(sessionStorage.getItem("stash"))) return;
@@ -240,6 +233,7 @@ function App() {
 
   const [playMainBGM, mainData] = useSound(`assets/audio/bgm/${bgm}.mp3`, {
     loop: true,
+    onload: () => setLockout(false),
   });
 
   const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp.mp3", {
@@ -261,15 +255,6 @@ function App() {
         mainData.sound.fade(0, 1, 2000);
         playMainBGM();
       }
-    } else if (content === "video") {
-      mainData.sound.fade(1, 0, 500);
-      mainTimeout = setTimeout(() => {
-        mainData.pause();
-      }, 500);
-      warpTimeout = setTimeout(() => {
-        playWarpBGM();
-        warpData.sound.fade(0, 1, 1000);
-      }, 14000);
     } else if (content === "single") {
       if (warpData.sound.playing()) return;
       playWarpBGM();
@@ -339,6 +324,7 @@ function App() {
               src={`./assets/audio-${sound ? "on" : "off"}.svg`}
               alt="audio toggle"
               draggable="false"
+              title={lockout ? "Sounds are loading..." : ""}
               width={resize.getWidth(50)}
               onClick={() => {
                 if (!lockout) setSound(!sound);
@@ -453,6 +439,8 @@ function App() {
             onEnded={() => {
               setContent("single");
             }}
+            mainBGM={{ playMainBGM, mainData }}
+            warpBGM={{ playWarpBGM, warpData }}
             resize={resize}
           />
         )}
