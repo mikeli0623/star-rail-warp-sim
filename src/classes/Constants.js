@@ -135,4 +135,15 @@ const allWeapons = [
   "mutual-demise",
 ];
 
-export { allChars, allWeapons, baseWeapons };
+const allBGM = [
+  "ooc-science-fiction",
+  "ooc-space-walk",
+  "ooc-timeline",
+  "osae-faded-sun",
+  "osae-streets-abuzz",
+  "osae-cumulus-formations",
+  "ss-exquisite-ingenuity",
+  "ss-lustrous-moonlight",
+];
+
+export { allChars, allWeapons, baseWeapons, allBGM };

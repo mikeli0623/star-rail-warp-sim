@@ -16,6 +16,8 @@ import History from "./classes/History";
 import MiniBanners from "./components/MiniBanners";
 import Settings from "./components/Settings";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import useSound from "use-sound";
+import { SoundProvider } from "./components/SoundContext";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -29,6 +31,11 @@ function App() {
   );
 
   const [currentWarp, setCurrentWarp] = useState([]);
+
+  const [sound, setSound] = useState(false);
+  const value = { sound, setSound };
+
+  const [lockout, setLockout] = useState(true);
 
   const [bannerState, setBannerState] = useState({
     beginner: {
@@ -220,9 +227,77 @@ function App() {
     setContent("video");
   };
 
+  const [bgm] = useState(
+    // allBGM[Math.floor(Math.random() * allBGM.length)]
+    "ooc-timeline"
+  );
+
+  const [playMainBGM, mainData] = useSound(`assets/audio/bgm/${bgm}.mp3`, {
+    loop: true,
+    onload: () => setLockout(false),
+  });
+
+  const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp.mp3", {
+    loop: true,
+  });
+
+  useEffect(() => {
+    if (!sound) {
+      mainData.pause();
+      warpData.stop();
+      return;
+    }
+
+    let mainTimeout;
+    let warpTimeout;
+
+    if (content === "main") {
+      if (!mainData.sound.playing()) {
+        mainData.sound.fade(0, 1, 2000);
+        playMainBGM();
+      }
+    } else if (content === "single") {
+      if (warpData.sound.playing()) return;
+      playWarpBGM();
+      warpData.sound.fade(0, 1, 1000);
+    }
+    return () => {
+      if (content === "main") clearTimeout(warpTimeout);
+
+      if (content === "video") {
+        clearTimeout(warpTimeout);
+        clearTimeout(mainTimeout);
+      }
+      if (!hasFive && !hasFour && content === "single") {
+        clearTimeout(warpTimeout);
+        warpData.sound.fade(1, 0, 1000);
+        warpTimeout = setTimeout(() => {
+          warpData.stop();
+        }, 1000);
+      }
+      if (content === "results") {
+        clearTimeout(warpTimeout);
+        warpData.sound.fade(1, 0, 1000);
+        warpTimeout = setTimeout(() => {
+          warpData.stop();
+        }, 1000);
+      }
+    };
+  }, [
+    content,
+    sound,
+    playMainBGM,
+    mainData,
+    playWarpBGM,
+    warpData,
+    hasFive,
+    hasFour,
+  ]);
+
   return (
-    <div className="App">
-      {content === "main" && (
+    <SoundProvider value={value}>
+      <div className="App">
+        {content === "main" && (
         <div
           id="main-back"
           style={{
@@ -248,145 +323,182 @@ function App() {
           <Settings resize={resize} />
           <div id="main-back-cover" />
           <div
-            id="main-back-cover-pattern"
+            id="main-back"
             style={{
-              backgroundImage: "url(assets/banner/cover-pattern.webp)",
-              backgroundSize: `${resize.getWidth(10)}px ${resize.getHeight(
-                8,
-                10
-              )}px`,
+              backgroundImage: `url(/assets/banner/${vers}/${bannerType}-back.webp)`,
+              backgroundColor: `${
+                bannerType === "beginner" ? "#1f2322" : "#0a162e"
+              }`,
             }}
           >
-            <LazyLoadImage
-              effect="opacity"
+            <a
+              href="https://github.com/mikeli0623/star-rail"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                id="plug"
+                src="/assets/github-mark-white.svg"
+                alt="github link"
+                width={resize.getWidth(40)}
+                title="View source code"
+              />
+            </a>
+            <img
+              id="audio-toggle"
+              src={`./assets/audio-${sound ? "on" : "off"}.svg`}
+              alt="audio toggle"
+              draggable="false"
+              title={lockout ? "Sounds are loading..." : ""}
+              width={resize.getWidth(50)}
+              onClick={() => {
+                if (!lockout) setSound(!sound);
+              }}
+            />
+            <div id="main-back-cover" />
+            <div
+              id="main-back-cover-pattern"
+              style={{
+                backgroundImage: "url(assets/banner/cover-pattern.webp)",
+                backgroundSize: `${resize.getWidth(10)}px ${resize.getHeight(
+                  8,
+                  10
+                )}px`,
+              }}
+            >
+              <LazyLoadImage
+                effect="opacity"
+                className="ring"
+                src="/assets/rings.webp"
+                alt="rings"
+                width={resize.getWidth(550)}
+              />
+              <div
+                id="info"
+                style={{
+                  width: resize.getWidth(320),
+                  height: resize.getHeight(44, 300),
+                }}
+              >
+                <div
+                  id="warp-icon"
+                  style={{
+                    backgroundImage: "url(/assets/warp-icon.webp)",
+                    width: resize.getWidth(44),
+                    height: resize.getWidth(44),
+                    backgroundSize: resize.getWidth(44),
+                  }}
+                />
+                <div
+                  style={{
+                    height: resize.getWidth(44),
+                    width: resize.getWidth(240),
+                    display: "flex",
+                    flexDirection: "column",
+                    margin: 0,
+                    padding: 0,
+                  }}
+                >
+                  <div
+                    id="title"
+                    style={{
+                      fontSize: resize.getWidth(22),
+                      height: resize.getWidth(24),
+                      textAlign: "left",
+                      marginTop: `-${resize.getWidth(5)}px`,
+                    }}
+                  >
+                    Warp
+                  </div>
+                  <div
+                    id="warp-type"
+                    style={{
+                      textAlign: "left",
+                      fontSize: resize.getWidth(24),
+                      height: resize.getWidth(24),
+                    }}
+                  >
+                    {json.getTitle(vers, bannerType)}
+                  </div>
+                </div>
+              </div>
+              <MiniBanners
+                vers={vers}
+                bannerType={bannerType}
+                setBannerType={setBannerType}
+                hasBeginner={totalBeginner < 5}
+                resize={resize}
+              />
+              {banners[vers][bannerType]}
+              <img
+                id="exchange-button"
+                alt="exchange"
+                src="/assets/exchange.webp"
+                draggable="false"
+                width={resize.getWidth(178)}
+              />
+              <img
+                id="view-details-button"
+                alt="view details"
+                src="/assets/view-details.webp"
+                draggable="false"
+                width={resize.getWidth(178)}
+              />
+              <WarpButtons
+                onWarp={handleWarp}
+                event={bannerType}
+                resize={resize}
+              />
+            </div>
+          </div>
+        )}
+        {content === "video" && (
+          <WarpVideo
+            src={
+              hasFive
+                ? "/assets/five.mp4"
+                : hasFour
+                ? "/assets/four.mp4"
+                : "/assets/three.mp4"
+            }
+            onEnded={() => {
+              setContent("single");
+            }}
+            mainBGM={{ playMainBGM, mainData }}
+            warpBGM={{ playWarpBGM, warpData }}
+            resize={resize}
+          />
+        )}
+        {content === "single" && (
+          <WarpSingle
+            currentWarp={currentWarp}
+            newItems={newItems}
+            setNewItems={setNewItems}
+            setContent={setContent}
+            resize={resize}
+          />
+        )}
+        {content === "results" && (
+          <React.Fragment>
+            <img
               className="ring"
               src="/assets/rings.webp"
               alt="rings"
               width={resize.getWidth(550)}
             />
-            <div
-              id="info"
-              style={{
-                width: resize.getWidth(320),
-                height: resize.getHeight(44, 300),
+            <WarpResults
+              currentWarp={currentWarp}
+              newItems={newItems}
+              onClose={() => {
+                setContent("main");
+                setNewItems([]);
               }}
-            >
-              <div
-                id="warp-icon"
-                style={{
-                  backgroundImage: "url(/assets/warp-icon.webp)",
-                  width: resize.getWidth(44),
-                  height: resize.getWidth(44),
-                  backgroundSize: resize.getWidth(44),
-                }}
-              />
-              <div
-                style={{
-                  height: resize.getWidth(44),
-                  width: resize.getWidth(240),
-                  display: "flex",
-                  flexDirection: "column",
-                  margin: 0,
-                  padding: 0,
-                }}
-              >
-                <div
-                  id="title"
-                  style={{
-                    fontSize: resize.getWidth(22),
-                    height: resize.getWidth(24),
-                    textAlign: "left",
-                    marginTop: `-${resize.getWidth(5)}px`,
-                  }}
-                >
-                  Warp
-                </div>
-                <div
-                  id="warp-type"
-                  style={{
-                    textAlign: "left",
-                    fontSize: resize.getWidth(24),
-                    height: resize.getWidth(24),
-                  }}
-                >
-                  {json.getTitle(vers, bannerType)}
-                </div>
-              </div>
-            </div>
-            <MiniBanners
-              vers={vers}
-              bannerType={bannerType}
-              setBannerType={setBannerType}
-              hasBeginner={totalBeginner < 5}
               resize={resize}
             />
-            {banners[vers][bannerType]}
-            <img
-              id="exchange-button"
-              alt="exchange"
-              src="/assets/exchange.webp"
-              draggable="false"
-              width={resize.getWidth(178)}
-            />
-            <img
-              id="view-details-button"
-              alt="view details"
-              src="/assets/view-details.webp"
-              draggable="false"
-              width={resize.getWidth(178)}
-            />
-            <WarpButtons
-              onWarp={handleWarp}
-              event={bannerType}
-              resize={resize}
-            />
-          </div>
-        </div>
-      )}
-      {content === "video" && (
-        <WarpVideo
-          src={
-            hasFive
-              ? "/assets/five.mp4"
-              : hasFour
-              ? "/assets/four.mp4"
-              : "/assets/three.mp4"
-          }
-          onEnded={() => {
-            setContent("single");
-          }}
-          resize={resize}
-        />
-      )}
-      {content === "single" && (
-        <WarpSingle
-          currentWarp={currentWarp}
-          newItems={newItems}
-          setNewItems={setNewItems}
-          setContent={setContent}
-          resize={resize}
-        />
-      )}
-      {content === "results" && (
-        <React.Fragment>
-          <img
-            className="ring"
-            src="/assets/rings.webp"
-            alt="rings"
-            width={resize.getWidth(550)}
-          />
-          <WarpResults
-            currentWarp={currentWarp}
-            newItems={newItems}
-            onClose={() => {
-              setContent("main");
-              setNewItems([]);
-            }}
-            resize={resize}
-          />
-        </React.Fragment>
-      )}
-    </div>
+          </React.Fragment>
+        )}
+      </div>
+    </SoundProvider>
   );
 }
 

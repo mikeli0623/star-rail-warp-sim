@@ -36,6 +36,14 @@ html * {
   scale: 1.1;
 }
 
+#audio-toggle {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  transform: translate(-30%, 30%);
+}
+
 .close-button {
   position: absolute;
   scale: 0.4;
