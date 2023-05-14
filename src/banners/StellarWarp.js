@@ -47,7 +47,7 @@ const StellarWarp = ({ resize }) => {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/1.0/himeko-back.webp"
+          src="../assets/banner/himeko-back.webp"
           width={resize.getWidth(500)}
           alt="char"
           draggable="false"
@@ -62,7 +62,7 @@ const StellarWarp = ({ resize }) => {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/1.0/bronya-back.webp"
+          src="../assets/banner/bronya-back.webp"
           width={resize.getWidth(900)}
           alt="char"
           draggable="false"
@@ -79,7 +79,7 @@ const StellarWarp = ({ resize }) => {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src="../assets/banner/1.0/standard-left.webp"
+        src="../assets/banner/standard-left.webp"
         width={resize.getWidth(331)}
         alt="left"
         draggable="false"
@@ -92,7 +92,7 @@ const StellarWarp = ({ resize }) => {
         }}
       />
       <img
-        src="../assets/banner/1.0/standard-rate-1.webp"
+        src="../assets/banner/standard-rate-1.webp"
         alt="Night on the Milky Way"
         width={resize.getWidth(135)}
         style={{
@@ -106,7 +106,7 @@ const StellarWarp = ({ resize }) => {
         }}
       />
       <img
-        src="../assets/banner/1.0/standard-rate-2.webp"
+        src="../assets/banner/standard-rate-2.webp"
         alt="But the Battle Isn't Over"
         width={resize.getWidth(108)}
         style={{
@@ -119,7 +119,7 @@ const StellarWarp = ({ resize }) => {
         }}
       />
       <img
-        src="../assets/banner/1.0/standard-rate-3.webp"
+        src="../assets/banner/standard-rate-3.webp"
         alt="Something Irreplaceable"
         width={resize.getWidth(108)}
         style={{
@@ -132,7 +132,7 @@ const StellarWarp = ({ resize }) => {
         }}
       />
       <img
-        src="../assets/banner/1.0/weap-tag.webp"
+        src="../assets/banner/weap-tag.webp"
         alt="weapon tag"
         width={resize.getWidth(240)}
         style={{
@@ -143,7 +143,7 @@ const StellarWarp = ({ resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/himeko.webp"
+        src="../assets/banner/himeko.webp"
         width={resize.getWidth(500)}
         alt="char"
         draggable="false"
@@ -158,7 +158,7 @@ const StellarWarp = ({ resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/gepard.webp"
+        src="../assets/banner/gepard.webp"
         width={resize.getWidth(800)}
         alt="char"
         draggable="false"
@@ -174,7 +174,7 @@ const StellarWarp = ({ resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/bronya.webp"
+        src="../assets/banner/bronya.webp"
         width={resize.getWidth(900)}
         alt="char"
         draggable="false"
@@ -190,7 +190,7 @@ const StellarWarp = ({ resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/bronya-tag.webp"
+        src="../assets/banner/bronya-tag.webp"
         width={resize.getWidth(152)}
         alt="bronya tag"
         draggable="false"
@@ -204,7 +204,7 @@ const StellarWarp = ({ resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/gepard-tag.webp"
+        src="../assets/banner/gepard-tag.webp"
         width={resize.getWidth(152)}
         alt="gepard tag"
         draggable="false"
@@ -218,7 +218,7 @@ const StellarWarp = ({ resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/himeko-tag.webp"
+        src="../assets/banner/himeko-tag.webp"
         width={resize.getWidth(152)}
         alt="himeko tag"
         draggable="false"

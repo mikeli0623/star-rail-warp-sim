@@ -1,5 +1,6 @@
 import React from "react";
 import "../css/Banners.css";
+import "../css/vers/1.0.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const BrilliantFixation = ({ resize }) => {

@@ -9,6 +9,7 @@ import useWindowSize from "./components/useWindowSize";
 import DepartureWarp from "./banners/DepartureWarp";
 import ButterflyOnSwordtip from "./banners/ButterflyOnSwordtip";
 import BrilliantFixation from "./banners/BrilliantFixation";
+import SwirlOfHeavenlySpear from "./banners/SwirlOfHeavenlySpear";
 import StellarWarp from "./banners/StellarWarp";
 import { json, allChars, allWeapons } from "./classes/Constants";
 import WarpSingle from "./components/WarpSingle";
@@ -166,13 +167,17 @@ function App() {
   const banners = useMemo(() => {
     return {
       "1.0": {
-        beginner: <DepartureWarp total={totalBeginner} resize={resize} />,
         char: <ButterflyOnSwordtip resize={resize} />,
         weap: <BrilliantFixation resize={resize} />,
         standard: <StellarWarp resize={resize} />,
       },
+      1.1: {
+        char: <SwirlOfHeavenlySpear resize={resize} />,
+        weap: <BrilliantFixation resize={resize} />,
+        standard: <StellarWarp resize={resize} />,
+      },
     };
-  }, [resize, totalBeginner]);
+  }, [resize]);
 
   useEffect(() => {
     if (totalBeginner === 5) setBannerType("char");
@@ -219,13 +224,19 @@ function App() {
     setContent("video");
   };
 
+  const getBack = () => {
+    if (bannerType === "beginner") return "beginner";
+    if (bannerType === "standard") return "standard";
+    return `${vers}/${bannerType}`;
+  };
+
   return (
     <div className="App">
       {content === "main" && (
         <div
           id="main-back"
           style={{
-            backgroundImage: `url(/assets/banner/${vers}/${bannerType}-back.webp)`,
+            backgroundImage: `url(/assets/banner/${getBack()}-back.webp)`,
             backgroundColor: `${
               bannerType === "beginner" ? "#1f2322" : "#0a162e"
             }`,
@@ -265,7 +276,7 @@ function App() {
             <div
               id="info"
               style={{
-                width: resize.getWidth(320),
+                width: resize.getWidth(380),
                 height: resize.getHeight(44, 300),
               }}
             >
@@ -281,7 +292,7 @@ function App() {
               <div
                 style={{
                   height: resize.getWidth(44),
-                  width: resize.getWidth(240),
+                  width: resize.getWidth(300),
                   display: "flex",
                   flexDirection: "column",
                   margin: 0,
@@ -318,7 +329,12 @@ function App() {
               hasBeginner={totalBeginner < 5}
               resize={resize}
             />
-            {banners[vers][bannerType]}
+            {bannerType === "beginner" ? (
+              <DepartureWarp total={totalBeginner} resize={resize} />
+            ) : (
+              banners[vers][bannerType]
+            )}
+
             <img
               id="exchange-button"
               alt="exchange"

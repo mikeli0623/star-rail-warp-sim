@@ -1,9 +1,9 @@
 import React from "react";
 import "../css/Banners.css";
-import "../css/vers/1.0.css";
+import "../css/vers/1.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const ButterflyOnSwordtip = ({ resize }) => {
+const SwirlOfHeavenlySpear = ({ resize }) => {
   return (
     <React.Fragment>
       <div
@@ -25,7 +25,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
           background:
             "linear-gradient(to bottom, rgba(16, 20, 56, 1) 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
-          overflow: "hidden",
+          // overflow: "hidden",
           boxShadow: "0 0 10px rgba(8, 8, 8, 0.521)",
           top: "50%",
           left: "50%",
@@ -48,14 +48,13 @@ const ButterflyOnSwordtip = ({ resize }) => {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/1.0/char-banner-back.webp"
-          height="100%"
+          src="../assets/banner/1.1/char-banner-back.webp"
+          width={resize.getWidth(1500)}
           alt="right"
           draggable="false"
           style={{
             position: "relative",
-            transform: "translateX(-3.8%)",
-            animation: "seele-back-animation 2s 1",
+            animation: "jing-yuan-back-animation 2s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -74,12 +73,12 @@ const ButterflyOnSwordtip = ({ resize }) => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.0/natasha.webp)",
-            width: resize.getWidth(1000),
-            height: resize.getWidth(1000),
-            backgroundSize: resize.getWidth(1000),
+            backgroundImage: "url(../assets/banner/1.1/sushang.webp)",
+            width: resize.getWidth(1100),
+            height: resize.getWidth(1100),
+            backgroundSize: resize.getWidth(1100),
             position: "absolute",
-            animation: "natasha-animation 1s 1",
+            animation: "sushang-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "50ms",
             opacity: "0",
@@ -101,12 +100,12 @@ const ButterflyOnSwordtip = ({ resize }) => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.0/hook.webp)",
-            width: resize.getWidth(1000),
-            height: resize.getWidth(1000),
-            backgroundSize: resize.getWidth(1000),
+            backgroundImage: "url(../assets/banner/1.1/march-7th.webp)",
+            width: resize.getWidth(1100),
+            height: resize.getWidth(1100),
+            backgroundSize: resize.getWidth(1100),
             position: "absolute",
-            animation: "hook-animation 1s 1",
+            animation: "march-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "100ms",
             animationFillMode: "both",
@@ -128,12 +127,12 @@ const ButterflyOnSwordtip = ({ resize }) => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.0/pela.webp)",
+            backgroundImage: "url(../assets/banner/1.1/tingyun.webp)",
             width: resize.getWidth(1100),
             height: resize.getWidth(1100),
             backgroundSize: resize.getWidth(1100),
             position: "absolute",
-            animation: "pela-animation 1s 1",
+            animation: "tingyun-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "150ms",
             animationFillMode: "both",
@@ -157,7 +156,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/seele.webp"
+        src="../assets/banner/1.1/jing-yuan.webp"
         width={resize.getWidth(1145)}
         alt="char"
         draggable="false"
@@ -165,7 +164,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "seele-animation 2s 1",
+          animation: "jing-yuan-animation 2s 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
@@ -186,19 +185,19 @@ const ButterflyOnSwordtip = ({ resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/seele-tag.webp"
-        width={resize.getWidth(130)}
+        src="../assets/banner/1.1/jing-yuan-tag.webp"
+        width={resize.getWidth(150)}
         alt="seele tag"
         draggable="false"
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translate(-90%, 85%)",
+          transform: "translate(-80%, 100%)",
         }}
       />
     </React.Fragment>
   );
 };
 
-export default ButterflyOnSwordtip;
+export default SwirlOfHeavenlySpear;
