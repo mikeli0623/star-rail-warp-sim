@@ -14,6 +14,7 @@ import { json, allChars, allWeapons } from "./classes/Constants";
 import WarpSingle from "./components/WarpSingle";
 import History from "./classes/History";
 import MiniBanners from "./components/MiniBanners";
+import Settings from "./components/Settings";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 function App() {
@@ -244,6 +245,7 @@ function App() {
               title="View source code"
             />
           </a>
+          <Settings resize={resize} />
           <div id="main-back-cover" />
           <div
             id="main-back-cover-pattern"
