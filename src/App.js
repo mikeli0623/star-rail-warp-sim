@@ -14,6 +14,7 @@ import { json, allChars, allWeapons } from "./classes/Constants";
 import WarpSingle from "./components/WarpSingle";
 import History from "./classes/History";
 import MiniBanners from "./components/MiniBanners";
+import Settings from "./components/Settings";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
 import { SoundProvider } from "./components/SoundContext";
@@ -297,6 +298,30 @@ function App() {
     <SoundProvider value={value}>
       <div className="App">
         {content === "main" && (
+        <div
+          id="main-back"
+          style={{
+            backgroundImage: `url(/assets/banner/${vers}/${bannerType}-back.webp)`,
+            backgroundColor: `${
+              bannerType === "beginner" ? "#1f2322" : "#0a162e"
+            }`,
+          }}
+        >
+          <a
+            href="https://github.com/mikeli0623/star-rail"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              id="plug"
+              src="/assets/github-mark-white.svg"
+              alt="github link"
+              width={resize.getWidth(40)}
+              title="View source code"
+            />
+          </a>
+          <Settings resize={resize} />
+          <div id="main-back-cover" />
           <div
             id="main-back"
             style={{
