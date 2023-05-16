@@ -1,6 +1,6 @@
 [
   {
-    "vers": ["1.0"],
+    "vers": ["1.0", "1.1"],
     "type": "beginner",
     "title": "Departure Warp",
     "poolFiveChar": [
@@ -158,7 +158,7 @@
     ]
   },
   {
-    "vers": ["1.0"],
+    "vers": ["1.0", "1.1"],
     "type": "standard",
     "title": "Stellar Warp",
     "poolFiveChar": [
@@ -215,6 +215,112 @@
       "resolution-shines-as-pearls-of-sweat",
       "day-one-of-my-new-life",
       "landaus-choice",
+      "trend-of-the-universal-market"
+    ]
+  },
+  {
+    "vers": ["1.1"],
+    "type": "char",
+    "title": "Swirl Of Heavenly Spear",
+    "rateUpFive": ["jing-yuan"],
+    "rateUpFour": ["sushang", "march-7th", "tingyun"],
+    "poolFiveChar": [
+      "himeko",
+      "gepard",
+      "yanqing",
+      "welt",
+      "bailu",
+      "clara",
+      "bronya"
+    ],
+    "poolFourChar": [
+      "asta",
+      "herta",
+      "march-7th",
+      "arlan",
+      "serval",
+      "tingyun",
+      "sushang",
+      "qingque",
+      "dan-heng",
+      "sampo"
+    ],
+    "poolFourWeap": [
+      "a-secret-vow",
+      "dance-dance-dance",
+      "day-one-of-my-new-life",
+      "eyes-of-the-prey",
+      "geniuses-repose",
+      "good-night-and-sleep-well",
+      "landaus-choice",
+      "make-the-world-clamor",
+      "memories-of-the-past",
+      "only-silence-remains",
+      "perfect-timing",
+      "planetary-rendezvous",
+      "post-op-conversation",
+      "resolution-shines-as-pearls-of-sweat",
+      "shared-feeling",
+      "subscribe-for-more",
+      "swordplay",
+      "the-birth-of-the-self",
+      "the-moles-welcome-you",
+      "trend-of-the-universal-market",
+      "under-the-blue-sky"
+    ]
+  },
+  {
+    "vers": ["1.1"],
+    "type": "weap",
+    "title": "Brilliant Fixation",
+    "rateUpFive": ["before-dawn"],
+    "rateUpFour": [
+      "post-op-conversation",
+      "good-night-and-sleep-well",
+      "the-moles-welcome-you"
+    ],
+    "poolFiveWeap": [
+      "something-irreplaceable",
+      "time-waits-for-no-one",
+      "night-on-the-milky-way",
+      "but-the-battle-isnt-over",
+      "sleep-like-the-dead",
+      "in-the-name-of-the-world",
+      "moment-of-victory"
+    ],
+    "poolFourChar": [
+      "arlan",
+      "hook",
+      "herta",
+      "pela",
+      "natasha",
+      "asta",
+      "dan-heng",
+      "march-7th",
+      "qingque",
+      "sampo",
+      "serval",
+      "sushang",
+      "tingyun"
+    ],
+    "poolFourWeap": [
+      "perfect-timing",
+      "shared-feeling",
+      "a-secret-vow",
+      "under-the-blue-sky",
+      "geniuses-repose",
+      "make-the-world-clamor",
+      "dance-dance-dance",
+      "the-birth-of-the-self",
+      "memories-of-the-past",
+      "planetary-rendezvous",
+      "only-silence-remains",
+      "subscribe-for-more",
+      "day-one-of-my-new-life",
+      "eyes-of-the-prey",
+      "landaus-choice",
+      "resolution-shines-as-pearls-of-sweat",
+      "swordplay",
       "trend-of-the-universal-market"
     ]
   }

@@ -10,6 +10,7 @@ import ResizeContext from "./ResizeContext";
 import DepartureWarp from "../banners/DepartureWarp";
 import ButterflyOnSwordtip from "../banners/ButterflyOnSwordtip";
 import BrilliantFixation from "../banners/BrilliantFixation";
+import SwirlOfHeavenlySpear from "../banners/SwirlOfHeavenlySpear";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 
@@ -23,7 +24,7 @@ export default function Main({
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
 
-  const [vers, setVers] = useState("1.0");
+  const [vers, setVers] = useState("1.1");
 
   const [bannerType, setBannerType] = useState(
     sessionStorage.getItem("bannerType")
@@ -143,13 +144,17 @@ export default function Main({
   const banners = useMemo(() => {
     return {
       "1.0": {
-        beginner: <DepartureWarp total={totalBeginner} />,
         char: <ButterflyOnSwordtip />,
         weap: <BrilliantFixation />,
         standard: <StellarWarp />,
       },
+      1.1: {
+        char: <SwirlOfHeavenlySpear />,
+        weap: <BrilliantFixation />,
+        standard: <StellarWarp />,
+      },
     };
-  }, [totalBeginner]);
+  }, []);
 
   const handleWarp = (warps) => {
     if (bannerType === "beginner") {
@@ -187,18 +192,27 @@ export default function Main({
     setBannerState(bannerStateClone);
     setCurrentWarp(warpResults);
     setContent("video");
-    sessionStorage.setItem("bannerType", bannerType);
   };
 
   useEffect(() => {
     if (totalBeginner === 5) setBannerType("char");
   }, [totalBeginner]);
 
+  useEffect(() => {
+    sessionStorage.setItem("bannerType", bannerType);
+  }, [bannerType]);
+
+  const getBack = () => {
+    if (bannerType === "beginner") return "beginner";
+    if (bannerType === "standard") return "standard";
+    return `${vers}/${bannerType}`;
+  };
+
   return (
     <div
       id="main-back"
       style={{
-        backgroundImage: `url(/assets/banner/${vers}/${bannerType}-back.webp)`,
+        backgroundImage: `url(/assets/banner/${getBack()}-back.webp)`,
         backgroundColor: `${bannerType === "beginner" ? "#1f2322" : "#0a162e"}`,
       }}
     >
@@ -221,8 +235,8 @@ export default function Main({
         <div
           id="info"
           style={{
-            width: getWidth(320),
-            height: getHeight(44, 300),
+            width: getWidth(380),
+            height: getHeight(44, 380),
           }}
         >
           <div
@@ -236,8 +250,8 @@ export default function Main({
           />
           <div
             style={{
-              height: getWidth(44),
-              width: getWidth(240),
+              height: getHeight(44, 300),
+              width: getWidth(300),
               display: "flex",
               flexDirection: "column",
               margin: 0,
@@ -273,7 +287,11 @@ export default function Main({
           setBannerType={setBannerType}
           hasBeginner={totalBeginner < 5}
         />
-        {banners[vers][bannerType]}
+        {bannerType === "beginner" ? (
+          <DepartureWarp total={totalBeginner} />
+        ) : (
+          banners[vers][bannerType]
+        )}
         <Button
           style={{
             position: "absolute",

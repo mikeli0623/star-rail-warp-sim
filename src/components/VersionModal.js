@@ -39,7 +39,6 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
             return (
               <VersionInfo
                 key={vers + i}
-                isCurrentVers={vers === currentVers}
                 isCurrentSelected={vers === selected}
                 vers={vers}
                 setSelected={setSelected}

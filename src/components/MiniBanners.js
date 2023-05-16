@@ -65,7 +65,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         effect="opacity-200"
         className="mini-banner"
         alt="mini character banner active"
-        src={`../assets/banner/mini/${vers}-char-active.webp`}
+        src={`../assets/banner/mini/${vers}/char-active.webp`}
         width={getWidth(180)}
         style={{
           transform: hasBeginner ? `translateY(190%)` : `translateY(100%)`,
@@ -78,7 +78,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         effect="opacity-200"
         className="mini-banner"
         alt="mini character banner"
-        src={`../assets/banner/mini/${vers}-char.webp`}
+        src={`../assets/banner/mini/${vers}/char.webp`}
         width={getWidth(160)}
         style={{
           transform: hasBeginner ? `translateY(320%)` : "translateY(180%)",
@@ -107,7 +107,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         effect="opacity-200"
         className="mini-banner"
         alt="mini weapon banner active"
-        src={`../assets/banner/mini/${vers}-weap-active.webp`}
+        src={`../assets/banner/mini/${vers}/weap-active.webp`}
         width={getWidth(180)}
         style={{
           transform: hasBeginner ? `translateY(310%)` : "translateY(200%)",
@@ -120,7 +120,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         effect="opacity-200"
         className="mini-banner"
         alt="mini weapon banner"
-        src={`../assets/banner/mini/${vers}-weap.webp`}
+        src={`../assets/banner/mini/${vers}/weap.webp`}
         width={getWidth(160)}
         style={{
           transform: hasBeginner ? `translateY(470%)` : "translateY(320%)",
@@ -149,10 +149,10 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         effect="opacity-200"
         className="mini-banner"
         alt="mini standard banner active"
-        src={`../assets/banner/mini/${vers}-standard-active.webp`}
+        src={`../assets/banner/mini/standard-active.webp`}
         width={getWidth(180)}
         style={{
-          transform: hasBeginner ? `translateY(450%)` : "translateY(335%)",
+          transform: hasBeginner ? `translateY(445%)` : "translateY(335%)",
           opacity: `${bannerType === "standard" ? 1 : 0}`,
         }}
         draggable="false"
@@ -161,7 +161,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         effect="opacity-200"
         className="mini-banner"
         alt="mini standard banner"
-        src={`../assets/banner/mini/${vers}-standard.webp`}
+        src={`../assets/banner/mini/standard.webp`}
         width={getWidth(160)}
         style={{
           transform: hasBeginner ? `translateY(620%)` : "translateY(460%)",

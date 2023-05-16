@@ -375,13 +375,15 @@ html * {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  transition: background-color 0.2s;
+}
+
+.vers-info * {
+  transition: color 0.2s;
 }
 
 .vers-info.highlight {
   background-color: #282827;
-}
-
-.vers-icon {
 }
 
 .vers-info-text {
