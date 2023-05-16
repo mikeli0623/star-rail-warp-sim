@@ -129,13 +129,7 @@ function App() {
           )}
           {content === "video" && (
             <WarpVideo
-              src={
-                hasFive
-                  ? "/assets/five.mp4"
-                  : hasFour
-                  ? "/assets/four.webm"
-                  : "/assets/three.webm"
-              }
+              rarity={hasFive ? "five" : hasFour ? "four" : "three"}
               onEnded={() => {
                 setContent("single");
               }}
