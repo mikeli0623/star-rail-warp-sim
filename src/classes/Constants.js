@@ -146,6 +146,6 @@ const allBGM = [
   "ss-lustrous-moonlight",
 ];
 
-const allVers = ["1.1", "1.0"];
+const allVers = ["1.0"];
 
 export { allChars, allWeapons, baseWeapons, allBGM, allVers };

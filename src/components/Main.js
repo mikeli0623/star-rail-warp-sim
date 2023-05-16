@@ -24,7 +24,7 @@ export default function Main({
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
 
-  const [vers, setVers] = useState("1.1");
+  const [vers, setVers] = useState("1.0");
 
   const [bannerType, setBannerType] = useState(
     sessionStorage.getItem("bannerType")

@@ -163,8 +163,8 @@ const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
               src="/assets/new.webp"
               width={getWidth(70)}
               style={{
-                marginLeft: getWidth(10),
-                marginBottom: getWidth(20),
+                marginLeft: 10,
+                marginBottom: 20,
               }}
             />
           )}

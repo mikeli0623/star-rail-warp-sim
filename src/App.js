@@ -53,7 +53,7 @@ function App() {
   const [playMainBGM, mainData] = useSound(`assets/audio/bgm/${bgm}.mp3`, {
     loop: true,
     onload: () => setLockout(false),
-    mute: true,
+    volume: 0.2,
   });
 
   const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp.mp3", {
@@ -133,8 +133,8 @@ function App() {
                 hasFive
                   ? "/assets/five.mp4"
                   : hasFour
-                  ? "/assets/four.mp4"
-                  : "/assets/three.mp4"
+                  ? "/assets/four.webm"
+                  : "/assets/three.webm"
               }
               onEnded={() => {
                 setContent("single");
