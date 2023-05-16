@@ -46,40 +46,36 @@ const BrilliantFixation = () => {
           }}
         />
       </div>
-      <img
+      <LazyLoadImage
+        className="weap-rate-up"
         src="../assets/banner/1.0/weap-rate-1.webp"
         alt="The Moles Welcome You"
         width={getWidth(135)}
         style={{
-          position: "absolute",
-          zIndex: 101,
-          transform: "translate(-280%, 40%) rotate(5deg)",
           animation: "cone-1-animation 0.3s 1",
           animationTimingFunction: "linear",
           animationFillMode: "both",
           animationDelay: "100ms",
         }}
       />
-      <img
+      <LazyLoadImage
+        className="weap-rate-up"
         src="../assets/banner/1.0/weap-rate-2.webp"
         alt="Post-Op Conversation"
         width={getWidth(108)}
         style={{
-          position: "absolute",
-          zIndex: 101,
           animationTimingFunction: "linear",
           animation: "cone-2-animation 0.3s 1",
           animationFillMode: "both",
           animationDelay: "150ms",
         }}
       />
-      <img
+      <LazyLoadImage
+        className="weap-rate-up"
         src="../assets/banner/1.0/weap-rate-3.webp"
         alt="Good Night and Sleep Well"
         width={getWidth(108)}
         style={{
-          position: "absolute",
-          zIndex: 101,
           animationTimingFunction: "linear",
           animation: "cone-3-animation 0.3s 1",
           animationFillMode: "both",

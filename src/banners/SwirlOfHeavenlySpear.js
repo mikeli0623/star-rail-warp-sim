@@ -63,7 +63,7 @@ const SwirlOfHeavenlySpear = () => {
         style={{
           width: getWidth(72.3),
           height: getHeight(206.1, 72.3),
-          transform: "translate(-634%, 50%)",
+          transform: "translate(-680%, 90%)",
           animation: "appear 50ms 1",
           opacity: "0",
           animationFillMode: "both",
@@ -89,7 +89,7 @@ const SwirlOfHeavenlySpear = () => {
         style={{
           width: getWidth(72.3),
           height: getHeight(206.1, 72.3),
-          transform: "translate(-510%, 50%)",
+          transform: "translate(-560%, 90%)",
           animation: "appear 50ms 1",
           animationDelay: "75ms",
           opacity: "0",
@@ -116,7 +116,7 @@ const SwirlOfHeavenlySpear = () => {
         style={{
           width: getWidth(72.3),
           height: getHeight(206.1, 72.3),
-          transform: "translate(-386%, 50%)",
+          transform: "translate(-440%, 90%)",
           animation: "appear 50ms 1",
           animationDelay: "150ms",
           opacity: "0",

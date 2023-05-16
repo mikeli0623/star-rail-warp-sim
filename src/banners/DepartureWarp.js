@@ -270,9 +270,9 @@ const DepartureWarp = ({ total }) => {
           paddingTop: getWidth(12),
         }}
       >
-        20% off for set of 10 Warps, and a
+        20% off for set of 10 Warps, and a{" "}
         <span style={{ color: "#d89747" }}>5</span>
-        -star characters is guaranteed within
+        -star character is guaranteed within
         <span style={{ color: "#d89747" }}> 50 </span> Warps.
       </div>
     </React.Fragment>

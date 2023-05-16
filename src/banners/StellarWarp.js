@@ -90,13 +90,12 @@ const StellarWarp = () => {
           zIndex: "10",
         }}
       />
-      <img
+      <LazyLoadImage
+        className="weap-rate-up"
         src="../assets/banner/standard-rate-1.webp"
         alt="Night on the Milky Way"
         width={getWidth(135)}
         style={{
-          position: "absolute",
-          zIndex: "100",
           transform: "translate(-280%, 40%) rotate(5deg)",
           animation: "cone-1-animation 0.3s 1",
           animationTimingFunction: "linear",
@@ -104,40 +103,37 @@ const StellarWarp = () => {
           animationDelay: "100ms",
         }}
       />
-      <img
+      <LazyLoadImage
+        className="weap-rate-up"
         src="../assets/banner/standard-rate-2.webp"
         alt="But the Battle Isn't Over"
         width={getWidth(108)}
         style={{
-          position: "absolute",
-          zIndex: "100",
           animationTimingFunction: "linear",
           animation: "cone-2-animation 0.3s 1",
           animationFillMode: "both",
           animationDelay: "150ms",
         }}
       />
-      <img
+      <LazyLoadImage
+        className="weap-rate-up"
         src="../assets/banner/standard-rate-3.webp"
         alt="Something Irreplaceable"
         width={getWidth(108)}
         style={{
-          position: "absolute",
-          zIndex: "100",
           animationTimingFunction: "linear",
           animation: "cone-3-animation 0.3s 1",
           animationFillMode: "both",
           animationDelay: "200ms",
         }}
       />
-      <img
+      <LazyLoadImage
+        className="weap-rate-up"
         src="../assets/banner/weap-tag.webp"
         alt="weapon tag"
         width={getWidth(240)}
         style={{
-          position: "absolute",
-          zIndex: "100",
-          transform: "translate(-155%, 200%)",
+          transform: "translate(-205%, 150%)",
         }}
       />
       <LazyLoadImage

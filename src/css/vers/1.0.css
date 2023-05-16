@@ -60,36 +60,3 @@
     transform: scale(1) translate(-32%, -52%);
   }
 }
-
-@keyframes cone-1-animation {
-  0% {
-    transform: scale(1.2) translate(-220%, 30%) rotate(5deg);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) translate(-280%, 40%) rotate(5deg);
-    opacity: 1;
-  }
-}
-
-@keyframes cone-2-animation {
-  0% {
-    transform: scale(1.2) translate(-270%, 75%) rotate(20deg);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) translate(-300%, 85%) rotate(20deg);
-    opacity: 1;
-  }
-}
-
-@keyframes cone-3-animation {
-  0% {
-    transform: scale(1.2) translate(-320%, 65%) rotate(-10deg);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1) translate(-400%, 75%) rotate(-10deg);
-    opacity: 1;
-  }
-}

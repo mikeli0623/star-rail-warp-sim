@@ -264,7 +264,7 @@ export default function Main({
                 fontSize: getWidth(22),
                 height: getWidth(24),
                 textAlign: "left",
-                marginTop: `-${getWidth(5)}px`,
+                marginTop: `-${getWidth(8)}px`,
               }}
             >
               Warp
