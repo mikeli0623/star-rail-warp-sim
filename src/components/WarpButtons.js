@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
+import ResizeContext from "./ResizeContext";
 
-const WarpButtons = ({ onWarp, event, resize }) => {
+const WarpButtons = ({ onWarp, event }) => {
+  const { getWidth } = useContext(ResizeContext);
   const [play] = useSound("/assets/audio/sfx/button-select.mp3");
   const { sound } = useContext(SoundContext);
 
@@ -19,7 +21,7 @@ const WarpButtons = ({ onWarp, event, resize }) => {
           }}
           src={"./assets/beginner-10.webp"}
           alt={"10 beginner warps"}
-          width={resize.getWidth(300)}
+          width={getWidth(400)}
           draggable="false"
         />
       </div>
@@ -41,7 +43,7 @@ const WarpButtons = ({ onWarp, event, resize }) => {
                 : "./assets/event-1.webp"
             }
             alt={event === "standard" ? "1 standard warp" : "1 event warp"}
-            width={resize.getWidth(240)}
+            width={getWidth(280)}
             draggable="false"
           />
         </div>
@@ -59,7 +61,7 @@ const WarpButtons = ({ onWarp, event, resize }) => {
                 : "./assets/event-10.webp"
             }
             alt={event === "standard" ? "10 event warps" : "10 standard warps"}
-            width={resize.getWidth(240)}
+            width={getWidth(280)}
             draggable="false"
           />
         </div>

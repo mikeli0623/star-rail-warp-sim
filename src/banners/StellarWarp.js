@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/Banners.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ResizeContext from "../components/ResizeContext";
 
-const StellarWarp = ({ resize }) => {
+const StellarWarp = () => {
+  const { getWidth, getHeight } = useContext(ResizeContext);
   return (
     <React.Fragment>
       <div
         style={{
-          width: resize.getWidth(8),
-          height: resize.getHeight(677.33, 1100),
+          width: getWidth(8),
+          height: getHeight(677.33, 1100),
           background:
             "linear-gradient(180deg, black 75%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
@@ -19,8 +21,8 @@ const StellarWarp = ({ resize }) => {
       />
       <div
         style={{
-          width: resize.getWidth(764),
-          height: resize.getHeight(677.33, 1100),
+          width: getWidth(764),
+          height: getHeight(677.33, 1100),
           background:
             "linear-gradient(to bottom, #282d60 15%, #37437a 30%, #6d91d6 60%, rgba(140, 168, 208, 1) 75%, rgba(140, 168, 208, 0.86) 85%, transparent 100%)",
           position: "absolute",
@@ -34,12 +36,9 @@ const StellarWarp = ({ resize }) => {
         <div
           style={{
             backgroundImage: "url(../assets/banner/right-corner.webp)",
-            height: resize.getHeight(200, 148),
-            width: resize.getWidth(148),
-            backgroundSize: `${resize.getWidth(148)}px ${resize.getHeight(
-              200,
-              148
-            )}px`,
+            height: getHeight(200, 148),
+            width: getWidth(148),
+            backgroundSize: `${getWidth(148)}px ${getHeight(200, 148)}px`,
             position: "absolute",
             zIndex: 100,
             right: 0,
@@ -48,7 +47,7 @@ const StellarWarp = ({ resize }) => {
         <LazyLoadImage
           effect="opacity"
           src="../assets/banner/1.0/himeko-back.webp"
-          width={resize.getWidth(500)}
+          width={getWidth(500)}
           alt="char"
           draggable="false"
           style={{
@@ -63,7 +62,7 @@ const StellarWarp = ({ resize }) => {
         <LazyLoadImage
           effect="opacity"
           src="../assets/banner/1.0/bronya-back.webp"
-          width={resize.getWidth(900)}
+          width={getWidth(900)}
           alt="char"
           draggable="false"
           style={{
@@ -80,7 +79,7 @@ const StellarWarp = ({ resize }) => {
       <LazyLoadImage
         effect="opacity-100"
         src="../assets/banner/1.0/standard-left.webp"
-        width={resize.getWidth(331)}
+        width={getWidth(331)}
         alt="left"
         draggable="false"
         style={{
@@ -94,7 +93,7 @@ const StellarWarp = ({ resize }) => {
       <img
         src="../assets/banner/1.0/standard-rate-1.webp"
         alt="Night on the Milky Way"
-        width={resize.getWidth(135)}
+        width={getWidth(135)}
         style={{
           position: "absolute",
           zIndex: "100",
@@ -108,7 +107,7 @@ const StellarWarp = ({ resize }) => {
       <img
         src="../assets/banner/1.0/standard-rate-2.webp"
         alt="But the Battle Isn't Over"
-        width={resize.getWidth(108)}
+        width={getWidth(108)}
         style={{
           position: "absolute",
           zIndex: "100",
@@ -121,7 +120,7 @@ const StellarWarp = ({ resize }) => {
       <img
         src="../assets/banner/1.0/standard-rate-3.webp"
         alt="Something Irreplaceable"
-        width={resize.getWidth(108)}
+        width={getWidth(108)}
         style={{
           position: "absolute",
           zIndex: "100",
@@ -134,7 +133,7 @@ const StellarWarp = ({ resize }) => {
       <img
         src="../assets/banner/1.0/weap-tag.webp"
         alt="weapon tag"
-        width={resize.getWidth(240)}
+        width={getWidth(240)}
         style={{
           position: "absolute",
           zIndex: "100",
@@ -144,7 +143,7 @@ const StellarWarp = ({ resize }) => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.0/himeko.webp"
-        width={resize.getWidth(500)}
+        width={getWidth(500)}
         alt="char"
         draggable="false"
         style={{
@@ -159,7 +158,7 @@ const StellarWarp = ({ resize }) => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.0/gepard.webp"
-        width={resize.getWidth(800)}
+        width={getWidth(800)}
         alt="char"
         draggable="false"
         style={{
@@ -175,7 +174,7 @@ const StellarWarp = ({ resize }) => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.0/bronya.webp"
-        width={resize.getWidth(900)}
+        width={getWidth(900)}
         alt="char"
         draggable="false"
         style={{
@@ -191,7 +190,7 @@ const StellarWarp = ({ resize }) => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.0/bronya-tag.webp"
-        width={resize.getWidth(152)}
+        width={getWidth(152)}
         alt="bronya tag"
         draggable="false"
         style={{
@@ -205,7 +204,7 @@ const StellarWarp = ({ resize }) => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.0/gepard-tag.webp"
-        width={resize.getWidth(152)}
+        width={getWidth(152)}
         alt="gepard tag"
         draggable="false"
         style={{
@@ -219,7 +218,7 @@ const StellarWarp = ({ resize }) => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.0/himeko-tag.webp"
-        width={resize.getWidth(152)}
+        width={getWidth(152)}
         alt="himeko tag"
         draggable="false"
         style={{

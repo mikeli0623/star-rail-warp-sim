@@ -4,14 +4,9 @@ import { allChars, json } from "../classes/Constants";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
+import ResizeContext from "./ResizeContext";
 
-const WarpSingle = ({
-  currentWarp,
-  newItems,
-  setNewItems,
-  setContent,
-  resize,
-}) => {
+const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
   const cleanText = (text) => {
     return text
       .replace(/[^\w\s-]/g, "")
@@ -19,6 +14,7 @@ const WarpSingle = ({
       .replace(/\s+/g, "-");
   };
 
+  const { getWidth, getHeight } = useContext(ResizeContext);
   const { sound } = useContext(SoundContext);
 
   const [warpIndex, setWarpIndex] = useState(0);
@@ -77,7 +73,7 @@ const WarpSingle = ({
         key={i}
         src="./assets/star.webp"
         alt="star"
-        width={`${resize.getWidth(22)}`}
+        width={`${getWidth(22)}`}
         star={i + 1}
         draggable="false"
       />
@@ -93,7 +89,6 @@ const WarpSingle = ({
       }}
     >
       <CloseButton
-        resize={resize}
         onClose={() => {
           if (currentWarp.length === 10) {
             if (sound) playFour();
@@ -107,8 +102,8 @@ const WarpSingle = ({
       <div
         id="single-info"
         style={{
-          height: resize.getHeight(115, 550),
-          width: resize.getWidth(550),
+          height: getHeight(115, 550),
+          width: getWidth(550),
           opacity: `${animateInfo ? 1 : 0}`,
           animationName: `${animateInfo ? "animate-info" : ""}`,
           animationDuration: "1s",
@@ -119,11 +114,8 @@ const WarpSingle = ({
         <div
           className="single-info-shadow"
           style={{
-            height: resize.getHeight(
-              100,
-              Math.max(150 + 15 * item.name.length, 300)
-            ),
-            width: resize.getWidth(Math.max(150 + 15 * item.name.length, 300)),
+            height: getHeight(100, Math.max(150 + 15 * item.name.length, 300)),
+            width: getWidth(Math.max(150 + 15 * item.name.length, 300)),
           }}
         >
           {item.isChar ? (
@@ -132,7 +124,7 @@ const WarpSingle = ({
               className={`${animateInfo ? "single-type" : "transparent"}`}
               src={`./assets/${cleanText(item.element)}.webp`}
               alt={item.element}
-              width={`${resize.getWidth(90)}`}
+              width={`${getWidth(90)}`}
               draggable="false"
             />
           ) : (
@@ -141,7 +133,7 @@ const WarpSingle = ({
               className={`${animateInfo ? "single-type" : "transparent"}`}
               src={`./assets/${cleanText(item.path)}.webp`}
               alt={item.path}
-              width={`${resize.getWidth(115)}`}
+              width={`${getWidth(115)}`}
               draggable="false"
             />
           )}
@@ -149,9 +141,9 @@ const WarpSingle = ({
             <div
               className={`${animateInfo ? "single-name" : "transparent"}`}
               style={{
-                fontSize: `${resize.getWidth(34)}px`,
+                fontSize: `${getWidth(34)}px`,
                 color: "white",
-                marginTop: resize.getWidth(8),
+                marginTop: getWidth(8),
               }}
             >
               {item.name}
@@ -169,10 +161,10 @@ const WarpSingle = ({
               effect="opacity"
               alt="new tag"
               src="/assets/new.webp"
-              width={resize.getWidth(70)}
+              width={getWidth(70)}
               style={{
-                marginLeft: resize.getWidth(10),
-                marginBottom: resize.getWidth(20),
+                marginLeft: getWidth(10),
+                marginBottom: getWidth(20),
               }}
             />
           )}
@@ -181,16 +173,16 @@ const WarpSingle = ({
           <div
             className="path-shadow"
             style={{
-              width: resize.getWidth(60 + cleanText(item.path).length * 12),
-              height: resize.getHeight(40, 120),
-              fontSize: resize.getWidth(28),
+              width: getWidth(60 + cleanText(item.path).length * 12),
+              height: getHeight(40, 120),
+              fontSize: getWidth(28),
             }}
           >
             <LazyLoadImage
               effect="opacity"
               alt={item.path}
               src={`./assets/${cleanText(item.path)}.webp`}
-              width={resize.getWidth(50)}
+              width={getWidth(50)}
             />
             {item.path.slice(4)}
           </div>
@@ -210,7 +202,7 @@ const WarpSingle = ({
               )}.webp`}
               alt={item.name}
               onAnimationEnd={() => setAnimateInfo(true)}
-              width={resize.getWidth(1800)}
+              width={getWidth(1800)}
               draggable="false"
             />
           );
@@ -223,7 +215,7 @@ const WarpSingle = ({
                 src="./assets/glass-back.webp"
                 alt="glass back"
                 style={{ rotate: "7deg" }}
-                width={resize.getWidth(400)}
+                width={getWidth(400)}
                 draggable="false"
               />
               <LazyLoadImage
@@ -236,8 +228,8 @@ const WarpSingle = ({
                 src={`/assets/splash/${cleanText(
                   json.getName(currentWarp[i])
                 )}.webp`}
-                height={resize.getHeight(558.75, 400)}
-                width={resize.getWidth(400)}
+                height={getHeight(558.75, 400)}
+                width={getWidth(400)}
                 draggable="false"
               />
               <LazyLoadImage
@@ -246,7 +238,7 @@ const WarpSingle = ({
                 src="./assets/glass-front.webp"
                 alt="glass front"
                 style={{ rotate: "7deg" }}
-                width={resize.getWidth(400)}
+                width={getWidth(400)}
                 draggable="false"
               />
             </React.Fragment>

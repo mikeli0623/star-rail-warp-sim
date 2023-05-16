@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import SoundContext from "./SoundContext";
 import CloseButton from "./CloseButton";
 
-const WarpVideo = ({ src, onEnded, mainBGM, warpBGM, resize }) => {
+const WarpVideo = ({ src, onEnded, mainBGM, warpBGM }) => {
   const { sound } = useContext(SoundContext);
   const [loaded, setLoaded] = useState(false);
 
@@ -24,7 +24,7 @@ const WarpVideo = ({ src, onEnded, mainBGM, warpBGM, resize }) => {
 
   return (
     <section id="video-container">
-      <CloseButton resize={resize} onClose={onEnded} />
+      <CloseButton onClose={onEnded} />
       <video
         autoPlay
         onEnded={onEnded}

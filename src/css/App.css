@@ -22,26 +22,62 @@ html * {
   cursor: url(./assets/cursor.webp), auto;
 } */
 
-#plug {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  transition: scale 0.2s;
-  transform-origin: top left;
-}
-
-#plug:hover {
-  scale: 1.1;
-}
-
 #audio-toggle {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1000;
   transform: translate(-30%, 30%);
+}
+
+.custom-button {
+  background-color: #eae9ee;
+  border-radius: 50px;
+  text-align: center;
+  transition: filter 0.2s, box-shadow 0.2s, background-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-button.disabled {
+  filter: brightness(0.4);
+}
+
+.button-outline {
+  border-radius: 50px;
+  border: 2px solid #d2d1d6;
+  transition: border-color 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-text {
+  position: relative;
+  font-weight: bold;
+}
+
+.custom-button:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 0 2px #d2d2d2, 0 0 0 5px white;
+}
+
+.custom-button:active {
+  background-color: #d2d2d6;
+  box-shadow: 0 0 0 2px #adabaf, 0 0 0 5px white;
+}
+
+.custom-button:active .button-outline {
+  border-color: #b8b8bc;
+}
+
+.custom-button.disabled:hover {
+  filter: brightness(0.4);
+}
+
+.custom-button.disabled:active {
+  filter: brightness(0.4);
 }
 
 .close-button {
@@ -155,7 +191,7 @@ html * {
 }
 
 #title {
-  color: #e2c893;
+  color: #dcc491;
 }
 
 #warp-type {
@@ -256,15 +292,15 @@ html * {
 }
 
 .warp-button.beginner {
-  transform: translate(110%, 660%);
+  transform: translate(70%, 481%);
 }
 
 .warp-button.one {
-  transform: translate(35%, 710%);
+  transform: translate(0%, 600%);
 }
 
 .warp-button.ten {
-  transform: translate(140%, 710%);
+  transform: translate(105%, 600%);
 }
 
 .warp-button:active {
@@ -294,18 +330,64 @@ html * {
   z-index: 1000;
   right: 1.5%;
   top: 1.5%;
+  transition: filter 0.1s, scale 0.2s;
+  filter: grayscale(1) brightness(2);
+}
+
+#settings-button:hover {
+  filter: grayscale(1) brightness(2.2);
+  box-shadow: 0 0 10px 2px white;
+}
+
+#settings-button:active {
+  filter: grayscale(0) brightness(1.1);
+  scale: 0.9;
 }
 
 .menu-button {
   transition: filter 0.2s;
 }
 
+.menu-button.disabled {
+  filter: brightness(0.5);
+}
+
+.menu-button.disabled:hover {
+  filter: brightness(0.5);
+}
+
+.menu-button.disabled:active {
+  filter: brightness(0.5);
+}
+
 .menu-button:hover {
-  filter: brightness(1.2);
+  filter: brightness(1.5);
 }
 
 .menu-button:active {
-  filter: brightness(1.4);
+  filter: brightness(2);
+}
+
+.vers-info {
+  margin-bottom: 1%;
+  border: 4px solid #c2ab89;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.vers-info.highlight {
+  background-color: #282827;
+}
+
+.vers-icon {
+}
+
+.vers-info-text {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
 }
 
 /* Warp Single */

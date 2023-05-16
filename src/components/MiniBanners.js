@@ -2,14 +2,9 @@ import React, { useState, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
+import ResizeContext from "./ResizeContext";
 
-const MiniBanners = ({
-  vers,
-  bannerType,
-  setBannerType,
-  hasBeginner,
-  resize,
-}) => {
+const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
   const [highlightIndex, setHighlightIndex] = useState(null);
 
   const [play] = useSound("../assets/audio/sfx/mini-select.mp3", {
@@ -17,6 +12,8 @@ const MiniBanners = ({
   });
 
   const { sound } = useContext(SoundContext);
+
+  const { getWidth } = useContext(ResizeContext);
 
   return (
     <React.Fragment>
@@ -27,7 +24,7 @@ const MiniBanners = ({
             className="mini-banner beginner"
             alt="mini beginner banner"
             src={`../assets/banner/mini/beginner.webp`}
-            width={resize.getWidth(160)}
+            width={getWidth(160)}
             style={{
               transform: `translateY(180%)`,
               opacity: `${bannerType === "beginner" ? 0 : 1}`,
@@ -54,7 +51,7 @@ const MiniBanners = ({
             className="mini-banner"
             alt="mini beginner banner active"
             src={`../assets/banner/mini/beginner-active.webp`}
-            width={resize.getWidth(180)}
+            width={getWidth(180)}
             style={{
               transform: `translateY(100%)`,
               opacity: `${bannerType === "beginner" ? 1 : 0}`,
@@ -69,7 +66,7 @@ const MiniBanners = ({
         className="mini-banner"
         alt="mini character banner active"
         src={`../assets/banner/mini/${vers}-char-active.webp`}
-        width={resize.getWidth(180)}
+        width={getWidth(180)}
         style={{
           transform: hasBeginner ? `translateY(190%)` : `translateY(100%)`,
           opacity: `${bannerType === "char" ? 1 : 0}`,
@@ -82,7 +79,7 @@ const MiniBanners = ({
         className="mini-banner"
         alt="mini character banner"
         src={`../assets/banner/mini/${vers}-char.webp`}
-        width={resize.getWidth(160)}
+        width={getWidth(160)}
         style={{
           transform: hasBeginner ? `translateY(320%)` : "translateY(180%)",
           opacity: `${bannerType === "char" ? 0 : 1}`,
@@ -111,7 +108,7 @@ const MiniBanners = ({
         className="mini-banner"
         alt="mini weapon banner active"
         src={`../assets/banner/mini/${vers}-weap-active.webp`}
-        width={resize.getWidth(180)}
+        width={getWidth(180)}
         style={{
           transform: hasBeginner ? `translateY(310%)` : "translateY(200%)",
           opacity: `${bannerType === "weap" ? 1 : 0}`,
@@ -124,7 +121,7 @@ const MiniBanners = ({
         className="mini-banner"
         alt="mini weapon banner"
         src={`../assets/banner/mini/${vers}-weap.webp`}
-        width={resize.getWidth(160)}
+        width={getWidth(160)}
         style={{
           transform: hasBeginner ? `translateY(470%)` : "translateY(320%)",
           opacity: `${bannerType === "weap" ? 0 : 1}`,
@@ -153,7 +150,7 @@ const MiniBanners = ({
         className="mini-banner"
         alt="mini standard banner active"
         src={`../assets/banner/mini/${vers}-standard-active.webp`}
-        width={resize.getWidth(180)}
+        width={getWidth(180)}
         style={{
           transform: hasBeginner ? `translateY(450%)` : "translateY(335%)",
           opacity: `${bannerType === "standard" ? 1 : 0}`,
@@ -165,7 +162,7 @@ const MiniBanners = ({
         className="mini-banner"
         alt="mini standard banner"
         src={`../assets/banner/mini/${vers}-standard.webp`}
-        width={resize.getWidth(160)}
+        width={getWidth(160)}
         style={{
           transform: hasBeginner ? `translateY(620%)` : "translateY(460%)",
           opacity: `${bannerType === "standard" ? 0 : 1}`,
@@ -194,7 +191,7 @@ const MiniBanners = ({
         className="mini-highlight"
         src="../assets/banner/mini/highlight.webp"
         alt="highlight"
-        width={resize.getWidth(160)}
+        width={getWidth(160)}
         style={{
           transform: hasBeginner ? "translateY(172%)" : "translateY(170%)",
           opacity: hasBeginner
@@ -207,7 +204,7 @@ const MiniBanners = ({
         className="mini-highlight"
         src="../assets/banner/mini/highlight.webp"
         alt="highlight"
-        width={resize.getWidth(160)}
+        width={getWidth(160)}
         style={{
           transform: "translateY(305%)",
           opacity: hasBeginner
@@ -220,7 +217,7 @@ const MiniBanners = ({
         className="mini-highlight"
         src="../assets/banner/mini/highlight.webp"
         alt="highlight"
-        width={resize.getWidth(160)}
+        width={getWidth(160)}
         style={{
           transform: hasBeginner ? "translateY(450%)" : "translateY(440%)",
           opacity: hasBeginner
@@ -233,7 +230,7 @@ const MiniBanners = ({
         className="mini-highlight"
         src="../assets/banner/mini/highlight.webp"
         alt="highlight"
-        width={resize.getWidth(160)}
+        width={getWidth(160)}
         style={{
           transform: "translateY(595%)",
           opacity: hasBeginner

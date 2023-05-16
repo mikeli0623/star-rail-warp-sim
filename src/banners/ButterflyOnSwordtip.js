@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/Banners.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ResizeContext from "../components/ResizeContext";
 
-const ButterflyOnSwordtip = ({ resize }) => {
+const ButterflyOnSwordtip = () => {
+  const { getWidth, getHeight } = useContext(ResizeContext);
+
   return (
     <React.Fragment>
       <div
         style={{
-          width: resize.getWidth(8),
-          height: resize.getHeight(677.33, 1100),
+          width: getWidth(8),
+          height: getHeight(677.33, 1100),
           background:
             "linear-gradient(180deg, black 75%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
@@ -19,8 +22,8 @@ const ButterflyOnSwordtip = ({ resize }) => {
       />
       <div
         style={{
-          width: resize.getWidth(764),
-          height: resize.getHeight(677.33, 1100),
+          width: getWidth(764),
+          height: getHeight(677.33, 1100),
           background:
             "linear-gradient(to bottom, rgba(16, 20, 56, 1) 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
@@ -34,12 +37,9 @@ const ButterflyOnSwordtip = ({ resize }) => {
         <div
           style={{
             backgroundImage: "url(../assets/banner/right-corner.webp)",
-            height: resize.getHeight(200, 148),
-            width: resize.getWidth(148),
-            backgroundSize: `${resize.getWidth(148)}px ${resize.getHeight(
-              200,
-              148
-            )}px`,
+            height: getHeight(200, 148),
+            width: getWidth(148),
+            backgroundSize: `${getWidth(148)}px ${getHeight(200, 148)}px`,
             position: "absolute",
             zIndex: "1",
             right: "0",
@@ -63,8 +63,8 @@ const ButterflyOnSwordtip = ({ resize }) => {
       <div
         className="rate-up-char-icons"
         style={{
-          width: resize.getWidth(72.3),
-          height: resize.getHeight(206.1, 72.3),
+          width: getWidth(72.3),
+          height: getHeight(206.1, 72.3),
           transform: "translate(-634%, 50%)",
           animation: "appear 50ms 1",
           opacity: "0",
@@ -74,9 +74,9 @@ const ButterflyOnSwordtip = ({ resize }) => {
         <div
           style={{
             backgroundImage: "url(../assets/banner/1.0/natasha.webp)",
-            width: resize.getWidth(1000),
-            height: resize.getWidth(1000),
-            backgroundSize: resize.getWidth(1000),
+            width: getWidth(1000),
+            height: getWidth(1000),
+            backgroundSize: getWidth(1000),
             position: "absolute",
             animation: "natasha-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
@@ -89,8 +89,8 @@ const ButterflyOnSwordtip = ({ resize }) => {
       <div
         className="rate-up-char-icons"
         style={{
-          width: resize.getWidth(72.3),
-          height: resize.getHeight(206.1, 72.3),
+          width: getWidth(72.3),
+          height: getHeight(206.1, 72.3),
           transform: "translate(-510%, 50%)",
           animation: "appear 50ms 1",
           animationDelay: "75ms",
@@ -101,9 +101,9 @@ const ButterflyOnSwordtip = ({ resize }) => {
         <div
           style={{
             backgroundImage: "url(../assets/banner/1.0/hook.webp)",
-            width: resize.getWidth(1000),
-            height: resize.getWidth(1000),
-            backgroundSize: resize.getWidth(1000),
+            width: getWidth(1000),
+            height: getWidth(1000),
+            backgroundSize: getWidth(1000),
             position: "absolute",
             animation: "hook-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
@@ -116,8 +116,8 @@ const ButterflyOnSwordtip = ({ resize }) => {
       <div
         className="rate-up-char-icons"
         style={{
-          width: resize.getWidth(72.3),
-          height: resize.getHeight(206.1, 72.3),
+          width: getWidth(72.3),
+          height: getHeight(206.1, 72.3),
           transform: "translate(-386%, 50%)",
           animation: "appear 50ms 1",
           animationDelay: "150ms",
@@ -128,9 +128,9 @@ const ButterflyOnSwordtip = ({ resize }) => {
         <div
           style={{
             backgroundImage: "url(../assets/banner/1.0/pela.webp)",
-            width: resize.getWidth(1100),
-            height: resize.getWidth(1100),
-            backgroundSize: resize.getWidth(1100),
+            width: getWidth(1100),
+            height: getWidth(1100),
+            backgroundSize: getWidth(1100),
             position: "absolute",
             animation: "pela-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
@@ -143,7 +143,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
       <LazyLoadImage
         effect="opacity-100"
         src="../assets/banner/1.0/char-left.webp"
-        width={resize.getWidth(331)}
+        width={getWidth(331)}
         alt="left"
         draggable="false"
         style={{
@@ -157,7 +157,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.0/seele.webp"
-        width={resize.getWidth(1145)}
+        width={getWidth(1145)}
         alt="char"
         draggable="false"
         style={{
@@ -172,7 +172,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/magnify.webp"
-        width={resize.getWidth(40)}
+        width={getWidth(40)}
         alt="magnify"
         draggable="false"
         style={{
@@ -186,7 +186,7 @@ const ButterflyOnSwordtip = ({ resize }) => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.0/seele-tag.webp"
-        width={resize.getWidth(130)}
+        width={getWidth(130)}
         alt="seele tag"
         draggable="false"
         style={{
