@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../css/Banners.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ResizeContext from "../components/ResizeContext";
 
-const DepartureWarp = ({ total, resize }) => {
+const DepartureWarp = ({ total }) => {
+  const { getWidth } = useContext(ResizeContext);
   return (
     <React.Fragment>
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/beg-gepard.webp"
-        width={resize.getWidth(400)}
+        src="../assets/banner/beg-gepard.webp"
+        width={getWidth(400)}
         alt="gepard"
         draggable="false"
         style={{
@@ -22,8 +24,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/yanqing.webp"
-        width={resize.getWidth(740)}
+        src="../assets/banner/yanqing.webp"
+        width={getWidth(740)}
         alt="yanqing"
         draggable="false"
         style={{
@@ -37,8 +39,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/beg-bronya.webp"
-        width={resize.getWidth(1100)}
+        src="../assets/banner/beg-bronya.webp"
+        width={getWidth(1100)}
         alt="char"
         draggable="false"
         style={{
@@ -52,8 +54,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/clara.webp"
-        width={resize.getWidth(400)}
+        src="../assets/banner/clara.webp"
+        width={getWidth(400)}
         alt="char"
         draggable="false"
         style={{
@@ -67,8 +69,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/beg-himeko.webp"
-        width={resize.getWidth(1100)}
+        src="../assets/banner/beg-himeko.webp"
+        width={getWidth(1100)}
         alt="char"
         draggable="false"
         style={{
@@ -82,8 +84,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/bailu.webp"
-        width={resize.getWidth(460)}
+        src="../assets/banner/bailu.webp"
+        width={getWidth(460)}
         alt="char"
         draggable="false"
         style={{
@@ -97,8 +99,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/welt.webp"
-        width={resize.getWidth(700)}
+        src="../assets/banner/welt.webp"
+        width={getWidth(700)}
         alt="char"
         draggable="false"
         style={{
@@ -112,8 +114,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/welt-tag.webp"
-        width={resize.getWidth(130)}
+        src="../assets/banner/welt-tag.webp"
+        width={getWidth(130)}
         alt="welt tag"
         draggable="false"
         style={{
@@ -126,8 +128,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/beg-bronya-tag.webp"
-        width={resize.getWidth(160)}
+        src="../assets/banner/beg-bronya-tag.webp"
+        width={getWidth(160)}
         alt="bronya tag"
         draggable="false"
         style={{
@@ -140,8 +142,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/yanqing-tag.webp"
-        width={resize.getWidth(165)}
+        src="../assets/banner/yanqing-tag.webp"
+        width={getWidth(165)}
         alt="yanqing tag"
         draggable="false"
         style={{
@@ -154,8 +156,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/beg-gepard-tag.webp"
-        width={resize.getWidth(160)}
+        src="../assets/banner/beg-gepard-tag.webp"
+        width={getWidth(160)}
         alt="gepard tag"
         draggable="false"
         style={{
@@ -168,8 +170,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/beg-himeko-tag.webp"
-        width={resize.getWidth(160)}
+        src="../assets/banner/beg-himeko-tag.webp"
+        width={getWidth(160)}
         alt="himeko tag"
         draggable="false"
         style={{
@@ -182,8 +184,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/clara-tag.webp"
-        width={resize.getWidth(130)}
+        src="../assets/banner/clara-tag.webp"
+        width={getWidth(130)}
         alt="clara tag"
         draggable="false"
         style={{
@@ -196,8 +198,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/bailu-tag.webp"
-        width={resize.getWidth(130)}
+        src="../assets/banner/bailu-tag.webp"
+        width={getWidth(130)}
         alt="bailu tag"
         draggable="false"
         style={{
@@ -210,8 +212,8 @@ const DepartureWarp = ({ total, resize }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/starter-tag.webp"
-        width={resize.getWidth(160)}
+        src="../assets/banner/starter-tag.webp"
+        width={getWidth(160)}
         alt="starter tag"
         draggable="false"
         style={{
@@ -228,9 +230,9 @@ const DepartureWarp = ({ total, resize }) => {
           zIndex: "1",
           top: "50%",
           left: "50%",
-          transform: "translate(-210%, 280%)",
+          transform: "translate(-210%, 235%)",
           color: "white",
-          fontSize: resize.getWidth(36),
+          fontSize: getWidth(36),
           textShadow: "0 0 4px black",
         }}
       >
@@ -242,9 +244,9 @@ const DepartureWarp = ({ total, resize }) => {
           zIndex: "1",
           top: "50%",
           left: "50%",
-          transform: "translate(135%, 890%)",
+          transform: "translate(135%, 730%)",
           color: "white",
-          fontSize: resize.getWidth(24),
+          fontSize: getWidth(24),
           textShadow: "0 0 2px black",
         }}
       >
@@ -258,19 +260,19 @@ const DepartureWarp = ({ total, resize }) => {
           left: "50%",
           transform: "translate(-111%, 170%)",
           backgroundColor: "rgba(0,0,0,0.45)",
-          width: resize.getWidth(500),
-          height: resize.getWidth(110),
+          width: getWidth(500),
+          height: getWidth(110),
           color: "#d5dae0",
-          fontSize: resize.getWidth(24),
+          fontSize: getWidth(24),
           textAlign: "left",
           boxSizing: "border-box",
-          paddingLeft: resize.getWidth(12),
-          paddingTop: resize.getWidth(12),
+          paddingLeft: getWidth(12),
+          paddingTop: getWidth(12),
         }}
       >
         20% off for set of 10 Warps, and a{" "}
         <span style={{ color: "#d89747" }}>5</span>
-        -star characters is guaranteed within
+        -star character is guaranteed within
         <span style={{ color: "#d89747" }}> 50 </span> Warps.
       </div>
     </React.Fragment>

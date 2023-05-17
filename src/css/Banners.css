@@ -79,6 +79,15 @@
   z-index: 101;
   overflow: hidden;
   background-color: rgb(255, 255, 255);
+  bottom: 50%;
+  left: 50%;
+}
+
+.weap-rate-up {
+  position: absolute;
+  z-index: 101;
+  top: 50%;
+  left: 50%;
 }
 
 @keyframes appear {
@@ -87,53 +96,7 @@
   }
 }
 
-@keyframes natasha-animation {
-  0% {
-    transform: translate(-54%, -16%);
-  }
-  100% {
-    transform: translate(-48%, -16%);
-    opacity: 1;
-  }
-}
-
-@keyframes hook-animation {
-  0% {
-    transform: translate(-53%, -41%);
-  }
-  100% {
-    transform: translate(-47%, -41%);
-    opacity: 1;
-  }
-}
-
-@keyframes pela-animation {
-  0% {
-    transform: translate(-43%, -35%);
-  }
-  100% {
-    transform: translate(-37%, -35%);
-    opacity: 1;
-  }
-}
-
-@keyframes seele-animation {
-  0% {
-    transform: translate(-48%, -60%);
-  }
-  100% {
-    transform: translate(-40.8%, -60%);
-  }
-}
-
-@keyframes seele-back-animation {
-  0% {
-    transform: translateX(-11%);
-  }
-  100% {
-    transform: translateX(-3.8%);
-  }
-}
+/* Stellar Warp */
 
 @keyframes bronya-animation {
   0% {
@@ -180,50 +143,35 @@
   }
 }
 
-@keyframes banner-ring-spin {
-  to {
-    transform: translate(-24%, -50%) rotate(-360deg);
-  }
-}
-
-@keyframes seele-weap-back-animation {
-  from {
-    transform: scale(1.1) translate(-37%, -47%);
-  }
-  to {
-    transform: scale(1) translate(-32%, -52%);
-  }
-}
-
 @keyframes cone-1-animation {
   0% {
-    transform: scale(1.2) translate(-220%, 30%) rotate(5deg);
+    transform: scale(1.2) translate(-270%, -20%) rotate(5deg);
     opacity: 0;
   }
   100% {
-    transform: scale(1) translate(-280%, 40%) rotate(5deg);
+    transform: scale(1) translate(-330%, -10%) rotate(5deg);
     opacity: 1;
   }
 }
 
 @keyframes cone-2-animation {
   0% {
-    transform: scale(1.2) translate(-270%, 75%) rotate(20deg);
+    transform: scale(1.2) translate(-315%, 30%) rotate(20deg);
     opacity: 0;
   }
   100% {
-    transform: scale(1) translate(-300%, 85%) rotate(20deg);
+    transform: scale(1) translate(-345%, 40%) rotate(20deg);
     opacity: 1;
   }
 }
 
 @keyframes cone-3-animation {
   0% {
-    transform: scale(1.2) translate(-320%, 65%) rotate(-10deg);
+    transform: scale(1.2) translate(-370%, 15%) rotate(-10deg);
     opacity: 0;
   }
   100% {
-    transform: scale(1) translate(-400%, 75%) rotate(-10deg);
+    transform: scale(1) translate(-450%, 25%) rotate(-10deg);
     opacity: 1;
   }
 }

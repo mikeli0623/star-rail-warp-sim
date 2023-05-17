@@ -1,16 +1,19 @@
+import { useContext } from "react";
 import { img_path, json } from "../classes/Constants";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ResizeContext from "./ResizeContext";
 
-const WarpResult = ({ warp, isNew, style, resize }) => {
+const WarpResult = ({ warp, isNew, style }) => {
+  const { getWidth, getHeight } = useContext(ResizeContext);
   return (
     <div className="warp-result-hover">
       <LazyLoadImage
         className={warp === "" ? "transparent" : "warp-result"}
         src={`${img_path["warpResult"]}${warp}.webp`}
         rarity={warp ? json.getRarity(warp) : 0}
-        width={resize.getWidth(440)}
-        height={resize.getHeight(230, 440)}
+        width={getWidth(440)}
+        height={getHeight(230, 440)}
         style={{
           ...style,
         }}
@@ -20,7 +23,7 @@ const WarpResult = ({ warp, isNew, style, resize }) => {
           className="warp-results-new-tag"
           alt="new tag"
           src="/assets/new.webp"
-          width={resize.getWidth(90)}
+          width={getWidth(90)}
           style={{ ...style }}
         />
       )}
@@ -28,62 +31,60 @@ const WarpResult = ({ warp, isNew, style, resize }) => {
   );
 };
 
-const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
+const WarpResults = ({ currentWarp, newItems, onClose }) => {
+  const { getWidth } = useContext(ResizeContext);
   return (
     <section
       id="warp-result-container"
       style={{ backgroundImage: "url(../assets/warp-result.webp)" }}
     >
-      <CloseButton resize={resize} onClose={onClose} />
+      <CloseButton onClose={onClose} />
       <div className="warp-results top">
         <WarpResult
           warp={currentWarp[0]}
           isNew={newItems.indexOf(currentWarp[0]) !== -1}
           style={{
-            marginTop: resize.getWidth(10),
+            marginTop: getWidth(10),
             animation: `${
               json.getRarity(currentWarp[0]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
-            animationDelay: "200ms",
+            } 1.2s 1`,
+            animationDelay: "100ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
         <WarpResult
           warp={currentWarp[1]}
           isNew={newItems.indexOf(currentWarp[1]) !== -1}
           style={{
-            marginBottom: resize.getWidth(10),
+            marginBottom: getWidth(10),
             animation: `${
               json.getRarity(currentWarp[1]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
-            animationDelay: "100ms",
+            } 1.2s 1`,
+            animationDelay: "50ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
         <WarpResult
           warp={currentWarp[2]}
           isNew={newItems.indexOf(currentWarp[2]) !== -1}
           style={{
-            marginTop: resize.getWidth(10),
+            marginTop: getWidth(10),
             animation: `${
               json.getRarity(currentWarp[2]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
+            } 1.2s 1`,
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
-        <WarpResult warp={""} resize={resize} />
+        <WarpResult warp={""} />
       </div>
       <div className="warp-results middle">
         <WarpResult
@@ -94,11 +95,10 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[3]) !== 3
                 ? "animate-result-middle"
                 : "animate-three-middle"
-            } 1.5s 1`,
+            } 1.2s 1`,
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
         <WarpResult
           warp={currentWarp[4]}
@@ -108,12 +108,11 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[4]) !== 3
                 ? "animate-result-middle"
                 : "animate-three-middle"
-            } 1.5s 1`,
-            animationDelay: "100ms",
+            } 1.2s 1`,
+            animationDelay: "50ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
         <WarpResult
           warp={currentWarp[5]}
@@ -123,12 +122,11 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[5]) !== 3
                 ? "animate-result-middle"
                 : "animate-three-middle"
-            } 1.5s 1`,
-            animationDelay: "200ms",
+            } 1.2s 1`,
+            animationDelay: "100ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
         <WarpResult
           warp={currentWarp[6]}
@@ -138,62 +136,58 @@ const WarpResults = ({ currentWarp, newItems, onClose, resize }) => {
               json.getRarity(currentWarp[6]) !== 3
                 ? "animate-result-middle"
                 : "animate-three-middle"
-            } 1.5s 1`,
-            animationDelay: "300ms",
+            } 1.2s 1`,
+            animationDelay: "150ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
       </div>
       <div className="warp-results bottom">
-        <WarpResult warp={""} resize={resize} />
+        <WarpResult warp={""} />
         <WarpResult
           warp={currentWarp[7]}
           isNew={newItems.indexOf(currentWarp[7]) !== -1}
           style={{
-            marginBottom: resize.getWidth(10),
+            marginBottom: getWidth(10),
             animation: `${
               json.getRarity(currentWarp[7]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
-            animationDelay: "200ms",
+            } 1.2s 1`,
+            animationDelay: "100ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
         <WarpResult
           warp={currentWarp[8]}
           isNew={newItems.indexOf(currentWarp[8]) !== -1}
           style={{
-            marginTop: resize.getWidth(10),
+            marginTop: getWidth(10),
             animation: `${
               json.getRarity(currentWarp[8]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
-            animationDelay: "100ms",
+            } 1.2s 1`,
+            animationDelay: "50ms",
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
         <WarpResult
           warp={currentWarp[9]}
           isNew={newItems.indexOf(currentWarp[9]) !== -1}
           style={{
-            marginBottom: resize.getWidth(10),
+            marginBottom: getWidth(10),
             animation: `${
               json.getRarity(currentWarp[9]) !== 3
                 ? "animate-result"
                 : "animate-three"
-            } 1.5s 1`,
+            } 1.2s 1`,
             animationTimingFunction: "cubic-bezier(.12,1,.06,1)",
             animationFillMode: "both",
           }}
-          resize={resize}
         />
       </div>
     </section>
