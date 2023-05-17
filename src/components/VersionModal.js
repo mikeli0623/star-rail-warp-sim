@@ -12,7 +12,6 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
   const handleClose = () => {
     if (sound) playModalClose();
     setShow(false);
-    setSelected(currentVers);
   };
 
   const [playModalClose] = useSound("../assets/audio/sfx/banner-close.mp3");
@@ -23,13 +22,22 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
 
   return (
     <React.Fragment>
-      <Modal show={show} onHide={handleClose}>
+      <Modal
+        show={show}
+        onHide={() => {
+          handleClose();
+          setSelected(currentVers);
+        }}
+      >
         <Modal.Header style={{ backgroundColor: "#e9e7e2" }}>
           <Modal.Title style={{ fontWeight: "bold" }}>
             Choose Your Banner Version
           </Modal.Title>
           <CloseButton
-            onClose={handleClose}
+            onClose={() => {
+              handleClose();
+              setSelected(currentVers);
+            }}
             variant="dark"
             style={{ transform: "translate(-10%, -10%)" }}
             resize={false}
@@ -54,6 +62,7 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
                 playCancel();
               }
               handleClose();
+              setSelected(currentVers);
             }}
             text="Cancel"
             size="sm"

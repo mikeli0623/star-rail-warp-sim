@@ -24,6 +24,7 @@ export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
   const warpChance = Math.random();
   const rateUpChance = type === "char" ? 0.5 : 0.75;
   const rateUp = Math.random() < rateUpChance ? true : false;
+  const char = Math.random() < 0.5;
   let warpItem;
   if (
     warpChance <
@@ -54,8 +55,7 @@ export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
       }
     } else {
       if (type === "standard") {
-        if (warpChance < banner.rateFive / 2)
-          warpItem = randItem(json.getPoolFiveChar(vers, type));
+        if (char) warpItem = randItem(json.getPoolFiveChar(vers, type));
         else warpItem = randItem(json.getPoolFiveWeap(vers, type));
       } else warpItem = randItem(json.getPoolFiveChar(vers, type));
     }
@@ -73,14 +73,12 @@ export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
       } else {
         // draw from non rate up
         banner.guaranteeFour = true;
-        if (warpChance < banner.rateFour / 2)
-          warpItem = randItem(json.getPoolFourChar(vers, type));
+        if (char) warpItem = randItem(json.getPoolFourChar(vers, type));
         else warpItem = randItem(json.getPoolFourWeap(vers, type));
       }
     } else {
       // standard banner
-      if (warpChance < banner.rateFour / 2)
-        warpItem = randItem(json.getPoolFourChar(vers, type));
+      if (char) warpItem = randItem(json.getPoolFourChar(vers, type));
       else warpItem = randItem(json.getPoolFourWeap(vers, type));
     }
   } else {

@@ -170,7 +170,7 @@ const ButterflyOnSwordtip = () => {
           animationFillMode: "both",
         }}
       />
-      <LazyLoadImage
+      {/* <LazyLoadImage
         effect="opacity"
         src="../assets/magnify.webp"
         width={getWidth(40)}
@@ -183,7 +183,7 @@ const ButterflyOnSwordtip = () => {
           transform: "translate(-430%, 120%)",
           filter: "brightness(0.4)",
         }}
-      />
+      /> */}
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.0/seele-tag.webp"

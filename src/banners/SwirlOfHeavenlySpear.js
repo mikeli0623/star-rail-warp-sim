@@ -24,8 +24,9 @@ const SwirlOfHeavenlySpear = () => {
         style={{
           width: getWidth(764),
           height: getHeight(677.33, 1100),
+          overflow: "hidden",
           background:
-            "linear-gradient(to bottom, rgba(16, 20, 56, 1) 70%, rgba(255, 255, 255, 0) 100%)",
+            "linear-gradient(to bottom, rgba(40, 33, 36, 1) 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
           boxShadow: "0 0 10px rgba(8, 8, 8, 0.521)",
           top: "50%",
@@ -140,7 +141,7 @@ const SwirlOfHeavenlySpear = () => {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src="../assets/banner/1.0/char-left.webp"
+        src="../assets/banner/1.1/char-left.webp"
         width={getWidth(331)}
         alt="left"
         draggable="false"
@@ -155,7 +156,7 @@ const SwirlOfHeavenlySpear = () => {
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.1/jing-yuan.webp"
-        width={getWidth(1145)}
+        width={getWidth(1500)}
         alt="char"
         draggable="false"
         style={{
@@ -167,7 +168,7 @@ const SwirlOfHeavenlySpear = () => {
           animationFillMode: "both",
         }}
       />
-      <LazyLoadImage
+      {/* <LazyLoadImage
         effect="opacity"
         src="../assets/magnify.webp"
         width={getWidth(40)}
@@ -180,7 +181,7 @@ const SwirlOfHeavenlySpear = () => {
           transform: "translate(-430%, 120%)",
           filter: "brightness(0.4)",
         }}
-      />
+      /> */}
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/1.1/jing-yuan-tag.webp"

@@ -364,7 +364,7 @@ html * {
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.2s;
-  height: 112px;
+  height: 130px;
 }
 
 .vers-info * {
