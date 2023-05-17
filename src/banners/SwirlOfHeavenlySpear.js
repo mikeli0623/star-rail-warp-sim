@@ -24,7 +24,7 @@ const SwirlOfHeavenlySpear = () => {
         style={{
           width: getWidth(764),
           height: getHeight(677.33, 1100),
-          // overflow: "hidden",
+          overflow: "hidden",
           background:
             "linear-gradient(to bottom, rgba(40, 33, 36, 1) 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
@@ -141,7 +141,7 @@ const SwirlOfHeavenlySpear = () => {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src="../assets/banner/1.0/char-left.webp"
+        src="../assets/banner/1.1/char-left.webp"
         width={getWidth(331)}
         alt="left"
         draggable="false"
