@@ -112,7 +112,7 @@ const BrilliantFixationS = () => {
           )}deg)`,
         }}
       />
-      <LazyLoadImage
+      {/* <LazyLoadImage
         effect="opacity"
         src="../assets/magnify.webp"
         width={getWidth(40)}
@@ -126,7 +126,7 @@ const BrilliantFixationS = () => {
           transform: "translate(-540%, 40%)",
           filter: "brightness(0.4)",
         }}
-      />
+      /> */}
     </React.Fragment>
   );
 };

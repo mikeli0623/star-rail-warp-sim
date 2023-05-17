@@ -13,7 +13,7 @@ const BrilliantFixationJY = () => {
           width: getWidth(764),
           height: getHeight(677.33, 1100),
           background:
-            "linear-gradient(to bottom, rgba(16, 20, 56, 1) 70%, rgba(255, 255, 255, 0) 100%)",
+            "linear-gradient(to bottom, rgba(164, 164, 128, 1) 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
           overflow: "hidden",
           boxShadow: "0 0 10px rgba(8, 8, 8, 0.521)",
@@ -112,7 +112,7 @@ const BrilliantFixationJY = () => {
           )}deg)`,
         }}
       />
-      <LazyLoadImage
+      {/* <LazyLoadImage
         effect="opacity"
         src="../assets/magnify.webp"
         width={getWidth(40)}
@@ -126,7 +126,7 @@ const BrilliantFixationJY = () => {
           transform: "translate(-540%, 40%)",
           filter: "brightness(0.4)",
         }}
-      />
+      /> */}
     </React.Fragment>
   );
 };
