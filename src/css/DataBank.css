@@ -1,0 +1,26 @@
+#db-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: #121727;
+}
+
+.db-type-icon {
+  transition: filter 0.2s, scale 0.2s;
+}
+
+.db-type-icon:hover {
+  filter: brightness(1.2);
+  scale: 1.05;
+}
+
+.db-type-icon:active {
+  filter: brightness(1);
+  scale: 1;
+}

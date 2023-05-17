@@ -256,7 +256,7 @@ export default function Main({
         <div
           id="warp-icon"
           style={{
-            backgroundImage: "url(/assets/warp-icon.webp)",
+            backgroundImage: "url(/assets/icon-warp.webp)",
             width: getWidth(44),
             height: getWidth(44),
             backgroundSize: getWidth(44),

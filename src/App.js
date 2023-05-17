@@ -9,9 +9,10 @@ import useSound from "use-sound";
 import { SoundProvider } from "./components/SoundContext";
 import { ResizeProvider } from "./components/ResizeContext";
 import Main from "./components/Main";
+import DataBankOverlay from "./components/DataBankOverlay";
 
 function App() {
-  const [content, setContent] = useState("main");
+  const [content, setContent] = useState("data-bank");
 
   const [bannerType, setBannerType] = useState(
     sessionStorage.getItem("bannerType")
@@ -61,6 +62,7 @@ function App() {
   const [playMainBGM, mainData] = useSound(`assets/audio/bgm/${bgm}.mp3`, {
     loop: true,
     onload: () => setLockout(false),
+    mute: true,
     volume: 0.2,
   });
 
@@ -121,6 +123,16 @@ function App() {
     hasFour,
   ]);
 
+  const [showDB, setShowDB] = useState(false);
+  const [DBType, setDBType] = useState(null);
+
+  const handleDBSelect = (type) => {
+    if (type !== null) {
+      setContent("data-bank");
+      setDBType(type);
+    }
+  };
+
   return (
     <ResizeProvider value={resizeValue}>
       <SoundProvider value={soundValue}>
@@ -174,6 +186,7 @@ function App() {
               />
             </React.Fragment>
           )}
+          {content === "data-bank" && <DataBankOverlay />}
         </div>
       </SoundProvider>
     </ResizeProvider>

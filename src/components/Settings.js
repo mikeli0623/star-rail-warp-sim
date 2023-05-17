@@ -33,7 +33,7 @@ const Settings = ({ lockout, vers, setVers }) => {
 
   const [playVersionOpen] = useSound("../assets/audio/sfx/banner-open.mp3");
   const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
-  const [playDataBankOpen] = useSound("../assets/audio/sfx/data-bank-open.mp3");
+  const [playDataBankOpen] = useSound("../assets/audio/sfx/db-menu-open.mp3");
   const [playPhonoOpen] = useSound("../assets/audio/sfx/phono-open-1.mp3");
 
   const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
