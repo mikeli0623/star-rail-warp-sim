@@ -38,7 +38,7 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
       />
       <div className="vers-info-text">
         <div style={{ color: isCurrentSelected ? "white" : "black" }}>
-          Version: {vers}
+          Version {vers}
         </div>
         <div style={{ color: isCurrentSelected ? "#7d7d7d" : "#4F4F4F" }}>
           Character Event:{" "}

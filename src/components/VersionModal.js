@@ -12,6 +12,7 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
   const handleClose = () => {
     if (sound) playModalClose();
     setShow(false);
+    setSelected(currentVers);
   };
 
   const [playModalClose] = useSound("../assets/audio/sfx/banner-close.mp3");
@@ -61,8 +62,8 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
           <Button
             onClick={() => {
               if (sound) playButton();
-              console.log(selected);
               setVers(selected);
+              sessionStorage.setItem("vers", selected);
               handleClose();
             }}
             text="Confirm"

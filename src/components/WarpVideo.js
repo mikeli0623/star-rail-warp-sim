@@ -2,7 +2,7 @@ import { useContext, useState, useEffect } from "react";
 import SoundContext from "./SoundContext";
 import CloseButton from "./CloseButton";
 
-const WarpVideo = ({ onEnded, mainBGM, warpBGM, rarity }) => {
+const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
   const { sound } = useContext(SoundContext);
   const [loaded, setLoaded] = useState(false);
 
@@ -39,7 +39,10 @@ const WarpVideo = ({ onEnded, mainBGM, warpBGM, rarity }) => {
           }
         }}
       >
-        <source src={`assets/${rarity}.webm`} type="video/webm" />
+        <source
+          src={`assets/${event ? "event" : "normal"}-${rarity}.webm`}
+          type="video/webm"
+        />
       </video>
     </section>
   );

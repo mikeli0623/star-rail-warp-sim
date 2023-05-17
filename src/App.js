@@ -13,6 +13,14 @@ import Main from "./components/Main";
 function App() {
   const [content, setContent] = useState("main");
 
+  const [bannerType, setBannerType] = useState(
+    sessionStorage.getItem("bannerType")
+      ? sessionStorage.getItem("bannerType")
+      : parseInt(localStorage.getItem("totalBeginner")) === 5
+      ? "char"
+      : "beginner"
+  );
+
   const [currentWarp, setCurrentWarp] = useState([]);
 
   const [sound, setSound] = useState(false);
@@ -26,7 +34,7 @@ function App() {
 
   const getWidth = useCallback(
     (width) => {
-      return window.innerWidth > 1280 ? width : size.width / (1280 / width);
+      return window.innerWidth > 1280 ? width : (size.width * width) / 1280;
     },
     [size]
   );
@@ -120,6 +128,8 @@ function App() {
           {content === "main" && (
             <Main
               lockout={lockout}
+              bannerType={bannerType}
+              setBannerType={setBannerType}
               setNewItems={setNewItems}
               setHasFive={setHasFive}
               setHasFour={setHasFour}
@@ -130,6 +140,7 @@ function App() {
           {content === "video" && (
             <WarpVideo
               rarity={hasFive ? "five" : hasFour ? "four" : "three"}
+              event={bannerType === "char" || bannerType === "weap"}
               onEnded={() => {
                 setContent("single");
               }}

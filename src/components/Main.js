@@ -10,12 +10,15 @@ import ResizeContext from "./ResizeContext";
 import DepartureWarp from "../banners/DepartureWarp";
 import ButterflyOnSwordtip from "../banners/ButterflyOnSwordtip";
 import BrilliantFixation from "../banners/BrilliantFixation";
+import BrilliantFixation1 from "../banners/BrilliantFixation1";
 import SwirlOfHeavenlySpear from "../banners/SwirlOfHeavenlySpear";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 
 export default function Main({
   lockout,
+  bannerType,
+  setBannerType,
   setNewItems,
   setHasFive,
   setHasFour,
@@ -24,15 +27,7 @@ export default function Main({
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
 
-  const [vers, setVers] = useState("1.0");
-
-  const [bannerType, setBannerType] = useState(
-    sessionStorage.getItem("bannerType")
-      ? sessionStorage.getItem("bannerType")
-      : parseInt(localStorage.getItem("totalBeginner")) === 5
-      ? "char"
-      : "beginner"
-  );
+  const [vers, setVers] = useState(sessionStorage.getItem("vers") || "1.0");
 
   const [totalBeginner, setTotalBeginner] = useState(
     parseInt(localStorage.getItem("totalBeginner")) || 0
@@ -146,15 +141,24 @@ export default function Main({
       "1.0": {
         char: <ButterflyOnSwordtip />,
         weap: <BrilliantFixation />,
-        standard: <StellarWarp />,
       },
       1.1: {
         char: <SwirlOfHeavenlySpear />,
-        weap: <BrilliantFixation />,
-        standard: <StellarWarp />,
+        weap: <BrilliantFixation1 />,
       },
     };
   }, []);
+
+  const bannerBackColor = {
+    "1.0": {
+      char: "#0a162e",
+      weap: "#0a162e",
+    },
+    1.1: {
+      char: "black",
+      weap: "black",
+    },
+  };
 
   const handleWarp = (warps) => {
     if (bannerType === "beginner") {
@@ -208,118 +212,123 @@ export default function Main({
     return `${vers}/${bannerType}`;
   };
 
+  const getBanner = () => {
+    if (bannerType === "beginner")
+      return <DepartureWarp total={totalBeginner} />;
+    if (bannerType === "standard") return <StellarWarp />;
+    return banners[vers][bannerType];
+  };
+
   return (
     <div
       id="main-back"
       style={{
         backgroundImage: `url(/assets/banner/${getBack()}-back.webp)`,
-        backgroundColor: `${bannerType === "beginner" ? "#1f2322" : "#0a162e"}`,
+        backgroundColor: `${
+          bannerType === "beginner"
+            ? "#1f2322"
+            : bannerBackColor[vers][bannerType]
+        }`,
       }}
     >
       <Settings lockout={lockout} vers={vers} setVers={setVers} />
-      <div id="main-back-cover" />
       <div
-        id="main-back-cover-pattern"
+        id="main-back-cover"
         style={{
           backgroundImage: "url(assets/banner/cover-pattern.webp)",
           backgroundSize: `${getWidth(10)}px ${getHeight(8, 10)}px`,
         }}
+      />
+      <LazyLoadImage
+        effect="opacity"
+        className="ring"
+        src="/assets/rings.webp"
+        alt="rings"
+        width={getWidth(550)}
+      />
+      <div
+        id="info"
+        style={{
+          width: getWidth(380),
+          height: getHeight(44, 380),
+        }}
       >
-        <LazyLoadImage
-          effect="opacity"
-          className="ring"
-          src="/assets/rings.webp"
-          alt="rings"
-          width={getWidth(550)}
+        <div
+          id="warp-icon"
+          style={{
+            backgroundImage: "url(/assets/warp-icon.webp)",
+            width: getWidth(44),
+            height: getWidth(44),
+            backgroundSize: getWidth(44),
+          }}
         />
         <div
-          id="info"
           style={{
-            width: getWidth(380),
-            height: getHeight(44, 380),
+            height: getHeight(44, 300),
+            width: getWidth(300),
+            display: "flex",
+            flexDirection: "column",
+            margin: 0,
+            padding: 0,
           }}
         >
           <div
-            id="warp-icon"
+            id="title"
             style={{
-              backgroundImage: "url(/assets/warp-icon.webp)",
-              width: getWidth(44),
-              height: getWidth(44),
-              backgroundSize: getWidth(44),
-            }}
-          />
-          <div
-            style={{
-              height: getHeight(44, 300),
-              width: getWidth(300),
-              display: "flex",
-              flexDirection: "column",
-              margin: 0,
-              padding: 0,
+              fontSize: getWidth(22),
+              height: getWidth(24),
+              textAlign: "left",
+              marginTop: `-${getWidth(8)}px`,
             }}
           >
-            <div
-              id="title"
-              style={{
-                fontSize: getWidth(22),
-                height: getWidth(24),
-                textAlign: "left",
-                marginTop: `-${getWidth(8)}px`,
-              }}
-            >
-              Warp
-            </div>
-            <div
-              id="warp-type"
-              style={{
-                textAlign: "left",
-                fontSize: getWidth(24),
-                height: getWidth(24),
-              }}
-            >
-              {json.getTitle(vers, bannerType)}
-            </div>
+            Warp
+          </div>
+          <div
+            id="warp-type"
+            style={{
+              textAlign: "left",
+              fontSize: getWidth(24),
+              height: getWidth(24),
+            }}
+          >
+            {json.getTitle(vers, bannerType)}
           </div>
         </div>
-        <MiniBanners
-          vers={vers}
-          bannerType={bannerType}
-          setBannerType={setBannerType}
-          hasBeginner={totalBeginner < 5}
-        />
-        {bannerType === "beginner" ? (
-          <DepartureWarp total={totalBeginner} />
-        ) : (
-          banners[vers][bannerType]
-        )}
-        <Button
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            zIndex: "1000",
-            transform: "translate(-230%, 650%)",
-          }}
-          onClick={() => {}}
-          size="md"
-          text="Exchange"
-          disabled={true}
-        />
-        <Button
-          style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            zIndex: "1000",
-            transform: "translate(-125%, 650%)",
-          }}
-          onClick={() => {}}
-          size="md"
-          text="View Details"
-          disabled={true}
-        />
-        <WarpButtons onWarp={handleWarp} event={bannerType} />
       </div>
+      <MiniBanners
+        vers={vers}
+        bannerType={bannerType}
+        setBannerType={setBannerType}
+        hasBeginner={totalBeginner < 5}
+      />
+      {getBanner()}
+      <Button
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          zIndex: "1000",
+          transform: "translate(-230%, 650%)",
+        }}
+        onClick={() => {}}
+        size="md"
+        text="Exchange"
+        disabled={true}
+      />
+      <Button
+        style={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          zIndex: "1000",
+          transform: "translate(-125%, 650%)",
+        }}
+        onClick={() => {}}
+        size="md"
+        text="View Details"
+        disabled={true}
+      />
+      <WarpButtons onWarp={handleWarp} event={bannerType} />
     </div>
   );
 }

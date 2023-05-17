@@ -18,10 +18,6 @@ html * {
   font-display: swap;
 }
 
-/* *:hover {
-  cursor: url(./assets/cursor.webp), auto;
-} */
-
 #audio-toggle {
   position: absolute;
   top: 0;
@@ -240,7 +236,7 @@ html * {
   position: fixed;
   top: 0;
   left: 0;
-  background-size: 200vw 200vh;
+  background-size: 200% 200%;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
@@ -255,14 +251,6 @@ html * {
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: rgba(156, 156, 156, 0.199);
-}
-
-#main-back-cover-pattern {
-  min-height: 100%;
-  min-width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 #exchange-button {
@@ -679,5 +667,15 @@ html * {
   100% {
     transform: translate(0);
     filter: brightness(1);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .vers-info {
+    font-size: 14px;
+  }
+
+  .vers-icon {
+    width: 100px;
   }
 }
