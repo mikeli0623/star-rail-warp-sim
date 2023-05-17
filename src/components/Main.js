@@ -9,8 +9,8 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "./ResizeContext";
 import DepartureWarp from "../banners/DepartureWarp";
 import ButterflyOnSwordtip from "../banners/ButterflyOnSwordtip";
-import BrilliantFixation from "../banners/BrilliantFixation";
-import BrilliantFixation1 from "../banners/BrilliantFixation1";
+import BrilliantFixationS from "../banners/BrilliantFixationS";
+import BrilliantFixationJY from "../banners/BrilliantFixationJY";
 import SwirlOfHeavenlySpear from "../banners/SwirlOfHeavenlySpear";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
@@ -140,11 +140,11 @@ export default function Main({
     return {
       "1.0": {
         char: <ButterflyOnSwordtip />,
-        weap: <BrilliantFixation />,
+        weap: <BrilliantFixationS />,
       },
       1.1: {
         char: <SwirlOfHeavenlySpear />,
-        weap: <BrilliantFixation1 />,
+        weap: <BrilliantFixationJY />,
       },
     };
   }, []);
@@ -200,7 +200,7 @@ export default function Main({
 
   useEffect(() => {
     if (totalBeginner === 5) setBannerType("char");
-  }, [totalBeginner]);
+  }, [totalBeginner, setBannerType]);
 
   useEffect(() => {
     sessionStorage.setItem("bannerType", bannerType);
@@ -250,7 +250,7 @@ export default function Main({
         id="info"
         style={{
           width: getWidth(380),
-          height: getHeight(44, 380),
+          height: getHeight(50, 380),
         }}
       >
         <div
@@ -264,7 +264,7 @@ export default function Main({
         />
         <div
           style={{
-            height: getHeight(44, 300),
+            height: getHeight(50, 300),
             width: getWidth(300),
             display: "flex",
             flexDirection: "column",
@@ -278,7 +278,7 @@ export default function Main({
               fontSize: getWidth(22),
               height: getWidth(24),
               textAlign: "left",
-              marginTop: `-${getWidth(8)}px`,
+              marginTop: `-${getWidth(6)}px`,
             }}
           >
             Warp

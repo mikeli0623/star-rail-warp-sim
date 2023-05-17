@@ -236,7 +236,7 @@ html * {
   position: fixed;
   top: 0;
   left: 0;
-  background-size: 200% 200%;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
@@ -364,6 +364,7 @@ html * {
   justify-content: space-between;
   align-items: center;
   transition: background-color 0.2s;
+  height: 112px;
 }
 
 .vers-info * {
