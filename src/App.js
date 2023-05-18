@@ -123,6 +123,8 @@ function App() {
     hasFour,
   ]);
 
+  const [showDB, setShowDB] = useState(false);
+
   const [DBType, setDBType] = useState("char");
 
   return (
@@ -133,6 +135,8 @@ function App() {
             <Main
               lockout={lockout}
               bannerType={bannerType}
+              showDB={showDB}
+              setShowDB={setShowDB}
               setBannerType={setBannerType}
               setNewItems={setNewItems}
               setHasFive={setHasFive}
@@ -180,7 +184,11 @@ function App() {
             </React.Fragment>
           )}
           {content === "data-bank" && (
-            <DataBank type={DBType} setContent={setContent} />
+            <DataBank
+              type={DBType}
+              setContent={setContent}
+              setShowDB={setShowDB}
+            />
           )}
         </div>
       </SoundProvider>

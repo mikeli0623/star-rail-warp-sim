@@ -18,6 +18,8 @@ import Button from "./Button";
 export default function Main({
   lockout,
   bannerType,
+  showDB,
+  setShowDB,
   setBannerType,
   setNewItems,
   setHasFive,
@@ -215,6 +217,8 @@ export default function Main({
       <Settings
         lockout={lockout}
         vers={vers}
+        showDB={showDB}
+        setShowDB={setShowDB}
         setVers={setVers}
         setDBType={setDBType}
         setContent={setContent}

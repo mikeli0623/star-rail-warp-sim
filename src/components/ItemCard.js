@@ -25,7 +25,7 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
   };
 
   const wrapCount = (string, divWidth, fontSize) => {
-    const characterWidth = fontSize * 0.9; // Assume the width of a character is 60% of the font size (adjust as needed)
+    const characterWidth = fontSize * 1; // Assume the width of a character is 60% of the font size (adjust as needed)
     const contentWidth = string.length * characterWidth;
     return Math.ceil(contentWidth / divWidth);
   };

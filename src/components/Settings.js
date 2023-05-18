@@ -11,16 +11,24 @@ import VersionModal from "./VersionModal";
 import ResizeContext from "./ResizeContext";
 import DataBankOverlay from "./DataBankOverlay";
 
-const Settings = ({ lockout, vers, setVers, setDBType, setContent }) => {
+const Settings = ({
+  lockout,
+  vers,
+  showDB,
+  setShowDB,
+  setVers,
+  setDBType,
+  setContent,
+}) => {
   const { getWidth } = useContext(ResizeContext);
 
-  const [show, setShow] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   const handleClose = () => {
-    setShow(false);
+    setShowSettings(false);
     if (sound) playMenuClose();
   };
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShowSettings(true);
 
   const [playMenuOpen] = useSound("../assets/audio/sfx/menu-open.mp3");
 
@@ -41,8 +49,6 @@ const Settings = ({ lockout, vers, setVers, setDBType, setContent }) => {
   const [showReset, setShowReset] = useState(false);
 
   const [showVersion, setShowVersion] = useState(false);
-
-  const [showDB, setShowDB] = useState(false);
 
   const handleDBSelect = (type) => {
     setDBType(type);
@@ -83,7 +89,7 @@ const Settings = ({ lockout, vers, setVers, setDBType, setContent }) => {
         handleSelect={handleDBSelect}
       />
       <Offcanvas
-        show={show}
+        show={showSettings}
         onHide={handleClose}
         placement="end"
         style={{

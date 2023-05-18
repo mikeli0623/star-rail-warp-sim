@@ -1,8 +1,19 @@
 .db > div > div {
   background-color: rgba(0, 0, 0, 0);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.db-type-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 22px;
 }
 
 .db-type-icon {
+  margin: 0 30px;
   transition: filter 0.2s, scale 0.2s;
 }
 
@@ -36,18 +47,83 @@
   transform: translate(-80%, 90%);
 }
 
-.db-item-container {
+.db-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-45%, -50%);
-  width: 80%;
-  height: 80%;
+  bottom: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+}
+
+.item-filter-container {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.filter-button {
+  margin: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.filter-img-circle {
+  height: 60px;
+  width: 60px;
+  background-position: center;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.filter-img-circle[active="true"] {
+  background-color: #e9e9eb;
+}
+
+.filter-img {
+  height: 60px;
+  width: 60px;
+  background-position: center;
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  border-radius: 100%;
+  transition: filter 0.2s ease;
+}
+
+.filter-img[active="true"] {
+  filter: brightness(0);
+}
+
+.filter-text {
+  color: #a9abb2;
+  font-size: 20px;
+  margin-left: 10px;
+  transition: color 0.2s ease;
+}
+
+.filter-text[active="true"] {
+  color: white;
+}
+
+.db-item-container {
+  width: 80% !important;
+}
+
+.db-item-container > div:first-of-type {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  overflow-y: scroll;
+}
+
+.db-item-container:hover > div:last-child {
+  opacity: 1 !important;
 }
 
 .item-card {

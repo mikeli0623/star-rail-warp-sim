@@ -1,14 +1,15 @@
 import "../css/DataBank.css";
-import React, { useContext, useEffect } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import React, { useContext, useEffect, useState } from "react";
+import { Scrollbars } from "react-custom-scrollbars-2";
 import { json, allChars, allWeapons } from "../classes/Constants";
 import CloseButton from "./CloseButton";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
 import ResizeContext from "./ResizeContext";
 import ItemCard from "./ItemCard";
+import FilterButton from "./FilterButton";
 
-export default function DataBank({ type, setContent }) {
+export default function DataBank({ type, setContent, setShowDB }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { sound } = useContext(SoundContext);
 
@@ -22,6 +23,7 @@ export default function DataBank({ type, setContent }) {
   const handleExit = () => {
     if (sound) playExit();
     setContent("main");
+    setShowDB(true);
   };
 
   useEffect(() => {
@@ -70,8 +72,29 @@ export default function DataBank({ type, setContent }) {
     ...groupedArray.lowPriority,
   ];
 
+  const renderThumb = ({ style, ...props }) => {
+    const thumbStyle = {
+      backgroundColor: `#c4ceda`,
+    };
+    return (
+      <div className="bar" style={{ ...style, ...thumbStyle }} {...props} />
+    );
+  };
+
+  const [filter, setFilter] = useState("All");
+
+  const handleFilterSelect = (newFilter) => {
+    if (newFilter !== filter) {
+      if (sound) playSelectFilter();
+      setFilter(newFilter);
+    }
+  };
+
   return (
-    <section className="db-back">
+    <section
+      className="db-back"
+      style={{ backgroundImage: "url(assets/db-back.webp)" }}
+    >
       <div
         id="info"
         style={{
@@ -130,23 +153,73 @@ export default function DataBank({ type, setContent }) {
           {total}/{type === "char" ? allChars.length : allWeapons.length}
         </span>
       </div>
-      <div className="db-item-container">
-        {sortedStash
-          .filter(([name]) => {
-            if (type === "char") return allChars.includes(name);
-            else return allWeapons.includes(name);
-          })
-          .map(([name, count]) => {
-            return (
-              <ItemCard
-                key={name}
-                type={type}
-                item={name}
-                indexed={count > 0}
-                handleSelect={handleItemSelect}
-              />
-            );
-          })}
+      <div className="db-content">
+        <div className="item-filter-container">
+          <FilterButton
+            text="All"
+            handleSelect={handleFilterSelect}
+            active={filter === "All"}
+          />
+          <FilterButton
+            text="Destruction"
+            handleSelect={handleFilterSelect}
+            active={filter === "Destruction"}
+          />
+          <FilterButton
+            text="The Hunt"
+            handleSelect={handleFilterSelect}
+            active={filter === "The Hunt"}
+          />
+          <FilterButton
+            text="Erudition"
+            handleSelect={handleFilterSelect}
+            active={filter === "Erudition"}
+          />
+          <FilterButton
+            text="Harmony"
+            handleSelect={handleFilterSelect}
+            active={filter === "Harmony"}
+          />
+          <FilterButton
+            text="Nihility"
+            handleSelect={handleFilterSelect}
+            active={filter === "Nihility"}
+          />
+          <FilterButton
+            text="Preservation"
+            handleSelect={handleFilterSelect}
+            active={filter === "Preservation"}
+          />
+          <FilterButton
+            text="Abundance"
+            handleSelect={handleFilterSelect}
+            active={filter === "Abundance"}
+          />
+        </div>
+        <Scrollbars
+          className="db-item-container"
+          autoHide
+          autoHideTimeout={1000}
+          autoHideDuration={200}
+          renderThumbVertical={renderThumb}
+        >
+          {sortedStash
+            .filter(([name]) => {
+              if (filter === "All") return true;
+              return json.getPath(name) === filter;
+            })
+            .map(([name, count]) => {
+              return (
+                <ItemCard
+                  key={name}
+                  type={type}
+                  item={name}
+                  indexed={count > 0}
+                  handleSelect={handleItemSelect}
+                />
+              );
+            })}
+        </Scrollbars>
       </div>
 
       <CloseButton onClose={handleExit} />
