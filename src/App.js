@@ -64,7 +64,7 @@ function App() {
     volume: 0.2,
   });
 
-  const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp.mp3", {
+  const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp-loop.mp3", {
     loop: true,
   });
 
