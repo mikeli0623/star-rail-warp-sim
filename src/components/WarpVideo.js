@@ -1,10 +1,16 @@
 import { useContext, useState, useEffect } from "react";
 import SoundContext from "./SoundContext";
 import CloseButton from "./CloseButton";
+import { AdvancedVideo } from "@cloudinary/react";
+import { CloudinaryVideo } from "@cloudinary/url-gen";
 
 const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
   const { sound } = useContext(SoundContext);
   const [loaded, setLoaded] = useState(false);
+
+  const video = new CloudinaryVideo(`${event ? "event" : "normal"}-${rarity}`, {
+    cloudName: "hbhhi",
+  });
 
   useEffect(() => {
     if (!loaded || !sound) return;
@@ -28,7 +34,8 @@ const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
   return (
     <section id="video-container">
       <CloseButton onClose={onEnded} />
-      <video
+      <AdvancedVideo
+        cldVid={video}
         autoPlay
         onEnded={onEnded}
         muted={!sound}
@@ -38,12 +45,7 @@ const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
             setLoaded(true);
           }
         }}
-      >
-        <source
-          src={`assets/${event ? "event" : "normal"}-${rarity}.webm`}
-          type="video/webm"
-        />
-      </video>
+      />
     </section>
   );
 };
