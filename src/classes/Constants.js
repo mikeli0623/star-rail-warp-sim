@@ -46,18 +46,18 @@ const allChars = [
   "sushang",
   "tingyun",
   "bailu",
-  "blade",
   "bronya",
   "clara",
   "gepard",
   "himeko",
   "jing-yuan",
-  "kafka",
-  "luocha",
+  // "kafka",
+  // "luocha",
   "seele",
-  "silver-fox",
+  // "silver-wolf",
   "welt",
   "yanqing",
+  // "blade",
 ];
 
 const allWeapons = [

@@ -9,10 +9,10 @@ import useSound from "use-sound";
 import { SoundProvider } from "./components/SoundContext";
 import { ResizeProvider } from "./components/ResizeContext";
 import Main from "./components/Main";
-import DataBankOverlay from "./components/DataBankOverlay";
+import DataBank from "./components/DataBank";
 
 function App() {
-  const [content, setContent] = useState("data-bank");
+  const [content, setContent] = useState("main");
 
   const [bannerType, setBannerType] = useState(
     sessionStorage.getItem("bannerType")
@@ -123,15 +123,7 @@ function App() {
     hasFour,
   ]);
 
-  const [showDB, setShowDB] = useState(false);
-  const [DBType, setDBType] = useState(null);
-
-  const handleDBSelect = (type) => {
-    if (type !== null) {
-      setContent("data-bank");
-      setDBType(type);
-    }
-  };
+  const [DBType, setDBType] = useState("char");
 
   return (
     <ResizeProvider value={resizeValue}>
@@ -147,6 +139,7 @@ function App() {
               setHasFour={setHasFour}
               setContent={setContent}
               setCurrentWarp={setCurrentWarp}
+              setDBType={setDBType}
             />
           )}
           {content === "video" && (
@@ -186,7 +179,9 @@ function App() {
               />
             </React.Fragment>
           )}
-          {content === "data-bank" && <DataBankOverlay />}
+          {content === "data-bank" && (
+            <DataBank type={DBType} setContent={setContent} />
+          )}
         </div>
       </SoundProvider>
     </ResizeProvider>

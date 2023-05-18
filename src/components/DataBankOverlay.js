@@ -1,23 +1,34 @@
 import "../css/DataBank.css";
 import React, { useState, useContext, useEffect } from "react";
+import Modal from "react-bootstrap/Modal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
 import ResizeContext from "./ResizeContext";
 
-export default function DataBankOverlay({
-  handleSelect = () => {},
-  handleClose = () => {},
-}) {
+export default function DataBankOverlay({ show, setShow, handleSelect }) {
   const { getWidth } = useContext(ResizeContext);
-  // const { sound } = useContext(SoundContext);
-  const sound = true;
+  const { sound } = useContext(SoundContext);
 
-  const [playLoad] = useSound("../assets/audio/sfx/db-load.mp3");
+  const [playMenuOpen] = useSound("../assets/audio/sfx/db-menu-open.mp3");
+  const [playMenuClose] = useSound("../assets/audio/sfx/db-menu-close.mp3");
   const [playSelect] = useSound("../assets/audio/sfx/db-select.mp3");
 
+  const handleClose = () => setShow(false);
   return (
-    <div id="db-back" onClick={handleClose}>
+    <Modal
+      className="db"
+      style={{ backgroundColor: "rgba(24, 29, 49, 0.8)" }}
+      show={show}
+      onHide={handleClose}
+      centered
+      onEntering={() => {
+        if (sound) playMenuOpen();
+      }}
+      onExiting={() => {
+        if (sound) playMenuClose();
+      }}
+    >
       <LazyLoadImage
         className="db-type-icon"
         effect="opacity"
@@ -40,6 +51,6 @@ export default function DataBankOverlay({
         }}
         draggable="false"
       />
-    </div>
+    </Modal>
   );
 }

@@ -184,7 +184,7 @@ const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
               src={`./assets/${cleanText(item.path)}.webp`}
               width={getWidth(50)}
             />
-            {item.path.slice(4)}
+            {item.path}
           </div>
         )}
       </div>
