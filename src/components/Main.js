@@ -41,8 +41,8 @@ export default function Main({
       softPity: 50,
       guaranteeFive: localStorage.getItem("begGuaranteeFive") === "true",
       guaranteeFour: localStorage.getItem("begGuaranteeFour") === "true",
-      pityFive: parseInt(localStorage.getItem("beg")) || 0,
-      pityFour: parseInt(localStorage.getItem("beg")) || 0,
+      pityFive: parseInt(localStorage.getItem("begPityFive")) || 0,
+      pityFour: parseInt(localStorage.getItem("begPityFour")) || 0,
     },
     char: {
       rateFive: 0.006,
