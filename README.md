@@ -8,7 +8,7 @@ A React web app that simulates the warp mechanism of Honkai Star Rail
 
 ## Site
 
-Make a few pulls yourself at [https://star-rail-warp-sim.onrender.com/](https://star-rail-warp-sim.onrender.com/)
+Make a few pulls yourself at [https://starrailwarpsim.com/](https://starrailwarpsim.com/)
 
 ## Preview
 
