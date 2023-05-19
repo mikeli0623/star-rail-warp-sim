@@ -206,7 +206,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         alt="highlight"
         width={getWidth(160)}
         style={{
-          transform: "translateY(314%)",
+          transform: hasBeginner ? "translateY(309%)" : "translateY(315%)",
           opacity: hasBeginner
             ? `${highlightIndex === 1 && bannerType !== "char" ? 1 : 0}`
             : `${highlightIndex === 1 && bannerType !== "weap" ? 1 : 0}`,
