@@ -62,7 +62,6 @@ function App() {
   const [playMainBGM, mainData] = useSound(`assets/audio/bgm/${bgm}.mp3`, {
     loop: true,
     onload: () => setLockout(false),
-    mute: true,
     volume: 0.2,
   });
 
