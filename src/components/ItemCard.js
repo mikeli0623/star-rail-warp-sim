@@ -1,7 +1,8 @@
 import "../css/DataBank.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { json } from "../classes/Constants";
+import useWindowSize from "./useWindowSize";
 
 export default function ItemCard({ type, item, indexed, handleSelect }) {
   const info = {
@@ -11,6 +12,16 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
     path: json.getPath(item),
   };
 
+  const size = useWindowSize();
+
+  const [wrapMulti, setWrapMulti] = useState(10);
+
+  useEffect(() => {
+    if (size.width < 1280) {
+      setWrapMulti(13);
+    }
+  }, [size]);
+
   const starPrinter = (i) => {
     return (
       <LazyLoadImage
@@ -18,16 +29,16 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
         key={i}
         src="./assets/star.webp"
         alt="star"
-        width={14}
+        width={size.width < 580 ? 8 : 14}
         draggable="false"
       />
     );
   };
 
-  const wrapCount = (string, divWidth, fontSize) => {
-    const characterWidth = fontSize * 1; // Assume the width of a character is 60% of the font size (adjust as needed)
+  const wrapCount = (string) => {
+    const characterWidth = 22; // Assume the width of a character is 60% of the font size (adjust as needed)
     const contentWidth = string.length * characterWidth;
-    return Math.ceil(contentWidth / divWidth);
+    return Math.ceil(contentWidth / 180);
   };
 
   return (
@@ -44,14 +55,14 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
             className="db-item-element"
             alt="Element"
             src={`assets/${info.element}.webp`}
-            width={40}
+            width={size.width < 580 ? 25 : 40}
           />
         )}
         <LazyLoadImage
           effect="opacity"
           alt="Path"
           src={`assets/icon-${info.path.replace(/ /g, "-")}.webp`}
-          width={35}
+          width={size.width < 580 ? 20 : 35}
         />
       </div>
       {type === "char" && (
@@ -88,7 +99,7 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
         <div
           className="item-name"
           style={{
-            transform: `translateY(-${wrapCount(info.name, 180, 22) * 10}%)`,
+            transform: `translateY(-${wrapCount(info.name) * wrapMulti}%)`,
           }}
         >
           {info.name}

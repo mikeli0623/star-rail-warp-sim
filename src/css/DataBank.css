@@ -306,3 +306,92 @@
   right: -5%;
   bottom: 4%;
 }
+
+@media screen and (max-width: 700px) {
+  .db-type-icon {
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .item-card {
+    width: 144px;
+    height: 240px;
+    margin: 6px;
+  }
+
+  .db-item-element {
+    margin-bottom: 4px;
+  }
+
+  .index-noti {
+    font-size: 18px;
+  }
+
+  .item-name {
+    font-size: 18px;
+  }
+
+  .star-container {
+    width: 100%;
+    position: absolute;
+    transform: translateY(100%);
+  }
+
+  .base-highlight {
+    height: 4px;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .filter-text {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .item-card {
+    width: 72px;
+    height: 120px;
+    margin: 5px;
+  }
+
+  .index-noti {
+    font-size: 10px;
+  }
+
+  .item-name {
+    font-size: 9px;
+  }
+
+  .star-container {
+    width: 100%;
+    position: absolute;
+    transform: translateY(15%);
+  }
+
+  .base-highlight {
+    height: 3px;
+  }
+
+  .filter-button {
+    margin: 10px;
+  }
+
+  .filter-img-circle {
+    height: 35px;
+    width: 35px;
+    background-size: 25px 25px;
+  }
+
+  .filter-img {
+    height: 35px;
+    width: 35px;
+    background-size: 25px 25px;
+  }
+
+  .db-content {
+    bottom: 0%;
+    height: 80vh;
+  }
+}

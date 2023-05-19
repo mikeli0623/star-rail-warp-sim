@@ -221,7 +221,6 @@ export default function DataBank({ type, setContent, setShowDB }) {
             })}
         </Scrollbars>
       </div>
-
       <CloseButton onClose={handleExit} />
     </section>
   );

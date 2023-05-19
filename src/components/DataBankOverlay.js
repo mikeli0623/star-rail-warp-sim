@@ -15,7 +15,7 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
 
   const handleClose = () => setShow(false);
 
-  const stash = Object.entries(JSON.parse(localStorage.getItem("stash")));
+  const stash = Object.entries(JSON.parse(localStorage.getItem("stash")) || []);
 
   const total = stash.reduce(
     ([accLC, accC], [name, count]) => {
