@@ -1,31 +1,31 @@
 [
     {
         "name": "Arlan",
-        "path": "The Destruction",
+        "path": "Destruction",
         "element": "Lightning",
         "rarity": 4
     },
     {
         "name": "Asta",
-        "path": "The Harmony",
+        "path": "Harmony",
         "element": "Fire",
         "rarity": 4
     },
     {
         "name": "Bailu",
-        "path": "The Abundance",
+        "path": "Abundance",
         "element": "Lightning",
         "rarity": 5
     },
     {
         "name": "Bronya",
-        "path": "The Harmony",
+        "path": "Harmony",
         "element": "Wind",
         "rarity": 5
     },
     {
         "name": "Clara",
-        "path": "The Destruction",
+        "path": "Destruction",
         "element": "Physical",
         "rarity": 5
     },
@@ -38,56 +38,56 @@
     },
     {
         "name": "Gepard",
-        "path": "The Preservation",
+        "path": "Preservation",
         "element": "Ice",
         "rarity": 5
     },
     {
         "name": "Herta",
-        "path": "The Erudition",
+        "path": "Erudition",
         "element": "Ice",
         "rarity": 4
     },
     {
         "name": "Himeko",
-        "path": "The Erudition",
+        "path": "Erudition",
         "element": "Fire",
         "rarity": 5
     },
     {
         "name": "Hook",
-        "path": "The Destruction",
+        "path": "Destruction",
         "element": "Fire",
         "rarity": 4
     },
     {
         "id": "march-7th",
         "name": "March 7th",
-        "path": "The Preservation",
+        "path": "Preservation",
         "element": "Ice",
         "rarity": 4
     },
     {
         "name": "Natasha",
-        "path": "The Abundance",
+        "path": "Abundance",
         "element": "Physical",
         "rarity": 4
     },
     {
         "name": "Pela",
-        "path": "The Nihility",
+        "path": "Nihility",
         "element": "Ice",
         "rarity": 4
     },
     {
         "name": "Qingque",
-        "path": "The Erudition",
+        "path": "Erudition",
         "element": "Quantum",
         "rarity": 4
     },
     {
         "name": "Sampo",
-        "path": "The Nihility",
+        "path": "Nihility",
         "element": "Wind",
         "rarity": 4
     },
@@ -99,7 +99,7 @@
     },
     {
         "name": "Serval",
-        "path": "The Erudition",
+        "path": "Erudition",
         "element": "Lightning",
         "rarity": 4
     },
@@ -111,13 +111,13 @@
     },
     {
         "name": "Tingyun",
-        "path": "The Harmony",
+        "path": "Harmony",
         "element": "Lightning",
         "rarity": 4
     },
     {
         "name": "Welt",
-        "path": "The Nihility",
+        "path": "Nihility",
         "element": "Imaginary",
         "rarity": 5
     },
@@ -129,31 +129,31 @@
     },
     {
         "name": "Jing Yuan",
-        "path": "The Erudition",
+        "path": "Erudition",
         "element": "Lightning",
         "rarity": 5
     },
     {
         "name": "Silver Wolf",
-        "path": "The Nihility",
+        "path": "Nihility",
         "element": "Quantum",
         "rarity": 5
     },
     {
         "name": "Blade",
-        "path": "The Destruction",
+        "path": "Destruction",
         "element": "Wind",
         "rarity": 5
     },
     {
         "name": "Kafka",
-        "path": "The Nihility",
+        "path": "Nihility",
         "element": "Lightning",
         "rarity": 5
     },
     {
         "name": "Luocha",
-        "path": "The Abundance",
+        "path": "Abundance",
         "element": "Imaginary",
         "rarity": 5
     }

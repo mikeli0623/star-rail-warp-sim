@@ -9,17 +9,26 @@ import SoundContext from "./SoundContext";
 import ResetModal from "./ResetModal";
 import VersionModal from "./VersionModal";
 import ResizeContext from "./ResizeContext";
+import DataBankOverlay from "./DataBankOverlay";
 
-const Settings = ({ lockout, vers, setVers }) => {
+const Settings = ({
+  lockout,
+  vers,
+  showDB,
+  setShowDB,
+  setVers,
+  setDBType,
+  setContent,
+}) => {
   const { getWidth } = useContext(ResizeContext);
 
-  const [show, setShow] = useState(false);
+  const [showSettings, setShowSettings] = useState(false);
 
   const handleClose = () => {
-    setShow(false);
+    setShowSettings(false);
     if (sound) playMenuClose();
   };
-  const handleShow = () => setShow(true);
+  const handleShow = () => setShowSettings(true);
 
   const [playMenuOpen] = useSound("../assets/audio/sfx/menu-open.mp3");
 
@@ -31,22 +40,20 @@ const Settings = ({ lockout, vers, setVers }) => {
     "../assets/audio/sfx/menu-button-select.mp3"
   );
 
-  const [playVersionOpen] = useSound("../assets/audio/sfx/banner-open.mp3");
   const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
-  const [playDataBankOpen] = useSound("../assets/audio/sfx/data-bank-open.mp3");
   const [playPhonoOpen] = useSound("../assets/audio/sfx/phono-open-1.mp3");
-
   const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
 
   const { sound, setSound } = useContext(SoundContext);
 
   const [showReset, setShowReset] = useState(false);
 
-  const handleShowReset = () => setShowReset(true);
-
   const [showVersion, setShowVersion] = useState(false);
 
-  const handleShowVersion = () => setShowVersion(true);
+  const handleDBSelect = (type) => {
+    setDBType(type);
+    setContent("data-bank");
+  };
 
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
@@ -76,8 +83,13 @@ const Settings = ({ lockout, vers, setVers }) => {
         currentVers={vers}
         setVers={setVers}
       />
+      <DataBankOverlay
+        show={showDB}
+        setShow={setShowDB}
+        handleSelect={handleDBSelect}
+      />
       <Offcanvas
-        show={show}
+        show={showSettings}
         onHide={handleClose}
         placement="end"
         style={{
@@ -125,33 +137,22 @@ const Settings = ({ lockout, vers, setVers }) => {
               draggable="false"
               width={getWidth(114)}
               onClick={() => {
-                if (sound) {
-                  playButtonSelect();
-                  playVersionOpen();
-                }
-                handleShowVersion();
+                if (sound) playButtonSelect();
+                setShowVersion(true);
               }}
             />
-            <OverlayTrigger
-              placement="top"
-              delay={{ show: 400, hide: 200 }}
-              overlay={renderTooltip}
-            >
-              <LazyLoadImage
-                effect="opacity"
-                alt="Data Bank Button"
-                className="menu-button disabled"
-                src="assets/menu/data-bank.webp"
-                draggable="false"
-                width={getWidth(114)}
-                onClick={() => {
-                  if (sound) {
-                    playButtonSelect();
-                    playDataBankOpen();
-                  }
-                }}
-              />
-            </OverlayTrigger>
+            <LazyLoadImage
+              effect="opacity"
+              alt="Data Bank Button"
+              className="menu-button"
+              src="assets/menu/data-bank.webp"
+              draggable="false"
+              width={getWidth(114)}
+              onClick={() => {
+                if (sound) playButtonSelect();
+                setShowDB(true);
+              }}
+            />
             <OverlayTrigger
               placement="top"
               delay={{ show: 400, hide: 200 }}
@@ -208,7 +209,7 @@ const Settings = ({ lockout, vers, setVers }) => {
                   playButtonSelect();
                   playModalOpen();
                 }
-                handleShowReset();
+                setShowReset(true);
               }}
             />
             <a

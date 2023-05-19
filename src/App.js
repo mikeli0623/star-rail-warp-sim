@@ -9,6 +9,7 @@ import useSound from "use-sound";
 import { SoundProvider } from "./components/SoundContext";
 import { ResizeProvider } from "./components/ResizeContext";
 import Main from "./components/Main";
+import DataBank from "./components/DataBank";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -61,6 +62,7 @@ function App() {
   const [playMainBGM, mainData] = useSound(`assets/audio/bgm/${bgm}.mp3`, {
     loop: true,
     onload: () => setLockout(false),
+    mute: true,
     volume: 0.2,
   });
 
@@ -121,6 +123,10 @@ function App() {
     hasFour,
   ]);
 
+  const [showDB, setShowDB] = useState(false);
+
+  const [DBType, setDBType] = useState("char");
+
   return (
     <ResizeProvider value={resizeValue}>
       <SoundProvider value={soundValue}>
@@ -129,12 +135,15 @@ function App() {
             <Main
               lockout={lockout}
               bannerType={bannerType}
+              showDB={showDB}
+              setShowDB={setShowDB}
               setBannerType={setBannerType}
               setNewItems={setNewItems}
               setHasFive={setHasFive}
               setHasFour={setHasFour}
               setContent={setContent}
               setCurrentWarp={setCurrentWarp}
+              setDBType={setDBType}
             />
           )}
           {content === "video" && (
@@ -173,6 +182,13 @@ function App() {
                 }}
               />
             </React.Fragment>
+          )}
+          {content === "data-bank" && (
+            <DataBank
+              type={DBType}
+              setContent={setContent}
+              setShowDB={setShowDB}
+            />
           )}
         </div>
       </SoundProvider>

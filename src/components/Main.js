@@ -18,12 +18,15 @@ import Button from "./Button";
 export default function Main({
   lockout,
   bannerType,
+  showDB,
+  setShowDB,
   setBannerType,
   setNewItems,
   setHasFive,
   setHasFour,
   setContent,
   setCurrentWarp,
+  setDBType,
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
 
@@ -103,37 +106,17 @@ export default function Main({
   // creates stash
   useEffect(() => {
     if (JSON.parse(localStorage.getItem("stash"))) return;
-    let stash = [];
-    allChars.map((char) => stash.push({ itemId: char, count: 0 }));
-    allWeapons.map((weapon) => stash.push({ itemId: weapon, count: 0 }));
+    let stash = {};
+    allChars.map((char) => (stash[char] = 0));
+    allWeapons.map((weap) => (stash[weap] = 0));
     localStorage.setItem("stash", JSON.stringify(stash));
   }, []);
 
   const updateStash = (warpItem) => {
     let stash = JSON.parse(localStorage.getItem("stash"));
-    stash.map((stashItem) => {
-      if (stashItem.itemId === warpItem) {
-        if (stashItem.count === 0) setNewItems((prev) => [...prev, warpItem]);
-        stashItem.count += 1;
-      }
-      return stashItem;
-    });
-    orderStash(stash);
+    if (stash[warpItem] === 0) setNewItems((prev) => [...prev, warpItem]);
+    stash[warpItem]++;
     localStorage.setItem("stash", JSON.stringify(stash));
-  };
-
-  const orderStash = (stash) => {
-    for (let i = 1; i < stash.length; i++) {
-      if (stash[i].count > 0) {
-        for (let j = i - 1; j >= 0; j--) {
-          if (stash[j].count === 0) {
-            let tmp = stash[j];
-            stash[j] = stash[j + 1];
-            stash[j + 1] = tmp;
-          }
-        }
-      }
-    }
   };
 
   const banners = useMemo(() => {
@@ -231,7 +214,15 @@ export default function Main({
         }`,
       }}
     >
-      <Settings lockout={lockout} vers={vers} setVers={setVers} />
+      <Settings
+        lockout={lockout}
+        vers={vers}
+        showDB={showDB}
+        setShowDB={setShowDB}
+        setVers={setVers}
+        setDBType={setDBType}
+        setContent={setContent}
+      />
       <div
         id="main-back-cover"
         style={{
@@ -256,7 +247,7 @@ export default function Main({
         <div
           id="warp-icon"
           style={{
-            backgroundImage: "url(/assets/warp-icon.webp)",
+            backgroundImage: "url(/assets/icon-warp.webp)",
             width: getWidth(44),
             height: getWidth(44),
             backgroundSize: getWidth(44),

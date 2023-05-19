@@ -53,7 +53,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
             src={`../assets/banner/mini/beginner-active.webp`}
             width={getWidth(180)}
             style={{
-              transform: `translateY(100%)`,
+              transform: `translateY(95%)`,
               opacity: `${bannerType === "beginner" ? 1 : 0}`,
               pointerEvents: "none",
             }}
@@ -110,7 +110,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         src={`../assets/banner/mini/${vers}/weap-active.webp`}
         width={getWidth(180)}
         style={{
-          transform: hasBeginner ? `translateY(310%)` : "translateY(210%)",
+          transform: hasBeginner ? `translateY(305%)` : "translateY(210%)",
           opacity: `${bannerType === "weap" ? 1 : 0}`,
           pointerEvents: "none",
         }}
@@ -206,7 +206,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         alt="highlight"
         width={getWidth(160)}
         style={{
-          transform: "translateY(314%)",
+          transform: hasBeginner ? "translateY(309%)" : "translateY(315%)",
           opacity: hasBeginner
             ? `${highlightIndex === 1 && bannerType !== "char" ? 1 : 0}`
             : `${highlightIndex === 1 && bannerType !== "weap" ? 1 : 0}`,

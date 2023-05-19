@@ -212,18 +212,6 @@ html * {
   filter: brightness(0.8);
 }
 
-.mini-banner.beginner {
-  filter: brightness(1.1);
-}
-
-.mini-banner.beginner:hover {
-  filter: brightness(1.3);
-}
-
-.mini-banner.beginner:active {
-  filter: brightness(1);
-}
-
 .mini-banner:hover {
   filter: brightness(1);
 }
