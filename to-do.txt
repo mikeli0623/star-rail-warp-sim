@@ -1,0 +1,88 @@
+NOTE
+- for elements in position absolute, set transformation origin to opposite of whichever directions are set to 0
+	- eg. top: 0 and left: 0 means transform-origin: bottom right
+
+bugs
+- warp single if animation fully plays for a character, frame of giant image appears
+- no overflow for long width short height screens
+
+cloudinary
+- why the fuck normal 4 not work, but everything else does
+
+research how to smooth transitions between content changes
+
+add more @media for height and button positions
+
+menu icon add lower half shine to custom made ones like data bank and banner version
+
+SEO
+
+update readme like this
+https://github.com/uzair-ashraf/genshin-impact-wish-simulator
+
+multiverse vistas
+	- do i even meet the req.
+
+disclaimer
+	- idk if i need one
+	- credit mihoyo ig
+<a href="https://www.flaticon.com/free-icons/reset" title="reset icons">Reset icons created by inkubators - Flaticon</a>
+
+- phone icon opens up menu
+	- data bank
+		- overlay with LC or Character option
+			- not modal
+				- no CloseButton, but can click anywhere on overlay to exit
+	- version choosing
+	- stats?
+	- credits
+	- phonograph
+		- toggle BGM
+		- toggle Warp BGM
+			- localStorage
+
+- sounds
+	- change bgm option
+	- global volume multiplier
+	- sync 5 star video sound
+		- equalize video sounds
+
+other
+- maginfy icon not round enough
+
+maybe
+- seele weapon banner back too low res
+- stellar jade counter
+- exchange button?
+	- might just be a for fun button
+
+future
+- history
+	- max history 100 warps
+- loading bar to wait for load all images maybe
+- carousel tranistion for banners
+- use transition library of some sort for banner back transitions
+- low performance mode toggle
+- some warp single img quality for characters are kinda low
+- warp single cooler animations
+- warp result 5 star back card then turn
+- warp single 5 star special animation
+- shine effect
+	- rate up 4 star seele banner
+	- mini banners
+	- new tag
+- make standard and even warp buttons same, only difference is icon
+	- add border highlight 2px solid white
+- figure out minibanner main banner overlap
+- view details + history
+- standard banner additional rewards
+- soft pity somehow
+	- how does it even work
+- add some type of loading screen or indicator before video loads
+
+far far future
+- preloading assets?
+- add bonus drops and notification
+
+very low prio
+- preserve ring rotation degree in main and results
