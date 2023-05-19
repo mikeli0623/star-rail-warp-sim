@@ -203,22 +203,28 @@ export default function DataBank({ type, setContent, setShowDB }) {
           autoHideDuration={200}
           renderThumbVertical={renderThumb}
         >
-          {sortedStash
-            .filter(([name]) => {
-              if (filter === "All") return true;
-              return json.getPath(name) === filter;
-            })
-            .map(([name, count]) => {
-              return (
-                <ItemCard
-                  key={name}
-                  type={type}
-                  item={name}
-                  indexed={count > 0}
-                  handleSelect={handleItemSelect}
-                />
-              );
-            })}
+          {sortedStash.length > 0 ? (
+            sortedStash
+              .filter(([name]) => {
+                if (filter === "All") return true;
+                return json.getPath(name) === filter;
+              })
+              .map(([name, count]) => {
+                return (
+                  <ItemCard
+                    key={name}
+                    type={type}
+                    item={name}
+                    indexed={count > 0}
+                    handleSelect={handleItemSelect}
+                  />
+                );
+              })
+          ) : (
+            <p style={{ color: "white" }}>
+              Nothing appearing? Reset in the phone menu.
+            </p>
+          )}
         </Scrollbars>
       </div>
       <CloseButton onClose={handleExit} />
