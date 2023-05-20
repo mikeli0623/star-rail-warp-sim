@@ -10,6 +10,7 @@ import ResetModal from "./ResetModal";
 import VersionModal from "./VersionModal";
 import ResizeContext from "./ResizeContext";
 import DataBankOverlay from "./DataBankOverlay";
+import CreditsModal from "./CreditsModal";
 
 const Settings = ({
   lockout,
@@ -19,6 +20,8 @@ const Settings = ({
   setVers,
   setDBType,
   setContent,
+  fancy,
+  setFancy,
 }) => {
   const { getWidth } = useContext(ResizeContext);
 
@@ -49,6 +52,8 @@ const Settings = ({
   const [showReset, setShowReset] = useState(false);
 
   const [showVersion, setShowVersion] = useState(false);
+
+  const [showCredits, setShowCredits] = useState(false);
 
   const handleDBSelect = (type) => {
     setDBType(type);
@@ -88,6 +93,7 @@ const Settings = ({
         setShow={setShowDB}
         handleSelect={handleDBSelect}
       />
+      <CreditsModal show={showCredits} setShow={setShowCredits} />
       <Offcanvas
         show={showSettings}
         onHide={handleClose}
@@ -180,6 +186,7 @@ const Settings = ({
               flexDirection: "row",
               justifyContent: "space-evenly",
               width: "100%",
+              marginBottom: getWidth(15),
             }}
           >
             <LazyLoadImage
@@ -199,6 +206,18 @@ const Settings = ({
             />
             <LazyLoadImage
               effect="opacity"
+              alt="Fancy Animations Toggle Button"
+              className="menu-button"
+              src={`./assets/menu/fancy-${fancy ? "on" : "off"}.webp`}
+              draggable="false"
+              width={getWidth(114)}
+              onClick={() => {
+                if (sound) playButtonSelect();
+                setFancy(!fancy);
+              }}
+            />
+            <LazyLoadImage
+              effect="opacity"
               alt="Reset Button"
               className="menu-button"
               src="assets/menu/reset.webp"
@@ -210,6 +229,30 @@ const Settings = ({
                   playModalOpen();
                 }
                 setShowReset(true);
+              }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+              width: "100%",
+            }}
+          >
+            <LazyLoadImage
+              effect="opacity"
+              alt="Credits Button"
+              className="menu-button"
+              src="./assets/menu/credits.webp"
+              draggable="false"
+              width={getWidth(114)}
+              onClick={() => {
+                if (sound) {
+                  playButtonSelect();
+                  playModalOpen();
+                }
+                setShowCredits(true);
               }}
             />
             <a
@@ -232,6 +275,7 @@ const Settings = ({
                 }}
               />
             </a>
+            <div style={{ width: getWidth(114), height: getWidth(114) }} />
           </div>
         </Offcanvas.Body>
       </Offcanvas>

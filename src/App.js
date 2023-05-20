@@ -62,7 +62,6 @@ function App() {
   const [playMainBGM, mainData] = useSound(`assets/audio/bgm/${bgm}.mp3`, {
     loop: true,
     onload: () => setLockout(false),
-    mute: true,
     volume: 0.2,
   });
 
@@ -127,6 +126,8 @@ function App() {
 
   const [DBType, setDBType] = useState("char");
 
+  const [fancy, setFancy] = useState(false);
+
   return (
     <ResizeProvider value={resizeValue}>
       <SoundProvider value={soundValue}>
@@ -144,6 +145,8 @@ function App() {
               setContent={setContent}
               setCurrentWarp={setCurrentWarp}
               setDBType={setDBType}
+              fancy={fancy}
+              setFancy={setFancy}
             />
           )}
           {content === "video" && (
@@ -163,6 +166,7 @@ function App() {
               newItems={newItems}
               setNewItems={setNewItems}
               setContent={setContent}
+              fancy={fancy}
             />
           )}
           {content === "results" && (

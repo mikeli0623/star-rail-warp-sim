@@ -393,6 +393,7 @@ html * {
   right: 0;
   margin: auto;
   scale: 0.8;
+  z-index: 9;
 }
 
 .single-item.char {
@@ -449,6 +450,7 @@ html * {
 .glass.back {
   transform: translate(6%, 6%);
   animation: animate-glass-back 0.7s forwards;
+  z-index: 9;
 }
 
 @keyframes animate-glass-back {
@@ -469,6 +471,7 @@ html * {
 .glass.front {
   transform: translate(-6%, -6%);
   animation: animate-glass-front 0.7s forwards;
+  z-index: 9;
 }
 
 @keyframes animate-glass-front {
@@ -495,7 +498,7 @@ html * {
   position: absolute;
   top: 50%;
   left: 50%;
-  z-index: 1;
+  z-index: 10;
 }
 
 @keyframes animate-info {
@@ -550,6 +553,65 @@ html * {
 .single-name {
   word-wrap: break-word;
   user-select: none;
+  text-shadow: 0 0 4px black;
+}
+
+.animation-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  animation: animate-animation-ring 1.8s forwards;
+  animation-timing-function: cubic-bezier(0.58, 0.16, 0.19, 0.91);
+  filter: invert(100%) sepia(62%) saturate(7041%) hue-rotate(171deg)
+    brightness(105%) contrast(98%);
+}
+
+.animation-ring[rarity="5"] {
+  filter: invert(89%) sepia(5%) saturate(1652%) hue-rotate(334deg)
+    brightness(116%) contrast(91%);
+}
+
+.animation-ring[rarity="4"] {
+  filter: invert(90%) sepia(89%) saturate(513%) hue-rotate(192deg)
+    brightness(101%) contrast(97%);
+}
+
+@keyframes animate-animation-ring {
+  0% {
+    scale: 0.6;
+    opacity: 0.4;
+  }
+  33% {
+    scale: 2;
+    opacity: 1;
+  }
+  100% {
+    scale: 4;
+    rotate: -70deg;
+  }
+}
+
+.donut {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+  z-index: 3;
+  transform: translate(-50%, -50%);
+  border: 280px solid #5280db3f;
+  border-radius: 100%;
+  height: 1100px;
+  width: 1100px;
+  animation: animate-animation-ring 1.8s forwards;
+}
+.donut[rarity="4"] {
+  border-color: #5541ac49;
+}
+.donut[rarity="5"] {
+  border-color: #c49e4c2f;
 }
 
 /* Warp Results */
@@ -666,5 +728,30 @@ html * {
 
   .vers-icon {
     width: 100px;
+  }
+
+  @keyframes animate-animation-ring {
+    0% {
+      scale: 0.2;
+      opacity: 0.4;
+    }
+    33% {
+      scale: 0.8;
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      scale: 1.6;
+      rotate: 0.5turn;
+      opacity: 0;
+    }
+  }
+
+  .donut {
+    border-width: 200px;
+    height: 800px;
+    width: 800px;
   }
 }
