@@ -54,14 +54,14 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
             effect="opacity"
             className="db-item-element"
             alt="Element"
-            src={`assets/${info.element}.webp`}
+            src={`assets/${info.element.toLowerCase()}.webp`}
             width={size.width < 580 ? 25 : 40}
           />
         )}
         <LazyLoadImage
           effect="opacity"
           alt="Path"
-          src={`assets/icon-${info.path.replace(/ /g, "-")}.webp`}
+          src={`assets/icon-${info.path.toLowerCase().replace(/ /g, "-")}.webp`}
           width={size.width < 580 ? 20 : 35}
         />
       </div>
