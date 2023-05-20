@@ -17,6 +17,7 @@ const WarpResult = ({ warp, isNew, style }) => {
         style={{
           ...style,
         }}
+        draggable="false"
       />
       {isNew && (
         <LazyLoadImage
@@ -25,6 +26,7 @@ const WarpResult = ({ warp, isNew, style }) => {
           src="/assets/new.webp"
           width={getWidth(90)}
           style={{ ...style }}
+          draggable="false"
         />
       )}
     </div>

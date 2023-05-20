@@ -82,6 +82,16 @@
   transition: background-color 0.2s ease;
 }
 
+.filter-button:hover .filter-img-circle[active="false"] {
+  background-color: #3e404b;
+  outline: 2px solid #84868c;
+}
+
+.filter-button:active .filter-img-circle[active="false"] {
+  background-color: black;
+  outline: 2px solid #e0bc5e;
+}
+
 .filter-img-circle[active="true"] {
   background-color: #e9e9eb;
 }
@@ -118,7 +128,7 @@
 .db-item-container > div:first-of-type {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-content: flex-start;
   flex-wrap: wrap;
 }
 

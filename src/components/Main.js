@@ -27,6 +27,8 @@ export default function Main({
   setContent,
   setCurrentWarp,
   setDBType,
+  fancy,
+  setFancy,
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
 
@@ -222,6 +224,8 @@ export default function Main({
         setVers={setVers}
         setDBType={setDBType}
         setContent={setContent}
+        fancy={fancy}
+        setFancy={setFancy}
       />
       <div
         id="main-back-cover"

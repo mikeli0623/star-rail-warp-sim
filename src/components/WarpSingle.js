@@ -6,7 +6,13 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
 import ResizeContext from "./ResizeContext";
 
-const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
+const WarpSingle = ({
+  currentWarp,
+  newItems,
+  setNewItems,
+  setContent,
+  fancy,
+}) => {
   const cleanText = (text) => {
     return text
       .replace(/[^\w\s-]/g, "")
@@ -20,6 +26,7 @@ const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
   const [warpIndex, setWarpIndex] = useState(0);
 
   const [animateInfo, setAnimateInfo] = useState(false);
+  const [animateFancy, setAnimateFancy] = useState(false);
 
   const [playThree] = useSound("./assets/audio/sfx/three.mp3", { volume: 0.8 });
   const [playFour] = useSound("./assets/audio/sfx/four.mp3", { volume: 0.8 });
@@ -63,6 +70,7 @@ const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
   const nextSingle = () => {
     setWarpIndex(warpIndex + 1);
     setAnimateInfo(false);
+    setAnimateFancy(false);
   };
 
   const starPrinter = (i) => {
@@ -173,7 +181,7 @@ const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
           <div
             className="path-shadow"
             style={{
-              width: getWidth(60 + cleanText(item.path).length * 12),
+              width: getWidth(80 + cleanText(item.path).length * 12),
               height: getHeight(40, 120),
               fontSize: getWidth(28),
             }}
@@ -201,6 +209,7 @@ const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
                 json.getName(currentWarp[i])
               )}.webp`}
               alt={item.name}
+              onAnimationStart={() => setAnimateFancy(true)}
               onAnimationEnd={() => setAnimateInfo(true)}
               width={getWidth(1800)}
               draggable="false"
@@ -223,6 +232,7 @@ const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
                 className={`${
                   i === warpIndex ? "single-item" : "transparent"
                 } weap`}
+                onAnimationStart={() => setAnimateFancy(true)}
                 onAnimationEnd={() => setAnimateInfo(true)}
                 alt={currentWarp[i]}
                 src={`/assets/splash/${cleanText(
@@ -244,6 +254,23 @@ const WarpSingle = ({ currentWarp, newItems, setNewItems, setContent }) => {
             </React.Fragment>
           );
       })}
+      {fancy && (
+        <React.Fragment>
+          <LazyLoadImage
+            className={`${animateFancy ? "animation-ring" : "transparent"}`}
+            onAnimationEnd={() => setAnimateFancy(false)}
+            width={700}
+            effect="opacity"
+            alt="animation-ring"
+            src="assets/animation-ring.webp"
+            rarity={item.rarity}
+          />
+          <div
+            className={`${animateFancy ? "donut" : "transparent"}`}
+            rarity={item.rarity}
+          />
+        </React.Fragment>
+      )}
     </div>
   );
 };
