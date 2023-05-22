@@ -5,6 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { allChars, allWeapons } from "../classes/Constants";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
+import { useTranslation } from "react-i18next";
 
 export default function DataBankOverlay({ show, setShow, handleSelect }) {
   const { sound } = useContext(SoundContext);
@@ -24,6 +25,8 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
     },
     [0, 0]
   );
+
+  const { t } = useTranslation();
 
   return (
     <Modal
@@ -51,7 +54,7 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
           }}
           draggable="false"
         />
-        <div style={{ color: "white" }}>Light Cones</div>
+        <div style={{ color: "white" }}>{t("db.type1")}</div>
         <div style={{ color: "#dac291" }}>
           {total[0]}/{allWeapons.length}
         </div>
@@ -68,7 +71,7 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
           }}
           draggable="false"
         />
-        <div style={{ color: "white" }}>Characters</div>
+        <div style={{ color: "white" }}>{t("db.type2")}</div>
         <div style={{ color: "#dac291" }}>
           {total[1]}/{allChars.length}
         </div>

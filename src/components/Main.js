@@ -14,6 +14,7 @@ import BrilliantFixationJY from "../banners/BrilliantFixationJY";
 import SwirlOfHeavenlySpear from "../banners/SwirlOfHeavenlySpear";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 export default function Main({
   lockout,
@@ -31,6 +32,8 @@ export default function Main({
   setFancy,
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
+
+  const { t, i18n } = useTranslation();
 
   const [vers, setVers] = useState(sessionStorage.getItem("vers") || "1.1");
 
@@ -192,8 +195,8 @@ export default function Main({
   }, [bannerType]);
 
   const getBack = () => {
-    if (bannerType === "beginner") return "beginner";
-    if (bannerType === "standard") return "standard";
+    if (bannerType === "beginner") return "beginner/beginner";
+    if (bannerType === "standard") return "standard/standard";
     return `${vers}/${bannerType}`;
   };
 
@@ -276,7 +279,7 @@ export default function Main({
               marginTop: `-${getWidth(6)}px`,
             }}
           >
-            Warp
+            {t("main.title")}
           </div>
           <div
             id="warp-type"
@@ -286,7 +289,7 @@ export default function Main({
               height: getWidth(24),
             }}
           >
-            {json.getTitle(vers, bannerType)}
+            {json.getTitle(vers, bannerType, i18n.resolvedLanguage)}
           </div>
         </div>
       </div>
@@ -307,7 +310,7 @@ export default function Main({
         }}
         onClick={() => {}}
         size="md"
-        text="Exchange"
+        text={t("button.exchange")}
         disabled={true}
       />
       <Button
@@ -320,7 +323,7 @@ export default function Main({
         }}
         onClick={() => {}}
         size="md"
-        text="View Details"
+        text={t("button.view-details")}
         disabled={true}
       />
       <WarpButtons onWarp={handleWarp} event={bannerType} />

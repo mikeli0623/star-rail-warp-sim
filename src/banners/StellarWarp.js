@@ -2,9 +2,12 @@ import React, { useContext } from "react";
 import "../css/Banners.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
+import { useTranslation } from "react-i18next";
+import NameTag from "./NameTag";
 
 const StellarWarp = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
+  const { i18n } = useTranslation();
   return (
     <React.Fragment>
       <div
@@ -46,7 +49,7 @@ const StellarWarp = () => {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/himeko-back.webp"
+          src="../assets/banner/standard/himeko-back.webp"
           width={getWidth(500)}
           alt="char"
           draggable="false"
@@ -61,7 +64,7 @@ const StellarWarp = () => {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/bronya-back.webp"
+          src="../assets/banner/standard/bronya-back.webp"
           width={getWidth(900)}
           alt="char"
           draggable="false"
@@ -78,7 +81,7 @@ const StellarWarp = () => {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src="../assets/banner/standard-left.webp"
+        src={`../assets/banner/standard/${i18n.resolvedLanguage}/standard-left.webp`}
         width={getWidth(331)}
         alt="left"
         draggable="false"
@@ -92,7 +95,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/standard-rate-1.webp"
+        src="../assets/banner/standard/standard-rate-1.webp"
         alt="Night on the Milky Way"
         width={getWidth(135)}
         style={{
@@ -105,7 +108,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/standard-rate-2.webp"
+        src="../assets/banner/standard/standard-rate-2.webp"
         alt="But the Battle Isn't Over"
         width={getWidth(108)}
         style={{
@@ -117,7 +120,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/standard-rate-3.webp"
+        src="../assets/banner/standard/standard-rate-3.webp"
         alt="Something Irreplaceable"
         width={getWidth(108)}
         style={{
@@ -129,7 +132,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/weap-tag.webp"
+        src={`../assets/banner/standard/${i18n.resolvedLanguage}/weap-tag.webp`}
         alt="weapon tag"
         width={getWidth(240)}
         style={{
@@ -138,7 +141,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/himeko.webp"
+        src="../assets/banner/standard/himeko.webp"
         width={getWidth(500)}
         alt="char"
         draggable="false"
@@ -153,7 +156,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/gepard.webp"
+        src="../assets/banner/standard/gepard.webp"
         width={getWidth(800)}
         alt="char"
         draggable="false"
@@ -169,7 +172,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/bronya.webp"
+        src="../assets/banner/standard/bronya.webp"
         width={getWidth(900)}
         alt="char"
         draggable="false"
@@ -183,47 +186,26 @@ const StellarWarp = () => {
           animationFillMode: "both",
         }}
       />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/bronya-tag.webp"
-        width={getWidth(152)}
-        alt="bronya tag"
-        draggable="false"
+      <NameTag
+        name="Bronya"
         style={{
-          position: "absolute",
-          zIndex: "11",
-          top: "50%",
-          left: "50%",
-          transform: "translate(136%, 20%)",
+          transform: "translate(135%, 20%)",
         }}
+        bottom={true}
       />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/gepard-tag.webp"
-        width={getWidth(152)}
-        alt="gepard tag"
-        draggable="false"
+      <NameTag
+        name="Gepard"
         style={{
-          position: "absolute",
-          zIndex: "11",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-115%, -165%)",
+          transform: "translate(-110%, -165%)",
         }}
+        bottom={true}
       />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/himeko-tag.webp"
-        width={getWidth(152)}
-        alt="himeko tag"
-        draggable="false"
+      <NameTag
+        name="Himeko"
         style={{
-          position: "absolute",
-          zIndex: "11",
-          top: "50%",
-          left: "50%",
-          transform: "translate(225%, -100%)",
+          transform: "translate(215%, -100%)",
         }}
+        bottom={true}
       />
     </React.Fragment>
   );

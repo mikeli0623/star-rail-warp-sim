@@ -25,7 +25,7 @@ class ParseJSON {
     const json = this.isChar(item) ? this.charJSON : this.weaponJSON;
     for (const key of json) if (cleanText(key.name) === item) return key.rarity;
   }
-  getPath(item) {
+  getPath(item, lang = "en") {
     const json = this.isChar(item) ? this.charJSON : this.weaponJSON;
     for (const key of json) if (cleanText(key.name) === item) return key.path;
   }
@@ -34,9 +34,9 @@ class ParseJSON {
       if (cleanText(key.name) === name) return key.element;
     return "";
   }
-  getTitle(vers, type) {
+  getTitle(vers, type, lang = "en") {
     for (const key of this.bannerJSON) {
-      if (key.vers.includes(vers) && key.type === type) return key.title;
+      if (key.vers.includes(vers) && key.type === type) return key.title[lang];
     }
   }
   getRateUpFive(vers, type) {

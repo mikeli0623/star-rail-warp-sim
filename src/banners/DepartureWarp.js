@@ -2,14 +2,18 @@ import React, { useContext } from "react";
 import "../css/Banners.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
+import { useTranslation, Trans } from "react-i18next";
+import NameTag from "./NameTag";
 
 const DepartureWarp = ({ total }) => {
   const { getWidth } = useContext(ResizeContext);
+
+  const { t, i18n } = useTranslation();
   return (
     <React.Fragment>
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beg-gepard.webp"
+        src="../assets/banner/beginner/gepard.webp"
         width={getWidth(400)}
         alt="gepard"
         draggable="false"
@@ -24,7 +28,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/yanqing.webp"
+        src="../assets/banner/beginner/yanqing.webp"
         width={getWidth(740)}
         alt="yanqing"
         draggable="false"
@@ -39,7 +43,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beg-bronya.webp"
+        src="../assets/banner/beginner/bronya.webp"
         width={getWidth(1100)}
         alt="char"
         draggable="false"
@@ -54,7 +58,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/clara.webp"
+        src="../assets/banner/beginner/clara.webp"
         width={getWidth(400)}
         alt="char"
         draggable="false"
@@ -69,7 +73,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beg-himeko.webp"
+        src="../assets/banner/beginner/himeko.webp"
         width={getWidth(1100)}
         alt="char"
         draggable="false"
@@ -84,7 +88,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/bailu.webp"
+        src="../assets/banner/beginner/bailu.webp"
         width={getWidth(460)}
         alt="char"
         draggable="false"
@@ -99,7 +103,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/welt.webp"
+        src="../assets/banner/beginner/welt.webp"
         width={getWidth(700)}
         alt="char"
         draggable="false"
@@ -112,107 +116,51 @@ const DepartureWarp = ({ total }) => {
           animationFillMode: "both",
         }}
       />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/welt-tag.webp"
-        width={getWidth(130)}
-        alt="welt tag"
-        draggable="false"
+      <NameTag
+        name="Welt"
         style={{
-          position: "absolute",
-          zIndex: "1",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
+          transform: "translate(-30%, -30%)",
+        }}
+      />
+      <NameTag
+        name="Himeko"
+        style={{
+          transform: "translate(160%, -60%)",
+        }}
+      />
+      <NameTag
+        name="Bailu"
+        style={{
+          transform: "translate(390%, 80%)",
+        }}
+      />
+      <NameTag
+        name="Clara"
+        style={{
+          transform: "translate(300%, -160%)",
+        }}
+      />
+      <NameTag
+        name="Bronya"
+        style={{
+          transform: "translate(-240%, -110%)",
+        }}
+      />
+      <NameTag
+        name="Gepard"
+        style={{
+          transform: "translate(-90%, -350%)",
+        }}
+      />
+      <NameTag
+        name="Yanqing"
+        style={{
+          transform: "translate(-380%, -260%)",
         }}
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beg-bronya-tag.webp"
-        width={getWidth(160)}
-        alt="bronya tag"
-        draggable="false"
-        style={{
-          position: "absolute",
-          zIndex: "1",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-250%, -110%)",
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/yanqing-tag.webp"
-        width={getWidth(165)}
-        alt="yanqing tag"
-        draggable="false"
-        style={{
-          position: "absolute",
-          zIndex: "1",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-370%, -310%)",
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/beg-gepard-tag.webp"
-        width={getWidth(160)}
-        alt="gepard tag"
-        draggable="false"
-        style={{
-          position: "absolute",
-          zIndex: "1",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-100%, -430%)",
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/beg-himeko-tag.webp"
-        width={getWidth(160)}
-        alt="himeko tag"
-        draggable="false"
-        style={{
-          position: "absolute",
-          zIndex: "1",
-          top: "50%",
-          left: "50%",
-          transform: "translate(120%, -100%)",
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/clara-tag.webp"
-        width={getWidth(130)}
-        alt="clara tag"
-        draggable="false"
-        style={{
-          position: "absolute",
-          zIndex: "1",
-          top: "50%",
-          left: "50%",
-          transform: "translate(360%, -200%)",
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/bailu-tag.webp"
-        width={getWidth(130)}
-        alt="bailu tag"
-        draggable="false"
-        style={{
-          position: "absolute",
-          zIndex: "1",
-          top: "50%",
-          left: "50%",
-          transform: "translate(500%, 80%)",
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/starter-tag.webp"
+        src={`../assets/banner/beginner/${i18n.resolvedLanguage}/starter-tag.webp`}
         width={getWidth(160)}
         alt="starter tag"
         draggable="false"
@@ -230,13 +178,15 @@ const DepartureWarp = ({ total }) => {
           zIndex: "1",
           top: "50%",
           left: "50%",
-          transform: "translate(-210%, 235%)",
+          transform: "translate(-110%, 235%)",
+          width: getWidth(500),
+          textAlign: "left",
           color: "white",
           fontSize: getWidth(36),
           textShadow: "0 0 4px black",
         }}
       >
-        Departure Warp
+        {t("banner.beg.title")}
       </div>
       <div
         style={{
@@ -244,13 +194,14 @@ const DepartureWarp = ({ total }) => {
           zIndex: "1",
           top: "50%",
           left: "50%",
-          transform: "translate(135%, 730%)",
+          transform: "translate(82%, 730%)",
+          width: getWidth(360),
           color: "white",
           fontSize: getWidth(24),
           textShadow: "0 0 2px black",
         }}
       >
-        Remaining Warps: {50 - 10 * total}/50
+        {t("banner.beg.remaining")}: {50 - 10 * total}/50
       </div>
       <div
         style={{
@@ -270,10 +221,12 @@ const DepartureWarp = ({ total }) => {
           paddingTop: getWidth(12),
         }}
       >
-        20% off for set of 10 Warps, and a{" "}
-        <span style={{ color: "#d89747" }}>5</span>
-        -star character is guaranteed within
-        <span style={{ color: "#d89747" }}> 50 </span> Warps.
+        <Trans i18nKey="banner.beg.text">
+          20% off for set of 10 Warps, and a
+          <span style={{ color: "#d89747" }}>5</span>-star character is
+          guaranteed within <span style={{ color: "#d89747" }}>50</span>
+          Warps.
+        </Trans>
       </div>
     </React.Fragment>
   );

@@ -8,6 +8,7 @@ import SoundContext from "./SoundContext";
 import ResizeContext from "./ResizeContext";
 import ItemCard from "./ItemCard";
 import FilterButton from "./FilterButton";
+import { useTranslation } from "react-i18next";
 
 export default function DataBank({ type, setContent, setShowDB }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -90,6 +91,8 @@ export default function DataBank({ type, setContent, setShowDB }) {
     }
   };
 
+  const { t } = useTranslation();
+
   return (
     <section
       className="db-back"
@@ -130,7 +133,7 @@ export default function DataBank({ type, setContent, setShowDB }) {
               marginTop: `-${getWidth(6)}px`,
             }}
           >
-            Data Bank
+            {t("db.title")}
           </div>
           <div
             id="warp-type"
@@ -140,7 +143,7 @@ export default function DataBank({ type, setContent, setShowDB }) {
               height: getWidth(24),
             }}
           >
-            {type === "char" ? "Characters" : "Light Cones"}
+            {type === "char" ? t("db.type2") : t("db.type1")}
           </div>
         </div>
       </div>
@@ -148,7 +151,7 @@ export default function DataBank({ type, setContent, setShowDB }) {
         className="indexed-info"
         style={{ color: "white", fontSize: getWidth(24) }}
       >
-        Indexed{" "}
+        {t("db.indexed")}{" "}
         <span style={{ color: "#face75" }}>
           {total}/{type === "char" ? allChars.length : allWeapons.length}
         </span>

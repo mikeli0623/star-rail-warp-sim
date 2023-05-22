@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback, useEffect, Suspense } from "react";
 import "./css/App.css";
 import "./css/Lazy.css";
 import WarpVideo from "./components/WarpVideo";
@@ -200,4 +200,10 @@ function App() {
   );
 }
 
-export default App;
+export default function WrappedApp() {
+  return (
+    <Suspense fallback="...is loading">
+      <App />
+    </Suspense>
+  );
+}

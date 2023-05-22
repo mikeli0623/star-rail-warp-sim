@@ -2,7 +2,10 @@
   {
     "vers": ["1.0", "1.1"],
     "type": "beginner",
-    "title": "Departure Warp",
+    "title": {
+      "en": "Departure Warp",
+      "zh": "始发跃迁"
+    },
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -54,7 +57,7 @@
   {
     "vers": ["1.0"],
     "type": "char",
-    "title": "Butterfly of Swordtip",
+    "title": { "en": "Butterfly of Swordtip", "zh": "蝶立锋锷" },
     "rateUpFive": ["seele"],
     "rateUpFour": ["natasha", "pela", "hook"],
     "poolFiveChar": [
@@ -105,7 +108,11 @@
   {
     "vers": ["1.0"],
     "type": "weap",
-    "title": "Brilliant Fixation",
+    "title": {
+      "en": "Brilliant Fixation",
+      "zh": "流光定影",
+      "ko": "세월의 응고"
+    },
     "rateUpFive": ["in-the-night"],
     "rateUpFour": [
       "post-op-conversation",
@@ -160,7 +167,7 @@
   {
     "vers": ["1.0", "1.1"],
     "type": "standard",
-    "title": "Stellar Warp",
+    "title": { "en": "Stellar Warp", "zh": "群星跃迁", "ko": "뭇별의 워프" },
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -221,7 +228,11 @@
   {
     "vers": ["1.1"],
     "type": "char",
-    "title": "Swirl Of Heavenly Spear",
+    "title": {
+      "en": "Swirl Of Heavenly Spear",
+      "zh": "天戈麾斥",
+      "ko": "천과수 소용돌이"
+    },
     "rateUpFive": ["jing-yuan"],
     "rateUpFour": ["sushang", "march-7th", "tingyun"],
     "poolFiveChar": [
@@ -271,7 +282,11 @@
   {
     "vers": ["1.1"],
     "type": "weap",
-    "title": "Brilliant Fixation",
+    "title": {
+      "en": "Brilliant Fixation",
+      "zh": "流光定影",
+      "ko": "세월의 응고"
+    },
     "rateUpFive": ["before-dawn"],
     "rateUpFour": [
       "only-silence-remains",

@@ -3,6 +3,7 @@ import "../css/Banners.css";
 import "../css/vers/1.0.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
+import NameTag from "./NameTag";
 
 const ButterflyOnSwordtip = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -184,18 +185,10 @@ const ButterflyOnSwordtip = () => {
           filter: "brightness(0.4)",
         }}
       /> */}
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/1.0/seele-tag.webp"
-        width={getWidth(130)}
-        alt="seele tag"
-        draggable="false"
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-90%, 85%)",
-        }}
+      <NameTag
+        name="Seele"
+        bottom={true}
+        style={{ transform: "translate(-75%, 70%)" }}
       />
     </React.Fragment>
   );
