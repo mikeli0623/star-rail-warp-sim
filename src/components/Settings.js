@@ -1,16 +1,17 @@
 import React, { useState, useContext } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
-import ResetModal from "./ResetModal";
-import VersionModal from "./VersionModal";
+import ResetModal from "./modals/ResetModal";
+import VersionModal from "./modals/VersionModal";
 import ResizeContext from "./ResizeContext";
 import DataBankOverlay from "./DataBankOverlay";
-import CreditsModal from "./CreditsModal";
+import CreditsModal from "./modals/CreditsModal";
+import LangModal from "./modals/LangModal";
+import { useTranslation } from "react-i18next";
 
 const Settings = ({
   lockout,
@@ -44,7 +45,7 @@ const Settings = ({
   );
 
   const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
-  const [playPhonoOpen] = useSound("../assets/audio/sfx/phono-open-1.mp3");
+  // const [playPhonoOpen] = useSound("../assets/audio/sfx/phono-open-1.mp3");
   const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
 
   const { sound, setSound } = useContext(SoundContext);
@@ -55,16 +56,14 @@ const Settings = ({
 
   const [showCredits, setShowCredits] = useState(false);
 
+  const [showLang, setShowLang] = useState(false);
+
   const handleDBSelect = (type) => {
     setDBType(type);
     setContent("data-bank");
   };
 
-  const renderTooltip = (props) => (
-    <Tooltip id="button-tooltip" {...props}>
-      Coming soon...
-    </Tooltip>
-  );
+  const { i18n } = useTranslation();
 
   return (
     <React.Fragment>
@@ -94,6 +93,7 @@ const Settings = ({
         handleSelect={handleDBSelect}
       />
       <CreditsModal show={showCredits} setShow={setShowCredits} />
+      <LangModal show={showLang} setShow={setShowLang} />
       <Offcanvas
         show={showSettings}
         onHide={handleClose}
@@ -111,7 +111,7 @@ const Settings = ({
           <LazyLoadImage
             effect="opacity"
             alt="Game Logo"
-            src="assets/menu/logo.webp"
+            src={`assets/menu/${i18n.resolvedLanguage}/logo.webp`}
             draggable="false"
             width={getWidth(356)}
           />
@@ -139,7 +139,7 @@ const Settings = ({
               effect="opacity"
               alt="Banner Version Button"
               className="menu-button"
-              src="assets/menu/banner-version.webp"
+              src={`assets/menu/${i18n.resolvedLanguage}/banner-version.webp`}
               draggable="false"
               width={getWidth(114)}
               onClick={() => {
@@ -151,7 +151,7 @@ const Settings = ({
               effect="opacity"
               alt="Data Bank Button"
               className="menu-button"
-              src="assets/menu/data-bank.webp"
+              src={`assets/menu/${i18n.resolvedLanguage}/data-bank.webp`}
               draggable="false"
               width={getWidth(114)}
               onClick={() => {
@@ -159,26 +159,18 @@ const Settings = ({
                 setShowDB(true);
               }}
             />
-            <OverlayTrigger
-              placement="top"
-              delay={{ show: 400, hide: 200 }}
-              overlay={renderTooltip}
-            >
-              <LazyLoadImage
-                effect="opacity"
-                alt="Phonograph Button"
-                className="menu-button disabled"
-                src="assets/menu/phonograph.webp"
-                draggable="false"
-                width={getWidth(114)}
-                onClick={() => {
-                  if (sound) {
-                    playButtonSelect();
-                    playPhonoOpen();
-                  }
-                }}
-              />
-            </OverlayTrigger>
+            <LazyLoadImage
+              effect="opacity"
+              alt="Language Button"
+              className="menu-button"
+              src={`assets/menu/${i18n.resolvedLanguage}/language.webp`}
+              draggable="false"
+              width={getWidth(114)}
+              onClick={() => {
+                if (sound) playButtonSelect();
+                setShowLang(true);
+              }}
+            />
           </div>
           <div
             style={{
@@ -193,7 +185,9 @@ const Settings = ({
               effect="opacity"
               alt="Audio Toggle Button"
               className="menu-button"
-              src={`./assets/menu/audio-${sound ? "on" : "off"}.webp`}
+              src={`./assets/menu/${i18n.resolvedLanguage}/audio-${
+                sound ? "on" : "off"
+              }.webp`}
               draggable="false"
               title={lockout ? "Sounds are loading..." : ""}
               width={getWidth(114)}
@@ -208,7 +202,9 @@ const Settings = ({
               effect="opacity"
               alt="Fancy Animations Toggle Button"
               className="menu-button"
-              src={`./assets/menu/fancy-${fancy ? "on" : "off"}.webp`}
+              src={`./assets/menu/${i18n.resolvedLanguage}/fancy-${
+                fancy ? "on" : "off"
+              }.webp`}
               draggable="false"
               width={getWidth(114)}
               onClick={() => {
@@ -220,7 +216,7 @@ const Settings = ({
               effect="opacity"
               alt="Reset Button"
               className="menu-button"
-              src="assets/menu/reset.webp"
+              src={`assets/menu/${i18n.resolvedLanguage}/reset.webp`}
               draggable="false"
               width={getWidth(114)}
               onClick={() => {
@@ -244,7 +240,7 @@ const Settings = ({
               effect="opacity"
               alt="Credits Button"
               className="menu-button"
-              src="./assets/menu/credits.webp"
+              src={`assets/menu/${i18n.resolvedLanguage}/credits.webp`}
               draggable="false"
               width={getWidth(114)}
               onClick={() => {
@@ -264,7 +260,7 @@ const Settings = ({
                 effect="opacity"
                 alt="GitHub Link"
                 className="menu-button"
-                src="assets/menu/plug.webp"
+                src={`assets/menu/${i18n.resolvedLanguage}/plug.webp`}
                 draggable="false"
                 width={getWidth(114)}
                 onClick={() => {
@@ -275,7 +271,22 @@ const Settings = ({
                 }}
               />
             </a>
-            <div style={{ width: getWidth(114), height: getWidth(114) }} />
+            <a href="https://ko-fi.com/hbhhi" target="_blank" rel="noreferrer">
+              <LazyLoadImage
+                effect="opacity"
+                alt="Language Button"
+                className="menu-button"
+                src={`assets/menu/${i18n.resolvedLanguage}/panhandling.webp`}
+                draggable="false"
+                width={getWidth(114)}
+                onClick={() => {
+                  if (sound) {
+                    playButtonSelect();
+                    playPageOpen();
+                  }
+                }}
+              />
+            </a>
           </div>
         </Offcanvas.Body>
       </Offcanvas>

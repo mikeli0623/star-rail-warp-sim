@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { json } from "../classes/Constants";
 import useWindowSize from "./useWindowSize";
+import { useTranslation } from "react-i18next";
+const trans = require("../assets/data/translations.json");
 
 export default function ItemCard({ type, item, indexed, handleSelect }) {
   const info = {
@@ -10,6 +12,13 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
     rarity: json.getRarity(item),
     element: json.getElement(item),
     path: json.getPath(item),
+  };
+
+  const cleanText = (text) => {
+    return text
+      .replace(/[^\w\s-]/g, "")
+      .toLowerCase()
+      .replace(/\s+/g, "-");
   };
 
   const size = useWindowSize();
@@ -41,12 +50,14 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
     return Math.ceil(contentWidth / 180);
   };
 
+  const { t, i18n } = useTranslation();
+
   return (
     <div className="item-card" onClick={handleSelect}>
       <div className="card-gradient" rarity={info.rarity} />
       <div className="card-overlay" indexed={indexed.toString()} />
       <div className="index-noti" indexed={indexed.toString()}>
-        Not Indexed
+        {t("db.not-indexed")}
       </div>
       <div className="item-top">
         {type === "char" && (
@@ -102,7 +113,9 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
             transform: `translateY(-${wrapCount(info.name) * wrapMulti}%)`,
           }}
         >
-          {info.name}
+          {i18n.resolvedLanguage === "en"
+            ? info.name
+            : trans[i18n.resolvedLanguage][cleanText(info.name)]}
         </div>
         <div className="star-container">
           {Array(info.rarity)

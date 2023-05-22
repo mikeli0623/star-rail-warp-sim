@@ -346,7 +346,7 @@ html * {
 
 .vers-info {
   margin-bottom: 1%;
-  border: 4px solid #c2ab89;
+  border: 4px solid #cabdaa8c;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -355,12 +355,21 @@ html * {
   height: 130px;
 }
 
+.vers-info:hover {
+  background-color: #1b1b1b25;
+}
+
+.vers-info:active {
+  background-color: #4949496c;
+}
+
 .vers-info * {
-  transition: color 0.2s;
+  transition: color 0.2s, border-color 0.2s;
 }
 
 .vers-info.highlight {
   background-color: #282827;
+  border-color: #c2ab89;
 }
 
 .vers-info-text {

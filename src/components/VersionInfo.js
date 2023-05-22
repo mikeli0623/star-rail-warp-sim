@@ -3,6 +3,8 @@ import { json } from "../classes/Constants";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useTranslation } from "react-i18next";
+const trans = require("../assets/data/translations.json");
 
 export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
   const { sound } = useContext(SoundContext);
@@ -25,6 +27,10 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
       .join(" ");
   };
 
+  const { t, i18n } = useTranslation();
+
+  const isEnglish = i18n.resolvedLanguage === "en";
+
   return (
     <div
       className={`vers-info ${isCurrentSelected && "highlight"}`}
@@ -38,18 +44,30 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
       />
       <div className="vers-info-text">
         <div style={{ color: isCurrentSelected ? "white" : "black" }}>
-          Version {vers}
+          {t("modal.vers.vers")} {vers}
         </div>
         <div style={{ color: isCurrentSelected ? "#7d7d7d" : "#4F4F4F" }}>
-          Character Event:{" "}
+          {t("modal.vers.event1")}{" "}
           <span style={{ color: isCurrentSelected ? "#bebebe" : "#868686" }}>
-            {cleanText(json.getRateUpFive(vers, "char")[0])}
+            {cleanText(
+              isEnglish
+                ? json.getRateUpFive(vers, "char")[0]
+                : trans[i18n.resolvedLanguage][
+                    json.getRateUpFive(vers, "char")[0]
+                  ]
+            )}
           </span>
         </div>
         <div style={{ color: isCurrentSelected ? "#7d7d7d" : "#4F4F4F" }}>
-          Weapon Event:{" "}
+          {t("modal.vers.event2")}{" "}
           <span style={{ color: isCurrentSelected ? "#bebebe" : "#868686" }}>
-            {cleanText(json.getRateUpFive(vers, "weap")[0])}
+            {cleanText(
+              isEnglish
+                ? json.getRateUpFive(vers, "weap")[0]
+                : trans[i18n.resolvedLanguage][
+                    json.getRateUpFive(vers, "weap")[0]
+                  ]
+            )}
           </span>
         </div>
       </div>

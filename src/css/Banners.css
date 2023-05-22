@@ -1,4 +1,60 @@
+.name-tag {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: space-around;
+}
+
+.name-tag[anim="true"] {
+  animation: animate-tag 0.8s forwards;
+  animation-delay: 300ms;
+  opacity: 0;
+}
+
+.name-tag-top {
+  background-color: rgba(0, 0, 0, 0.6);
+  font-weight: 0;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.name-tag-bottom {
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-tag-bottom[bottom="false"] {
+  background-color: transparent;
+}
+
 /* Departure Warp */
+
+.beg-name-tag {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  animation: animate-tag 0.8s forwards;
+  animation-delay: 300ms;
+  opacity: 0;
+}
+
+@keyframes animate-tag {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
 @keyframes beginner-bronya-animation {
   0% {

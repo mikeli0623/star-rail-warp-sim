@@ -5,6 +5,8 @@ import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
 import ResizeContext from "./ResizeContext";
+import { useTranslation } from "react-i18next";
+const trans = require("../assets/data/translations.json");
 
 const WarpSingle = ({
   currentWarp,
@@ -73,6 +75,8 @@ const WarpSingle = ({
     setAnimateFancy(false);
   };
 
+  useEffect(() => console.log(trans));
+
   const starPrinter = (i) => {
     return (
       <LazyLoadImage
@@ -87,6 +91,8 @@ const WarpSingle = ({
       />
     );
   };
+
+  const { i18n } = useTranslation();
 
   return (
     <div
@@ -154,7 +160,9 @@ const WarpSingle = ({
                 marginTop: getWidth(8),
               }}
             >
-              {item.name}
+              {i18n.resolvedLanguage === "en"
+                ? item.name
+                : trans[i18n.resolvedLanguage][cleanText(item.name)]}
             </div>
             <div id="stars-container">
               {Array(item.rarity)
@@ -192,7 +200,9 @@ const WarpSingle = ({
               src={`./assets/${cleanText(item.path)}.webp`}
               width={getWidth(50)}
             />
-            {item.path}
+            {i18n.resolvedLanguage === "en"
+              ? item.path
+              : trans[i18n.resolvedLanguage][cleanText(item.path)]}
           </div>
         )}
       </div>

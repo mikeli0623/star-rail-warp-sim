@@ -3,9 +3,12 @@ import "../css/Banners.css";
 import "../css/vers/1.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
+import { useTranslation } from "react-i18next";
+import NameTag from "./NameTag";
 
 const SwirlOfHeavenlySpear = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
+  const { i18n } = useTranslation();
   return (
     <React.Fragment>
       <div
@@ -18,6 +21,18 @@ const SwirlOfHeavenlySpear = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-2720%, -50%)",
+        }}
+      />
+      <div
+        style={{
+          width: getWidth(100),
+          height: getHeight(50, 1100),
+          background:
+            "linear-gradient(180deg, black 75%, rgba(255, 255, 255, 0) 100%)",
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-310%, -678%)",
         }}
       />
       <div
@@ -141,7 +156,7 @@ const SwirlOfHeavenlySpear = () => {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src="../assets/banner/1.1/char-left.webp"
+        src={`../assets/banner/1.1/${i18n.resolvedLanguage}/char-left.webp`}
         width={getWidth(331)}
         alt="left"
         draggable="false"
@@ -182,18 +197,10 @@ const SwirlOfHeavenlySpear = () => {
           filter: "brightness(0.4)",
         }}
       /> */}
-      <LazyLoadImage
-        effect="opacity"
-        src="../assets/banner/1.1/jing-yuan-tag.webp"
-        width={getWidth(150)}
-        alt="seele tag"
-        draggable="false"
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-80%, 100%)",
-        }}
+      <NameTag
+        name="Jing Yuan"
+        bottom={true}
+        style={{ transform: "translate(-75%, 50%)" }}
       />
     </React.Fragment>
   );
