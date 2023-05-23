@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import SoundContext from "./SoundContext";
-import { allChars, json } from "../classes/Constants";
+import { allChars, json } from "../util/Constants";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
@@ -74,8 +74,6 @@ const WarpSingle = ({
     setAnimateInfo(false);
     setAnimateFancy(false);
   };
-
-  useEffect(() => console.log(trans));
 
   const starPrinter = (i) => {
     return (
@@ -160,9 +158,7 @@ const WarpSingle = ({
                 marginTop: getWidth(8),
               }}
             >
-              {i18n.resolvedLanguage === "en"
-                ? item.name
-                : trans[i18n.resolvedLanguage][cleanText(item.name)]}
+              {trans[cleanText(item.name)][i18n.resolvedLanguage]}
             </div>
             <div id="stars-container">
               {Array(item.rarity)
@@ -200,9 +196,7 @@ const WarpSingle = ({
               src={`./assets/${cleanText(item.path)}.webp`}
               width={getWidth(50)}
             />
-            {i18n.resolvedLanguage === "en"
-              ? item.path
-              : trans[i18n.resolvedLanguage][cleanText(item.path)]}
+            {trans[cleanText(item.path)][i18n.resolvedLanguage]}
           </div>
         )}
       </div>

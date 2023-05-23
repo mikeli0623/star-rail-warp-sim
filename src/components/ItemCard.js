@@ -1,7 +1,7 @@
 import "../css/DataBank.css";
 import React, { useEffect, useState } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { json } from "../classes/Constants";
+import { json } from "../util/Constants";
 import useWindowSize from "./useWindowSize";
 import { useTranslation } from "react-i18next";
 const trans = require("../assets/data/translations.json");
@@ -110,12 +110,13 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
         <div
           className="item-name"
           style={{
-            transform: `translateY(-${wrapCount(info.name) * wrapMulti}%)`,
+            transform: `translateY(-${
+              wrapCount(trans[cleanText(info.name)][i18n.resolvedLanguage]) *
+              wrapMulti
+            }%)`,
           }}
         >
-          {i18n.resolvedLanguage === "en"
-            ? info.name
-            : trans[i18n.resolvedLanguage][cleanText(info.name)]}
+          {trans[cleanText(info.name)][i18n.resolvedLanguage]}
         </div>
         <div className="star-container">
           {Array(info.rarity)

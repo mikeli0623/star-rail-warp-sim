@@ -1,10 +1,11 @@
 import "../css/DataBank.css";
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 const trans = require("../assets/data/translations.json");
 
 export default function FilterButton({ text, active, handleSelect }) {
   const dumbText = text.toLowerCase().replace(/ /g, "-");
+  useEffect(() => console.log(text, dumbText));
   const { i18n } = useTranslation();
   return (
     <div className="filter-button" onClick={() => handleSelect(text)}>
@@ -18,9 +19,7 @@ export default function FilterButton({ text, active, handleSelect }) {
         />
       </div>
       <span className="filter-text" active={active.toString()}>
-        {i18n.resolvedLanguage === "en"
-          ? text
-          : trans[i18n.resolvedLanguage][dumbText]}
+        {trans[dumbText][i18n.resolvedLanguage]}
       </span>
     </div>
   );

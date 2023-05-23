@@ -4,7 +4,17 @@
     "type": "beginner",
     "title": {
       "en": "Departure Warp",
-      "zh": "始发跃迁"
+      "zh": "始发跃迁",
+      "ja": "始発跳躍",
+      "ko": "초행길 워프",
+      "es": "Salto de partida",
+      "fr": "Saut hyperespace de départ",
+      "ru": "Отправной прыжок",
+      "th": "ก้าวแรกแห่งการวาร์ป",
+      "vi": "Bước Nhảy Đầu Tiên",
+      "de": "Startwarp",
+      "id": "Warp Keberangkatan",
+      "pt": "Salto Hiperespacial de Partida"
     },
     "poolFiveChar": [
       "himeko",
@@ -57,7 +67,20 @@
   {
     "vers": ["1.0"],
     "type": "char",
-    "title": { "en": "Butterfly of Swordtip", "zh": "蝶立锋锷" },
+    "title": {
+      "en": "Butterfly of Swordtip",
+      "zh": "蝶立锋锷",
+      "ja": "切先の蝶",
+      "ko": "칼끝의 나비",
+      "es": "Mariposa en el filo",
+      "fr": "Papillon sur la pointe de la lame",
+      "ru": "Бабочка на острие",
+      "th": "ผีเสื้อบนปลายดาบ",
+      "vi": "Bướm Trên Mũi Kiếm",
+      "de": "Schmetterling auf der Schwertspitze",
+      "id": "Kupu-Kupu di Ujung Pedang",
+      "pt": "Borboleta na Ponta da Espada"
+    },
     "rateUpFive": ["seele"],
     "rateUpFour": ["natasha", "pela", "hook"],
     "poolFiveChar": [
@@ -111,7 +134,16 @@
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
-      "ko": "세월의 응고"
+      "ko": "세월의 응고",
+      "ja": "光陰を定めし影",
+      "es": "Fijación brillante",
+      "fr": "Fixation brillante",
+      "ru": "Искрящаяся фиксация",
+      "th": "เปลวแสงที่พร่างพราว",
+      "vi": "Định Hình Năm Tháng",
+      "de": "Strahlende Verankerung",
+      "id": "Fiksasi Brilian",
+      "pt": "Fixação Brilhante"
     },
     "rateUpFive": ["in-the-night"],
     "rateUpFour": [
@@ -167,7 +199,20 @@
   {
     "vers": ["1.0", "1.1"],
     "type": "standard",
-    "title": { "en": "Stellar Warp", "zh": "群星跃迁", "ko": "뭇별의 워프" },
+    "title": {
+      "en": "Stellar Warp",
+      "zh": "群星跃迁",
+      "ko": "뭇별의 워프",
+      "ja": "群星跳躍",
+      "es": "Salto estelar",
+      "fr": "Saut stellaire",
+      "ru": "Звёздный прыжок",
+      "th": "วาร์ปสู่ดวงดาว",
+      "vi": "Bước Nhảy Chòm Sao",
+      "de": "Stellarwarp",
+      "id": "Warp Bintang-Bintang",
+      "pt": "Salto Hiperespacial Estelar"
+    },
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -231,7 +276,16 @@
     "title": {
       "en": "Swirl Of Heavenly Spear",
       "zh": "天戈麾斥",
-      "ko": "천과수 소용돌이"
+      "ko": "천과수 소용돌이",
+      "ja": "奔放な天矛",
+      "es": "Espiral de la lanza celestial",
+      "fr": "Tourbillon de la lance céleste",
+      "ru": "Вихрь небесных копий",
+      "th": "เกลียวหอกสวรรค์",
+      "vi": "Thiên Giáo Trách Phạt",
+      "de": "Wirbel des himmlischen Speeres",
+      "id": "Pusaran Tombak Langit",
+      "pt": "Turbilhão da Lança Celestia"
     },
     "rateUpFive": ["jing-yuan"],
     "rateUpFour": ["sushang", "march-7th", "tingyun"],
@@ -285,7 +339,16 @@
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
-      "ko": "세월의 응고"
+      "ko": "세월의 응고",
+      "ja": "光陰を定めし影",
+      "es": "Fijación brillante",
+      "fr": "Fixation brillante",
+      "ru": "Искрящаяся фиксация",
+      "th": "เปลวแสงที่พร่างพราว",
+      "vi": "Định Hình Năm Tháng",
+      "de": "Strahlende Verankerung",
+      "id": "Fiksasi Brilian",
+      "pt": "Fixação Brilhante"
     },
     "rateUpFive": ["before-dawn"],
     "rateUpFour": [

@@ -1,0 +1,44 @@
+{
+  "main": {
+    "title": "Salto Hiperespacial"
+  },
+  "modal": {
+    "lang": { "title": "Escolha seu idioma" },
+    "reset": {
+      "title": "Redefinir dados",
+      "body": "Isso redefinirá permanentemente todos os seus dados. Tem certeza?"
+    },
+    "credits": {
+      "title": "Credits",
+      "body": "A maioria dos ativos pertence a Mihoyo e foi retirada do Honkai Star Rail e editada. <1/> Alguns ícones fornecidos por: <3> <1> <0> Reset icons created by inkubators - Flaticon </0> </1> <1> <0> Cinema icons created by SumberRejeki - Flaticon </0> </1> <1> <0> Country icons created by Freepik - Flaticon </0> </1> </3>"
+    },
+    "vers": {
+      "title": "Escolha sua versão",
+      "vers": "Versão",
+      "event1": "Salto Hiperespacial de Evento de Personagem:",
+      "event2": "Salto Hiperespacial de Evento de Cone de Luz:"
+    }
+  },
+  "db": {
+    "title": "Banco de Dados",
+    "type1": "Cones de Luz",
+    "type2": "Personagens",
+    "indexed": "Indexado",
+    "not-indexed": "Não Indexado"
+  },
+  "button": {
+    "close": "Fechar",
+    "cancel": "Cancelar",
+    "confirm": "Confirme",
+    "reset": "Reiniciar",
+    "exchange": "Troca",
+    "view-details": "Detalhes"
+  },
+  "banner": {
+    "beg": {
+      "title": "Salto Hiperespacial de Partida",
+      "remaining": "Saltos Hiperespaciais restantes",
+      "text": "Conjuntos de 10 Saltos Hiperespaciais com 20% de desconto e um personagem <1>5</1> estrelas é garantido em até <1>50</1> Saltos Hiperespaciais."
+    }
+  }
+}

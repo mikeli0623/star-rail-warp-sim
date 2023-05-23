@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { img_path, json } from "../classes/Constants";
+import { img_path, json } from "../util/Constants";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "./ResizeContext";

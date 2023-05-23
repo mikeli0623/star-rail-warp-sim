@@ -161,7 +161,7 @@
 }
 
 .card-overlay[indexed="false"] {
-  background-color: rgba(46, 46, 46, 0.363);
+  background-color: rgba(46, 46, 46, 0.6);
 }
 
 .item-card:hover .card-overlay {

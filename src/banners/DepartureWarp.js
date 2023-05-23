@@ -4,9 +4,19 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
 import { useTranslation, Trans } from "react-i18next";
 import NameTag from "./NameTag";
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 const DepartureWarp = ({ total }) => {
   const { getWidth } = useContext(ResizeContext);
+
+  const renderThumb = ({ style, ...props }) => {
+    const thumbStyle = {
+      backgroundColor: `#c4ceda`,
+    };
+    return (
+      <div className="bar" style={{ ...style, ...thumbStyle }} {...props} />
+    );
+  };
 
   const { t, i18n } = useTranslation();
   return (
@@ -161,7 +171,7 @@ const DepartureWarp = ({ total }) => {
       <LazyLoadImage
         effect="opacity"
         src={`../assets/banner/beginner/${i18n.resolvedLanguage}/starter-tag.webp`}
-        width={getWidth(160)}
+        width={getWidth(300)}
         alt="starter tag"
         draggable="false"
         style={{
@@ -169,7 +179,7 @@ const DepartureWarp = ({ total }) => {
           zIndex: "1",
           top: "50%",
           left: "50%",
-          transform: "translate(-350%, 300%)",
+          transform: "translate(-186%, 270%)",
         }}
       />
       <div
@@ -203,7 +213,10 @@ const DepartureWarp = ({ total }) => {
       >
         {t("banner.beg.remaining")}: {50 - 10 * total}/50
       </div>
-      <div
+
+      <Scrollbars
+        renderThumbVertical={renderThumb}
+        className="beg-description"
         style={{
           position: "absolute",
           zIndex: "1",
@@ -217,8 +230,6 @@ const DepartureWarp = ({ total }) => {
           fontSize: getWidth(24),
           textAlign: "left",
           boxSizing: "border-box",
-          paddingLeft: getWidth(12),
-          paddingTop: getWidth(12),
         }}
       >
         <Trans i18nKey="banner.beg.text">
@@ -227,7 +238,7 @@ const DepartureWarp = ({ total }) => {
           guaranteed within <span style={{ color: "#d89747" }}>50</span>
           Warps.
         </Trans>
-      </div>
+      </Scrollbars>
     </React.Fragment>
   );
 };
