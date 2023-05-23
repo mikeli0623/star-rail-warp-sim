@@ -1,7 +1,7 @@
 import "../css/DataBank.css";
 import React, { useContext, useEffect, useState } from "react";
 import { Scrollbars } from "react-custom-scrollbars-2";
-import { json, allChars, allWeapons } from "../classes/Constants";
+import { json, allChars, allWeapons } from "../util/Constants";
 import CloseButton from "./CloseButton";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";

@@ -4,7 +4,7 @@ import useSound from "use-sound";
 import SoundContext from "../SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
-import { allVers } from "../../classes/Constants";
+import { allVers } from "../../util/Constants";
 import VersionInfo from "../VersionInfo";
 import { useTranslation } from "react-i18next";
 

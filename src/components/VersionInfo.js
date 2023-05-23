@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { json } from "../classes/Constants";
+import { json } from "../util/Constants";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -29,8 +29,6 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
 
   const { t, i18n } = useTranslation();
 
-  const isEnglish = i18n.resolvedLanguage === "en";
-
   return (
     <div
       className={`vers-info ${isCurrentSelected && "highlight"}`}
@@ -50,11 +48,7 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
           {t("modal.vers.event1")}{" "}
           <span style={{ color: isCurrentSelected ? "#bebebe" : "#868686" }}>
             {cleanText(
-              isEnglish
-                ? json.getRateUpFive(vers, "char")[0]
-                : trans[i18n.resolvedLanguage][
-                    json.getRateUpFive(vers, "char")[0]
-                  ]
+              trans[json.getRateUpFive(vers, "char")[0]][i18n.resolvedLanguage]
             )}
           </span>
         </div>
@@ -62,11 +56,7 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
           {t("modal.vers.event2")}{" "}
           <span style={{ color: isCurrentSelected ? "#bebebe" : "#868686" }}>
             {cleanText(
-              isEnglish
-                ? json.getRateUpFive(vers, "weap")[0]
-                : trans[i18n.resolvedLanguage][
-                    json.getRateUpFive(vers, "weap")[0]
-                  ]
+              trans[json.getRateUpFive(vers, "weap")[0]][i18n.resolvedLanguage]
             )}
           </span>
         </div>

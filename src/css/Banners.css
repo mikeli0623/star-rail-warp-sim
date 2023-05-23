@@ -37,6 +37,10 @@
 
 /* Departure Warp */
 
+.beg-description > div {
+  padding: 12px;
+}
+
 .beg-name-tag {
   position: absolute;
   z-index: 1;
@@ -229,5 +233,11 @@
   100% {
     transform: scale(1) translate(-450%, 25%) rotate(-10deg);
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .beg-description > div {
+    padding: 5px;
   }
 }

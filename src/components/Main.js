@@ -1,7 +1,7 @@
 import React, { useState, useContext, useMemo, useEffect } from "react";
-import { json, allChars, allWeapons } from "../classes/Constants";
-import { CalcWarp } from "../classes/CalcWarp";
-// import History from "../classes/History";
+import { json, allChars, allWeapons } from "../util/Constants";
+import { CalcWarp } from "../util/CalcWarp";
+// import History from "../util/History";
 import WarpButtons from "./WarpButtons";
 import MiniBanners from "./MiniBanners";
 import Settings from "./Settings";
@@ -247,8 +247,8 @@ export default function Main({
       <div
         id="info"
         style={{
-          width: getWidth(380),
-          height: getHeight(50, 380),
+          width: getWidth(680),
+          height: getHeight(50, 680),
         }}
       >
         <div
@@ -262,8 +262,8 @@ export default function Main({
         />
         <div
           style={{
-            height: getHeight(50, 300),
-            width: getWidth(300),
+            height: getHeight(50, 600),
+            width: getWidth(600),
             display: "flex",
             flexDirection: "column",
             margin: 0,

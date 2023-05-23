@@ -2,7 +2,7 @@ import "../css/DataBank.css";
 import React, { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { allChars, allWeapons } from "../classes/Constants";
+import { allChars, allWeapons } from "../util/Constants";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
 import { useTranslation } from "react-i18next";

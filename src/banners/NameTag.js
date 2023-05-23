@@ -1,12 +1,12 @@
 import "../css/DataBank.css";
 import React, { useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { json } from "../classes/Constants";
+import { json } from "../util/Constants";
 import { useTranslation } from "react-i18next";
 import ResizeContext from "../components/ResizeContext";
 const trans = require("../assets/data/translations.json");
 
-const asianLang = ["zh"];
+const asianLang = ["zh", "ko", "ja"];
 
 export default function NameTag({ style, name, bottom = false, anim = true }) {
   const cleanText = (text) => {
@@ -18,11 +18,7 @@ export default function NameTag({ style, name, bottom = false, anim = true }) {
   const dumbText = name.toLowerCase().replace(/ /g, "-");
   const tagWidth = () => {
     const multi = asianLang.includes(i18n.resolvedLanguage) ? 34 : 16;
-    const calcName =
-      i18n.resolvedLanguage === "en"
-        ? name
-        : trans[i18n.resolvedLanguage][dumbText];
-    return calcName.length * multi;
+    return trans[dumbText][i18n.resolvedLanguage].length * multi;
   };
 
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -49,9 +45,7 @@ export default function NameTag({ style, name, bottom = false, anim = true }) {
           draggable="false"
           width={getWidth(34)}
         />
-        {i18n.resolvedLanguage === "en"
-          ? name
-          : trans[i18n.resolvedLanguage][dumbText]}
+        {trans[dumbText][i18n.resolvedLanguage]}
       </span>
       <span
         className="name-tag-bottom"

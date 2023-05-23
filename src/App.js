@@ -126,7 +126,7 @@ function App() {
 
   const [DBType, setDBType] = useState("char");
 
-  const [fancy, setFancy] = useState(false);
+  const [fancy, setFancy] = useState(true);
 
   return (
     <ResizeProvider value={resizeValue}>

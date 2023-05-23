@@ -4,11 +4,22 @@ import useSound from "use-sound";
 import SoundContext from "../SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useTranslation } from "react-i18next";
 
 const langs = {
   en: { nativeName: "English" },
   zh: { nativeName: "中文" },
+  ko: { nativeName: "한국인" },
+  ja: { nativeName: "日本語" },
+  es: { nativeName: "Español" },
+  ru: { nativeName: "русский" },
+  th: { nativeName: "แบบไทย" },
+  vi: { nativeName: "Tiếng Việt" },
+  id: { nativeName: "Bahasa Indo" },
+  fr: { nativeName: "Français" },
+  de: { nativeName: "Deutsch" },
+  pt: { nativeName: "Português" },
 };
 
 export default function LangModal({ show, setShow }) {
@@ -44,13 +55,19 @@ export default function LangModal({ show, setShow }) {
           resize={false}
         />
       </Modal.Header>
-      <Modal.Body style={{ backgroundColor: "#e9e7e2", display: "flex" }}>
+      <Modal.Body
+        style={{
+          backgroundColor: "#e9e7e2",
+          display: "flex",
+          flexWrap: "wrap",
+        }}
+      >
         {Object.keys(langs).map((lang) => (
           <Button
             key={lang}
             style={{
               fontWeight: i18n.resolvedLanguage === lang ? "bold" : "normal",
-              margin: "0 5px",
+              margin: "5px",
             }}
             size="sm"
             text={
@@ -59,9 +76,11 @@ export default function LangModal({ show, setShow }) {
                   width: "100%",
                   display: "flex",
                   justifyContent: "space-evenly",
+                  alignItems: "center",
                 }}
               >
-                <img
+                <LazyLoadImage
+                  effect="opacity"
                   alt="country icon"
                   src={`assets/lang-icons/${lang}.webp`}
                   width={22}

@@ -34,6 +34,7 @@ html * {
   display: flex;
   justify-content: center;
   align-items: center;
+  line-height: 100%;
 }
 
 .custom-button.disabled {
@@ -178,7 +179,7 @@ html * {
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(10%, 60%);
+  transform: translate(5%, 60%);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -730,7 +731,17 @@ html * {
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .custom-button {
+    line-height: 80%;
+  }
+}
+
 @media screen and (max-width: 500px) {
+  .custom-button {
+    line-height: 50%;
+  }
+
   .vers-info {
     font-size: 14px;
   }
