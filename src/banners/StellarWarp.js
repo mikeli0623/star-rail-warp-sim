@@ -192,6 +192,7 @@ const StellarWarp = () => {
           transform: "translate(135%, 20%)",
         }}
         bottom={true}
+        anim={false}
       />
       <NameTag
         name="Gepard"
@@ -199,6 +200,7 @@ const StellarWarp = () => {
           transform: "translate(-110%, -165%)",
         }}
         bottom={true}
+        anim={false}
       />
       <NameTag
         name="Himeko"
@@ -206,6 +208,7 @@ const StellarWarp = () => {
           transform: "translate(215%, -100%)",
         }}
         bottom={true}
+        anim={false}
       />
     </React.Fragment>
   );

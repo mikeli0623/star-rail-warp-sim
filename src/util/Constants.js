@@ -1,12 +1,6 @@
 import parseJSON from "./parseJSON";
 export const json = new parseJSON();
 
-export const path = {};
-
-export const img_path = {
-  warpResult: "../assets/warp-results/",
-};
-
 const baseWeapons = [
   "amber",
   "arrows",
@@ -148,4 +142,6 @@ const allBGM = [
 
 const allVers = ["1.1", "1.0"];
 
-export { allChars, allWeapons, baseWeapons, allBGM, allVers };
+const asianLang = ["zh", "ko", "ja"];
+
+export { allChars, allWeapons, baseWeapons, allBGM, allVers, asianLang };

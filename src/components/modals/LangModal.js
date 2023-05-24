@@ -28,8 +28,8 @@ export default function LangModal({ show, setShow }) {
 
   const { t, i18n } = useTranslation();
 
-  const [playModalOpen] = useSound("../assets/audio/sfx/banner-open.mp3");
-  const [playModalClose] = useSound("../assets/audio/sfx/banner-close.mp3");
+  const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
+  const [playModalClose] = useSound("../assets/audio/sfx/modal-close.mp3");
   const [playButton] = useSound("/assets/audio/sfx/button-select.mp3");
   const [playCancel] = useSound("/assets/audio/sfx/button-cancel.mp3");
 
@@ -65,9 +65,9 @@ export default function LangModal({ show, setShow }) {
         {Object.keys(langs).map((lang) => (
           <Button
             key={lang}
+            className="country-button"
             style={{
               fontWeight: i18n.resolvedLanguage === lang ? "bold" : "normal",
-              margin: "5px",
             }}
             size="sm"
             text={
@@ -80,12 +80,13 @@ export default function LangModal({ show, setShow }) {
                 }}
               >
                 <LazyLoadImage
+                  className="country-icon"
                   effect="opacity"
-                  alt="country icon"
+                  alt="Country Icon"
                   src={`assets/lang-icons/${lang}.webp`}
                   width={22}
                 />
-                {langs[lang].nativeName}
+                <span className="country-name">{langs[lang].nativeName}</span>
               </span>
             }
             onClick={() => {

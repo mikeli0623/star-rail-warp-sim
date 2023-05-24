@@ -7,6 +7,7 @@ export default function Button({
   style,
   text,
   onClick,
+  className = "",
   size = "md",
   cancel = false,
   disabled = false,
@@ -48,7 +49,7 @@ export default function Button({
 
   return (
     <div
-      className={`custom-button ${disabled && "disabled"}`}
+      className={`custom-button ${disabled && "disabled"} ${className}`}
       onClick={handleClick}
       style={{
         ...style,

@@ -21,8 +21,6 @@ const Settings = ({
   setVers,
   setDBType,
   setContent,
-  fancy,
-  setFancy,
 }) => {
   const { getWidth } = useContext(ResizeContext);
 
@@ -200,20 +198,6 @@ const Settings = ({
             />
             <LazyLoadImage
               effect="opacity"
-              alt="Fancy Animations Toggle Button"
-              className="menu-button"
-              src={`./assets/menu/${i18n.resolvedLanguage}/fancy-${
-                fancy ? "on" : "off"
-              }.webp`}
-              draggable="false"
-              width={getWidth(114)}
-              onClick={() => {
-                if (sound) playButtonSelect();
-                setFancy(!fancy);
-              }}
-            />
-            <LazyLoadImage
-              effect="opacity"
               alt="Reset Button"
               className="menu-button"
               src={`assets/menu/${i18n.resolvedLanguage}/reset.webp`}
@@ -227,15 +211,6 @@ const Settings = ({
                 setShowReset(true);
               }}
             />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-              width: "100%",
-            }}
-          >
             <LazyLoadImage
               effect="opacity"
               alt="Credits Button"
@@ -251,6 +226,15 @@ const Settings = ({
                 setShowCredits(true);
               }}
             />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+              width: "100%",
+            }}
+          >
             <a
               href="https://github.com/mikeli0623/star-rail"
               target="_blank"
@@ -271,10 +255,14 @@ const Settings = ({
                 }}
               />
             </a>
-            <a href="https://ko-fi.com/hbhhi" target="_blank" rel="noreferrer">
+            <a
+              href="https://ko-fi.com/mikeli0623"
+              target="_blank"
+              rel="noreferrer"
+            >
               <LazyLoadImage
                 effect="opacity"
-                alt="Language Button"
+                alt="Support Button"
                 className="menu-button"
                 src={`assets/menu/${i18n.resolvedLanguage}/panhandling.webp`}
                 draggable="false"
@@ -287,6 +275,7 @@ const Settings = ({
                 }}
               />
             </a>
+            <div style={{ width: getWidth(114), height: getWidth(114) }} />
           </div>
         </Offcanvas.Body>
       </Offcanvas>

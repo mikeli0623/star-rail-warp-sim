@@ -41,7 +41,7 @@ export default function NameTag({ style, name, bottom = false, anim = true }) {
       >
         <LazyLoadImage
           alt={json.getElement(dumbText)}
-          src={`assets/${cleanText(json.getElement(dumbText))}.webp`}
+          src={`assets/elem-${cleanText(json.getElement(dumbText))}.webp`}
           draggable="false"
           width={getWidth(34)}
         />

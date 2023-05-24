@@ -126,8 +126,6 @@ function App() {
 
   const [DBType, setDBType] = useState("char");
 
-  const [fancy, setFancy] = useState(true);
-
   return (
     <ResizeProvider value={resizeValue}>
       <SoundProvider value={soundValue}>
@@ -145,8 +143,6 @@ function App() {
               setContent={setContent}
               setCurrentWarp={setCurrentWarp}
               setDBType={setDBType}
-              fancy={fancy}
-              setFancy={setFancy}
             />
           )}
           {content === "video" && (
@@ -163,10 +159,10 @@ function App() {
           {content === "single" && (
             <WarpSingle
               currentWarp={currentWarp}
+              hasFive={hasFive}
               newItems={newItems}
               setNewItems={setNewItems}
               setContent={setContent}
-              fancy={fancy}
             />
           )}
           {content === "results" && (
@@ -179,6 +175,7 @@ function App() {
               />
               <WarpResults
                 currentWarp={currentWarp}
+                hasFive={hasFive}
                 newItems={newItems}
                 onClose={() => {
                   setContent("main");
@@ -202,8 +199,12 @@ function App() {
 
 export default function WrappedApp() {
   return (
-    <Suspense fallback="...is loading">
+    <Suspense fallback={<Loading />}>
       <App />
     </Suspense>
   );
+}
+
+function Loading() {
+  return <div id="loading">Loading...</div>;
 }

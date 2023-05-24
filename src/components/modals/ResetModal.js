@@ -26,7 +26,6 @@ export default function ResetModal({ show, setShow }) {
     >
       <Modal.Header style={{ backgroundColor: "#e9e7e2" }}>
         <Modal.Title style={{ fontWeight: "bold" }}>
-          {" "}
           {t("modal.reset.title")}
         </Modal.Title>
         <CloseButton

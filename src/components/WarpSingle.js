@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import SoundContext from "./SoundContext";
-import { allChars, json } from "../util/Constants";
+import { allChars, json, asianLang } from "../util/Constants";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
@@ -8,12 +8,14 @@ import ResizeContext from "./ResizeContext";
 import { useTranslation } from "react-i18next";
 const trans = require("../assets/data/translations.json");
 
+const baseDelay = 400;
+const addDelay = 100;
 const WarpSingle = ({
   currentWarp,
   newItems,
+  hasFive,
   setNewItems,
   setContent,
-  fancy,
 }) => {
   const cleanText = (text) => {
     return text
@@ -29,10 +31,14 @@ const WarpSingle = ({
 
   const [animateInfo, setAnimateInfo] = useState(false);
   const [animateFancy, setAnimateFancy] = useState(false);
+  const [animateFive, setAnimateFive] = useState(false);
+  const [firstAnimation, setFirstAnimation] = useState(true);
 
   const [playThree] = useSound("./assets/audio/sfx/three.mp3", { volume: 0.8 });
   const [playFour] = useSound("./assets/audio/sfx/four.mp3", { volume: 0.8 });
-  const [playFive] = useSound("./assets/audio/sfx/five.mp3", { volume: 0.8 });
+  const [playFive, playFiveData] = useSound("./assets/audio/sfx/five.mp3", {
+    volume: 0.8,
+  });
 
   const [item, setItem] = useState({
     name: json.getName(currentWarp[0]),
@@ -50,17 +56,16 @@ const WarpSingle = ({
       rarity: json.getRarity(currentWarp[warpIndex]),
       isChar: allChars.includes(currentWarp[warpIndex]),
     });
+    if (json.getRarity(currentWarp[warpIndex]) === 5) setAnimateFive(true);
   }, [currentWarp, warpIndex]);
 
   useEffect(() => {
     const length = currentWarp.length;
     if (warpIndex === length) {
-      if (length === 10) {
-        if (sound) playFour();
-        setContent("results");
-      } else setContent("main");
+      if (length === 10) setContent("results");
+      else setContent("main");
     }
-  }, [warpIndex, currentWarp, setContent, playFour, sound]);
+  }, [warpIndex, currentWarp, setContent]);
 
   useEffect(() => {
     if (!sound) return;
@@ -73,6 +78,9 @@ const WarpSingle = ({
     setWarpIndex(warpIndex + 1);
     setAnimateInfo(false);
     setAnimateFancy(false);
+    setAnimateFive(false);
+    setFirstAnimation(true);
+    if (sound) playFiveData.stop();
   };
 
   const starPrinter = (i) => {
@@ -90,6 +98,11 @@ const WarpSingle = ({
     );
   };
 
+  const pathWidth = (path) => {
+    const multi = asianLang.includes(i18n.resolvedLanguage) ? 28 : 14;
+    return trans[path][i18n.resolvedLanguage].length * multi;
+  };
+
   const { i18n } = useTranslation();
 
   return (
@@ -103,7 +116,9 @@ const WarpSingle = ({
       <CloseButton
         onClose={() => {
           if (currentWarp.length === 10) {
-            if (sound) playFour();
+            if (sound) {
+              if (hasFive) playFiveData.stop();
+            }
             setContent("results");
           } else {
             setContent("main");
@@ -134,7 +149,7 @@ const WarpSingle = ({
             <LazyLoadImage
               effect="opacity"
               className={`${animateInfo ? "single-type" : "transparent"}`}
-              src={`./assets/${cleanText(item.element)}.webp`}
+              src={`./assets/elem-${cleanText(item.element)}.webp`}
               alt={item.element}
               width={`${getWidth(90)}`}
               draggable="false"
@@ -143,7 +158,7 @@ const WarpSingle = ({
             <LazyLoadImage
               effect="opacity"
               className={`${animateInfo ? "single-type" : "transparent"}`}
-              src={`./assets/${cleanText(item.path)}.webp`}
+              src={`./assets/path-${cleanText(item.path)}.webp`}
               alt={item.path}
               width={`${getWidth(115)}`}
               draggable="false"
@@ -185,7 +200,7 @@ const WarpSingle = ({
           <div
             className="path-shadow"
             style={{
-              width: getWidth(80 + cleanText(item.path).length * 12),
+              width: getWidth(80 + pathWidth(cleanText(item.path))),
               height: getHeight(40, 120),
               fontSize: getWidth(28),
             }}
@@ -193,20 +208,170 @@ const WarpSingle = ({
             <LazyLoadImage
               effect="opacity"
               alt={item.path}
-              src={`./assets/${cleanText(item.path)}.webp`}
+              src={`./assets/path-${cleanText(item.path)}.webp`}
               width={getWidth(50)}
             />
             {trans[cleanText(item.path)][i18n.resolvedLanguage]}
           </div>
         )}
       </div>
+      {animateFive && (
+        <div className="five-special-container">
+          <LazyLoadImage
+            className="reveal-path"
+            effect="opacity"
+            src={`./assets/path-${cleanText(item.path)}-lg.webp`}
+            alt={item.path}
+            onAnimationEnd={() => {
+              if (firstAnimation) setFirstAnimation(!firstAnimation);
+              else setAnimateFive(false);
+            }}
+            style={{
+              animation:
+                "animate-reveal-path 400ms cubic-bezier(.77,.07,.57,.81) 0s 1 both, animate-out-path 200ms cubic-bezier(.77,.07,.57,.81) 600ms 1 both",
+            }}
+          />
+          <div
+            className="reveal-star-group"
+            style={{
+              transform: "translate(-190%,-50%)",
+              animation:
+                "animate-reveal-first-group 400ms ease-in-out 0s 1 both",
+            }}
+          >
+            <div
+              className="reveal-star-back"
+              style={{
+                animation: `animate-reveal-back 100ms ease-in-out ${baseDelay}ms 1 both`,
+              }}
+            />
+            <LazyLoadImage
+              className="reveal-star"
+              effect="opacity"
+              src="./assets/reveal-star.webp"
+              alt="Star"
+              style={{
+                animation:
+                  "animate-reveal-star 400ms ease-in-out 0s 1 both, animate-out-small-star 200ms cubic-bezier(.77,.07,.57,.81) 600ms 1 both",
+              }}
+            />
+          </div>
+          <div
+            className="reveal-star-group"
+            style={{
+              transform: "translate(-120%,-50%)",
+              animation:
+                "animate-reveal-second-group 400ms ease-in-out 50ms 1 both",
+            }}
+          >
+            <div
+              className="reveal-star-back"
+              style={{
+                animation: `animate-reveal-back 100ms ease-in-out ${
+                  baseDelay + addDelay
+                }ms 1 both`,
+              }}
+            />
+            <LazyLoadImage
+              className="reveal-star"
+              effect="opacity"
+              src="./assets/reveal-star.webp"
+              alt="Star"
+              style={{
+                animation: `animate-reveal-star 400ms ease-in-out ${addDelay}ms 1 both, animate-out-small-star 200ms cubic-bezier(.77,.07,.57,.81) 600ms 1 both`,
+              }}
+            />
+          </div>
+          <div
+            className="reveal-star-group"
+            style={{
+              transform: "translate(-50%,-50%)",
+              animation:
+                "animate-reveal-third-group 400ms ease-in-out 100ms 1 both",
+            }}
+          >
+            <div
+              className="reveal-star-back main"
+              style={{
+                animation: `animate-reveal-back 100ms ease-in-out ${
+                  baseDelay + 2 * addDelay
+                }ms 1 both`,
+              }}
+            />
+            <LazyLoadImage
+              className="reveal-star main"
+              effect="opacity"
+              src="./assets/reveal-star.webp"
+              alt="Star"
+              style={{
+                animation: `animate-reveal-star 400ms ease-in-out ${
+                  2 * addDelay
+                }ms 1 both, animate-out-star 200ms cubic-bezier(.77,.07,.57,.81) 600ms 1 both`,
+              }}
+            />
+          </div>
+          <div
+            className="reveal-star-group"
+            style={{
+              transform: "translate(20%,-50%)",
+              animation:
+                "animate-reveal-fourth-group 400ms ease-in-out 50ms 1 both",
+            }}
+          >
+            <div
+              className="reveal-star-back"
+              style={{
+                animation: `animate-reveal-back 100ms ease-in-out ${
+                  baseDelay + addDelay
+                }ms 1 both`,
+              }}
+            />
+            <LazyLoadImage
+              className="reveal-star"
+              effect="opacity"
+              src="./assets/reveal-star.webp"
+              alt="Star"
+              style={{
+                animation: `animate-reveal-star 400ms ease-in-out ${addDelay}ms 1 both, animate-out-small-star 200ms cubic-bezier(.77,.07,.57,.81) 600ms 1 both`,
+              }}
+            />
+          </div>
+          <div
+            className="reveal-star-group"
+            style={{
+              transform: "translate(90%,-50%)",
+              animation:
+                "animate-reveal-fifth-group 400ms ease-in-out 0ms 1 both",
+            }}
+          >
+            <div
+              className="reveal-star-back"
+              style={{
+                animation: `animate-reveal-back 100ms ease-in-out ${baseDelay}ms 1 both`,
+              }}
+            />
+            <LazyLoadImage
+              className="reveal-star"
+              effect="opacity"
+              src="./assets/reveal-star.webp"
+              alt="Star"
+              style={{
+                animation:
+                  "animate-reveal-star 400ms ease-in-out 0ms 1 both, animate-out-small-star 200ms cubic-bezier(.77,.07,.57,.81) 600ms 1 both",
+              }}
+            />
+          </div>
+        </div>
+      )}
       {currentWarp.map((warp, i) => {
         if (item.isChar)
           return (
             <LazyLoadImage
               effect="opacity"
               className={`${
-                i === warpIndex ? "single-item" : "transparent"
+                i === warpIndex && (!animateFive || item.rarity !== 5)
+                  ? "single-item"
+                  : "transparent"
               } char`}
               key={warp + i}
               src={`/assets/splash/${cleanText(
@@ -224,7 +389,11 @@ const WarpSingle = ({
             <React.Fragment key={warp + i}>
               <LazyLoadImage
                 effect="opacity"
-                className={`${i === warpIndex ? "glass" : "transparent"} back`}
+                className={`${
+                  i === warpIndex && (!animateFive || item.rarity !== 5)
+                    ? "glass"
+                    : "transparent"
+                } back`}
                 src="./assets/glass-back.webp"
                 alt="glass back"
                 style={{ rotate: "7deg" }}
@@ -234,7 +403,9 @@ const WarpSingle = ({
               <LazyLoadImage
                 effect="opacity"
                 className={`${
-                  i === warpIndex ? "single-item" : "transparent"
+                  i === warpIndex && (!animateFive || item.rarity !== 5)
+                    ? "single-item"
+                    : "transparent"
                 } weap`}
                 onAnimationStart={() => setAnimateFancy(true)}
                 onAnimationEnd={() => setAnimateInfo(true)}
@@ -248,7 +419,11 @@ const WarpSingle = ({
               />
               <LazyLoadImage
                 effect="opacity"
-                className={`${i === warpIndex ? "glass" : "transparent"} front`}
+                className={`${
+                  i === warpIndex && (!animateFive || item.rarity !== 5)
+                    ? "glass"
+                    : "transparent"
+                } front`}
                 src="./assets/glass-front.webp"
                 alt="glass front"
                 style={{ rotate: "7deg" }}
@@ -258,23 +433,19 @@ const WarpSingle = ({
             </React.Fragment>
           );
       })}
-      {fancy && (
-        <React.Fragment>
-          <LazyLoadImage
-            className={`${animateFancy ? "animation-ring" : "transparent"}`}
-            onAnimationEnd={() => setAnimateFancy(false)}
-            width={700}
-            effect="opacity"
-            alt="animation-ring"
-            src="assets/animation-ring.webp"
-            rarity={item.rarity}
-          />
-          <div
-            className={`${animateFancy ? "donut" : "transparent"}`}
-            rarity={item.rarity}
-          />
-        </React.Fragment>
-      )}
+      <LazyLoadImage
+        className={`${animateFancy ? "animation-ring" : "transparent"}`}
+        onAnimationEnd={() => setAnimateFancy(false)}
+        width={700}
+        effect="opacity"
+        alt="animation-ring"
+        src="assets/animation-ring.webp"
+        rarity={item.rarity}
+      />
+      <div
+        className={`${animateFancy ? "donut" : "transparent"}`}
+        rarity={item.rarity}
+      />
     </div>
   );
 };

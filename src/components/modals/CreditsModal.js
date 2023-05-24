@@ -4,7 +4,7 @@ import useSound from "use-sound";
 import SoundContext from "../SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 
 export default function CreditsModal({ show, setShow }) {
   const { sound } = useContext(SoundContext);
@@ -38,44 +38,41 @@ export default function CreditsModal({ show, setShow }) {
         />
       </Modal.Header>
       <Modal.Body style={{ backgroundColor: "#e9e7e2" }}>
-        <Trans i18nKey="modal.credits.body">
-          Most assets belong to Mihoyo and were taken from in Honkai Star Rail
-          and edited.
-          <br />
-          Some icons provided by:
-          <ul>
-            <li>
-              <a
-                href="https://www.flaticon.com/free-icons/reset"
-                title="reset icons"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Reset icons created by inkubators - Flaticon
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.flaticon.com/free-icons/cinema"
-                title="cinema icons"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Cinema icons created by SumberRejeki - Flaticon
-              </a>
-            </li>
-            <li>
-              <a
-                href="https://www.flaticon.com/free-icons/country"
-                title="country icons"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Country icons created by Freepik - Flaticon
-              </a>
-            </li>
-          </ul>
-        </Trans>
+        {t("modal.credits.body1")}
+        <br />
+        {t("modal.credits.body2")}
+        <ul>
+          <li>
+            <a
+              href="https://www.flaticon.com/free-icons/reset"
+              title="Reset Icons"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Reset icons created by inkubators - Flaticon
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.flaticon.com/free-icons/cinema"
+              title="Cinema Icons"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Cinema icons created by SumberRejeki - Flaticon
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.flaticon.com/free-icons/country"
+              title="Country Icons"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Country icons created by Freepik - Flaticon
+            </a>
+          </li>
+        </ul>
       </Modal.Body>
       <Modal.Footer style={{ backgroundColor: "#e9e7e2" }}>
         <Button
