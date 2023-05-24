@@ -4,7 +4,13 @@ import useSound from "use-sound";
 import SoundContext from "./SoundContext";
 import ResizeContext from "./ResizeContext";
 
-const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
+const MiniBanners = ({
+  vers,
+  bannerType,
+  setBannerType,
+  setDirection,
+  hasBeginner,
+}) => {
   const [highlightIndex, setHighlightIndex] = useState(null);
 
   const [play] = useSound("../assets/audio/sfx/mini-select.mp3", {
@@ -32,6 +38,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
             onClick={() => {
               if (bannerType !== "beginner") {
                 setBannerType("beginner");
+                setDirection("down");
                 if (sound) play();
               }
             }}
@@ -87,6 +94,9 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         onClick={() => {
           if (bannerType !== "char") {
             setBannerType("char");
+            if (hasBeginner) {
+              setDirection(bannerType === "weap" ? "down" : "up");
+            } else setDirection("down");
             if (sound) play();
           }
         }}
@@ -128,6 +138,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         }}
         onClick={() => {
           if (bannerType !== "weap") {
+            setDirection(bannerType === "char" ? "down" : "up");
             setBannerType("weap");
             if (sound) play();
           }
@@ -170,6 +181,7 @@ const MiniBanners = ({ vers, bannerType, setBannerType, hasBeginner }) => {
         onClick={() => {
           if (bannerType !== "standard") {
             setBannerType("standard");
+            setDirection("up");
             if (sound) play();
           }
         }}

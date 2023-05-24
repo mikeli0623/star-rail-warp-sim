@@ -4,13 +4,26 @@ import "../css/vers/1.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
 import { useTranslation } from "react-i18next";
-import NameTag from "./NameTag";
+import NameTag from "../components/NameTag";
+import { motion } from "framer-motion";
 
-const SwirlOfHeavenlySpear = () => {
+const SwirlOfHeavenlySpear = ({ direction }) => {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
   return (
-    <React.Fragment>
+    <motion.div
+      key="jy-char"
+      className="banner"
+      initial={{
+        transform: `translate(-50%, ${direction === "up" ? "-" : ""}500%)`,
+        opacity: 0,
+      }}
+      animate={{ transform: "translate(-50%,-50%)", opacity: 1 }}
+      exit={{
+        transform: `translate(-50%, ${direction === "up" ? "" : "-"}500%)`,
+        opacity: 0,
+      }}
+    >
       <div
         style={{
           width: getWidth(8),
@@ -68,7 +81,7 @@ const SwirlOfHeavenlySpear = () => {
           draggable="false"
           style={{
             position: "relative",
-            animation: "jing-yuan-back-animation 2s 1",
+            animation: "jing-yuan-back-animation 3s 200ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -80,7 +93,7 @@ const SwirlOfHeavenlySpear = () => {
           width: getWidth(72.3),
           height: getHeight(206.1, 72.3),
           transform: "translate(-680%, 90%)",
-          animation: "appear 50ms 1",
+          animation: "appear 50ms 200ms 1",
           opacity: "0",
           animationFillMode: "both",
         }}
@@ -94,7 +107,7 @@ const SwirlOfHeavenlySpear = () => {
             position: "absolute",
             animation: "sushang-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-            animationDelay: "50ms",
+            animationDelay: "250ms",
             opacity: "0",
             animationFillMode: "both",
           }}
@@ -107,7 +120,7 @@ const SwirlOfHeavenlySpear = () => {
           height: getHeight(206.1, 72.3),
           transform: "translate(-560%, 90%)",
           animation: "appear 50ms 1",
-          animationDelay: "75ms",
+          animationDelay: "275ms",
           opacity: "0",
           animationFillMode: "both",
         }}
@@ -121,7 +134,7 @@ const SwirlOfHeavenlySpear = () => {
             position: "absolute",
             animation: "march-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-            animationDelay: "100ms",
+            animationDelay: "300ms",
             animationFillMode: "both",
             opacity: "0",
           }}
@@ -134,7 +147,7 @@ const SwirlOfHeavenlySpear = () => {
           height: getHeight(206.1, 72.3),
           transform: "translate(-440%, 90%)",
           animation: "appear 50ms 1",
-          animationDelay: "150ms",
+          animationDelay: "350ms",
           opacity: "0",
           animationFillMode: "both",
         }}
@@ -148,7 +161,7 @@ const SwirlOfHeavenlySpear = () => {
             position: "absolute",
             animation: "tingyun-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-            animationDelay: "150ms",
+            animationDelay: "350ms",
             animationFillMode: "both",
             opacity: "0",
           }}
@@ -178,7 +191,7 @@ const SwirlOfHeavenlySpear = () => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "jing-yuan-animation 2s 1",
+          animation: "jing-yuan-animation 3s 200ms 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
@@ -203,7 +216,7 @@ const SwirlOfHeavenlySpear = () => {
         style={{ transform: "translate(-75%, 50%)" }}
         anim={false}
       />
-    </React.Fragment>
+    </motion.div>
   );
 };
 

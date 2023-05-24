@@ -48,7 +48,7 @@
 
 @keyframes jing-yuan-weap-back-animation {
   0% {
-    transform: translate(30%, -15%);
+    transform: translate(25%, -13%);
   }
   100% {
     transform: translate(20%, -12%);

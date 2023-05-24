@@ -3,11 +3,24 @@ import "../css/Banners.css";
 import "../css/vers/1.0.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
+import { motion } from "framer-motion";
 
-const BrilliantFixationS = () => {
+const BrilliantFixationS = ({ direction }) => {
   const { getWidth, getHeight } = useContext(ResizeContext);
   return (
-    <React.Fragment>
+    <motion.div
+      key="se-weap"
+      className="banner"
+      initial={{
+        transform: `translate(-50%, ${direction === "up" ? "-" : ""}500%)`,
+        opacity: 0,
+      }}
+      animate={{ transform: "translate(-50%,-50%)", opacity: 1 }}
+      exit={{
+        transform: `translate(-50%, ${direction === "up" ? "" : "-"}500%)`,
+        opacity: 0,
+      }}
+    >
       <div
         style={{
           width: getWidth(764),
@@ -40,7 +53,7 @@ const BrilliantFixationS = () => {
           alt="right"
           draggable="false"
           style={{
-            animation: "seele-weap-back-animation 2s 1",
+            animation: "seele-weap-back-animation 3s 200ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -52,10 +65,10 @@ const BrilliantFixationS = () => {
         alt="The Moles Welcome You"
         width={getWidth(135)}
         style={{
-          animation: "cone-1-animation 0.3s 1",
+          animation: "cone-1-animation 0.5s 1",
           animationTimingFunction: "linear",
           animationFillMode: "both",
-          animationDelay: "100ms",
+          animationDelay: "300ms",
         }}
       />
       <LazyLoadImage
@@ -65,9 +78,9 @@ const BrilliantFixationS = () => {
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
-          animation: "cone-2-animation 0.3s 1",
+          animation: "cone-2-animation 0.5s 1",
           animationFillMode: "both",
-          animationDelay: "150ms",
+          animationDelay: "350ms",
         }}
       />
       <LazyLoadImage
@@ -77,9 +90,9 @@ const BrilliantFixationS = () => {
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
-          animation: "cone-3-animation 0.3s 1",
+          animation: "cone-3-animation 0.5s 1",
           animationFillMode: "both",
-          animationDelay: "200ms",
+          animationDelay: "400ms",
         }}
       />
       <LazyLoadImage
@@ -127,7 +140,7 @@ const BrilliantFixationS = () => {
           filter: "brightness(0.4)",
         }}
       /> */}
-    </React.Fragment>
+    </motion.div>
   );
 };
 

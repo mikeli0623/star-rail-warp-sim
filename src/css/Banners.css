@@ -1,3 +1,9 @@
+.banner {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
 .name-tag {
   position: absolute;
   z-index: 1;
@@ -11,7 +17,7 @@
 
 .name-tag[anim="true"] {
   animation: animate-tag 0.8s forwards;
-  animation-delay: 300ms;
+  animation-delay: 500ms;
   opacity: 0;
 }
 

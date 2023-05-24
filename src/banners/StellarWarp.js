@@ -3,13 +3,20 @@ import "../css/Banners.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
 import { useTranslation } from "react-i18next";
-import NameTag from "./NameTag";
+import NameTag from "../components/NameTag";
+import { motion } from "framer-motion";
 
 const StellarWarp = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
   return (
-    <React.Fragment>
+    <motion.div
+      key="standard"
+      className="banner"
+      initial={{ transform: "translate(-50%, 500%)", opacity: 0 }}
+      animate={{ transform: "translate(-50%,-50%)", opacity: 1 }}
+      exit={{ transform: "translate(-50%, 500%)", opacity: 0 }}
+    >
       <div
         style={{
           width: getWidth(8),
@@ -57,7 +64,7 @@ const StellarWarp = () => {
             position: "absolute",
             top: "50%",
             left: "50%",
-            animation: "himeko-back-animation 2s 1",
+            animation: "himeko-back-animation 3s 200ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -73,7 +80,7 @@ const StellarWarp = () => {
             top: "50%",
             left: "50%",
             transform: "translate(-51.1%, -58%)",
-            animation: "bronya-back-animation 2s 1",
+            animation: "bronya-back-animation 3s 200ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -100,10 +107,10 @@ const StellarWarp = () => {
         width={getWidth(135)}
         style={{
           transform: "translate(-280%, 40%) rotate(5deg)",
-          animation: "cone-1-animation 0.3s 1",
+          animation: "cone-1-animation 0.4s 1",
           animationTimingFunction: "linear",
           animationFillMode: "both",
-          animationDelay: "100ms",
+          animationDelay: "300ms",
         }}
       />
       <LazyLoadImage
@@ -113,9 +120,9 @@ const StellarWarp = () => {
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
-          animation: "cone-2-animation 0.3s 1",
+          animation: "cone-2-animation 0.4s 1",
           animationFillMode: "both",
-          animationDelay: "150ms",
+          animationDelay: "350ms",
         }}
       />
       <LazyLoadImage
@@ -125,9 +132,9 @@ const StellarWarp = () => {
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
-          animation: "cone-3-animation 0.3s 1",
+          animation: "cone-3-animation 0.4s 1",
           animationFillMode: "both",
-          animationDelay: "200ms",
+          animationDelay: "400ms",
         }}
       />
       <LazyLoadImage
@@ -149,7 +156,7 @@ const StellarWarp = () => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "himeko-animation 2s 1",
+          animation: "himeko-animation 3s 200ms 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
@@ -165,7 +172,7 @@ const StellarWarp = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-66%, -63%)",
-          animation: "gepard-animation 2s 1",
+          animation: "gepard-animation 3s 200ms 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
@@ -181,7 +188,7 @@ const StellarWarp = () => {
           top: "50%",
           left: "50%",
           transform: "translate(-32%, -58%)",
-          animation: "bronya-animation 2s 1",
+          animation: "bronya-animation 3s 200ms 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
@@ -210,7 +217,7 @@ const StellarWarp = () => {
         bottom={true}
         anim={false}
       />
-    </React.Fragment>
+    </motion.div>
   );
 };
 
