@@ -65,7 +65,7 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
             effect="opacity"
             className="db-item-element"
             alt="Element"
-            src={`assets/${info.element.toLowerCase()}.webp`}
+            src={`assets/elem-${info.element.toLowerCase()}.webp`}
             width={size.width < 580 ? 25 : 40}
           />
         )}

@@ -10,7 +10,8 @@
     },
     "credits": {
       "title": "감사",
-      "body": "대부분의 자산은 Mihoyo에 속하며 Honkai Star Rail에서 가져와 편집했습니다. <1/> 에서 제공하는 일부 아이콘: <3> <1> <0> Reset icons created by inkubators - Flaticon </0> </1> <1> <0> Cinema icons created by SumberRejeki - Flaticon </0> </1> <1> <0> Country icons created by Freepik - Flaticon </0> </1> </3>"
+      "body1": "대부분의 자산은 Mihoyo에 속하며 Honkai Star Rail에서 가져와 편집했습니다.",
+      "body2": "에서 제공하는 일부 아이콘:"
     },
     "vers": {
       "title": "버전을 선택하세요",

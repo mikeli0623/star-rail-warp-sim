@@ -1,11 +1,10 @@
 import "../css/DataBank.css";
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 const trans = require("../assets/data/translations.json");
 
 export default function FilterButton({ text, active, handleSelect }) {
   const dumbText = text.toLowerCase().replace(/ /g, "-");
-  useEffect(() => console.log(text, dumbText));
   const { i18n } = useTranslation();
   return (
     <div className="filter-button" onClick={() => handleSelect(text)}>

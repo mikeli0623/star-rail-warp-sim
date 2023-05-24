@@ -81,13 +81,13 @@ function App() {
 
     if (content === "main") {
       if (!mainData.sound.playing()) {
-        mainData.sound.fade(0, 1, 2000);
+        mainData.sound.fade(0, 1, 500);
         playMainBGM();
       }
     } else if (content === "single") {
       if (warpData.sound.playing()) return;
       playWarpBGM();
-      warpData.sound.fade(0, 1, 1000);
+      warpData.sound.fade(0, 1, 500);
     }
     return () => {
       if (content === "main") clearTimeout(warpTimeout);
@@ -96,19 +96,19 @@ function App() {
         clearTimeout(warpTimeout);
         clearTimeout(mainTimeout);
       }
-      if (!hasFive && !hasFour && content === "single") {
+      if (currentWarp.length !== 10 && content === "single") {
         clearTimeout(warpTimeout);
-        warpData.sound.fade(1, 0, 1000);
+        warpData.sound.fade(1, 0, 500);
         warpTimeout = setTimeout(() => {
           warpData.stop();
-        }, 1000);
+        }, 500);
       }
       if (content === "results") {
         clearTimeout(warpTimeout);
-        warpData.sound.fade(1, 0, 1000);
+        warpData.sound.fade(1, 0, 500);
         warpTimeout = setTimeout(() => {
           warpData.stop();
-        }, 1000);
+        }, 500);
       }
     };
   }, [
@@ -118,15 +118,12 @@ function App() {
     mainData,
     playWarpBGM,
     warpData,
-    hasFive,
-    hasFour,
+    currentWarp,
   ]);
 
   const [showDB, setShowDB] = useState(false);
 
   const [DBType, setDBType] = useState("char");
-
-  const [fancy, setFancy] = useState(true);
 
   return (
     <ResizeProvider value={resizeValue}>
@@ -145,8 +142,6 @@ function App() {
               setContent={setContent}
               setCurrentWarp={setCurrentWarp}
               setDBType={setDBType}
-              fancy={fancy}
-              setFancy={setFancy}
             />
           )}
           {content === "video" && (
@@ -163,10 +158,10 @@ function App() {
           {content === "single" && (
             <WarpSingle
               currentWarp={currentWarp}
+              hasFive={hasFive}
               newItems={newItems}
               setNewItems={setNewItems}
               setContent={setContent}
-              fancy={fancy}
             />
           )}
           {content === "results" && (
@@ -179,6 +174,7 @@ function App() {
               />
               <WarpResults
                 currentWarp={currentWarp}
+                hasFive={hasFive}
                 newItems={newItems}
                 onClose={() => {
                   setContent("main");
@@ -202,8 +198,12 @@ function App() {
 
 export default function WrappedApp() {
   return (
-    <Suspense fallback="...is loading">
+    <Suspense fallback={<Loading />}>
       <App />
     </Suspense>
   );
+}
+
+function Loading() {
+  return <div id="loading">Loading...</div>;
 }

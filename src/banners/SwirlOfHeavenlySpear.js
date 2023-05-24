@@ -201,6 +201,7 @@ const SwirlOfHeavenlySpear = () => {
         name="Jing Yuan"
         bottom={true}
         style={{ transform: "translate(-75%, 50%)" }}
+        anim={false}
       />
     </React.Fragment>
   );

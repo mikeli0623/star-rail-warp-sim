@@ -8,10 +8,7 @@ const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
 
   useEffect(() => {
     if (!loaded || !sound) return;
-    mainBGM.mainData.sound.fade(1, 0, 500);
-    let mainTimeout = setTimeout(() => {
-      mainBGM.mainData.pause();
-    }, 500);
+    mainBGM.mainData.pause();
     let warpTimeout = setTimeout(
       () => {
         warpBGM.playWarpBGM();
@@ -20,7 +17,6 @@ const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
       rarity === "five" ? 15500 : 14000
     );
     return () => {
-      clearTimeout(mainTimeout);
       clearTimeout(warpTimeout);
     };
   }, [loaded, sound, mainBGM, warpBGM, rarity]);

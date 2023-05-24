@@ -404,4 +404,8 @@
     bottom: 0%;
     height: 80vh;
   }
+
+  .item-top {
+    margin: 2px;
+  }
 }

@@ -189,6 +189,7 @@ const ButterflyOnSwordtip = () => {
         name="Seele"
         bottom={true}
         style={{ transform: "translate(-75%, 70%)" }}
+        anim={false}
       />
     </React.Fragment>
   );

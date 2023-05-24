@@ -18,6 +18,16 @@ html * {
   font-display: swap;
 }
 
+#loading {
+  background-color: #282827;
+  color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #audio-toggle {
   position: absolute;
   top: 0;
@@ -75,6 +85,10 @@ html * {
 
 .custom-button.disabled:active {
   filter: brightness(0.4);
+}
+
+.country-button {
+  margin: 5px;
 }
 
 .close-button {
@@ -185,6 +199,7 @@ html * {
   align-items: center;
   justify-content: space-evenly;
   z-index: 1000;
+  text-shadow: 0 0 4px black;
 }
 
 #title {
@@ -644,15 +659,18 @@ html * {
   flex-direction: row;
   transform: rotate(-11.5deg);
   width: 110vw;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-content: center;
 }
 
 .warp-results.top {
   margin-bottom: 2%;
+  justify-content: flex-start;
 }
 
 .warp-results.bottom {
   margin-top: 2%;
+  justify-content: flex-end;
 }
 
 .warp-results-new-tag {
@@ -665,18 +683,20 @@ html * {
   transition: transform 0.1s;
   display: flex;
   position: relative;
+  margin: 0 20px;
+}
+
+.warp-result.five-back {
+  position: absolute;
+  z-index: 1;
 }
 
 .warp-result-hover:hover {
   transform: scale(1.05);
 }
 
-.warp-result[rarity="3"]:hover {
-  transform: translate(100px);
-}
-
 .warp-result[rarity="3"] {
-  border: 2px solid #182c50;
+  outline: 2px solid #182c50;
   border-bottom: 0;
   box-shadow: 0 0 10px 1px #213e77;
 }
@@ -687,6 +707,15 @@ html * {
 
 .warp-result[rarity="5"] {
   box-shadow: 0 0 50px 10px #fbda92;
+}
+
+.hack-close {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
 }
 
 @keyframes animate-three {
@@ -731,15 +760,260 @@ html * {
   }
 }
 
+@keyframes animate-five-back {
+  0% {
+    rotate: 0deg;
+  }
+  25% {
+    rotate: -1deg;
+  }
+  50% {
+    rotate: 0deg;
+  }
+  75% {
+    rotate: 1deg;
+  }
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes animate-change-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes animate-change-in {
+  to {
+    opacity: 1;
+  }
+}
+
+.five-special-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(at bottom, #162342, #01040c, black);
+}
+
+.reveal-path {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  opacity: 0.5;
+  filter: brightness(0.5);
+  transform-origin: top left;
+  width: 25%;
+}
+
+.reveal-star-group {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.reveal-star-back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 200vh;
+  width: 60px;
+  background-color: #3c506e5b;
+}
+
+.reveal-star-back.main {
+  width: 150px;
+}
+
+.reveal-star {
+  width: 80%;
+  scale: 0.6;
+}
+
+.reveal-star.main {
+  scale: 1;
+}
+
+@keyframes animate-reveal-path {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes animate-reveal-back {
+  from {
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+  to {
+    transform: translate(-50%, -50%) scaleX(0);
+  }
+}
+
+@keyframes animate-reveal-star {
+  50% {
+    filter: brightness(3);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+@keyframes animate-reveal-first-group {
+  from {
+    transform: translate(-190%, 100%);
+  }
+  to {
+    transform: translate(-190%, -50%);
+  }
+}
+
+@keyframes animate-reveal-second-group {
+  from {
+    transform: translate(-120%, 100%);
+  }
+  to {
+    transform: translate(-120%, -50%);
+  }
+}
+
+@keyframes animate-reveal-third-group {
+  from {
+    transform: translate(-50%, 100%);
+  }
+  to {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes animate-reveal-fourth-group {
+  from {
+    transform: translate(20%, 100%);
+  }
+  to {
+    transform: translate(20%, -50%);
+  }
+}
+
+@keyframes animate-reveal-fifth-group {
+  from {
+    transform: translate(90%, 100%);
+  }
+  to {
+    transform: translate(90%, -50%);
+  }
+}
+
+@keyframes animate-out-path {
+  from {
+    opacity: 1;
+    scale: 1;
+  }
+  to {
+    opacity: 0;
+    scale: 0.5;
+  }
+}
+
+@keyframes animate-out-star {
+  from {
+    scale: 1;
+  }
+  to {
+    scale: 0.5;
+  }
+}
+
+@keyframes animate-out-small-star {
+  from {
+    scale: 0.6;
+  }
+  to {
+    scale: 0.3;
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .custom-button {
     line-height: 80%;
   }
 }
 
+@media screen and (max-width: 600px) {
+  .reveal-path {
+    width: 50%;
+  }
+
+  .reveal-star-back {
+    width: 30px;
+  }
+
+  .reveal-star-back.main {
+    width: 75px;
+  }
+
+  .reveal-star {
+    width: 60%;
+  }
+
+  @keyframes animate-reveal-first-group {
+    from {
+      transform: translate(-140%, 100%);
+    }
+    to {
+      transform: translate(-140%, -50%);
+    }
+  }
+
+  @keyframes animate-reveal-second-group {
+    from {
+      transform: translate(-95%, 100%);
+    }
+    to {
+      transform: translate(-95%, -50%);
+    }
+  }
+
+  @keyframes animate-reveal-third-group {
+    from {
+      transform: translate(-50%, 100%);
+    }
+    to {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  @keyframes animate-reveal-fourth-group {
+    from {
+      transform: translate(-5%, 100%);
+    }
+    to {
+      transform: translate(-5%, -50%);
+    }
+  }
+
+  @keyframes animate-reveal-fifth-group {
+    from {
+      transform: translate(40%, 100%);
+    }
+    to {
+      transform: translate(40%, -50%);
+    }
+  }
+}
+
 @media screen and (max-width: 500px) {
   .custom-button {
     line-height: 50%;
+  }
+
+  .warp-result-hover {
+    margin: 0 10px;
   }
 
   .vers-info {
@@ -773,5 +1047,18 @@ html * {
     border-width: 200px;
     height: 800px;
     width: 800px;
+  }
+
+  .country-button {
+    margin: 10px;
+  }
+
+  .country-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .country-name {
+    display: none;
   }
 }
