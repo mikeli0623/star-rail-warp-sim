@@ -67,6 +67,7 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
             alt="Element"
             src={`assets/elem-${info.element.toLowerCase()}.webp`}
             width={size.width < 580 ? 25 : 40}
+            draggable="false"
           />
         )}
         <LazyLoadImage
@@ -74,6 +75,7 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
           alt="Path"
           src={`assets/icon-${info.path.toLowerCase().replace(/ /g, "-")}.webp`}
           width={size.width < 580 ? 20 : 35}
+          draggable="false"
         />
       </div>
       {type === "char" && (
@@ -82,6 +84,7 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
           className="char-img"
           alt={`${info.name} Card`}
           src={`./assets/splash/iso/${item}.webp`}
+          draggable="false"
         />
       )}
       {type === "weap" && (
@@ -91,18 +94,21 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
             className="weap-img glass-back"
             alt="Glass Back"
             src="assets/glass-back.webp"
+            draggable="false"
           />
           <LazyLoadImage
             effect="opacity"
             className="weap-img"
             alt={`${info.name} Card`}
             src={`./assets/splash/${item}.webp`}
+            draggable="false"
           />
           <LazyLoadImage
             effect="opacity"
             className="weap-img glass-front"
             alt="Glass Front"
             src="assets/glass-front.webp"
+            draggable="false"
           />
         </React.Fragment>
       )}

@@ -233,6 +233,7 @@ export default function Main({
       />
       <LazyLoadImage
         effect="opacity"
+        draggable="false"
         className="ring"
         src="/assets/rings.webp"
         alt="rings"

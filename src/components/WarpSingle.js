@@ -224,6 +224,7 @@ const WarpSingle = ({
         <div className="five-special-container">
           <LazyLoadImage
             className="reveal-path"
+            draggable="false"
             effect="opacity"
             src={`./assets/path-${cleanText(item.path)}-lg.webp`}
             alt={item.path}
@@ -252,6 +253,7 @@ const WarpSingle = ({
             />
             <LazyLoadImage
               className="reveal-star"
+              draggable="false"
               effect="opacity"
               src="./assets/reveal-star.webp"
               alt="Star"
@@ -279,6 +281,7 @@ const WarpSingle = ({
             />
             <LazyLoadImage
               className="reveal-star"
+              draggable="false"
               effect="opacity"
               src="./assets/reveal-star.webp"
               alt="Star"
@@ -305,6 +308,7 @@ const WarpSingle = ({
             />
             <LazyLoadImage
               className="reveal-star main"
+              draggable="false"
               effect="opacity"
               src="./assets/reveal-star.webp"
               alt="Star"
@@ -334,6 +338,7 @@ const WarpSingle = ({
             <LazyLoadImage
               className="reveal-star"
               effect="opacity"
+              draggable="false"
               src="./assets/reveal-star.webp"
               alt="Star"
               style={{
@@ -356,6 +361,7 @@ const WarpSingle = ({
               }}
             />
             <LazyLoadImage
+              draggable="false"
               className="reveal-star"
               effect="opacity"
               src="./assets/reveal-star.webp"
@@ -445,6 +451,7 @@ const WarpSingle = ({
         effect="opacity"
         alt="animation-ring"
         src="assets/animation-ring.webp"
+        draggable="false"
         rarity={item.rarity}
       />
       <div

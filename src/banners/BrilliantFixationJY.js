@@ -68,7 +68,7 @@ const BrilliantFixationJY = ({ direction }) => {
       <LazyLoadImage
         className="weap-rate-up"
         src="../assets/banner/1.1/weap-rate-1.webp"
-        alt="The Moles Welcome You"
+        alt="Day One Of My New Life"
         width={getWidth(135)}
         style={{
           animation: "cone-1-animation 0.4s 1",
@@ -76,11 +76,12 @@ const BrilliantFixationJY = ({ direction }) => {
           animationFillMode: "both",
           animationDelay: "300ms",
         }}
+        draggable="false"
       />
       <LazyLoadImage
         className="weap-rate-up"
         src="../assets/banner/1.1/weap-rate-2.webp"
-        alt="Post-Op Conversation"
+        alt="Planetary Rendezvous"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
@@ -88,11 +89,12 @@ const BrilliantFixationJY = ({ direction }) => {
           animationFillMode: "both",
           animationDelay: "350ms",
         }}
+        draggable="false"
       />
       <LazyLoadImage
         className="weap-rate-up"
         src="../assets/banner/1.1/weap-rate-3.webp"
-        alt="Good Night and Sleep Well"
+        alt="Only Silence Remains"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
@@ -100,6 +102,7 @@ const BrilliantFixationJY = ({ direction }) => {
           animationFillMode: "both",
           animationDelay: "400ms",
         }}
+        draggable="false"
       />
       <LazyLoadImage
         effect="opacity-100"
@@ -130,6 +133,7 @@ const BrilliantFixationJY = ({ direction }) => {
             Math.random() * 360
           )}deg)`,
         }}
+        draggable="false"
       />
       {/* <LazyLoadImage
         effect="opacity"

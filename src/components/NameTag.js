@@ -52,11 +52,36 @@ export default function NameTag({ style, name, bottom = false, anim = true }) {
         bottom={bottom.toString()}
         style={{ width: getWidth(100) }}
       >
-        <LazyLoadImage alt="star" src="assets/star.webp" width={getWidth(16)} />
-        <LazyLoadImage alt="star" src="assets/star.webp" width={getWidth(16)} />
-        <LazyLoadImage alt="star" src="assets/star.webp" width={getWidth(16)} />
-        <LazyLoadImage alt="star" src="assets/star.webp" width={getWidth(16)} />
-        <LazyLoadImage alt="star" src="assets/star.webp" width={getWidth(16)} />
+        <LazyLoadImage
+          alt="star"
+          src="assets/star.webp"
+          width={getWidth(16)}
+          draggable="false"
+        />
+        <LazyLoadImage
+          alt="star"
+          src="assets/star.webp"
+          width={getWidth(16)}
+          draggable="false"
+        />
+        <LazyLoadImage
+          alt="star"
+          src="assets/star.webp"
+          width={getWidth(16)}
+          draggable="false"
+        />
+        <LazyLoadImage
+          alt="star"
+          src="assets/star.webp"
+          width={getWidth(16)}
+          draggable="false"
+        />
+        <LazyLoadImage
+          alt="star"
+          src="assets/star.webp"
+          width={getWidth(16)}
+          draggable="false"
+        />
       </span>
     </div>
   );

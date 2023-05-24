@@ -39,6 +39,7 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
         effect="opacity"
         className="vers-icon"
         src={`./assets/banner/mini/${vers}/char-active.webp`}
+        draggable="false"
       />
       <div className="vers-info-text">
         <div style={{ color: isCurrentSelected ? "white" : "black" }}>
