@@ -15,6 +15,7 @@ import SwirlOfHeavenlySpear from "../banners/SwirlOfHeavenlySpear";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
+import { AnimatePresence } from "framer-motion";
 
 export default function Main({
   lockout,
@@ -122,18 +123,20 @@ export default function Main({
     localStorage.setItem("stash", JSON.stringify(stash));
   };
 
+  const [direction, setDirection] = useState("down");
+
   const banners = useMemo(() => {
     return {
       "1.0": {
-        char: <ButterflyOnSwordtip />,
-        weap: <BrilliantFixationS />,
+        char: <ButterflyOnSwordtip direction={direction} />,
+        weap: <BrilliantFixationS direction={direction} />,
       },
       1.1: {
-        char: <SwirlOfHeavenlySpear />,
-        weap: <BrilliantFixationJY />,
+        char: <SwirlOfHeavenlySpear direction={direction} />,
+        weap: <BrilliantFixationJY direction={direction} />,
       },
     };
-  }, []);
+  }, [direction]);
 
   const bannerBackColor = {
     "1.0": {
@@ -196,13 +199,6 @@ export default function Main({
     if (bannerType === "beginner") return "beginner/beginner";
     if (bannerType === "standard") return "standard/standard";
     return `${vers}/${bannerType}`;
-  };
-
-  const getBanner = () => {
-    if (bannerType === "beginner")
-      return <DepartureWarp total={totalBeginner} />;
-    if (bannerType === "standard") return <StellarWarp />;
-    return banners[vers][bannerType];
   };
 
   return (
@@ -293,9 +289,17 @@ export default function Main({
         vers={vers}
         bannerType={bannerType}
         setBannerType={setBannerType}
+        setDirection={setDirection}
         hasBeginner={totalBeginner < 5}
       />
-      {getBanner()}
+      <AnimatePresence>
+        {totalBeginner < 5 && bannerType === "beginner" && (
+          <DepartureWarp total={totalBeginner} />
+        )}
+        {bannerType === "char" && banners[vers]["char"]}
+        {bannerType === "weap" && banners[vers]["weap"]}
+        {bannerType === "standard" && <StellarWarp />}
+      </AnimatePresence>
       <Button
         style={{
           position: "absolute",

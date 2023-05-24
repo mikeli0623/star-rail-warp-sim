@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { json } from "../util/Constants";
 import { useTranslation } from "react-i18next";
-import ResizeContext from "../components/ResizeContext";
+import ResizeContext from "./ResizeContext";
 const trans = require("../assets/data/translations.json");
 
 const asianLang = ["zh", "ko", "ja"];

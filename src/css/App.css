@@ -245,6 +245,7 @@ html * {
   background-position: center;
   height: 100%;
   width: 100%;
+  transition: background 0.2s ease;
 }
 
 #main-back-cover {

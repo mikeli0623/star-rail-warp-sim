@@ -3,8 +3,9 @@ import "../css/Banners.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
 import { useTranslation, Trans } from "react-i18next";
-import NameTag from "./NameTag";
+import NameTag from "../components/NameTag";
 import { Scrollbars } from "react-custom-scrollbars-2";
+import { motion } from "framer-motion";
 
 const DepartureWarp = ({ total }) => {
   const { getWidth } = useContext(ResizeContext);
@@ -20,7 +21,13 @@ const DepartureWarp = ({ total }) => {
 
   const { t, i18n } = useTranslation();
   return (
-    <React.Fragment>
+    <motion.div
+      key="beginner"
+      className="banner"
+      initial={{ transform: "translate(-50%, -500%)", opacity: 0 }}
+      animate={{ transform: "translate(-50%,-50%)", opacity: 1 }}
+      exit={{ transform: "translate(-50%, -500%)", opacity: 0 }}
+    >
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/beginner/gepard.webp"
@@ -31,7 +38,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "beginner-gepard-animation 1.2s 1",
+          animation: "beginner-gepard-animation 2.2s 1",
           animationTimingFunction: "cubic-bezier(.27,.93,.64,.98)",
           animationFillMode: "both",
         }}
@@ -46,7 +53,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "yanqing-animation 1.2s 1",
+          animation: "yanqing-animation 2.2s 1",
           animationTimingFunction: "cubic-bezier(.27,.93,.64,.98)",
           animationFillMode: "both",
         }}
@@ -61,7 +68,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "beginner-bronya-animation 1.4s 1",
+          animation: "beginner-bronya-animation 2.4s 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "forwards",
         }}
@@ -76,7 +83,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "clara-animation 1.2s 1",
+          animation: "clara-animation 2.2s 1",
           animationTimingFunction: "cubic-bezier(.27,.93,.64,.98)",
           animationFillMode: "both",
         }}
@@ -91,7 +98,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "beginner-himeko-animation 1.4s 1",
+          animation: "beginner-himeko-animation 2.4s 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
@@ -106,7 +113,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "bailu-animation 1.2s 1",
+          animation: "bailu-animation 2.2s 1",
           animationTimingFunction: "cubic-bezier(.27,.93,.64,.98)",
           animationFillMode: "both",
         }}
@@ -121,7 +128,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "welt-animation 1.4s 1",
+          animation: "welt-animation 2.4s 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
@@ -239,7 +246,7 @@ const DepartureWarp = ({ total }) => {
           Warps.
         </Trans>
       </Scrollbars>
-    </React.Fragment>
+    </motion.div>
   );
 };
 
