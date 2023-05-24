@@ -9,6 +9,7 @@ import ResizeContext from "./ResizeContext";
 import ItemCard from "./ItemCard";
 import FilterButton from "./FilterButton";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 
 export default function DataBank({ type, setContent, setShowDB }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -94,7 +95,11 @@ export default function DataBank({ type, setContent, setShowDB }) {
   const { t } = useTranslation();
 
   return (
-    <section
+    <motion.section
+      key="db"
+      initial={{ filter: "brightness(0)" }}
+      animate={{ filter: "brightness(1)" }}
+      exit={{ filter: "brightness(0)" }}
       className="db-back"
       style={{ backgroundImage: "url(assets/db-back.webp)" }}
     >
@@ -225,6 +230,6 @@ export default function DataBank({ type, setContent, setShowDB }) {
         </Scrollbars>
       </div>
       <CloseButton onClose={handleExit} />
-    </section>
+    </motion.section>
   );
 }

@@ -38,7 +38,6 @@ const MiniBanners = ({
             onClick={() => {
               if (bannerType !== "beginner") {
                 setBannerType("beginner");
-                setDirection("down");
                 if (sound) play();
               }
             }}
@@ -95,8 +94,8 @@ const MiniBanners = ({
           if (bannerType !== "char") {
             setBannerType("char");
             if (hasBeginner) {
-              setDirection(bannerType === "weap" ? "down" : "up");
-            } else setDirection("down");
+              setDirection(bannerType === "weap" ? "up" : "down");
+            } else setDirection("up");
             if (sound) play();
           }
         }}
@@ -181,7 +180,6 @@ const MiniBanners = ({
         onClick={() => {
           if (bannerType !== "standard") {
             setBannerType("standard");
-            setDirection("up");
             if (sound) play();
           }
         }}

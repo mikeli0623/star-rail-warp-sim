@@ -4,6 +4,7 @@ import CloseButton from "./CloseButton";
 import ResizeContext from "./ResizeContext";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
+import { motion } from "framer-motion";
 
 const WarpResult = ({
   warp,
@@ -93,10 +94,18 @@ const WarpResults = ({ currentWarp, newItems, onClose, hasFive }) => {
   }, [sound, hasFive, playResultsFive, playResultsNormal]);
 
   return (
-    <section
+    <motion.section
+      key="results"
+      exit={{ opacity: 0, transition: { duration: 0.4 } }}
       id="warp-result-container"
       style={{ backgroundImage: "url(../assets/warp-result.webp)" }}
     >
+      <img
+        className="ring"
+        src="/assets/rings.webp"
+        alt="rings"
+        width={getWidth(550)}
+      />
       <div onClick={onClose} className="hack-close" />
       <CloseButton
         onClose={() => {
@@ -255,7 +264,7 @@ const WarpResults = ({ currentWarp, newItems, onClose, hasFive }) => {
           }}
         />
       </div>
-    </section>
+    </motion.section>
   );
 };
 

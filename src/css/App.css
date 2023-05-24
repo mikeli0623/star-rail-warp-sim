@@ -245,7 +245,7 @@ html * {
   background-position: center;
   height: 100%;
   width: 100%;
-  transition: background 0.2s ease;
+  transition: background-image 0.2s ease;
 }
 
 #main-back-cover {
@@ -307,7 +307,6 @@ html * {
   left: 0;
   top: 0;
   z-index: 1051;
-  background-color: black;
 }
 
 #video-container video {

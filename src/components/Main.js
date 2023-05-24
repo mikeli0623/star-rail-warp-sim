@@ -15,7 +15,7 @@ import SwirlOfHeavenlySpear from "../banners/SwirlOfHeavenlySpear";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 
 export default function Main({
   lockout,
@@ -202,7 +202,9 @@ export default function Main({
   };
 
   return (
-    <div
+    <motion.section
+      key="main"
+      exit={{ opacity: 0 }}
       id="main-back"
       style={{
         backgroundImage: `url(/assets/banner/${getBack()}-back.webp)`,
@@ -327,6 +329,6 @@ export default function Main({
         disabled={true}
       />
       <WarpButtons onWarp={handleWarp} event={bannerType} />
-    </div>
+    </motion.section>
   );
 }
