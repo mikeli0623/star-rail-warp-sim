@@ -81,13 +81,13 @@ function App() {
 
     if (content === "main") {
       if (!mainData.sound.playing()) {
-        mainData.sound.fade(0, 1, 2000);
+        mainData.sound.fade(0, 1, 500);
         playMainBGM();
       }
     } else if (content === "single") {
       if (warpData.sound.playing()) return;
       playWarpBGM();
-      warpData.sound.fade(0, 1, 1000);
+      warpData.sound.fade(0, 1, 500);
     }
     return () => {
       if (content === "main") clearTimeout(warpTimeout);
@@ -96,19 +96,19 @@ function App() {
         clearTimeout(warpTimeout);
         clearTimeout(mainTimeout);
       }
-      if (!hasFive && !hasFour && content === "single") {
+      if (currentWarp.length !== 10 && content === "single") {
         clearTimeout(warpTimeout);
-        warpData.sound.fade(1, 0, 1000);
+        warpData.sound.fade(1, 0, 500);
         warpTimeout = setTimeout(() => {
           warpData.stop();
-        }, 1000);
+        }, 500);
       }
       if (content === "results") {
         clearTimeout(warpTimeout);
-        warpData.sound.fade(1, 0, 1000);
+        warpData.sound.fade(1, 0, 500);
         warpTimeout = setTimeout(() => {
           warpData.stop();
-        }, 1000);
+        }, 500);
       }
     };
   }, [
@@ -118,8 +118,7 @@ function App() {
     mainData,
     playWarpBGM,
     warpData,
-    hasFive,
-    hasFour,
+    currentWarp,
   ]);
 
   const [showDB, setShowDB] = useState(false);
