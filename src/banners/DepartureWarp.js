@@ -24,9 +24,7 @@ const DepartureWarp = ({ total }) => {
     <motion.div
       key="beginner"
       className="banner"
-      initial={{ transform: "translate(-50%, -500%)", opacity: 0 }}
-      animate={{ transform: "translate(-50%,-50%)", opacity: 1 }}
-      exit={{ transform: "translate(-50%, -500%)", opacity: 0 }}
+      style={{ transform: "translate(-50%, -50%)" }}
     >
       <LazyLoadImage
         effect="opacity"
@@ -38,7 +36,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "beginner-gepard-animation 2.2s 1",
+          animation: "beginner-gepard-animation 1.7s 1",
           animationTimingFunction: "cubic-bezier(.27,.93,.64,.98)",
           animationFillMode: "both",
         }}
@@ -53,7 +51,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "yanqing-animation 2.2s 1",
+          animation: "yanqing-animation 1.7s 1",
           animationTimingFunction: "cubic-bezier(.27,.93,.64,.98)",
           animationFillMode: "both",
         }}
@@ -68,7 +66,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "beginner-bronya-animation 2.4s 1",
+          animation: "beginner-bronya-animation 1.9s 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "forwards",
         }}
@@ -83,7 +81,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "clara-animation 2.2s 1",
+          animation: "clara-animation 1.7s 1",
           animationTimingFunction: "cubic-bezier(.27,.93,.64,.98)",
           animationFillMode: "both",
         }}
@@ -98,7 +96,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "beginner-himeko-animation 2.4s 1",
+          animation: "beginner-himeko-animation 1.9s 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
@@ -113,7 +111,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "bailu-animation 2.2s 1",
+          animation: "bailu-animation 1.7s 1",
           animationTimingFunction: "cubic-bezier(.27,.93,.64,.98)",
           animationFillMode: "both",
         }}
@@ -128,7 +126,7 @@ const DepartureWarp = ({ total }) => {
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "welt-animation 2.4s 1",
+          animation: "welt-animation 1.9s 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}

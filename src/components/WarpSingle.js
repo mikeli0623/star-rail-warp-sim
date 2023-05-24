@@ -6,6 +6,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
 import ResizeContext from "./ResizeContext";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 const trans = require("../assets/data/translations.json");
 
 const baseDelay = 400;
@@ -106,7 +107,11 @@ const WarpSingle = ({
   const { i18n } = useTranslation();
 
   return (
-    <div
+    <motion.section
+      key="single"
+      initial={{ filter: "brightness(0)" }}
+      animate={{ filter: "brightness(1)" }}
+      exit={currentWarp.length === 10 ? { opacity: 0.5 } : {}}
       className="overlay"
       onClick={nextSingle}
       style={{
@@ -446,7 +451,7 @@ const WarpSingle = ({
         className={`${animateFancy ? "donut" : "transparent"}`}
         rarity={item.rarity}
       />
-    </div>
+    </motion.section>
   );
 };
 

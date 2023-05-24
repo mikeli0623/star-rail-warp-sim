@@ -12,14 +12,15 @@ const BrilliantFixationS = ({ direction }) => {
       key="se-weap"
       className="banner"
       initial={{
-        transform: `translate(-50%, ${direction === "up" ? "-" : ""}500%)`,
+        transform: `translate(-50%, ${direction === "up" ? "-" : ""}1000%)`,
         opacity: 0,
       }}
       animate={{ transform: "translate(-50%,-50%)", opacity: 1 }}
       exit={{
-        transform: `translate(-50%, ${direction === "up" ? "" : "-"}500%)`,
+        transform: `translate(-50%, ${direction === "up" ? "" : "-"}1000%)`,
         opacity: 0,
       }}
+      transition={{ duration: 0.4 }}
     >
       <div
         style={{

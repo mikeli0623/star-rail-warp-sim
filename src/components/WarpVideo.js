@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import SoundContext from "./SoundContext";
 import CloseButton from "./CloseButton";
+import { motion } from "framer-motion";
 
 const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
   const { sound } = useContext(SoundContext);
@@ -22,7 +23,11 @@ const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
   }, [loaded, sound, mainBGM, warpBGM, rarity]);
 
   return (
-    <section id="video-container">
+    <motion.section
+      key="video"
+      id="video-container"
+      style={{ backgroundColor: loaded ? "white" : "black" }}
+    >
       <CloseButton onClose={onEnded} />
       <video
         autoPlay
@@ -40,7 +45,7 @@ const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
           type="video/webm"
         />
       </video>
-    </section>
+    </motion.section>
   );
 };
 

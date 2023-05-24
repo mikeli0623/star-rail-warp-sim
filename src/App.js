@@ -10,6 +10,7 @@ import { SoundProvider } from "./components/SoundContext";
 import { ResizeProvider } from "./components/ResizeContext";
 import Main from "./components/Main";
 import DataBank from "./components/DataBank";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -129,49 +130,43 @@ function App() {
     <ResizeProvider value={resizeValue}>
       <SoundProvider value={soundValue}>
         <div className="App">
-          {content === "main" && (
-            <Main
-              lockout={lockout}
-              bannerType={bannerType}
-              showDB={showDB}
-              setShowDB={setShowDB}
-              setBannerType={setBannerType}
-              setNewItems={setNewItems}
-              setHasFive={setHasFive}
-              setHasFour={setHasFour}
-              setContent={setContent}
-              setCurrentWarp={setCurrentWarp}
-              setDBType={setDBType}
-            />
-          )}
-          {content === "video" && (
-            <WarpVideo
-              rarity={hasFive ? "five" : hasFour ? "four" : "three"}
-              event={bannerType === "char" || bannerType === "weap"}
-              onEnded={() => {
-                setContent("single");
-              }}
-              mainBGM={{ playMainBGM, mainData }}
-              warpBGM={{ playWarpBGM, warpData }}
-            />
-          )}
-          {content === "single" && (
-            <WarpSingle
-              currentWarp={currentWarp}
-              hasFive={hasFive}
-              newItems={newItems}
-              setNewItems={setNewItems}
-              setContent={setContent}
-            />
-          )}
-          {content === "results" && (
-            <React.Fragment>
-              <img
-                className="ring"
-                src="/assets/rings.webp"
-                alt="rings"
-                width={resizeValue.getWidth(550)}
+          <AnimatePresence>
+            {content === "main" && (
+              <Main
+                lockout={lockout}
+                bannerType={bannerType}
+                showDB={showDB}
+                setShowDB={setShowDB}
+                setBannerType={setBannerType}
+                setNewItems={setNewItems}
+                setHasFive={setHasFive}
+                setHasFour={setHasFour}
+                setContent={setContent}
+                setCurrentWarp={setCurrentWarp}
+                setDBType={setDBType}
               />
+            )}
+            {content === "video" && (
+              <WarpVideo
+                rarity={hasFive ? "five" : hasFour ? "four" : "three"}
+                event={bannerType === "char" || bannerType === "weap"}
+                onEnded={() => {
+                  setContent("single");
+                }}
+                mainBGM={{ playMainBGM, mainData }}
+                warpBGM={{ playWarpBGM, warpData }}
+              />
+            )}
+            {content === "single" && (
+              <WarpSingle
+                currentWarp={currentWarp}
+                hasFive={hasFive}
+                newItems={newItems}
+                setNewItems={setNewItems}
+                setContent={setContent}
+              />
+            )}
+            {content === "results" && (
               <WarpResults
                 currentWarp={currentWarp}
                 hasFive={hasFive}
@@ -181,15 +176,15 @@ function App() {
                   setNewItems([]);
                 }}
               />
-            </React.Fragment>
-          )}
-          {content === "data-bank" && (
-            <DataBank
-              type={DBType}
-              setContent={setContent}
-              setShowDB={setShowDB}
-            />
-          )}
+            )}
+            {content === "data-bank" && (
+              <DataBank
+                type={DBType}
+                setContent={setContent}
+                setShowDB={setShowDB}
+              />
+            )}
+          </AnimatePresence>
         </div>
       </SoundProvider>
     </ResizeProvider>

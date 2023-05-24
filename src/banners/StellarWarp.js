@@ -13,9 +13,10 @@ const StellarWarp = () => {
     <motion.div
       key="standard"
       className="banner"
-      initial={{ transform: "translate(-50%, 500%)", opacity: 0 }}
+      initial={{ transform: "translate(-50%, 1000%)", opacity: 0 }}
       animate={{ transform: "translate(-50%,-50%)", opacity: 1 }}
-      exit={{ transform: "translate(-50%, 500%)", opacity: 0 }}
+      exit={{ transform: "translate(-50%, 1000%)", opacity: 0 }}
+      transition={{ duration: 0.4 }}
     >
       <div
         style={{
