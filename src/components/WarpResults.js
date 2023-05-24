@@ -26,7 +26,7 @@ const WarpResult = ({
           height={getHeight(230, 440)}
           style={{
             ...style,
-            animation: `animate-five-back 130ms ease-in-out 600ms 3 both, animate-change-out 100ms ease-out 990ms 1 both, ${animationStyle}`,
+            animation: `animate-five-back 65ms ease-in-out 600ms 6 both, animate-change-out 100ms ease-out 990ms 1 both, ${animationStyle}`,
           }}
           draggable="false"
         />
