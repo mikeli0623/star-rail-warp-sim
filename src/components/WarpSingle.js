@@ -92,16 +92,18 @@ const WarpSingle = ({
         key={i}
         src="./assets/star.webp"
         alt="star"
-        width={`${getWidth(22)}`}
+        width={`${getWidth(22, 11)}`}
         star={i + 1}
         draggable="false"
       />
     );
   };
 
-  const pathWidth = (path) => {
-    const multi = asianLang.includes(i18n.resolvedLanguage) ? 28 : 14;
-    return trans[path][i18n.resolvedLanguage].length * multi;
+  const textWidth = (text, fontSize = [28, 14]) => {
+    const multi = asianLang.includes(i18n.resolvedLanguage)
+      ? fontSize[0]
+      : fontSize[1];
+    return trans[text][i18n.resolvedLanguage].length * multi;
   };
 
   const { i18n } = useTranslation();
@@ -134,8 +136,8 @@ const WarpSingle = ({
       <div
         id="single-info"
         style={{
-          height: getHeight(115, 550),
-          width: getWidth(550),
+          height: getHeight(115, 550, 55, 240),
+          width: getWidth(550, 240),
           opacity: `${animateInfo ? 1 : 0}`,
           animationName: `${animateInfo ? "animate-info" : ""}`,
           animationDuration: "1s",
@@ -146,8 +148,16 @@ const WarpSingle = ({
         <div
           className="single-info-shadow"
           style={{
-            height: getHeight(100, Math.max(150 + 15 * item.name.length, 300)),
-            width: getWidth(Math.max(150 + 15 * item.name.length, 300)),
+            height: getHeight(
+              100,
+              150 + textWidth(cleanText(item.name)),
+              40,
+              200
+            ),
+            width: getWidth(
+              150 + textWidth(cleanText(item.name)),
+              100 + textWidth(cleanText(item.name), [22, 10])
+            ),
           }}
         >
           {item.isChar ? (
@@ -156,7 +166,7 @@ const WarpSingle = ({
               className={`${animateInfo ? "single-type" : "transparent"}`}
               src={`./assets/elem-${cleanText(item.element)}.webp`}
               alt={item.element}
-              width={`${getWidth(90)}`}
+              width={`${getWidth(90, 50)}`}
               draggable="false"
             />
           ) : (
@@ -165,7 +175,7 @@ const WarpSingle = ({
               className={`${animateInfo ? "single-type" : "transparent"}`}
               src={`./assets/path-${cleanText(item.path)}.webp`}
               alt={item.path}
-              width={`${getWidth(115)}`}
+              width={`${getWidth(115, 65)}`}
               draggable="false"
             />
           )}
@@ -173,9 +183,9 @@ const WarpSingle = ({
             <div
               className={`${animateInfo ? "single-name" : "transparent"}`}
               style={{
-                fontSize: `${getWidth(34)}px`,
+                fontSize: `${getWidth(34, 16)}px`,
                 color: "white",
-                marginTop: getWidth(8),
+                marginTop: 8,
               }}
             >
               {trans[cleanText(item.name)][i18n.resolvedLanguage]}
@@ -193,7 +203,7 @@ const WarpSingle = ({
               effect="opacity"
               alt="new tag"
               src="/assets/new.webp"
-              width={getWidth(70)}
+              width={getWidth(70, 35)}
               style={{
                 marginLeft: 10,
                 marginBottom: 20,
@@ -205,16 +215,19 @@ const WarpSingle = ({
           <div
             className="path-shadow"
             style={{
-              width: getWidth(80 + pathWidth(cleanText(item.path))),
-              height: getHeight(40, 120),
-              fontSize: getWidth(28),
+              width: getWidth(
+                80 + textWidth(cleanText(item.path)),
+                80 + textWidth(cleanText(item.path), [12, 6])
+              ),
+              height: getHeight(40, 120, 18, 120),
+              fontSize: getWidth(28, 12),
             }}
           >
             <LazyLoadImage
               effect="opacity"
               alt={item.path}
               src={`./assets/path-${cleanText(item.path)}.webp`}
-              width={getWidth(50)}
+              width={getWidth(50, 24)}
             />
             {trans[cleanText(item.path)][i18n.resolvedLanguage]}
           </div>
@@ -391,7 +404,7 @@ const WarpSingle = ({
               alt={item.name}
               onAnimationStart={() => setAnimateFancy(true)}
               onAnimationEnd={() => setAnimateInfo(true)}
-              width={getWidth(1800)}
+              width={getWidth(1800, 900)}
               draggable="false"
             />
           );
@@ -408,7 +421,7 @@ const WarpSingle = ({
                 src="./assets/glass-back.webp"
                 alt="glass back"
                 style={{ rotate: "7deg" }}
-                width={getWidth(400)}
+                width={getWidth(400, 200)}
                 draggable="false"
               />
               <LazyLoadImage
@@ -424,8 +437,8 @@ const WarpSingle = ({
                 src={`/assets/splash/${cleanText(
                   json.getName(currentWarp[i])
                 )}.webp`}
-                height={getHeight(558.75, 400)}
-                width={getWidth(400)}
+                // height={getHeight(558.75, 400)}
+                width={getWidth(400, 200)}
                 draggable="false"
               />
               <LazyLoadImage
@@ -438,7 +451,7 @@ const WarpSingle = ({
                 src="./assets/glass-front.webp"
                 alt="glass front"
                 style={{ rotate: "7deg" }}
-                width={getWidth(400)}
+                width={getWidth(400, 200)}
                 draggable="false"
               />
             </React.Fragment>

@@ -35,17 +35,19 @@ function App() {
   const size = useWindowSize();
 
   const getWidth = useCallback(
-    (width) => {
-      return window.innerWidth > 1280 ? width : (size.width * width) / 1280;
+    (width, minWidth = 0) => {
+      return window.innerWidth > 1280
+        ? width
+        : Math.max((size.width * width) / 1280, minWidth);
     },
     [size]
   );
 
   const getHeight = useCallback(
-    (height, width) => {
+    (height, width, minHeight = 0, minWidth = 0) => {
       return window.innerWidth > 1280
         ? height
-        : (getWidth(width) * height) / width;
+        : Math.max((getWidth(width, minWidth) * height) / width, minHeight);
     },
     [getWidth]
   );

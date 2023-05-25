@@ -242,17 +242,17 @@ export default function Main({
       <div
         id="info"
         style={{
-          width: getWidth(680),
-          height: getHeight(50, 680),
+          width: getWidth(680, 200),
+          height: getHeight(50, 680, 20, 200),
         }}
       >
         <div
           id="warp-icon"
           style={{
             backgroundImage: "url(/assets/icon-warp.webp)",
-            width: getWidth(44),
-            height: getWidth(44),
-            backgroundSize: getWidth(44),
+            width: getWidth(44, 22),
+            height: getWidth(44, 22),
+            backgroundSize: getWidth(44, 22),
           }}
         />
         <div
@@ -268,10 +268,10 @@ export default function Main({
           <div
             id="title"
             style={{
-              fontSize: getWidth(22),
-              height: getWidth(24),
+              fontSize: getWidth(22, 9),
+              height: getWidth(24, 11),
               textAlign: "left",
-              marginTop: `-${getWidth(6)}px`,
+              marginTop: `-6px`,
             }}
           >
             {t("main.title")}
@@ -280,8 +280,8 @@ export default function Main({
             id="warp-type"
             style={{
               textAlign: "left",
-              fontSize: getWidth(24),
-              height: getWidth(24),
+              fontSize: getWidth(24, 11),
+              height: getWidth(24, 11),
             }}
           >
             {json.getTitle(vers, bannerType, i18n.resolvedLanguage)}

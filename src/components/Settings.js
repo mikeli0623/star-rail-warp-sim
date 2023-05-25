@@ -70,7 +70,7 @@ const Settings = ({
         id="settings-button"
         alt="Settings Button"
         src="assets/menu/phone.webp"
-        width={getWidth(33)}
+        width={getWidth(33, 18)}
         onClick={() => {
           handleShow();
           if (sound) playMenuSelect();
@@ -99,7 +99,7 @@ const Settings = ({
         style={{
           backgroundColor: "#111213",
           color: "#e9e9eb",
-          width: getWidth(450),
+          width: getWidth(450, 200),
         }}
         onEntering={() => {
           if (sound) setTimeout(() => playMenuOpen(), 200);
@@ -111,7 +111,7 @@ const Settings = ({
             alt="Game Logo"
             src={`assets/menu/${i18n.resolvedLanguage}/logo.webp`}
             draggable="false"
-            width={getWidth(356)}
+            width={getWidth(356, 160)}
           />
           <CloseButton onClose={handleClose} />
         </Offcanvas.Header>
@@ -130,7 +130,7 @@ const Settings = ({
               flexDirection: "row",
               justifyContent: "space-evenly",
               width: "100%",
-              marginBottom: getWidth(15),
+              marginBottom: getWidth(20),
             }}
           >
             <LazyLoadImage
@@ -139,7 +139,7 @@ const Settings = ({
               className="menu-button"
               src={`assets/menu/${i18n.resolvedLanguage}/banner-version.webp`}
               draggable="false"
-              width={getWidth(114)}
+              width={getWidth(114, 50)}
               onClick={() => {
                 if (sound) playButtonSelect();
                 setShowVersion(true);
@@ -151,7 +151,7 @@ const Settings = ({
               className="menu-button"
               src={`assets/menu/${i18n.resolvedLanguage}/data-bank.webp`}
               draggable="false"
-              width={getWidth(114)}
+              width={getWidth(114, 50)}
               onClick={() => {
                 if (sound) playButtonSelect();
                 setShowDB(true);
@@ -163,7 +163,7 @@ const Settings = ({
               className="menu-button"
               src={`assets/menu/${i18n.resolvedLanguage}/language.webp`}
               draggable="false"
-              width={getWidth(114)}
+              width={getWidth(114, 50)}
               onClick={() => {
                 if (sound) playButtonSelect();
                 setShowLang(true);
@@ -176,7 +176,7 @@ const Settings = ({
               flexDirection: "row",
               justifyContent: "space-evenly",
               width: "100%",
-              marginBottom: getWidth(15),
+              marginBottom: getWidth(20),
             }}
           >
             <LazyLoadImage
@@ -188,7 +188,7 @@ const Settings = ({
               }.webp`}
               draggable="false"
               title={lockout ? "Sounds are loading..." : ""}
-              width={getWidth(114)}
+              width={getWidth(114, 50)}
               onClick={() => {
                 if (!lockout) {
                   playButtonSelect();
@@ -202,7 +202,7 @@ const Settings = ({
               className="menu-button"
               src={`assets/menu/${i18n.resolvedLanguage}/reset.webp`}
               draggable="false"
-              width={getWidth(114)}
+              width={getWidth(114, 50)}
               onClick={() => {
                 if (sound) {
                   playButtonSelect();
@@ -217,7 +217,7 @@ const Settings = ({
               className="menu-button"
               src={`assets/menu/${i18n.resolvedLanguage}/credits.webp`}
               draggable="false"
-              width={getWidth(114)}
+              width={getWidth(114, 50)}
               onClick={() => {
                 if (sound) {
                   playButtonSelect();
@@ -246,7 +246,7 @@ const Settings = ({
                 className="menu-button"
                 src={`assets/menu/${i18n.resolvedLanguage}/plug.webp`}
                 draggable="false"
-                width={getWidth(114)}
+                width={getWidth(114, 50)}
                 onClick={() => {
                   if (sound) {
                     playButtonSelect();
@@ -266,7 +266,7 @@ const Settings = ({
                 className="menu-button"
                 src={`assets/menu/${i18n.resolvedLanguage}/panhandling.webp`}
                 draggable="false"
-                width={getWidth(114)}
+                width={getWidth(114, 50)}
                 onClick={() => {
                   if (sound) {
                     playButtonSelect();
@@ -275,7 +275,9 @@ const Settings = ({
                 }}
               />
             </a>
-            <div style={{ width: getWidth(114), height: getWidth(114) }} />
+            <div
+              style={{ width: getWidth(114, 50), height: getWidth(114, 50) }}
+            />
           </div>
         </Offcanvas.Body>
       </Offcanvas>
