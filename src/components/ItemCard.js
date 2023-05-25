@@ -1,12 +1,13 @@
 import "../css/DataBank.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { json } from "../util/Constants";
-import useWindowSize from "./useWindowSize";
+import ResizeContext from "./ResizeContext";
 import { useTranslation } from "react-i18next";
 const trans = require("../assets/data/translations.json");
 
 export default function ItemCard({ type, item, indexed, handleSelect }) {
+  const { getWidth } = useContext(ResizeContext);
   const info = {
     name: json.getName(item),
     rarity: json.getRarity(item),
@@ -21,24 +22,21 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
       .replace(/\s+/g, "-");
   };
 
-  const size = useWindowSize();
-
   const [wrapMulti, setWrapMulti] = useState(10);
 
   useEffect(() => {
-    if (size.width < 1280) {
-      setWrapMulti(13);
-    }
-  }, [size]);
+    setWrapMulti(getWidth(13));
+  }, [getWidth]);
 
   const starPrinter = (i) => {
     return (
       <LazyLoadImage
         effect="opacity"
         key={i}
+        className="db-item-star"
         src="./assets/star.webp"
         alt="star"
-        width={size.width < 580 ? 8 : 14}
+        width={getWidth(14, 8)}
         draggable="false"
       />
     );
@@ -59,22 +57,27 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
       <div className="index-noti" indexed={indexed.toString()}>
         {t("db.not-indexed")}
       </div>
-      <div className="item-top">
+      <div
+        className="item-top"
+        style={{ margin: getWidth(5), width: getWidth(40, 20) }}
+      >
         {type === "char" && (
           <LazyLoadImage
             effect="opacity"
+            width={getWidth(35, 22)}
             className="db-item-element"
             alt="Element"
             src={`assets/elem-${info.element.toLowerCase()}.webp`}
-            width={size.width < 580 ? 25 : 40}
             draggable="false"
+            style={{ marginBottom: getWidth(5) }}
           />
         )}
         <LazyLoadImage
           effect="opacity"
+          className="db-item-path"
+          width={getWidth(35, 20)}
           alt="Path"
           src={`assets/icon-${info.path.toLowerCase().replace(/ /g, "-")}.webp`}
-          width={size.width < 580 ? 20 : 35}
           draggable="false"
         />
       </div>

@@ -16,11 +16,7 @@ function App() {
   const [content, setContent] = useState("main");
 
   const [bannerType, setBannerType] = useState(
-    sessionStorage.getItem("bannerType")
-      ? sessionStorage.getItem("bannerType")
-      : parseInt(localStorage.getItem("totalBeginner")) === 5
-      ? "char"
-      : "beginner"
+    parseInt(localStorage.getItem("totalBeginner")) === 5 ? "char" : "beginner"
   );
 
   const [currentWarp, setCurrentWarp] = useState([]);
