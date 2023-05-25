@@ -52,8 +52,8 @@
   bottom: 5%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   height: 80vh;
   width: 100%;
 }
@@ -209,17 +209,11 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 100px;
   z-index: 10;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin: 5px;
-}
-
-.db-item-element {
-  margin-bottom: 4px;
+  align-items: center;
 }
 
 .char-img {
@@ -330,10 +324,6 @@
     margin: 6px;
   }
 
-  .db-item-element {
-    margin-bottom: 4px;
-  }
-
   .index-noti {
     font-size: 18px;
   }
@@ -353,9 +343,9 @@
   }
 }
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 960px) and (orientation: portrait) {
   .filter-text {
-    opacity: 0;
+    display: none;
   }
 }
 
@@ -366,12 +356,9 @@
     margin: 5px;
   }
 
-  .index-noti {
-    font-size: 10px;
-  }
-
+  .index-noti,
   .item-name {
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .star-container {
@@ -388,6 +375,86 @@
     margin: 10px;
   }
 
+  .filter-img-circle,
+  .filter-img {
+    height: 35px;
+    width: 35px;
+    background-size: 25px 25px;
+  }
+
+  .db-content {
+    bottom: 0%;
+    height: 75vh;
+  }
+
+  .db-item-container > div:first-of-type {
+    height: 90%;
+  }
+}
+
+@media screen and (max-height: 820px) and (orientation: landscape) {
+  .item-card {
+    width: 160px;
+    height: 280px;
+    margin: 10px;
+  }
+
+  .filter-button {
+    margin: 12px;
+  }
+
+  .filter-img-circle,
+  .filter-img {
+    height: 52px;
+    width: 52px;
+    background-size: 42px 42px;
+  }
+
+  .filter-text {
+    font-size: 20px;
+    margin-left: 8px;
+  }
+}
+
+@media screen and (max-height: 700px) and (orientation: landscape) {
+  .item-card {
+    width: 72px;
+    height: 120px;
+    margin: 5px;
+  }
+
+  .index-noti,
+  .item-name {
+    font-size: 10px;
+  }
+
+  .item-filter-container {
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (height < 500px) and (orientation: landscape) {
+}
+
+@media screen and (height < 278px) and (orientation: landscape) {
+  .star-container {
+    width: 100%;
+    position: absolute;
+    transform: translateY(15%);
+  }
+
+  .base-highlight {
+    height: 3px;
+  }
+
+  .item-filter-container {
+    width: 18%;
+  }
+
+  .filter-button {
+    margin: 0px;
+  }
+
   .filter-img-circle {
     height: 35px;
     width: 35px;
@@ -400,12 +467,26 @@
     background-size: 25px 25px;
   }
 
-  .db-content {
-    bottom: 0%;
-    height: 80vh;
+  .filter-text {
+    font-size: 12px;
+    margin-left: 5px;
   }
 
-  .item-top {
-    margin: 2px;
+  .db-content {
+    bottom: 0%;
+    height: 65vh;
+  }
+
+  .db-item-container > div:first-of-type {
+    height: 90%;
+    width: 90%;
+  }
+
+  .modal-content {
+    scale: 0.6;
+  }
+
+  .db-type-icon {
+    width: 70%;
   }
 }

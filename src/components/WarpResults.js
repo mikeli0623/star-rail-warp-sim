@@ -106,7 +106,13 @@ const WarpResults = ({ currentWarp, newItems, onClose, hasFive }) => {
         alt="rings"
         width={getWidth(550)}
       />
-      <div onClick={onClose} className="hack-close" />
+      <div
+        onClick={() => {
+          onClose();
+          playFiveData.stop();
+        }}
+        className="hack-close"
+      />
       <CloseButton
         onClose={() => {
           onClose();
@@ -114,7 +120,13 @@ const WarpResults = ({ currentWarp, newItems, onClose, hasFive }) => {
         }}
       />
       <div className="warp-results top">
-        <div onClick={onClose} className="hack-close" />
+        <div
+          onClick={() => {
+            onClose();
+            playFiveData.stop();
+          }}
+          className="hack-close"
+        />
         <WarpResult
           handleSelect={handleSelect}
           warp={currentWarp[0]}
@@ -162,7 +174,13 @@ const WarpResults = ({ currentWarp, newItems, onClose, hasFive }) => {
         />
       </div>
       <div className="warp-results middle">
-        <div onClick={onClose} className="hack-close" />
+        <div
+          onClick={() => {
+            onClose();
+            playFiveData.stop();
+          }}
+          className="hack-close"
+        />
         <WarpResult
           handleSelect={handleSelect}
           warp={currentWarp[3]}
@@ -217,7 +235,13 @@ const WarpResults = ({ currentWarp, newItems, onClose, hasFive }) => {
         />
       </div>
       <div className="warp-results bottom">
-        <div onClick={onClose} className="hack-close" />
+        <div
+          onClick={() => {
+            onClose();
+            playFiveData.stop();
+          }}
+          className="hack-close"
+        />
         <WarpResult
           handleSelect={handleSelect}
           warp={currentWarp[7]}

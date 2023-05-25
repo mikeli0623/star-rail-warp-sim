@@ -192,8 +192,8 @@ export default function Main({
   }, [totalBeginner, setBannerType]);
 
   useEffect(() => {
-    sessionStorage.setItem("bannerType", bannerType);
-  }, [bannerType]);
+    setBannerType(bannerType);
+  }, [bannerType, setBannerType]);
 
   const getBack = () => {
     if (bannerType === "beginner") return "beginner/beginner";
