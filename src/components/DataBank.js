@@ -106,23 +106,23 @@ export default function DataBank({ type, setContent, setShowDB }) {
       <div
         id="info"
         style={{
-          width: getWidth(380),
-          height: getHeight(50, 380),
+          width: getWidth(680, 200),
+          height: getHeight(50, 680, 20, 200),
         }}
       >
         <div
           id="warp-icon"
           style={{
             backgroundImage: "url(/assets/icon-db.webp)",
-            width: getWidth(44),
-            height: getWidth(44),
-            backgroundSize: getWidth(44),
+            width: getWidth(44, 22),
+            height: getWidth(44, 22),
+            backgroundSize: getWidth(44, 22),
           }}
         />
         <div
           style={{
-            height: getHeight(50, 300),
-            width: getWidth(300),
+            height: getHeight(50, 600),
+            width: getWidth(600),
             display: "flex",
             flexDirection: "column",
             margin: 0,
@@ -132,10 +132,10 @@ export default function DataBank({ type, setContent, setShowDB }) {
           <div
             id="title"
             style={{
-              fontSize: getWidth(22),
-              height: getWidth(24),
+              fontSize: getWidth(22, 9),
+              height: getWidth(24, 11),
               textAlign: "left",
-              marginTop: `-${getWidth(6)}px`,
+              marginTop: `-6px`,
             }}
           >
             {t("db.title")}
@@ -144,8 +144,8 @@ export default function DataBank({ type, setContent, setShowDB }) {
             id="warp-type"
             style={{
               textAlign: "left",
-              fontSize: getWidth(24),
-              height: getWidth(24),
+              fontSize: getWidth(24, 11),
+              height: getWidth(24, 11),
             }}
           >
             {type === "char" ? t("db.type2") : t("db.type1")}
@@ -154,7 +154,7 @@ export default function DataBank({ type, setContent, setShowDB }) {
       </div>
       <div
         className="indexed-info"
-        style={{ color: "white", fontSize: getWidth(24) }}
+        style={{ color: "white", fontSize: getWidth(24, 12) }}
       >
         {t("db.indexed")}{" "}
         <span style={{ color: "#face75" }}>

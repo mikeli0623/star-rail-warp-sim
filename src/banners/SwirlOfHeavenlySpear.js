@@ -75,7 +75,6 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
           }}
         />
         <LazyLoadImage
-          effect="opacity"
           src="../assets/banner/1.1/char-banner-back.webp"
           width={getWidth(1500)}
           alt="right"
@@ -183,7 +182,6 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
         }}
       />
       <LazyLoadImage
-        effect="opacity"
         src="../assets/banner/1.1/jing-yuan.webp"
         width={getWidth(1500)}
         alt="char"

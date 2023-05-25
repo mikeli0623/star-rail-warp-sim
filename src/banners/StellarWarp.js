@@ -104,6 +104,7 @@ const StellarWarp = () => {
       <LazyLoadImage
         className="weap-rate-up"
         src="../assets/banner/standard/standard-rate-1.webp"
+        draggable="false"
         alt="Night on the Milky Way"
         width={getWidth(135)}
         style={{
@@ -117,6 +118,7 @@ const StellarWarp = () => {
       <LazyLoadImage
         className="weap-rate-up"
         src="../assets/banner/standard/standard-rate-2.webp"
+        draggable="false"
         alt="But the Battle Isn't Over"
         width={getWidth(108)}
         style={{
@@ -129,6 +131,7 @@ const StellarWarp = () => {
       <LazyLoadImage
         className="weap-rate-up"
         src="../assets/banner/standard/standard-rate-3.webp"
+        draggable="false"
         alt="Something Irreplaceable"
         width={getWidth(108)}
         style={{
@@ -141,6 +144,7 @@ const StellarWarp = () => {
       <LazyLoadImage
         className="weap-rate-up"
         src={`../assets/banner/standard/${i18n.resolvedLanguage}/weap-tag.webp`}
+        draggable="false"
         alt="weapon tag"
         width={getWidth(240)}
         style={{

@@ -64,6 +64,7 @@ const BrilliantFixationS = ({ direction }) => {
         className="weap-rate-up"
         src="../assets/banner/1.0/weap-rate-1.webp"
         alt="The Moles Welcome You"
+        draggable="false"
         width={getWidth(135)}
         style={{
           animation: "cone-1-animation 0.5s 1",
@@ -76,6 +77,7 @@ const BrilliantFixationS = ({ direction }) => {
         className="weap-rate-up"
         src="../assets/banner/1.0/weap-rate-2.webp"
         alt="Post-Op Conversation"
+        draggable="false"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
@@ -88,6 +90,7 @@ const BrilliantFixationS = ({ direction }) => {
         className="weap-rate-up"
         src="../assets/banner/1.0/weap-rate-3.webp"
         alt="Good Night and Sleep Well"
+        draggable="false"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
@@ -114,6 +117,7 @@ const BrilliantFixationS = ({ direction }) => {
         effect="opacity"
         className="ring"
         src="/assets/rings.webp"
+        draggable="false"
         alt="rings"
         width={getWidth(550)}
         style={{

@@ -84,6 +84,7 @@ export default function LangModal({ show, setShow }) {
                   effect="opacity"
                   alt="Country Icon"
                   src={`assets/lang-icons/${lang}.webp`}
+                  draggable="false"
                   width={22}
                 />
                 <span className="country-name">{langs[lang].nativeName}</span>
