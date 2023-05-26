@@ -6,7 +6,7 @@ import ResizeContext from "./ResizeContext";
 
 const MiniBanners = ({
   vers,
-  bannerType,
+  bannerType: currentBannerType,
   setBannerType,
   setDirection,
   hasBeginner,
@@ -21,6 +21,34 @@ const MiniBanners = ({
 
   const { getWidth } = useContext(ResizeContext);
 
+  const setActiveBanner = (banner) => {
+    if (sound) play();
+
+    const bannerValue = {
+      beginner: 0,
+      char: hasBeginner ? 1 : 0,
+      weap: hasBeginner ? 2 : 1,
+      standard: hasBeginner ? 3 : 2,
+    };
+
+    let edgeBanner =
+      (bannerValue[currentBannerType] === 0 &&
+        bannerValue[banner] === (hasBeginner ? 3 : 2)) ||
+      (bannerValue[currentBannerType] === (hasBeginner ? 3 : 2) &&
+        bannerValue[banner] === 0)
+        ? true
+        : false;
+    console.log(edgeBanner);
+    if (bannerValue[currentBannerType] - bannerValue[banner] < 0) {
+      if (edgeBanner) setDirection("up");
+      else setDirection("down");
+    } else {
+      if (edgeBanner) setDirection("down");
+      else setDirection("up");
+    }
+    setBannerType(banner);
+  };
+
   return (
     <React.Fragment>
       {hasBeginner && (
@@ -33,13 +61,10 @@ const MiniBanners = ({
             width={getWidth(160, 70)}
             style={{
               transform: `translateY(180%)`,
-              opacity: `${bannerType === "beginner" ? 0 : 1}`,
+              opacity: `${currentBannerType === "beginner" ? 0 : 1}`,
             }}
             onClick={() => {
-              if (bannerType !== "beginner") {
-                setBannerType("beginner");
-                if (sound) play();
-              }
+              setActiveBanner("beginner");
             }}
             draggable="false"
             onMouseDown={() => {
@@ -60,7 +85,7 @@ const MiniBanners = ({
             width={getWidth(180, 78.75)}
             style={{
               transform: `translateY(95%)`,
-              opacity: `${bannerType === "beginner" ? 1 : 0}`,
+              opacity: `${currentBannerType === "beginner" ? 1 : 0}`,
               pointerEvents: "none",
             }}
             draggable="false"
@@ -75,7 +100,7 @@ const MiniBanners = ({
         width={getWidth(180, 78.75)}
         style={{
           transform: hasBeginner ? `translateY(155%)` : `translateY(80%)`,
-          opacity: `${bannerType === "char" ? 1 : 0}`,
+          opacity: `${currentBannerType === "char" ? 1 : 0}`,
           pointerEvents: "none",
         }}
         draggable="false"
@@ -88,17 +113,9 @@ const MiniBanners = ({
         width={getWidth(160, 70)}
         style={{
           transform: hasBeginner ? `translateY(320%)` : "translateY(190%)",
-          opacity: `${bannerType === "char" ? 0 : 1}`,
+          opacity: `${currentBannerType === "char" ? 0 : 1}`,
         }}
-        onClick={() => {
-          if (bannerType !== "char") {
-            setBannerType("char");
-            if (hasBeginner) {
-              setDirection(bannerType === "weap" ? "up" : "down");
-            } else setDirection("up");
-            if (sound) play();
-          }
-        }}
+        onClick={() => setActiveBanner("char")}
         draggable="false"
         onMouseDown={() => {
           if (hasBeginner) {
@@ -120,7 +137,7 @@ const MiniBanners = ({
         width={getWidth(180, 78.75)}
         style={{
           transform: hasBeginner ? `translateY(305%)` : "translateY(210%)",
-          opacity: `${bannerType === "weap" ? 1 : 0}`,
+          opacity: `${currentBannerType === "weap" ? 1 : 0}`,
           pointerEvents: "none",
         }}
         draggable="false"
@@ -133,15 +150,9 @@ const MiniBanners = ({
         width={getWidth(160, 70)}
         style={{
           transform: hasBeginner ? `translateY(470%)` : "translateY(330%)",
-          opacity: `${bannerType === "weap" ? 0 : 1}`,
+          opacity: `${currentBannerType === "weap" ? 0 : 1}`,
         }}
-        onClick={() => {
-          if (bannerType !== "weap") {
-            setDirection(bannerType === "char" ? "down" : "up");
-            setBannerType("weap");
-            if (sound) play();
-          }
-        }}
+        onClick={() => setActiveBanner("weap")}
         draggable="false"
         onMouseDown={() => {
           if (hasBeginner) {
@@ -163,7 +174,7 @@ const MiniBanners = ({
         width={getWidth(180, 78.75)}
         style={{
           transform: hasBeginner ? `translateY(445%)` : "translateY(335%)",
-          opacity: `${bannerType === "standard" ? 1 : 0}`,
+          opacity: `${currentBannerType === "standard" ? 1 : 0}`,
         }}
         draggable="false"
       />
@@ -175,14 +186,9 @@ const MiniBanners = ({
         width={getWidth(160, 70)}
         style={{
           transform: hasBeginner ? `translateY(620%)` : "translateY(475%)",
-          opacity: `${bannerType === "standard" ? 0 : 1}`,
+          opacity: `${currentBannerType === "standard" ? 0 : 1}`,
         }}
-        onClick={() => {
-          if (bannerType !== "standard") {
-            setBannerType("standard");
-            if (sound) play();
-          }
-        }}
+        onClick={() => setActiveBanner("standard")}
         draggable="false"
         onMouseDown={() => {
           if (hasBeginner) {
@@ -205,8 +211,10 @@ const MiniBanners = ({
         style={{
           transform: hasBeginner ? "translateY(172%)" : "translateY(180%)",
           opacity: hasBeginner
-            ? `${highlightIndex === 0 && bannerType !== "beginner" ? 1 : 0}`
-            : `${highlightIndex === 0 && bannerType !== "char" ? 1 : 0}`,
+            ? `${
+                highlightIndex === 0 && currentBannerType !== "beginner" ? 1 : 0
+              }`
+            : `${highlightIndex === 0 && currentBannerType !== "char" ? 1 : 0}`,
         }}
       />
       <LazyLoadImage
@@ -218,8 +226,8 @@ const MiniBanners = ({
         style={{
           transform: hasBeginner ? "translateY(309%)" : "translateY(315%)",
           opacity: hasBeginner
-            ? `${highlightIndex === 1 && bannerType !== "char" ? 1 : 0}`
-            : `${highlightIndex === 1 && bannerType !== "weap" ? 1 : 0}`,
+            ? `${highlightIndex === 1 && currentBannerType !== "char" ? 1 : 0}`
+            : `${highlightIndex === 1 && currentBannerType !== "weap" ? 1 : 0}`,
         }}
       />
       <LazyLoadImage
@@ -231,8 +239,10 @@ const MiniBanners = ({
         style={{
           transform: hasBeginner ? "translateY(450%)" : "translateY(455%)",
           opacity: hasBeginner
-            ? `${highlightIndex === 2 && bannerType !== "weap" ? 1 : 0}`
-            : `${highlightIndex === 2 && bannerType !== "standard" ? 1 : 0}`,
+            ? `${highlightIndex === 2 && currentBannerType !== "weap" ? 1 : 0}`
+            : `${
+                highlightIndex === 2 && currentBannerType !== "standard" ? 1 : 0
+              }`,
         }}
       />
       <LazyLoadImage
@@ -244,7 +254,9 @@ const MiniBanners = ({
         style={{
           transform: "translateY(595%)",
           opacity: hasBeginner
-            ? `${highlightIndex === 3 && bannerType !== "standard" ? 1 : 0}`
+            ? `${
+                highlightIndex === 3 && currentBannerType !== "standard" ? 1 : 0
+              }`
             : 0,
         }}
       />

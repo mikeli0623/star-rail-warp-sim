@@ -125,18 +125,25 @@ export default function Main({
 
   const [direction, setDirection] = useState("down");
 
-  const banners = useMemo(() => {
+  const allBanners = useMemo(() => {
     return {
       "1.0": {
-        char: <ButterflyOnSwordtip direction={direction} />,
-        weap: <BrilliantFixationS direction={direction} />,
+        char: <ButterflyOnSwordtip />,
+        weap: <BrilliantFixationS />,
       },
       1.1: {
-        char: <SwirlOfHeavenlySpear direction={direction} />,
-        weap: <BrilliantFixationJY direction={direction} />,
+        char: <SwirlOfHeavenlySpear />,
+        weap: <BrilliantFixationJY />,
       },
     };
-  }, [direction]);
+  }, []);
+
+  const currentBanners = {
+    beginner: <DepartureWarp total={totalBeginner} />,
+    char: allBanners[vers]["char"],
+    weap: allBanners[vers]["weap"],
+    standard: <StellarWarp />,
+  };
 
   const bannerBackColor = {
     "1.0": {
@@ -296,12 +303,39 @@ export default function Main({
         hasBeginner={totalBeginner < 5}
       />
       <AnimatePresence>
-        {totalBeginner < 5 && bannerType === "beginner" && (
-          <DepartureWarp total={totalBeginner} />
-        )}
-        {bannerType === "char" && banners[vers]["char"]}
-        {bannerType === "weap" && banners[vers]["weap"]}
-        {bannerType === "standard" && <StellarWarp />}
+        <motion.div
+          className="banner"
+          key={bannerType + vers}
+          initial={
+            bannerType === "beginner"
+              ? {}
+              : {
+                  transform: `translate(-50%, ${
+                    direction === "up" ? "-" : ""
+                  }500%)`,
+                  opacity: 0,
+                  transition: { duration: 0.3 },
+                }
+          }
+          animate={{
+            transform: "translate(-50%,-50%)",
+            opacity: 1,
+            transition: { duration: bannerType === "beginner" ? 0 : 0.3 },
+          }}
+          exit={
+            bannerType === "beginner"
+              ? { opacity: 0 }
+              : {
+                  transform: `translate(-50%, ${
+                    direction === "up" ? "" : "-"
+                  }500%)`,
+                  opacity: 0,
+                  transition: { duration: 0.3 },
+                }
+          }
+        >
+          {currentBanners[bannerType]}
+        </motion.div>
       </AnimatePresence>
       <Button
         style={{

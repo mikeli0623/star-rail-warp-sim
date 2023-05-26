@@ -18,6 +18,12 @@ html * {
   font-display: swap;
 }
 
+.banner {
+  top: 50%;
+  left: 50%;
+  position: absolute;
+}
+
 #loading {
   background-color: #282827;
   color: white;
