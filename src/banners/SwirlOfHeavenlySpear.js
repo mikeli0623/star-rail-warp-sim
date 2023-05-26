@@ -5,26 +5,12 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
 import { useTranslation } from "react-i18next";
 import NameTag from "../components/NameTag";
-import { motion } from "framer-motion";
 
 const SwirlOfHeavenlySpear = ({ direction }) => {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
   return (
-    <motion.div
-      key="jy-char"
-      className="banner"
-      initial={{
-        transform: `translate(-50%, ${direction === "up" ? "-" : ""}1000%)`,
-        opacity: 0,
-      }}
-      animate={{ transform: "translate(-50%,-50%)", opacity: 1 }}
-      exit={{
-        transform: `translate(-50%, ${direction === "up" ? "" : "-"}1000%)`,
-        opacity: 0,
-      }}
-      transition={{ duration: 0.4 }}
-    >
+    <React.Fragment>
       <div
         style={{
           width: getWidth(8),
@@ -215,7 +201,7 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
         style={{ transform: "translate(-75%, 50%)" }}
         anim={false}
       />
-    </motion.div>
+    </React.Fragment>
   );
 };
 

@@ -4,25 +4,11 @@ import "../css/vers/1.0.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/ResizeContext";
 import NameTag from "../components/NameTag";
-import { motion } from "framer-motion";
 
-const ButterflyOnSwordtip = ({ direction }) => {
+const ButterflyOnSwordtip = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
   return (
-    <motion.div
-      key="se-char"
-      className="banner"
-      initial={{
-        transform: `translate(-50%, ${direction === "up" ? "-" : ""}1000%)`,
-        opacity: 0,
-      }}
-      animate={{ transform: "translate(-50%,-50%)", opacity: 1 }}
-      exit={{
-        transform: `translate(-50%, ${direction === "up" ? "" : "-"}1000%)`,
-        opacity: 0,
-      }}
-      transition={{ duration: 0.4 }}
-    >
+    <React.Fragment>
       <div
         style={{
           width: getWidth(8),
@@ -204,7 +190,7 @@ const ButterflyOnSwordtip = ({ direction }) => {
         style={{ transform: "translate(-75%, 70%)" }}
         anim={false}
       />
-    </motion.div>
+    </React.Fragment>
   );
 };
 

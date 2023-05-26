@@ -5,8 +5,6 @@ import ResizeContext from "../components/ResizeContext";
 import { useTranslation, Trans } from "react-i18next";
 import NameTag from "../components/NameTag";
 import { Scrollbars } from "react-custom-scrollbars-2";
-import { motion } from "framer-motion";
-
 const DepartureWarp = ({ total }) => {
   const { getWidth } = useContext(ResizeContext);
 
@@ -21,11 +19,7 @@ const DepartureWarp = ({ total }) => {
 
   const { t, i18n } = useTranslation();
   return (
-    <motion.div
-      key="beginner"
-      className="banner"
-      style={{ transform: "translate(-50%, -50%)" }}
-    >
+    <React.Fragment>
       <LazyLoadImage
         effect="opacity"
         src="../assets/banner/beginner/gepard.webp"
@@ -244,7 +238,7 @@ const DepartureWarp = ({ total }) => {
           Warps.
         </Trans>
       </Scrollbars>
-    </motion.div>
+    </React.Fragment>
   );
 };
 
