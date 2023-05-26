@@ -48,10 +48,10 @@ const allChars = [
   "seele",
   "welt",
   "yanqing",
-  "silver-wolf",
-  "yukong",
+  // "silver-wolf",
+  // "yukong",
   // "kafka",
-  "luocha",
+  // "luocha",
   // "blade",
 ];
 
