@@ -1,0 +1,56 @@
+@keyframes dan-heng-animation {
+  0% {
+    transform: translate(-58.5%, -35%);
+  }
+  100% {
+    transform: translate(-52.5%, -35%);
+    opacity: 1;
+  }
+}
+
+@keyframes asta-animation {
+  0% {
+    transform: translate(-49.5%, -29%);
+  }
+  100% {
+    transform: translate(-43.5%, -29%);
+    opacity: 1;
+  }
+}
+
+@keyframes serval-animation {
+  0% {
+    transform: translate(-55.5%, -36%);
+  }
+  100% {
+    transform: translate(-49.5%, -36%);
+    opacity: 1;
+  }
+}
+
+@keyframes silver-wolf-animation {
+  0% {
+    transform: translate(-46%, -50%);
+  }
+  100% {
+    transform: translate(-38.8%, -50%);
+  }
+}
+
+@keyframes silver-wolf-back-animation {
+  0% {
+    transform: translate(-32.08%, -27.4%);
+  }
+  100% {
+    transform: translate(-24.88%, -27.4%);
+  }
+}
+
+@keyframes jing-yuan-weap-back-animation {
+  0% {
+    transform: translate(25%, -13%);
+  }
+  100% {
+    transform: translate(20%, -12%);
+  }
+}

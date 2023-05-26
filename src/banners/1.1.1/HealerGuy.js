@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import "../css/Banners.css";
-import "../css/vers/1.1.css";
+import "../../css/Banners.css";
+import "../../css/vers/1.1.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ResizeContext from "../components/ResizeContext";
+import ResizeContext from "../../components/ResizeContext";
 import { useTranslation } from "react-i18next";
-import NameTag from "../components/NameTag";
+import NameTag from "../../components/NameTag";
 
-const SwirlOfHeavenlySpear = ({ direction }) => {
+export default function HealerGuy() {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
   return (
@@ -61,13 +61,13 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
           }}
         />
         <LazyLoadImage
-          src="../assets/banner/1.1/char-banner-back.webp"
+          //   src="../assets/banner/1.0.1/char-banner-back.webp"
           width={getWidth(1500)}
           alt="right"
           draggable="false"
           style={{
             position: "relative",
-            animation: "jing-yuan-back-animation 3s 200ms 1",
+            animation: "luocha-back-animation 3s 200ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -86,12 +86,12 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1/sushang.webp)",
+            backgroundImage: "url(../assets/banner/1.1.1/char-rate-1.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "sushang-animation 1s 1",
+            animation: "pela-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "250ms",
             opacity: "0",
@@ -113,12 +113,12 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1/march-7th.webp)",
-            width: getWidth(1100),
-            height: getWidth(1100),
-            backgroundSize: getWidth(1100),
+            backgroundImage: "url(../assets/banner/1.1.1/char-rate-2.webp)",
+            width: getWidth(800),
+            height: getWidth(800),
+            backgroundSize: getWidth(800),
             position: "absolute",
-            animation: "march-animation 1s 1",
+            animation: "qingque-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "300ms",
             animationFillMode: "both",
@@ -140,12 +140,12 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1/tingyun.webp)",
+            backgroundImage: "url(../assets/banner/1.1.1/char-rate-3.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "tingyun-animation 1s 1",
+            animation: "yukong-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "350ms",
             animationFillMode: "both",
@@ -155,7 +155,7 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.1/${i18n.resolvedLanguage}/char-left.webp`}
+        src={`../assets/banner/1.0.1/${i18n.resolvedLanguage}/char-left.webp`}
         width={getWidth(331)}
         alt="left"
         draggable="false"
@@ -168,15 +168,15 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
         }}
       />
       <LazyLoadImage
-        src="../assets/banner/1.1/jing-yuan.webp"
-        width={getWidth(1500)}
+        src="../assets/banner/1.1.1/main-char.webp"
+        width={getWidth(1200)}
         alt="char"
         draggable="false"
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "jing-yuan-animation 3s 200ms 1",
+          animation: "luocha-animation 3s 200ms 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
@@ -196,13 +196,11 @@ const SwirlOfHeavenlySpear = ({ direction }) => {
         }}
       /> */}
       <NameTag
-        name="Jing Yuan"
+        name="Luocha"
         bottom={true}
         style={{ transform: "translate(-75%, 50%)" }}
         anim={false}
       />
     </React.Fragment>
   );
-};
-
-export default SwirlOfHeavenlySpear;
+}
