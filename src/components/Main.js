@@ -8,10 +8,14 @@ import Settings from "./Settings";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "./ResizeContext";
 import DepartureWarp from "../banners/DepartureWarp";
-import ButterflyOnSwordtip from "../banners/ButterflyOnSwordtip";
-import BrilliantFixationS from "../banners/BrilliantFixationS";
-import BrilliantFixationJY from "../banners/BrilliantFixationJY";
-import SwirlOfHeavenlySpear from "../banners/SwirlOfHeavenlySpear";
+import ButterflyOnSwordtip from "../banners/1.0.0/ButterflyOnSwordtip";
+import BrilliantFixationS from "../banners/1.0.0/BrilliantFixationS";
+import BrilliantFixationJY from "../banners/1.0.1/BrilliantFixationJY";
+import SwirlOfHeavenlySpear from "../banners/1.0.1/SwirlOfHeavenlySpear";
+import BrilliantFixationSW from "../banners/1.1.0/BrilliantFixationSW";
+import GamerMoment from "../banners/1.1.0/GamerMoment";
+import BrilliantFixationL from "../banners/1.1.1/BrilliantFixationL";
+import HealerGuy from "../banners/1.1.1/HealerGuy";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
@@ -34,7 +38,7 @@ export default function Main({
 
   const { t, i18n } = useTranslation();
 
-  const [vers, setVers] = useState(sessionStorage.getItem("vers") || "1.1");
+  const [vers, setVers] = useState(sessionStorage.getItem("vers") || "1.0.1");
 
   const [totalBeginner, setTotalBeginner] = useState(
     parseInt(localStorage.getItem("totalBeginner")) || 0
@@ -127,13 +131,21 @@ export default function Main({
 
   const allBanners = useMemo(() => {
     return {
-      "1.0": {
+      "1.0.0": {
         char: <ButterflyOnSwordtip />,
         weap: <BrilliantFixationS />,
       },
-      1.1: {
+      "1.0.1": {
         char: <SwirlOfHeavenlySpear />,
         weap: <BrilliantFixationJY />,
+      },
+      "1.1.0": {
+        char: <GamerMoment />,
+        weap: <BrilliantFixationSW />,
+      },
+      "1.1.1": {
+        char: <HealerGuy />,
+        weap: <BrilliantFixationL />,
       },
     };
   }, []);
@@ -146,11 +158,19 @@ export default function Main({
   };
 
   const bannerBackColor = {
-    "1.0": {
+    "1.0.0": {
       char: "#0a162e",
       weap: "#0a162e",
     },
-    1.1: {
+    "1.0.1": {
+      char: "#1f2930",
+      weap: "black",
+    },
+    "1.1.0": {
+      char: "black",
+      weap: "black",
+    },
+    "1.1.1": {
       char: "black",
       weap: "black",
     },

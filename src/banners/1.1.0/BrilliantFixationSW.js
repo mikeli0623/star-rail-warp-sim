@@ -1,11 +1,13 @@
 import React, { useContext } from "react";
-import "../css/Banners.css";
-import "../css/vers/1.0.css";
+import "../../css/Banners.css";
+import "../../css/vers/1.1.0.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ResizeContext from "../components/ResizeContext";
+import ResizeContext from "../../components/ResizeContext";
+import { useTranslation } from "react-i18next";
 
-const BrilliantFixationS = () => {
+export default function BrilliantFixationSW() {
   const { getWidth, getHeight } = useContext(ResizeContext);
+  const { i18n } = useTranslation();
   return (
     <React.Fragment>
       <div
@@ -13,7 +15,7 @@ const BrilliantFixationS = () => {
           width: getWidth(764),
           height: getHeight(677.33, 1100),
           background:
-            "linear-gradient(to bottom, rgba(16, 20, 56, 1) 70%, rgba(255, 255, 255, 0) 100%)",
+            "linear-gradient(to bottom, rgba(164, 164, 128, 1) 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
           overflow: "hidden",
           boxShadow: "0 0 10px rgba(8, 8, 8, 0.521)",
@@ -35,12 +37,12 @@ const BrilliantFixationS = () => {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/1.0/weap-banner-back.webp"
+          src="../assets/banner/1.0.1/weap-banner-back.webp"
           width={getWidth(1200)}
           alt="right"
           draggable="false"
           style={{
-            animation: "seele-weap-back-animation 3s 200ms 1",
+            animation: "jing-yuan-weap-back-animation 3s 100ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -48,46 +50,46 @@ const BrilliantFixationS = () => {
       </div>
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/1.0/weap-rate-1.webp"
-        alt="The Moles Welcome You"
-        draggable="false"
+        src="../assets/banner/1.0.1/weap-rate-1.webp"
+        alt="Day One Of My New Life"
         width={getWidth(135)}
         style={{
-          animation: "cone-1-animation 0.5s 1",
+          animation: "cone-1-animation 0.4s 1",
           animationTimingFunction: "linear",
           animationFillMode: "both",
           animationDelay: "300ms",
         }}
+        draggable="false"
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/1.0/weap-rate-2.webp"
-        alt="Post-Op Conversation"
-        draggable="false"
+        src="../assets/banner/1.0.1/weap-rate-2.webp"
+        alt="Planetary Rendezvous"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
-          animation: "cone-2-animation 0.5s 1",
+          animation: "cone-2-animation 0.4s 1",
           animationFillMode: "both",
           animationDelay: "350ms",
         }}
+        draggable="false"
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/1.0/weap-rate-3.webp"
-        alt="Good Night and Sleep Well"
-        draggable="false"
+        src="../assets/banner/1.0.1/weap-rate-3.webp"
+        alt="Only Silence Remains"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
-          animation: "cone-3-animation 0.5s 1",
+          animation: "cone-3-animation 0.4s 1",
           animationFillMode: "both",
           animationDelay: "400ms",
         }}
+        draggable="false"
       />
       <LazyLoadImage
         effect="opacity-100"
-        src="../assets/banner/1.0/weap-left.webp"
+        src={`../assets/banner/1.0.1/${i18n.resolvedLanguage}/weap-left.webp`}
         width={getWidth(1101.5)}
         alt="left"
         draggable="false"
@@ -103,7 +105,6 @@ const BrilliantFixationS = () => {
         effect="opacity"
         className="ring"
         src="/assets/rings.webp"
-        draggable="false"
         alt="rings"
         width={getWidth(550)}
         style={{
@@ -115,6 +116,7 @@ const BrilliantFixationS = () => {
             Math.random() * 360
           )}deg)`,
         }}
+        draggable="false"
       />
       {/* <LazyLoadImage
         effect="opacity"
@@ -133,6 +135,4 @@ const BrilliantFixationS = () => {
       /> */}
     </React.Fragment>
   );
-};
-
-export default BrilliantFixationS;
+}

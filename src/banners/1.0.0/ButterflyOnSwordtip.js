@@ -1,9 +1,9 @@
 import React, { useContext } from "react";
-import "../css/Banners.css";
-import "../css/vers/1.0.css";
+import "../../css/Banners.css";
+import "../../css/vers/1.0.0.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ResizeContext from "../components/ResizeContext";
-import NameTag from "../components/NameTag";
+import ResizeContext from "../../components/ResizeContext";
+import NameTag from "../../components/NameTag";
 
 const ButterflyOnSwordtip = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -48,7 +48,7 @@ const ButterflyOnSwordtip = () => {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/1.0/char-banner-back.webp"
+          src="../assets/banner/1.0.0/char-banner-back.webp"
           height="100%"
           alt="right"
           draggable="false"
@@ -74,7 +74,7 @@ const ButterflyOnSwordtip = () => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.0/natasha.webp)",
+            backgroundImage: "url(../assets/banner/1.0.0/natasha.webp)",
             width: getWidth(1000),
             height: getWidth(1000),
             backgroundSize: getWidth(1000),
@@ -101,7 +101,7 @@ const ButterflyOnSwordtip = () => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.0/hook.webp)",
+            backgroundImage: "url(../assets/banner/1.0.0/hook.webp)",
             width: getWidth(1000),
             height: getWidth(1000),
             backgroundSize: getWidth(1000),
@@ -128,7 +128,7 @@ const ButterflyOnSwordtip = () => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.0/pela.webp)",
+            backgroundImage: "url(../assets/banner/1.0.0/pela.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
@@ -143,7 +143,7 @@ const ButterflyOnSwordtip = () => {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src="../assets/banner/1.0/char-left.webp"
+        src="../assets/banner/1.0.0/char-left.webp"
         width={getWidth(331)}
         alt="left"
         draggable="false"
@@ -157,7 +157,7 @@ const ButterflyOnSwordtip = () => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/1.0/seele.webp"
+        src="../assets/banner/1.0.0/seele.webp"
         width={getWidth(1145)}
         alt="char"
         draggable="false"

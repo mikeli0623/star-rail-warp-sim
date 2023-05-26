@@ -48,9 +48,10 @@ const allChars = [
   "seele",
   "welt",
   "yanqing",
+  // "silver-wolf",
+  // "yukong",
   // "kafka",
   // "luocha",
-  // "silver-wolf",
   // "blade",
 ];
 
@@ -93,8 +94,8 @@ const allWeapons = [
   "before-dawn",
   "but-the-battle-isnt-over",
   "cruising-in-the-stellar-sea",
-  // "echoes-of-the-coffin",
-  // "incessant-rain",
+  "echoes-of-the-coffin",
+  "incessant-rain",
   "in-the-name-of-the-world",
   "in-the-night",
   "moment-of-victory",
@@ -140,7 +141,11 @@ const allBGM = [
   "ss-lustrous-moonlight",
 ];
 
-const allVers = ["1.1", "1.0"];
+const allVers = [
+  // "1.1.1", "1.1.0",
+  "1.0.1",
+  "1.0.0",
+];
 
 const asianLang = ["zh", "ko", "ja"];
 
