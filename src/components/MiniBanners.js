@@ -38,7 +38,6 @@ const MiniBanners = ({
         bannerValue[banner] === 0)
         ? true
         : false;
-    console.log(edgeBanner);
     if (bannerValue[currentBannerType] - bannerValue[banner] < 0) {
       if (edgeBanner) setDirection("up");
       else setDirection("down");
