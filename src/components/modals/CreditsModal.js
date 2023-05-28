@@ -82,7 +82,7 @@ export default function CreditsModal({ show, setShow }) {
               playButton();
             }
           }}
-          text="Close"
+          content="Close"
           size="sm"
           resize={false}
         />

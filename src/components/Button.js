@@ -5,13 +5,15 @@ import useSound from "use-sound";
 
 export default function Button({
   style,
-  text,
+  content,
   onClick,
   className = "",
   size = "md",
   cancel = false,
   disabled = false,
   resize = true,
+  roundSize = null,
+  muted = false,
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const [playSelect] = useSound("/assets/audio/sfx/button-select.mp3");
@@ -19,7 +21,7 @@ export default function Button({
   const { sound } = useContext(SoundContext);
 
   const handleClick = () => {
-    if (sound) {
+    if (sound && !muted) {
       if (cancel) playCancel();
       else playSelect();
     }
@@ -53,22 +55,26 @@ export default function Button({
       onClick={handleClick}
       style={{
         ...style,
-        width: buttonSizes[size]["outerWidth"],
-        height: buttonSizes[size]["outerHeight"],
+        width: roundSize ? roundSize : buttonSizes[size]["outerWidth"],
+        height: roundSize ? roundSize : buttonSizes[size]["outerHeight"],
       }}
     >
       <div
         className="button-outline"
         style={{
-          width: buttonSizes[size]["innerWidth"],
-          height: buttonSizes[size]["innerHeight"],
+          width: roundSize
+            ? roundSize - getWidth(8)
+            : buttonSizes[size]["innerWidth"],
+          height: roundSize
+            ? roundSize - getWidth(8)
+            : buttonSizes[size]["innerHeight"],
         }}
       >
         <div
           className="button-text"
           style={{ fontSize: `${fontSize[size]}px`, width: "100%" }}
         >
-          {text}
+          {content}
         </div>
       </div>
     </div>

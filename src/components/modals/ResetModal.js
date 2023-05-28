@@ -46,7 +46,7 @@ export default function ResetModal({ show, setShow }) {
               playCancel();
             }
           }}
-          text={t("button.cancel")}
+          content={t("button.cancel")}
           size="sm"
           resize={false}
         />
@@ -60,7 +60,7 @@ export default function ResetModal({ show, setShow }) {
             }, 250);
           }}
           style={{ color: "#c42c2c" }}
-          text={t("button.reset")}
+          content={t("button.reset")}
           size="sm"
           resize={false}
         />

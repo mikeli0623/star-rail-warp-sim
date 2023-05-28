@@ -10,13 +10,14 @@ import ItemCard from "./ItemCard";
 import FilterButton from "./FilterButton";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function DataBank({ type, setContent, setShowDB }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { sound } = useContext(SoundContext);
 
   const [playLoad] = useSound("../assets/audio/sfx/db-load.mp3");
-  const [playSelectItem] = useSound("../assets/audio/sfx/db-item-select.mp3");
+  const [playSelectItem] = useSound("../assets/audio/sfx/item-select.mp3");
   const [playSelectFilter] = useSound(
     "../assets/audio/sfx/db-filter-select.mp3"
   );
@@ -103,6 +104,13 @@ export default function DataBank({ type, setContent, setShowDB }) {
       className="db-back"
       style={{ backgroundImage: "url(assets/db-back.webp)" }}
     >
+      <LazyLoadImage
+        alt={`${type} icon`}
+        className="db-faded-type-icon"
+        src={`/assets/db-${type}-icon.webp`}
+        draggable="false"
+        width={getWidth(186, 90)}
+      />
       <div
         id="info"
         style={{

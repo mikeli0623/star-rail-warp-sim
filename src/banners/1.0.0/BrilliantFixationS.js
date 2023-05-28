@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../../css/Banners.css";
 import "../../css/vers/1.0.0.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../../components/ResizeContext";
+import Button from "../../components/Button";
+import RateModal from "../../components/modals/RateModal";
 
 const BrilliantFixationS = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
+  const [show, setShow] = useState(false);
   return (
     <React.Fragment>
       <div
@@ -116,21 +119,30 @@ const BrilliantFixationS = () => {
           )}deg)`,
         }}
       />
-      {/* <LazyLoadImage
-        effect="opacity"
-        src="../assets/magnify.webp"
-        width={getWidth(40)}
-        alt="magnify"
-        draggable="false"
+      <RateModal show={show} setShow={setShow} vers="1.0.0" type="weap" />
+      <Button
         style={{
-          zIndex: 100,
           position: "absolute",
           top: "50%",
           left: "50%",
           transform: "translate(-540%, 40%)",
-          filter: "brightness(0.4)",
+          zIndex: 100,
         }}
-      /> */}
+        onClick={() => setShow(true)}
+        rounded
+        size="md"
+        muted
+        content={
+          <LazyLoadImage
+            effect="opacity"
+            src="../assets/magnify.webp"
+            width={getWidth(18)}
+            alt="magnify"
+            draggable="false"
+          />
+        }
+        roundSize={getWidth(40)}
+      />
     </React.Fragment>
   );
 };

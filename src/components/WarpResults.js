@@ -71,7 +71,7 @@ const WarpResult = ({
 const WarpResults = ({ currentWarp, newItems, onClose, hasFive }) => {
   const { getWidth } = useContext(ResizeContext);
   const { sound } = useContext(SoundContext);
-  const [playSelectItem] = useSound("../assets/audio/sfx/db-item-select.mp3");
+  const [playSelectItem] = useSound("../assets/audio/sfx/item-select.mp3");
   const [playResultsNormal] = useSound("./assets/audio/sfx/results.mp3", {
     volume: 0.8,
   });

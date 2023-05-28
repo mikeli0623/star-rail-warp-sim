@@ -18,6 +18,14 @@
       "vers": "Version",
       "event1": "Événement hyperespace de personnage:",
       "event2": "Événement hyperespace de cône de lumière:"
+    },
+    "rate": {
+      "title": {
+        "char": "Personnages avec de plus grandes chances d'obtention",
+        "weap": "Cônes de lumière avec de plus grandes chances d'obtention"
+      },
+      "rate5": "Taux d'obtention augmenté pour : 5 étoiles",
+      "rate4": "Taux d'obtention augmenté pour : 4 étoiles"
     }
   },
   "db": {

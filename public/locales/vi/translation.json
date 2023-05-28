@@ -18,6 +18,14 @@
       "vers": "Phiên bản",
       "event1": "Bước Nhảy Sự Kiện Nhân Vật:",
       "event2": "Bước Nhảy Sự Kiện Nón Ánh Sáng:"
+    },
+    "rate": {
+      "title": {
+        "char": "Tăng Tỷ Lệ Xuất Hiện Nhân Vật",
+        "weap": "Tăng Tỷ Lệ Xuất Hiện Nón Ánh Sáng"
+      },
+      "rate5": "Tăng Tỷ Lệ Xuất Hiện: 5 Sao",
+      "rate4": "Tăng Tỷ Lệ Xuất Hiện: 4 Sao"
     }
   },
   "db": {

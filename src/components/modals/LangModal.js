@@ -70,7 +70,7 @@ export default function LangModal({ show, setShow }) {
               fontWeight: i18n.resolvedLanguage === lang ? "bold" : "normal",
             }}
             size="sm"
-            text={
+            content={
               <span
                 style={{
                   width: "100%",
@@ -105,7 +105,7 @@ export default function LangModal({ show, setShow }) {
             }
             handleClose();
           }}
-          text={t("button.close")}
+          content={t("button.close")}
           size="sm"
           resize={false}
         />

@@ -18,6 +18,14 @@
       "vers": "Ausführung",
       "event1": "Figuren-Aktionswarp:",
       "event2": "Lichtkegel-Aktionswarp:"
+    },
+    "rate": {
+      "title": {
+        "char": "Figuren mit höherer Chance",
+        "weap": "Lichtkegel mit höherer Chance"
+      },
+      "rate5": "Erhöhte Chance: 5 Sterne",
+      "rate4": "Erhöhte Chance: 4 Sterne"
     }
   },
   "db": {

@@ -40,6 +40,14 @@
   background-color: rgb(24, 29, 49);
 }
 
+.db-faded-type-icon {
+  position: absolute;
+  filter: brightness(10);
+  opacity: 0.08;
+  top: -5%;
+  left: 0;
+}
+
 .indexed-info {
   position: absolute;
   top: 0;
