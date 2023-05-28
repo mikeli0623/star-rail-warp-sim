@@ -17,7 +17,7 @@ export default function DataBank({ type, setContent, setShowDB }) {
   const { sound } = useContext(SoundContext);
 
   const [playLoad] = useSound("../assets/audio/sfx/db-load.mp3");
-  const [playSelectItem] = useSound("../assets/audio/sfx/db-item-select.mp3");
+  const [playSelectItem] = useSound("../assets/audio/sfx/item-select.mp3");
   const [playSelectFilter] = useSound(
     "../assets/audio/sfx/db-filter-select.mp3"
   );

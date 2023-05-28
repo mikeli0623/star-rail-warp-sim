@@ -72,7 +72,7 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
             handleClose();
             setSelected(currentVers);
           }}
-          text={t("button.cancel")}
+          content={t("button.cancel")}
           size="sm"
           resize={false}
         />
@@ -83,7 +83,7 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
             sessionStorage.setItem("vers", selected);
             handleClose();
           }}
-          text={t("button.confirm")}
+          content={t("button.confirm")}
           size="sm"
           resize={false}
         />

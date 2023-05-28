@@ -18,6 +18,14 @@
       "vers": "Versão",
       "event1": "Salto Hiperespacial de Evento de Personagem:",
       "event2": "Salto Hiperespacial de Evento de Cone de Luz:"
+    },
+    "rate": {
+      "title": {
+        "char": "Taxa de Obtenção Aumentada: Personagens",
+        "weap": "Taxa de Obtenção Aumentada: Cones de Luz"
+      },
+      "rate5": "Taxa de Obtenção Aumentada: 5 Estrelas",
+      "rate4": "Taxa de Obtenção Aumentada: 4 Estrelas"
     }
   },
   "db": {

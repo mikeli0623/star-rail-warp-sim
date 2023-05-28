@@ -18,6 +18,14 @@
       "vers": "Version",
       "event1": "Character Event:",
       "event2": "Weapon Event:"
+    },
+    "rate": {
+      "title": {
+        "char": "Drop Rate Boosted Characters",
+        "weap": "Drop-Rate Boost: Light Cones"
+      },
+      "rate5": "Boosted Drop Rate: 5-star",
+      "rate4": "Boosted Drop Rate: 4-star"
     }
   },
   "db": {

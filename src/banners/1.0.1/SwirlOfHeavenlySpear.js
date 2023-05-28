@@ -1,14 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../../css/Banners.css";
 import "../../css/vers/1.0.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../../components/ResizeContext";
 import { useTranslation } from "react-i18next";
 import NameTag from "../../components/NameTag";
+import Button from "../../components/Button";
+import RateModal from "../../components/modals/RateModal";
 
 const SwirlOfHeavenlySpear = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
+
+  const [show, setShow] = useState(false);
+
   return (
     <React.Fragment>
       <div
@@ -181,20 +186,29 @@ const SwirlOfHeavenlySpear = () => {
           animationFillMode: "both",
         }}
       />
-      {/* <LazyLoadImage
-        effect="opacity"
-        src="../assets/magnify.webp"
-        width={getWidth(40)}
-        alt="magnify"
-        draggable="false"
+      <RateModal show={show} setShow={setShow} vers="1.0.1" type="char" />
+      <Button
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translate(-430%, 120%)",
-          filter: "brightness(0.4)",
+          transform: "translate(-420%, 60%)",
         }}
-      /> */}
+        onClick={() => setShow(true)}
+        rounded
+        size="md"
+        muted
+        content={
+          <LazyLoadImage
+            effect="opacity"
+            src="../assets/magnify.webp"
+            width={getWidth(18)}
+            alt="magnify"
+            draggable="false"
+          />
+        }
+        roundSize={getWidth(40)}
+      />
       <NameTag
         name="Jing Yuan"
         bottom={true}

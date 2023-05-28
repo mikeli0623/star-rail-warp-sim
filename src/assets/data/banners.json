@@ -288,7 +288,7 @@
       "pt": "Turbilhão da Lança Celestia"
     },
     "rateUpFive": ["jing-yuan"],
-    "rateUpFour": ["sushang", "march-7th", "tingyun"],
+    "rateUpFour": ["march-7th", "tingyun", "sushang"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -352,9 +352,9 @@
     },
     "rateUpFive": ["before-dawn"],
     "rateUpFour": [
+      "day-one-of-my-new-life",
       "only-silence-remains",
-      "planetary-rendezvous",
-      "day-one-of-my-new-life"
+      "planetary-rendezvous"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",

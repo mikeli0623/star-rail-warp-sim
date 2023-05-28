@@ -1,3 +1,51 @@
+.rate-icon {
+  width: 80px;
+  height: 100px;
+  border-radius: 0 15px 0 0;
+  position: relative;
+  overflow: hidden;
+  transition: outline 0.2s, filter 0.2s;
+  margin: 10px;
+  background: linear-gradient(196deg, #4c4c70 0%, #815eba 70%);
+  border-bottom: 2px solid #a079d6;
+}
+
+.rate-icon[rarity="5"] {
+  background: linear-gradient(
+    196deg,
+    rgba(147, 92, 89, 1) 0%,
+    rgba(190, 149, 108, 1) 70%
+  );
+  border-bottom: 2px solid #d6b178;
+}
+
+.rate-icon:hover {
+  outline: 4px solid white;
+}
+
+.rate-icon:active {
+  filter: brightness(0.8);
+}
+
+.rate-name {
+  position: absolute;
+  bottom: 0;
+  background-color: black;
+  color: white;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+.rate-char-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 440%;
+}
+
 .name-tag {
   position: absolute;
   z-index: 1;
@@ -169,10 +217,10 @@
 
 @keyframes bronya-back-animation {
   0% {
-    transform: translate(-59.3%, -57.8%);
+    transform: translate(-59.18%, -58%);
   }
   100% {
-    transform: translate(-51.1%, -58%);
+    transform: translate(-51.18%, -58%);
   }
 }
 

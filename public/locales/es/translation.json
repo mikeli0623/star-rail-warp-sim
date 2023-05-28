@@ -18,6 +18,14 @@
       "vers": "Versión",
       "event1": "Salto de evento de personaje:",
       "event2": "Salto de evento de cono de luz:"
+    },
+    "rate": {
+      "title": {
+        "char": "Personajes con probabilidad aumentada",
+        "weap": "Conos de luz con probabilidad aumentada"
+      },
+      "rate5": "Probabilidad aumentada: 5★",
+      "rate4": "Probabilidad aumentada: 4★"
     }
   },
   "db": {

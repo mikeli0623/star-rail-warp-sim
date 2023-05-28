@@ -18,6 +18,14 @@
       "vers": "Versi",
       "event1": "Event Warp Karakter:",
       "event2": "Event Warp Light Cone:"
+    },
+    "rate": {
+      "title": {
+        "char": "Karakter UP",
+        "weap": "Light Cone UP"
+      },
+      "rate5": "Peluang UP: 5★",
+      "rate4": "Peluang UP: 4★"
     }
   },
   "db": {

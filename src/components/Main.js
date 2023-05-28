@@ -360,7 +360,7 @@ export default function Main({
         }}
         onClick={() => {}}
         size="md"
-        text={t("button.exchange")}
+        content={t("button.exchange")}
         disabled={true}
       />
       <Button
@@ -373,7 +373,7 @@ export default function Main({
         }}
         onClick={() => {}}
         size="md"
-        text={t("button.view-details")}
+        content={t("button.view-details")}
         disabled={true}
       />
       <WarpButtons onWarp={handleWarp} event={bannerType} />
