@@ -127,8 +127,6 @@ export default function Main({
     localStorage.setItem("stash", JSON.stringify(stash));
   };
 
-  const [direction, setDirection] = useState("down");
-
   const allBanners = useMemo(() => {
     return {
       "1.0.0": {
@@ -319,7 +317,6 @@ export default function Main({
         vers={vers}
         bannerType={bannerType}
         setBannerType={setBannerType}
-        setDirection={setDirection}
         hasBeginner={totalBeginner < 5}
       />
       <AnimatePresence>
@@ -330,9 +327,7 @@ export default function Main({
             bannerType === "beginner"
               ? {}
               : {
-                  transform: `translate(-50%, ${
-                    direction === "up" ? "-" : ""
-                  }500%)`,
+                  transform: `translate(-50%, 500%)`,
                   opacity: 0,
                   transition: { duration: 0.3 },
                 }
@@ -346,9 +341,7 @@ export default function Main({
             bannerType === "beginner"
               ? { opacity: 0 }
               : {
-                  transform: `translate(-50%, ${
-                    direction === "up" ? "" : "-"
-                  }500%)`,
+                  transform: `translate(-50%, -500%)`,
                   opacity: 0,
                   transition: { duration: 0.3 },
                 }

@@ -8,7 +8,6 @@ const MiniBanners = ({
   vers,
   bannerType: currentBannerType,
   setBannerType,
-  setDirection,
   hasBeginner,
 }) => {
   const [highlightIndex, setHighlightIndex] = useState(null);
@@ -22,30 +21,10 @@ const MiniBanners = ({
   const { getWidth } = useContext(ResizeContext);
 
   const setActiveBanner = (banner) => {
-    if (sound) play();
-
-    const bannerValue = {
-      beginner: 0,
-      char: hasBeginner ? 1 : 0,
-      weap: hasBeginner ? 2 : 1,
-      standard: hasBeginner ? 3 : 2,
-    };
-
-    let edgeBanner =
-      (bannerValue[currentBannerType] === 0 &&
-        bannerValue[banner] === (hasBeginner ? 3 : 2)) ||
-      (bannerValue[currentBannerType] === (hasBeginner ? 3 : 2) &&
-        bannerValue[banner] === 0)
-        ? true
-        : false;
-    if (bannerValue[currentBannerType] - bannerValue[banner] < 0) {
-      if (edgeBanner) setDirection("up");
-      else setDirection("down");
-    } else {
-      if (edgeBanner) setDirection("down");
-      else setDirection("up");
+    if (currentBannerType !== banner) {
+      if (sound) play();
+      setBannerType(banner);
     }
-    setBannerType(banner);
   };
 
   return (
