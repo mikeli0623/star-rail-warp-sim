@@ -10,6 +10,7 @@ import ItemCard from "./ItemCard";
 import FilterButton from "./FilterButton";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function DataBank({ type, setContent, setShowDB }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -103,6 +104,13 @@ export default function DataBank({ type, setContent, setShowDB }) {
       className="db-back"
       style={{ backgroundImage: "url(assets/db-back.webp)" }}
     >
+      <LazyLoadImage
+        alt={`${type} icon`}
+        className="db-faded-type-icon"
+        src={`/assets/db-${type}-icon.webp`}
+        draggable="false"
+        width={getWidth(186, 90)}
+      />
       <div
         id="info"
         style={{
