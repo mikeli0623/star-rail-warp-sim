@@ -35,4 +35,3 @@ Make a few pulls yourself at [https://star-rail-warp-sim.onrender.com/](https://
 ## Upcoming Features
 
 - Warp History
-- Phonograph BGM select
