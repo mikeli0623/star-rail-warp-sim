@@ -290,26 +290,9 @@ const Settings = ({
                 }}
               />
             </a>
-            <a
-              href="https://ko-fi.com/mikeli0623"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <LazyLoadImage
-                effect="opacity"
-                alt="Support Button"
-                className="menu-button"
-                src={`assets/menu/${i18n.resolvedLanguage}/panhandling.webp`}
-                draggable="false"
-                width={getWidth(114, 50)}
-                onClick={() => {
-                  if (sound) {
-                    playButtonSelect();
-                    playPageOpen();
-                  }
-                }}
-              />
-            </a>
+            <div
+              style={{ width: getWidth(114, 50), height: getWidth(114, 50) }}
+            />
           </div>
         </Offcanvas.Body>
       </Offcanvas>
