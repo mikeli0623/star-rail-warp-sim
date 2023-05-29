@@ -21,7 +21,6 @@ export default function CreditsModal({ show, setShow }) {
     <Modal
       show={show}
       onHide={handleClose}
-      centered
       onExiting={() => {
         if (sound) playModalClose();
       }}
@@ -50,16 +49,6 @@ export default function CreditsModal({ show, setShow }) {
               rel="noreferrer"
             >
               Reset icons created by inkubators - Flaticon
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.flaticon.com/free-icons/cinema"
-              title="Cinema Icons"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Cinema icons created by SumberRejeki - Flaticon
             </a>
           </li>
           <li>

@@ -11,7 +11,8 @@
     "credits": {
       "title": "Credits",
       "body1": "Sebagian besar aset milik Mihoyo dan diambil dari Honkai Star Rail dan diedit.",
-      "body2": "Beberapa ikon disediakan oleh:"
+      "body2": "Beberapa ikon disediakan oleh:",
+      "body3": "Beberapa seni karakter disediakan oleh:"
     },
     "vers": {
       "title": "Pilih versi Anda",
@@ -26,6 +27,9 @@
       },
       "rate5": "Peluang UP: 5★",
       "rate4": "Peluang UP: 4★"
+    },
+    "phono": {
+      "title": "Fonograf"
     }
   },
   "db": {
@@ -41,7 +45,9 @@
     "confirm": "Mengonfirmasi",
     "reset": "Mengatur ulang",
     "exchange": "Penukaran",
-    "view-details": "Lihat Detail"
+    "view-details": "Lihat Detail",
+    "phono": "Pilih Musik",
+    "current": "Lagu Saat Ini"
   },
   "banner": {
     "beg": {

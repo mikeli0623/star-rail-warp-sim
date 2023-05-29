@@ -33,6 +33,7 @@ export default function Main({
   setContent,
   setCurrentWarp,
   setDBType,
+  bgm,
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
 
@@ -248,6 +249,7 @@ export default function Main({
         setVers={setVers}
         setDBType={setDBType}
         setContent={setContent}
+        bgm={bgm}
       />
       <div
         id="main-back-cover"
@@ -359,7 +361,6 @@ export default function Main({
           transform: "translate(-230%, 650%)",
         }}
         onClick={() => {}}
-        size="md"
         content={t("button.exchange")}
         disabled={true}
       />
@@ -372,7 +373,6 @@ export default function Main({
           transform: "translate(-125%, 650%)",
         }}
         onClick={() => {}}
-        size="md"
         content={t("button.view-details")}
         disabled={true}
       />

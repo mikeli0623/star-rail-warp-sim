@@ -11,7 +11,8 @@
     "credits": {
       "title": "감사",
       "body1": "대부분의 자산은 Mihoyo에 속하며 Honkai Star Rail에서 가져와 편집했습니다.",
-      "body2": "에서 제공하는 일부 아이콘:"
+      "body2": "에서 제공하는 일부 아이콘:",
+      "body3": "일부 캐릭터 아트 제공:"
     },
     "vers": {
       "title": "버전을 선택하세요",
@@ -26,6 +27,9 @@
       },
       "rate5": "확률UP: ★5",
       "rate4": "확률UP: ★4"
+    },
+    "phono": {
+      "title": "축음기"
     }
   },
   "db": {
@@ -41,7 +45,9 @@
     "confirm": "확인",
     "reset": "초기화",
     "exchange": "상점 교환",
-    "view-details": "상세보기"
+    "view-details": "상세보기",
+    "phono": "음악 선택",
+    "current": "현재 곡"
   },
   "banner": {
     "beg": {
