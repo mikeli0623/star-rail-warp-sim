@@ -45,6 +45,7 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
       <div className="db-type-group">
         <LazyLoadImage
           className="db-type-icon"
+          type="weap"
           effect="opacity"
           alt="Light Cones Icon"
           src="/assets/db-weap-icon.webp"
@@ -62,6 +63,7 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
       <div className="db-type-group">
         <LazyLoadImage
           className="db-type-icon"
+          type="char"
           effect="opacity"
           alt="Characters Icon"
           src="/assets/db-char-icon.webp"
