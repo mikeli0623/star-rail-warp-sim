@@ -11,7 +11,8 @@
     "credits": {
       "title": "Credits",
       "body1": "Most assets belong to Mihoyo and were taken from in Honkai Star Rail and edited.",
-      "body2": "Some icons provided by:"
+      "body2": "Some icons provided by:",
+      "body3": "Some character art provided by:"
     },
     "vers": {
       "title": "Choose Your Banner Version",
@@ -26,6 +27,9 @@
       },
       "rate5": "Boosted Drop Rate: 5-star",
       "rate4": "Boosted Drop Rate: 4-star"
+    },
+    "phono": {
+      "title": "Phonograph"
     }
   },
   "db": {
@@ -41,7 +45,9 @@
     "confirm": "Confirm",
     "reset": "Reset",
     "exchange": "Exchange",
-    "view-details": "View Details"
+    "view-details": "View Details",
+    "phono": "Set Music",
+    "current": "Current Song"
   },
   "banner": {
     "beg": {

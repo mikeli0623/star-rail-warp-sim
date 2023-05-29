@@ -11,7 +11,8 @@
     "credits": {
       "title": "Credits",
       "body1": "La mayoría de los activos pertenecen a Mihoyo y se tomaron de Honkai Star Rail y se editaron.",
-      "body2": "Algunos iconos proporcionados por:"
+      "body2": "Algunos iconos proporcionados por:",
+      "body3": "Algunos dibujos de personajes proporcionados por:"
     },
     "vers": {
       "title": "Elija su versión de banner",
@@ -26,6 +27,9 @@
       },
       "rate5": "Probabilidad aumentada: 5★",
       "rate4": "Probabilidad aumentada: 4★"
+    },
+    "phono": {
+      "title": "Fonógrafo"
     }
   },
   "db": {
@@ -41,7 +45,9 @@
     "confirm": "Confirmar",
     "reset": "Reiniciar",
     "exchange": "Recompensas canjeables",
-    "view-details": "Ver detalles"
+    "view-details": "Ver detalles",
+    "phono": "Seleccionar musica",
+    "current": "Canción actual"
   },
   "banner": {
     "beg": {

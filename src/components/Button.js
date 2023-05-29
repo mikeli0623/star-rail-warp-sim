@@ -8,7 +8,7 @@ export default function Button({
   content,
   onClick,
   className = "",
-  size = "md",
+  size = "lg",
   cancel = false,
   disabled = false,
   resize = true,
@@ -30,8 +30,8 @@ export default function Button({
 
   const fontSize = {
     sm: resize ? getWidth(14) : 14,
-    md: resize ? getWidth(24) : 24,
-    lg: resize ? getWidth(36) : 36,
+    md: resize ? getWidth(18) : 18,
+    lg: resize ? getWidth(24) : 24,
   };
 
   const buttonSizes = {
@@ -42,6 +42,12 @@ export default function Button({
       innerHeight: resize ? getHeight(35, 95) : 35,
     },
     md: {
+      outerWidth: resize ? getWidth(180) : 180,
+      outerHeight: resize ? getHeight(44, 180) : 44,
+      innerWidth: resize ? 175 : 175,
+      innerHeight: resize ? getHeight(39, 175) : 39,
+    },
+    lg: {
       outerWidth: resize ? getWidth(240) : 240,
       outerHeight: resize ? getHeight(48, 240) : 48,
       innerWidth: resize ? 235 : 235,

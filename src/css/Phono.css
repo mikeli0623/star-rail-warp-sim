@@ -1,0 +1,168 @@
+.phono-icon {
+  width: 30px;
+}
+
+.phono-albums {
+  height: 421px;
+  width: 172px;
+}
+
+.phono-album {
+  filter: brightness(0.6);
+  transition: scale 0.2s, filter 0.2s;
+}
+
+.phono-album[actual="true"] {
+  filter: brightness(1);
+  scale: 1.1;
+}
+
+.phono-album[actual="false"]:hover {
+  filter: brightness(1);
+  scale: 1.1;
+}
+
+.phono-album[actual="false"]:active {
+  filter: brightness(0.8);
+  scale: 1.05;
+}
+
+.phono-track {
+  position: relative;
+  border: 2px solid #818181;
+  background-color: rgba(0, 0, 0, 0.8);
+  transition: background-color 0.2s, border-color 0.2s;
+  width: 250px;
+  height: 60px;
+  font-size: 18px;
+}
+
+.phono-track[chosen="true"] {
+  border: 2px solid white;
+  background-color: #e2e4e4;
+  color: black;
+}
+
+.phono-track[chosen="false"]:hover {
+  background-color: rgba(94, 94, 94, 0.8);
+}
+
+.phono-track[chosen="false"]:active {
+  border: 2px solid #756335;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.phono-track[filler="true"] {
+  border: 2px solid white;
+}
+
+.play-bar {
+  background-color: black;
+  width: 4px;
+  transform-origin: bottom;
+}
+
+.play-bar.small {
+  height: 18px;
+}
+
+.play-bar.big {
+  height: 28px;
+}
+
+.left {
+  margin-right: 3px;
+}
+
+.left.small {
+  animation: animate-bar-small 1.5s infinite both;
+}
+
+.left.big {
+  animation: animate-bar-big 1.5s infinite 100ms both;
+}
+
+.right.big {
+  animation: animate-bar-big 1.5s infinite 50ms both;
+}
+
+.small.right {
+  margin-left: 3px;
+  animation: animate-bar-small 1.5s infinite 50ms both;
+}
+
+@keyframes animate-bar-small {
+  0% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(0.6);
+  }
+  33% {
+    transform: scaleY(0.8);
+  }
+  40% {
+    transform: scaleY(0.9);
+  }
+  85% {
+    transform: scaleY(0.4);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@keyframes animate-bar-big {
+  0% {
+    transform: scaleY(1);
+  }
+  25% {
+    transform: scaleY(0.5);
+  }
+  33% {
+    transform: scaleY(0.7);
+  }
+  50% {
+    transform: scaleY(0.9);
+  }
+  90% {
+    transform: scaleY(0.4);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .phono-albums {
+    width: 150px;
+    height: 300px;
+  }
+
+  .phono-album {
+    width: 100px;
+    height: 85px;
+  }
+
+  .phono-track {
+    width: 220px;
+    height: 55px;
+    font-size: 14px;
+  }
+
+  .current-icon {
+    width: 20px;
+  }
+
+  .phono-icon {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .phono-track {
+    width: 180px;
+    height: 45px;
+    font-size: 14px;
+  }
+}

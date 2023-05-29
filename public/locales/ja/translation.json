@@ -11,7 +11,8 @@
     "credits": {
       "title": "Credits",
       "body1": "ほとんどのアセットは Mihoyo に属し、Honkai Star Rail から取得されて編集されました。",
-      "body2": "一部のアイコンは以下から提供されます:"
+      "body2": "一部のアイコンは以下から提供されます:",
+      "body3": "キャラクターアートの一部は提供されています:"
     },
     "vers": {
       "title": "バージョンを選択してください",
@@ -26,6 +27,9 @@
       },
       "rate5": "確率アップ: ★5",
       "rate4": "確率アップ: ★4"
+    },
+    "phono": {
+      "title": "蓄音機"
     }
   },
   "db": {
@@ -41,7 +45,9 @@
     "confirm": "OK",
     "reset": "リセット",
     "exchange": "ショップ交換",
-    "view-details": "詳細を確認"
+    "view-details": "詳細を確認",
+    "phono": "BGMを設定する",
+    "current": "現在のBGM"
   },
   "banner": {
     "beg": {

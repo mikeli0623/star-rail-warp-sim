@@ -11,7 +11,8 @@
     "credits": {
       "title": "Credits",
       "body1": "La plupart des actifs appartiennent à Mihoyo et ont été extraits de Honkai Star Rail et édités.",
-      "body2": "Quelques icônes fournies par:"
+      "body2": "Quelques icônes fournies par:",
+      "body3": "Quelques illustrations de personnages fournies par:"
     },
     "vers": {
       "title": "Choisissez votre version",
@@ -26,6 +27,9 @@
       },
       "rate5": "Taux d'obtention augmenté pour : 5 étoiles",
       "rate4": "Taux d'obtention augmenté pour : 4 étoiles"
+    },
+    "phono": {
+      "title": "Phonographe"
     }
   },
   "db": {
@@ -41,7 +45,9 @@
     "confirm": "Confirmer",
     "reset": "Réinitialiser",
     "exchange": "Boutique",
-    "view-details": "Voir les détails"
+    "view-details": "Voir les détails",
+    "phono": "Sélectionnez la musique",
+    "current": "Musique actuelle"
   },
   "banner": {
     "beg": {

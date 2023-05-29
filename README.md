@@ -35,4 +35,3 @@ Make a few pulls yourself at [https://starrailwarpsim.com/](https://starrailwarp
 ## Upcoming Features
 
 - Warp History
-- Phonograph BGM select

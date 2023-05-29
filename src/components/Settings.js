@@ -10,6 +10,7 @@ import VersionModal from "./modals/VersionModal";
 import ResizeContext from "./ResizeContext";
 import DataBankOverlay from "./DataBankOverlay";
 import CreditsModal from "./modals/CreditsModal";
+import PhonoModal from "./modals/PhonoModal";
 import LangModal from "./modals/LangModal";
 import { useTranslation } from "react-i18next";
 
@@ -21,6 +22,7 @@ const Settings = ({
   setVers,
   setDBType,
   setContent,
+  bgm,
 }) => {
   const { getWidth } = useContext(ResizeContext);
 
@@ -43,7 +45,6 @@ const Settings = ({
   );
 
   const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
-  // const [playPhonoOpen] = useSound("../assets/audio/sfx/phono-open-1.mp3");
   const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
 
   const { sound, setSound } = useContext(SoundContext);
@@ -56,12 +57,24 @@ const Settings = ({
 
   const [showLang, setShowLang] = useState(false);
 
+  const [showPhono, setShowPhono] = useState(false);
+
   const handleDBSelect = (type) => {
     setDBType(type);
     setContent("data-bank");
   };
 
   const { i18n } = useTranslation();
+
+  const trackInfo = () => {
+    if (!bgm[0]) return ["ooc", "timeline"];
+    const fileName = bgm[0].split("/").pop();
+    const regex = /^(.+?)-(.+?)\.mp3$/;
+    const match = fileName.match(regex);
+    const title = match[2].replace(/-/g, " ");
+    const album = match[1].replace(/-/g, " ");
+    return [album, title];
+  };
 
   return (
     <React.Fragment>
@@ -92,6 +105,13 @@ const Settings = ({
       />
       <CreditsModal show={showCredits} setShow={setShowCredits} />
       <LangModal show={showLang} setShow={setShowLang} />
+      <PhonoModal
+        show={showPhono}
+        setShow={setShowPhono}
+        handleSelect={bgm[1]}
+        currentAlbum={trackInfo()[0]}
+        currentTrack={trackInfo()[1]}
+      />
       <Offcanvas
         show={showSettings}
         onHide={handleClose}
@@ -159,14 +179,16 @@ const Settings = ({
             />
             <LazyLoadImage
               effect="opacity"
-              alt="Language Button"
+              alt="Phonograph Button"
               className="menu-button"
-              src={`assets/menu/${i18n.resolvedLanguage}/language.webp`}
+              src={`assets/menu/${i18n.resolvedLanguage}/phono.webp`}
               draggable="false"
               width={getWidth(114, 50)}
               onClick={() => {
-                if (sound) playButtonSelect();
-                setShowLang(true);
+                if (!lockout) {
+                  if (sound) playButtonSelect();
+                  setShowPhono(true);
+                }
               }}
             />
           </div>
@@ -213,6 +235,27 @@ const Settings = ({
             />
             <LazyLoadImage
               effect="opacity"
+              alt="Language Button"
+              className="menu-button"
+              src={`assets/menu/${i18n.resolvedLanguage}/language.webp`}
+              draggable="false"
+              width={getWidth(114, 50)}
+              onClick={() => {
+                if (sound) playButtonSelect();
+                setShowLang(true);
+              }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-evenly",
+              width: "100%",
+            }}
+          >
+            <LazyLoadImage
+              effect="opacity"
               alt="Credits Button"
               className="menu-button"
               src={`assets/menu/${i18n.resolvedLanguage}/credits.webp`}
@@ -226,15 +269,6 @@ const Settings = ({
                 setShowCredits(true);
               }}
             />
-          </div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "space-evenly",
-              width: "100%",
-            }}
-          >
             <a
               href="https://github.com/mikeli0623/star-rail"
               target="_blank"
@@ -275,9 +309,6 @@ const Settings = ({
                 }}
               />
             </a>
-            <div
-              style={{ width: getWidth(114, 50), height: getWidth(114, 50) }}
-            />
           </div>
         </Offcanvas.Body>
       </Offcanvas>

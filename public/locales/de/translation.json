@@ -11,7 +11,8 @@
     "credits": {
       "title": "Credits",
       "body1": "Die meisten Assets gehören Mihoyo und wurden aus Honkai Star Rail übernommen und bearbeitet.",
-      "body2": "Einige Symbole bereitgestellt von:"
+      "body2": "Einige Symbole bereitgestellt von:",
+      "body3": "Einige Charakterzeichnungen bereitgestellt von:"
     },
     "vers": {
       "title": "Wähle deine Version",
@@ -26,6 +27,9 @@
       },
       "rate5": "Erhöhte Chance: 5 Sterne",
       "rate4": "Erhöhte Chance: 4 Sterne"
+    },
+    "phono": {
+      "title": "Grammophon"
     }
   },
   "db": {
@@ -41,7 +45,9 @@
     "confirm": "Bestätigen",
     "reset": "Zurücksetzen",
     "exchange": "Zum Shop",
-    "view-details": "Details ansehen"
+    "view-details": "Details ansehen",
+    "phono": "Musik auswählen",
+    "current": "Aktuelles Lied"
   },
   "banner": {
     "beg": {

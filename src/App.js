@@ -24,7 +24,7 @@ function App() {
   const [sound, setSound] = useState(false);
   const soundValue = { sound, setSound };
 
-  const [lockout, setLockout] = useState(true);
+  const [lockout, setLockout] = useState(0);
 
   const [newItems, setNewItems] = useState([]);
 
@@ -53,22 +53,99 @@ function App() {
   const [hasFive, setHasFive] = useState(false);
   const [hasFour, setHasFour] = useState(false);
 
-  const [bgm] = useState(
-    // allBGM[Math.floor(Math.random() * allBGM.length)]
-    "ooc-timeline"
+  const [playOOCSF, OOCSFData] = useSound(
+    "assets/audio/bgm/ooc-science-fiction.mp3",
+    {
+      loop: true,
+      onload: () => setLockout((prev) => prev + 1),
+    }
   );
 
-  const [playMainBGM, mainData] = useSound(`assets/audio/bgm/${bgm}.mp3`, {
+  const [playOOCT, OOCTData] = useSound("assets/audio/bgm/ooc-timeline.mp3", {
     loop: true,
-    onload: () => setLockout(false),
-    volume: 0.2,
+    onload: () => setLockout((prev) => prev + 1),
   });
+
+  const [playOOCSW, OOCSWData] = useSound(
+    "assets/audio/bgm/ooc-space-walk.mp3",
+    {
+      loop: true,
+      onload: () => setLockout((prev) => prev + 1),
+    }
+  );
+
+  const [playOSAEFS, OSAEFSData] = useSound(
+    "assets/audio/bgm/osae-faded-sun.mp3",
+    {
+      loop: true,
+      onload: () => setLockout((prev) => prev + 1),
+    }
+  );
+
+  const [playOSAESA, OSAESAData] = useSound(
+    "assets/audio/bgm/osae-streets-abuzz.mp3",
+    {
+      loop: true,
+      onload: () => setLockout((prev) => prev + 1),
+    }
+  );
+
+  const [playSSCF, SSCFData] = useSound(
+    "assets/audio/bgm/ss-cumulus-formations.mp3",
+    {
+      loop: true,
+      onload: () => setLockout((prev) => prev + 1),
+    }
+  );
+
+  const [playSSEI, SSEIData] = useSound(
+    "assets/audio/bgm/ss-exquisite-ingenuity.mp3",
+    {
+      loop: true,
+      onload: () => setLockout((prev) => prev + 1),
+    }
+  );
+
+  const [playSSLM, SSLMData] = useSound(
+    "assets/audio/bgm/ss-lustrous-moonlight.mp3",
+    {
+      loop: true,
+      onload: () => setLockout((prev) => prev + 1),
+    }
+  );
+
+  const [[playMainBGM, mainData], setBgm] = useState([undefined, undefined]);
+
+  const allBGM = {
+    "ooc-science-fiction": [playOOCSF, OOCSFData],
+    "ooc-space-walk": [playOOCSW, OOCSWData],
+    "ooc-timeline": [playOOCT, OOCTData],
+    "osae-faded-sun": [playOSAEFS, OSAEFSData],
+    "osae-streets-abuzz": [playOSAESA, OSAESAData],
+    "ss-cumulus-formations": [playSSCF, SSCFData],
+    "ss-exquisite-ingenuity": [playSSEI, SSEIData],
+    "ss-lustrous-moonlight": [playSSLM, SSLMData],
+  };
+
+  useEffect(() => {
+    if (lockout === Object.keys(allBGM).length) {
+      setBgm(allBGM["ooc-timeline"]);
+    }
+  }, [lockout]);
+
+  const handleTrack = (track) => {
+    if (!mainData.sound._src.includes(track)) {
+      mainData.stop();
+      setBgm(allBGM[track]);
+    }
+  };
 
   const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp-loop.mp3", {
     loop: true,
   });
 
   useEffect(() => {
+    if (!mainData) return;
     if (!sound) {
       mainData.pause();
       warpData.stop();
@@ -113,11 +190,11 @@ function App() {
   }, [
     content,
     sound,
-    playMainBGM,
     mainData,
+    currentWarp.length,
+    playMainBGM,
     playWarpBGM,
     warpData,
-    currentWarp,
   ]);
 
   const [showDB, setShowDB] = useState(false);
@@ -131,7 +208,7 @@ function App() {
           <AnimatePresence>
             {content === "main" && (
               <Main
-                lockout={lockout}
+                lockout={lockout < Object.keys(allBGM).length}
                 bannerType={bannerType}
                 showDB={showDB}
                 setShowDB={setShowDB}
@@ -142,6 +219,7 @@ function App() {
                 setContent={setContent}
                 setCurrentWarp={setCurrentWarp}
                 setDBType={setDBType}
+                bgm={[mainData ? mainData.sound._src : undefined, handleTrack]}
               />
             )}
             {content === "video" && (

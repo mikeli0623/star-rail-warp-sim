@@ -19,7 +19,6 @@ export default function ResetModal({ show, setShow }) {
     <Modal
       show={show}
       onHide={handleClose}
-      centered
       onExiting={() => {
         if (sound) playModalClose();
       }}
@@ -38,7 +37,10 @@ export default function ResetModal({ show, setShow }) {
       <Modal.Body style={{ backgroundColor: "#e9e7e2" }}>
         {t("modal.reset.body")}
       </Modal.Body>
-      <Modal.Footer style={{ backgroundColor: "#e9e7e2" }}>
+      <Modal.Footer
+        className="justify-content-between"
+        style={{ backgroundColor: "#e9e7e2" }}
+      >
         <Button
           onClick={() => {
             handleClose();

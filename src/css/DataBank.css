@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
 }
 
 .db-type-group {
@@ -15,6 +16,16 @@
 .db-type-icon {
   margin: 0 30px;
   transition: filter 0.2s, scale 0.2s;
+}
+
+.db-type-icon[type="weap"] {
+  width: 186px;
+  height: 201px;
+}
+
+.db-type-icon[type="char"] {
+  width: 298px;
+  height: 298px;
 }
 
 .db-type-icon:hover {
@@ -320,8 +331,14 @@
 }
 
 @media screen and (max-width: 700px) {
-  .db-type-icon {
-    width: 70%;
+  .db-type-icon[type="weap"] {
+    width: 130px;
+    height: 141px;
+  }
+
+  .db-type-icon[type="char"] {
+    width: 209px;
+    height: 209px;
   }
 }
 
@@ -494,7 +511,13 @@
     scale: 0.6;
   }
 
-  .db-type-icon {
-    width: 70%;
+  .db-type-icon[type="weap"] {
+    width: 130px;
+    height: 141px;
+  }
+
+  .db-type-icon[type="char"] {
+    width: 209px;
+    height: 209px;
   }
 }

@@ -73,6 +73,7 @@ export default function RateModal({ show, setShow, vers, type }) {
           {json.getRateUpFour(vers, type).map((item) => {
             return (
               <RateIcon
+                key={item}
                 item={item}
                 rarity="4"
                 type={type}

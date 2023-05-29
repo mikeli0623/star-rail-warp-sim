@@ -130,16 +130,11 @@ const allWeapons = [
   "mutual-demise",
 ];
 
-const allBGM = [
-  "ooc-science-fiction",
-  "ooc-space-walk",
-  "ooc-timeline",
-  "osae-faded-sun",
-  "osae-streets-abuzz",
-  "osae-cumulus-formations",
-  "ss-exquisite-ingenuity",
-  "ss-lustrous-moonlight",
-];
+const BGM = {
+  ooc: ["timeline", "science-fiction", "space-walk"],
+  osae: ["faded-sun", "streets-abuzz"],
+  ss: ["cumulus-formations", "exquisite-ingenuity", "lustrous-moonlight"],
+};
 
 const allVers = [
   // "1.1.1", "1.1.0",
@@ -149,4 +144,4 @@ const allVers = [
 
 const asianLang = ["zh", "ko", "ja"];
 
-export { allChars, allWeapons, baseWeapons, allBGM, allVers, asianLang };
+export { allChars, allWeapons, baseWeapons, BGM, allVers, asianLang };

@@ -11,7 +11,8 @@
     "credits": {
       "title": "Credits",
       "body1": "Hầu hết tài sản thuộc về Mihoyo và được lấy từ Honkai Star Rail và chỉnh sửa.",
-      "body2": "Một số biểu tượng được cung cấp bởi:"
+      "body2": "Một số biểu tượng được cung cấp bởi:",
+      "body3": "Một số nghệ thuật nhân vật được cung cấp bởi:"
     },
     "vers": {
       "title": "Chọn phiên bản của bạn",
@@ -26,6 +27,9 @@
       },
       "rate5": "Tăng Tỷ Lệ Xuất Hiện: 5 Sao",
       "rate4": "Tăng Tỷ Lệ Xuất Hiện: 4 Sao"
+    },
+    "phono": {
+      "title": "Máy Hát"
     }
   },
   "db": {
@@ -41,7 +45,9 @@
     "confirm": "Xác nhận",
     "reset": "Cài lại",
     "exchange": "Đổi Cửa Hàng",
-    "view-details": "Xem Chi Tiết"
+    "view-details": "Xem Chi Tiết",
+    "phono": "Chọn nhạc",
+    "current": "Bài Hiện Tại"
   },
   "banner": {
     "beg": {
