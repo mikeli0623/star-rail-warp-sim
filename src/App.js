@@ -11,6 +11,7 @@ import { ResizeProvider } from "./components/ResizeContext";
 import Main from "./components/Main";
 import DataBank from "./components/DataBank";
 import { AnimatePresence } from "framer-motion";
+import { usePageVisibility } from "react-page-visibility";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -22,7 +23,10 @@ function App() {
   const [currentWarp, setCurrentWarp] = useState([]);
 
   const [sound, setSound] = useState(false);
-  const soundValue = { sound, setSound };
+  const [continueSound, setContinueSound] = useState(false);
+  const soundValue = { sound, setSound, setContinueSound };
+
+  const isVisible = usePageVisibility();
 
   const [lockout, setLockout] = useState(0);
 
@@ -49,6 +53,11 @@ function App() {
   );
 
   const resizeValue = { getWidth, getHeight };
+
+  useEffect(() => {
+    if (!isVisible) setSound(false);
+    else setSound(continueSound);
+  }, [isVisible, sound, continueSound]);
 
   const [hasFive, setHasFive] = useState(false);
   const [hasFour, setHasFour] = useState(false);

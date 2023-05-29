@@ -47,7 +47,7 @@ const Settings = ({
   const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
   const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
 
-  const { sound, setSound } = useContext(SoundContext);
+  const { sound, setSound, setContinueSound } = useContext(SoundContext);
 
   const [showReset, setShowReset] = useState(false);
 
@@ -215,6 +215,7 @@ const Settings = ({
                 if (!lockout) {
                   playButtonSelect();
                   setSound(!sound);
+                  setContinueSound(!sound);
                 }
               }}
             />
