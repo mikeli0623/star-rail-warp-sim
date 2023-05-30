@@ -179,6 +179,10 @@ export default function Main({
     if (bannerType === "beginner") {
       setTotalBeginner(totalBeginner + 1);
       localStorage.setItem("totalBeginner", totalBeginner + 1);
+      if (totalBeginner === 4) {
+        setBannerType("char");
+        sessionStorage.setItem("bannerType", "char");
+      }
     }
     setHasFive(false);
     setHasFour(false);
@@ -212,14 +216,6 @@ export default function Main({
     setCurrentWarp(warpResults);
     setContent("video");
   };
-
-  useEffect(() => {
-    if (totalBeginner === 5) setBannerType("char");
-  }, [totalBeginner, setBannerType]);
-
-  useEffect(() => {
-    setBannerType(bannerType);
-  }, [bannerType, setBannerType]);
 
   const getBack = () => {
     if (bannerType === "beginner") return "beginner/beginner";
@@ -373,6 +369,7 @@ export default function Main({
           transform: "translate(-125%, 650%)",
         }}
         onClick={() => {}}
+        // onClick={() => setContent("details")}
         content={t("button.view-details")}
         disabled={true}
       />

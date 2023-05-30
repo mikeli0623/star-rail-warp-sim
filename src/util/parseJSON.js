@@ -43,31 +43,37 @@ class ParseJSON {
     for (const key of this.bannerJSON) {
       if (key.vers.includes(vers) && key.type === type) return key.rateUpFive;
     }
+    return [];
   }
   getRateUpFour(vers, type) {
     for (const key of this.bannerJSON) {
       if (key.vers.includes(vers) && key.type === type) return key.rateUpFour;
     }
+    return [];
   }
   getPoolFiveChar(vers, type) {
     for (const key of this.bannerJSON) {
       if (key.vers.includes(vers) && key.type === type) return key.poolFiveChar;
     }
+    return [];
   }
   getPoolFiveWeap(vers, type) {
     for (const key of this.bannerJSON) {
       if (key.vers.includes(vers) && key.type === type) return key.poolFiveWeap;
     }
+    return [];
   }
   getPoolFourChar(vers, type) {
     for (const key of this.bannerJSON) {
       if (key.vers.includes(vers) && key.type === type) return key.poolFourChar;
     }
+    return [];
   }
   getPoolFourWeap(vers, type) {
     for (const key of this.bannerJSON) {
       if (key.vers.includes(vers) && key.type === type) return key.poolFourWeap;
     }
+    return [];
   }
 }
 

@@ -24,6 +24,7 @@ const MiniBanners = ({
     if (currentBannerType !== banner) {
       if (sound) play();
       setBannerType(banner);
+      sessionStorage.setItem("bannerType", banner);
     }
   };
 

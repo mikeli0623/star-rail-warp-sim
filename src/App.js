@@ -9,16 +9,21 @@ import useSound from "use-sound";
 import { SoundProvider } from "./components/SoundContext";
 import { ResizeProvider } from "./components/ResizeContext";
 import Main from "./components/Main";
-import DataBank from "./components/DataBank";
+import DataBank from "./components/db/DataBank";
 import { AnimatePresence } from "framer-motion";
 import { usePageVisibility } from "react-page-visibility";
+import DetailsMain from "./components/details/DetailsMain";
 
 var soundTimeout;
 function App() {
   const [content, setContent] = useState("main");
 
   const [bannerType, setBannerType] = useState(
-    parseInt(localStorage.getItem("totalBeginner")) === 5 ? "char" : "beginner"
+    sessionStorage.getItem("bannerType")
+      ? sessionStorage.getItem("bannerType")
+      : parseInt(localStorage.getItem("totalBeginner")) === 5
+      ? "char"
+      : "beginner"
   );
 
   const [currentWarp, setCurrentWarp] = useState([]);
@@ -271,6 +276,9 @@ function App() {
                 setContent={setContent}
                 setShowDB={setShowDB}
               />
+            )}
+            {content === "details" && (
+              <DetailsMain setContent={setContent} bannerType={bannerType} />
             )}
           </AnimatePresence>
         </div>
