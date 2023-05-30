@@ -8,7 +8,7 @@ import SoundContext from "./SoundContext";
 import ResetModal from "./modals/ResetModal";
 import VersionModal from "./modals/VersionModal";
 import ResizeContext from "./ResizeContext";
-import DataBankOverlay from "./DataBankOverlay";
+import DataBankOverlay from "./db/DataBankOverlay";
 import CreditsModal from "./modals/CreditsModal";
 import PhonoModal from "./modals/PhonoModal";
 import LangModal from "./modals/LangModal";

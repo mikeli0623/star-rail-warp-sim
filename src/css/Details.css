@@ -1,0 +1,12 @@
+.details-back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: rgb(24, 29, 49);
+}

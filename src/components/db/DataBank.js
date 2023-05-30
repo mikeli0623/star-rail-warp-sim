@@ -1,11 +1,11 @@
-import "../css/DataBank.css";
+import "../../css/DataBank.css";
 import React, { useContext, useEffect, useState } from "react";
 import { Scrollbars } from "react-custom-scrollbars-2";
-import { json, allChars, allWeapons } from "../util/Constants";
-import CloseButton from "./CloseButton";
+import { json, allChars, allWeapons } from "../../util/Constants";
+import CloseButton from "../CloseButton";
 import useSound from "use-sound";
-import SoundContext from "./SoundContext";
-import ResizeContext from "./ResizeContext";
+import SoundContext from "../SoundContext";
+import ResizeContext from "../ResizeContext";
 import ItemCard from "./ItemCard";
 import FilterButton from "./FilterButton";
 import { useTranslation } from "react-i18next";

@@ -1,10 +1,9 @@
-import "../css/DataBank.css";
 import React, { useEffect, useState, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { json } from "../util/Constants";
-import ResizeContext from "./ResizeContext";
+import { json } from "../../util/Constants";
+import ResizeContext from "../ResizeContext";
 import { useTranslation } from "react-i18next";
-const trans = require("../assets/data/translations.json");
+const trans = require("../../assets/data/translations.json");
 
 export default function ItemCard({ type, item, indexed, handleSelect }) {
   const { getWidth } = useContext(ResizeContext);
