@@ -288,22 +288,18 @@ html * {
 
 .warp-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  bottom: -1.5%;
+  right: 0;
   z-index: 100;
   transition: filter 0.2s;
 }
 
-.warp-button.beginner {
-  transform: translate(70%, 481%);
-}
-
 .warp-button.one {
-  transform: translate(0%, 600%);
+  right: 26%;
 }
 
 .warp-button.ten {
-  transform: translate(105%, 600%);
+  right: 1.5%;
 }
 
 .warp-button:active {
@@ -1068,5 +1064,11 @@ html * {
   .close-button {
     top: 0%;
     right: 1%;
+  }
+}
+
+@media screen and (max-height: 400px) and (orientation: landscape) {
+  #main-back {
+    overflow: auto;
   }
 }

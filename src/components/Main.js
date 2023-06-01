@@ -312,61 +312,70 @@ export default function Main({
         setBannerType={setBannerType}
         hasBeginner={totalBeginner < 5}
       />
-      <AnimatePresence>
-        <motion.div
-          className="banner"
-          key={bannerType + vers}
-          initial={
-            bannerType === "beginner"
-              ? {}
-              : {
-                  transform: `translate(-50%, 500%)`,
-                  opacity: 0,
-                  transition: { duration: 0.3 },
-                }
-          }
-          animate={{
-            transform: "translate(-50%,-50%)",
-            opacity: 1,
-            transition: { duration: bannerType === "beginner" ? 0 : 0.3 },
+      <div
+        style={{
+          position: "relative",
+          width: getWidth(1200),
+          height: getHeight(700, 1200),
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%,-55%)",
+        }}
+      >
+        <AnimatePresence>
+          <motion.div
+            className="banner"
+            key={bannerType + vers}
+            initial={
+              bannerType === "beginner"
+                ? {}
+                : {
+                    transform: `translate(-50%, 500%)`,
+                    opacity: 0,
+                    transition: { duration: 0.3 },
+                  }
+            }
+            animate={{
+              transform: "translate(-50%,-50%)",
+              opacity: 1,
+              transition: { duration: bannerType === "beginner" ? 0 : 0.3 },
+            }}
+            exit={
+              bannerType === "beginner"
+                ? { opacity: 0 }
+                : {
+                    transform: `translate(-50%, -500%)`,
+                    opacity: 0,
+                    transition: { duration: 0.3 },
+                  }
+            }
+          >
+            {currentBanners[bannerType]}
+          </motion.div>
+        </AnimatePresence>
+        <Button
+          style={{
+            position: "absolute",
+            bottom: "-1.5%",
+            left: "3.5%",
+            zIndex: "1000",
           }}
-          exit={
-            bannerType === "beginner"
-              ? { opacity: 0 }
-              : {
-                  transform: `translate(-50%, -500%)`,
-                  opacity: 0,
-                  transition: { duration: 0.3 },
-                }
-          }
-        >
-          {currentBanners[bannerType]}
-        </motion.div>
-      </AnimatePresence>
-      <Button
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          zIndex: "1000",
-          transform: "translate(-230%, 650%)",
-        }}
-        onClick={() => {}}
-        content={t("button.exchange")}
-        disabled={true}
-      />
-      <Button
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          zIndex: "1000",
-          transform: "translate(-125%, 650%)",
-        }}
-        onClick={() => setContent("details")}
-        content={t("button.view-details")}
-      />
-      <WarpButtons onWarp={handleWarp} event={bannerType} />
+          onClick={() => {}}
+          content={t("button.exchange")}
+          disabled={true}
+        />
+        <Button
+          style={{
+            position: "absolute",
+            bottom: "-1.5%",
+            left: "25%",
+            zIndex: "1000",
+          }}
+          onClick={() => setContent("details")}
+          content={t("button.view-details")}
+        />
+        <WarpButtons onWarp={handleWarp} event={bannerType} />
+      </div>
     </motion.section>
   );
 }
