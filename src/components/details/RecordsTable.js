@@ -65,17 +65,43 @@ const RecordsTable = ({ history, type, title }) => {
     <section className="w-100">
       <Table bordered>
         <thead style={{ fontSize: getWidth(16) }}>
-          <tr
-            style={{
-              backgroundColor: "#e7e7e7",
-              color: "#9d8463",
-              fontSize: getWidth(28, 14),
-            }}
-          >
-            <th>{t("table.entity-type")}</th>
-            <th>{t("table.entity-name")}</th>
-            <th>{t("table.warp-type")}</th>
-            <th>{t("table.warp-time")}</th>
+          <tr>
+            <th
+              style={{
+                backgroundColor: "#e7e7e7",
+                color: "#9d8463",
+                fontSize: getWidth(28, 14),
+              }}
+            >
+              {t("table.entity-type")}
+            </th>
+            <th
+              style={{
+                backgroundColor: "#e7e7e7",
+                color: "#9d8463",
+                fontSize: getWidth(28, 14),
+              }}
+            >
+              {t("table.entity-name")}
+            </th>
+            <th
+              style={{
+                backgroundColor: "#e7e7e7",
+                color: "#9d8463",
+                fontSize: getWidth(28, 14),
+              }}
+            >
+              {t("table.warp-type")}
+            </th>
+            <th
+              style={{
+                backgroundColor: "#e7e7e7",
+                color: "#9d8463",
+                fontSize: getWidth(28, 14),
+              }}
+            >
+              {t("table.warp-time")}
+            </th>
           </tr>
         </thead>
         <tbody style={{ color: "#8c8c8c" }}>
