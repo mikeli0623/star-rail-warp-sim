@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Tooltip from "react-bootstrap/Tooltip";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
@@ -90,7 +89,6 @@ const Settings = ({
         }}
         draggable="false"
       />
-      <Tooltip id="button-tooltip">Coming soon...</Tooltip>
       <ResetModal show={showReset} setShow={setShowReset} />
       <VersionModal
         show={showVersion}
