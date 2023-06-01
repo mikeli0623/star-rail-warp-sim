@@ -401,7 +401,6 @@ html * {
 .vers-info-text {
   display: flex;
   flex-direction: column;
-  margin-right: 4%;
 }
 
 /* Warp Single */

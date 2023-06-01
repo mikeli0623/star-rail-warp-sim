@@ -2,11 +2,13 @@ import { useContext } from "react";
 import { json } from "../util/Constants";
 import useSound from "use-sound";
 import SoundContext from "./SoundContext";
+import ResizeContext from "./ResizeContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useTranslation } from "react-i18next";
 const trans = require("../assets/data/translations.json");
 
 export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
+  const { getWidth } = useContext(ResizeContext);
   const { sound } = useContext(SoundContext);
   const [playSelect] = useSound("/assets/audio/sfx/version-select.mp3");
   const [playRepeat] = useSound("../assets/audio/sfx/version-repeat.mp3");
@@ -41,7 +43,10 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
         src={`./assets/banner/mini/${vers}/char-active.webp`}
         draggable="false"
       />
-      <div className="vers-info-text">
+      <div
+        className="vers-info-text"
+        style={{ margin: `0 ${getWidth(10, 5)}px` }}
+      >
         <div style={{ color: isCurrentSelected ? "white" : "black" }}>
           {t("modal.vers.vers")} {vers}
         </div>
