@@ -44,13 +44,13 @@ export default function Button({
     md: {
       outerWidth: resize ? getWidth(180) : 180,
       outerHeight: resize ? getHeight(44, 180) : 44,
-      innerWidth: resize ? 175 : 175,
+      innerWidth: resize ? getWidth(175) : 175,
       innerHeight: resize ? getHeight(39, 175) : 39,
     },
     lg: {
       outerWidth: resize ? getWidth(240) : 240,
       outerHeight: resize ? getHeight(48, 240) : 48,
-      innerWidth: resize ? 235 : 235,
+      innerWidth: resize ? getWidth(235) : 235,
       innerHeight: resize ? getHeight(43, 235) : 43,
     },
   };
@@ -74,6 +74,7 @@ export default function Button({
           height: roundSize
             ? roundSize - getWidth(8)
             : buttonSizes[size]["innerHeight"],
+          border: `${getWidth(2, 1)}px solid #d2d1d6`,
         }}
       >
         <div

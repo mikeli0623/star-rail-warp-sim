@@ -76,12 +76,14 @@ const WarpSingle = ({
   }, [item, playFour, playThree, playFive, sound]);
 
   const nextSingle = () => {
-    setWarpIndex(warpIndex + 1);
-    setAnimateInfo(false);
-    setAnimateFancy(false);
-    setAnimateFive(false);
-    setFirstAnimation(true);
-    if (sound) playFiveData.stop();
+    if (animateInfo) {
+      setWarpIndex(warpIndex + 1);
+      setAnimateInfo(false);
+      setAnimateFancy(false);
+      setAnimateFive(false);
+      setFirstAnimation(true);
+      if (sound) playFiveData.stop();
+    }
   };
 
   const starPrinter = (i) => {

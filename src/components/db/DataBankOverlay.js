@@ -4,9 +4,11 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { allChars, allWeapons } from "../../util/Constants";
 import useSound from "use-sound";
 import SoundContext from "../SoundContext";
+import ResizeContext from "../ResizeContext";
 import { useTranslation } from "react-i18next";
 
 export default function DataBankOverlay({ show, setShow, handleSelect }) {
+  const { getWidth } = useContext(ResizeContext);
   const { sound } = useContext(SoundContext);
 
   const [playMenuOpen] = useSound("../assets/audio/sfx/db-menu-open.mp3");
@@ -44,6 +46,7 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
       <div className="db-type-group">
         <LazyLoadImage
           className="db-type-icon"
+          style={{ margin: `0 ${getWidth(10, 5)}px` }}
           type="weap"
           effect="opacity"
           alt="Light Cones Icon"
@@ -62,6 +65,7 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
       <div className="db-type-group">
         <LazyLoadImage
           className="db-type-icon"
+          style={{ margin: `0 ${getWidth(10, 5)}px` }}
           type="char"
           effect="opacity"
           alt="Characters Icon"

@@ -12,13 +12,9 @@
 }
 
 .rate-card {
-  width: 48%;
-  height: 160px;
   position: relative;
   overflow: hidden;
-  margin: 10px;
   background: linear-gradient(-90deg, #815eba 60%, #4c4c70 100%);
-  outline: 4px solid white;
 }
 
 .rate-card[rarity="5"] {
@@ -48,13 +44,10 @@
   width: 100%;
   text-align: left;
   white-space: nowrap;
-  font-size: 34px;
 }
 
 .rate-card-path {
   position: absolute;
-  top: -30%;
-  left: -10%;
   filter: brightness(3);
   opacity: 0.3;
   z-index: 0;
@@ -75,4 +68,17 @@
 
 .card-glass-front {
   transform: translate(115%, -70%);
+}
+
+.details-stars {
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .line-thing {
+    display: none;
+  }
+  .details-stars[hide="true"] {
+    display: none !important;
+  }
 }
