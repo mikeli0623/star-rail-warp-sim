@@ -17,8 +17,8 @@
     "vers": {
       "title": "Choose Your Banner Version",
       "vers": "Version",
-      "event1": "Character Event:",
-      "event2": "Weapon Event:"
+      "event1": "Character Event Warp",
+      "event2": "Weapon Event Warp"
     },
     "rate": {
       "title": {
@@ -47,7 +47,8 @@
     "exchange": "Exchange",
     "view-details": "View Details",
     "phono": "Set Music",
-    "current": "Current Song"
+    "current": "Current Song",
+    "records": "Records"
   },
   "banner": {
     "beg": {
@@ -55,5 +56,22 @@
       "remaining": "Remaining Warps",
       "text": "20% off for set of 10 Warps, and a <1>5</1>-star character is guaranteed within <1>50</1> Warps."
     }
+  },
+  "table": {
+    "entity-type": "Entity Type",
+    "entity-name": "Entity Name",
+    "warp-type": "Warp Type",
+    "warp-time": "Warp Time",
+    "char": "Character",
+    "weap": "Light Cone",
+    "none": "No record",
+    "tag1": "Drop-Rate Boost Entities",
+    "tag2": "Entity List",
+    "drop1": "Drop Rate (out of 5-star entities):",
+    "drop2": "Drop Rate (out of 4-star entities):",
+    "list1": "5-star entity base Warp rate:",
+    "list2": "4-star entity base Warp rate:",
+    "list3": "3-star entity base Warp rate:",
+    "guarantee": "(Incl. guarantee:"
   }
 }

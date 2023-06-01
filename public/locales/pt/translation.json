@@ -17,8 +17,8 @@
     "vers": {
       "title": "Escolha sua versão",
       "vers": "Versão",
-      "event1": "Salto Hiperespacial de Evento de Personagem:",
-      "event2": "Salto Hiperespacial de Evento de Cone de Luz:"
+      "event1": "Salto Hiperespacial de Evento de Personagem",
+      "event2": "Salto Hiperespacial de Evento de Cone de Luz"
     },
     "rate": {
       "title": {
@@ -47,7 +47,8 @@
     "exchange": "Troca",
     "view-details": "Detalhes",
     "phono": "Selecione a música",
-    "current": "Música Atual"
+    "current": "Música Atual",
+    "records": "Históricos"
   },
   "banner": {
     "beg": {
@@ -55,5 +56,22 @@
       "remaining": "Saltos Hiperespaciais restantes",
       "text": "Conjuntos de 10 Saltos Hiperespaciais com 20% de desconto e um personagem <1>5</1> estrelas é garantido em até <1>50</1> Saltos Hiperespaciais."
     }
+  },
+  "table": {
+    "entity-type": "Tipo do item",
+    "entity-name": "Nome do item",
+    "warp-type": "Tipo de Salto Hyperspatial",
+    "warp-time": "Hora",
+    "char": "Personagens",
+    "weap": "Cones de Luz",
+    "none": "Sem dados",
+    "tag1": "Itens com Probabilidade Aumentada",
+    "tag2": "Lista de Itens",
+    "drop1": "Probabilidade do item de 5 estrelas ser um item promocional:",
+    "drop2": "Probabilidade do item de 4 estrelas ser um item promocional:",
+    "list1": "Prob. base de obter um item 5★:",
+    "list2": "Prob. base de obter um item 4★:",
+    "list3": "Prob. base de obter um item 3★:",
+    "guarantee": "(incl. garantia:"
   }
 }

@@ -11,14 +11,14 @@
     "credits": {
       "title": "Credits",
       "body1": "Hầu hết tài sản thuộc về Mihoyo và được lấy từ Honkai Star Rail và chỉnh sửa.",
-      "body2": "Một số biểu tượng được cung cấp bởi:",
-      "body3": "Một số nghệ thuật nhân vật được cung cấp bởi:"
+      "body2": "Một số biểu tượng được cung cấp bởi",
+      "body3": "Một số nghệ thuật nhân vật được cung cấp bởi"
     },
     "vers": {
       "title": "Chọn phiên bản của bạn",
       "vers": "Phiên bản",
-      "event1": "Bước Nhảy Sự Kiện Nhân Vật:",
-      "event2": "Bước Nhảy Sự Kiện Nón Ánh Sáng:"
+      "event1": "Bước Nhảy Sự Kiện Nhân Vật",
+      "event2": "Bước Nhảy Sự Kiện Nón Ánh Sáng"
     },
     "rate": {
       "title": {
@@ -47,7 +47,8 @@
     "exchange": "Đổi Cửa Hàng",
     "view-details": "Xem Chi Tiết",
     "phono": "Chọn nhạc",
-    "current": "Bài Hiện Tại"
+    "current": "Bài Hiện Tại",
+    "records": "Lịch Sử"
   },
   "banner": {
     "beg": {
@@ -55,5 +56,22 @@
       "remaining": "Số lần cờn lại",
       "text": "10 lần giảm 20%, trong <1>50</1> lần Bước Nhảy chắc chắn nhận được nhân vật <1>5</1> sao"
     }
+  },
+  "table": {
+    "entity-type": "Loại đối tượng",
+    "entity-name": "Tên đối tượng",
+    "warp-type": "Loại Bước Nhảy",
+    "warp-time": "Thời gian Bước Nhảy",
+    "char": "Nhân Vật",
+    "weap": "Nón Ánh Sáng",
+    "none": "Không có dữ liệu",
+    "tag1": "Đối Tượng Tăng Tỷ Lệ Xuất Hiện",
+    "tag2": "Danh Sách Đối Tượng",
+    "drop1": "Tỷ lệ Bước Nhảy cơ bản 5 sao thành công là:",
+    "drop2": "Tỷ lệ Bước Nhảy cơ bản 4 sao thành công là:",
+    "list1": "Tỷ lệ cơ bản ra đối tượng 5 sao:",
+    "list2": "Tỷ lệ cơ bản ra đối tượng 4 sao:",
+    "list3": "Tỷ lệ cơ bản ra đối tượng 3 sao:",
+    "guarantee": "(Có bảo hiểm:"
   }
 }

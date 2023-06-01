@@ -1,7 +1,7 @@
 import React, { useState, useContext, useMemo, useEffect } from "react";
 import { json, allChars, allWeapons } from "../util/Constants";
 import { CalcWarp } from "../util/CalcWarp";
-// import History from "../util/History";
+import History from "../util/History";
 import WarpButtons from "./WarpButtons";
 import MiniBanners from "./MiniBanners";
 import Settings from "./Settings";
@@ -33,6 +33,8 @@ export default function Main({
   setContent,
   setCurrentWarp,
   setDBType,
+  history,
+  setHistory,
   bgm,
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -87,13 +89,6 @@ export default function Main({
       pityFour: parseInt(localStorage.getItem("standPityFour")) || 0,
     },
   });
-
-  // const [history, setHistory] = useState({
-  //   beginner: JSON.parse(localStorage.getItem("begHistory")) || [],
-  //   char: JSON.parse(localStorage.getItem("charHistory")) || [],
-  //   weap: JSON.parse(localStorage.getItem("weapHistory")) || [],
-  //   standard: JSON.parse(localStorage.getItem("standHistory")) || [],
-  // });
 
   const localStore = (suffix, value) => {
     switch (bannerType) {
@@ -203,12 +198,12 @@ export default function Main({
     localStore("GuaranteeFive", bannerState[bannerType].guaranteeFive);
     localStore("GuaranteeFour", bannerState[bannerType].guaranteeFour);
 
-    // let historyClone = structuredClone(history);
-    // historyClone[bannerType] = historyClone[bannerType].concat(
-    //   new History(warpResults).getHistory()
-    // );
-    // localStore("History", JSON.stringify(historyClone[bannerType]));
-    // setHistory(historyClone);
+    let historyClone = structuredClone(history);
+    historyClone[bannerType] = historyClone[bannerType].concat(
+      new History(warpResults).getHistory()
+    );
+    localStore("History", JSON.stringify(historyClone[bannerType]));
+    setHistory(historyClone);
 
     let bannerStateClone = bannerState;
     bannerStateClone[bannerType] = banner;
@@ -368,10 +363,8 @@ export default function Main({
           zIndex: "1000",
           transform: "translate(-125%, 650%)",
         }}
-        onClick={() => {}}
-        // onClick={() => setContent("details")}
+        onClick={() => setContent("details")}
         content={t("button.view-details")}
-        disabled={true}
       />
       <WarpButtons onWarp={handleWarp} event={bannerType} />
     </motion.section>

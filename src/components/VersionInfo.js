@@ -46,7 +46,8 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
           {t("modal.vers.vers")} {vers}
         </div>
         <div style={{ color: isCurrentSelected ? "#7d7d7d" : "#4F4F4F" }}>
-          {t("modal.vers.event1")}{" "}
+          {t("modal.vers.event1")}
+          {": "}
           <span style={{ color: isCurrentSelected ? "#bebebe" : "#868686" }}>
             {cleanText(
               trans[json.getRateUpFive(vers, "char")[0]][i18n.resolvedLanguage]
@@ -54,7 +55,8 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
           </span>
         </div>
         <div style={{ color: isCurrentSelected ? "#7d7d7d" : "#4F4F4F" }}>
-          {t("modal.vers.event2")}{" "}
+          {t("modal.vers.event2")}
+          {": "}
           <span style={{ color: isCurrentSelected ? "#bebebe" : "#868686" }}>
             {cleanText(
               trans[json.getRateUpFive(vers, "weap")[0]][i18n.resolvedLanguage]

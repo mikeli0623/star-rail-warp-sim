@@ -2,99 +2,91 @@ import { useContext } from "react";
 import { json } from "../../util/Constants";
 import ResizeContext from "../ResizeContext";
 import Table from "react-bootstrap/Table";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useTranslation } from "react-i18next";
+const trans = require("../../assets/data/translations.json");
 
-const RecordsTable = ({ items, rateUp = [], type }) => {
+const RecordsTable = ({ history, type, title }) => {
   const { getWidth } = useContext(ResizeContext);
-
-  const tableItem = rateUp.concat(items).map((item, index) => {
+  const { t, i18n } = useTranslation();
+  const displayHistory = history.map((item, index) => {
     return (
-      <tr key={item + index} style={{ fontSize: getWidth(16, 12) }}>
-        {index < Math.ceil(items.length / 4) ? (
-          <>
-            <td>
-              {rateUp.includes(items[index * 4]) ? (
-                <>
-                  <LazyLoadImage
-                    alt="Rate Up Icon"
-                    effect="opacity"
-                    src="../assets/details/rate-up.webp"
-                    width={10}
-                  />
-                  {json.getName(items[index * 4])}
-                </>
-              ) : (
-                json.getName(items[index * 4])
-              )}
-            </td>
-            <td>
-              {rateUp.includes(items[index * 4 + 1]) ? (
-                <>
-                  <LazyLoadImage
-                    alt="Rate Up Icon"
-                    effect="opacity"
-                    src="../assets/details/rate-up.webp"
-                    width={10}
-                  />
-                  {json.getName(items[index * 4 + 1])}
-                </>
-              ) : items[index * 2 + 1] == null ? (
-                ""
-              ) : (
-                json.getName(items[index * 4 + 1])
-              )}
-            </td>
-            <td>
-              {rateUp.includes(items[index * 4 + 2]) ? (
-                <>
-                  <LazyLoadImage
-                    alt="Rate Up Icon"
-                    effect="opacity"
-                    src="../assets/details/rate-up.webp"
-                    width={10}
-                  />
-                  {json.getName(items[index * 4 + 2])}
-                </>
-              ) : items[index * 2 + 2] == null ? (
-                ""
-              ) : (
-                json.getName(items[index * 4 + 2])
-              )}
-            </td>
-            <td>
-              {rateUp.includes(items[index * 4 + 3]) ? (
-                <>
-                  <LazyLoadImage
-                    alt="Rate Up Icon"
-                    effect="opacity"
-                    src="../assets/details/rate-up.webp"
-                    width={10}
-                  />
-                  {json.getName(items[index * 4 + 3])}
-                </>
-              ) : items[index * 2 + 3] == null ? (
-                ""
-              ) : (
-                json.getName(items[index * 4 + 3])
-              )}
-            </td>
-          </>
-        ) : (
-          <></>
-        )}
+      <tr key={item + index} style={{ fontSize: getWidth(16) }}>
+        <td
+          className="w-20"
+          style={{
+            fontSize: 24,
+            verticalAlign: "middle",
+          }}
+        >
+          {t(`table.${json.isChar(item.id) ? "char" : "weap"}`)}
+        </td>
+        <td
+          style={{
+            width: "30%",
+            fontSize: 24,
+            verticalAlign: "middle",
+            color:
+              json.getRarity(item.id) === 4
+                ? "#a256e0"
+                : json.getRarity(item.id) === 5
+                ? "#d2a96b"
+                : undefined,
+          }}
+        >
+          {trans[item.id][i18n.resolvedLanguage]}
+        </td>
+        <td
+          className="w-23"
+          style={{
+            fontSize: 24,
+            verticalAlign: "middle",
+          }}
+        >
+          {type === "char"
+            ? t("modal.vers.event1")
+            : type === "weap"
+            ? t("modal.vers.event2")
+            : title}
+        </td>
+        <td
+          style={{
+            width: "27%",
+            fontSize: 24,
+            verticalAlign: "middle",
+          }}
+        >
+          {new Date(item.time).toLocaleString()}
+        </td>
       </tr>
     );
   });
 
   return (
-    <section className="details-table">
+    <section className="w-100">
       <Table bordered>
-        <thead style={{ fontSize: getWidth(16, 12) }}>
-          <tr>
-            <th colSpan={4}>{type}</th>
+        <thead style={{ fontSize: getWidth(16) }}>
+          <tr
+            style={{
+              backgroundColor: "#e7e7e7",
+              color: "#9d8463",
+              fontSize: 28,
+            }}
+          >
+            <th>{t("table.entity-type")}</th>
+            <th>{t("table.entity-name")}</th>
+            <th>{t("table.warp-type")}</th>
+            <th>{t("table.warp-time")}</th>
           </tr>
         </thead>
-        <tbody>{tableItem}</tbody>
+        <tbody style={{ color: "#8c8c8c" }}>
+          {history.length > 0 ? (
+            displayHistory
+          ) : (
+            <tr>
+              <td colSpan={4}>{t("table.none")}</td>
+            </tr>
+          )}
+        </tbody>
       </Table>
     </section>
   );

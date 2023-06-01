@@ -17,8 +17,8 @@
     "vers": {
       "title": "Wähle deine Version",
       "vers": "Ausführung",
-      "event1": "Figuren-Aktionswarp:",
-      "event2": "Lichtkegel-Aktionswarp:"
+      "event1": "Figuren-Aktionswarp",
+      "event2": "Lichtkegel-Aktionswarp"
     },
     "rate": {
       "title": {
@@ -47,7 +47,8 @@
     "exchange": "Zum Shop",
     "view-details": "Details ansehen",
     "phono": "Musik auswählen",
-    "current": "Aktuelles Lied"
+    "current": "Aktuelles Lied",
+    "records": "Aufzeichnungen"
   },
   "banner": {
     "beg": {
@@ -55,5 +56,22 @@
       "remaining": "Verbleibende Warps",
       "text": "20 % Rabatt bei 10 Warps und innerhalb von <1>50</1> Warps erhältst du garantiert eine <1>5</1>-Sterne-Figur."
     }
+  },
+  "table": {
+    "entity-type": "Objekttyp",
+    "entity-name": "Objektname",
+    "warp-type": "Warptyp",
+    "warp-time": "Warpzeit",
+    "char": "Figur",
+    "weap": "Lichtkegel",
+    "none": "Keine Daten",
+    "tag1": "Erhöhung der Chance",
+    "tag2": "Objekliste",
+    "drop1": "Chance für das Aktionsobjekt bei einem 5-Sterne-Warp-Erfolg:",
+    "drop2": "Chance für das Aktionsobjekt bei einem 4-Sterne-Warp-Erfolg:",
+    "list1": "Allg. 5-Sterne-Objekt-Erfolgschance:",
+    "list2": "Allg. 4-Sterne-Objekt-Erfolgschance:",
+    "list3": "Allg. 3-Sterne-Objekt-Erfolgschance:",
+    "guarantee": "(inkl. Garantie:"
   }
 }
