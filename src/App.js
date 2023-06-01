@@ -218,6 +218,13 @@ function App() {
 
   const [DBType, setDBType] = useState("char");
 
+  const [history, setHistory] = useState({
+    beginner: JSON.parse(localStorage.getItem("begHistory")) || [],
+    char: JSON.parse(localStorage.getItem("charHistory")) || [],
+    weap: JSON.parse(localStorage.getItem("weapHistory")) || [],
+    standard: JSON.parse(localStorage.getItem("standHistory")) || [],
+  });
+
   return (
     <ResizeProvider value={resizeValue}>
       <SoundProvider value={soundValue}>
@@ -236,6 +243,8 @@ function App() {
                 setContent={setContent}
                 setCurrentWarp={setCurrentWarp}
                 setDBType={setDBType}
+                history={history}
+                setHistory={setHistory}
                 bgm={[mainData ? mainData.sound._src : undefined, handleTrack]}
               />
             )}
@@ -278,7 +287,11 @@ function App() {
               />
             )}
             {content === "details" && (
-              <DetailsMain setContent={setContent} bannerType={bannerType} />
+              <DetailsMain
+                setContent={setContent}
+                bannerType={bannerType}
+                history={history[bannerType]}
+              />
             )}
           </AnimatePresence>
         </div>

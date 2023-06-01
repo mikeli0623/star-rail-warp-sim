@@ -11,8 +11,8 @@
     "credits": {
       "title": "Credits",
       "body1": "Sebagian besar aset milik Mihoyo dan diambil dari Honkai Star Rail dan diedit.",
-      "body2": "Beberapa ikon disediakan oleh:",
-      "body3": "Beberapa seni karakter disediakan oleh:"
+      "body2": "Beberapa ikon disediakan oleh",
+      "body3": "Beberapa seni karakter disediakan oleh"
     },
     "vers": {
       "title": "Pilih versi Anda",
@@ -47,7 +47,8 @@
     "exchange": "Penukaran",
     "view-details": "Lihat Detail",
     "phono": "Pilih Musik",
-    "current": "Lagu Saat Ini"
+    "current": "Lagu Saat Ini",
+    "records": "Riwayat"
   },
   "banner": {
     "beg": {
@@ -55,5 +56,22 @@
       "remaining": "Jumlah Tersisa",
       "text": "Ada diskon 20% untuk set 10 Warp, dijamin akan memperoleh karakter <1>5★</1> dalam <1>50</1> Warp"
     }
+  },
+  "table": {
+    "entity-type": "Tipe Item",
+    "entity-name": "Nama Item",
+    "warp-type": "Tipe Warp",
+    "warp-time": "Waktu Warp",
+    "char": "Karakter",
+    "weap": "Light Cone",
+    "none": "Tidak ada data",
+    "tag1": "Item UP",
+    "tag2": "Daftar Item",
+    "drop1": "Kemungkinan dari persentase Warp item 5★:",
+    "drop2": "Kemungkinan dari persentase Warp item 4★:",
+    "list1": "Persentase dasar Warp item 5★:",
+    "list2": "Persentase dasar Warp item 4★:",
+    "list3": "Persentase dasar Warp item 3★:",
+    "guarantee": "(Termasuk Jaminan: :"
   }
 }

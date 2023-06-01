@@ -1,16 +1,15 @@
 import { json } from "../../util/Constants";
-import useSound from "use-sound";
-import SoundContext from "../SoundContext";
 import ResizeContext from "../ResizeContext";
+import { baseWeapons } from "../../util/Constants";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import DetailsTable from "./DetailsTable";
 import React from "react";
 import RateCard from "./RateCard";
+import DetailHeader from "./DetailHeader";
+import DetailInfo from "./DetailInfo";
 
-export default function DetailsContent({ vers, bannerType }) {
-  const { t, i18n } = useTranslation();
+export default function DetailsContent({ vers, bannerType, title }) {
+  const { t } = useTranslation();
   const rateFiveChar =
     bannerType === "char" ? json.getRateUpFive(vers, bannerType) : [];
   const rateFiveWeap =
@@ -25,34 +24,96 @@ export default function DetailsContent({ vers, bannerType }) {
   const poolFourWeap = json.getPoolFourWeap(vers, bannerType);
   return (
     <div className="d-flex flex-column align-items-start">
-      <p className="px-5" style={{ fontWeight: "bold" }}>
-        {json.getTitle(vers, bannerType, i18n.resolvedLanguage)}
-      </p>
+      <h1 className="px-5" style={{ fontWeight: "bold" }}>
+        {title}
+      </h1>
+      {(rateFiveChar.length > 0 || rateFiveWeap.length > 0) && (
+        <DetailHeader title={t("table.tag1")} />
+      )}
       <div className="px-5 w-100">
-        {(rateFiveChar || rateFiveWeap) && (
+        {(rateFiveChar.length > 0 || rateFiveWeap.length > 0) && (
           <div>
-            <div className="d-flex">
+            <DetailInfo
+              text={t("table.drop1")}
+              rarity={5}
+              chance={bannerType === "weap" ? " 75%" : " 50%"}
+            />
+            <div className="d-flex flex-wrap">
               {rateFiveChar.map((item) => {
-                return <RateCard item={item} rarity={5} type="char" />;
+                return (
+                  <RateCard
+                    key={item}
+                    item={item}
+                    rarity={5}
+                    path={json.getPath(item).toLowerCase().replace(/ /g, "-")}
+                    elem={json
+                      .getElement(item)
+                      .toLowerCase()
+                      .replace(/ /g, "-")}
+                    type="char"
+                  />
+                );
               })}
             </div>
-            <div className="d-flex">
+            <div className="d-flex flex-wrap">
               {rateFiveWeap.map((item) => {
-                return <RateCard item={item} rarity={5} type="weap" />;
+                return (
+                  <RateCard
+                    key={item}
+                    item={item}
+                    rarity={5}
+                    path={json.getPath(item).toLowerCase().replace(/ /g, "-")}
+                    type="weap"
+                  />
+                );
               })}
             </div>
-            <div className="d-flex">
+            <DetailInfo text={t("table.drop2")} rarity={4} chance={" 50%"} />
+            <div className="d-flex flex-wrap">
               {rateFourChar.map((item) => {
-                return <RateCard item={item} rarity={4} type="char" />;
+                return (
+                  <RateCard
+                    key={item}
+                    item={item}
+                    rarity={4}
+                    elem={json
+                      .getElement(item)
+                      .toLowerCase()
+                      .replace(/ /g, "-")}
+                    path={json.getPath(item).toLowerCase().replace(/ /g, "-")}
+                    type="char"
+                  />
+                );
               })}
             </div>
-            <div className="d-flex">
+            <div className="d-flex flex-wrap">
               {rateFourWeap.map((item) => {
-                return <RateCard item={item} rarity={4} type="weap" />;
+                return (
+                  <RateCard
+                    key={item}
+                    item={item}
+                    rarity={4}
+                    path={json.getPath(item).toLowerCase().replace(/ /g, "-")}
+                    type="weap"
+                  />
+                );
               })}
             </div>
           </div>
         )}
+      </div>
+      {(rateFiveChar.length > 0 || rateFiveWeap.length > 0) && (
+        <DetailHeader title={t("table.tag2")} />
+      )}
+      <div className="px-5 w-100">
+        <DetailInfo
+          text={[t("table.list1"), t("table.guarantee")]}
+          rarity={5}
+          chance={[
+            bannerType === "char" ? "0.600" : "0.800",
+            bannerType === "char" ? "1.600" : "1.870",
+          ]}
+        />
         {poolFiveChar && (
           <DetailsTable
             items={rateFiveChar.concat(poolFiveChar)}
@@ -60,11 +121,7 @@ export default function DetailsContent({ vers, bannerType }) {
             type={t("db.type2")}
           />
         )}
-        <DetailsTable
-          items={rateFourChar.concat(poolFourChar)}
-          rateUp={rateFourChar}
-          type={t("db.type2")}
-        />
+
         {poolFiveWeap && (
           <DetailsTable
             items={rateFiveWeap.concat(poolFiveWeap)}
@@ -72,11 +129,33 @@ export default function DetailsContent({ vers, bannerType }) {
             type={t("db.type1")}
           />
         )}
+        <DetailInfo
+          text={[t("table.list2"), t("table.guarantee")]}
+          rarity={5}
+          chance={[
+            bannerType === "char" ? "5.100" : "6.600",
+            bannerType === "char" ? "13.000" : "14.800",
+          ]}
+        />
+        <DetailsTable
+          items={rateFourChar.concat(poolFourChar)}
+          rateUp={rateFourChar}
+          type={t("db.type2")}
+        />
         <DetailsTable
           items={rateFourWeap.concat(poolFourWeap)}
           rateUp={rateFourWeap}
           type={t("db.type1")}
         />
+        <DetailInfo
+          text={[t("table.list3"), t("table.guarantee")]}
+          rarity={5}
+          chance={[
+            bannerType === "char" ? "94.300" : "92.600",
+            bannerType === "char" ? "85.400" : "83.330",
+          ]}
+        />
+        <DetailsTable items={baseWeapons} rateUp={[]} type={t("db.type1")} />
       </div>
     </div>
   );

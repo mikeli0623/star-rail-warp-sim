@@ -17,8 +17,8 @@
     "vers": {
       "title": "Elija su versión de banner",
       "vers": "Versión",
-      "event1": "Salto de evento de personaje:",
-      "event2": "Salto de evento de cono de luz:"
+      "event1": "Salto de evento de personaje",
+      "event2": "Salto de evento de cono de luz"
     },
     "rate": {
       "title": {
@@ -47,7 +47,8 @@
     "exchange": "Recompensas canjeables",
     "view-details": "Ver detalles",
     "phono": "Seleccionar musica",
-    "current": "Canción actual"
+    "current": "Canción actual",
+    "records": "Historial"
   },
   "banner": {
     "beg": {
@@ -55,5 +56,22 @@
       "remaining": "Intentos restantes",
       "text": "20% de descuento en series de 10 Saltos. En <1>50</1> Saltos tienes garantizado un personaje de <1>5</1> estrellas."
     }
+  },
+  "table": {
+    "entity-type": "Tipo",
+    "entity-name": "Nombre",
+    "warp-type": "Tipo de Salto",
+    "warp-time": "Fecha",
+    "char": "Personajes",
+    "weap": "Conos de luz",
+    "none": "Sin datos",
+    "tag1": "Artículos con probabilidad de obtención aumentada",
+    "tag2": "Lista de artículos",
+    "drop1": "Prob. base de obtener uno de los artículos de 5 estrellas:",
+    "drop2": "Prob. base de obtener uno de los artículos de 4 estrellas:",
+    "list1": "Prob. base de obtener un artículo de 5★:",
+    "list2": "Prob. base de obtener un artículo de 4★:",
+    "list3": "Prob. base de obtener un artículo de 3★:)",
+    "guarantee": "(Incl. garantía:"
   }
 }

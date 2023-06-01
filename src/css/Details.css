@@ -10,3 +10,69 @@
   z-index: -1;
   background-color: rgb(24, 29, 49);
 }
+
+.rate-card {
+  width: 48%;
+  height: 160px;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  background: linear-gradient(-90deg, #815eba 60%, #4c4c70 100%);
+  outline: 4px solid white;
+}
+
+.rate-card[rarity="5"] {
+  background: linear-gradient(
+    -90deg,
+    rgba(190, 149, 108, 1) 60%,
+    rgba(147, 92, 89, 1) 100%
+  );
+}
+
+.card-char-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-44%, -20%);
+}
+
+.rate-card-name {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.6) 40%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  color: white;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 34px;
+}
+
+.rate-card-path {
+  position: absolute;
+  top: -30%;
+  left: -10%;
+  filter: brightness(3);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.card-weap-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(120%, -65%);
+  width: 18%;
+  rotate: 13deg;
+}
+
+.card-glass-back {
+  transform: translate(125%, -61%);
+}
+
+.card-glass-front {
+  transform: translate(115%, -70%);
+}

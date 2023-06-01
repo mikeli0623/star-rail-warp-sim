@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import { json } from "../../util/Constants";
 import ResizeContext from "../ResizeContext";
 import Table from "react-bootstrap/Table";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -114,7 +113,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
   });
 
   return (
-    <section className="details-table">
+    <section>
       <Table bordered className="m-0">
         <thead style={{ fontSize: getWidth(16, 12) }}>
           <tr>

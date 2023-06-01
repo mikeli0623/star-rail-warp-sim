@@ -17,8 +17,8 @@
     "vers": {
       "title": "Choisissez votre version",
       "vers": "Version",
-      "event1": "Événement hyperespace de personnage:",
-      "event2": "Événement hyperespace de cône de lumière:"
+      "event1": "Événement hyperespace de personnage",
+      "event2": "Événement hyperespace de cône de lumière"
     },
     "rate": {
       "title": {
@@ -47,7 +47,8 @@
     "exchange": "Boutique",
     "view-details": "Voir les détails",
     "phono": "Sélectionnez la musique",
-    "current": "Musique actuelle"
+    "current": "Musique actuelle",
+    "records": "Historique"
   },
   "banner": {
     "beg": {
@@ -55,5 +56,22 @@
       "remaining": "Tirages de Sauts hyperespaces restants",
       "text": "20 % de réduction sur un ensemble de 10 Sauts hyperespaces, et un personnage <1>5</1> étoiles garanti sur <1>50</1> Sauts hyperespaces."
     }
+  },
+  "table": {
+    "entity-type": "Type d'objet",
+    "entity-name": "Nom de l'objet",
+    "warp-type": "Type de Saut hyperespace",
+    "warp-time": "Date du Saut hyperespace",
+    "char": "Personnages",
+    "weap": "Cône de lumière",
+    "none": "Pas de données",
+    "tag1": "Chances d'obtention renforcées",
+    "tag2": "Liste des articles",
+    "drop1": "Prob. de base d'obtenir article 5 étoiles en Saut hyperespace:",
+    "drop2": "Prob. de base d'obtenir article 4 étoiles en Saut hyperespace:",
+    "list1": "Prob. de base d'obtenir article 5★:",
+    "list2": "Prob. de base d'obtenir article 4★:",
+    "list3": "Prob. de base d'obtenir article 3★:",
+    "guarantee": "(Incl. garantie:"
   }
 }
