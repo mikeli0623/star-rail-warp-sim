@@ -1,5 +1,5 @@
 import "../../css/Details.css";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import CloseButton from "../CloseButton";
 import ResizeContext from "../ResizeContext";
 import { Scrollbars } from "react-custom-scrollbars-2";
@@ -10,14 +10,15 @@ import DetailsContent from "./DetailsContent";
 import RecordsContent from "./RecordsContent";
 
 const DetailsButton = ({ text, handleSelect, isActive }) => {
+  const { getWidth } = useContext(ResizeContext);
   return (
     <div
       className="d-flex justify-content-center align-items-center"
       onClick={handleSelect}
       style={{
         color: isActive ? "#d9c190" : "#a4a4a4",
-        height: 60,
-        borderBottom: isActive && "4px solid #d9c190",
+        height: getWidth(60),
+        borderBottom: isActive && `${getWidth(4, 1)}px solid #d9c190`,
       }}
     >
       {text}
@@ -28,6 +29,7 @@ const DetailsButton = ({ text, handleSelect, isActive }) => {
 export default function DetailsMain({ setContent, bannerType, history }) {
   const [vers] = useState(sessionStorage.getItem("vers") || "1.0.1");
   const [detailType, setDetailType] = useState("details");
+  const { getWidth } = useContext(ResizeContext);
 
   const { t, i18n } = useTranslation();
   return (
@@ -45,7 +47,7 @@ export default function DetailsMain({ setContent, bannerType, history }) {
           backgroundColor: "#f1f1f1",
           width: "70vw",
           height: "70vh",
-          fontSize: 30,
+          fontSize: getWidth(28, 14),
         }}
       >
         <nav
@@ -63,7 +65,7 @@ export default function DetailsMain({ setContent, bannerType, history }) {
               width: 1,
               height: 40,
               backgroundColor: "#c6c6c6",
-              margin: "0 80px",
+              margin: `0 ${getWidth(80)}px`,
             }}
           />
           <DetailsButton

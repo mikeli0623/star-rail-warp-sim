@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import { json } from "../../util/Constants";
 import ResizeContext from "../ResizeContext";
 import { baseWeapons } from "../../util/Constants";
@@ -10,6 +11,7 @@ import DetailInfo from "./DetailInfo";
 
 export default function DetailsContent({ vers, bannerType, title }) {
   const { t } = useTranslation();
+  const { getWidth } = useContext(ResizeContext);
   const rateFiveChar =
     bannerType === "char" ? json.getRateUpFive(vers, bannerType) : [];
   const rateFiveWeap =
@@ -24,13 +26,20 @@ export default function DetailsContent({ vers, bannerType, title }) {
   const poolFourWeap = json.getPoolFourWeap(vers, bannerType);
   return (
     <div className="d-flex flex-column align-items-start">
-      <h1 className="px-5" style={{ fontWeight: "bold" }}>
+      <p
+        className="mt-2 mb-0"
+        style={{
+          fontWeight: "bold",
+          fontSize: getWidth(40, 22),
+          padding: `0 ${getWidth(50)}px`,
+        }}
+      >
         {title}
-      </h1>
+      </p>
       {(rateFiveChar.length > 0 || rateFiveWeap.length > 0) && (
         <DetailHeader title={t("table.tag1")} />
       )}
-      <div className="px-5 w-100">
+      <div className="w-100" style={{ padding: `0 ${getWidth(50)}px` }}>
         {(rateFiveChar.length > 0 || rateFiveWeap.length > 0) && (
           <div>
             <DetailInfo
@@ -102,10 +111,8 @@ export default function DetailsContent({ vers, bannerType, title }) {
           </div>
         )}
       </div>
-      {(rateFiveChar.length > 0 || rateFiveWeap.length > 0) && (
-        <DetailHeader title={t("table.tag2")} />
-      )}
-      <div className="px-5 w-100">
+      <DetailHeader title={t("table.tag2")} />
+      <div className="w-100" style={{ padding: `0 ${getWidth(50)}px` }}>
         <DetailInfo
           text={[t("table.list1"), t("table.guarantee")]}
           rarity={5}
@@ -131,7 +138,7 @@ export default function DetailsContent({ vers, bannerType, title }) {
         )}
         <DetailInfo
           text={[t("table.list2"), t("table.guarantee")]}
-          rarity={5}
+          rarity={4}
           chance={[
             bannerType === "char" ? "5.100" : "6.600",
             bannerType === "char" ? "13.000" : "14.800",
@@ -149,7 +156,7 @@ export default function DetailsContent({ vers, bannerType, title }) {
         />
         <DetailInfo
           text={[t("table.list3"), t("table.guarantee")]}
-          rarity={5}
+          rarity={3}
           chance={[
             bannerType === "char" ? "94.300" : "92.600",
             bannerType === "char" ? "85.400" : "83.330",

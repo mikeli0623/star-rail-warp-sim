@@ -14,7 +14,7 @@ const RecordsTable = ({ history, type, title }) => {
         <td
           className="w-20"
           style={{
-            fontSize: 24,
+            fontSize: getWidth(24, 8),
             verticalAlign: "middle",
           }}
         >
@@ -23,7 +23,7 @@ const RecordsTable = ({ history, type, title }) => {
         <td
           style={{
             width: "30%",
-            fontSize: 24,
+            fontSize: getWidth(24, 8),
             verticalAlign: "middle",
             color:
               json.getRarity(item.id) === 4
@@ -38,7 +38,7 @@ const RecordsTable = ({ history, type, title }) => {
         <td
           className="w-23"
           style={{
-            fontSize: 24,
+            fontSize: getWidth(24, 8),
             verticalAlign: "middle",
           }}
         >
@@ -51,7 +51,7 @@ const RecordsTable = ({ history, type, title }) => {
         <td
           style={{
             width: "27%",
-            fontSize: 24,
+            fontSize: getWidth(24, 8),
             verticalAlign: "middle",
           }}
         >
@@ -69,7 +69,7 @@ const RecordsTable = ({ history, type, title }) => {
             style={{
               backgroundColor: "#e7e7e7",
               color: "#9d8463",
-              fontSize: 28,
+              fontSize: getWidth(28, 14),
             }}
           >
             <th>{t("table.entity-type")}</th>

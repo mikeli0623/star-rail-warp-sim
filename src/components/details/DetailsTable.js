@@ -17,7 +17,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
             <td
               className="w-25"
               style={{
-                fontSize: 24,
+                fontSize: getWidth(24, 8),
                 verticalAlign: "middle",
               }}
             >
@@ -38,7 +38,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
             <td
               className="w-25"
               style={{
-                fontSize: 24,
+                fontSize: getWidth(24, 8),
                 verticalAlign: "middle",
               }}
             >
@@ -61,7 +61,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
             <td
               className="w-25"
               style={{
-                fontSize: 24,
+                fontSize: getWidth(24, 8),
                 verticalAlign: "middle",
               }}
             >
@@ -84,7 +84,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
             <td
               className="w-25"
               style={{
-                fontSize: 24,
+                fontSize: getWidth(24, 8),
                 verticalAlign: "middle",
               }}
             >
@@ -122,7 +122,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
               style={{
                 backgroundColor: "#e7e7e7",
                 color: "#9d8463",
-                fontSize: 28,
+                fontSize: getWidth(28, 14),
               }}
             >
               {type}

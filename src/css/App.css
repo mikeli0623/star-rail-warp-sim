@@ -684,7 +684,7 @@ html * {
 }
 
 .warp-result-hover {
-  transition: transform 0.1s;
+  transition: scale 0.3s;
   display: flex;
   position: relative;
   margin: 0 20px;
@@ -696,7 +696,7 @@ html * {
 }
 
 .warp-result-hover:hover {
-  transform: scale(1.05);
+  scale: 1.05;
 }
 
 .warp-result[rarity="3"] {

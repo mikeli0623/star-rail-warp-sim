@@ -1,29 +1,42 @@
-import React from "react";
+import React, { useContext } from "react";
+import ResizeContext from "../ResizeContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useTranslation } from "react-i18next";
 const trans = require("../../assets/data/translations.json");
 
 export default function RateCard({ item, rarity, type, elem = "", path }) {
+  const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
 
   return (
-    <div className="rate-card" rarity={rarity}>
+    <div
+      className="rate-card"
+      rarity={rarity}
+      style={{
+        height: getHeight(160, 600),
+        width: getWidth(600, 300),
+        margin: getWidth(10),
+        outline: `${getWidth(4, 2)}px solid white`,
+      }}
+    >
       {elem && (
         <div
-          className="d-flex justify-content-center align-items-center m-2"
+          className="d-flex justify-content-center align-items-center"
           style={{
             backgroundColor: "black",
             borderRadius: "100%",
-            height: 42,
-            width: 42,
+            height: getWidth(42, 18),
+            width: getWidth(42, 18),
             position: "absolute",
             zIndex: 1,
+            marginTop: getWidth(10),
+            marginLeft: getWidth(10),
           }}
         >
           <img
             alt={`${elem} icon`}
             src={`./assets/elem-${elem}.webp`}
-            width={40}
+            width={getWidth(40, 16)}
             draggable="false"
           />
         </div>
@@ -32,7 +45,8 @@ export default function RateCard({ item, rarity, type, elem = "", path }) {
         className="rate-card-path"
         alt={`${path} icon`}
         src={`./assets/path-${path}-lg.webp`}
-        width={300}
+        width={getWidth(250)}
+        style={{ top: -getWidth(40), left: -getWidth(20) }}
         draggable="false"
       />
       {type === "char" && (
@@ -41,7 +55,7 @@ export default function RateCard({ item, rarity, type, elem = "", path }) {
           className="card-char-img"
           alt={`${item} Card`}
           src={`./assets/splash/iso-full/${item}.webp`}
-          width={1100}
+          width={getWidth(1100, 550)}
           draggable="false"
         />
       )}
@@ -70,7 +84,10 @@ export default function RateCard({ item, rarity, type, elem = "", path }) {
           />
         </React.Fragment>
       )}
-      <div className="rate-card-name px-3">
+      <div
+        className="rate-card-name"
+        style={{ fontSize: getWidth(34, 14), padding: `0 ${getWidth(30)}px` }}
+      >
         {trans[item][i18n.resolvedLanguage]}
       </div>
     </div>

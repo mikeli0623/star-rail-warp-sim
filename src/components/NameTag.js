@@ -1,12 +1,10 @@
 import "../css/DataBank.css";
 import React, { useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { json } from "../util/Constants";
+import { json, asianLang } from "../util/Constants";
 import { useTranslation } from "react-i18next";
 import ResizeContext from "./ResizeContext";
 const trans = require("../assets/data/translations.json");
-
-const asianLang = ["zh", "ko", "ja"];
 
 export default function NameTag({ style, name, bottom = false, anim = true }) {
   const cleanText = (text) => {
