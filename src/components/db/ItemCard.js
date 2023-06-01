@@ -50,7 +50,11 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
   const { t, i18n } = useTranslation();
 
   return (
-    <div className="item-card" onClick={handleSelect}>
+    <div
+      className="item-card"
+      onClick={handleSelect}
+      style={{ borderRadius: `0 ${getWidth(20, 10)}px 0 0` }}
+    >
       <div className="card-gradient" rarity={info.rarity} />
       <div className="card-overlay" indexed={indexed.toString()} />
       <div className="index-noti" indexed={indexed.toString()}>
