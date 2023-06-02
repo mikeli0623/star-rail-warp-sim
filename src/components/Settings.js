@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import useSound from "use-sound";
 import SoundContext from "./context/SoundContext";
 import ResetModal from "./modals/ResetModal";
 import VersionModal from "./modals/VersionModal";
@@ -33,6 +32,9 @@ const Settings = ({
   };
   const handleShow = () => setShowSettings(true);
 
+  const { sound, setSound, setContinueSound, useSound } =
+    useContext(SoundContext);
+
   const [playMenuOpen] = useSound("../assets/audio/sfx/menu-open.mp3");
 
   const [playMenuClose] = useSound("../assets/audio/sfx/menu-close.mp3");
@@ -45,8 +47,6 @@ const Settings = ({
 
   const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
   const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
-
-  const { sound, setSound, setContinueSound } = useContext(SoundContext);
 
   const [showReset, setShowReset] = useState(false);
 

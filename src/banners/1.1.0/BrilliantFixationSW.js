@@ -41,7 +41,7 @@ export default function BrilliantFixationSW() {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/1.0.1/weap-banner-back.webp"
+          src="../assets/banner/1.1.0/weap-banner-back.webp"
           width={getWidth(1200)}
           alt="right"
           draggable="false"
@@ -54,8 +54,8 @@ export default function BrilliantFixationSW() {
       </div>
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/1.0.1/weap-rate-1.webp"
-        alt="Day One Of My New Life"
+        src="../assets/splash/banner-rate/memories-of-the-past.webp"
+        alt="Memories of the Past"
         width={getWidth(135)}
         style={{
           animation: "cone-1-animation 0.4s 1",
@@ -67,8 +67,8 @@ export default function BrilliantFixationSW() {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/1.0.1/weap-rate-2.webp"
-        alt="Planetary Rendezvous"
+        src="../assets/splash/banner-rate/make-the-world-clamor.webp"
+        alt="Make the World Clamor"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
@@ -80,8 +80,8 @@ export default function BrilliantFixationSW() {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/1.0.1/weap-rate-3.webp"
-        alt="Only Silence Remains"
+        src="../assets/splash/banner-rate/subscribe-for-more.webp"
+        alt="Subscribe for More"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",

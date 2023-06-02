@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
-import useSound from "use-sound";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import { json } from "../../util/Constants";
@@ -8,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import RateIcon from "../RateIcon";
 
 export default function RateModal({ show, setShow, vers, type }) {
-  const { sound } = useContext(SoundContext);
+  const { sound, useSound } = useContext(SoundContext);
   const handleClose = () => setShow(false);
 
   const { t } = useTranslation();

@@ -3,7 +3,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { json, allChars, allWeapons } from "../../util/Constants";
 import CloseButton from "../CloseButton";
-import useSound from "use-sound";
 import SoundContext from "../context/SoundContext";
 import ResizeContext from "../context/ResizeContext";
 import ItemCard from "./ItemCard";
@@ -14,13 +13,11 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function DataBank({ type, setContent, setShowDB }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
-  const { sound } = useContext(SoundContext);
+  const { sound, useSound } = useContext(SoundContext);
 
   const [playLoad] = useSound("../assets/audio/sfx/db-load.mp3");
   const [playSelectItem] = useSound("../assets/audio/sfx/item-select.mp3");
-  const [playSelectFilter] = useSound(
-    "../assets/audio/sfx/db-filter-select.mp3"
-  );
+  const [playSelectFilter] = useSound("../assets/audio/sfx/tab-select.mp3");
   const [playExit] = useSound("../assets/audio/sfx/db-exit.mp3");
 
   const handleExit = () => {

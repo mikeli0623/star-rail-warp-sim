@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import "../../css/Phono.css";
 import Modal from "react-bootstrap/Modal";
-import useSound from "use-sound";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
@@ -18,7 +17,7 @@ export default function PhonoModal({
   currentTrack,
   handleSelect,
 }) {
-  const { sound } = useContext(SoundContext);
+  const { sound, useSound } = useContext(SoundContext);
   const handleClose = () => {
     setShow(false);
   };

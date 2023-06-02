@@ -1,5 +1,6 @@
 import { useState, useContext } from "react";
 import ResizeContext from "../context/ResizeContext";
+import SoundContext from "../context/SoundContext";
 import { useTranslation } from "react-i18next";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import RecordsTable from "./RecordsTable";
@@ -10,6 +11,11 @@ export default function RecordsContent({ type, history, title }) {
   const [pagIndex, setPagIndex] = useState(1);
   const [currentPosition, setCurrentPosition] = useState(0);
 
+  const { sound, useSound } = useContext(SoundContext);
+  const [playNext] = useSound("/assets/audio/sfx/next.mp3");
+  const [playPrev] = useSound("/assets/audio/sfx/prev.mp3");
+  const [playNone] = useSound("/assets/audio/sfx/none.mp3", { volume: 0.8 });
+
   const showNext = () => {
     const remainingElements = history.length - currentPosition;
     const elementsToShow = Math.min(remainingElements, 5);
@@ -17,7 +23,8 @@ export default function RecordsContent({ type, history, title }) {
     if (elementsToShow > 0) {
       setPagIndex(pagIndex + 1);
       setCurrentPosition(currentPosition + elementsToShow);
-    }
+      if (sound) playNext();
+    } else if (sound) playNone();
   };
 
   const showPrev = () => {
@@ -27,8 +34,9 @@ export default function RecordsContent({ type, history, title }) {
       if (elementsToShow > 0) {
         setPagIndex(pagIndex - 1);
         setCurrentPosition(currentPosition - elementsToShow);
+        if (sound) playPrev();
       }
-    }
+    } else if (sound) playNone();
   };
 
   const slicedHistory = history.slice(currentPosition, currentPosition + 5);

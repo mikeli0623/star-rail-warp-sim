@@ -2,7 +2,6 @@ import { useContext, useEffect } from "react";
 import { json } from "../util/Constants";
 import CloseButton from "./CloseButton";
 import ResizeContext from "./context/ResizeContext";
-import useSound from "use-sound";
 import SoundContext from "./context/SoundContext";
 import { motion } from "framer-motion";
 
@@ -70,7 +69,7 @@ const WarpResult = ({
 
 const WarpResults = ({ currentWarp, newItems, onClose, hasFive }) => {
   const { getWidth } = useContext(ResizeContext);
-  const { sound } = useContext(SoundContext);
+  const { sound, useSound } = useContext(SoundContext);
   const [playSelectItem] = useSound("../assets/audio/sfx/item-select.mp3");
   const [playResultsNormal] = useSound("./assets/audio/sfx/results.mp3", {
     volume: 0.8,

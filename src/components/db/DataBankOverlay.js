@@ -2,14 +2,13 @@ import React, { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { allChars, allWeapons } from "../../util/Constants";
-import useSound from "use-sound";
 import SoundContext from "../context/SoundContext";
 import ResizeContext from "../context/ResizeContext";
 import { useTranslation } from "react-i18next";
 
 export default function DataBankOverlay({ show, setShow, handleSelect }) {
   const { getWidth } = useContext(ResizeContext);
-  const { sound } = useContext(SoundContext);
+  const { sound, useSound } = useContext(SoundContext);
 
   const [playMenuOpen] = useSound("../assets/audio/sfx/db-menu-open.mp3");
   const [playMenuClose] = useSound("../assets/audio/sfx/db-menu-close.mp3");

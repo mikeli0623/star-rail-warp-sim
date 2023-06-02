@@ -8,6 +8,7 @@ const trans = require("../../assets/data/translations.json");
 const RecordsTable = ({ history, type, title }) => {
   const { getWidth } = useContext(ResizeContext);
   const { t, i18n } = useTranslation();
+
   const displayHistory = history.map((item, index) => {
     return (
       <tr key={item + index} style={{ fontSize: getWidth(16) }}>

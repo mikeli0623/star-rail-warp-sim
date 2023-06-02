@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import useSound from "use-sound";
 import SoundContext from "./context/SoundContext";
 import ResizeContext from "./context/ResizeContext";
 
@@ -12,11 +11,11 @@ const MiniBanners = ({
 }) => {
   const [highlightIndex, setHighlightIndex] = useState(null);
 
+  const { sound, useSound } = useContext(SoundContext);
+
   const [play] = useSound("../assets/audio/sfx/mini-select.mp3", {
     volume: 0.6,
   });
-
-  const { sound } = useContext(SoundContext);
 
   const { getWidth } = useContext(ResizeContext);
 

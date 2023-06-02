@@ -54,7 +54,7 @@ const BrilliantFixationJY = () => {
       </div>
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/1.0.1/weap-rate-1.webp"
+        src="../assets/splash/banner-rate/day-one-of-my-new-life.webp"
         alt="Day One Of My New Life"
         width={getWidth(135)}
         style={{
@@ -67,7 +67,7 @@ const BrilliantFixationJY = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/1.0.1/weap-rate-2.webp"
+        src="../assets/splash/banner-rate/planetary-rendezvous.webp"
         alt="Planetary Rendezvous"
         width={getWidth(108)}
         style={{
@@ -80,7 +80,7 @@ const BrilliantFixationJY = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/1.0.1/weap-rate-3.webp"
+        src="../assets/splash/banner-rate/only-silence-remains.webp"
         alt="Only Silence Remains"
         width={getWidth(108)}
         style={{

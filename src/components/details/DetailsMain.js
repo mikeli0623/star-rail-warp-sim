@@ -1,5 +1,6 @@
 import "../../css/Details.css";
 import { useState, useContext } from "react";
+import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import ResizeContext from "../context/ResizeContext";
 import { Scrollbars } from "react-custom-scrollbars-2";
@@ -32,6 +33,17 @@ export default function DetailsMain({ setContent, bannerType, history }) {
   const { getWidth } = useContext(ResizeContext);
 
   const { t, i18n } = useTranslation();
+
+  const { sound, useSound } = useContext(SoundContext);
+
+  const [playTab] = useSound("/assets/audio/sfx/tab-select.mp3");
+  const [playClose] = useSound("/assets/audio/sfx/details-close.mp3");
+
+  const handleSelect = (type) => {
+    setDetailType(type);
+    if (sound) playTab();
+  };
+
   return (
     <motion.main
       key="details"
@@ -54,10 +66,15 @@ export default function DetailsMain({ setContent, bannerType, history }) {
           className="position-sticky d-flex justify-content-center align-items-center py-2"
           style={{ backgroundColor: "#303030", top: 0, zIndex: 2 }}
         >
-          <CloseButton onClose={() => setContent("main")} />
+          <CloseButton
+            onClose={() => {
+              if (sound) playClose();
+              setContent("main");
+            }}
+          />
           <DetailsButton
             text={t("button.view-details")}
-            handleSelect={() => setDetailType("details")}
+            handleSelect={() => handleSelect("details")}
             isActive={detailType === "details"}
           />
           <div
@@ -70,7 +87,7 @@ export default function DetailsMain({ setContent, bannerType, history }) {
           />
           <DetailsButton
             text={t("button.records")}
-            handleSelect={() => setDetailType("records")}
+            handleSelect={() => handleSelect("records")}
             isActive={detailType === "records"}
           />
         </nav>

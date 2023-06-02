@@ -1,4 +1,5 @@
 import React, { useState, useContext, useMemo, useEffect } from "react";
+import SoundContext from "./context/SoundContext";
 import { json, allChars, allWeapons } from "../util/Constants";
 import { CalcWarp } from "../util/CalcWarp";
 import History from "../util/History";
@@ -13,9 +14,9 @@ import BrilliantFixationS from "../banners/1.0.0/BrilliantFixationS";
 import BrilliantFixationJY from "../banners/1.0.1/BrilliantFixationJY";
 import SwirlOfHeavenlySpear from "../banners/1.0.1/SwirlOfHeavenlySpear";
 import BrilliantFixationSW from "../banners/1.1.0/BrilliantFixationSW";
-import GamerMoment from "../banners/1.1.0/GamerMoment";
+import ContractZero from "../banners/1.1.0/ContractZero";
 import BrilliantFixationL from "../banners/1.1.1/BrilliantFixationL";
-import HealerGuy from "../banners/1.1.1/HealerGuy";
+import LaicPursuit from "../banners/1.1.1/LaicPursuit";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
@@ -38,6 +39,9 @@ export default function Main({
   bgm,
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
+  const { sound, useSound } = useContext(SoundContext);
+
+  const [playOpenDetails] = useSound("/assets/audio/sfx/details-open.mp3");
 
   const { t, i18n } = useTranslation();
 
@@ -134,11 +138,11 @@ export default function Main({
         weap: <BrilliantFixationJY />,
       },
       "1.1.0": {
-        char: <GamerMoment />,
+        char: <ContractZero />,
         weap: <BrilliantFixationSW />,
       },
       "1.1.1": {
-        char: <HealerGuy />,
+        char: <LaicPursuit />,
         weap: <BrilliantFixationL />,
       },
     };
@@ -371,7 +375,10 @@ export default function Main({
             left: "25%",
             zIndex: "1000",
           }}
-          onClick={() => setContent("details")}
+          onClick={() => {
+            if (sound) playOpenDetails();
+            setContent("details");
+          }}
           content={t("button.view-details")}
         />
         <WarpButtons onWarp={handleWarp} event={bannerType} />

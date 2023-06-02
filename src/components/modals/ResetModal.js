@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
-import useSound from "use-sound";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
 import { useTranslation } from "react-i18next";
 
 export default function ResetModal({ show, setShow }) {
-  const { sound } = useContext(SoundContext);
+  const { sound, useSound } = useContext(SoundContext);
   const handleClose = () => setShow(false);
   const [playModalClose] = useSound("../assets/audio/sfx/modal-close.mp3");
   const [playButton] = useSound("/assets/audio/sfx/button-select.mp3");
