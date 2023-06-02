@@ -17,7 +17,7 @@ export default function PhonoModal({
   currentTrack,
   handleSelect,
 }) {
-  const { sound, useSound } = useContext(SoundContext);
+  const { sound, useSound, setSoundEnabled } = useContext(SoundContext);
   const handleClose = () => {
     setShow(false);
   };
@@ -33,6 +33,8 @@ export default function PhonoModal({
   const [playAlbumSelect] = useSound(
     "/assets/audio/sfx/phono-album-select.mp3"
   );
+  const [playToggleOn] = useSound("/assets/audio/sfx/toggle-on.mp3");
+  const [playToggleOff] = useSound("/assets/audio/sfx/toggle-off.mp3");
 
   const { t, i18n } = useTranslation();
 
@@ -64,6 +66,19 @@ export default function PhonoModal({
 
   const [fillerAlbumChangeAlbum, setFillerAlbumChangeAlbum] =
     useState(undefined);
+
+  const [checked, setChecked] = useState(
+    localStorage.getItem("bgm") ? JSON.parse(localStorage.getItem("bgm")) : true
+  );
+  const handleBGM = () => {
+    if (sound) {
+      if (checked) playToggleOff();
+      else playToggleOn();
+    }
+    localStorage.setItem("bgm", (!checked).toString());
+    setChecked(!checked);
+    setSoundEnabled(!checked);
+  };
 
   return (
     <Modal
@@ -201,6 +216,7 @@ export default function PhonoModal({
                   actual={actualTrack === track}
                   chosen={chosenTrack === track}
                   filler={fillerAlbumChangeTrack === track}
+                  muted={!sound || !checked}
                   handleSelect={() => {
                     handleSelect(chosenAlbum + "-" + track);
                     setFillerAlbumChangeAlbum(undefined);
@@ -218,7 +234,27 @@ export default function PhonoModal({
           </div>
         </div>
       </Modal.Body>
-      <Modal.Footer style={{ backgroundColor: "#23252f", borderTop: "none" }}>
+      <Modal.Footer
+        className="d-flex justify-content-between align-items-center px-4"
+        style={{ backgroundColor: "#23252f", borderTop: "none" }}
+      >
+        <div
+          className="d-flex justify-content-between align-items-center px-2 bgm-toggle"
+          onClick={({ target }) => handleBGM(target)}
+        >
+          BGM
+          <input
+            checked={checked}
+            type="checkbox"
+            onChange={() => {}}
+            style={{
+              accentColor: "#f29d38",
+              color: "white !important",
+              background: "!important",
+            }}
+          />
+        </div>
+
         <Button
           onClick={() => {
             if (!(actualTrack === chosenTrack && !fillerAlbumChangeTrack)) {

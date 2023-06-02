@@ -30,7 +30,16 @@ function App() {
 
   const [sound, setSound] = useState(false);
   const [continueSound, setContinueSound] = useState(false);
-  const soundValue = { sound, setSound, setContinueSound, useSound };
+  const [soundEnabled, setSoundEnabled] = useState(
+    localStorage.getItem("bgm") ? JSON.parse(localStorage.getItem("bgm")) : true
+  );
+  const soundValue = {
+    sound,
+    setSound,
+    setContinueSound,
+    setSoundEnabled,
+    useSound,
+  };
 
   const isVisible = usePageVisibility();
 
@@ -162,6 +171,11 @@ function App() {
 
   useEffect(() => {
     if (!mainData) return;
+    if (!soundEnabled) mainData.pause();
+  }, [mainData, soundEnabled]);
+
+  useEffect(() => {
+    if (!mainData) return;
     if (!sound) {
       mainData.pause();
       // soundTimeout = setTimeout(() => mainData.sound.stop(), 10000);
@@ -177,7 +191,7 @@ function App() {
       content === "data-bank" ||
       content === "details"
     ) {
-      if (!mainData.sound.playing()) {
+      if (!mainData.sound.playing() && soundEnabled) {
         mainData.sound.fade(0, 1, 500);
         playMainBGM();
         // clearTimeout(soundTimeout);
@@ -217,6 +231,7 @@ function App() {
     playMainBGM,
     playWarpBGM,
     warpData,
+    soundEnabled,
   ]);
 
   const [showDB, setShowDB] = useState(false);
