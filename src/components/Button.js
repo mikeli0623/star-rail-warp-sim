@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import ResizeContext from "./ResizeContext";
-import SoundContext from "./SoundContext";
+import ResizeContext from "./context/ResizeContext";
+import SoundContext from "./context/SoundContext";
 import useSound from "use-sound";
 
 export default function Button({

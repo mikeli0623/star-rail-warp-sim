@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import { json } from "../util/Constants";
 import useSound from "use-sound";
-import SoundContext from "./SoundContext";
-import ResizeContext from "./ResizeContext";
+import SoundContext from "./context/SoundContext";
+import ResizeContext from "./context/ResizeContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useTranslation } from "react-i18next";
 const trans = require("../assets/data/translations.json");

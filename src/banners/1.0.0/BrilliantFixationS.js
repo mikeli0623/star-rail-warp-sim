@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import "../../css/Banners.css";
 import "../../css/vers/1.0.0.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ResizeContext from "../../components/ResizeContext";
+import ResizeContext from "../../components/context/ResizeContext";
 import Button from "../../components/Button";
 import RateModal from "../../components/modals/RateModal";
 

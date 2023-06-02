@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import useSound from "use-sound";
-import SoundContext from "../SoundContext";
+import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
 import { allVers } from "../../util/Constants";

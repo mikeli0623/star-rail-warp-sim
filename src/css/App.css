@@ -259,7 +259,7 @@ html * {
 }
 
 #main-back-cover {
-  min-height: 100%;
+  min-height: 200%;
   min-width: 100%;
   position: absolute;
   left: 50%;
@@ -288,22 +288,18 @@ html * {
 
 .warp-button {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  bottom: -1.5%;
+  right: 0;
   z-index: 100;
   transition: filter 0.2s;
 }
 
-.warp-button.beginner {
-  transform: translate(70%, 481%);
-}
-
 .warp-button.one {
-  transform: translate(0%, 600%);
+  right: 26%;
 }
 
 .warp-button.ten {
-  transform: translate(105%, 600%);
+  right: 1.5%;
 }
 
 .warp-button:active {
@@ -619,6 +615,47 @@ html * {
   100% {
     scale: 4;
     rotate: -70deg;
+  }
+}
+
+.light-ray {
+  width: 500vw;
+  height: 500vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: top left;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  animation: animate-light-ray 1.8s forwards;
+  animation-timing-function: cubic-bezier(0.58, 0.16, 0.19, 0.91);
+  filter: invert(100%) sepia(62%) saturate(7041%) hue-rotate(171deg)
+    brightness(105%) contrast(98%);
+}
+
+.light-ray[rarity="5"] {
+  filter: invert(89%) sepia(5%) saturate(1652%) hue-rotate(334deg)
+    brightness(116%) contrast(91%);
+}
+
+.light-ray[rarity="4"] {
+  filter: invert(90%) sepia(89%) saturate(513%) hue-rotate(192deg)
+    brightness(101%) contrast(97%);
+}
+
+@keyframes animate-light-ray {
+  0% {
+    opacity: 0.4;
+  }
+  33% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    rotate: 40deg;
   }
 }
 
@@ -1068,5 +1105,11 @@ html * {
   .close-button {
     top: 0%;
     right: 1%;
+  }
+}
+
+@media screen and (max-height: 400px) and (orientation: landscape) {
+  #main-back {
+    overflow: auto;
   }
 }

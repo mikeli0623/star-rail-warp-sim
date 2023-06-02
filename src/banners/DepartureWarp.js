@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import "../css/Banners.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ResizeContext from "../components/ResizeContext";
+import ResizeContext from "../components/context/ResizeContext";
 import { useTranslation, Trans } from "react-i18next";
 import NameTag from "../components/NameTag";
 import { Scrollbars } from "react-custom-scrollbars-2";
+
 const DepartureWarp = ({ total }) => {
   const { getWidth } = useContext(ResizeContext);
 
@@ -203,7 +204,7 @@ const DepartureWarp = ({ total }) => {
           zIndex: "1",
           top: "50%",
           left: "50%",
-          transform: "translate(82%, 730%)",
+          transform: "translate(60%, 720%)",
           width: getWidth(360),
           color: "white",
           fontSize: getWidth(24),
@@ -212,7 +213,6 @@ const DepartureWarp = ({ total }) => {
       >
         {t("banner.beg.remaining")}: {50 - 10 * total}/50
       </div>
-
       <Scrollbars
         renderThumbVertical={renderThumb}
         className="beg-description"

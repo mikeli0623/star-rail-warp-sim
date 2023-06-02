@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import SoundContext from "./SoundContext";
+import SoundContext from "./context/SoundContext";
 import useSound from "use-sound";
-import ResizeContext from "./ResizeContext";
+import ResizeContext from "./context/ResizeContext";
 
 const CloseButton = ({ onClose, style, variant = "light", resize = true }) => {
   const { getWidth, getHeight } = useContext(ResizeContext);

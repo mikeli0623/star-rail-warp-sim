@@ -3,8 +3,8 @@ import Modal from "react-bootstrap/Modal";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { allChars, allWeapons } from "../../util/Constants";
 import useSound from "use-sound";
-import SoundContext from "../SoundContext";
-import ResizeContext from "../ResizeContext";
+import SoundContext from "../context/SoundContext";
+import ResizeContext from "../context/ResizeContext";
 import { useTranslation } from "react-i18next";
 
 export default function DataBankOverlay({ show, setShow, handleSelect }) {

@@ -1,13 +1,12 @@
 import React, { useState, useContext } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
-import Tooltip from "react-bootstrap/Tooltip";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
-import SoundContext from "./SoundContext";
+import SoundContext from "./context/SoundContext";
 import ResetModal from "./modals/ResetModal";
 import VersionModal from "./modals/VersionModal";
-import ResizeContext from "./ResizeContext";
+import ResizeContext from "./context/ResizeContext";
 import DataBankOverlay from "./db/DataBankOverlay";
 import CreditsModal from "./modals/CreditsModal";
 import PhonoModal from "./modals/PhonoModal";
@@ -90,7 +89,6 @@ const Settings = ({
         }}
         draggable="false"
       />
-      <Tooltip id="button-tooltip">Coming soon...</Tooltip>
       <ResetModal show={showReset} setShow={setShowReset} />
       <VersionModal
         show={showVersion}

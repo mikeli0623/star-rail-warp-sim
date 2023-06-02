@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import SoundContext from "./SoundContext";
+import SoundContext from "./context/SoundContext";
 import CloseButton from "./CloseButton";
 import { motion } from "framer-motion";
 
