@@ -16,6 +16,7 @@ const RecordsTable = ({ history, type, title }) => {
           style={{
             fontSize: getWidth(24, 8),
             verticalAlign: "middle",
+            color: "#767676",
           }}
         >
           {t(`table.${json.isChar(item.id) ? "char" : "weap"}`)}
@@ -30,7 +31,7 @@ const RecordsTable = ({ history, type, title }) => {
                 ? "#a256e0"
                 : json.getRarity(item.id) === 5
                 ? "#d2a96b"
-                : undefined,
+                : "#767676",
           }}
         >
           {trans[item.id][i18n.resolvedLanguage]}
@@ -40,6 +41,7 @@ const RecordsTable = ({ history, type, title }) => {
           style={{
             fontSize: getWidth(24, 8),
             verticalAlign: "middle",
+            color: "#767676",
           }}
         >
           {type === "char"
@@ -53,6 +55,7 @@ const RecordsTable = ({ history, type, title }) => {
             width: "27%",
             fontSize: getWidth(24, 8),
             verticalAlign: "middle",
+            color: "#767676",
           }}
         >
           {new Date(item.time).toLocaleString()}

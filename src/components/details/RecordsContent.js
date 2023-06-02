@@ -11,14 +11,12 @@ export default function RecordsContent({ type, history, title }) {
   const [currentPosition, setCurrentPosition] = useState(0);
 
   const showNext = () => {
-    if (currentPosition + 5 < history.length) {
-      const remainingElements = history.length - currentPosition;
-      const elementsToShow = Math.min(remainingElements, 5);
+    const remainingElements = history.length - currentPosition;
+    const elementsToShow = Math.min(remainingElements, 5);
 
-      if (elementsToShow > 0) {
-        setPagIndex(pagIndex + 1);
-        setCurrentPosition(currentPosition + elementsToShow);
-      }
+    if (elementsToShow > 0) {
+      setPagIndex(pagIndex + 1);
+      setCurrentPosition(currentPosition + elementsToShow);
     }
   };
 
