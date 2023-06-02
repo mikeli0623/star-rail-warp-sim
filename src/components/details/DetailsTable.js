@@ -19,6 +19,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
               style={{
                 fontSize: getWidth(24, 8),
                 verticalAlign: "middle",
+                color: "#767676",
               }}
             >
               {rateUp.includes(items[index * 4]) ? (
@@ -40,6 +41,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
               style={{
                 fontSize: getWidth(24, 8),
                 verticalAlign: "middle",
+                color: "#767676",
               }}
             >
               {rateUp.includes(items[index * 4 + 1]) ? (
@@ -63,6 +65,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
               style={{
                 fontSize: getWidth(24, 8),
                 verticalAlign: "middle",
+                color: "#767676",
               }}
             >
               {rateUp.includes(items[index * 4 + 2]) ? (
@@ -86,6 +89,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
               style={{
                 fontSize: getWidth(24, 8),
                 verticalAlign: "middle",
+                color: "#767676",
               }}
             >
               {rateUp.includes(items[index * 4 + 3]) ? (
