@@ -5,7 +5,14 @@ import ResizeContext from "../context/ResizeContext";
 import { useTranslation } from "react-i18next";
 const trans = require("../../assets/data/translations.json");
 
-export default function ItemCard({ type, item, indexed, handleSelect }) {
+export default function ItemCard({
+  type,
+  item,
+  indexed,
+  handleSelect,
+  showCount,
+  count,
+}) {
   const { getWidth } = useContext(ResizeContext);
   const info = {
     name: json.getName(item),
@@ -26,6 +33,10 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
   useEffect(() => {
     setWrapMulti(getWidth(13));
   }, [getWidth]);
+
+  useEffect(() => {
+    console.log(count);
+  });
 
   const starPrinter = (i) => {
     return (
@@ -84,6 +95,7 @@ export default function ItemCard({ type, item, indexed, handleSelect }) {
           draggable="false"
         />
       </div>
+      {showCount && <div className="item-count">{count}</div>}
       {type === "char" && (
         <LazyLoadImage
           effect="opacity"

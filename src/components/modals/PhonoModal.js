@@ -8,6 +8,7 @@ import { BGM } from "../../util/Constants";
 import { useTranslation } from "react-i18next";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PhonoTrack from "../PhonoTrack";
+import Checkbox from "../Checkbox";
 const trans = require("../../assets/data/translations.json");
 
 export default function PhonoModal({
@@ -33,8 +34,6 @@ export default function PhonoModal({
   const [playAlbumSelect] = useSound(
     "/assets/audio/sfx/phono-album-select.mp3"
   );
-  const [playToggleOn] = useSound("/assets/audio/sfx/toggle-on.mp3");
-  const [playToggleOff] = useSound("/assets/audio/sfx/toggle-off.mp3");
 
   const { t, i18n } = useTranslation();
 
@@ -70,11 +69,8 @@ export default function PhonoModal({
   const [checked, setChecked] = useState(
     localStorage.getItem("bgm") ? JSON.parse(localStorage.getItem("bgm")) : true
   );
+
   const handleBGM = () => {
-    if (sound) {
-      if (checked) playToggleOff();
-      else playToggleOn();
-    }
     localStorage.setItem("bgm", (!checked).toString());
     setChecked(!checked);
     setSoundEnabled(!checked);
@@ -238,23 +234,7 @@ export default function PhonoModal({
         className="d-flex justify-content-between align-items-center px-4"
         style={{ backgroundColor: "#23252f", borderTop: "none" }}
       >
-        <div
-          className="d-flex justify-content-between align-items-center px-2 bgm-toggle"
-          onClick={({ target }) => handleBGM(target)}
-        >
-          BGM
-          <input
-            checked={checked}
-            type="checkbox"
-            onChange={() => {}}
-            style={{
-              accentColor: "#f29d38",
-              color: "white !important",
-              background: "!important",
-            }}
-          />
-        </div>
-
+        <Checkbox handleCheck={handleBGM} checked={checked} text="BGM" />
         <Button
           onClick={() => {
             if (!(actualTrack === chosenTrack && !fillerAlbumChangeTrack)) {

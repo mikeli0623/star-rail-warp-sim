@@ -978,6 +978,12 @@ html * {
   }
 }
 
+.checkbox {
+  background-color: white;
+  width: 100px;
+  font-size: 20px;
+}
+
 @media screen and (max-width: 1280px) {
   .custom-button {
     line-height: 80%;
@@ -1105,6 +1111,11 @@ html * {
   .close-button {
     top: 0%;
     right: 1%;
+  }
+
+  .checkbox {
+    width: 80px;
+    font-size: 16px;
   }
 }
 

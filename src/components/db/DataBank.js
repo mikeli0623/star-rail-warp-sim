@@ -10,6 +10,7 @@ import FilterButton from "./FilterButton";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Checkbox from "../Checkbox";
 
 export default function DataBank({ type, setContent, setShowDB }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -88,6 +89,17 @@ export default function DataBank({ type, setContent, setShowDB }) {
       if (sound) playSelectFilter();
       setFilter(newFilter);
     }
+  };
+
+  const [checked, setChecked] = useState(
+    sessionStorage.getItem("db-count")
+      ? JSON.parse(sessionStorage.getItem("db-count"))
+      : false
+  );
+
+  const handleCount = () => {
+    sessionStorage.setItem("db-count", (!checked).toString());
+    setChecked(!checked);
   };
 
   const { t } = useTranslation();
@@ -208,6 +220,12 @@ export default function DataBank({ type, setContent, setShowDB }) {
             handleSelect={handleFilterSelect}
             active={filter === "Abundance"}
           />
+          <Checkbox
+            className="count-check"
+            handleCheck={handleCount}
+            checked={checked}
+            text="Count"
+          />
         </div>
         <Scrollbars
           className="db-item-container"
@@ -228,6 +246,8 @@ export default function DataBank({ type, setContent, setShowDB }) {
                     key={name}
                     type={type}
                     item={name}
+                    showCount={checked && count > 0}
+                    count={count}
                     indexed={count > 0}
                     handleSelect={handleItemSelect}
                   />
