@@ -30,7 +30,7 @@ function App() {
 
   const [sound, setSound] = useState(false);
   const [continueSound, setContinueSound] = useState(false);
-  const soundValue = { sound, setSound, setContinueSound };
+  const soundValue = { sound, setSound, setContinueSound, useSound };
 
   const isVisible = usePageVisibility();
 

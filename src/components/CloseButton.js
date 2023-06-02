@@ -1,12 +1,11 @@
 import { useContext } from "react";
 import SoundContext from "./context/SoundContext";
-import useSound from "use-sound";
 import ResizeContext from "./context/ResizeContext";
 
 const CloseButton = ({ onClose, style, variant = "light", resize = true }) => {
   const { getWidth, getHeight } = useContext(ResizeContext);
+  const { sound, useSound } = useContext(SoundContext);
   const [play] = useSound("/assets/audio/sfx/close-button.mp3");
-  const { sound } = useContext(SoundContext);
 
   return (
     <div

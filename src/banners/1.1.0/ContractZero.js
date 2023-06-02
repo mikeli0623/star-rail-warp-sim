@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "../../css/Banners.css";
-import "../../css/vers/1.1.1.css";
+import "../../css/vers/1.1.0.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../../components/context/ResizeContext";
 import { useTranslation } from "react-i18next";
@@ -8,10 +8,11 @@ import NameTag from "../../components/NameTag";
 import Button from "../../components/Button";
 import RateModal from "../../components/modals/RateModal";
 
-export default function HealerGuy() {
+export default function ContractZero() {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
   const [show, setShow] = useState(false);
+
   return (
     <React.Fragment>
       <div
@@ -70,7 +71,7 @@ export default function HealerGuy() {
           draggable="false"
           style={{
             position: "relative",
-            animation: "luocha-back-animation 3s 200ms 1",
+            animation: "silver-wolf-back-animation 3s 200ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -89,12 +90,12 @@ export default function HealerGuy() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.1/char-rate-1.webp)",
+            backgroundImage: "url(../assets/banner/1.1.0/char-rate-1.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "pela-animation 1s 1",
+            animation: "dan-heng-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "250ms",
             opacity: "0",
@@ -116,12 +117,12 @@ export default function HealerGuy() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.1/char-rate-2.webp)",
-            width: getWidth(800),
-            height: getWidth(800),
-            backgroundSize: getWidth(800),
+            backgroundImage: "url(../assets/banner/1.1.0/char-rate-2.webp)",
+            width: getWidth(1100),
+            height: getWidth(1100),
+            backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "qingque-animation 1s 1",
+            animation: "asta-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "300ms",
             animationFillMode: "both",
@@ -143,12 +144,12 @@ export default function HealerGuy() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.1/char-rate-3.webp)",
+            backgroundImage: "url(../assets/banner/1.1.0/char-rate-3.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "yukong-animation 1s 1",
+            animation: "serval-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "350ms",
             animationFillMode: "both",
@@ -171,20 +172,20 @@ export default function HealerGuy() {
         }}
       />
       <LazyLoadImage
-        src="../assets/banner/1.1.1/main-char.webp"
-        width={getWidth(1200)}
+        src="../assets/banner/1.1.0/main-char.webp"
+        width={getWidth(800)}
         alt="char"
         draggable="false"
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "luocha-animation 3s 200ms 1",
+          animation: "silver-wolf-animation 3s 200ms 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
       />
-      <RateModal show={show} setShow={setShow} vers="1.1.1" type="char" />
+      <RateModal show={show} setShow={setShow} vers="1.1.0" type="char" />
       <Button
         style={{
           position: "absolute",
@@ -208,7 +209,7 @@ export default function HealerGuy() {
         roundSize={getWidth(40)}
       />
       <NameTag
-        name="Luocha"
+        name="Silver Wolf"
         bottom={true}
         style={{ transform: "translate(-75%, 50%)" }}
         anim={false}

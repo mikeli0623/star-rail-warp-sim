@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import ResizeContext from "./context/ResizeContext";
 import SoundContext from "./context/SoundContext";
-import useSound from "use-sound";
 
 export default function Button({
   style,
@@ -16,9 +15,9 @@ export default function Button({
   muted = false,
 }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
+  const { sound, useSound } = useContext(SoundContext);
   const [playSelect] = useSound("/assets/audio/sfx/button-select.mp3");
   const [playCancel] = useSound("/assets/audio/sfx/button-cancel.mp3");
-  const { sound } = useContext(SoundContext);
 
   const handleClick = () => {
     if (sound && !muted) {

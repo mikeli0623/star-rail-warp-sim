@@ -405,7 +405,7 @@
     "vers": ["1.1.0"],
     "type": "char",
     "title": {
-      "en": "Gamer Moment",
+      "en": "Contract Zero",
       "zh": "天戈麾斥",
       "ko": "천과수 소용돌이",
       "ja": "奔放な天矛",
@@ -483,9 +483,9 @@
     },
     "rateUpFive": ["incessant-rain"],
     "rateUpFour": [
-      "only-silence-remains",
-      "planetary-rendezvous",
-      "day-one-of-my-new-life"
+      "memories-of-the-past",
+      "subscribe-for-more",
+      "make-the-world-clamor"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -519,24 +519,24 @@
       "the-moles-welcome-you",
       "under-the-blue-sky",
       "geniuses-repose",
-      "make-the-world-clamor",
       "the-birth-of-the-self",
       "dance-dance-dance",
-      "memories-of-the-past",
-      "subscribe-for-more",
       "swordplay",
       "eyes-of-the-prey",
       "good-night-and-sleep-well",
       "resolution-shines-as-pearls-of-sweat",
       "landaus-choice",
-      "trend-of-the-universal-market"
+      "trend-of-the-universal-market",
+      "only-silence-remains",
+      "planetary-rendezvous",
+      "day-one-of-my-new-life"
     ]
   },
   {
     "vers": ["1.1.1"],
     "type": "char",
     "title": {
-      "en": "Healer Guy",
+      "en": "Laic Pursuit",
       "zh": "天戈麾斥",
       "ko": "천과수 소용돌이",
       "ja": "奔放な天矛",
@@ -615,9 +615,9 @@
     },
     "rateUpFive": ["echoes-of-the-coffin"],
     "rateUpFour": [
-      "only-silence-remains",
-      "planetary-rendezvous",
-      "day-one-of-my-new-life"
+      "dance-dance-dance",
+      "geniuses-repose",
+      "good-night-and-sleep-well"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -650,18 +650,18 @@
       "a-secret-vow",
       "the-moles-welcome-you",
       "under-the-blue-sky",
-      "geniuses-repose",
       "make-the-world-clamor",
       "the-birth-of-the-self",
-      "dance-dance-dance",
       "memories-of-the-past",
       "subscribe-for-more",
       "swordplay",
       "eyes-of-the-prey",
-      "good-night-and-sleep-well",
       "resolution-shines-as-pearls-of-sweat",
       "landaus-choice",
-      "trend-of-the-universal-market"
+      "trend-of-the-universal-market",
+      "only-silence-remains",
+      "planetary-rendezvous",
+      "day-one-of-my-new-life"
     ]
   }
 ]

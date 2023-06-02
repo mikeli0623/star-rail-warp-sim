@@ -3,7 +3,6 @@ import SoundContext from "./context/SoundContext";
 import { allChars, json, asianLang } from "../util/Constants";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import useSound from "use-sound";
 import ResizeContext from "./context/ResizeContext";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
@@ -26,7 +25,7 @@ const WarpSingle = ({
   };
 
   const { getWidth, getHeight } = useContext(ResizeContext);
-  const { sound } = useContext(SoundContext);
+  const { sound, useSound } = useContext(SoundContext);
 
   const [warpIndex, setWarpIndex] = useState(0);
 

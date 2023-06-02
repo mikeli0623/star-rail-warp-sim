@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { json } from "../util/Constants";
-import useSound from "use-sound";
 import SoundContext from "./context/SoundContext";
 import ResizeContext from "./context/ResizeContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -9,7 +8,7 @@ const trans = require("../assets/data/translations.json");
 
 export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
   const { getWidth } = useContext(ResizeContext);
-  const { sound } = useContext(SoundContext);
+  const { sound, useSound } = useContext(SoundContext);
   const [playSelect] = useSound("/assets/audio/sfx/version-select.mp3");
   const [playRepeat] = useSound("../assets/audio/sfx/version-repeat.mp3");
 

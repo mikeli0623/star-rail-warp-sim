@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import Modal from "react-bootstrap/Modal";
-import useSound from "use-sound";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
@@ -23,7 +22,7 @@ const langs = {
 };
 
 export default function LangModal({ show, setShow }) {
-  const { sound } = useContext(SoundContext);
+  const { sound, useSound } = useContext(SoundContext);
   const handleClose = () => setShow(false);
 
   const { t, i18n } = useTranslation();

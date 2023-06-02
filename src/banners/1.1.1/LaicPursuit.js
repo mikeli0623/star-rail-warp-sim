@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "../../css/Banners.css";
-import "../../css/vers/1.1.0.css";
+import "../../css/vers/1.1.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../../components/context/ResizeContext";
 import { useTranslation } from "react-i18next";
@@ -8,11 +8,10 @@ import NameTag from "../../components/NameTag";
 import Button from "../../components/Button";
 import RateModal from "../../components/modals/RateModal";
 
-export default function GamerMoment() {
+export default function LaicPursuit() {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
   const [show, setShow] = useState(false);
-
   return (
     <React.Fragment>
       <div
@@ -71,7 +70,7 @@ export default function GamerMoment() {
           draggable="false"
           style={{
             position: "relative",
-            animation: "silver-wolf-back-animation 3s 200ms 1",
+            animation: "luocha-back-animation 3s 200ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -90,12 +89,12 @@ export default function GamerMoment() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.0/char-rate-1.webp)",
+            backgroundImage: "url(../assets/banner/1.1.1/char-rate-1.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "dan-heng-animation 1s 1",
+            animation: "pela-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "250ms",
             opacity: "0",
@@ -117,12 +116,12 @@ export default function GamerMoment() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.0/char-rate-2.webp)",
-            width: getWidth(1100),
-            height: getWidth(1100),
-            backgroundSize: getWidth(1100),
+            backgroundImage: "url(../assets/banner/1.1.1/char-rate-2.webp)",
+            width: getWidth(800),
+            height: getWidth(800),
+            backgroundSize: getWidth(800),
             position: "absolute",
-            animation: "asta-animation 1s 1",
+            animation: "qingque-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "300ms",
             animationFillMode: "both",
@@ -144,12 +143,12 @@ export default function GamerMoment() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.0/char-rate-3.webp)",
+            backgroundImage: "url(../assets/banner/1.1.1/char-rate-3.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "serval-animation 1s 1",
+            animation: "yukong-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "350ms",
             animationFillMode: "both",
@@ -172,20 +171,20 @@ export default function GamerMoment() {
         }}
       />
       <LazyLoadImage
-        src="../assets/banner/1.1.0/main-char.webp"
-        width={getWidth(800)}
+        src="../assets/banner/1.1.1/main-char.webp"
+        width={getWidth(1200)}
         alt="char"
         draggable="false"
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "silver-wolf-animation 3s 200ms 1",
+          animation: "luocha-animation 3s 200ms 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
       />
-      <RateModal show={show} setShow={setShow} vers="1.1.0" type="char" />
+      <RateModal show={show} setShow={setShow} vers="1.1.1" type="char" />
       <Button
         style={{
           position: "absolute",
@@ -209,7 +208,7 @@ export default function GamerMoment() {
         roundSize={getWidth(40)}
       />
       <NameTag
-        name="Silver Wolf"
+        name="Luocha"
         bottom={true}
         style={{ transform: "translate(-75%, 50%)" }}
         anim={false}
