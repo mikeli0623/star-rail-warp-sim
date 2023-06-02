@@ -33,6 +33,7 @@ function App() {
   const [soundEnabled, setSoundEnabled] = useState(
     localStorage.getItem("bgm") ? JSON.parse(localStorage.getItem("bgm")) : true
   );
+
   const soundValue = {
     sound,
     setSound,
@@ -107,6 +108,11 @@ function App() {
     }
   );
 
+  const [playOSAEE, OSAEEData] = useSound("assets/audio/bgm/osae-embers.mp3", {
+    loop: true,
+    onload: () => setLockout((prev) => prev + 1),
+  });
+
   const [playOSAESA, OSAESAData] = useSound(
     "assets/audio/bgm/osae-streets-abuzz.mp3",
     {
@@ -146,6 +152,7 @@ function App() {
     "ooc-space-walk": [playOOCSW, OOCSWData],
     "ooc-timeline": [playOOCT, OOCTData],
     "osae-faded-sun": [playOSAEFS, OSAEFSData],
+    "osae-embers": [playOSAEE, OSAEEData],
     "osae-streets-abuzz": [playOSAESA, OSAESAData],
     "ss-cumulus-formations": [playSSCF, SSCFData],
     "ss-exquisite-ingenuity": [playSSEI, SSEIData],

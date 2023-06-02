@@ -132,7 +132,7 @@ const allWeapons = [
 
 const BGM = {
   ooc: ["timeline", "science-fiction", "space-walk"],
-  osae: ["faded-sun", "streets-abuzz"],
+  osae: ["faded-sun", "embers", "streets-abuzz"],
   ss: ["cumulus-formations", "exquisite-ingenuity", "lustrous-moonlight"],
 };
 

@@ -42,6 +42,14 @@ export default function PhonoTrack({
         </div>
       )}
       {track}
+      <LazyLoadImage
+        alt="Current BGM"
+        effect="opacity"
+        className="back-icon"
+        draggable="false"
+        src="assets/phono/back-icon.webp"
+        chosen={chosen.toString()}
+      />
       {actual && (
         <LazyLoadImage
           alt="Current BGM"
