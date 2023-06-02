@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import ResizeContext from "../ResizeContext";
+import ResizeContext from "../context/ResizeContext";
 
 export default function DetailInfo({ text, rarity, chance }) {
   const { getWidth } = useContext(ResizeContext);

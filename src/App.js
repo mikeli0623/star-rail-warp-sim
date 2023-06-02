@@ -3,11 +3,11 @@ import "./css/App.css";
 import "./css/Lazy.css";
 import WarpVideo from "./components/WarpVideo";
 import WarpResults from "./components/WarpResults";
-import useWindowSize from "./components/useWindowSize";
+import useWindowSize from "./components/hooks/useWindowSize";
 import WarpSingle from "./components/WarpSingle";
 import useSound from "use-sound";
-import { SoundProvider } from "./components/SoundContext";
-import { ResizeProvider } from "./components/ResizeContext";
+import { SoundProvider } from "./components/context/SoundContext";
+import { ResizeProvider } from "./components/context/ResizeContext";
 import Main from "./components/Main";
 import DataBank from "./components/db/DataBank";
 import { AnimatePresence } from "framer-motion";
@@ -60,6 +60,7 @@ function App() {
 
   const resizeValue = { getWidth, getHeight };
 
+  // pauses sound when focus is lost
   useEffect(() => {
     if (!isVisible) setSound(false);
     else setSound(continueSound);

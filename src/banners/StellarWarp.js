@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "../css/Banners.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ResizeContext from "../components/ResizeContext";
+import ResizeContext from "../components/context/ResizeContext";
 import { useTranslation } from "react-i18next";
 import NameTag from "../components/NameTag";
 

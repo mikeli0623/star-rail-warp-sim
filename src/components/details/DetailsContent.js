@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { json } from "../../util/Constants";
-import ResizeContext from "../ResizeContext";
+import ResizeContext from "../context/ResizeContext";
 import { baseWeapons } from "../../util/Constants";
 import { useTranslation } from "react-i18next";
 import DetailsTable from "./DetailsTable";

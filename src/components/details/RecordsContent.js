@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import ResizeContext from "../ResizeContext";
+import ResizeContext from "../context/ResizeContext";
 import { useTranslation } from "react-i18next";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import RecordsTable from "./RecordsTable";

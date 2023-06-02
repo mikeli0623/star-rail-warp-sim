@@ -1,7 +1,7 @@
 import "../../css/Details.css";
 import { useState, useContext } from "react";
 import CloseButton from "../CloseButton";
-import ResizeContext from "../ResizeContext";
+import ResizeContext from "../context/ResizeContext";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import { json } from "../../util/Constants";
 import { useTranslation } from "react-i18next";

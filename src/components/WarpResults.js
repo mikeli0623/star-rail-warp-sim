@@ -1,9 +1,9 @@
 import { useContext, useEffect } from "react";
 import { json } from "../util/Constants";
 import CloseButton from "./CloseButton";
-import ResizeContext from "./ResizeContext";
+import ResizeContext from "./context/ResizeContext";
 import useSound from "use-sound";
-import SoundContext from "./SoundContext";
+import SoundContext from "./context/SoundContext";
 import { motion } from "framer-motion";
 
 const WarpResult = ({

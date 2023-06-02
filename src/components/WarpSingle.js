@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useContext } from "react";
-import SoundContext from "./SoundContext";
+import SoundContext from "./context/SoundContext";
 import { allChars, json, asianLang } from "../util/Constants";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
-import ResizeContext from "./ResizeContext";
+import ResizeContext from "./context/ResizeContext";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
 const trans = require("../assets/data/translations.json");
@@ -460,6 +460,14 @@ const WarpSingle = ({
         className={`${animateFancy ? "donut" : "transparent"}`}
         rarity={item.rarity}
       />
+      {/* <LazyLoadImage
+        className={`${animateFancy ? "light-ray" : "transparent"}`}
+        effect="opacity"
+        alt="Rays of Light"
+        src="assets/test.webp"
+        draggable="false"
+        rarity={item.rarity}
+      /> */}
     </motion.section>
   );
 };

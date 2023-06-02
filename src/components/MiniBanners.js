@@ -1,8 +1,8 @@
 import React, { useState, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import useSound from "use-sound";
-import SoundContext from "./SoundContext";
-import ResizeContext from "./ResizeContext";
+import SoundContext from "./context/SoundContext";
+import ResizeContext from "./context/ResizeContext";
 
 const MiniBanners = ({
   vers,

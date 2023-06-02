@@ -6,7 +6,7 @@ import WarpButtons from "./WarpButtons";
 import MiniBanners from "./MiniBanners";
 import Settings from "./Settings";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ResizeContext from "./ResizeContext";
+import ResizeContext from "./context/ResizeContext";
 import DepartureWarp from "../banners/DepartureWarp";
 import ButterflyOnSwordtip from "../banners/1.0.0/ButterflyOnSwordtip";
 import BrilliantFixationS from "../banners/1.0.0/BrilliantFixationS";

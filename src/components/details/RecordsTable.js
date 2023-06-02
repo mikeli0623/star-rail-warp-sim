@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { json } from "../../util/Constants";
-import ResizeContext from "../ResizeContext";
+import ResizeContext from "../context/ResizeContext";
 import Table from "react-bootstrap/Table";
 import { useTranslation } from "react-i18next";
 const trans = require("../../assets/data/translations.json");

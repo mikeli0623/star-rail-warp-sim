@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { json } from "../../util/Constants";
-import ResizeContext from "../ResizeContext";
+import ResizeContext from "../context/ResizeContext";
 import { useTranslation } from "react-i18next";
 const trans = require("../../assets/data/translations.json");
 
