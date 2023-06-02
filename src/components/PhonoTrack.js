@@ -41,7 +41,9 @@ export default function PhonoTrack({
           )}
         </div>
       )}
-      {track}
+      <div className="position-relative track-name" chosen={chosen.toString()}>
+        {track}
+      </div>
       <LazyLoadImage
         alt="Current BGM"
         effect="opacity"
