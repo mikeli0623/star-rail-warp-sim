@@ -34,10 +34,6 @@ export default function ItemCard({
     setWrapMulti(getWidth(13));
   }, [getWidth]);
 
-  useEffect(() => {
-    console.log(count);
-  });
-
   const starPrinter = (i) => {
     return (
       <LazyLoadImage

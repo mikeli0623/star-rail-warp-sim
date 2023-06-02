@@ -27,6 +27,20 @@
   scale: 1.05;
 }
 
+.back-icon {
+  width: 60px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  filter: invert(0.2);
+  transition: filter 0.2s, opacity 0.2s;
+}
+
+.back-icon[chosen="true"] {
+  filter: invert(0.2);
+  opacity: 0.2;
+}
+
 .phono-track {
   position: relative;
   border: 2px solid #818181;
@@ -35,6 +49,7 @@
   width: 250px;
   height: 60px;
   font-size: 18px;
+  overflow: hidden;
 }
 
 .phono-track[chosen="true"] {
@@ -164,5 +179,9 @@
     width: 180px;
     height: 45px;
     font-size: 14px;
+  }
+
+  .back-icon {
+    width: 45px;
   }
 }

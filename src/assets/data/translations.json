@@ -1594,5 +1594,19 @@
     "de": "Schimmerndes Mondlicht",
     "id": "Lustrous Moonlight",
     "pt": "Lustrous Moonlight"
+  },
+  "embers": {
+    "en": "Embers",
+    "zh": "余烬",
+    "ja": "余燼",
+    "ko": "잔화",
+    "es": "Ascuas",
+    "fr": "Embers",
+    "ru": "Embers",
+    "th": "Embers",
+    "vi": "Tro Tàn",
+    "de": "Warme Glut",
+    "id": "Embers",
+    "pt": "Embers"
   }
 }
