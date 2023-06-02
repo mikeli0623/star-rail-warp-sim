@@ -111,12 +111,14 @@ export default function Main({
     }
   };
 
-  // creates stash
+  // creates stash and updates it if there are new entities
   useEffect(() => {
-    if (JSON.parse(localStorage.getItem("stash"))) return;
-    let stash = {};
-    allChars.map((char) => (stash[char] = 0));
-    allWeapons.map((weap) => (stash[weap] = 0));
+    const allItems = allChars.concat(allWeapons);
+    var stash = JSON.parse(localStorage.getItem("stash")) || {};
+
+    allItems.forEach((item) => {
+      if (stash[item] === undefined) stash[item] = 0;
+    });
     localStorage.setItem("stash", JSON.stringify(stash));
   }, []);
 

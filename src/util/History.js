@@ -4,10 +4,6 @@ class History {
     this.date = new Date();
   }
 
-  getwarp = () => {
-    return this.warp;
-  };
-
   getTime = () => {
     return this.date;
   };

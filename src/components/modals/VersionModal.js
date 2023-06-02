@@ -62,7 +62,10 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
           );
         })}
       </Modal.Body>
-      <Modal.Footer style={{ backgroundColor: "#e9e7e2" }}>
+      <Modal.Footer
+        className="d-flex justify-content-between align-items-center"
+        style={{ backgroundColor: "#e9e7e2" }}
+      >
         <Button
           onClick={() => {
             if (sound) {

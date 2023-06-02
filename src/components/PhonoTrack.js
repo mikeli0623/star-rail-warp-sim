@@ -1,3 +1,4 @@
+import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function PhonoTrack({
@@ -6,6 +7,7 @@ export default function PhonoTrack({
   actual,
   filler,
   chosen,
+  muted,
 }) {
   return (
     <div
@@ -27,10 +29,16 @@ export default function PhonoTrack({
           className="d-flex align-items-end justify-content-center"
           style={{ width: 44 }}
         >
-          <div className="play-bar small left" />
-          <div className="play-bar big left" />
-          <div className="play-bar big right" />
-          <div className="play-bar small right" />
+          {muted ? (
+            <div style={{ width: 15, height: 15, backgroundColor: "black" }} />
+          ) : (
+            <React.Fragment>
+              <div className="play-bar small left" />
+              <div className="play-bar big left" />
+              <div className="play-bar big right" />
+              <div className="play-bar small right" />
+            </React.Fragment>
+          )}
         </div>
       )}
       {track}

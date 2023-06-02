@@ -8,6 +8,7 @@ import { BGM } from "../../util/Constants";
 import { useTranslation } from "react-i18next";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PhonoTrack from "../PhonoTrack";
+import Checkbox from "../Checkbox";
 const trans = require("../../assets/data/translations.json");
 
 export default function PhonoModal({
@@ -17,7 +18,7 @@ export default function PhonoModal({
   currentTrack,
   handleSelect,
 }) {
-  const { sound, useSound } = useContext(SoundContext);
+  const { sound, useSound, setSoundEnabled } = useContext(SoundContext);
   const handleClose = () => {
     setShow(false);
   };
@@ -64,6 +65,16 @@ export default function PhonoModal({
 
   const [fillerAlbumChangeAlbum, setFillerAlbumChangeAlbum] =
     useState(undefined);
+
+  const [checked, setChecked] = useState(
+    localStorage.getItem("bgm") ? JSON.parse(localStorage.getItem("bgm")) : true
+  );
+
+  const handleBGM = () => {
+    localStorage.setItem("bgm", (!checked).toString());
+    setChecked(!checked);
+    setSoundEnabled(!checked);
+  };
 
   return (
     <Modal
@@ -201,6 +212,7 @@ export default function PhonoModal({
                   actual={actualTrack === track}
                   chosen={chosenTrack === track}
                   filler={fillerAlbumChangeTrack === track}
+                  muted={!sound || !checked}
                   handleSelect={() => {
                     handleSelect(chosenAlbum + "-" + track);
                     setFillerAlbumChangeAlbum(undefined);
@@ -218,7 +230,11 @@ export default function PhonoModal({
           </div>
         </div>
       </Modal.Body>
-      <Modal.Footer style={{ backgroundColor: "#23252f", borderTop: "none" }}>
+      <Modal.Footer
+        className="d-flex justify-content-between align-items-center px-4"
+        style={{ backgroundColor: "#23252f", borderTop: "none" }}
+      >
+        <Checkbox handleCheck={handleBGM} checked={checked} text="BGM" />
         <Button
           onClick={() => {
             if (!(actualTrack === chosenTrack && !fillerAlbumChangeTrack)) {

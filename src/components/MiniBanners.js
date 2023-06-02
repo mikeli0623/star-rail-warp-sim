@@ -19,11 +19,15 @@ const MiniBanners = ({
 
   const { getWidth } = useContext(ResizeContext);
 
+  const [lockout, setLockout] = useState(false);
+
   const setActiveBanner = (banner) => {
-    if (currentBannerType !== banner) {
+    if (!lockout && currentBannerType !== banner) {
+      setLockout(true);
       if (sound) play();
       setBannerType(banner);
       sessionStorage.setItem("bannerType", banner);
+      setTimeout(() => setLockout(false), 300);
     }
   };
 

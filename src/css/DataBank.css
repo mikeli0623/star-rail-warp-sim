@@ -85,6 +85,11 @@
   overflow: auto;
 }
 
+.count-check {
+  margin-top: 14px;
+  margin-left: 14px;
+}
+
 .filter-button {
   margin: 14px;
   display: flex;
@@ -232,6 +237,20 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.item-count {
+  position: absolute;
+  top: 2%;
+  right: 10%;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  text-shadow: 0 0 4px black;
+  font-size: 24px;
 }
 
 .char-img {
@@ -399,6 +418,11 @@
     margin: 10px;
   }
 
+  .count-check {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
   .filter-img-circle,
   .filter-img {
     height: 35px;
@@ -425,6 +449,11 @@
 
   .filter-button {
     margin: 12px;
+  }
+
+  .count-check {
+    margin-top: 12px;
+    margin-left: 12px;
   }
 
   .filter-img-circle,
@@ -475,7 +504,8 @@
     width: 18%;
   }
 
-  .filter-button {
+  .filter-button,
+  .count-check {
     margin: 0px;
   }
 
