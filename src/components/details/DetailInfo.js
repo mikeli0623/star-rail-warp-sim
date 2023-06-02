@@ -24,10 +24,10 @@ export default function DetailInfo({ text, rarity, chance }) {
           padding: `0 ${getWidth(20)}px`,
         }}
       >
-        {[...Array(rarity)].map((i) => {
+        {[...Array(rarity)].map((i, j) => {
           return (
             <img
-              key={i}
+              key={j}
               alt="Star"
               width={getWidth(25)}
               src="./assets/details/star.webp"
