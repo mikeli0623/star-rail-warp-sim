@@ -70,7 +70,17 @@ export default function CreditsModal({ show, setShow }) {
               playButton();
             }
           }}
-          content="Close"
+          content={
+            <span className="d-flex align-items-center justify-content-center">
+              <img
+                className="mx-1"
+                alt="Cancel"
+                src="assets/button-cancel.webp"
+                width={18}
+              />
+              {t("button.close")}
+            </span>
+          }
           size="sm"
           resize={false}
         />
