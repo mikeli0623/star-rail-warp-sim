@@ -104,6 +104,23 @@ export default function DataBank({ type, setContent, setShowDB }) {
 
   const { t } = useTranslation();
 
+  useEffect(() => {
+    function handleKeyDown({ keyCode }) {
+      // if (keyCode === 27) setShowDB(false);
+      if (keyCode === 27) {
+        if (sound) playExit();
+        setContent("main");
+        setShowDB(true);
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return function cleanup() {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [setContent, setShowDB, playExit, sound]);
+
   return (
     <motion.section
       key="db"
