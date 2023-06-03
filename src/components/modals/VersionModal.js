@@ -74,7 +74,17 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
             handleClose();
             setSelected(currentVers);
           }}
-          content={t("button.cancel")}
+          content={
+            <span className="d-flex align-items-center justify-content-center">
+              <img
+                className="mx-1"
+                alt="Cancel"
+                src="assets/button-cancel.webp"
+                width={18}
+              />
+              {t("button.cancel")}
+            </span>
+          }
           size="sm"
           resize={false}
         />
@@ -85,7 +95,17 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
             sessionStorage.setItem("vers", selected);
             handleClose();
           }}
-          content={t("button.confirm")}
+          content={
+            <span className="d-flex align-items-center justify-content-center">
+              <img
+                className="mx-1"
+                alt="Confirm"
+                src="assets/button-confirm.webp"
+                width={18}
+              />
+              {t("button.confirm")}
+            </span>
+          }
           size="sm"
           resize={false}
         />

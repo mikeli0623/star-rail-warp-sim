@@ -104,7 +104,17 @@ export default function LangModal({ show, setShow }) {
             }
             handleClose();
           }}
-          content={t("button.close")}
+          content={
+            <span className="d-flex align-items-center justify-content-center">
+              <img
+                className="mx-1"
+                alt="Cancel"
+                src="assets/button-cancel.webp"
+                width={18}
+              />
+              {t("button.close")}
+            </span>
+          }
           size="sm"
           resize={false}
         />

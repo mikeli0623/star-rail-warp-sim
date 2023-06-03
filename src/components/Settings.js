@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
@@ -74,6 +74,18 @@ const Settings = ({
     const album = match[1].replace(/-/g, " ");
     return [album, title];
   };
+
+  useEffect(() => {
+    function handleKeyDown({ keyCode }) {
+      if (keyCode === 27 && !showSettings && !showDB) setShowSettings(true);
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return function cleanup() {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [showSettings, showDB]);
 
   return (
     <React.Fragment>

@@ -47,7 +47,17 @@ export default function ResetModal({ show, setShow }) {
               playCancel();
             }
           }}
-          content={t("button.cancel")}
+          content={
+            <span className="d-flex align-items-center justify-content-center">
+              <img
+                className="mx-1"
+                alt="Cancel"
+                src="assets/button-cancel.webp"
+                width={18}
+              />
+              {t("button.cancel")}
+            </span>
+          }
           size="sm"
           resize={false}
         />
@@ -61,7 +71,17 @@ export default function ResetModal({ show, setShow }) {
             }, 250);
           }}
           style={{ color: "#c42c2c" }}
-          content={t("button.reset")}
+          content={
+            <span className="d-flex align-items-center justify-content-center">
+              <img
+                className="mx-1"
+                alt="Confirm"
+                src="assets/button-confirm.webp"
+                width={18}
+              />
+              {t("button.reset")}
+            </span>
+          }
           size="sm"
           resize={false}
         />

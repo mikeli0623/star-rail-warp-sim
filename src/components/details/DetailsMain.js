@@ -1,5 +1,5 @@
 import "../../css/Details.css";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import ResizeContext from "../context/ResizeContext";
@@ -43,6 +43,21 @@ export default function DetailsMain({ setContent, bannerType, history }) {
     setDetailType(type);
     if (sound) playTab();
   };
+
+  useEffect(() => {
+    function handleKeyDown({ keyCode }) {
+      if (keyCode === 27) {
+        if (sound) playClose();
+        setContent("main");
+      }
+    }
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    return function cleanup() {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [sound, setContent, playClose]);
 
   return (
     <motion.main

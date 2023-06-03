@@ -34,10 +34,14 @@ const WarpSingle = ({
   const [animateFive, setAnimateFive] = useState(false);
   const [firstAnimation, setFirstAnimation] = useState(true);
 
-  const [playThree] = useSound("./assets/audio/sfx/three.mp3", { volume: 0.8 });
-  const [playFour] = useSound("./assets/audio/sfx/four.mp3", { volume: 0.8 });
+  const [playThree] = useSound("./assets/audio/sfx/three.mp3", {
+    interrupt: true,
+  });
+  const [playFour] = useSound("./assets/audio/sfx/four.mp3", {
+    interrupt: true,
+  });
   const [playFive, playFiveData] = useSound("./assets/audio/sfx/five.mp3", {
-    volume: 0.8,
+    interrupt: true,
   });
 
   const [item, setItem] = useState({

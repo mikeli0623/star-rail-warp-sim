@@ -27,6 +27,14 @@
   scale: 1.05;
 }
 
+.track-name {
+  z-index: 1;
+}
+
+.track-name[chosen="false"] {
+  text-shadow: 0 0 2px black;
+}
+
 .back-icon {
   width: 60px;
   position: absolute;

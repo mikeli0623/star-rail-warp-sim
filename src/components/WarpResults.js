@@ -72,12 +72,12 @@ const WarpResults = ({ currentWarp, newItems, onClose, hasFive }) => {
   const { sound, useSound } = useContext(SoundContext);
   const [playSelectItem] = useSound("../assets/audio/sfx/item-select.mp3");
   const [playResultsNormal] = useSound("./assets/audio/sfx/results.mp3", {
-    volume: 0.8,
+    interrupt: true,
   });
   const [playResultsFive, playFiveData] = useSound(
     "./assets/audio/sfx/five-result.mp3",
     {
-      volume: 0.8,
+      interrupt: true,
     }
   );
 
