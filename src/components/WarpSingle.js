@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import SoundContext from "./context/SoundContext";
 import { allChars, json, asianLang } from "../util/Constants";
-import CloseButton from "./CloseButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "./context/ResizeContext";
 import { useTranslation } from "react-i18next";
@@ -125,19 +124,25 @@ const WarpSingle = ({
         backgroundImage: "url(../assets/warp-result.webp)",
       }}
     >
-      <CloseButton
-        onClose={() => {
+      <div
+        className="skip-button"
+        onClick={() => {
           if (currentWarp.length === 10) {
-            if (sound) {
-              if (hasFive) playFiveData.stop();
-            }
+            if (sound && hasFive) playFiveData.stop();
             setContent("results");
           } else {
             setContent("main");
             setNewItems([]);
           }
         }}
-      />
+      >
+        <LazyLoadImage
+          className="skip-icon"
+          effect="opacity"
+          draggable="false"
+          src="assets/skip.webp"
+        />
+      </div>
       {animateInfo && (
         <div
           id="single-info"

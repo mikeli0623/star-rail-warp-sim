@@ -72,7 +72,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  height: 80vh;
+  height: 82vh;
   width: 100%;
 }
 
@@ -97,6 +97,7 @@
 }
 
 .filter-img-circle {
+  position: relative;
   height: 60px;
   width: 60px;
   background-position: center;
@@ -104,6 +105,9 @@
   background-repeat: no-repeat;
   border-radius: 100%;
   transition: background-color 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .filter-button:hover .filter-img-circle[active="false"] {
@@ -136,13 +140,14 @@
 
 .filter-text {
   color: #a9abb2;
-  font-size: 20px;
+  font-size: 22px;
   margin-left: 10px;
   transition: color 0.2s ease;
 }
 
 .filter-text[active="true"] {
   color: white;
+  margin-left: 14px;
 }
 
 .db-item-container {
@@ -430,9 +435,17 @@
     background-size: 25px 25px;
   }
 
+  .item-filter-container {
+    width: 25%;
+  }
+
   .db-content {
     bottom: 0%;
-    height: 75vh;
+    height: 78vh;
+  }
+
+  .item-count {
+    font-size: 16px;
   }
 
   .db-item-container > div:first-of-type {

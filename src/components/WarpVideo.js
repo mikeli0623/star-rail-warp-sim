@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import SoundContext from "./context/SoundContext";
-import CloseButton from "./CloseButton";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { motion } from "framer-motion";
 
 const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
@@ -28,7 +28,14 @@ const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
       id="video-container"
       style={{ backgroundColor: loaded ? "white" : "black" }}
     >
-      <CloseButton onClose={onEnded} />
+      <div className="skip-button" onClick={onEnded}>
+        <LazyLoadImage
+          className="skip-icon"
+          effect="opacity"
+          draggable="false"
+          src="assets/skip.webp"
+        />
+      </div>
       <video
         autoPlay
         onEnded={onEnded}
