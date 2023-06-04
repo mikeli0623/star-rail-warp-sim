@@ -128,7 +128,7 @@ export default function DataBank({ type, setContent, setShowDB }) {
       animate={{ filter: "brightness(1)" }}
       exit={{ filter: "brightness(0)" }}
       className="db-back"
-      style={{ backgroundImage: "url(assets/db-back.webp)" }}
+      style={{ backgroundImage: "url(assets/db/db-back.webp)" }}
     >
       <LazyLoadImage
         alt={`${type} icon`}

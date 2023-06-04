@@ -49,7 +49,7 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
           type="weap"
           effect="opacity"
           alt="Light Cones Icon"
-          src="/assets/db-weap-icon.webp"
+          src="/assets/db/db-weap-icon.webp"
           onClick={() => {
             if (sound) playSelect();
             handleSelect("weap");
@@ -68,7 +68,7 @@ export default function DataBankOverlay({ show, setShow, handleSelect }) {
           type="char"
           effect="opacity"
           alt="Characters Icon"
-          src="/assets/db-char-icon.webp"
+          src="/assets/db/db-char-icon.webp"
           onClick={() => {
             if (sound) playSelect();
             handleSelect("char");
