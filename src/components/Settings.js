@@ -46,7 +46,6 @@ const Settings = ({
   );
 
   const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
-  const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
 
   const [showReset, setShowReset] = useState(false);
 
@@ -237,10 +236,7 @@ const Settings = ({
               draggable="false"
               width={getWidth(114, 50)}
               onClick={() => {
-                if (sound) {
-                  playButtonSelect();
-                  playModalOpen();
-                }
+                if (sound) playButtonSelect();
                 setShowReset(true);
               }}
             />
@@ -273,10 +269,8 @@ const Settings = ({
               draggable="false"
               width={getWidth(114, 50)}
               onClick={() => {
-                if (sound) {
-                  playButtonSelect();
-                  playModalOpen();
-                }
+                if (sound) playButtonSelect();
+
                 setShowCredits(true);
               }}
             />

@@ -34,6 +34,7 @@ export default function RateModal({ show, setShow, vers, type }) {
       onExiting={() => {
         if (sound) playModalClose();
       }}
+      centered
     >
       <Modal.Header
         style={{

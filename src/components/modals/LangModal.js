@@ -42,6 +42,7 @@ export default function LangModal({ show, setShow }) {
       onExiting={() => {
         if (sound) playModalClose();
       }}
+      centered
     >
       <Modal.Header style={{ backgroundColor: "#e9e7e2" }}>
         <Modal.Title style={{ fontWeight: "bold" }}>
