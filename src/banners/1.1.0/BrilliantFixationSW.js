@@ -19,7 +19,7 @@ export default function BrilliantFixationSW() {
           width: getWidth(764),
           height: getHeight(677.33, 1100),
           background:
-            "linear-gradient(to bottom, rgba(164, 164, 128, 1) 70%, rgba(255, 255, 255, 0) 100%)",
+            "linear-gradient(to bottom, #0e1e3b 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
           overflow: "hidden",
           boxShadow: "0 0 10px rgba(8, 8, 8, 0.521)",
