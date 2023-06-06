@@ -4,7 +4,7 @@ import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import ResizeContext from "../context/ResizeContext";
 import { Scrollbars } from "react-custom-scrollbars-2";
-import { json } from "../../util/Constants";
+import { json, LATESTVERS } from "../../util/Constants";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import DetailsContent from "./DetailsContent";
@@ -28,7 +28,7 @@ const DetailsButton = ({ text, handleSelect, isActive }) => {
 };
 
 export default function DetailsMain({ setContent, bannerType, history }) {
-  const vers = sessionStorage.getItem("vers") || "1.1.0";
+  const vers = sessionStorage.getItem("vers") || LATESTVERS;
   const [detailType, setDetailType] = useState("details");
   const { getWidth } = useContext(ResizeContext);
 
