@@ -28,7 +28,7 @@ const DetailsButton = ({ text, handleSelect, isActive }) => {
 };
 
 export default function DetailsMain({ setContent, bannerType, history }) {
-  const [vers] = useState(sessionStorage.getItem("vers") || "1.0.1");
+  const vers = sessionStorage.getItem("vers") || "1.1.0";
   const [detailType, setDetailType] = useState("details");
   const { getWidth } = useContext(ResizeContext);
 
