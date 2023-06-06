@@ -1,6 +1,6 @@
 import React, { useState, useContext, useMemo, useEffect } from "react";
 import SoundContext from "./context/SoundContext";
-import { json, allChars, allWeapons } from "../util/Constants";
+import { json, allChars, allWeapons, LATESTVERS } from "../util/Constants";
 import { CalcWarp } from "../util/CalcWarp";
 import History from "../util/History";
 import WarpButtons from "./WarpButtons";
@@ -45,7 +45,9 @@ export default function Main({
 
   const { t, i18n } = useTranslation();
 
-  const [vers, setVers] = useState(sessionStorage.getItem("vers") || "1.1.0");
+  const [vers, setVers] = useState(
+    sessionStorage.getItem("vers") || LATESTVERS
+  );
 
   const [totalBeginner, setTotalBeginner] = useState(
     parseInt(localStorage.getItem("totalBeginner")) || 0

@@ -143,6 +143,16 @@ const allVers = [
   "1.0.0",
 ];
 
+const LATESTVERS = "1.1.0";
+
 const asianLang = ["zh", "ko", "ja"];
 
-export { allChars, allWeapons, baseWeapons, BGM, allVers, asianLang };
+export {
+  allChars,
+  allWeapons,
+  baseWeapons,
+  BGM,
+  allVers,
+  asianLang,
+  LATESTVERS,
+};
