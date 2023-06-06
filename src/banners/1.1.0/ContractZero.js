@@ -159,7 +159,7 @@ export default function ContractZero() {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.1.0/char-left.webp`}
+        src={`../assets/banner/1.1.0/${i18n.resolvedLanguage}/char-left.webp`}
         width={getWidth(331)}
         alt="left"
         draggable="false"
