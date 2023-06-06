@@ -11,6 +11,7 @@ export default function CreditsModal({ show, setShow }) {
     setShow(false);
   };
 
+  const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
   const [playModalClose] = useSound("../assets/audio/sfx/modal-close.mp3");
   const [playButton] = useSound("/assets/audio/sfx/button-select.mp3");
 
@@ -20,9 +21,13 @@ export default function CreditsModal({ show, setShow }) {
     <Modal
       show={show}
       onHide={handleClose}
+      onEntering={() => {
+        if (sound) playModalOpen();
+      }}
       onExiting={() => {
         if (sound) playModalClose();
       }}
+      centered
     >
       <Modal.Header style={{ backgroundColor: "#e9e7e2" }}>
         <Modal.Title style={{ fontWeight: "bold" }}>

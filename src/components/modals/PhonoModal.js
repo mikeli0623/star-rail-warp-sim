@@ -92,6 +92,7 @@ export default function PhonoModal({
         setChosenTrack(actualTrack);
       }}
       className="phono-modal"
+      centered
     >
       <Modal.Header
         style={{

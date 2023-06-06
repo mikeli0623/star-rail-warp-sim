@@ -30,10 +30,10 @@
 
 @keyframes silver-wolf-animation {
   0% {
-    transform: translate(-46%, -50%);
+    transform: translate(-38%, -50%);
   }
   100% {
-    transform: translate(-38.8%, -50%);
+    transform: translate(-30%, -50%);
   }
 }
 
@@ -46,11 +46,11 @@
   }
 }
 
-@keyframes jing-yuan-weap-back-animation {
+@keyframes silver-wolf-weap-back-animation {
   0% {
-    transform: translate(25%, -13%);
+    transform: translate(30%, -13%);
   }
   100% {
-    transform: translate(20%, -12%);
+    transform: translate(25%, -12%);
   }
 }

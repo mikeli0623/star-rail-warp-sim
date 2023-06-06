@@ -45,7 +45,7 @@ export default function Main({
 
   const { t, i18n } = useTranslation();
 
-  const [vers, setVers] = useState(sessionStorage.getItem("vers") || "1.0.1");
+  const [vers, setVers] = useState(sessionStorage.getItem("vers") || "1.1.0");
 
   const [totalBeginner, setTotalBeginner] = useState(
     parseInt(localStorage.getItem("totalBeginner")) || 0

@@ -283,6 +283,10 @@ html * {
   filter: brightness(0.8);
 }
 
+.mini-banner.active {
+  filter: brightness(1);
+}
+
 #main-back {
   position: fixed;
   top: 0;

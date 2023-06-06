@@ -64,8 +64,8 @@ export default function ContractZero() {
             right: "0",
           }}
         />
-        <LazyLoadImage
-          //   src="../assets/banner/1.0.1/char-banner-back.webp"
+        {/* <LazyLoadImage
+            src="../assets/banner/1.0.1/char-banner-back.webp"
           width={getWidth(1500)}
           alt="right"
           draggable="false"
@@ -75,7 +75,7 @@ export default function ContractZero() {
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
-        />
+        /> */}
       </div>
       <div
         className="rate-up-char-icons"
@@ -159,7 +159,7 @@ export default function ContractZero() {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.0.1/${i18n.resolvedLanguage}/char-left.webp`}
+        src={`../assets/banner/1.1.0/char-left.webp`}
         width={getWidth(331)}
         alt="left"
         draggable="false"
@@ -173,7 +173,7 @@ export default function ContractZero() {
       />
       <LazyLoadImage
         src="../assets/banner/1.1.0/main-char.webp"
-        width={getWidth(800)}
+        width={getWidth(850)}
         alt="char"
         draggable="false"
         style={{

@@ -48,7 +48,7 @@ const allChars = [
   "seele",
   "welt",
   "yanqing",
-  // "silver-wolf",
+  "silver-wolf",
   // "yukong",
   // "kafka",
   // "luocha",
@@ -137,7 +137,8 @@ const BGM = {
 };
 
 const allVers = [
-  // "1.1.1", "1.1.0",
+  // "1.1.1",
+  "1.1.0",
   "1.0.1",
   "1.0.0",
 ];

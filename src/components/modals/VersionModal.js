@@ -35,6 +35,7 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
       onExiting={() => {
         if (sound) playModalClose();
       }}
+      centered
     >
       <Modal.Header style={{ backgroundColor: "#e9e7e2" }}>
         <Modal.Title style={{ fontWeight: "bold" }}>

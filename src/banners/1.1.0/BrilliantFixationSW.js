@@ -42,11 +42,11 @@ export default function BrilliantFixationSW() {
         <LazyLoadImage
           effect="opacity"
           src="../assets/banner/1.1.0/weap-banner-back.webp"
-          width={getWidth(1200)}
+          width={getWidth(1000)}
           alt="right"
           draggable="false"
           style={{
-            animation: "jing-yuan-weap-back-animation 3s 100ms 1",
+            animation: "silver-wolf-weap-back-animation 3s 100ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -93,7 +93,7 @@ export default function BrilliantFixationSW() {
       />
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.0.1/${i18n.resolvedLanguage}/weap-left.webp`}
+        src={`../assets/banner/1.1.0/weap-left.webp`}
         width={getWidth(1101.5)}
         alt="left"
         draggable="false"
