@@ -57,17 +57,17 @@
   },
   "incessant-rain": {
     "en": "Incessant Rain",
-    "zh": "Incessant Rain",
-    "ja": "Incessant Rain",
-    "ko": "Incessant Rain",
-    "es": "Incessant Rain",
-    "fr": "Incessant Rain",
-    "ru": "Incessant Rain",
-    "th": "Incessant Rain",
-    "vi": "Incessant Rain",
-    "de": "Incessant Rain",
+    "zh": "雨一直下",
+    "ja": "降りやまぬ雨",
+    "ko": "계속 내리는 비",
+    "es": "Lluvia incesante",
+    "fr": "Pluie incessante",
+    "ru": "Непрекращающийся дождь",
+    "th": "Cơn Mưa Tầm Tă",
+    "vi": "Cơn Mưa Tầm Tă",
+    "de": "Unaufhörlicher Regen",
     "id": "Incessant Rain",
-    "pt": "Incessant Rain"
+    "pt": "Chuva Constante"
   },
   "a-secret-vow": {
     "en": "A Secret Vow",
