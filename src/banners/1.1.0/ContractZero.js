@@ -45,7 +45,8 @@ export default function ContractZero() {
           height: getHeight(677.33, 1100),
           overflow: "hidden",
           background:
-            "linear-gradient(to bottom, rgba(40, 33, 36, 1) 70%, rgba(255, 255, 255, 0) 100%)",
+            " linear-gradient(180deg, rgba(117,150,216,1) 0%, rgba(168,184,236,1) 50%, rgba(109,152,201,1) 100%)",
+
           position: "absolute",
           boxShadow: "0 0 10px rgba(8, 8, 8, 0.521)",
           top: "50%",
@@ -173,7 +174,7 @@ export default function ContractZero() {
       />
       <LazyLoadImage
         src="../assets/banner/1.1.0/main-char.webp"
-        width={getWidth(850)}
+        width={getWidth(1100)}
         alt="char"
         draggable="false"
         style={{
