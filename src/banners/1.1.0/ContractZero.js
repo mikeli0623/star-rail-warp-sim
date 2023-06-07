@@ -65,9 +65,9 @@ export default function ContractZero() {
             right: "0",
           }}
         />
-        {/* <LazyLoadImage
-            src="../assets/banner/1.0.1/char-banner-back.webp"
-          width={getWidth(1500)}
+        <LazyLoadImage
+          src="../assets/banner/1.1.0/char-banner-back.webp"
+          width={getWidth(900)}
           alt="right"
           draggable="false"
           style={{
@@ -76,7 +76,7 @@ export default function ContractZero() {
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
-        /> */}
+        />
       </div>
       <div
         className="rate-up-char-icons"
@@ -174,7 +174,7 @@ export default function ContractZero() {
       />
       <LazyLoadImage
         src="../assets/banner/1.1.0/main-char.webp"
-        width={getWidth(1100)}
+        width={getWidth(900)}
         alt="char"
         draggable="false"
         style={{
@@ -192,7 +192,7 @@ export default function ContractZero() {
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translate(-420%, 60%)",
+          transform: "translate(-420%, 90%)",
         }}
         onClick={() => setShow(true)}
         rounded

@@ -724,11 +724,14 @@ html * {
 
 #warp-result-container {
   background-color: #1d2b45;
-  min-height: 100vh;
-  min-width: 100vw;
-  background-size: 100vw 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -764,7 +767,6 @@ html * {
   transition: scale 0.3s;
   display: flex;
   position: relative;
-  margin: 0 20px;
 }
 
 .warp-result.five-back {
@@ -1099,10 +1101,6 @@ html * {
     line-height: 50%;
   }
 
-  .warp-result-hover {
-    margin: 0 10px;
-  }
-
   .vers-info {
     font-size: 14px;
   }
@@ -1157,6 +1155,20 @@ html * {
   .checkbox {
     width: 70px;
     font-size: 12px;
+  }
+
+  .warp-result {
+    width: 90px;
+    height: 50px;
+  }
+
+  .skip-button {
+    width: 60px;
+    height: 30px;
+  }
+
+  .skip-icon {
+    width: 15px;
   }
 }
 

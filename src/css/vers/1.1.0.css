@@ -30,27 +30,27 @@
 
 @keyframes silver-wolf-animation {
   0% {
-    transform: translate(-36%, -50%);
+    transform: translate(-36%, -52%);
   }
   100% {
-    transform: translate(-28%, -50%);
+    transform: translate(-28%, -52%);
   }
 }
 
 @keyframes silver-wolf-back-animation {
   0% {
-    transform: translate(-32.08%, -27.4%);
+    transform: translate(-12%, -15.15%);
   }
   100% {
-    transform: translate(-2.88%, -27.4%);
+    transform: translate(-4%, -15.15%);
   }
 }
 
 @keyframes silver-wolf-weap-back-animation {
   0% {
-    transform: translate(5%, 1%) rotate(-13deg);
+    transform: translate(-4%, -7%);
   }
   100% {
-    transform: translate(0%, 0%) rotate(-13deg);
+    transform: translate(-7%, -6%);
   }
 }

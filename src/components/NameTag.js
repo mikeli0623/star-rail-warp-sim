@@ -15,7 +15,7 @@ export default function NameTag({ style, name, bottom = false, anim = true }) {
   };
   const dumbText = name.toLowerCase().replace(/ /g, "-");
   const tagWidth = () => {
-    const multi = asianLang.includes(i18n.resolvedLanguage) ? 34 : 16;
+    const multi = asianLang.includes(i18n.resolvedLanguage) ? 36 : 16;
     return trans[dumbText][i18n.resolvedLanguage].length * multi;
   };
 
