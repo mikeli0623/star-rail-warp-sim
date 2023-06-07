@@ -16,7 +16,11 @@ const WarpResult = ({
   const { getWidth, getHeight } = useContext(ResizeContext);
 
   return (
-    <div className="warp-result-hover" onClick={handleSelect}>
+    <div
+      className="warp-result-hover"
+      onClick={handleSelect}
+      style={{ margin: `0 ${getWidth(20)}px` }}
+    >
       {isFive && (
         <img
           alt="Five Star Back"

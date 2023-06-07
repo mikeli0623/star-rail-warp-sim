@@ -14,7 +14,6 @@ import { AnimatePresence } from "framer-motion";
 import { usePageVisibility } from "react-page-visibility";
 import DetailsMain from "./components/details/DetailsMain";
 
-// var soundTimeout;
 function App() {
   const [content, setContent] = useState("main");
 
@@ -185,7 +184,6 @@ function App() {
     if (!mainData) return;
     if (!sound) {
       mainData.pause();
-      // soundTimeout = setTimeout(() => mainData.sound.stop(), 10000);
       warpData.stop();
       return;
     }
@@ -201,7 +199,6 @@ function App() {
       if (!mainData.sound.playing() && soundEnabled) {
         mainData.sound.fade(0, 1, 500);
         playMainBGM();
-        // clearTimeout(soundTimeout);
       }
     } else if (content === "single") {
       if (warpData.sound.playing()) return;

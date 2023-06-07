@@ -169,7 +169,7 @@ export default function Main({
       weap: "black",
     },
     "1.1.0": {
-      char: "black",
+      char: "#232a3c",
       weap: "black",
     },
     "1.1.1": {
