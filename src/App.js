@@ -13,6 +13,7 @@ import DataBank from "./components/db/DataBank";
 import { AnimatePresence } from "framer-motion";
 import { usePageVisibility } from "react-page-visibility";
 import DetailsMain from "./components/details/DetailsMain";
+import StatsMain from "./components/stats/StatsMain";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -26,6 +27,49 @@ function App() {
   );
 
   const [currentWarp, setCurrentWarp] = useState([]);
+
+  const [bannerState, setBannerState] = useState({
+    beginner: {
+      rateFive: parseInt(localStorage.getItem("begRateFive")) || 0.006,
+      rateFour: parseInt(localStorage.getItem("begRateFour")) || 0.051,
+      maxPity: parseInt(localStorage.getItem("begHardPity")) || 50,
+      softPity: parseInt(localStorage.getItem("begSoftPity")) || 50,
+      guaranteeFive: localStorage.getItem("begGuaranteeFive") === "true",
+      guaranteeFour: localStorage.getItem("begGuaranteeFour") === "true",
+      pityFive: parseInt(localStorage.getItem("begPityFive")) || 0,
+      pityFour: parseInt(localStorage.getItem("begPityFour")) || 0,
+    },
+    char: {
+      rateFive: parseInt(localStorage.getItem("charRateFive")) || 0.006,
+      rateFour: parseInt(localStorage.getItem("charRateFour")) || 0.051,
+      maxPity: parseInt(localStorage.getItem("charHardPity")) || 90,
+      softPity: parseInt(localStorage.getItem("charSoftPity")) || 75,
+      guaranteeFive: localStorage.getItem("charGuaranteeFive") === "true",
+      guaranteeFour: localStorage.getItem("charGuaranteeFour") === "true",
+      pityFive: parseInt(localStorage.getItem("charPityFive")) || 0,
+      pityFour: parseInt(localStorage.getItem("charPityFour")) || 0,
+    },
+    weap: {
+      rateFive: parseInt(localStorage.getItem("weapRateFive")) || 0.008,
+      rateFour: parseInt(localStorage.getItem("weapRateFour")) || 0.066,
+      maxPity: parseInt(localStorage.getItem("weapHardPity")) || 80,
+      softPity: parseInt(localStorage.getItem("weapSoftPity")) || 65,
+      guaranteeFive: localStorage.getItem("weapGuaranteeFive") === "true",
+      guaranteeFour: localStorage.getItem("weapGuaranteeFour") === "true",
+      pityFive: parseInt(localStorage.getItem("weapPityFive")) || 0,
+      pityFour: parseInt(localStorage.getItem("weapPityFour")) || 0,
+    },
+    standard: {
+      rateFive: parseInt(localStorage.getItem("standRateFive")) || 0.006,
+      rateFour: parseInt(localStorage.getItem("standRateFour")) || 0.051,
+      maxPity: parseInt(localStorage.getItem("standHardPity")) || 90,
+      softPity: parseInt(localStorage.getItem("standSoftPity")) || 75,
+      guaranteeFive: localStorage.getItem("standGuaranteeFive") === "true",
+      guaranteeFour: localStorage.getItem("standGuaranteeFour") === "true",
+      pityFive: parseInt(localStorage.getItem("standPityFive")) || 0,
+      pityFour: parseInt(localStorage.getItem("standPityFour")) || 0,
+    },
+  });
 
   const [sound, setSound] = useState(false);
   const [continueSound, setContinueSound] = useState(false);
@@ -258,6 +302,8 @@ function App() {
               <Main
                 lockout={lockout < Object.keys(allBGM).length}
                 bannerType={bannerType}
+                bannerState={bannerState}
+                setBannerState={setBannerState}
                 showDB={showDB}
                 setShowDB={setShowDB}
                 setBannerType={setBannerType}
@@ -315,6 +361,15 @@ function App() {
                 setContent={setContent}
                 bannerType={bannerType}
                 history={history[bannerType]}
+              />
+            )}
+            {content === "stats" && (
+              <StatsMain
+                setContent={setContent}
+                bannerType={bannerType}
+                setBannerType={setBannerType}
+                bannerState={bannerState}
+                setBannerState={setBannerState}
               />
             )}
           </AnimatePresence>

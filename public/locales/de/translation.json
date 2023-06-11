@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "Grammophon"
+    },
+    "default": {
+      "title": "Auf Standard setzen",
+      "body": "Dadurch werden die Warp-Einstellungen auf die Standardwerte gesetzt. Bist du dir sicher?"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "Details ansehen",
     "phono": "Musik auswählen",
     "current": "Aktuelles Lied",
-    "records": "Aufzeichnungen"
+    "records": "Aufzeichnungen",
+    "default": "Standard",
+    "stats": "Statistiken"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "Allg. 4-Sterne-Objekt-Erfolgschance:",
     "list3": "Allg. 3-Sterne-Objekt-Erfolgschance:",
     "guarantee": "(inkl. Garantie:"
+  },
+  "stats": {
+    "rateFive": "Wahrscheinlichkeit 5-Sterne",
+    "rateFour": "Wahrscheinlichkeit 4-Sterne",
+    "maxPity": "5-Sterne-Hard-Limit",
+    "softPity": "5-Sterne-Soft-Limit",
+    "pityFive": "Aktuelles 5-Sterne-Limit",
+    "pityFour": "Aktuelles 4-Sterne-Limit",
+    "guaranteeFive": "Garantierte 5-Sterne-Bewertung",
+    "guaranteeFour": "Garantierte 4-Sterne-Bewertung",
+    "total": "Gesamt"
   }
 }

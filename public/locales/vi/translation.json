@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "Máy Hát"
+    },
+    "default": {
+      "title": "Đặt thành Mặc định",
+      "body": "Thao tác này sẽ đặt cài đặt sợi dọc thành giá trị mặc định. Bạn có chắc không?"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "Xem Chi Tiết",
     "phono": "Chọn nhạc",
     "current": "Bài Hiện Tại",
-    "records": "Lịch Sử"
+    "records": "Lịch Sử",
+    "default": "Mặc định",
+    "stats": "Số liệu thống kê"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "Tỷ lệ cơ bản ra đối tượng 4 sao:",
     "list3": "Tỷ lệ cơ bản ra đối tượng 3 sao:",
     "guarantee": "(Có bảo hiểm:"
+  },
+  "stats": {
+    "rateFive": "Xác suất 5 sao",
+    "rateFour": "Xác suất 4 sao",
+    "maxPity": "Giới hạn cứng 5 sao",
+    "softPity": "Giới hạn mềm 5 sao",
+    "pityFive": "Giới hạn 5 sao hiện tại",
+    "pityFour": "Giới hạn 4 sao hiện tại",
+    "guaranteeFive": "Đảm bảo nổi bật 5 sao",
+    "guaranteeFour": "Đảm bảo nổi bật 4 sao",
+    "total": "Tổng cộng"
   }
 }

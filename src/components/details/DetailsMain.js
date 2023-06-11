@@ -36,12 +36,14 @@ export default function DetailsMain({ setContent, bannerType, history }) {
 
   const { sound, useSound } = useContext(SoundContext);
 
-  const [playTab] = useSound("/assets/audio/sfx/tab-select.mp3");
+  const [playTab] = useSound("/assets/audio/sfx/details-type-select.mp3");
   const [playClose] = useSound("/assets/audio/sfx/details-close.mp3");
 
   const handleSelect = (type) => {
-    setDetailType(type);
-    if (sound) playTab();
+    if (type !== detailType) {
+      setDetailType(type);
+      if (sound) playTab();
+    }
   };
 
   useEffect(() => {

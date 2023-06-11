@@ -1,17 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
 import { useTranslation } from "react-i18next";
+import Checkbox from "../Checkbox";
 
-export default function ResetModal({ show, setShow }) {
+export default function StatsModal({ show, setShow }) {
   const { sound, useSound } = useContext(SoundContext);
+
   const handleClose = () => setShow(false);
+
   const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
   const [playModalClose] = useSound("../assets/audio/sfx/modal-close.mp3");
+  const [playCancel] = useSound("/assets/audio/sfx/button-cancel.mp3");
 
   const { t } = useTranslation();
+
+  const [stats, setStats] = useState({
+    beginner: { total: parseInt(localStorage.getItem("beginnerTotal")) || 0 },
+    char: { total: parseInt(localStorage.getItem("charTotal")) || 0 },
+    weap: { total: parseInt(localStorage.getItem("weapTotal")) || 0 },
+    standard: { total: parseInt(localStorage.getItem("standardTotal")) || 0 },
+  });
+
+  const [cheat, setCheat] = useState(false);
 
   return (
     <Modal
@@ -27,7 +40,7 @@ export default function ResetModal({ show, setShow }) {
     >
       <Modal.Header style={{ backgroundColor: "#e9e7e2" }}>
         <Modal.Title style={{ fontWeight: "bold" }}>
-          {t("modal.reset.title")}
+          {t("modal.vers.title")}
         </Modal.Title>
         <CloseButton
           onClose={handleClose}
@@ -36,48 +49,42 @@ export default function ResetModal({ show, setShow }) {
           resize={false}
         />
       </Modal.Header>
-      <Modal.Body style={{ backgroundColor: "#e9e7e2" }}>
-        {t("modal.reset.body")}
+      <Modal.Body
+        style={{ backgroundColor: "#e9e7e2" }}
+        className="d-flex flex-column"
+      >
+        <div>
+          Stellar Jade spent:{" "}
+          {Object.values(stats).reduce((acc, val) => acc + val.total, 0) * 160}
+        </div>
+        <div># Beginner Warps: {stats.beginner.total}</div>
+        <div># Character Warps: {stats.char.total}</div>
+        <div># Light Cone Warps: {stats.weap.total}</div>
+        <div># Stellar Warps:{stats.standard.total}</div>
       </Modal.Body>
       <Modal.Footer
         className="justify-content-between"
         style={{ backgroundColor: "#e9e7e2" }}
       >
-        <Button
-          cancel
-          onClick={() => handleClose()}
-          content={
-            <span className="d-flex align-items-center justify-content-center">
-              <img
-                className="mx-1"
-                alt="Cancel"
-                src="assets/button-cancel.webp"
-                width={18}
-              />
-              {t("button.cancel")}
-            </span>
-          }
-          size="sm"
-          resize={false}
+        <Checkbox
+          handleCheck={() => setCheat(!cheat)}
+          checked={cheat}
+          text="Cheat"
         />
         <Button
           onClick={() => {
-            setTimeout(() => {
-              localStorage.clear();
-              sessionStorage.clear();
-              window.location.reload();
-            }, 250);
+            if (sound) playCancel();
+            handleClose();
           }}
-          style={{ color: "#c42c2c" }}
           content={
             <span className="d-flex align-items-center justify-content-center">
               <img
                 className="mx-1"
-                alt="Confirm"
-                src="assets/button-confirm.webp"
+                alt="Close"
+                src="assets/button-cancel.webp"
                 width={18}
               />
-              {t("button.reset")}
+              {t("button.close")}
             </span>
           }
           size="sm"

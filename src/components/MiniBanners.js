@@ -1,249 +1,95 @@
-import React, { useState, useContext } from "react";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useContext, useState } from "react";
 import SoundContext from "./context/SoundContext";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import { LATESTVERS } from "../util/Constants";
 import ResizeContext from "./context/ResizeContext";
 
-const MiniBanners = ({
-  vers,
-  bannerType: currentBannerType,
-  setBannerType,
-  hasBeginner,
-}) => {
-  const [highlightIndex, setHighlightIndex] = useState(null);
-
-  const { sound, useSound } = useContext(SoundContext);
-
-  const [play] = useSound("../assets/audio/sfx/mini-select.mp3", {
-    volume: 0.6,
-  });
-
-  const { getWidth } = useContext(ResizeContext);
-
-  const [lockout, setLockout] = useState(false);
-
-  const setActiveBanner = (banner) => {
-    if (!lockout && currentBannerType !== banner) {
-      setLockout(true);
-      if (sound) play();
-      setBannerType(banner);
-      sessionStorage.setItem("bannerType", banner);
-      setTimeout(() => setLockout(false), 300);
-    }
-  };
-
+const MiniBanner = ({ path, active, handleSelect }) => {
+  const [clicked, setClicked] = useState(false);
+  const { getWidth, getHeight } = useContext(ResizeContext);
   return (
-    <React.Fragment>
-      {hasBeginner && (
-        <React.Fragment>
-          <LazyLoadImage
-            effect="opacity-200"
-            className="mini-banner"
-            alt="mini beginner banner"
-            src={`../assets/banner/mini/beginner.webp`}
-            width={getWidth(160, 70)}
-            style={{
-              transform: `translateY(180%)`,
-              opacity: `${currentBannerType === "beginner" ? 0 : 1}`,
-            }}
-            onClick={() => {
-              setActiveBanner("beginner");
-            }}
-            draggable="false"
-            onMouseDown={() => {
-              if (highlightIndex !== 0) setHighlightIndex(0);
-            }}
-            onMouseUp={() => {
-              setHighlightIndex(null);
-            }}
-            onMouseLeave={() => {
-              setHighlightIndex(null);
-            }}
-          />
-          <LazyLoadImage
-            effect="opacity-200"
-            className="mini-banner active"
-            alt="mini beginner banner active"
-            src={`../assets/banner/mini/beginner-active.webp`}
-            width={getWidth(180, 78.75)}
-            style={{
-              transform: `translateY(95%)`,
-              opacity: `${currentBannerType === "beginner" ? 1 : 0}`,
-              pointerEvents: "none",
-            }}
-            draggable="false"
-          />
-        </React.Fragment>
-      )}
+    <div
+      className="position-relative"
+      style={{
+        height: getHeight(105, 180, 45.9375),
+        width: getWidth(180, 78.75),
+        marginBottom: `-${getWidth(15)}px`,
+      }}
+    >
       <LazyLoadImage
         effect="opacity-200"
-        className="mini-banner active"
+        className="mini-banner-img-active"
         alt="mini character banner active"
-        src={`../assets/banner/mini/${vers}/char-active.webp`}
+        src={`../assets/banner/mini/${path}-active.webp`}
         width={getWidth(180, 78.75)}
-        style={{
-          transform: hasBeginner ? `translateY(155%)` : `translateY(80%)`,
-          opacity: `${currentBannerType === "char" ? 1 : 0}`,
-          pointerEvents: "none",
-        }}
         draggable="false"
+        active={active}
       />
       <LazyLoadImage
         effect="opacity-200"
-        className="mini-banner"
+        className="mini-banner-img"
         alt="mini character banner"
-        src={`../assets/banner/mini/${vers}/char.webp`}
+        src={`../assets/banner/mini/${path}.webp`}
         width={getWidth(160, 70)}
-        style={{
-          transform: hasBeginner ? `translateY(320%)` : "translateY(190%)",
-          opacity: `${currentBannerType === "char" ? 0 : 1}`,
-        }}
-        onClick={() => setActiveBanner("char")}
         draggable="false"
-        onMouseDown={() => {
-          if (hasBeginner) {
-            if (highlightIndex !== 1) setHighlightIndex(1);
-          } else if (highlightIndex !== 0) setHighlightIndex(0);
-        }}
-        onMouseUp={() => {
-          setHighlightIndex(null);
-        }}
-        onMouseLeave={() => {
-          setHighlightIndex(null);
-        }}
+        active={active}
+        onClick={handleSelect}
+        onMouseDown={() => setClicked(true)}
+        onMouseUp={() => setClicked(false)}
+        onMouseLeave={() => setClicked(false)}
       />
       <LazyLoadImage
         effect="opacity-200"
-        className="mini-banner active"
-        alt="mini weapon banner active"
-        src={`../assets/banner/mini/${vers}/weap-active.webp`}
-        width={getWidth(180, 78.75)}
-        style={{
-          transform: hasBeginner ? `translateY(305%)` : "translateY(210%)",
-          opacity: `${currentBannerType === "weap" ? 1 : 0}`,
-          pointerEvents: "none",
-        }}
-        draggable="false"
-      />
-      <LazyLoadImage
-        effect="opacity-200"
-        className="mini-banner"
-        alt="mini weapon banner"
-        src={`../assets/banner/mini/${vers}/weap.webp`}
-        width={getWidth(160, 70)}
-        style={{
-          transform: hasBeginner ? `translateY(470%)` : "translateY(330%)",
-          opacity: `${currentBannerType === "weap" ? 0 : 1}`,
-        }}
-        onClick={() => setActiveBanner("weap")}
-        draggable="false"
-        onMouseDown={() => {
-          if (hasBeginner) {
-            if (highlightIndex !== 2) setHighlightIndex(2);
-          } else if (highlightIndex !== 1) setHighlightIndex(1);
-        }}
-        onMouseUp={() => {
-          setHighlightIndex(null);
-        }}
-        onMouseLeave={() => {
-          setHighlightIndex(null);
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity-200"
-        className="mini-banner active"
-        alt="mini standard banner active"
-        src={`../assets/banner/mini/standard-active.webp`}
-        width={getWidth(180, 78.75)}
-        style={{
-          transform: hasBeginner ? `translateY(445%)` : "translateY(335%)",
-          opacity: `${currentBannerType === "standard" ? 1 : 0}`,
-        }}
-        draggable="false"
-      />
-      <LazyLoadImage
-        effect="opacity-200"
-        className="mini-banner"
-        alt="mini standard banner"
-        src={`../assets/banner/mini/standard.webp`}
-        width={getWidth(160, 70)}
-        style={{
-          transform: hasBeginner ? `translateY(620%)` : "translateY(475%)",
-          opacity: `${currentBannerType === "standard" ? 0 : 1}`,
-        }}
-        onClick={() => setActiveBanner("standard")}
-        draggable="false"
-        onMouseDown={() => {
-          if (hasBeginner) {
-            if (highlightIndex !== 3) setHighlightIndex(3);
-          } else if (highlightIndex !== 2) setHighlightIndex(2);
-        }}
-        onMouseUp={() => {
-          setHighlightIndex(null);
-        }}
-        onMouseLeave={() => {
-          setHighlightIndex(null);
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity-200"
-        className="mini-highlight"
+        className="mini-banner-highlight"
         src="../assets/banner/mini/highlight.webp"
         alt="highlight"
+        draggable="false"
         width={getWidth(160, 70)}
         style={{
-          transform: hasBeginner ? "translateY(172%)" : "translateY(180%)",
-          opacity: hasBeginner
-            ? `${
-                highlightIndex === 0 && currentBannerType !== "beginner" ? 1 : 0
-              }`
-            : `${highlightIndex === 0 && currentBannerType !== "char" ? 1 : 0}`,
+          opacity: `${clicked ? 1 : 0}`,
         }}
+        active={active}
       />
-      <LazyLoadImage
-        effect="opacity-200"
-        className="mini-highlight"
-        src="../assets/banner/mini/highlight.webp"
-        alt="highlight"
-        width={getWidth(160, 70)}
-        style={{
-          transform: hasBeginner ? "translateY(309%)" : "translateY(315%)",
-          opacity: hasBeginner
-            ? `${highlightIndex === 1 && currentBannerType !== "char" ? 1 : 0}`
-            : `${highlightIndex === 1 && currentBannerType !== "weap" ? 1 : 0}`,
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity-200"
-        className="mini-highlight"
-        src="../assets/banner/mini/highlight.webp"
-        alt="highlight"
-        width={getWidth(160, 70)}
-        style={{
-          transform: hasBeginner ? "translateY(450%)" : "translateY(455%)",
-          opacity: hasBeginner
-            ? `${highlightIndex === 2 && currentBannerType !== "weap" ? 1 : 0}`
-            : `${
-                highlightIndex === 2 && currentBannerType !== "standard" ? 1 : 0
-              }`,
-        }}
-      />
-      <LazyLoadImage
-        effect="opacity-200"
-        className="mini-highlight"
-        src="../assets/banner/mini/highlight.webp"
-        alt="highlight"
-        width={getWidth(160, 70)}
-        style={{
-          transform: "translateY(595%)",
-          opacity: hasBeginner
-            ? `${
-                highlightIndex === 3 && currentBannerType !== "standard" ? 1 : 0
-              }`
-            : 0,
-        }}
-      />
-    </React.Fragment>
+    </div>
   );
 };
 
-export default MiniBanners;
+const bannerTypes = ["beginner", "char", "weap", "standard"];
+export default function MiniBanners({
+  bannerType,
+  setBannerType,
+  hasBeginner = true,
+}) {
+  const { sound, useSound } = useContext(SoundContext);
+  const vers = sessionStorage.getItem("vers") || LATESTVERS;
+
+  const [playMini] = useSound("../assets/audio/sfx/mini-select.mp3", {
+    volume: 0.7,
+  });
+
+  const handleBannerSelect = (type) => {
+    setBannerType(type);
+    sessionStorage.setItem("bannerType", type);
+  };
+
+  return (
+    <div className="mini-banners">
+      {(hasBeginner
+        ? bannerTypes
+        : bannerTypes.filter((type) => type !== "beginner")
+      ).map((type) => {
+        return (
+          <MiniBanner
+            key={type}
+            handleSelect={() => {
+              if (sound) playMini();
+              handleBannerSelect(type);
+            }}
+            active={(type === bannerType).toString()}
+            path={["char", "weap"].includes(type) ? vers + "/" + type : type}
+          />
+        );
+      })}
+    </div>
+  );
+}

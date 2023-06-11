@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "蓄音機"
+    },
+    "default": {
+      "title": "デフォルトに設定",
+      "body": "これにより、ワープ設定がデフォルト値に設定されます。本気ですか？"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "詳細を確認",
     "phono": "BGMを設定する",
     "current": "現在のBGM",
-    "records": "跳躍履歴"
+    "records": "跳躍履歴",
+    "default": "デフォルト",
+    "stats": "統計"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "★4対象の基礎出現確率:",
     "list3": "★3対象の基礎出現確率:",
     "guarantee": "(獲得確定を含む総合出現確率:"
+  },
+  "stats": {
+    "rateFive": "確率5つ星",
+    "rateFour": "確率4つ星",
+    "maxPity": "5つ星のハードリミット",
+    "softPity": "5つ星のソフトリミット",
+    "pityFive": "現在の5つ星制限",
+    "pityFour": "現在の4つ星制限",
+    "guaranteeFive": "注目の 5 つ星を保証",
+    "guaranteeFour": "注目の 4 つ星を保証",
+    "total": "合計"
   }
 }
