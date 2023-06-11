@@ -76,7 +76,10 @@ const Settings = ({
 
   useEffect(() => {
     function handleKeyDown({ keyCode }) {
-      if (keyCode === 27 && !showSettings && !showDB) setShowSettings(true);
+      if (keyCode === 27 && !showSettings && !showDB) {
+        if (sound) playMenuSelect();
+        setShowSettings(true);
+      }
     }
 
     document.addEventListener("keydown", handleKeyDown);
@@ -84,7 +87,7 @@ const Settings = ({
     return function cleanup() {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [showSettings, showDB]);
+  }, [showSettings, showDB, sound, playMenuSelect]);
 
   return (
     <React.Fragment>

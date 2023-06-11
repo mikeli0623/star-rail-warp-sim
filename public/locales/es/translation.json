@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "Fonógrafo"
+    },
+    "default": {
+      "title": "Establecer como predeterminado",
+      "body": "Esto establecerá la configuración de salto a los valores predeterminados. Está seguro?"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "Ver detalles",
     "phono": "Seleccionar musica",
     "current": "Canción actual",
-    "records": "Historial"
+    "records": "Historial",
+    "default": "Por defecto",
+    "stats": "Estadísticas"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "Prob. base de obtener un artículo de 4★:",
     "list3": "Prob. base de obtener un artículo de 3★:)",
     "guarantee": "(Incl. garantía:"
+  },
+  "stats": {
+    "rateFive": "Probabilidad 5 estrellas",
+    "rateFour": "Probabilidad 4 estrellas",
+    "maxPity": "Límite duro de 5 estrellas",
+    "softPity": "Límite suave de 5 estrellas",
+    "pityFive": "Límite actual de 5 estrellas",
+    "pityFour": "Límite actual de 4 estrellas",
+    "guaranteeFive": "Garantizado Destacado 5 Estrellas",
+    "guaranteeFour": "Garantizado Destacado 4 Estrellas",
+    "total": "Total"
   }
 }

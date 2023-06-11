@@ -15,8 +15,6 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
 
   const [playModalOpen] = useSound("../assets/audio/sfx/banner-open.mp3");
   const [playModalClose] = useSound("../assets/audio/sfx/banner-close.mp3");
-  const [playButton] = useSound("/assets/audio/sfx/button-select.mp3");
-  const [playCancel] = useSound("/assets/audio/sfx/button-cancel.mp3");
 
   const [selected, setSelected] = useState(currentVers);
 
@@ -68,10 +66,8 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
         style={{ backgroundColor: "#e9e7e2" }}
       >
         <Button
+          cancel
           onClick={() => {
-            if (sound) {
-              playCancel();
-            }
             handleClose();
             setSelected(currentVers);
           }}
@@ -91,7 +87,6 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
         />
         <Button
           onClick={() => {
-            if (sound) playButton();
             setVers(selected);
             sessionStorage.setItem("vers", selected);
             handleClose();

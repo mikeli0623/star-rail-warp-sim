@@ -6,7 +6,7 @@
     "lang": { "title": "Choose Your Language" },
     "reset": {
       "title": "Reset Data",
-      "body": "This will permanently wipe all your data. Are you sure?"
+      "body": "This will permanently reset all your data. Are you sure?"
     },
     "credits": {
       "title": "Credits",
@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "Phonograph"
+    },
+    "default": {
+      "title": "Set to Default",
+      "body": "This will set the warp settings to default values. Are you sure?"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "View Details",
     "phono": "Set Music",
     "current": "Current Song",
-    "records": "Records"
+    "records": "Records",
+    "default": "Default",
+    "stats": "Stats"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "4-star entity base Warp rate:",
     "list3": "3-star entity base Warp rate:",
     "guarantee": "(Incl. guarantee:"
+  },
+  "stats": {
+    "rateFive": "Probability 5 Star",
+    "rateFour": "Probability 4 Star",
+    "maxPity": "5 Star Hard Pity",
+    "softPity": "5 Star Soft Pity",
+    "pityFive": "Current 5 Star Pity",
+    "pityFour": "Current 4 Star Pity",
+    "guaranteeFive": "Guaranteed Featured 5 Star",
+    "guaranteeFour": "Guaranteed Featured 4 Star",
+    "total": "Total"
   }
 }

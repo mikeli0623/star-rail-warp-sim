@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "Phonographe"
+    },
+    "default": {
+      "title": "Définir par défaut",
+      "body": "Cela définira les paramètres de saut sur les valeurs par défaut. Es-tu sûr?"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "Voir les détails",
     "phono": "Sélectionnez la musique",
     "current": "Musique actuelle",
-    "records": "Historique"
+    "records": "Historique",
+    "default": "Défaut",
+    "stats": "Statistiques"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "Prob. de base d'obtenir article 4★:",
     "list3": "Prob. de base d'obtenir article 3★:",
     "guarantee": "(Incl. garantie:"
+  },
+  "stats": {
+    "rateFive": "Probabilité 5 étoiles",
+    "rateFour": "Probabilité 4 étoiles",
+    "maxPity": "Limite stricte de 5 étoiles",
+    "softPity": "Limite souple 5 étoiles",
+    "pityFive": "Limite actuelle de 5 étoiles",
+    "pityFour": "Limite actuelle de 4 étoiles",
+    "guaranteeFive": "Garanti en vedette 5 étoiles",
+    "guaranteeFour": "Garanti en vedette 4 étoiles",
+    "total": "Total"
   }
 }

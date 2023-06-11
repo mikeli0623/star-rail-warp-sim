@@ -1,3 +1,10 @@
+.solid-circle {
+  stroke-width: 10px;
+  stroke-linecap: square;
+  fill: transparent;
+  stroke: #fdd073;
+}
+
 .db > div > div {
   background-color: rgba(0, 0, 0, 0);
   display: flex;

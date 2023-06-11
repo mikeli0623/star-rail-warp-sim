@@ -25,6 +25,8 @@ import { AnimatePresence, motion } from "framer-motion";
 export default function Main({
   lockout,
   bannerType,
+  bannerState,
+  setBannerState,
   showDB,
   setShowDB,
   setBannerType,
@@ -42,6 +44,7 @@ export default function Main({
   const { sound, useSound } = useContext(SoundContext);
 
   const [playOpenDetails] = useSound("/assets/audio/sfx/details-open.mp3");
+  const [playOpenStats] = useSound("/assets/audio/sfx/stats-open.mp3");
 
   const { t, i18n } = useTranslation();
 
@@ -52,49 +55,6 @@ export default function Main({
   const [totalBeginner, setTotalBeginner] = useState(
     parseInt(localStorage.getItem("totalBeginner")) || 0
   );
-
-  const [bannerState, setBannerState] = useState({
-    beginner: {
-      rateFive: 0.006,
-      rateFour: 0.051,
-      maxPity: 50,
-      softPity: 50,
-      guaranteeFive: localStorage.getItem("begGuaranteeFive") === "true",
-      guaranteeFour: localStorage.getItem("begGuaranteeFour") === "true",
-      pityFive: parseInt(localStorage.getItem("begPityFive")) || 0,
-      pityFour: parseInt(localStorage.getItem("begPityFour")) || 0,
-    },
-    char: {
-      rateFive: 0.006,
-      rateFour: 0.051,
-      maxPity: 90,
-      softPity: 75,
-      guaranteeFive: localStorage.getItem("charGuaranteeFive") === "true",
-      guaranteeFour: localStorage.getItem("charGuaranteeFour") === "true",
-      pityFive: parseInt(localStorage.getItem("charPityFive")) || 0,
-      pityFour: parseInt(localStorage.getItem("charPityFour")) || 0,
-    },
-    weap: {
-      rateFive: 0.008,
-      rateFour: 0.066,
-      maxPity: 80,
-      softPity: 65,
-      guaranteeFive: localStorage.getItem("weapGuaranteeFive") === "true",
-      guaranteeFour: localStorage.getItem("weapGuaranteeFour") === "true",
-      pityFive: parseInt(localStorage.getItem("weapPityFive")) || 0,
-      pityFour: parseInt(localStorage.getItem("weapPityFour")) || 0,
-    },
-    standard: {
-      rateFive: 0.006,
-      rateFour: 0.051,
-      maxPity: 90,
-      softPity: 75,
-      guaranteeFive: localStorage.getItem("standGuaranteeFive") === "true",
-      guaranteeFour: localStorage.getItem("standGuaranteeFour") === "true",
-      pityFive: parseInt(localStorage.getItem("standPityFive")) || 0,
-      pityFour: parseInt(localStorage.getItem("standPityFour")) || 0,
-    },
-  });
 
   const localStore = (suffix, value) => {
     switch (bannerType) {
@@ -187,6 +147,10 @@ export default function Main({
         sessionStorage.setItem("bannerType", "char");
       }
     }
+
+    const prevTotal = parseInt(localStorage.getItem(bannerType + "Total")) || 0;
+    localStorage.setItem(bannerType + "Total", prevTotal + warps);
+
     setHasFive(false);
     setHasFour(false);
     let warpResults = [];
@@ -224,6 +188,13 @@ export default function Main({
     if (bannerType === "beginner") return "beginner/beginner";
     if (bannerType === "standard") return "standard/standard";
     return `${vers}/${bannerType}`;
+  };
+
+  const setActiveBanner = (banner) => {
+    if (bannerType !== banner) {
+      setBannerType(banner);
+      sessionStorage.setItem("bannerType", banner);
+    }
   };
 
   return (
@@ -314,12 +285,25 @@ export default function Main({
           </div>
         </div>
       </div>
-      <MiniBanners
-        vers={vers}
-        bannerType={bannerType}
-        setBannerType={setBannerType}
-        hasBeginner={totalBeginner < 5}
-      />
+      <div
+        className="position-absolute"
+        style={{
+          top: "0",
+          left: "0",
+          height: getHeight(500, 300, 200),
+          width: getWidth(300),
+          transform: "translateY(15%)",
+          zIndex: 10000,
+        }}
+      >
+        <MiniBanners
+          vers={vers}
+          bannerType={bannerType}
+          setBannerType={setBannerType}
+          hasBeginner={totalBeginner < 5}
+          handleSelect={setActiveBanner}
+        />
+      </div>
       <div
         style={{
           position: "relative",
@@ -328,6 +312,7 @@ export default function Main({
           top: "50%",
           left: "50%",
           transform: "translate(-50%,-55%)",
+          zIndex: 0,
         }}
       >
         <AnimatePresence>
@@ -368,9 +353,11 @@ export default function Main({
             left: "3.5%",
             zIndex: "1000",
           }}
-          onClick={() => {}}
-          content={t("button.exchange")}
-          disabled={true}
+          onClick={() => {
+            if (sound) playOpenStats();
+            setContent("stats");
+          }}
+          content={t("button.stats")}
         />
         <Button
           style={{

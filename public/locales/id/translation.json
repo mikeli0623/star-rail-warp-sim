@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "Fonograf"
+    },
+    "default": {
+      "title": "Setel ke default",
+      "body": "Ini akan mengatur pengaturan Warp ke nilai default. Apa kamu yakin?"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "Lihat Detail",
     "phono": "Pilih Musik",
     "current": "Lagu Saat Ini",
-    "records": "Riwayat"
+    "records": "Riwayat",
+    "default": "Bawaan",
+    "stats": "Stats"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "Persentase dasar Warp item 4★:",
     "list3": "Persentase dasar Warp item 3★:",
     "guarantee": "(Termasuk Jaminan: :"
+  },
+  "stats": {
+    "rateFive": "Probabilitas 5★",
+    "rateFour": "Probabilitas 4★",
+    "maxPity": "Batas Keras 5★",
+    "softPity": "Batas Lunak 5★",
+    "pityFive": "Batas 5★ Saat Ini",
+    "pityFour": "Batas 4★ Saat Ini",
+    "guaranteeFive": "Dijamin Unggulan 5★",
+    "guaranteeFour": "Dijamin Unggulan 4★",
+    "total": "Total"
   }
 }

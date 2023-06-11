@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "축음기"
+    },
+    "default": {
+      "title": "기본값으로 설정",
+      "body": "그러면 워프 설정이 기본값으로 설정됩니다. 확실합니까?"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "상세보기",
     "phono": "음악 선택",
     "current": "현재 곡",
-    "records": "과거 기록"
+    "records": "과거 기록",
+    "default": "기본",
+    "stats": "통계"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "★4 워프 기본 성공률:",
     "list3": "★3 워프 기본 성공률:",
     "guarantee": "(워프 종합 성공률(천장 포함:"
+  },
+  "stats": {
+    "rateFive": "확률 5성",
+    "rateFour": "확률 4성",
+    "maxPity": "5성 하드 리미트",
+    "softPity": "5성 소프트 리미트",
+    "pityFive": "현재 5성 제한",
+    "pityFour": "현재 4성 제한",
+    "guaranteeFive": "추천 추천 5스타 보장",
+    "guaranteeFour": "추천 추천 4스타 보장",
+    "total": "총"
   }
 }

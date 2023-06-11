@@ -17,8 +17,8 @@
     "vers": {
       "title": "选您的版本",
       "vers": "版本",
-      "event1": "角色事件:",
-      "event2": "武器事件:"
+      "event1": "角色事件",
+      "event2": "武器事件"
     },
     "rate": {
       "title": {
@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "留声机"
+    },
+    "default": {
+      "title": "设置为默认值",
+      "body": "这会将扭曲设置设置为默认值。你确定吗？"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "查看详情",
     "phono": "选择音乐",
     "current": "当前曲目",
-    "records": "历史记录"
+    "records": "历史记录",
+    "default": "默认",
+    "stats": "统计数据"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "4星对象基础跃迁成功概率:",
     "list3": "3星对象基础跃迁成功概率:",
     "guarantee": "(含保底综合跃迁成功概率:"
+  },
+  "stats": {
+    "rateFive": "概率5星",
+    "rateFour": "概率4星",
+    "maxPity": "5星最高限额",
+    "softPity": "5星软限制",
+    "pityFive": "当前 5 星限制",
+    "pityFour": "当前 4 星限制",
+    "guaranteeFive": "保证精选 5 星",
+    "guaranteeFour": "保证精选 4 星",
+    "total": "全部"
   }
 }

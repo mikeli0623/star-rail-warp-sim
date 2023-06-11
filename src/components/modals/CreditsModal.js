@@ -13,7 +13,6 @@ export default function CreditsModal({ show, setShow }) {
 
   const [playModalOpen] = useSound("../assets/audio/sfx/modal-open.mp3");
   const [playModalClose] = useSound("../assets/audio/sfx/modal-close.mp3");
-  const [playButton] = useSound("/assets/audio/sfx/button-select.mp3");
 
   const { t } = useTranslation();
 
@@ -69,12 +68,7 @@ export default function CreditsModal({ show, setShow }) {
       </Modal.Body>
       <Modal.Footer style={{ backgroundColor: "#e9e7e2" }}>
         <Button
-          onClick={() => {
-            handleClose();
-            if (sound) {
-              playButton();
-            }
-          }}
+          onClick={() => handleClose()}
           content={
             <span className="d-flex align-items-center justify-content-center">
               <img

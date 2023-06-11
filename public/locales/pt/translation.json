@@ -30,6 +30,10 @@
     },
     "phono": {
       "title": "Fonógrafo"
+    },
+    "default": {
+      "title": "Definido como padrão",
+      "body": "Isso definirá as configurações de salto para seus valores padrão. Tem certeza?"
     }
   },
   "db": {
@@ -48,7 +52,9 @@
     "view-details": "Detalhes",
     "phono": "Selecione a música",
     "current": "Música Atual",
-    "records": "Históricos"
+    "records": "Históricos",
+    "default": "Padrão",
+    "stats": "Estatísticos"
   },
   "banner": {
     "beg": {
@@ -73,5 +79,16 @@
     "list2": "Prob. base de obter um item 4★:",
     "list3": "Prob. base de obter um item 3★:",
     "guarantee": "(incl. garantia:"
+  },
+  "stats": {
+    "rateFive": "Probabilidade 5 estrelas",
+    "rateFour": "Probabilidade 4 estrelas",
+    "maxPity": "Limite rígido de 5 estrelas",
+    "softPity": "Limite suave de 5 estrelasy",
+    "pityFive": "Limite atual de 5 estrelas",
+    "pityFour": "Limite atual de 4 estrelas",
+    "guaranteeFive": "5 estrelas em destaque garantido",
+    "guaranteeFour": "4 estrelas em destaque garantido",
+    "total": "Total"
   }
 }
