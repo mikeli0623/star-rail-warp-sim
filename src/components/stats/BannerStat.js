@@ -295,7 +295,6 @@ export default function BannerStat({
         <ResourceTotal
           type={`sr${["char", "weap"].includes(type) ? "s" : ""}-pass`}
           amount={total * (type === "beginner" ? 0.8 : 1)}
-          variant="dark"
         />
       </div>
 
