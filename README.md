@@ -31,7 +31,3 @@ Make a few pulls yourself at [https://starrailwarpsim.com/](https://starrailwarp
   <p align="center">
     <img src="./gifs/data-bank.gif">
   </p>
-
-## Upcoming Features
-
-- Warp History
