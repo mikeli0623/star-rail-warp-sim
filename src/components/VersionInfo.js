@@ -39,6 +39,7 @@ export default function VersionInfo({ isCurrentSelected, vers, setSelected }) {
         alt={`Version ${vers} Icon`}
         effect="opacity"
         className="vers-icon"
+        width={150}
         src={`./assets/banner/mini/${vers}/char-active.webp`}
         draggable="false"
       />

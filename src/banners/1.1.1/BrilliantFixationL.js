@@ -93,7 +93,7 @@ export default function BrilliantFixationL() {
       />
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.0.1/${i18n.resolvedLanguage}/weap-left.webp`}
+        src={`../assets/banner/1.1.1/${i18n.resolvedLanguage}/weap-left.webp`}
         width={getWidth(1101.5)}
         alt="left"
         draggable="false"
