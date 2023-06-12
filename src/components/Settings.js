@@ -13,7 +13,6 @@ import LangModal from "./modals/LangModal";
 import { useTranslation } from "react-i18next";
 
 const Settings = ({
-  lockout,
   vers,
   showDB,
   setShowDB,
@@ -65,11 +64,10 @@ const Settings = ({
   const { i18n } = useTranslation();
 
   const trackInfo = () => {
-    if (!bgm[0]) return ["ooc", "timeline"];
-    const fileName = bgm[0].split("/").pop();
-    const regex = /^(.+?)-(.+?)\.mp3$/;
+    const fileName = bgm[0];
+    const regex = /^(.+?)-(.+?)$/;
     const match = fileName.match(regex);
-    const title = match[2].replace(/-/g, " ");
+    const title = match[2];
     const album = match[1].replace(/-/g, " ");
     return [album, title];
   };
@@ -197,10 +195,8 @@ const Settings = ({
               draggable="false"
               width={getWidth(114, 50)}
               onClick={() => {
-                if (!lockout) {
-                  if (sound) playButtonSelect();
-                  setShowPhono(true);
-                }
+                if (sound) playButtonSelect();
+                setShowPhono(true);
               }}
             />
           </div>
@@ -221,14 +217,11 @@ const Settings = ({
                 sound ? "on" : "off"
               }.webp`}
               draggable="false"
-              title={lockout ? "Sounds are loading..." : ""}
               width={getWidth(114, 50)}
               onClick={() => {
-                if (!lockout) {
-                  playButtonSelect();
-                  setSound(!sound);
-                  setContinueSound(!sound);
-                }
+                playButtonSelect();
+                setSound(!sound);
+                setContinueSound(!sound);
               }}
             />
             <LazyLoadImage

@@ -3,7 +3,6 @@ import ResizeContext from "../context/ResizeContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function ResourceTotal({ type, amount, variant = "light" }) {
-  console.log(amount);
   const { getWidth } = useContext(ResizeContext);
   return (
     <div
