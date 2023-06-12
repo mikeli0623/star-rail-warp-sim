@@ -14,7 +14,7 @@ html * {
 
 @font-face {
   font-family: Default_SC;
-  src: url(../assets/URW-DIN-Arabic-Medium.ttf);
+  src: url(../assets/URW-DIN-Arabic-Medium.woff2);
   font-display: swap;
 }
 
