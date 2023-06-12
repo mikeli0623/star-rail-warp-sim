@@ -23,7 +23,6 @@ import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
 
 export default function Main({
-  lockout,
   bannerType,
   bannerState,
   setBannerState,
@@ -212,7 +211,6 @@ export default function Main({
       }}
     >
       <Settings
-        lockout={lockout}
         vers={vers}
         showDB={showDB}
         setShowDB={setShowDB}

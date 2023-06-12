@@ -18,10 +18,9 @@ export default function PhonoModal({
   currentTrack,
   handleSelect,
 }) {
-  const { sound, useSound, setSoundEnabled } = useContext(SoundContext);
-  const handleClose = () => {
-    setShow(false);
-  };
+  const { sound, useSound, setSoundEnabled, loaded } = useContext(SoundContext);
+
+  const handleClose = () => setShow(false);
 
   const [playModalOpen] = useSound(
     `../assets/audio/sfx/phono-open-${Math.random() < 0.5 ? 1 : 2}.mp3`
@@ -87,7 +86,10 @@ export default function PhonoModal({
       }}
       onExiting={() => {
         if (sound) playModalClose();
-        handleSelect(actualAlbum + "-" + actualTrack);
+        handleSelect(
+          actualAlbum + "-" + actualTrack,
+          actualAlbum === chosenAlbum && actualTrack === chosenTrack
+        );
         setChosenAlbum(actualAlbum);
         setChosenTrack(actualTrack);
       }}
@@ -214,6 +216,7 @@ export default function PhonoModal({
                   chosen={chosenTrack === track}
                   filler={fillerAlbumChangeTrack === track}
                   muted={!sound || !checked}
+                  loaded={loaded}
                   handleSelect={() => {
                     handleSelect(chosenAlbum + "-" + track);
                     setFillerAlbumChangeAlbum(undefined);

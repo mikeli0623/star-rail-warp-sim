@@ -3,13 +3,14 @@ import SoundContext from "./context/SoundContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { motion } from "framer-motion";
 
-const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
-  const { sound } = useContext(SoundContext);
+const WarpVideo = ({ onEnded, event, warpBGM, rarity }) => {
+  const { sound, soundEnabled, setSoundEnabled } = useContext(SoundContext);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     if (!loaded || !sound) return;
-    mainBGM.mainData.pause();
+    if (sound && soundEnabled) setSoundEnabled(false);
+
     let warpTimeout = setTimeout(
       () => {
         warpBGM.playWarpBGM();
@@ -20,7 +21,7 @@ const WarpVideo = ({ onEnded, event, mainBGM, warpBGM, rarity }) => {
     return () => {
       clearTimeout(warpTimeout);
     };
-  }, [loaded, sound, mainBGM, warpBGM, rarity]);
+  }, [loaded, sound, soundEnabled, setSoundEnabled, warpBGM, rarity]);
 
   return (
     <motion.section

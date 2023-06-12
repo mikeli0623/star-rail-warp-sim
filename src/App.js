@@ -14,6 +14,7 @@ import { AnimatePresence } from "framer-motion";
 import { usePageVisibility } from "react-page-visibility";
 import DetailsMain from "./components/details/DetailsMain";
 import StatsMain from "./components/stats/StatsMain";
+import useBGM from "./components/hooks/useBGM";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -77,17 +78,33 @@ function App() {
     localStorage.getItem("bgm") ? JSON.parse(localStorage.getItem("bgm")) : true
   );
 
+  const {
+    BGMVolume,
+    setBGMVolume,
+    track,
+    setTrack,
+    setMuted,
+    loaded,
+    setLoaded,
+    soundComponent,
+  } = useBGM("ooc-timeline", "./assets/audio/bgm/");
+
+  useEffect(() => {
+    if (sound && soundEnabled) setMuted(false);
+    return () => setMuted(true);
+  }, [soundEnabled, sound, setMuted]);
+
   const soundValue = {
     sound,
     setSound,
     setContinueSound,
+    soundEnabled,
     setSoundEnabled,
     useSound,
+    loaded: loaded,
   };
 
   const isVisible = usePageVisibility();
-
-  const [lockout, setLockout] = useState(0);
 
   const [newItems, setNewItems] = useState([]);
 
@@ -122,97 +139,9 @@ function App() {
   const [hasFive, setHasFive] = useState(false);
   const [hasFour, setHasFour] = useState(false);
 
-  const [playOOCSF, OOCSFData] = useSound(
-    "assets/audio/bgm/ooc-science-fiction.mp3",
-    {
-      loop: true,
-      onload: () => setLockout((prev) => prev + 1),
-    }
-  );
-
-  const [playOOCT, OOCTData] = useSound("assets/audio/bgm/ooc-timeline.mp3", {
-    loop: true,
-    onload: () => setLockout((prev) => prev + 1),
-  });
-
-  const [playOOCSW, OOCSWData] = useSound(
-    "assets/audio/bgm/ooc-space-walk.mp3",
-    {
-      loop: true,
-      onload: () => setLockout((prev) => prev + 1),
-    }
-  );
-
-  const [playOSAEFS, OSAEFSData] = useSound(
-    "assets/audio/bgm/osae-faded-sun.mp3",
-    {
-      loop: true,
-      onload: () => setLockout((prev) => prev + 1),
-    }
-  );
-
-  const [playOSAEE, OSAEEData] = useSound("assets/audio/bgm/osae-embers.mp3", {
-    loop: true,
-    onload: () => setLockout((prev) => prev + 1),
-  });
-
-  const [playOSAESA, OSAESAData] = useSound(
-    "assets/audio/bgm/osae-streets-abuzz.mp3",
-    {
-      loop: true,
-      onload: () => setLockout((prev) => prev + 1),
-    }
-  );
-
-  const [playSSCF, SSCFData] = useSound(
-    "assets/audio/bgm/ss-cumulus-formations.mp3",
-    {
-      loop: true,
-      onload: () => setLockout((prev) => prev + 1),
-    }
-  );
-
-  const [playSSEI, SSEIData] = useSound(
-    "assets/audio/bgm/ss-exquisite-ingenuity.mp3",
-    {
-      loop: true,
-      onload: () => setLockout((prev) => prev + 1),
-    }
-  );
-
-  const [playSSLM, SSLMData] = useSound(
-    "assets/audio/bgm/ss-lustrous-moonlight.mp3",
-    {
-      loop: true,
-      onload: () => setLockout((prev) => prev + 1),
-    }
-  );
-
-  const [[playMainBGM, mainData], setBgm] = useState([undefined, undefined]);
-
-  const allBGM = {
-    "ooc-science-fiction": [playOOCSF, OOCSFData],
-    "ooc-space-walk": [playOOCSW, OOCSWData],
-    "ooc-timeline": [playOOCT, OOCTData],
-    "osae-faded-sun": [playOSAEFS, OSAEFSData],
-    "osae-embers": [playOSAEE, OSAEEData],
-    "osae-streets-abuzz": [playOSAESA, OSAESAData],
-    "ss-cumulus-formations": [playSSCF, SSCFData],
-    "ss-exquisite-ingenuity": [playSSEI, SSEIData],
-    "ss-lustrous-moonlight": [playSSLM, SSLMData],
-  };
-
-  useEffect(() => {
-    if (lockout === Object.keys(allBGM).length) {
-      setBgm(allBGM["ooc-timeline"]);
-    }
-  }, [lockout]);
-
-  const handleTrack = (track) => {
-    if (!mainData.sound._src.includes(track)) {
-      mainData.stop();
-      setBgm(allBGM[track]);
-    }
+  const handleTrack = (track, loaded = false) => {
+    setLoaded(loaded);
+    setTrack(track);
   };
 
   const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp-loop.mp3", {
@@ -220,19 +149,11 @@ function App() {
   });
 
   useEffect(() => {
-    if (!mainData) return;
-    if (!soundEnabled) mainData.pause();
-  }, [mainData, soundEnabled]);
-
-  useEffect(() => {
-    if (!mainData) return;
     if (!sound) {
-      mainData.pause();
       warpData.stop();
       return;
     }
 
-    let mainTimeout;
     let warpTimeout;
 
     if (
@@ -240,28 +161,26 @@ function App() {
       content === "data-bank" ||
       content === "details"
     ) {
-      if (!mainData.sound.playing() && soundEnabled) {
-        mainData.sound.fade(0, 1, 500);
-        playMainBGM();
-      }
+      if (
+        localStorage.getItem("bgm")
+          ? JSON.parse(localStorage.getItem("bgm"))
+          : true
+      )
+        setSoundEnabled(true);
+      warpData.stop();
     } else if (content === "single") {
+      if (BGMVolume > 0) setBGMVolume(0);
       if (warpData.sound.playing()) return;
       playWarpBGM();
       warpData.sound.fade(0, 1, 500);
     }
     return () => {
-      if (content === "main") clearTimeout(warpTimeout);
-
+      if (content === "main") {
+        clearTimeout(warpTimeout);
+      }
       if (content === "video") {
         clearTimeout(warpTimeout);
-        clearTimeout(mainTimeout);
-      }
-      if (currentWarp.length !== 10 && content === "single") {
-        clearTimeout(warpTimeout);
-        warpData.sound.fade(1, 0, 500);
-        warpTimeout = setTimeout(() => {
-          warpData.stop();
-        }, 500);
+        warpData.stop();
       }
       if (content === "results") {
         clearTimeout(warpTimeout);
@@ -274,12 +193,11 @@ function App() {
   }, [
     content,
     sound,
-    mainData,
     currentWarp.length,
-    playMainBGM,
     playWarpBGM,
     warpData,
-    soundEnabled,
+    BGMVolume,
+    setBGMVolume,
   ]);
 
   const [showDB, setShowDB] = useState(false);
@@ -296,11 +214,11 @@ function App() {
   return (
     <ResizeProvider value={resizeValue}>
       <SoundProvider value={soundValue}>
+        {soundComponent}
         <div className="App">
           <AnimatePresence>
             {content === "main" && (
               <Main
-                lockout={lockout < Object.keys(allBGM).length}
                 bannerType={bannerType}
                 bannerState={bannerState}
                 setBannerState={setBannerState}
@@ -315,7 +233,7 @@ function App() {
                 setDBType={setDBType}
                 history={history}
                 setHistory={setHistory}
-                bgm={[mainData ? mainData.sound._src : undefined, handleTrack]}
+                bgm={[track, handleTrack]}
               />
             )}
             {content === "video" && (
@@ -325,7 +243,6 @@ function App() {
                 onEnded={() => {
                   setContent("single");
                 }}
-                mainBGM={{ playMainBGM, mainData }}
                 warpBGM={{ playWarpBGM, warpData }}
               />
             )}

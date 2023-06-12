@@ -1,5 +1,6 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import Spinner from "react-bootstrap/Spinner";
 
 export default function PhonoTrack({
   track,
@@ -8,6 +9,7 @@ export default function PhonoTrack({
   filler,
   chosen,
   muted,
+  loaded,
 }) {
   return (
     <div
@@ -31,6 +33,10 @@ export default function PhonoTrack({
         >
           {muted ? (
             <div style={{ width: 15, height: 15, backgroundColor: "black" }} />
+          ) : !loaded ? (
+            <Spinner animation="border" role="status">
+              <span className="visually-hidden">Loading...</span>
+            </Spinner>
           ) : (
             <React.Fragment>
               <div className="play-bar small left" />
