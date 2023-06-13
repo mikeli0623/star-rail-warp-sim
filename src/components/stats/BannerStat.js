@@ -300,7 +300,8 @@ export default function BannerStat({
 
       <div style={{ width: "95%" }}>
         <div className="d-flex justify-content-between align-items-center p-2 stat-info">
-          <h3
+          <Form.Label
+            htmlFor="rate-5"
             style={{
               marginBottom: 0,
               color: "#87888a",
@@ -308,9 +309,10 @@ export default function BannerStat({
             }}
           >
             {t("stats.rateFive")}
-          </h3>
+          </Form.Label>
           <InputGroup style={{ width: getWidth(125, 110) }}>
             <Form.Control
+              id="rate-5"
               style={{ height: getHeight(40, 125, 28) }}
               type="number"
               value={rateFive}
@@ -330,7 +332,8 @@ export default function BannerStat({
           </InputGroup>
         </div>
         <div className="d-flex justify-content-between align-items-center p-2 stat-info">
-          <h3
+          <Form.Label
+            htmlFor="rate-4"
             style={{
               marginBottom: 0,
               color: "#87888a",
@@ -338,9 +341,10 @@ export default function BannerStat({
             }}
           >
             {t("stats.rateFour")}
-          </h3>
+          </Form.Label>
           <InputGroup style={{ width: getWidth(125, 110) }}>
             <Form.Control
+              id="rate-4"
               style={{ height: getHeight(40, 125, 28) }}
               type="number"
               value={rateFour}
@@ -360,7 +364,8 @@ export default function BannerStat({
           </InputGroup>
         </div>
         <div className="d-flex justify-content-between align-items-center p-2 stat-info">
-          <h3
+          <Form.Label
+            htmlFor="hard-pity-5"
             style={{
               marginBottom: 0,
               color: "#87888a",
@@ -368,9 +373,10 @@ export default function BannerStat({
             }}
           >
             {t("stats.maxPity")}
-          </h3>
+          </Form.Label>
           <InputGroup style={{ width: getWidth(125, 90) }}>
             <Form.Control
+              id="hard-pity-5"
               style={{ height: getHeight(40, 125, 28) }}
               type="number"
               value={maxPity}
@@ -384,7 +390,8 @@ export default function BannerStat({
           </InputGroup>
         </div>
         <div className="d-flex justify-content-between align-items-center p-2 stat-info">
-          <h3
+          <Form.Label
+            htmlFor="soft-pity-5"
             style={{
               marginBottom: 0,
               color: "#87888a",
@@ -392,9 +399,10 @@ export default function BannerStat({
             }}
           >
             {t("stats.softPity")}
-          </h3>
+          </Form.Label>
           <InputGroup style={{ width: getWidth(125, 90) }}>
             <Form.Control
+              id="soft-pity-5"
               style={{ height: getHeight(40, 125, 28) }}
               type="number"
               value={softPity}
@@ -408,7 +416,8 @@ export default function BannerStat({
           </InputGroup>
         </div>
         <div className="d-flex justify-content-between align-items-center p-2 stat-info">
-          <h3
+          <Form.Label
+            htmlFor="current-pity-5"
             style={{
               marginBottom: 0,
               color: "#87888a",
@@ -416,9 +425,10 @@ export default function BannerStat({
             }}
           >
             {t("stats.pityFive")}
-          </h3>
+          </Form.Label>
           <InputGroup style={{ width: getWidth(125, 90) }}>
             <Form.Control
+              id="current-pity-5"
               style={{ height: getHeight(40, 125, 28) }}
               type="number"
               value={pityFive}
@@ -432,7 +442,8 @@ export default function BannerStat({
           </InputGroup>
         </div>
         <div className="d-flex justify-content-between align-items-center p-2 stat-info">
-          <h3
+          <Form.Label
+            htmlFor="current-pity-4"
             style={{
               marginBottom: 0,
               color: "#87888a",
@@ -440,9 +451,10 @@ export default function BannerStat({
             }}
           >
             {t("stats.pityFour")}
-          </h3>
+          </Form.Label>
           <InputGroup style={{ width: getWidth(125, 90) }}>
             <Form.Control
+              id="current-pity-4"
               style={{ height: getHeight(40, 125, 28) }}
               type="number"
               value={pityFour}
@@ -456,7 +468,8 @@ export default function BannerStat({
           </InputGroup>
         </div>
         <div className="d-flex justify-content-between align-items-center p-2 stat-info">
-          <h3
+          <Form.Label
+            htmlFor="g5-switch"
             style={{
               marginBottom: 0,
               color: "#87888a",
@@ -464,18 +477,19 @@ export default function BannerStat({
             }}
           >
             {t("stats.guaranteeFive")}
-          </h3>
+          </Form.Label>
           <InputGroup style={{ width: getWidth(125) }}>
             <Form.Check
+              id="g5-switch"
               type="switch"
-              id="custom-switch"
               checked={guaranteeFive}
               onChange={() => handleSwitch(setGuaranteeFive)}
             />
           </InputGroup>
         </div>
         <div className="d-flex justify-content-between align-items-center p-2 stat-info">
-          <h3
+          <Form.Label
+            htmlFor="g4-switch"
             style={{
               marginBottom: 0,
               color: "#87888a",
@@ -483,11 +497,11 @@ export default function BannerStat({
             }}
           >
             {t("stats.guaranteeFour")}
-          </h3>
+          </Form.Label>
           <InputGroup style={{ width: getWidth(125) }}>
             <Form.Check
+              id="g4-switch"
               type="switch"
-              id="custom-switch"
               checked={guaranteeFour}
               onChange={() => handleSwitch(setGuaranteeFour)}
             />
