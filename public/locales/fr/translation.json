@@ -17,8 +17,8 @@
     "vers": {
       "title": "Choisissez votre version",
       "vers": "Version",
-      "event1": "Événement hyperespace de personnage",
-      "event2": "Événement hyperespace de cône de lumière"
+      "event1": "Saut événement hyperespace de personnage",
+      "event2": "Saut événement hyperespace de cône de lumière"
     },
     "rate": {
       "title": {

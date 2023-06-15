@@ -143,7 +143,7 @@ const allVers = [
   "1.0.0",
 ];
 
-const LATESTVERS = "1.1.0";
+const LATESTVERS = allVers[0];
 
 const asianLang = ["zh", "ko", "ja"];
 
