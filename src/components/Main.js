@@ -370,7 +370,7 @@ export default function Main({
           }}
           content={t("button.view-details")}
         />
-        <WarpButtons onWarp={handleWarp} event={bannerType} />
+        {/* <WarpButtons onWarp={handleWarp} event={bannerType} /> */}
       </div>
     </motion.section>
   );
