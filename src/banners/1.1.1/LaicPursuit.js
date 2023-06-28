@@ -64,8 +64,8 @@ export default function LaicPursuit() {
           }}
         />
         <LazyLoadImage
-          //   src="../assets/banner/1.0.1/char-banner-back.webp"
-          width={getWidth(1500)}
+          src="../assets/banner/1.1.1/char-banner-back.webp"
+          width={getWidth(1200)}
           alt="right"
           draggable="false"
           style={{
