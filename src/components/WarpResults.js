@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { json } from "../util/Constants";
 import CloseButton from "./CloseButton";
 import ResizeContext from "./context/ResizeContext";
@@ -14,6 +14,8 @@ const WarpResult = ({
   handleSelect,
 }) => {
   const { getWidth, getHeight } = useContext(ResizeContext);
+
+  const [loaded, setLoaded] = useState(false);
 
   return (
     <div
@@ -47,7 +49,10 @@ const WarpResult = ({
           animation:
             (isFive ? "animate-change-in 100ms ease-in 990ms 1 both, " : "") +
             animationStyle,
-          opacity: isFive ? 0 : 1,
+          opacity: isFive || !loaded ? 0 : 1,
+        }}
+        onLoad={() => {
+          setLoaded(true);
         }}
         draggable="false"
       />

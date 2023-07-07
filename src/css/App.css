@@ -447,6 +447,7 @@ html * {
   align-items: center;
   transition: background-color 0.2s;
   height: 130px;
+  width: 95%;
 }
 
 .vers-info:hover {
@@ -809,17 +810,21 @@ html * {
   scale: 1.05;
 }
 
-.warp-result[rarity="3"] {
+.warp-result {
+  transition: opacity 0.2s;
+}
+
+.warp-result-hover[rarity="3"] {
   outline: 2px solid #182c50;
   border-bottom: 0;
   box-shadow: 0 0 10px 1px #213e77;
 }
 
-.warp-result[rarity="4"] {
+.warp-result-hover[rarity="4"] {
   box-shadow: 0 0 50px 10px #a87cff;
 }
 
-.warp-result[rarity="5"] {
+.warp-result-hover[rarity="5"] {
   box-shadow: 0 0 50px 10px #fbda92;
 }
 

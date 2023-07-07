@@ -42,6 +42,7 @@ export default function NameTag({ style, name, bottom = false, anim = true }) {
           src={`assets/elem-${cleanText(json.getElement(dumbText))}.webp`}
           draggable="false"
           width={getWidth(34)}
+          height={getWidth(34)}
         />
         {trans[dumbText][i18n.resolvedLanguage]}
       </span>
