@@ -67,9 +67,15 @@ export default function MiniBanners({
     volume: 0.7,
   });
 
+  const [lockout, setLockout] = useState(false);
+
   const handleBannerSelect = (type) => {
-    setBannerType(type);
-    sessionStorage.setItem("bannerType", type);
+    if (!lockout) {
+      setLockout(true);
+      setBannerType(type);
+      sessionStorage.setItem("bannerType", type);
+      setTimeout(() => setLockout(false), 300);
+    }
   };
 
   return (
