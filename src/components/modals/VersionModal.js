@@ -6,6 +6,7 @@ import Button from "../Button";
 import { allVers } from "../../util/Constants";
 import VersionInfo from "../VersionInfo";
 import { useTranslation } from "react-i18next";
+import { Scrollbars } from "react-custom-scrollbars-2";
 
 export default function VersionModal({ show, setShow, currentVers, setVers }) {
   const { sound, useSound } = useContext(SoundContext);
@@ -49,17 +50,31 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
           resize={false}
         />
       </Modal.Header>
-      <Modal.Body style={{ backgroundColor: "#e9e7e2" }}>
-        {allVers.map((vers, i) => {
-          return (
-            <VersionInfo
-              key={vers + i}
-              isCurrentSelected={vers === selected}
-              vers={vers}
-              setSelected={setSelected}
-            />
-          );
-        })}
+      <Modal.Body
+        style={{
+          backgroundColor: "#e9e7e2",
+        }}
+      >
+        <Scrollbars
+          style={{
+            height: "50vh",
+            width: "100%",
+          }}
+          autoHide
+          autoHideTimeout={1000}
+          autoHideDuration={200}
+        >
+          {allVers.map((vers, i) => {
+            return (
+              <VersionInfo
+                key={vers + i}
+                isCurrentSelected={vers === selected}
+                vers={vers}
+                setSelected={setSelected}
+              />
+            );
+          })}
+        </Scrollbars>
       </Modal.Body>
       <Modal.Footer
         className="d-flex justify-content-between align-items-center"

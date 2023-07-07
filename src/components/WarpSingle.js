@@ -97,6 +97,7 @@ const WarpSingle = ({
         src="./assets/star.webp"
         alt="star"
         width={`${getWidth(22, 11)}`}
+        height={`${getWidth(28, 14)}`}
         star={i + 1}
         draggable="false"
       />
@@ -176,6 +177,7 @@ const WarpSingle = ({
                 className="single-type"
                 src={`./assets/elem-${cleanText(item.element)}.webp`}
                 alt={item.element}
+                height={`${getWidth(90, 50)}`}
                 width={`${getWidth(90, 50)}`}
                 draggable="false"
               />
@@ -200,7 +202,7 @@ const WarpSingle = ({
               >
                 {trans[cleanText(item.name)][i18n.resolvedLanguage]}
               </div>
-              <div id="stars-container">
+              <div>
                 {Array(item.rarity)
                   .fill()
                   .map((e, i) => {
