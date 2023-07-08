@@ -89,7 +89,7 @@ export default function LaicPursuit() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.1/char-rate-1.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/pela.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
@@ -116,7 +116,7 @@ export default function LaicPursuit() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.1/char-rate-2.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/qingque.webp)",
             width: getWidth(800),
             height: getWidth(800),
             backgroundSize: getWidth(800),
@@ -143,7 +143,7 @@ export default function LaicPursuit() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.1/char-rate-3.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/yukong.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),

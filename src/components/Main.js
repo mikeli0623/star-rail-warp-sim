@@ -17,6 +17,10 @@ import BrilliantFixationSW from "../banners/1.1.0/BrilliantFixationSW";
 import ContractZero from "../banners/1.1.0/ContractZero";
 import BrilliantFixationL from "../banners/1.1.1/BrilliantFixationL";
 import LaicPursuit from "../banners/1.1.1/LaicPursuit";
+import BrilliantFixationB from "../banners/1.2.0/BrilliantFixationB";
+import ALostSoul from "../banners/1.2.0/ALostSoul";
+import BrilliantFixationK from "../banners/1.2.1/BrilliantFixationK";
+import NessunDorma from "../banners/1.2.1/NessunDorma";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
@@ -108,6 +112,14 @@ export default function Main({
         char: <LaicPursuit />,
         weap: <BrilliantFixationL />,
       },
+      "1.2.0": {
+        char: <ALostSoul />,
+        weap: <BrilliantFixationB />,
+      },
+      "1.2.1": {
+        char: <NessunDorma />,
+        weap: <BrilliantFixationK />,
+      },
     };
   }, []);
 
@@ -134,6 +146,14 @@ export default function Main({
     "1.1.1": {
       char: "black",
       weap: "black",
+    },
+    "1.2.0": {
+      char: "black",
+      weap: "black",
+    },
+    "1.2.1": {
+      char: "#241330",
+      weap: "#241330",
     },
   };
 

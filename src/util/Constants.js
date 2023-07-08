@@ -53,6 +53,7 @@ const allChars = [
   // "kafka",
   "luocha",
   // "blade",
+  // "luka",
 ];
 
 const allWeapons = [
@@ -136,7 +137,13 @@ const BGM = {
   ss: ["cumulus-formations", "exquisite-ingenuity", "lustrous-moonlight"],
 };
 
-const allVers = ["1.1.1", "1.1.0", "1.0.1", "1.0.0"];
+const allVers = [
+  // "1.2.1", "1.2.0",
+  "1.1.1",
+  "1.1.0",
+  "1.0.1",
+  "1.0.0",
+];
 
 const LATESTVERS = allVers[0];
 

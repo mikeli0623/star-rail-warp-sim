@@ -1,5 +1,11 @@
 [
   {
+    "name": "Luka",
+    "path": "Nihility",
+    "element": "Physical",
+    "rarity": 4
+  },
+  {
     "name": "Yukong",
     "path": "Harmony",
     "element": "Imaginary",
