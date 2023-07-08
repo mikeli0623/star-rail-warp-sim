@@ -51,7 +51,7 @@ const BrilliantFixationS = () => {
       </div>
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/splash/banner-rate/the-moles-welcome-you.webp"
+        src="../assets/banner/rate-up/the-moles-welcome-you.webp"
         alt="The Moles Welcome You"
         draggable="false"
         width={getWidth(135)}
@@ -64,7 +64,7 @@ const BrilliantFixationS = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/splash/banner-rate/post-op-conversation.webp"
+        src="../assets/banner/rate-up/post-op-conversation.webp"
         alt="Post-Op Conversation"
         draggable="false"
         width={getWidth(108)}
@@ -77,7 +77,7 @@ const BrilliantFixationS = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/splash/banner-rate/good-night-and-sleep-well.webp"
+        src="../assets/banner/rate-up/good-night-and-sleep-well.webp"
         alt="Good Night and Sleep Well"
         draggable="false"
         width={getWidth(108)}

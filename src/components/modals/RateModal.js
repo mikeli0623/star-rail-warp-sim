@@ -83,7 +83,7 @@ export default function RateModal({ show, setShow, vers, type }) {
           })}
         </span>
       </Modal.Body>
-      <Modal.Footer style={{ backgroundColor: "#e9e7e2" }}></Modal.Footer>
+      <Modal.Footer style={{ backgroundColor: "#e9e7e2" }} />
     </Modal>
   );
 }

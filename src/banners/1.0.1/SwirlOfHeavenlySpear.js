@@ -91,7 +91,7 @@ const SwirlOfHeavenlySpear = () => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.0.1/sushang.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/sushang.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
@@ -118,7 +118,7 @@ const SwirlOfHeavenlySpear = () => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.0.1/march-7th.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/march-7th.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
@@ -145,7 +145,7 @@ const SwirlOfHeavenlySpear = () => {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.0.1/tingyun.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/tingyun.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),

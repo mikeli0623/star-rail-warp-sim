@@ -54,7 +54,7 @@ export default function BrilliantFixationSW() {
       </div>
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/splash/banner-rate/memories-of-the-past.webp"
+        src="../assets/banner/rate-up/memories-of-the-past.webp"
         alt="Memories of the Past"
         width={getWidth(135)}
         style={{
@@ -67,7 +67,7 @@ export default function BrilliantFixationSW() {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/splash/banner-rate/make-the-world-clamor.webp"
+        src="../assets/banner/rate-up/make-the-world-clamor.webp"
         alt="Make the World Clamor"
         width={getWidth(108)}
         style={{
@@ -80,7 +80,7 @@ export default function BrilliantFixationSW() {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/splash/banner-rate/subscribe-for-more.webp"
+        src="../assets/banner/rate-up/subscribe-for-more.webp"
         alt="Subscribe for More"
         width={getWidth(108)}
         style={{

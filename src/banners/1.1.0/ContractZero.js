@@ -91,7 +91,7 @@ export default function ContractZero() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.0/char-rate-1.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/dan-heng.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
@@ -118,7 +118,7 @@ export default function ContractZero() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.0/char-rate-2.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/asta.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
@@ -145,7 +145,7 @@ export default function ContractZero() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/1.1.0/char-rate-3.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/serval.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
