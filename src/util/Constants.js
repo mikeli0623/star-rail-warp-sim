@@ -52,7 +52,7 @@ const allChars = [
   "yukong",
   // "kafka",
   "luocha",
-  // "blade",
+  "blade",
   // "luka",
 ];
 
@@ -106,7 +106,7 @@ const allWeapons = [
   "sleep-like-the-dead",
   "something-irreplaceable",
   "texture-of-memories",
-  // "the-unreachable-side",
+  "the-unreachable-side",
   "time-waits-for-no-one",
   "amber",
   "arrows",
@@ -138,7 +138,8 @@ const BGM = {
 };
 
 const allVers = [
-  // "1.2.1", "1.2.0",
+  // "1.2.1",
+  "1.2.0",
   "1.1.1",
   "1.1.0",
   "1.0.1",

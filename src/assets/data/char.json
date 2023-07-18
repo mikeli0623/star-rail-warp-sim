@@ -1,4 +1,28 @@
-[
+[  
+  {
+    "name": "Fu Xuan",
+    "path": "Preservation",
+    "element": "Quantum",
+    "rarity": 5
+  },
+  {
+    "name": "Lynx",
+    "path": "Abundance",
+    "element": "Quantum",
+    "rarity": 4
+  },
+  {
+    "name": "Jingliu",
+    "path": "Destruction",
+    "element": "Ice",
+    "rarity": 5
+  },
+  {
+    "name": "Imbibitor Lunae",
+    "path": "Destruction",
+    "element": "Imaginary",
+    "rarity": 5
+  },
   {
     "name": "Luka",
     "path": "Nihility",

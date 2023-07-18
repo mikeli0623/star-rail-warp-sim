@@ -443,7 +443,7 @@ html * {
   border: 4px solid #cabdaa8c;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   transition: background-color 0.2s;
   height: 130px;

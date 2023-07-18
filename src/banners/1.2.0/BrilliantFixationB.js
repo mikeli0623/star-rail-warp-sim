@@ -54,7 +54,7 @@ export default function BrilliantFixationL() {
       </div>
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/rate-up/dance-dance-dance.webp"
+        src="../assets/banner/rate-up/swordplay.webp"
         alt="Dance! Dance! Dance!"
         width={getWidth(135)}
         style={{
@@ -67,7 +67,7 @@ export default function BrilliantFixationL() {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/rate-up/geniuses-repose.webp"
+        src="../assets/banner/rate-up/shared-feeling.webp"
         alt="Geniuses Repose"
         width={getWidth(108)}
         style={{
@@ -80,7 +80,7 @@ export default function BrilliantFixationL() {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/rate-up/good-night-and-sleep-well.webp"
+        src="../assets/banner/rate-up/a-secret-vow.webp"
         alt="Good Night and Sleep Well"
         width={getWidth(108)}
         style={{
@@ -93,7 +93,7 @@ export default function BrilliantFixationL() {
       />
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.1.1/${i18n.resolvedLanguage}/weap-left.webp`}
+        src={`../assets/banner/1.2.0/${i18n.resolvedLanguage}/weap-left.webp`}
         width={getWidth(1101.5)}
         alt="left"
         draggable="false"
