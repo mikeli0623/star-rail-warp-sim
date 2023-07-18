@@ -103,6 +103,7 @@ export default function StatsMain({
             zIndex: 2,
             height: getWidth(70, 30),
             color: "white",
+            whiteSpace: "nowrap",
           }}
         >
           {t("stats.total")}
