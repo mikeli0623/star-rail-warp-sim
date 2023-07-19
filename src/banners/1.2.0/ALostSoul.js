@@ -44,7 +44,7 @@ export default function LaicPursuit() {
           height: getHeight(677.33, 1100),
           overflow: "hidden",
           background:
-            "linear-gradient(to bottom, rgba(40, 33, 36, 1) 70%, rgba(255, 255, 255, 0) 100%)",
+            "linear-gradient(to bottom, #1b2131 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
           boxShadow: "0 0 10px rgba(8, 8, 8, 0.521)",
           top: "50%",
@@ -63,18 +63,18 @@ export default function LaicPursuit() {
             right: "0",
           }}
         />
-        {/* <LazyLoadImage
-          src="../assets/banner/1.1.1/char-banner-back.webp"
+        <LazyLoadImage
+          src="../assets/banner/1.2.0/char-banner-back.webp"
           width={getWidth(1200)}
           alt="right"
           draggable="false"
           style={{
             position: "relative",
-            animation: "luocha-back-animation 3s 200ms 1",
+            animation: "blade-back-animation 3s 200ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
-        /> */}
+        />
       </div>
       <div
         className="rate-up-char-icons"
@@ -172,7 +172,7 @@ export default function LaicPursuit() {
       />
       <LazyLoadImage
         src="../assets/banner/1.2.0/main-char.webp"
-        width={getWidth(1000)}
+        width={getWidth(1100)}
         alt="char"
         draggable="false"
         style={{
