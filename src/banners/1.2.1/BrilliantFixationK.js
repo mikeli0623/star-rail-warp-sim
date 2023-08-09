@@ -54,8 +54,8 @@ export default function BrilliantFixationL() {
       </div>
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/rate-up/dance-dance-dance.webp"
-        alt="Dance! Dance! Dance!"
+        src="../assets/banner/rate-up/eyes-of-the-prey.webp"
+        alt="eyes-of-the-prey"
         width={getWidth(135)}
         style={{
           animation: "cone-1-animation 0.4s 1",
@@ -67,8 +67,8 @@ export default function BrilliantFixationL() {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/rate-up/geniuses-repose.webp"
-        alt="Geniuses Repose"
+        src="../assets/banner/rate-up/the-birth-of-the-self.webp"
+        alt="the-birth-of-the-self"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
@@ -80,8 +80,8 @@ export default function BrilliantFixationL() {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/rate-up/good-night-and-sleep-well.webp"
-        alt="Good Night and Sleep Well"
+        src="../assets/banner/rate-up/resolution-shines-as-pearls-of-sweat.webp"
+        alt="resolution-shines-as-pearls-of-sweat"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
@@ -93,7 +93,7 @@ export default function BrilliantFixationL() {
       />
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.1.1/${i18n.resolvedLanguage}/weap-left.webp`}
+        src={`../assets/banner/1.2.1/${i18n.resolvedLanguage}/weap-left.webp`}
         width={getWidth(1101.5)}
         alt="left"
         draggable="false"

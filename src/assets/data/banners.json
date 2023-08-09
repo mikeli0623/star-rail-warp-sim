@@ -820,16 +820,16 @@
     "type": "char",
     "title": {
       "en": "Nessun Dorma",
-      "zh": "Nessun Dorma",
-      "ko": "Nessun Dorma ",
-      "ja": "Nessun Dorma ",
-      "es": "Nessun Dorma ",
-      "fr": "Nessun Dorma ",
-      "ru": "Nessun Dorma ",
-      "th": "Nessun Dorma ",
-      "vi": "Nessun Dorma",
-      "de": "Nessun Dorma",
-      "id": "Nessun Dorma",
+      "zh": "夜将不眠",
+      "ko": "잠 못 드는 밤",
+      "ja": "夜は眠らぬ",
+      "es": "Nessun dorma",
+      "fr": "Nessun Dorma",
+      "ru": "Пускай никто не спит",
+      "th": "ค่ำคืนฝืนนิทรา",
+      "vi": "Không Ai Được Ngủ",
+      "de": "Schlaflos in der Nacht",
+      "id": "Malam Tanpa Mimpi",
       "pt": "Nessun Dorma"
     },
     "rateUpFive": ["kafka"],
@@ -900,9 +900,9 @@
     },
     "rateUpFive": ["patience-is-all-you-need"],
     "rateUpFour": [
-      "dance-dance-dance",
-      "geniuses-repose",
-      "good-night-and-sleep-well"
+      "eyes-of-the-prey",
+      "resolution-shines-as-pearls-of-sweat",
+      "the-birth-of-the-self"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -929,24 +929,24 @@
       "qingque"
     ],
     "poolFourWeap": [
+      "dance-dance-dance",
       "perfect-timing",
       "post-op-conversation",
       "shared-feeling",
       "a-secret-vow",
+      "geniuses-repose",
       "the-moles-welcome-you",
       "under-the-blue-sky",
       "make-the-world-clamor",
-      "the-birth-of-the-self",
       "memories-of-the-past",
       "subscribe-for-more",
       "swordplay",
-      "eyes-of-the-prey",
-      "resolution-shines-as-pearls-of-sweat",
       "landaus-choice",
       "trend-of-the-universal-market",
       "only-silence-remains",
       "planetary-rendezvous",
-      "day-one-of-my-new-life"
+      "day-one-of-my-new-life",
+      "good-night-and-sleep-well"
     ]
   }
 ]
