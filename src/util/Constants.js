@@ -28,32 +28,33 @@ const baseWeapons = [
 const allChars = [
   "arlan",
   "asta",
+  "bailu",
+  "blade",
+  "bronya",
+  "clara",
   "dan-heng",
+  "gepard",
   "herta",
+  "himeko",
   "hook",
+  "imbibitor-lunae",
+  "jing-yuan",
+  "kafka",
+  "luka",
+  "luocha",
   "march-7th",
   "natasha",
   "pela",
   "qingque",
   "sampo",
   "serval",
+  "seele",
+  "silver-wolf",
   "sushang",
   "tingyun",
-  "bailu",
-  "bronya",
-  "clara",
-  "gepard",
-  "himeko",
-  "jing-yuan",
-  "seele",
   "welt",
   "yanqing",
-  "silver-wolf",
   "yukong",
-  // "kafka",
-  "luocha",
-  "blade",
-  // "luka",
 ];
 
 const allWeapons = [
@@ -102,7 +103,7 @@ const allWeapons = [
   "moment-of-victory",
   "night-on-the-milky-way",
   "on-the-fall-of-an-aeon",
-  // "patience-is-all-you-need",
+  "patience-is-all-you-need",
   "sleep-like-the-dead",
   "something-irreplaceable",
   "texture-of-memories",
@@ -137,7 +138,7 @@ const BGM = {
   ss: ["cumulus-formations", "exquisite-ingenuity", "lustrous-moonlight"],
 };
 
-const allVers = ["1.2.1", "1.2.0", "1.1.1", "1.1.0", "1.0.1", "1.0.0"];
+const allVers = ["1.3.0", "1.2.1", "1.2.0", "1.1.1", "1.1.0", "1.0.1", "1.0.0"];
 
 const LATESTVERS = allVers[0];
 
