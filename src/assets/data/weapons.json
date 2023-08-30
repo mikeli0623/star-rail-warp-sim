@@ -1,372 +1,377 @@
 [
-	{
-        "name": "A Secret Vow",
-        "path": "Destruction",
-        "rarity": 4
-    },
-    {
-        "name": "Adversarial",
-        "path": "The Hunt",
-        "rarity": 3
-    },
-    {
-        "name": "Amber",
-        "path": "Preservation",
-        "rarity": 3
-    },
-    {
-        "name": "Arrows",
-        "path": "The Hunt",
-        "rarity": 3
-    },
-    {
-        "name": "Before Dawn",
-        "path": "Erudition",
-        "rarity": 5
-    },
-    {
-        "name": "But the Battle Isn't Over",
-        "path": "Harmony",
-        "rarity": 5
-    },
-    {
-        "name": "Carve the Moon, Weave the Clouds",
-        "path": "Harmony",
-        "rarity": 4
-    },
-    {
-        "name": "Chorus",
-        "path": "Harmony",
-        "rarity": 3
-    },
-    {
-        "name": "Collapsing Sky",
-        "path": "Destruction",
-        "rarity": 3
-    },
-    {
-        "name": "Cornucopia",
-        "path": "Abundance",
-        "rarity": 3
-    },
-    {
-        "name": "Cruising in the Stellar Sea",
-        "path": "The Hunt",
-        "rarity": 5
-    },
-    {
-        "name": "Dance! Dance! Dance!",
-        "path": "Harmony",
-        "rarity": 4
-    },
-    {
-        "name": "Darting Arrow",
-        "path": "The Hunt",
-        "rarity": 3
-    },
-    {
-        "name": "Data Bank",
-        "path": "Erudition",
-        "rarity": 3
-    },
-    {
-        "name": "Day One of My New Life",
-        "path": "Preservation",
-        "rarity": 4
-    },
-    {
-        "name": "Defense",
-        "path": "Preservation",
-        "rarity": 3
-    },
-    {
-        "name": "",
-        "path": "",
-        "rarity": 4
-    },
-    {
-        "name": "",
-        "path": "",
-        "rarity": 4
-    },
-    {
-        "name": "Echoes of the Coffin",
-        "path": "Abundance",
-        "rarity": 5
-    },
-    {
-        "name": "Eyes of the Prey",
-        "path": "Nihility",
-        "rarity": 4
-    },
-    {
-        "name": "Fermata",
-        "path": "Nihility",
-        "rarity": 4
-    },
-    {
-        "name": "Fine Fruit",
-        "path": "Abundance",
-        "rarity": 3
-    },
-    {
-        "name": "Geniuses' Repose",
-        "path": "Erudition",
-        "rarity": 4
-    },
-    {
-        "name": "Good Night and Sleep Well",
-        "path": "Nihility",
-        "rarity": 4
-    },
-    {
-        "name": "Hidden Shadow",
-        "path": "Nihility",
-        "rarity": 3
-    },
-    {
-        "name": "In the Name of the World",
-        "path": "Nihility",
-        "rarity": 5
-    },
-    {
-        "name": "In the Night",
-        "path": "The Hunt",
-        "rarity": 5
-    },
-    {
-        "name": "Incessant Rain",
-        "path": "Nihility",
-        "rarity": 5
-    },
-    {
-        "name": "Landau's Choice",
-        "path": "Preservation",
-        "rarity": 4
-    },
-    {
-        "name": "Loop",
-        "path": "Nihility",
-        "rarity": 3
-    },
-    {
-        "name": "Make the World Clamor",
-        "path": "Erudition",
-        "rarity": 4
-    },
-    {
-        "name": "Mediation",
-        "path": "Harmony",
-        "rarity": 3
-    },
-    {
-        "name": "Memories of the Past",
-        "path": "Harmony",
-        "rarity": 4
-    },
-    {
-        "name": "Meshing Cogs",
-        "path": "Harmony",
-        "rarity": 3
-    },
-    {
-        "name": "Moment of Victory",
-        "path": "Preservation",
-        "rarity": 5
-    },
-    {
-        "name": "Multiplication",
-        "path": "Abundance",
-        "rarity": 3
-    },
-    {
-        "name": "Mutual Demise",
-        "path": "Destruction",
-        "rarity": 3
-    },
-    {
-        "name": "Night on the Milky Way",
-        "path": "Erudition",
-        "rarity": 5
-    },
-    {
-        "name": "Nowhere to Run",
-        "path": "Preservation",
-        "rarity": 4
-    },
-    {
-        "name": "On the Fall of an Aeon",
-        "path": "Destruction",
-        "rarity": 5
-    },
-    {
-        "name": "Only Silence Remains",
-        "path": "The Hunt",
-        "rarity": 4
-    },
-    {
-        "name": "Passkey",
-        "path": "Erudition",
-        "rarity": 3
-    },
-    {
-        "name": "Past and Future",
-        "path": "Harmony",
-        "rarity": 4
-    },
-    {
-        "name": "Patience Is All You Need",
-        "path": "Nihility",
-        "rarity": 5
-    },
-    {
-        "name": "Perfect Timing",
-        "path": "Abundance",
-        "rarity": 4
-    },
-    {
-        "name": "Pioneering",
-        "path": "Preservation",
-        "rarity": 3
-    },
-    {
-        "name": "Planetary Rendezvous",
-        "path": "Harmony",
-        "rarity": 4
-    },
-    {
-        "name": "Post-Op Conversation",
-        "path": "Abundance",
-        "rarity": 4
-    },
-    {
-        "name": "Quid Pro Quo",
-        "path": "Abundance",
-        "rarity": 4
-    },
-    {
-        "name": "Resolution Shines As Pearls of Sweat",
-        "path": "Nihility",
-        "rarity": 4
-    },
-    {
-        "name": "Return to Darkness",
-        "path": "The Hunt",
-        "rarity": 4
-    },
-    {
-        "name": "River Flows in Spring",
-        "path": "The Hunt",
-        "rarity": 4
-    },
-    {
-        "name": "Sagacity",
-        "path": "Erudition",
-        "rarity": 3
-    },
-    {
-        "name": "Shared Feeling",
-        "path": "Abundance",
-        "rarity": 4
-    },
-    {
-        "name": "Shattered Home",
-        "path": "Destruction",
-        "rarity": 3
-    },
-    {
-        "name": "Sleep Like the Dead",
-        "path": "The Hunt",
-        "rarity": 5
-    },
-    {
-        "name": "Something Irreplaceable",
-        "path": "Destruction",
-        "rarity": 5
-    },
-    {
-        "name": "Subscribe for More!",
-        "path": "The Hunt",
-        "rarity": 4
-    },
-    {
-        "name": "Swordplay",
-        "path": "The Hunt",
-        "rarity": 4
-    },
-    {
-        "name": "Texture of Memories",
-        "path": "Preservation",
-        "rarity": 5
-    },
-    {
-        "name": "The Birth of the Self",
-        "path": "Erudition",
-        "rarity": 4
-    },
-    {
-        "name": "The Moles Welcome You",
-        "path": "Destruction",
-        "rarity": 4
-    },
-    {
-        "name": "The Seriousness of Breakfast",
-        "path": "Erudition",
-        "rarity": 4
-    },
-    {
-        "name": "The Unreachable Side",
-        "path": "Destruction",
-        "rarity": 5
-    },
-    {
-        "name": "This Is Me!",
-        "path": "Preservation",
-        "rarity": 4
-    },
-    {
-        "name": "Time Waits for No One",
-        "path": "Abundance",
-        "rarity": 5
-    },
-    {
-        "name": "Today Is Another Peaceful Day",
-        "path": "Erudition",
-        "rarity": 4
-    },
-    {
-        "name": "Trend of the Universal Market",
-        "path": "Preservation",
-        "rarity": 4
-    },
-    {
-        "name": "Under the Blue Sky",
-        "path": "Destruction",
-        "rarity": 4
-    },
-    {
-        "name": "Void",
-        "path": "Nihility",
-        "rarity": 3
-    },
-    {
-        "name": "We Are Wildfire",
-        "path": "Preservation",
-        "rarity": 4
-    },
-    {
-        "name": "Warmth Shortens Cold Nights",
-        "path": "Abundance",
-        "rarity": 4
-    },
-    {
-        "name": "We Will Meet Again",
-        "path": "Nihility",
-        "rarity": 4
-    },
-    {
-        "name": "Woof! Walk Time!",
-        "path": "Destruction",
-        "rarity": 4
-    }
+  {
+    "name": "Brighter Than the Sun",
+    "path": "Destruction",
+    "rarity": 5
+  },
+  {
+    "name": "A Secret Vow",
+    "path": "Destruction",
+    "rarity": 4
+  },
+  {
+    "name": "Adversarial",
+    "path": "The Hunt",
+    "rarity": 3
+  },
+  {
+    "name": "Amber",
+    "path": "Preservation",
+    "rarity": 3
+  },
+  {
+    "name": "Arrows",
+    "path": "The Hunt",
+    "rarity": 3
+  },
+  {
+    "name": "Before Dawn",
+    "path": "Erudition",
+    "rarity": 5
+  },
+  {
+    "name": "But the Battle Isn't Over",
+    "path": "Harmony",
+    "rarity": 5
+  },
+  {
+    "name": "Carve the Moon, Weave the Clouds",
+    "path": "Harmony",
+    "rarity": 4
+  },
+  {
+    "name": "Chorus",
+    "path": "Harmony",
+    "rarity": 3
+  },
+  {
+    "name": "Collapsing Sky",
+    "path": "Destruction",
+    "rarity": 3
+  },
+  {
+    "name": "Cornucopia",
+    "path": "Abundance",
+    "rarity": 3
+  },
+  {
+    "name": "Cruising in the Stellar Sea",
+    "path": "The Hunt",
+    "rarity": 5
+  },
+  {
+    "name": "Dance! Dance! Dance!",
+    "path": "Harmony",
+    "rarity": 4
+  },
+  {
+    "name": "Darting Arrow",
+    "path": "The Hunt",
+    "rarity": 3
+  },
+  {
+    "name": "Data Bank",
+    "path": "Erudition",
+    "rarity": 3
+  },
+  {
+    "name": "Day One of My New Life",
+    "path": "Preservation",
+    "rarity": 4
+  },
+  {
+    "name": "Defense",
+    "path": "Preservation",
+    "rarity": 3
+  },
+  {
+    "name": "",
+    "path": "",
+    "rarity": 4
+  },
+  {
+    "name": "",
+    "path": "",
+    "rarity": 4
+  },
+  {
+    "name": "Echoes of the Coffin",
+    "path": "Abundance",
+    "rarity": 5
+  },
+  {
+    "name": "Eyes of the Prey",
+    "path": "Nihility",
+    "rarity": 4
+  },
+  {
+    "name": "Fermata",
+    "path": "Nihility",
+    "rarity": 4
+  },
+  {
+    "name": "Fine Fruit",
+    "path": "Abundance",
+    "rarity": 3
+  },
+  {
+    "name": "Geniuses' Repose",
+    "path": "Erudition",
+    "rarity": 4
+  },
+  {
+    "name": "Good Night and Sleep Well",
+    "path": "Nihility",
+    "rarity": 4
+  },
+  {
+    "name": "Hidden Shadow",
+    "path": "Nihility",
+    "rarity": 3
+  },
+  {
+    "name": "In the Name of the World",
+    "path": "Nihility",
+    "rarity": 5
+  },
+  {
+    "name": "In the Night",
+    "path": "The Hunt",
+    "rarity": 5
+  },
+  {
+    "name": "Incessant Rain",
+    "path": "Nihility",
+    "rarity": 5
+  },
+  {
+    "name": "Landau's Choice",
+    "path": "Preservation",
+    "rarity": 4
+  },
+  {
+    "name": "Loop",
+    "path": "Nihility",
+    "rarity": 3
+  },
+  {
+    "name": "Make the World Clamor",
+    "path": "Erudition",
+    "rarity": 4
+  },
+  {
+    "name": "Mediation",
+    "path": "Harmony",
+    "rarity": 3
+  },
+  {
+    "name": "Memories of the Past",
+    "path": "Harmony",
+    "rarity": 4
+  },
+  {
+    "name": "Meshing Cogs",
+    "path": "Harmony",
+    "rarity": 3
+  },
+  {
+    "name": "Moment of Victory",
+    "path": "Preservation",
+    "rarity": 5
+  },
+  {
+    "name": "Multiplication",
+    "path": "Abundance",
+    "rarity": 3
+  },
+  {
+    "name": "Mutual Demise",
+    "path": "Destruction",
+    "rarity": 3
+  },
+  {
+    "name": "Night on the Milky Way",
+    "path": "Erudition",
+    "rarity": 5
+  },
+  {
+    "name": "Nowhere to Run",
+    "path": "Preservation",
+    "rarity": 4
+  },
+  {
+    "name": "On the Fall of an Aeon",
+    "path": "Destruction",
+    "rarity": 5
+  },
+  {
+    "name": "Only Silence Remains",
+    "path": "The Hunt",
+    "rarity": 4
+  },
+  {
+    "name": "Passkey",
+    "path": "Erudition",
+    "rarity": 3
+  },
+  {
+    "name": "Past and Future",
+    "path": "Harmony",
+    "rarity": 4
+  },
+  {
+    "name": "Patience Is All You Need",
+    "path": "Nihility",
+    "rarity": 5
+  },
+  {
+    "name": "Perfect Timing",
+    "path": "Abundance",
+    "rarity": 4
+  },
+  {
+    "name": "Pioneering",
+    "path": "Preservation",
+    "rarity": 3
+  },
+  {
+    "name": "Planetary Rendezvous",
+    "path": "Harmony",
+    "rarity": 4
+  },
+  {
+    "name": "Post-Op Conversation",
+    "path": "Abundance",
+    "rarity": 4
+  },
+  {
+    "name": "Quid Pro Quo",
+    "path": "Abundance",
+    "rarity": 4
+  },
+  {
+    "name": "Resolution Shines As Pearls of Sweat",
+    "path": "Nihility",
+    "rarity": 4
+  },
+  {
+    "name": "Return to Darkness",
+    "path": "The Hunt",
+    "rarity": 4
+  },
+  {
+    "name": "River Flows in Spring",
+    "path": "The Hunt",
+    "rarity": 4
+  },
+  {
+    "name": "Sagacity",
+    "path": "Erudition",
+    "rarity": 3
+  },
+  {
+    "name": "Shared Feeling",
+    "path": "Abundance",
+    "rarity": 4
+  },
+  {
+    "name": "Shattered Home",
+    "path": "Destruction",
+    "rarity": 3
+  },
+  {
+    "name": "Sleep Like the Dead",
+    "path": "The Hunt",
+    "rarity": 5
+  },
+  {
+    "name": "Something Irreplaceable",
+    "path": "Destruction",
+    "rarity": 5
+  },
+  {
+    "name": "Subscribe for More!",
+    "path": "The Hunt",
+    "rarity": 4
+  },
+  {
+    "name": "Swordplay",
+    "path": "The Hunt",
+    "rarity": 4
+  },
+  {
+    "name": "Texture of Memories",
+    "path": "Preservation",
+    "rarity": 5
+  },
+  {
+    "name": "The Birth of the Self",
+    "path": "Erudition",
+    "rarity": 4
+  },
+  {
+    "name": "The Moles Welcome You",
+    "path": "Destruction",
+    "rarity": 4
+  },
+  {
+    "name": "The Seriousness of Breakfast",
+    "path": "Erudition",
+    "rarity": 4
+  },
+  {
+    "name": "The Unreachable Side",
+    "path": "Destruction",
+    "rarity": 5
+  },
+  {
+    "name": "This Is Me!",
+    "path": "Preservation",
+    "rarity": 4
+  },
+  {
+    "name": "Time Waits for No One",
+    "path": "Abundance",
+    "rarity": 5
+  },
+  {
+    "name": "Today Is Another Peaceful Day",
+    "path": "Erudition",
+    "rarity": 4
+  },
+  {
+    "name": "Trend of the Universal Market",
+    "path": "Preservation",
+    "rarity": 4
+  },
+  {
+    "name": "Under the Blue Sky",
+    "path": "Destruction",
+    "rarity": 4
+  },
+  {
+    "name": "Void",
+    "path": "Nihility",
+    "rarity": 3
+  },
+  {
+    "name": "We Are Wildfire",
+    "path": "Preservation",
+    "rarity": 4
+  },
+  {
+    "name": "Warmth Shortens Cold Nights",
+    "path": "Abundance",
+    "rarity": 4
+  },
+  {
+    "name": "We Will Meet Again",
+    "path": "Nihility",
+    "rarity": 4
+  },
+  {
+    "name": "Woof! Walk Time!",
+    "path": "Destruction",
+    "rarity": 4
+  }
 ]
