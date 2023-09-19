@@ -1,0 +1,27 @@
+@keyframes lynx-animation {
+  0% {
+    transform: translate(-63.2%, -28%);
+  }
+  100% {
+    transform: translate(-56%, -28%);
+    opacity: 1;
+  }
+}
+
+@keyframes fu-xuan-weap-back-animation {
+  0% {
+    transform: translate(20%, -5%);
+  }
+  100% {
+    transform: translate(15%, -4%);
+  }
+}
+
+@keyframes fu-xuan-animation {
+  0% {
+    transform: translate(-41%, -50%);
+  }
+  100% {
+    transform: translate(-33%, -50%);
+  }
+}

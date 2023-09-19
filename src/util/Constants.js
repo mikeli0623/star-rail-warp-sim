@@ -55,6 +55,8 @@ const allChars = [
   "welt",
   "yanqing",
   "yukong",
+  "fu-xuan",
+  "lynx",
 ];
 
 const allWeapons = [
@@ -79,6 +81,7 @@ const allWeapons = [
   "resolution-shines-as-pearls-of-sweat",
   "return-to-darkness",
   "river-flows-in-spring",
+  "she-already-shut-her-eyes",
   "shared-feeling",
   "subscribe-for-more",
   "swordplay",
@@ -138,7 +141,16 @@ const BGM = {
   ss: ["cumulus-formations", "exquisite-ingenuity", "lustrous-moonlight"],
 };
 
-const allVers = ["1.3.0", "1.2.1", "1.2.0", "1.1.1", "1.1.0", "1.0.1", "1.0.0"];
+const allVers = [
+  "1.3.1",
+  "1.3.0",
+  "1.2.1",
+  "1.2.0",
+  "1.1.1",
+  "1.1.0",
+  "1.0.1",
+  "1.0.0",
+];
 
 const LATESTVERS = allVers[0];
 
