@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import Button from "../../components/Button";
 import RateModal from "../../components/modals/RateModal";
 
-export default function BrilliantFixationL() {
+export default function BrilliantFixationK() {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
 

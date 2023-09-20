@@ -23,6 +23,8 @@ import BrilliantFixationK from "../banners/1.2.1/BrilliantFixationK";
 import NessunDorma from "../banners/1.2.1/NessunDorma";
 import EpochalSpectrum from "../banners/1.3.0/EpochalSpectrum";
 import BrilliantFixationI from "../banners/1.3.0/BrilliantFixationI";
+import FFF from "../banners/1.3.1/FFF";
+import BrilliantFixationFX from "../banners/1.3.1/BrilliantFixationFX";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
@@ -126,6 +128,10 @@ export default function Main({
         char: <EpochalSpectrum />,
         weap: <BrilliantFixationI />,
       },
+      "1.3.1": {
+        char: <FFF />,
+        weap: <BrilliantFixationFX />,
+      },
     };
   }, []);
 
@@ -163,6 +169,10 @@ export default function Main({
     },
     "1.3.0": {
       char: "#0f1222",
+      weap: "black",
+    },
+    "1.3.1": {
+      char: "#17072b",
       weap: "black",
     },
   };

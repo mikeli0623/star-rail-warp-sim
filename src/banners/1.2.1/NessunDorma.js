@@ -8,7 +8,7 @@ import NameTag from "../../components/NameTag";
 import Button from "../../components/Button";
 import RateModal from "../../components/modals/RateModal";
 
-export default function LaicPursuit() {
+export default function NessunDorma() {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
   const [show, setShow] = useState(false);

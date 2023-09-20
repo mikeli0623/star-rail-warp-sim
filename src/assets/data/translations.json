@@ -41,6 +41,20 @@
     "id": "Fu Xuan",
     "pt": "Fu Xuan"
   },
+  "she-already-shut-her-eyes": {
+    "en": "She Already Shut Her Eyes",
+    "zh": "她已闭上双眼",
+    "ja": "閉ざした瞳",
+    "ko": "그녀는 두 눈을 감았네",
+    "es": "Ya ha cerrado los ojos",
+    "fr": "Elle a déjà fermé les yeux",
+    "ru": "Она закрыла глаза",
+    "th": "She Already Shut Her Eyes",
+    "vi": "Đôi Mắt Đã Nhắm Lại",
+    "de": "Ihre Augen sind bereits geschlossen",
+    "id": "She Already Shut Her Eyes",
+    "pt": "Ela Já Fechou Seus Olhos"
+  },
   "jingliu": {
     "en": "Jingliu",
     "zh": "镜流",
@@ -54,6 +68,62 @@
     "de": "Jingliu",
     "id": "Jingliu",
     "pt": "Jingliu"
+  },
+  "i-shall-be-my-own-sword": {
+    "en": "I Shall Be My Own Sword",
+    "zh": "I Shall Be My Own Sword",
+    "ja": "I Shall Be My Own Sword",
+    "ko": "I Shall Be My Own Sword",
+    "es": "I Shall Be My Own Sword",
+    "fr": "I Shall Be My Own Sword",
+    "ru": "I Shall Be My Own Sword",
+    "th": "I Shall Be My Own Sword",
+    "vi": "I Shall Be My Own Sword",
+    "de": "I Shall Be My Own Sword",
+    "id": "I Shall Be My Own Sword",
+    "pt": "I Shall Be My Own Sword"
+  },
+  "worrisome-blissful": {
+    "en": "Worrisome, Blissful",
+    "zh": "Worrisome, Blissful",
+    "ja": "Worrisome, Blissful",
+    "ko": "Worrisome, Blissful",
+    "es": "Worrisome, Blissful",
+    "fr": "Worrisome, Blissful",
+    "ru": "Worrisome, Blissful",
+    "th": "Worrisome, Blissful",
+    "vi": "Worrisome, Blissful",
+    "de": "Worrisome, Blissful",
+    "id": "Worrisome, Blissful",
+    "pt": "Worrisome, Blissful"
+  },
+  "guinaifen": {
+    "en": "Guinaifen",
+    "zh": "桂乃芬",
+    "ja": "桂乃芬",
+    "ko": "계네빈",
+    "es": "Guinaifen",
+    "fr": "Guinaifen",
+    "ru": "Гуйнайфэнь",
+    "th": "Guinaifen",
+    "vi": "Guinaifen",
+    "de": "Guinaifen",
+    "id": "Guinaifen",
+    "pt": "Guinaifen"
+  },
+  "topaz-and-numby": {
+    "en": "Topaz & Numby",
+    "zh": "托帕&账账",
+    "ja": "トパーズ&カブ",
+    "ko": "토파즈&복순이",
+    "es": "Topaz y Conti",
+    "fr": "Topaz et Compti",
+    "ru": "Топаз и Счетовод",
+    "th": "Topaz & Numby",
+    "vi": "Topaz & Numby",
+    "de": "Topaz und Kontie",
+    "id": "Topaz & Numby",
+    "pt": "Topaz & Dinheirinho"
   },
   "lynx": {
     "en": "Lynx",

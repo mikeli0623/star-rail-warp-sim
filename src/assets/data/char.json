@@ -1,10 +1,23 @@
-[  
+[
+  {
+    "name": "Topaz & Numby",
+    "path": "The Hunt",
+    "element": "Fire",
+    "rarity": 5
+  },
+  {
+    "name": "Guinaifen",
+    "path": "The Hunt",
+    "element": "Fire",
+    "rarity": 4
+  },
   {
     "name": "Fu Xuan",
     "path": "Preservation",
     "element": "Quantum",
     "rarity": 5
   },
+
   {
     "name": "Lynx",
     "path": "Abundance",
