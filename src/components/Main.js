@@ -25,6 +25,8 @@ import EpochalSpectrum from "../banners/1.3.0/EpochalSpectrum";
 import BrilliantFixationI from "../banners/1.3.0/BrilliantFixationI";
 import FFF from "../banners/1.3.1/FFF";
 import BrilliantFixationFX from "../banners/1.3.1/BrilliantFixationFX";
+import GEOTM from "../banners/1.4.0/GEOTM";
+import BrilliantFixationJ from "../banners/1.4.0/BrilliantFixationJ";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
@@ -132,6 +134,10 @@ export default function Main({
         char: <FFF />,
         weap: <BrilliantFixationFX />,
       },
+      "1.4.0": {
+        char: <GEOTM />,
+        weap: <BrilliantFixationJ />,
+      },
     };
   }, []);
 
@@ -173,6 +179,10 @@ export default function Main({
     },
     "1.3.1": {
       char: "#17072b",
+      weap: "black",
+    },
+    "1.4.0": {
+      char: "#1c253f",
       weap: "black",
     },
   };
