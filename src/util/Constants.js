@@ -57,9 +57,11 @@ const allChars = [
   "yukong",
   "fu-xuan",
   "lynx",
+  "jingliu",
 ];
 
 const allWeapons = [
+  "i-shall-be-my-own-sword",
   "a-secret-vow",
   "carve-the-moon-weave-the-clouds",
   "dance-dance-dance",
@@ -142,6 +144,7 @@ const BGM = {
 };
 
 const allVers = [
+  "1.4.0",
   "1.3.1",
   "1.3.0",
   "1.2.1",

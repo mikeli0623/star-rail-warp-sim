@@ -1,0 +1,8 @@
+@keyframes jingliu-weap-back-animation {
+  0% {
+    transform: translate(-3%, -13%);
+  }
+  100% {
+    transform: translate(0%, -12%);
+  }
+}
