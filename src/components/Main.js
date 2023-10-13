@@ -27,6 +27,8 @@ import FFF from "../banners/1.3.1/FFF";
 import BrilliantFixationFX from "../banners/1.3.1/BrilliantFixationFX";
 import GEOTM from "../banners/1.4.0/GEOTM";
 import BrilliantFixationJ from "../banners/1.4.0/BrilliantFixationJ";
+import SunsetClause from "../banners/1.4.1/SunsetClause";
+import BrilliantFixationTAN from "../banners/1.4.1/BrilliantFixationTAN";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
@@ -138,6 +140,10 @@ export default function Main({
         char: <GEOTM />,
         weap: <BrilliantFixationJ />,
       },
+      "1.4.1": {
+        char: <SunsetClause />,
+        weap: <BrilliantFixationTAN />,
+      },
     };
   }, []);
 
@@ -183,6 +189,10 @@ export default function Main({
     },
     "1.4.0": {
       char: "#1c253f",
+      weap: "black",
+    },
+    "1.4.1": {
+      char: "black",
       weap: "black",
     },
   };

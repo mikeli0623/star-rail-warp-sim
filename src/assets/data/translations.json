@@ -85,17 +85,17 @@
   },
   "worrisome-blissful": {
     "en": "Worrisome, Blissful",
-    "zh": "Worrisome, Blissful",
-    "ja": "Worrisome, Blissful",
-    "ko": "Worrisome, Blissful",
-    "es": "Worrisome, Blissful",
-    "fr": "Worrisome, Blissful",
-    "ru": "Worrisome, Blissful",
+    "zh": "烦恼着，幸福着",
+    "ja": "悩んで笑って",
+    "ko": "고민, 그리고 행복",
+    "es": "Preocupaciones y felicidad",
+    "fr": "Inquiétude et soulagement",
+    "ru": "Тревога и блаженство",
     "th": "Worrisome, Blissful",
-    "vi": "Worrisome, Blissful",
-    "de": "Worrisome, Blissful",
+    "vi": "Phiền Não, Hạnh Phúc",
+    "de": "Besorgt doch glückselig",
     "id": "Worrisome, Blissful",
-    "pt": "Worrisome, Blissful"
+    "pt": "Inquietante, Extasiante"
   },
   "guinaifen": {
     "en": "Guinaifen",
@@ -112,7 +112,7 @@
     "pt": "Guinaifen"
   },
   "topaz-and-numby": {
-    "en": "Topaz & Numby",
+    "en": "Topaz and Numby",
     "zh": "托帕&账账",
     "ja": "トパーズ&カブ",
     "ko": "토파즈&복순이",

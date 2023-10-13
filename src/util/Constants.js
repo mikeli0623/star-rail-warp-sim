@@ -58,10 +58,13 @@ const allChars = [
   "fu-xuan",
   "lynx",
   "jingliu",
+  // "topaz-and-numby",
+  // "guinaifen",
 ];
 
 const allWeapons = [
   "i-shall-be-my-own-sword",
+  // "worrisome-blissful",
   "a-secret-vow",
   "carve-the-moon-weave-the-clouds",
   "dance-dance-dance",
@@ -144,6 +147,7 @@ const BGM = {
 };
 
 const allVers = [
+  // "1.4.1",
   "1.4.0",
   "1.3.1",
   "1.3.0",
