@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "../../css/Banners.css";
-import "../../css/vers/1.4.0.css";
+import "../../css/vers/1.4.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../../components/context/ResizeContext";
 import { useTranslation } from "react-i18next";
@@ -8,7 +8,7 @@ import NameTag from "../../components/NameTag";
 import Button from "../../components/Button";
 import RateModal from "../../components/modals/RateModal";
 
-export default function GEOTM() {
+export default function SunsetClause() {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
   const [show, setShow] = useState(false);
@@ -89,12 +89,12 @@ export default function GEOTM() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/rate-up/tingyun.webp)",
-            width: getWidth(1100),
-            height: getWidth(1100),
-            backgroundSize: getWidth(1100),
+            backgroundImage: "url(../assets/banner/rate-up/guinaifen.webp)",
+            width: getWidth(900),
+            height: getWidth(900),
+            backgroundSize: getWidth(900),
             position: "absolute",
-            animation: "tingyun-animation 1s 1",
+            animation: "guinaifen-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "250ms",
             opacity: "0",
@@ -116,16 +116,16 @@ export default function GEOTM() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/rate-up/qingque.webp)",
-            width: getWidth(800),
-            height: getWidth(800),
-            backgroundSize: getWidth(800),
+            backgroundImage: "url(../assets/banner/rate-up/luka.webp)",
+            width: getWidth(1000),
+            height: getWidth(1000),
+            backgroundSize: getWidth(1000),
             position: "absolute",
-            animation: "qingque-animation 1s 1",
+            animation: "luka-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-            animationDelay: "300ms",
-            animationFillMode: "both",
+            animationDelay: "250ms",
             opacity: "0",
+            animationFillMode: "both",
           }}
         />
       </div>
@@ -143,12 +143,12 @@ export default function GEOTM() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/rate-up/sampo.webp)",
-            width: getWidth(800),
-            height: getWidth(800),
-            backgroundSize: getWidth(800),
+            backgroundImage: "url(../assets/banner/rate-up/sushang.webp)",
+            width: getWidth(1100),
+            height: getWidth(1100),
+            backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "sampo-animation 1s 1",
+            animation: "sushang-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "350ms",
             animationFillMode: "both",
@@ -158,7 +158,7 @@ export default function GEOTM() {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.4.0/${i18n.resolvedLanguage}/char-left.webp`}
+        src={`../assets/banner/1.4.1/${i18n.resolvedLanguage}/char-left.webp`}
         width={getWidth(331)}
         alt="left"
         draggable="false"
@@ -171,7 +171,7 @@ export default function GEOTM() {
         }}
       />
       <LazyLoadImage
-        src="../assets/banner/1.4.0/main-char.webp"
+        src="../assets/banner/1.4.1/main-char.webp"
         width={getWidth(1200)}
         alt="char"
         draggable="false"
@@ -184,7 +184,7 @@ export default function GEOTM() {
           animationFillMode: "both",
         }}
       />
-      <RateModal show={show} setShow={setShow} vers="1.4.0" type="char" />
+      <RateModal show={show} setShow={setShow} vers="1.4.1" type="char" />
       <Button
         style={{
           position: "absolute",
@@ -208,7 +208,7 @@ export default function GEOTM() {
         roundSize={getWidth(40)}
       />
       <NameTag
-        name="Jingliu"
+        name="Topaz and Numby"
         bottom={true}
         style={{ transform: "translate(-75%, 50%)" }}
         anim={false}

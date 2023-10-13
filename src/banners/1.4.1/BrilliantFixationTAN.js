@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import "../../css/Banners.css";
-import "../../css/vers/1.4.0.css";
+import "../../css/vers/1.4.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../../components/context/ResizeContext";
 import { useTranslation } from "react-i18next";
 import Button from "../../components/Button";
 import RateModal from "../../components/modals/RateModal";
 
-export default function BrilliantFixationJ() {
+export default function BrilliantFixationTAN() {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { i18n } = useTranslation();
 
@@ -41,7 +41,7 @@ export default function BrilliantFixationJ() {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/1.4.0/weap-banner-back.webp"
+          src="../assets/banner/1.4.1/weap-banner-back.webp"
           width={getWidth(1000)}
           alt="right"
           draggable="false"
@@ -93,7 +93,7 @@ export default function BrilliantFixationJ() {
       />
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.4.0/${i18n.resolvedLanguage}/weap-left.webp`}
+        src={`../assets/banner/1.4.1/${i18n.resolvedLanguage}/weap-left.webp`}
         width={getWidth(1101.5)}
         alt="left"
         draggable="false"
@@ -122,7 +122,7 @@ export default function BrilliantFixationJ() {
         }}
         draggable="false"
       />
-      <RateModal show={show} setShow={setShow} vers="1.4.0" type="weap" />
+      <RateModal show={show} setShow={setShow} vers="1.4.1" type="weap" />
       <Button
         style={{
           position: "absolute",
