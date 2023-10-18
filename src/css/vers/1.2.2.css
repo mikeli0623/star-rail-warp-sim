@@ -1,0 +1,46 @@
+@keyframes sampo-animation {
+  0% {
+    transform: translate(-52%, -22%);
+  }
+  100% {
+    transform: translate(-46%, -22%);
+    opacity: 1;
+  }
+}
+
+@keyframes luka-animation {
+  0% {
+    transform: translate(-47%, -21%);
+  }
+  100% {
+    transform: translate(-41%, -21%);
+    opacity: 1;
+  }
+}
+
+@keyframes kafka-animation {
+  0% {
+    transform: translate(-46%, -50%);
+  }
+  100% {
+    transform: translate(-38.8%, -50%);
+  }
+}
+
+@keyframes kafka-back-animation {
+  0% {
+    transform: translate(-28.5%, -22.2%);
+  }
+  100% {
+    transform: translate(-21.3%, -22.2%);
+  }
+}
+
+@keyframes kafka-weap-back-animation {
+  0% {
+    transform: translate(7%, -9%);
+  }
+  100% {
+    transform: translate(0%, -8%);
+  }
+}

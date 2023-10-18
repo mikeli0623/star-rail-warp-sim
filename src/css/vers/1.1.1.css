@@ -1,47 +1,56 @@
-/* @keyframes pela-animation {
+@keyframes dan-heng-animation {
   0% {
-    transform: translate(-43%, -35%);
+    transform: translate(-58.5%, -35%);
   }
   100% {
-    transform: translate(-37%, -35%);
-    opacity: 1;
-  }
-} */
-
-@keyframes qingque-animation {
-  0% {
-    transform: translate(-50%, -27%);
-  }
-  100% {
-    transform: translate(-44%, -27%);
+    transform: translate(-52.5%, -35%);
     opacity: 1;
   }
 }
 
-@keyframes yukong-animation {
+@keyframes asta-animation {
   0% {
-    transform: translate(-48%, -26%);
+    transform: translate(-49.5%, -29%);
   }
   100% {
-    transform: translate(-42%, -26%);
+    transform: translate(-43.5%, -29%);
     opacity: 1;
   }
 }
 
-@keyframes luocha-animation {
+@keyframes serval-animation {
   0% {
-    transform: translate(-46%, -50%);
+    transform: translate(-55.5%, -36%);
   }
   100% {
-    transform: translate(-38.8%, -50%);
+    transform: translate(-49.5%, -36%);
+    opacity: 1;
   }
 }
 
-@keyframes luocha-back-animation {
+@keyframes silver-wolf-animation {
   0% {
-    transform: translate(-28.5%, -22.2%);
+    transform: translate(-36%, -52%);
   }
   100% {
-    transform: translate(-21.3%, -22.2%);
+    transform: translate(-28%, -52%);
+  }
+}
+
+@keyframes silver-wolf-back-animation {
+  0% {
+    transform: translate(-12%, -15.15%);
+  }
+  100% {
+    transform: translate(-4%, -15.15%);
+  }
+}
+
+@keyframes silver-wolf-weap-back-animation {
+  0% {
+    transform: translate(-4%, -7%);
+  }
+  100% {
+    transform: translate(-7%, -6%);
   }
 }

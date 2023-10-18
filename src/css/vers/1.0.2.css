@@ -1,0 +1,56 @@
+@keyframes sushang-animation {
+  0% {
+    transform: translate(-54.5%, -31%);
+  }
+  100% {
+    transform: translate(-48.5%, -31%);
+    opacity: 1;
+  }
+}
+
+@keyframes march-animation {
+  0% {
+    transform: translate(-52.5%, -26%);
+  }
+  100% {
+    transform: translate(-46.5%, -26%);
+    opacity: 1;
+  }
+}
+
+@keyframes tingyun-animation {
+  0% {
+    transform: translate(-56%, -21%);
+  }
+  100% {
+    transform: translate(-50%, -21%);
+    opacity: 1;
+  }
+}
+
+@keyframes jing-yuan-animation {
+  0% {
+    transform: translate(-46%, -50%);
+  }
+  100% {
+    transform: translate(-38.8%, -50%);
+  }
+}
+
+@keyframes jing-yuan-back-animation {
+  0% {
+    transform: translate(-32.08%, -27.4%);
+  }
+  100% {
+    transform: translate(-24.88%, -27.4%);
+  }
+}
+
+@keyframes jing-yuan-weap-back-animation {
+  0% {
+    transform: translate(25%, -13%);
+  }
+  100% {
+    transform: translate(20%, -12%);
+  }
+}

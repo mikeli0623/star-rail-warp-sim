@@ -290,7 +290,7 @@ export default function BannerStat({
             ? t("modal.vers.event1")
             : type === "weap"
             ? t("modal.vers.event2")
-            : json.getTitle("1.0.0", type, i18n.resolvedLanguage)}
+            : json.getTitle("1.0.1", type, i18n.resolvedLanguage)}
         </h1>
         <ResourceTotal
           type={`sr${["char", "weap"].includes(type) ? "s" : ""}-pass`}

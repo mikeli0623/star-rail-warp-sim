@@ -1,27 +1,36 @@
-@keyframes lynx-animation {
+@keyframes arlan-animation {
   0% {
-    transform: translate(-63.2%, -28%);
+    transform: translate(-71.2%, -31%);
   }
   100% {
-    transform: translate(-56%, -28%);
+    transform: translate(-64%, -31%);
     opacity: 1;
   }
 }
 
-@keyframes fu-xuan-weap-back-animation {
+@keyframes blade-animation {
   0% {
-    transform: translate(20%, -5%);
+    transform: translate(-42%, -38%);
   }
   100% {
-    transform: translate(15%, -4%);
+    transform: translate(-34%, -38%);
   }
 }
 
-@keyframes fu-xuan-animation {
+@keyframes blade-back-animation {
   0% {
-    transform: translate(-41%, -50%);
+    transform: translate(-28%, -11.4%);
   }
   100% {
-    transform: translate(-33%, -50%);
+    transform: translate(-20.7%, -11.4%);
+  }
+}
+
+@keyframes imbibitor-weap-back-animation {
+  0% {
+    transform: translate(23%, -7%);
+  }
+  100% {
+    transform: translate(18%, -6%);
   }
 }

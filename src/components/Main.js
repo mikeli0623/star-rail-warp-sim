@@ -9,26 +9,30 @@ import Settings from "./Settings";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "./context/ResizeContext";
 import DepartureWarp from "../banners/DepartureWarp";
-import ButterflyOnSwordtip from "../banners/1.0.0/ButterflyOnSwordtip";
-import BrilliantFixationS from "../banners/1.0.0/BrilliantFixationS";
-import BrilliantFixationJY from "../banners/1.0.1/BrilliantFixationJY";
-import SwirlOfHeavenlySpear from "../banners/1.0.1/SwirlOfHeavenlySpear";
-import BrilliantFixationSW from "../banners/1.1.0/BrilliantFixationSW";
-import ContractZero from "../banners/1.1.0/ContractZero";
-import BrilliantFixationL from "../banners/1.1.1/BrilliantFixationL";
-import LaicPursuit from "../banners/1.1.1/LaicPursuit";
-import BrilliantFixationB from "../banners/1.2.0/BrilliantFixationB";
-import ALostSoul from "../banners/1.2.0/ALostSoul";
-import BrilliantFixationK from "../banners/1.2.1/BrilliantFixationK";
-import NessunDorma from "../banners/1.2.1/NessunDorma";
-import EpochalSpectrum from "../banners/1.3.0/EpochalSpectrum";
-import BrilliantFixationI from "../banners/1.3.0/BrilliantFixationI";
-import FFF from "../banners/1.3.1/FFF";
-import BrilliantFixationFX from "../banners/1.3.1/BrilliantFixationFX";
-import GEOTM from "../banners/1.4.0/GEOTM";
-import BrilliantFixationJ from "../banners/1.4.0/BrilliantFixationJ";
-import SunsetClause from "../banners/1.4.1/SunsetClause";
-import BrilliantFixationTAN from "../banners/1.4.1/BrilliantFixationTAN";
+import ButterflyOnSwordtip from "../banners/1.0.1/ButterflyOnSwordtip";
+import BrilliantFixationS from "../banners/1.0.1/BrilliantFixationS";
+import BrilliantFixationJY from "../banners/1.0.2/BrilliantFixationJY";
+import SwirlOfHeavenlySpear from "../banners/1.0.2/SwirlOfHeavenlySpear";
+import BrilliantFixationSW from "../banners/1.1.1/BrilliantFixationSW";
+import ContractZero from "../banners/1.1.1/ContractZero";
+import BrilliantFixationL from "../banners/1.1.2/BrilliantFixationL";
+import LaicPursuit from "../banners/1.1.2/LaicPursuit";
+import BrilliantFixationB from "../banners/1.2.1/BrilliantFixationB";
+import ALostSoul from "../banners/1.2.1/ALostSoul";
+import BrilliantFixationK from "../banners/1.2.2/BrilliantFixationK";
+import NessunDorma from "../banners/1.2.2/NessunDorma";
+import EpochalSpectrum from "../banners/1.3.1/EpochalSpectrum";
+import BrilliantFixationI from "../banners/1.3.1/BrilliantFixationI";
+import FFF from "../banners/1.3.2/FFF";
+import BrilliantFixationFX from "../banners/1.3.2/BrilliantFixationFX";
+import GEOTM from "../banners/1.4.1/GEOTM";
+import BrilliantFixationJ from "../banners/1.4.1/BrilliantFixationJ";
+import SunsetClause from "../banners/1.4.2/SunsetClause";
+import BrilliantFixationTAN from "../banners/1.4.2/BrilliantFixationTAN";
+import Banner151 from "../banners/1.5.1/151";
+import BrilliantFixation151 from "../banners/1.5.1/BrilliantFixation151";
+import Banner152 from "../banners/1.5.2/152";
+import BrilliantFixation152 from "../banners/1.5.2/BrilliantFixation152";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
@@ -104,45 +108,53 @@ export default function Main({
 
   const allBanners = useMemo(() => {
     return {
-      "1.0.0": {
+      "1.0.1": {
         char: <ButterflyOnSwordtip />,
         weap: <BrilliantFixationS />,
       },
-      "1.0.1": {
+      "1.0.2": {
         char: <SwirlOfHeavenlySpear />,
         weap: <BrilliantFixationJY />,
       },
-      "1.1.0": {
+      "1.1.1": {
         char: <ContractZero />,
         weap: <BrilliantFixationSW />,
       },
-      "1.1.1": {
+      "1.1.2": {
         char: <LaicPursuit />,
         weap: <BrilliantFixationL />,
       },
-      "1.2.0": {
+      "1.2.1": {
         char: <ALostSoul />,
         weap: <BrilliantFixationB />,
       },
-      "1.2.1": {
+      "1.2.2": {
         char: <NessunDorma />,
         weap: <BrilliantFixationK />,
       },
-      "1.3.0": {
+      "1.3.1": {
         char: <EpochalSpectrum />,
         weap: <BrilliantFixationI />,
       },
-      "1.3.1": {
+      "1.3.2": {
         char: <FFF />,
         weap: <BrilliantFixationFX />,
       },
-      "1.4.0": {
+      "1.4.1": {
         char: <GEOTM />,
         weap: <BrilliantFixationJ />,
       },
-      "1.4.1": {
+      "1.4.2": {
         char: <SunsetClause />,
         weap: <BrilliantFixationTAN />,
+      },
+      "1.5.1": {
+        char: <Banner151 />,
+        weap: <BrilliantFixation151 />,
+      },
+      "1.5.2": {
+        char: <Banner152 />,
+        weap: <BrilliantFixation152 />,
       },
     };
   }, []);
@@ -155,44 +167,52 @@ export default function Main({
   };
 
   const bannerBackColor = {
-    "1.0.0": {
+    "1.0.1": {
       char: "#0a162e",
       weap: "#0a162e",
     },
-    "1.0.1": {
+    "1.0.2": {
       char: "#1f2930",
       weap: "black",
     },
-    "1.1.0": {
+    "1.1.1": {
       char: "#232a3c",
       weap: "black",
     },
-    "1.1.1": {
-      char: "black",
-      weap: "black",
-    },
-    "1.2.0": {
+    "1.1.2": {
       char: "black",
       weap: "black",
     },
     "1.2.1": {
+      char: "black",
+      weap: "black",
+    },
+    "1.2.2": {
       char: "#241330",
       weap: "#241330",
     },
-    "1.3.0": {
+    "1.3.1": {
       char: "#0f1222",
       weap: "black",
     },
-    "1.3.1": {
+    "1.3.2": {
       char: "#17072b",
       weap: "black",
     },
-    "1.4.0": {
+    "1.4.1": {
       char: "#1c253f",
       weap: "black",
     },
-    "1.4.1": {
+    "1.4.2": {
       char: "black",
+      weap: "black",
+    },
+    "1.5.1": {
+      char: "#24283b",
+      weap: "black",
+    },
+    "1.5.2": {
+      char: "#43444a",
       weap: "black",
     },
   };
