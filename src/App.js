@@ -15,6 +15,7 @@ import { usePageVisibility } from "react-page-visibility";
 import DetailsMain from "./components/details/DetailsMain";
 import StatsMain from "./components/stats/StatsMain";
 import useBGM from "./components/hooks/useBGM";
+import StartModal from "./components/modals/StartModal";
 
 function App() {
   const [content, setContent] = useState("main");
@@ -211,11 +212,15 @@ function App() {
     standard: JSON.parse(localStorage.getItem("standHistory")) || [],
   });
 
+  const [showStart, setShowStart] = useState(true);
+
   return (
     <ResizeProvider value={resizeValue}>
       <SoundProvider value={soundValue}>
         {soundComponent}
         <div className="App">
+          <StartModal show={showStart} setShow={setShowStart} />
+
           <AnimatePresence>
             {content === "main" && (
               <Main
@@ -233,6 +238,7 @@ function App() {
                 setDBType={setDBType}
                 history={history}
                 setHistory={setHistory}
+                showStart={showStart}
                 bgm={[track, handleTrack]}
               />
             )}

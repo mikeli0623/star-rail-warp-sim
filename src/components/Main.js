@@ -39,7 +39,6 @@ import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
-import StartModal from "./modals/StartModal";
 
 export default function Main({
   bannerType,
@@ -54,6 +53,7 @@ export default function Main({
   setContent,
   setCurrentWarp,
   setDBType,
+  showStart,
   history,
   setHistory,
   bgm,
@@ -289,8 +289,6 @@ export default function Main({
     }
   };
 
-  const [showStart, setShowStart] = useState(true);
-
   return (
     <motion.section
       key="main"
@@ -305,7 +303,6 @@ export default function Main({
         }`,
       }}
     >
-      <StartModal show={showStart} setShow={setShowStart} />
       <Settings
         vers={vers}
         showDB={showDB}
