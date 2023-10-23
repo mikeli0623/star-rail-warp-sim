@@ -1,0 +1,47 @@
+/* @keyframes pela-animation {
+  0% {
+    transform: translate(-43%, -35%);
+  }
+  100% {
+    transform: translate(-37%, -35%);
+    opacity: 1;
+  }
+} */
+
+@keyframes qingque-animation {
+  0% {
+    transform: translate(-50%, -27%);
+  }
+  100% {
+    transform: translate(-44%, -27%);
+    opacity: 1;
+  }
+}
+
+@keyframes yukong-animation {
+  0% {
+    transform: translate(-48%, -26%);
+  }
+  100% {
+    transform: translate(-42%, -26%);
+    opacity: 1;
+  }
+}
+
+@keyframes luocha-animation {
+  0% {
+    transform: translate(-46%, -50%);
+  }
+  100% {
+    transform: translate(-38.8%, -50%);
+  }
+}
+
+@keyframes luocha-back-animation {
+  0% {
+    transform: translate(-28.5%, -22.2%);
+  }
+  100% {
+    transform: translate(-21.3%, -22.2%);
+  }
+}

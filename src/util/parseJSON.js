@@ -75,6 +75,19 @@ class ParseJSON {
     }
     return [];
   }
+  getRerun(vers) {
+    for (const key of this.bannerJSON) {
+      if (key.vers.includes(vers) && key.type.includes("rerun"))
+        return key["rerun-of"];
+    }
+    return null;
+  }
+  checkRerun(vers) {
+    for (const key of this.bannerJSON) {
+      if (key.vers.includes(vers) && key.type.includes("rerun")) return true;
+    }
+    return false;
+  }
 }
 
 export default ParseJSON;

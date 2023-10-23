@@ -1,17 +1,18 @@
 [
   {
     "vers": [
-      "1.0.0",
       "1.0.1",
-      "1.1.0",
+      "1.0.2",
       "1.1.1",
-      "1.2.0",
+      "1.1.2",
       "1.2.1",
-      "1.3.0",
+      "1.2.2",
       "1.3.1",
-      "1.4.0",
+      "1.3.2",
       "1.4.1",
-      "1.4.2"
+      "1.4.2",
+      "1.5.1",
+      "1.5.2"
     ],
     "type": "beginner",
     "title": {
@@ -77,10 +78,10 @@
     ]
   },
   {
-    "vers": ["1.0.0"],
+    "vers": ["1.0.1"],
     "type": "char",
     "title": {
-      "en": "Butterfly of Swordtip",
+      "en": "Butterfly on Swordtip",
       "zh": "蝶立锋锷",
       "ja": "切先の蝶",
       "ko": "칼끝의 나비",
@@ -141,7 +142,7 @@
     ]
   },
   {
-    "vers": ["1.0.0"],
+    "vers": ["1.0.1"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -210,17 +211,19 @@
   },
   {
     "vers": [
-      "1.0.0",
       "1.0.1",
-      "1.1.0",
+      "1.0.2",
       "1.1.1",
-      "1.2.0",
+      "1.1.2",
       "1.2.1",
-      "1.3.0",
+      "1.2.2",
       "1.3.1",
-      "1.4.0",
+      "1.3.2",
       "1.4.1",
-      "1.4.2"
+      "1.4.2",
+      "1.4.2",
+      "1.5.1",
+      "1.5.2"
     ],
     "type": "standard",
     "title": {
@@ -295,7 +298,7 @@
     ]
   },
   {
-    "vers": ["1.0.1"],
+    "vers": ["1.0.2"],
     "type": "char",
     "title": {
       "en": "Swirl Of Heavenly Spear",
@@ -359,7 +362,7 @@
     ]
   },
   {
-    "vers": ["1.0.1"],
+    "vers": ["1.0.2"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -427,7 +430,7 @@
     ]
   },
   {
-    "vers": ["1.1.0"],
+    "vers": ["1.1.1"],
     "type": "char",
     "title": {
       "en": "Contract Zero",
@@ -491,7 +494,7 @@
     ]
   },
   {
-    "vers": ["1.1.0"],
+    "vers": ["1.1.1"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -559,7 +562,7 @@
     ]
   },
   {
-    "vers": ["1.1.1"],
+    "vers": ["1.1.2"],
     "type": "char",
     "title": {
       "en": "Laic Pursuit",
@@ -624,7 +627,7 @@
     ]
   },
   {
-    "vers": ["1.1.1"],
+    "vers": ["1.1.2"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -692,7 +695,7 @@
     ]
   },
   {
-    "vers": ["1.2.0"],
+    "vers": ["1.2.1"],
     "type": "char",
     "title": {
       "en": "A Lost Soul",
@@ -757,7 +760,7 @@
     ]
   },
   {
-    "vers": ["1.2.0"],
+    "vers": ["1.2.1"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -821,7 +824,7 @@
     ]
   },
   {
-    "vers": ["1.2.1"],
+    "vers": ["1.2.2"],
     "type": "char",
     "title": {
       "en": "Nessun Dorma",
@@ -887,7 +890,7 @@
     ]
   },
   {
-    "vers": ["1.2.1"],
+    "vers": ["1.2.2"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -955,7 +958,7 @@
     ]
   },
   {
-    "vers": ["1.3.0"],
+    "vers": ["1.3.1"],
     "type": "char",
     "title": {
       "en": "Epochal Spectrum",
@@ -1021,7 +1024,7 @@
     ]
   },
   {
-    "vers": ["1.3.0"],
+    "vers": ["1.3.1"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -1089,7 +1092,7 @@
     ]
   },
   {
-    "vers": ["1.3.1"],
+    "vers": ["1.3.2"],
     "type": "char",
     "title": {
       "en": "Foreseen, Foreknown, Foretold",
@@ -1156,7 +1159,7 @@
     ]
   },
   {
-    "vers": ["1.3.1"],
+    "vers": ["1.3.2"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -1224,7 +1227,7 @@
     ]
   },
   {
-    "vers": ["1.4.0"],
+    "vers": ["1.4.1"],
     "type": "char",
     "title": {
       "en": "Gentle Eclipse of the Moon",
@@ -1291,7 +1294,7 @@
     ]
   },
   {
-    "vers": ["1.4.0"],
+    "vers": ["1.4.1"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -1359,7 +1362,7 @@
     ]
   },
   {
-    "vers": ["1.4.1"],
+    "vers": ["1.4.2"],
     "type": "char",
     "title": {
       "en": "Sunset Clause",
@@ -1427,7 +1430,7 @@
     ]
   },
   {
-    "vers": ["1.4.1"],
+    "vers": ["1.4.2"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -1494,7 +1497,216 @@
     ]
   },
   {
-    "vers": ["1.4.1"],
+    "vers": ["1.4.2"],
+    "type": "rerun-char",
+    "rerun-of": "1.0.1",
+    "title": {
+      "en": "Butterfly on Swordtip",
+      "zh": "蝶立锋锷",
+      "ja": "切先の蝶",
+      "ko": "칼끝의 나비",
+      "es": "Mariposa en el filo",
+      "fr": "Papillon sur la pointe de la lame",
+      "ru": "Бабочка на острие",
+      "th": "ผีเสื้อบนปลายดาบ",
+      "vi": "Bướm Trên Mũi Kiếm",
+      "de": "Schmetterling auf der Schwertspitze",
+      "id": "Kupu-Kupu di Ujung Pedang",
+      "pt": "Borboleta na Ponta da Espada"
+    },
+    "rateUpFive": ["seele"],
+    "rateUpFour": ["guinaifen", "luka", "sushang"],
+    "poolFiveChar": [
+      "himeko",
+      "gepard",
+      "yanqing",
+      "welt",
+      "bailu",
+      "clara",
+      "bronya"
+    ],
+    "poolFourChar": [
+      "lynx",
+      "qingque",
+      "sampo",
+      "tingyun",
+      "hook",
+      "pela",
+      "yukong",
+      "asta",
+      "march-7th",
+      "serval",
+      "arlan",
+      "natasha",
+      "dan-heng",
+      "herta"
+    ],
+    "poolFourWeap": [
+      "a-secret-vow",
+      "dance-dance-dance",
+      "day-one-of-my-new-life",
+      "eyes-of-the-prey",
+      "geniuses-repose",
+      "good-night-and-sleep-well",
+      "landaus-choice",
+      "make-the-world-clamor",
+      "memories-of-the-past",
+      "only-silence-remains",
+      "perfect-timing",
+      "planetary-rendezvous",
+      "post-op-conversation",
+      "resolution-shines-as-pearls-of-sweat",
+      "shared-feeling",
+      "subscribe-for-more",
+      "swordplay",
+      "the-birth-of-the-self",
+      "the-moles-welcome-you",
+      "trend-of-the-universal-market",
+      "under-the-blue-sky"
+    ]
+  },
+  {
+    "vers": ["1.4.2"],
+    "type": "rerun-weap",
+    "rerun-of": "1.0.1",
+    "title": {
+      "en": "Bygone Reminiscence",
+      "zh": "Bygone Reminiscence",
+      "ko": "Bygone Reminiscence",
+      "ja": "Bygone Reminiscence",
+      "es": "Bygone Reminiscence",
+      "fr": "Bygone Reminiscence",
+      "ru": "Bygone Reminiscence",
+      "th": "Bygone Reminiscence",
+      "vi": "Bygone Reminiscence",
+      "de": "Bygone Reminiscence",
+      "id": "Bygone Reminiscence",
+      "pt": "Bygone Reminiscence"
+    },
+    "rateUpFive": ["in-the-night"],
+    "rateUpFour": [
+      "the-moles-welcome-you",
+      "resolution-shines-as-pearls-of-sweat",
+      "only-silence-remains"
+    ],
+    "poolFiveWeap": [
+      "something-irreplaceable",
+      "sleep-like-the-dead",
+      "time-waits-for-no-one",
+      "night-on-the-milky-way",
+      "but-the-battle-isnt-over",
+      "in-the-name-of-the-world",
+      "moment-of-victory"
+    ],
+    "poolFourChar": [
+      "march-7th",
+      "dan-heng",
+      "arlan",
+      "asta",
+      "herta",
+      "natasha",
+      "serval",
+      "pela",
+      "sampo",
+      "hook",
+      "tingyun",
+      "sushang",
+      "qingque"
+    ],
+    "poolFourWeap": [
+      "memories-of-the-past",
+      "make-the-world-clamor",
+      "eyes-of-the-prey",
+      "perfect-timing",
+      "under-the-blue-sky",
+      "trend-of-the-universal-market",
+      "dance-dance-dance",
+      "planetary-rendezvous",
+      "landaus-choice",
+      "the-birth-of-the-self",
+      "post-op-conversation",
+      "shared-feeling",
+      "a-secret-vow",
+      "geniuses-repose",
+      "subscribe-for-more",
+      "swordplay",
+      "day-one-of-my-new-life",
+      "good-night-and-sleep-well"
+    ]
+  },
+  {
+    "vers": ["1.5.1"],
+    "type": "char",
+    "title": {
+      "en": "",
+      "zh": "",
+      "ko": "",
+      "ja": "",
+      "es": "",
+      "fr": "",
+      "ru": "",
+      "th": "",
+      "vi": "",
+      "de": "",
+      "id": "",
+      "pt": ""
+    },
+    "rateUpFive": ["huohuo"],
+    "rateUpFour": [],
+    "poolFiveChar": [
+      "himeko",
+      "gepard",
+      "yanqing",
+      "welt",
+      "bailu",
+      "clara",
+      "bronya"
+    ],
+    "poolFourChar": [
+      "guinaifen",
+      "luka",
+      "sushang",
+      "lynx",
+      "qingque",
+      "sampo",
+      "tingyun",
+      "hook",
+      "pela",
+      "yukong",
+      "asta",
+      "march-7th",
+      "serval",
+      "arlan",
+      "natasha",
+      "dan-heng",
+      "herta"
+    ],
+    "poolFourWeap": [
+      "perfect-timing",
+      "post-op-conversation",
+      "shared-feeling",
+      "a-secret-vow",
+      "the-moles-welcome-you",
+      "under-the-blue-sky",
+      "geniuses-repose",
+      "make-the-world-clamor",
+      "the-birth-of-the-self",
+      "dance-dance-dance",
+      "memories-of-the-past",
+      "planetary-rendezvous",
+      "only-silence-remains",
+      "subscribe-for-more",
+      "swordplay",
+      "eyes-of-the-prey",
+      "good-night-and-sleep-well",
+      "resolution-shines-as-pearls-of-sweat",
+      "day-one-of-my-new-life",
+      "landaus-choice",
+      "trend-of-the-universal-market"
+    ]
+  },
+  {
+    "vers": ["1.5.1"],
     "type": "weap",
     "title": {
       "en": "Brilliant Fixation",
@@ -1510,7 +1722,145 @@
       "id": "Fiksasi Brilian",
       "pt": "Fixação Brilhante"
     },
-    "rateUpFive": ["worrisome-blissful"],
+    "rateUpFive": ["night-of-fright"],
+    "rateUpFour": [],
+    "poolFiveWeap": [
+      "something-irreplaceable",
+      "sleep-like-the-dead",
+      "time-waits-for-no-one",
+      "night-on-the-milky-way",
+      "but-the-battle-isnt-over",
+      "in-the-name-of-the-world",
+      "moment-of-victory"
+    ],
+    "poolFourChar": [
+      "march-7th",
+      "dan-heng",
+      "arlan",
+      "asta",
+      "herta",
+      "natasha",
+      "serval",
+      "pela",
+      "sampo",
+      "hook",
+      "tingyun",
+      "sushang",
+      "qingque"
+    ],
+    "poolFourWeap": [
+      "memories-of-the-past",
+      "make-the-world-clamor",
+      "eyes-of-the-prey",
+      "perfect-timing",
+      "under-the-blue-sky",
+      "trend-of-the-universal-market",
+      "dance-dance-dance",
+      "planetary-rendezvous",
+      "landaus-choice",
+      "resolution-shines-as-pearls-of-sweat",
+      "the-birth-of-the-self",
+      "post-op-conversation",
+      "shared-feeling",
+      "a-secret-vow",
+      "geniuses-repose",
+      "the-moles-welcome-you",
+      "subscribe-for-more",
+      "swordplay",
+      "only-silence-remains",
+      "day-one-of-my-new-life",
+      "good-night-and-sleep-well"
+    ]
+  },
+  {
+    "vers": ["1.5.2"],
+    "type": "char",
+    "title": {
+      "en": "",
+      "zh": "",
+      "ko": "",
+      "ja": "",
+      "es": "",
+      "fr": "",
+      "ru": "",
+      "th": "",
+      "vi": "",
+      "de": "",
+      "id": "",
+      "pt": ""
+    },
+    "rateUpFive": ["argenti"],
+    "rateUpFour": [],
+    "poolFiveChar": [
+      "himeko",
+      "gepard",
+      "yanqing",
+      "welt",
+      "bailu",
+      "clara",
+      "bronya"
+    ],
+    "poolFourChar": [
+      "guinaifen",
+      "luka",
+      "sushang",
+      "lynx",
+      "qingque",
+      "sampo",
+      "tingyun",
+      "hook",
+      "pela",
+      "yukong",
+      "asta",
+      "march-7th",
+      "serval",
+      "arlan",
+      "natasha",
+      "dan-heng",
+      "herta"
+    ],
+    "poolFourWeap": [
+      "perfect-timing",
+      "post-op-conversation",
+      "shared-feeling",
+      "a-secret-vow",
+      "the-moles-welcome-you",
+      "under-the-blue-sky",
+      "geniuses-repose",
+      "make-the-world-clamor",
+      "the-birth-of-the-self",
+      "dance-dance-dance",
+      "memories-of-the-past",
+      "planetary-rendezvous",
+      "only-silence-remains",
+      "subscribe-for-more",
+      "swordplay",
+      "eyes-of-the-prey",
+      "good-night-and-sleep-well",
+      "resolution-shines-as-pearls-of-sweat",
+      "day-one-of-my-new-life",
+      "landaus-choice",
+      "trend-of-the-universal-market"
+    ]
+  },
+  {
+    "vers": ["1.5.2"],
+    "type": "weap",
+    "title": {
+      "en": "Brilliant Fixation",
+      "zh": "流光定影",
+      "ko": "세월의 응고",
+      "ja": "光陰を定めし影",
+      "es": "Fijación brillante",
+      "fr": "Fixation brillante",
+      "ru": "Искрящаяся фиксация",
+      "th": "เปลวแสงที่พร่างพราว",
+      "vi": "Định Hình Năm Tháng",
+      "de": "Strahlende Verankerung",
+      "id": "Fiksasi Brilian",
+      "pt": "Fixação Brilhante"
+    },
+    "rateUpFive": ["an-instance-forever-cherished"],
     "rateUpFour": [],
     "poolFiveWeap": [
       "something-irreplaceable",

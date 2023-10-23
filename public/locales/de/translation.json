@@ -54,7 +54,8 @@
     "current": "Aktuelles Lied",
     "records": "Aufzeichnungen",
     "default": "Standard",
-    "stats": "Statistiken"
+    "stats": "Statistiken",
+    "sound": "Klang"
   },
   "banner": {
     "beg": {

@@ -1,46 +1,38 @@
-@keyframes sampo-animation {
+@keyframes arlan-animation {
   0% {
-    transform: translate(-52%, -22%);
+    transform: translate(-71.2%, -31%);
   }
   100% {
-    transform: translate(-46%, -22%);
+    transform: translate(-64%, -31%);
     opacity: 1;
   }
 }
 
-@keyframes luka-animation {
+@keyframes blade-animation {
   0% {
-    transform: translate(-47%, -21%);
+    transform: translate(-42%, -38%);
   }
   100% {
-    transform: translate(-41%, -21%);
-    opacity: 1;
+    transform: translate(-34%, -38%);
   }
 }
 
-@keyframes kafka-animation {
+@keyframes blade-back-animation {
   0% {
-    transform: translate(-46%, -50%);
+    transform: translate(-28%, -11.4%);
   }
   100% {
-    transform: translate(-38.8%, -50%);
+    transform: translate(-20.7%, -11.4%);
   }
 }
 
-@keyframes kafka-back-animation {
+@keyframes blade-weap-back-animation {
   0% {
-    transform: translate(-28.5%, -22.2%);
+    transform: translate(-25%, -1.2%);
+    scale: 1.07;
   }
   100% {
-    transform: translate(-21.3%, -22.2%);
-  }
-}
-
-@keyframes kafka-weap-back-animation {
-  0% {
-    transform: translate(7%, -9%);
-  }
-  100% {
-    transform: translate(0%, -8%);
+    transform: translate(-25%, -1.2%);
+    scale: 1;
   }
 }

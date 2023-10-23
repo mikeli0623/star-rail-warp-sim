@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import SoundContext from "./context/SoundContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { LATESTVERS } from "../util/Constants";
+import { LATESTVERS, json } from "../util/Constants";
 import ResizeContext from "./context/ResizeContext";
 
 const MiniBanner = ({ path, active, handleSelect }) => {
@@ -54,7 +54,14 @@ const MiniBanner = ({ path, active, handleSelect }) => {
   );
 };
 
-const bannerTypes = ["beginner", "char", "weap", "standard"];
+const bannerTypes = [
+  "beginner",
+  "char",
+  "weap",
+  "rerun-char",
+  "rerun-weap",
+  "standard",
+];
 export default function MiniBanners({
   bannerType,
   setBannerType,
@@ -71,6 +78,7 @@ export default function MiniBanners({
 
   const handleBannerSelect = (type) => {
     if (!lockout) {
+      if (sound) playMini();
       setLockout(true);
       setBannerType(type);
       sessionStorage.setItem("bannerType", type);
@@ -80,22 +88,35 @@ export default function MiniBanners({
 
   return (
     <div className="mini-banners">
-      {(hasBeginner
-        ? bannerTypes
-        : bannerTypes.filter((type) => type !== "beginner")
-      ).map((type) => {
-        return (
-          <MiniBanner
-            key={type}
-            handleSelect={() => {
-              if (sound) playMini();
-              handleBannerSelect(type);
-            }}
-            active={(type === bannerType).toString()}
-            path={["char", "weap"].includes(type) ? vers + "/" + type : type}
-          />
-        );
-      })}
+      {bannerTypes
+        .filter((type) => {
+          if (!hasBeginner) return type !== "beginner";
+          return type;
+        })
+        .filter((type) => {
+          if (!json.checkRerun(vers)) return !type.includes("rerun");
+          return type;
+        })
+        .map((type) => {
+          return (
+            <MiniBanner
+              key={type}
+              handleSelect={() => {
+                handleBannerSelect(type);
+              }}
+              active={(type === bannerType).toString()}
+              path={
+                ["char", "weap"].includes(type)
+                  ? vers + "/" + type
+                  : type.includes("rerun")
+                  ? json.getRerun(vers) +
+                    "/" +
+                    (type.includes("char") ? "char" : "weap")
+                  : type
+              }
+            />
+          );
+        })}
     </div>
   );
 }

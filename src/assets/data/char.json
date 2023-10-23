@@ -12,6 +12,24 @@
     "rarity": 4
   },
   {
+    "name": "Huohuo",
+    "path": "Abundance",
+    "element": "Wind",
+    "rarity": 5
+  },
+  {
+    "name": "Hanya",
+    "path": "Harmony",
+    "element": "Physical",
+    "rarity": 4
+  },
+  {
+    "name": "Argenti",
+    "path": "Erudition",
+    "element": "Physical",
+    "rarity": 5
+  },
+  {
     "name": "Fu Xuan",
     "path": "Preservation",
     "element": "Quantum",

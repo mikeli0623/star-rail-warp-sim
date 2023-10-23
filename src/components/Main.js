@@ -9,30 +9,37 @@ import Settings from "./Settings";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "./context/ResizeContext";
 import DepartureWarp from "../banners/DepartureWarp";
-import ButterflyOnSwordtip from "../banners/1.0.0/ButterflyOnSwordtip";
-import BrilliantFixationS from "../banners/1.0.0/BrilliantFixationS";
-import BrilliantFixationJY from "../banners/1.0.1/BrilliantFixationJY";
-import SwirlOfHeavenlySpear from "../banners/1.0.1/SwirlOfHeavenlySpear";
-import BrilliantFixationSW from "../banners/1.1.0/BrilliantFixationSW";
-import ContractZero from "../banners/1.1.0/ContractZero";
-import BrilliantFixationL from "../banners/1.1.1/BrilliantFixationL";
-import LaicPursuit from "../banners/1.1.1/LaicPursuit";
-import BrilliantFixationB from "../banners/1.2.0/BrilliantFixationB";
-import ALostSoul from "../banners/1.2.0/ALostSoul";
-import BrilliantFixationK from "../banners/1.2.1/BrilliantFixationK";
-import NessunDorma from "../banners/1.2.1/NessunDorma";
-import EpochalSpectrum from "../banners/1.3.0/EpochalSpectrum";
-import BrilliantFixationI from "../banners/1.3.0/BrilliantFixationI";
-import FFF from "../banners/1.3.1/FFF";
-import BrilliantFixationFX from "../banners/1.3.1/BrilliantFixationFX";
-import GEOTM from "../banners/1.4.0/GEOTM";
-import BrilliantFixationJ from "../banners/1.4.0/BrilliantFixationJ";
-import SunsetClause from "../banners/1.4.1/SunsetClause";
-import BrilliantFixationTAN from "../banners/1.4.1/BrilliantFixationTAN";
+import ButterflyOnSwordtip from "../banners/1.0.1/ButterflyOnSwordtip";
+import BrilliantFixationS from "../banners/1.0.1/BrilliantFixationS";
+import BrilliantFixationJY from "../banners/1.0.2/BrilliantFixationJY";
+import SwirlOfHeavenlySpear from "../banners/1.0.2/SwirlOfHeavenlySpear";
+import BrilliantFixationSW from "../banners/1.1.1/BrilliantFixationSW";
+import ContractZero from "../banners/1.1.1/ContractZero";
+import BrilliantFixationL from "../banners/1.1.2/BrilliantFixationL";
+import LaicPursuit from "../banners/1.1.2/LaicPursuit";
+import BrilliantFixationB from "../banners/1.2.1/BrilliantFixationB";
+import ALostSoul from "../banners/1.2.1/ALostSoul";
+import BrilliantFixationK from "../banners/1.2.2/BrilliantFixationK";
+import NessunDorma from "../banners/1.2.2/NessunDorma";
+import EpochalSpectrum from "../banners/1.3.1/EpochalSpectrum";
+import BrilliantFixationI from "../banners/1.3.1/BrilliantFixationI";
+import FFF from "../banners/1.3.2/FFF";
+import BrilliantFixationFX from "../banners/1.3.2/BrilliantFixationFX";
+import GEOTM from "../banners/1.4.1/GEOTM";
+import BrilliantFixationJ from "../banners/1.4.1/BrilliantFixationJ";
+import SunsetClause from "../banners/1.4.2/SunsetClause";
+import BrilliantFixationTAN from "../banners/1.4.2/BrilliantFixationTAN";
+import RerunChar142 from "../banners/1.4.2/RerunChar142";
+import RerunWeap142 from "../banners/1.4.2/RerunWeap142";
+import Banner151 from "../banners/1.5.1/151";
+import BrilliantFixation151 from "../banners/1.5.1/BrilliantFixation151";
+import Banner152 from "../banners/1.5.2/152";
+import BrilliantFixation152 from "../banners/1.5.2/BrilliantFixation152";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
+import StartModal from "./modals/StartModal";
 
 export default function Main({
   bannerType,
@@ -104,45 +111,55 @@ export default function Main({
 
   const allBanners = useMemo(() => {
     return {
-      "1.0.0": {
+      "1.0.1": {
         char: <ButterflyOnSwordtip />,
         weap: <BrilliantFixationS />,
       },
-      "1.0.1": {
+      "1.0.2": {
         char: <SwirlOfHeavenlySpear />,
         weap: <BrilliantFixationJY />,
       },
-      "1.1.0": {
+      "1.1.1": {
         char: <ContractZero />,
         weap: <BrilliantFixationSW />,
       },
-      "1.1.1": {
+      "1.1.2": {
         char: <LaicPursuit />,
         weap: <BrilliantFixationL />,
       },
-      "1.2.0": {
+      "1.2.1": {
         char: <ALostSoul />,
         weap: <BrilliantFixationB />,
       },
-      "1.2.1": {
+      "1.2.2": {
         char: <NessunDorma />,
         weap: <BrilliantFixationK />,
       },
-      "1.3.0": {
+      "1.3.1": {
         char: <EpochalSpectrum />,
         weap: <BrilliantFixationI />,
       },
-      "1.3.1": {
+      "1.3.2": {
         char: <FFF />,
         weap: <BrilliantFixationFX />,
       },
-      "1.4.0": {
+      "1.4.1": {
         char: <GEOTM />,
         weap: <BrilliantFixationJ />,
       },
-      "1.4.1": {
+      "1.4.2": {
         char: <SunsetClause />,
         weap: <BrilliantFixationTAN />,
+        "rerun-char": <RerunChar142 />,
+        "rerun-weap": <RerunWeap142 />,
+      },
+      "1.5.1": {
+        char: <Banner151 />,
+        weap: <BrilliantFixation151 />,
+      },
+      "1.5.2": {
+        char: <Banner152 />,
+        weap: <BrilliantFixation152 />,
       },
     };
   }, []);
@@ -151,48 +168,60 @@ export default function Main({
     beginner: <DepartureWarp total={totalBeginner} />,
     char: allBanners[vers]["char"],
     weap: allBanners[vers]["weap"],
+    "rerun-char": allBanners[vers]["rerun-char"],
+    "rerun-weap": allBanners[vers]["rerun-weap"],
     standard: <StellarWarp />,
   };
 
   const bannerBackColor = {
-    "1.0.0": {
+    "1.0.1": {
       char: "#0a162e",
       weap: "#0a162e",
     },
-    "1.0.1": {
+    "1.0.2": {
       char: "#1f2930",
       weap: "black",
     },
-    "1.1.0": {
+    "1.1.1": {
       char: "#232a3c",
       weap: "black",
     },
-    "1.1.1": {
-      char: "black",
-      weap: "black",
-    },
-    "1.2.0": {
+    "1.1.2": {
       char: "black",
       weap: "black",
     },
     "1.2.1": {
+      char: "black",
+      weap: "black",
+    },
+    "1.2.2": {
       char: "#241330",
       weap: "#241330",
     },
-    "1.3.0": {
+    "1.3.1": {
       char: "#0f1222",
       weap: "black",
     },
-    "1.3.1": {
+    "1.3.2": {
       char: "#17072b",
       weap: "black",
     },
-    "1.4.0": {
+    "1.4.1": {
       char: "#1c253f",
       weap: "black",
     },
-    "1.4.1": {
+    "1.4.2": {
       char: "black",
+      weap: "black",
+      "rerun-char": "#0a162e",
+      "rerun-weap": "#0a162e",
+    },
+    "1.5.1": {
+      char: "#24283b",
+      weap: "black",
+    },
+    "1.5.2": {
+      char: "#43444a",
       weap: "black",
     },
   };
@@ -246,6 +275,10 @@ export default function Main({
   const getBack = () => {
     if (bannerType === "beginner") return "beginner/beginner";
     if (bannerType === "standard") return "standard/standard";
+    if (bannerType.includes("rerun"))
+      return `${json.getRerun(vers)}/${
+        bannerType.includes("char") ? "char" : "weap"
+      }`;
     return `${vers}/${bannerType}`;
   };
 
@@ -255,6 +288,8 @@ export default function Main({
       sessionStorage.setItem("bannerType", banner);
     }
   };
+
+  const [showStart, setShowStart] = useState(true);
 
   return (
     <motion.section
@@ -270,6 +305,7 @@ export default function Main({
         }`,
       }}
     >
+      <StartModal show={showStart} setShow={setShowStart} />
       <Settings
         vers={vers}
         showDB={showDB}
@@ -277,6 +313,7 @@ export default function Main({
         setVers={setVers}
         setDBType={setDBType}
         setContent={setContent}
+        showStart={showStart}
         bgm={bgm}
       />
       <div
@@ -363,14 +400,11 @@ export default function Main({
         />
       </div>
       <div
+        id="banner-container"
+        rerun={json.checkRerun(vers).toString()}
         style={{
-          position: "relative",
           width: getWidth(1200),
           height: getHeight(700, 1200),
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%,-55%)",
-          zIndex: 0,
         }}
       >
         <AnimatePresence>

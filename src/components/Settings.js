@@ -19,6 +19,7 @@ const Settings = ({
   setVers,
   setDBType,
   setContent,
+  showStart,
   bgm,
 }) => {
   const { getWidth } = useContext(ResizeContext);
@@ -74,7 +75,7 @@ const Settings = ({
 
   useEffect(() => {
     function handleKeyDown({ keyCode }) {
-      if (keyCode === 27 && !showSettings && !showDB) {
+      if (keyCode === 27 && !showSettings && !showDB && !showStart) {
         if (sound) playMenuSelect();
         setShowSettings(true);
       }
@@ -85,7 +86,7 @@ const Settings = ({
     return function cleanup() {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [showSettings, showDB, sound, playMenuSelect]);
+  }, [showSettings, showDB, sound, playMenuSelect, showStart]);
 
   return (
     <React.Fragment>

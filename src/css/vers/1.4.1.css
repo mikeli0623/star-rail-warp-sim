@@ -1,9 +1,8 @@
-@keyframes guinaifen-animation {
+@keyframes jingliu-weap-back-animation {
   0% {
-    transform: translate(-51%, -27%);
+    transform: translate(-3%, -13%);
   }
   100% {
-    transform: translate(-45%, -27%);
-    opacity: 1;
+    transform: translate(0%, -12%);
   }
 }

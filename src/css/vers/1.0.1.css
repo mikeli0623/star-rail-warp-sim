@@ -1,56 +1,62 @@
-@keyframes sushang-animation {
+@keyframes natasha-animation {
   0% {
-    transform: translate(-54.5%, -31%);
+    transform: translate(-54%, -16%);
   }
   100% {
-    transform: translate(-48.5%, -31%);
+    transform: translate(-48%, -16%);
     opacity: 1;
   }
 }
 
-@keyframes march-animation {
+@keyframes hook-animation {
   0% {
-    transform: translate(-52.5%, -26%);
+    transform: translate(-53%, -41%);
   }
   100% {
-    transform: translate(-46.5%, -26%);
+    transform: translate(-47%, -41%);
     opacity: 1;
   }
 }
 
-@keyframes tingyun-animation {
+@keyframes pela-animation {
   0% {
-    transform: translate(-56%, -21%);
+    transform: translate(-43%, -35%);
   }
   100% {
-    transform: translate(-50%, -21%);
+    transform: translate(-37%, -35%);
     opacity: 1;
   }
 }
 
-@keyframes jing-yuan-animation {
+@keyframes seele-animation {
   0% {
-    transform: translate(-46%, -50%);
+    transform: translate(-48%, -60%);
   }
   100% {
-    transform: translate(-38.8%, -50%);
+    transform: translate(-40.8%, -60%);
   }
 }
 
-@keyframes jing-yuan-back-animation {
+@keyframes seele-back-animation {
   0% {
-    transform: translate(-32.08%, -27.4%);
+    transform: translateX(-11%);
   }
   100% {
-    transform: translate(-24.88%, -27.4%);
+    transform: translateX(-3.8%);
   }
 }
 
-@keyframes jing-yuan-weap-back-animation {
-  0% {
-    transform: translate(25%, -13%);
+@keyframes banner-ring-spin {
+  to {
+    transform: translate(-24%, -50%) rotate(-360deg);
   }
-  100% {
-    transform: translate(20%, -12%);
+}
+
+@keyframes seele-weap-back-animation {
+  from {
+    transform: scale(1.1) translate(-37%, -47%);
+  }
+  to {
+    transform: scale(1) translate(-32%, -52%);
   }
 }
