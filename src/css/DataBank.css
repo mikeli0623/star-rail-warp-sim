@@ -449,7 +449,7 @@
 
   .db-content {
     bottom: 0%;
-    height: 78vh;
+    height: 72vh;
   }
 
   .item-count {
@@ -505,9 +505,6 @@
   .item-filter-container {
     overflow-y: scroll;
   }
-}
-
-@media screen and (height < 500px) and (orientation: landscape) {
 }
 
 @media screen and (height < 278px) and (orientation: landscape) {

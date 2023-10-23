@@ -26,6 +26,14 @@ html * {
   transform-origin: top left;
 }
 
+#banner-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  z-index: 0;
+}
+
 .banner {
   top: 50%;
   left: 50%;
@@ -1070,6 +1078,10 @@ html * {
 }
 
 @media screen and (max-width: 600px) {
+  #banner-container[rerun="true"] {
+    transform: translate(-50%, -25%);
+  }
+
   .reveal-path {
     width: 50%;
   }

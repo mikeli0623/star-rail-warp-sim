@@ -66,9 +66,9 @@ const allChars = [
 ];
 
 const allWeapons = [
-  // "worrisome-blissful",
   // "an-instance-forever-cherished",
   // "night-of-fright",
+  // "worrisome-blissful",
   "i-shall-be-my-own-sword",
   "a-secret-vow",
   "carve-the-moon-weave-the-clouds",
@@ -152,6 +152,8 @@ const BGM = {
 };
 
 const allVers = [
+  // "1.5.2",
+  // "1.5.1",
   // "1.4.2",
   "1.4.1",
   "1.3.2",

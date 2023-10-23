@@ -1,16 +1,15 @@
 import React, { useContext, useState } from "react";
 import "../../css/Banners.css";
-import "../../css/vers/1.4.2.css";
+import "../../css/vers/1.0.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../../components/context/ResizeContext";
-import { useTranslation } from "react-i18next";
 import NameTag from "../../components/NameTag";
 import Button from "../../components/Button";
 import RateModal from "../../components/modals/RateModal";
 
-export default function SunsetClause() {
+const RerunChar142 = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
-  const { i18n } = useTranslation();
+
   const [show, setShow] = useState(false);
   return (
     <React.Fragment>
@@ -28,24 +27,12 @@ export default function SunsetClause() {
       />
       <div
         style={{
-          width: getWidth(100),
-          height: getHeight(50, 1100),
-          background:
-            "linear-gradient(180deg, black 75%, rgba(255, 255, 255, 0) 100%)",
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-310%, -678%)",
-        }}
-      />
-      <div
-        style={{
           width: getWidth(764),
           height: getHeight(677.33, 1100),
-          overflow: "hidden",
           background:
-            "linear-gradient(to bottom, rgba(40, 33, 36, 1) 70%, rgba(255, 255, 255, 0) 100%)",
+            "linear-gradient(to bottom, rgba(16, 20, 56, 1) 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
+          overflow: "hidden",
           boxShadow: "0 0 10px rgba(8, 8, 8, 0.521)",
           top: "50%",
           left: "50%",
@@ -61,6 +48,20 @@ export default function SunsetClause() {
             position: "absolute",
             zIndex: "1",
             right: "0",
+          }}
+        />
+        <LazyLoadImage
+          effect="opacity"
+          src="../assets/banner/1.0.1/char-banner-back.webp"
+          height="100%"
+          alt="right"
+          draggable="false"
+          style={{
+            position: "relative",
+            transform: "translateX(-3.8%)",
+            animation: "seele-back-animation 3s 200ms 1",
+            animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
+            animationFillMode: "both",
           }}
         />
       </div>
@@ -146,7 +147,7 @@ export default function SunsetClause() {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src={`../assets/banner/1.4.2/${i18n.resolvedLanguage}/char-left.webp`}
+        src="../assets/banner/1.0.1/char-left.webp"
         width={getWidth(331)}
         alt="left"
         draggable="false"
@@ -159,26 +160,27 @@ export default function SunsetClause() {
         }}
       />
       <LazyLoadImage
-        src="../assets/banner/1.4.2/main-char.webp"
-        width={getWidth(1200)}
+        effect="opacity"
+        src="../assets/banner/1.0.1/seele.webp"
+        width={getWidth(1145)}
         alt="char"
         draggable="false"
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "fu-xuan-animation 3s 200ms 1",
+          animation: "seele-animation 3s 200ms 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}
       />
-      <RateModal show={show} setShow={setShow} vers="1.4.2" type="char" />
+      <RateModal show={show} setShow={setShow} vers="1.0.1" type="char" />
       <Button
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translate(-420%, 60%)",
+          transform: "translate(-420%, 110%)",
         }}
         onClick={() => setShow(true)}
         rounded
@@ -196,11 +198,13 @@ export default function SunsetClause() {
         roundSize={getWidth(40)}
       />
       <NameTag
-        name="Topaz and Numby"
+        name="Seele"
         bottom={true}
-        style={{ transform: "translate(-75%, 50%)" }}
+        style={{ transform: "translate(-75%, 70%)" }}
         anim={false}
       />
     </React.Fragment>
   );
-}
+};
+
+export default RerunChar142;

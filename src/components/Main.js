@@ -29,6 +29,8 @@ import GEOTM from "../banners/1.4.1/GEOTM";
 import BrilliantFixationJ from "../banners/1.4.1/BrilliantFixationJ";
 import SunsetClause from "../banners/1.4.2/SunsetClause";
 import BrilliantFixationTAN from "../banners/1.4.2/BrilliantFixationTAN";
+import RerunChar142 from "../banners/1.4.2/RerunChar142";
+import RerunWeap142 from "../banners/1.4.2/RerunWeap142";
 import Banner151 from "../banners/1.5.1/151";
 import BrilliantFixation151 from "../banners/1.5.1/BrilliantFixation151";
 import Banner152 from "../banners/1.5.2/152";
@@ -37,6 +39,7 @@ import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
+import StartModal from "./modals/StartModal";
 
 export default function Main({
   bannerType,
@@ -147,6 +150,8 @@ export default function Main({
       "1.4.2": {
         char: <SunsetClause />,
         weap: <BrilliantFixationTAN />,
+        "rerun-char": <RerunChar142 />,
+        "rerun-weap": <RerunWeap142 />,
       },
       "1.5.1": {
         char: <Banner151 />,
@@ -163,6 +168,8 @@ export default function Main({
     beginner: <DepartureWarp total={totalBeginner} />,
     char: allBanners[vers]["char"],
     weap: allBanners[vers]["weap"],
+    "rerun-char": allBanners[vers]["rerun-char"],
+    "rerun-weap": allBanners[vers]["rerun-weap"],
     standard: <StellarWarp />,
   };
 
@@ -206,6 +213,8 @@ export default function Main({
     "1.4.2": {
       char: "black",
       weap: "black",
+      "rerun-char": "#0a162e",
+      "rerun-weap": "#0a162e",
     },
     "1.5.1": {
       char: "#24283b",
@@ -266,6 +275,10 @@ export default function Main({
   const getBack = () => {
     if (bannerType === "beginner") return "beginner/beginner";
     if (bannerType === "standard") return "standard/standard";
+    if (bannerType.includes("rerun"))
+      return `${json.getRerun(vers)}/${
+        bannerType.includes("char") ? "char" : "weap"
+      }`;
     return `${vers}/${bannerType}`;
   };
 
@@ -275,6 +288,8 @@ export default function Main({
       sessionStorage.setItem("bannerType", banner);
     }
   };
+
+  const [showStart, setShowStart] = useState(true);
 
   return (
     <motion.section
@@ -290,6 +305,7 @@ export default function Main({
         }`,
       }}
     >
+      <StartModal show={showStart} setShow={setShowStart} />
       <Settings
         vers={vers}
         showDB={showDB}
@@ -297,6 +313,7 @@ export default function Main({
         setVers={setVers}
         setDBType={setDBType}
         setContent={setContent}
+        showStart={showStart}
         bgm={bgm}
       />
       <div
@@ -383,14 +400,11 @@ export default function Main({
         />
       </div>
       <div
+        id="banner-container"
+        rerun={json.checkRerun(vers).toString()}
         style={{
-          position: "relative",
           width: getWidth(1200),
           height: getHeight(700, 1200),
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%,-55%)",
-          zIndex: 0,
         }}
       >
         <AnimatePresence>

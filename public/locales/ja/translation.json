@@ -54,7 +54,8 @@
     "current": "現在のBGM",
     "records": "跳躍履歴",
     "default": "デフォルト",
-    "stats": "統計"
+    "stats": "統計",
+    "sound": "音"
   },
   "banner": {
     "beg": {
