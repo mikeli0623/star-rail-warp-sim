@@ -71,7 +71,7 @@ export default function ItemCard({
         className="item-top"
         style={{ margin: getWidth(5), width: getWidth(40, 20) }}
       >
-        {type === "char" && (
+        {type.includes("char") && (
           <LazyLoadImage
             effect="opacity"
             width={getWidth(35, 22)}
@@ -92,7 +92,7 @@ export default function ItemCard({
         />
       </div>
       {showCount && <div className="item-count">{count}</div>}
-      {type === "char" && (
+      {type.includes("char") && (
         <LazyLoadImage
           effect="opacity"
           className="char-img"
@@ -101,7 +101,7 @@ export default function ItemCard({
           draggable="false"
         />
       )}
-      {type === "weap" && (
+      {type.includes("weap") && (
         <React.Fragment>
           <LazyLoadImage
             effect="opacity"

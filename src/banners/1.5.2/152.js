@@ -63,6 +63,18 @@ export default function Banner152() {
             right: "0",
           }}
         />
+        <LazyLoadImage
+          src="../assets/banner/1.5.2/char-banner-back.webp"
+          width={getWidth(1200)}
+          alt="right"
+          draggable="false"
+          style={{
+            position: "relative",
+            animation: "argenti-back-animation 3s 200ms 1",
+            animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
+            animationFillMode: "both",
+          }}
+        />
       </div>
       <div
         className="rate-up-char-icons"

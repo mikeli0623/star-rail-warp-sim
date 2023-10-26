@@ -58,8 +58,8 @@ const allChars = [
   "fu-xuan",
   "lynx",
   "jingliu",
-  // "topaz-and-numby",
-  // "guinaifen",
+  "topaz-and-numby",
+  "guinaifen",
   // "argenti",
   // "huohuo",
   // "hanya",
@@ -68,7 +68,7 @@ const allChars = [
 const allWeapons = [
   // "an-instance-forever-cherished",
   // "night-of-fright",
-  // "worrisome-blissful",
+  "worrisome-blissful",
   "i-shall-be-my-own-sword",
   "a-secret-vow",
   "carve-the-moon-weave-the-clouds",
@@ -146,15 +146,15 @@ const allWeapons = [
 ];
 
 const BGM = {
-  ooc: ["timeline", "science-fiction", "space-walk"],
+  ooc: ["space-walk", "science-fiction", "timeline"],
   osae: ["faded-sun", "embers", "streets-abuzz"],
-  ss: ["cumulus-formations", "exquisite-ingenuity", "lustrous-moonlight"],
+  ss: ["lustrous-moonlight", "cumulus-formations", "exquisite-ingenuity"],
 };
 
 const allVers = [
   // "1.5.2",
   // "1.5.1",
-  // "1.4.2",
+  "1.4.2",
   "1.4.1",
   "1.3.2",
   "1.3.1",

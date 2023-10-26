@@ -9,14 +9,12 @@ import ItemCard from "./ItemCard";
 import FilterButton from "./FilterButton";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import Checkbox from "../Checkbox";
 
 export default function DataBank({ type, setContent, setShowDB }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { sound, useSound } = useContext(SoundContext);
 
-  const [playLoad] = useSound("../assets/audio/sfx/db-load.mp3");
   const [playSelectItem] = useSound("../assets/audio/sfx/item-select.mp3");
   const [playSelectFilter] = useSound("../assets/audio/sfx/tab-select.mp3");
   const [playExit] = useSound("../assets/audio/sfx/db-exit.mp3");
@@ -27,10 +25,6 @@ export default function DataBank({ type, setContent, setShowDB }) {
     setShowDB(true);
   };
 
-  useEffect(() => {
-    if (sound) playLoad();
-  }, [sound, playLoad]);
-
   const handleItemSelect = () => {
     if (sound) playSelectItem();
   };
@@ -38,7 +32,7 @@ export default function DataBank({ type, setContent, setShowDB }) {
   const stash = Object.entries(
     JSON.parse(localStorage.getItem("stash"))
   ).filter(([name]) => {
-    if (type === "char") return allChars.includes(name);
+    if (type.includes("char")) return allChars.includes(name);
     else return allWeapons.includes(name);
   });
 
@@ -106,7 +100,6 @@ export default function DataBank({ type, setContent, setShowDB }) {
 
   useEffect(() => {
     function handleKeyDown({ keyCode }) {
-      // if (keyCode === 27) setShowDB(false);
       if (keyCode === 27) {
         if (sound) playExit();
         setContent("main");
@@ -130,70 +123,67 @@ export default function DataBank({ type, setContent, setShowDB }) {
       className="db-back"
       style={{ backgroundImage: "url(assets/db/db-back.webp)" }}
     >
-      <LazyLoadImage
-        alt={`${type} icon`}
-        className="db-faded-type-icon"
-        src={`/assets/db-${type}-icon.webp`}
-        draggable="false"
-        width={getWidth(186, 90)}
-      />
-      <div
-        id="info"
-        style={{
-          width: getWidth(680, 200),
-          height: getHeight(50, 680, 20, 200),
-        }}
-      >
+      <div id="top-bar">
         <div
-          id="warp-icon"
+          id="info"
           style={{
-            backgroundImage: "url(/assets/icon-db.webp)",
-            width: getWidth(44, 22),
-            height: getWidth(44, 22),
-            backgroundSize: getWidth(44, 22),
-          }}
-        />
-        <div
-          style={{
-            height: getHeight(50, 600),
-            width: getWidth(600),
-            display: "flex",
-            flexDirection: "column",
-            margin: 0,
-            padding: 0,
+            width: getWidth(680, 200),
+            height: getHeight(50, 680, 20, 200),
           }}
         >
           <div
-            id="title"
+            id="warp-icon"
             style={{
-              fontSize: getWidth(22, 9),
-              height: getWidth(24, 11),
-              textAlign: "left",
-              marginTop: `-6px`,
+              backgroundImage: "url(/assets/icon-db.webp)",
+              width: getWidth(44, 22),
+              height: getWidth(44, 22),
+              backgroundSize: getWidth(44, 22),
             }}
-          >
-            {t("db.title")}
-          </div>
+          />
           <div
-            id="warp-type"
             style={{
-              textAlign: "left",
-              fontSize: getWidth(24, 11),
-              height: getWidth(24, 11),
+              height: getHeight(50, 600),
+              width: getWidth(600),
+              display: "flex",
+              flexDirection: "column",
+              margin: 0,
+              padding: 0,
             }}
           >
-            {type === "char" ? t("db.type2") : t("db.type1")}
+            <div
+              id="title"
+              style={{
+                fontSize: getWidth(22, 9),
+                height: getWidth(24, 11),
+                textAlign: "left",
+                marginTop: `-6px`,
+              }}
+            >
+              {t("db.title")}
+            </div>
+            <div
+              id="warp-type"
+              style={{
+                textAlign: "left",
+                fontSize: getWidth(24, 11),
+                height: getWidth(24, 11),
+              }}
+            >
+              {type.includes("char") ? t("db.type2") : t("db.type1")}
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="indexed-info"
-        style={{ color: "white", fontSize: getWidth(24, 12) }}
-      >
-        {t("db.indexed")}{" "}
-        <span style={{ color: "#face75" }}>
-          {total}/{type === "char" ? allChars.length : allWeapons.length}
-        </span>
+        <div
+          className="indexed-info"
+          style={{ color: "white", fontSize: getWidth(24, 12) }}
+        >
+          {t("db.indexed")}{" "}
+          <span style={{ color: "#face75" }}>
+            {total}/
+            {type.includes("char") ? allChars.length : allWeapons.length}
+          </span>
+        </div>
+        <CloseButton onClose={handleExit} />
       </div>
       <div className="db-content">
         <div className="item-filter-container">
@@ -277,7 +267,6 @@ export default function DataBank({ type, setContent, setShowDB }) {
           )}
         </Scrollbars>
       </div>
-      <CloseButton onClose={handleExit} />
     </motion.section>
   );
 }

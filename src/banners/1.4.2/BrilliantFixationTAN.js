@@ -46,7 +46,7 @@ export default function BrilliantFixationTAN() {
           alt="right"
           draggable="false"
           style={{
-            animation: "jingliu-weap-back-animation 3s 100ms 1",
+            animation: "topaz-weap-back-animation 3s 100ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -54,42 +54,42 @@ export default function BrilliantFixationTAN() {
       </div>
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/rate-up/memories-of-the-past.webp"
-        alt="Memories of the Past"
+        src="../assets/banner/rate-up/resolution-shines-as-pearls-of-sweat.webp"
+        alt="resolution-shines-as-pearls-of-sweat"
+        draggable="false"
         width={getWidth(135)}
         style={{
-          animation: "cone-1-animation 0.4s 1",
+          animation: "cone-1-animation 0.5s 1",
           animationTimingFunction: "linear",
           animationFillMode: "both",
           animationDelay: "300ms",
         }}
-        draggable="false"
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/rate-up/eyes-of-the-prey.webp"
-        alt="Eyes of the Prey"
+        src="../assets/banner/rate-up/only-silence-remains.webp"
+        alt="only-silence-remains"
+        draggable="false"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
-          animation: "cone-2-animation 0.4s 1",
+          animation: "cone-2-animation 0.5s 1",
           animationFillMode: "both",
           animationDelay: "350ms",
         }}
-        draggable="false"
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/rate-up/make-the-world-clamor.webp"
-        alt="Make the World Clamor"
+        src="../assets/banner/rate-up/the-moles-welcome-you.webp"
+        alt="The Moles Welcome You"
+        draggable="false"
         width={getWidth(108)}
         style={{
           animationTimingFunction: "linear",
-          animation: "cone-3-animation 0.4s 1",
+          animation: "cone-3-animation 0.5s 1",
           animationFillMode: "both",
           animationDelay: "400ms",
         }}
-        draggable="false"
       />
       <LazyLoadImage
         effect="opacity-100"

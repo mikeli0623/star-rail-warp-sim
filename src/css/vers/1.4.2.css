@@ -7,3 +7,23 @@
     opacity: 1;
   }
 }
+
+@keyframes topaz-back-animation {
+  0% {
+    transform: translate(-23.6%, -19.8%);
+  }
+  100% {
+    transform: translate(-15.6%, -19.8%);
+  }
+}
+
+@keyframes topaz-weap-back-animation {
+  0% {
+    transform: translate(-3%, -13%);
+    scale: 1.07;
+  }
+  100% {
+    transform: translate(0%, -12%);
+    scale: 1;
+  }
+}

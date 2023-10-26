@@ -45,9 +45,9 @@ const RecordsTable = ({ history, type, title }) => {
             color: "#767676",
           }}
         >
-          {type === "char"
+          {type.includes("char")
             ? t("modal.vers.event1")
-            : type === "weap"
+            : type.includes("weap")
             ? t("modal.vers.event2")
             : title}
         </td>
