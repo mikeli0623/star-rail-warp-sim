@@ -236,13 +236,19 @@ export default function Main({
       }
     }
 
-    const prevTotal = parseInt(localStorage.getItem(bannerType + "Total")) || 0;
-    localStorage.setItem(bannerType + "Total", prevTotal + warps);
+    let type = bannerType.includes("rerun")
+      ? bannerType.includes("char")
+        ? "char"
+        : "weap"
+      : bannerType;
+
+    const prevTotal = parseInt(localStorage.getItem(type + "Total")) || 0;
+    localStorage.setItem(type + "Total", prevTotal + warps);
 
     setHasFive(false);
     setHasFour(false);
     let warpResults = [];
-    let banner = bannerState[bannerType];
+    let banner = bannerState[type];
     for (let i = 0; i < warps; i++)
       warpResults.push(
         CalcWarp(vers, bannerType, banner, setHasFive, setHasFour)
@@ -253,20 +259,20 @@ export default function Main({
       return item;
     });
 
-    localStore("PityFive", bannerState[bannerType].pityFive);
-    localStore("PityFour", bannerState[bannerType].pityFour);
-    localStore("GuaranteeFive", bannerState[bannerType].guaranteeFive);
-    localStore("GuaranteeFour", bannerState[bannerType].guaranteeFour);
+    localStore("PityFive", bannerState[type].pityFive);
+    localStore("PityFour", bannerState[type].pityFour);
+    localStore("GuaranteeFive", bannerState[type].guaranteeFive);
+    localStore("GuaranteeFour", bannerState[type].guaranteeFour);
 
     let historyClone = structuredClone(history);
-    historyClone[bannerType] = historyClone[bannerType].concat(
+    historyClone[type] = historyClone[type].concat(
       new History(warpResults).getHistory()
     );
-    localStore("History", JSON.stringify(historyClone[bannerType]));
+    localStore("History", JSON.stringify(historyClone[type]));
     setHistory(historyClone);
 
     let bannerStateClone = bannerState;
-    bannerStateClone[bannerType] = banner;
+    bannerStateClone[type] = banner;
     setBannerState(bannerStateClone);
     setCurrentWarp(warpResults);
     setContent("video");
@@ -312,6 +318,7 @@ export default function Main({
         setContent={setContent}
         showStart={showStart}
         bgm={bgm}
+        setBannerType={setBannerType}
       />
       <div
         id="main-back-cover"

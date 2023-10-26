@@ -21,6 +21,7 @@ const Settings = ({
   setContent,
   showStart,
   bgm,
+  setBannerType,
 }) => {
   const { getWidth } = useContext(ResizeContext);
 
@@ -47,6 +48,8 @@ const Settings = ({
 
   const [playPageOpen] = useSound("../assets/audio/sfx/page-open.mp3");
 
+  const [playLoadDB] = useSound("../assets/audio/sfx/db-load.mp3");
+
   const [showReset, setShowReset] = useState(false);
 
   const [showVersion, setShowVersion] = useState(false);
@@ -60,6 +63,7 @@ const Settings = ({
   const handleDBSelect = (type) => {
     setDBType(type);
     setContent("data-bank");
+    if (sound) playLoadDB();
   };
 
   const { i18n } = useTranslation();
@@ -108,6 +112,7 @@ const Settings = ({
         setShow={setShowVersion}
         currentVers={vers}
         setVers={setVers}
+        setBannerType={setBannerType}
       />
       <DataBankOverlay
         show={showDB}

@@ -68,7 +68,13 @@ export default function StatsMain({
       style={{ backgroundImage: "url(assets/details/back.webp)" }}
     >
       <DefaultModal
-        type={bannerType}
+        type={
+          bannerType.includes("rerun")
+            ? bannerType.includes("char")
+              ? "char"
+              : "weap"
+            : bannerType
+        }
         show={showDefault}
         setShow={setShowDefault}
         setBannerState={setBannerState}
@@ -135,8 +141,22 @@ export default function StatsMain({
           //   onScroll={handleScroll}
         >
           <BannerStat
-            type={bannerType}
-            state={bannerState[bannerType]}
+            type={
+              bannerType.includes("rerun")
+                ? bannerType.includes("char")
+                  ? "char"
+                  : "weap"
+                : bannerType
+            }
+            state={
+              bannerState[
+                bannerType.includes("rerun")
+                  ? bannerType.includes("char")
+                    ? "char"
+                    : "weap"
+                  : bannerType
+              ]
+            }
             bannerState={bannerState}
             setBannerState={setBannerState}
           />

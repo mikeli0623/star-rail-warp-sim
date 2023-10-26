@@ -3,13 +3,14 @@ import "../../css/Banners.css";
 import "../../css/vers/1.0.1.css";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../../components/context/ResizeContext";
+import { useTranslation } from "react-i18next";
 import NameTag from "../../components/NameTag";
 import Button from "../../components/Button";
 import RateModal from "../../components/modals/RateModal";
 
 const RerunChar142 = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
-
+  const { i18n } = useTranslation();
   const [show, setShow] = useState(false);
   return (
     <React.Fragment>
@@ -147,7 +148,7 @@ const RerunChar142 = () => {
       </div>
       <LazyLoadImage
         effect="opacity-100"
-        src="../assets/banner/1.0.1/char-left.webp"
+        src={`../assets/banner/1.4.2/${i18n.resolvedLanguage}/rerun-char-left.webp`}
         width={getWidth(331)}
         alt="left"
         draggable="false"
@@ -174,7 +175,7 @@ const RerunChar142 = () => {
           animationFillMode: "both",
         }}
       />
-      <RateModal show={show} setShow={setShow} vers="1.0.1" type="char" />
+      <RateModal show={show} setShow={setShow} vers="1.4.2" type="rerun-char" />
       <Button
         style={{
           position: "absolute",

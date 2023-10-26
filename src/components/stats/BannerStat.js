@@ -286,9 +286,9 @@ export default function BannerStat({
         >
           {type === "beginner"
             ? t("banner.beg.title")
-            : type === "char"
+            : type.includes("char")
             ? t("modal.vers.event1")
-            : type === "weap"
+            : type.includes("weap")
             ? t("modal.vers.event2")
             : json.getTitle("1.0.1", type, i18n.resolvedLanguage)}
         </h1>

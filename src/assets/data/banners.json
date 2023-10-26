@@ -1447,7 +1447,11 @@
       "pt": "Fixação Brilhante"
     },
     "rateUpFive": ["worrisome-blissful"],
-    "rateUpFour": [],
+    "rateUpFour": [
+      "the-moles-welcome-you",
+      "resolution-shines-as-pearls-of-sweat",
+      "only-silence-remains"
+    ],
     "poolFiveWeap": [
       "something-irreplaceable",
       "sleep-like-the-dead",
@@ -1482,16 +1486,13 @@
       "dance-dance-dance",
       "planetary-rendezvous",
       "landaus-choice",
-      "resolution-shines-as-pearls-of-sweat",
       "the-birth-of-the-self",
       "post-op-conversation",
       "shared-feeling",
       "a-secret-vow",
       "geniuses-repose",
-      "the-moles-welcome-you",
       "subscribe-for-more",
       "swordplay",
-      "only-silence-remains",
       "day-one-of-my-new-life",
       "good-night-and-sleep-well"
     ]

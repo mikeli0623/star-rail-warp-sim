@@ -54,9 +54,9 @@ export default function RecordsContent({ type, history, title }) {
           alignSelf: "flex-start",
         }}
       >
-        {type === "char"
+        {type.includes("char")
           ? t("modal.vers.event1")
-          : type === "weap"
+          : type.includes("weap")
           ? t("modal.vers.event2")
           : title}
       </p>

@@ -49,7 +49,7 @@ export default function RateCard({ item, rarity, type, elem = "", path }) {
         style={{ top: -getWidth(40), left: -getWidth(20) }}
         draggable="false"
       />
-      {type === "char" && (
+      {type.includes("char") && (
         <LazyLoadImage
           effect="opacity"
           className="card-char-img"
@@ -59,7 +59,7 @@ export default function RateCard({ item, rarity, type, elem = "", path }) {
           draggable="false"
         />
       )}
-      {type === "weap" && (
+      {type.includes("weap") && (
         <React.Fragment>
           <LazyLoadImage
             effect="opacity"

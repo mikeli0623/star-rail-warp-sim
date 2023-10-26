@@ -22,7 +22,7 @@ const chanceFour = (currentPity, baseRate) => {
 
 export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
   const warpChance = Math.random();
-  const rateUpChance = type === "char" ? 0.5 : 0.75;
+  const rateUpChance = type.includes("char") ? 0.5 : 0.75;
   const rateUp = Math.random() < rateUpChance ? true : false;
   const char = Math.random() < 0.5;
   let warpItem;
@@ -47,10 +47,9 @@ export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
         warpItem = randItem(json.getRateUpFive(vers, type));
       } else {
         // drawing from normal 5 stars
-        warpItem =
-          type === "weap"
-            ? randItem(json.getPoolFiveWeap(vers, type))
-            : randItem(json.getPoolFiveChar(vers, type));
+        warpItem = type.includes("weap")
+          ? randItem(json.getPoolFiveWeap(vers, type))
+          : randItem(json.getPoolFiveChar(vers, type));
         banner.guaranteeFive = true;
       }
     } else {

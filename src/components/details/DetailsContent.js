@@ -12,14 +12,18 @@ import DetailInfo from "./DetailInfo";
 export default function DetailsContent({ vers, bannerType, title }) {
   const { t } = useTranslation();
   const { getWidth } = useContext(ResizeContext);
-  const rateFiveChar =
-    bannerType === "char" ? json.getRateUpFive(vers, bannerType) : [];
-  const rateFiveWeap =
-    bannerType === "weap" ? json.getRateUpFive(vers, bannerType) : [];
-  const rateFourChar =
-    bannerType === "char" ? json.getRateUpFour(vers, bannerType) : [];
-  const rateFourWeap =
-    bannerType === "weap" ? json.getRateUpFour(vers, bannerType) : [];
+  const rateFiveChar = bannerType.includes("char")
+    ? json.getRateUpFive(vers, bannerType)
+    : [];
+  const rateFiveWeap = bannerType.includes("weap")
+    ? json.getRateUpFive(vers, bannerType)
+    : [];
+  const rateFourChar = bannerType.includes("char")
+    ? json.getRateUpFour(vers, bannerType)
+    : [];
+  const rateFourWeap = bannerType.includes("weap")
+    ? json.getRateUpFour(vers, bannerType)
+    : [];
   const poolFiveChar = json.getPoolFiveChar(vers, bannerType);
   const poolFiveWeap = json.getPoolFiveWeap(vers, bannerType);
   const poolFourChar = json.getPoolFourChar(vers, bannerType);
@@ -45,7 +49,7 @@ export default function DetailsContent({ vers, bannerType, title }) {
             <DetailInfo
               text={t("table.drop1")}
               rarity={5}
-              chance={bannerType === "weap" ? " 75%" : " 50%"}
+              chance={bannerType.includes("weap") ? " 75%" : " 50%"}
             />
             <div className="d-flex flex-wrap">
               {rateFiveChar.map((item) => {
@@ -117,8 +121,8 @@ export default function DetailsContent({ vers, bannerType, title }) {
           text={[t("table.list1"), t("table.guarantee")]}
           rarity={5}
           chance={[
-            bannerType === "char" ? "0.600" : "0.800",
-            bannerType === "char" ? "1.600" : "1.870",
+            bannerType.includes("char") ? "0.600" : "0.800",
+            bannerType.includes("char") ? "1.600" : "1.870",
           ]}
         />
         {poolFiveChar && (
@@ -140,8 +144,8 @@ export default function DetailsContent({ vers, bannerType, title }) {
           text={[t("table.list2"), t("table.guarantee")]}
           rarity={4}
           chance={[
-            bannerType === "char" ? "5.100" : "6.600",
-            bannerType === "char" ? "13.000" : "14.800",
+            bannerType.includes("char") ? "5.100" : "6.600",
+            bannerType.includes("char") ? "13.000" : "14.800",
           ]}
         />
         <DetailsTable
@@ -158,8 +162,8 @@ export default function DetailsContent({ vers, bannerType, title }) {
           text={[t("table.list3"), t("table.guarantee")]}
           rarity={3}
           chance={[
-            bannerType === "char" ? "94.300" : "92.600",
-            bannerType === "char" ? "85.400" : "83.330",
+            bannerType.includes("char") ? "94.300" : "92.600",
+            bannerType.includes("char") ? "85.400" : "83.330",
           ]}
         />
         <DetailsTable items={baseWeapons} rateUp={[]} type={t("db.type1")} />

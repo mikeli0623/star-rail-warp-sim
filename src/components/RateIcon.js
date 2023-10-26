@@ -8,7 +8,7 @@ export default function RateIcon({ item, rarity, type, handleSelect }) {
 
   return (
     <div className="rate-icon" rarity={rarity} onClick={handleSelect}>
-      {type === "char" && (
+      {type.includes("char") && (
         <LazyLoadImage
           effect="opacity"
           className="rate-char-img"
@@ -17,7 +17,7 @@ export default function RateIcon({ item, rarity, type, handleSelect }) {
           draggable="false"
         />
       )}
-      {type === "weap" && (
+      {type.includes("weap") && (
         <React.Fragment>
           <LazyLoadImage
             effect="opacity"

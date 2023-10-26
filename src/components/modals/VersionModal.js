@@ -3,12 +3,18 @@ import Modal from "react-bootstrap/Modal";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
-import { allVers } from "../../util/Constants";
+import { allVers, json } from "../../util/Constants";
 import VersionInfo from "../VersionInfo";
 import { useTranslation } from "react-i18next";
 import { Scrollbars } from "react-custom-scrollbars-2";
 
-export default function VersionModal({ show, setShow, currentVers, setVers }) {
+export default function VersionModal({
+  show,
+  setShow,
+  currentVers,
+  setVers,
+  setBannerType,
+}) {
   const { sound, useSound } = useContext(SoundContext);
   const handleClose = () => {
     setShow(false);
@@ -104,6 +110,11 @@ export default function VersionModal({ show, setShow, currentVers, setVers }) {
           onClick={() => {
             setVers(selected);
             sessionStorage.setItem("vers", selected);
+            let bannerType = sessionStorage.getItem("bannerType");
+            if (bannerType.includes("rerun") && !json.checkRerun(selected)) {
+              if (bannerType.includes("char")) setBannerType("char");
+              else setBannerType("weap");
+            }
             handleClose();
           }}
           content={
