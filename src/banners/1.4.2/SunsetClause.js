@@ -44,7 +44,7 @@ export default function SunsetClause() {
           height: getHeight(677.33, 1100),
           overflow: "hidden",
           background:
-            "linear-gradient(to bottom, rgba(40, 33, 36, 1) 70%, rgba(255, 255, 255, 0) 100%)",
+            "linear-gradient(to bottom, #2b3040 70%, rgba(255, 255, 255, 0) 100%)",
           position: "absolute",
           boxShadow: "0 0 10px rgba(8, 8, 8, 0.521)",
           top: "50%",
@@ -61,18 +61,6 @@ export default function SunsetClause() {
             position: "absolute",
             zIndex: "1",
             right: "0",
-          }}
-        />
-        <LazyLoadImage
-          src="../assets/banner/1.4.2/char-banner-back.webp"
-          width={getWidth(1200)}
-          alt="right"
-          draggable="false"
-          style={{
-            position: "relative",
-            animation: "topaz-back-animation 3s 200ms 1",
-            animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-            animationFillMode: "both",
           }}
         />
       </div>
@@ -172,14 +160,14 @@ export default function SunsetClause() {
       />
       <LazyLoadImage
         src="../assets/banner/1.4.2/main-char.webp"
-        width={getWidth(1200)}
+        width={getWidth(1000)}
         alt="char"
         draggable="false"
         style={{
           position: "absolute",
           top: "50%",
           left: "50%",
-          animation: "fu-xuan-animation 3s 200ms 1",
+          animation: "topaz-animation 3s 200ms 1",
           animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
           animationFillMode: "both",
         }}

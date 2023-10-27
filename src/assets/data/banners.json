@@ -1572,17 +1572,17 @@
     "rerun-of": "1.0.1",
     "title": {
       "en": "Bygone Reminiscence",
-      "zh": "Bygone Reminiscence",
-      "ko": "Bygone Reminiscence",
-      "ja": "Bygone Reminiscence",
-      "es": "Bygone Reminiscence",
-      "fr": "Bygone Reminiscence",
-      "ru": "Bygone Reminiscence",
-      "th": "Bygone Reminiscence",
-      "vi": "Bygone Reminiscence",
-      "de": "Bygone Reminiscence",
-      "id": "Bygone Reminiscence",
-      "pt": "Bygone Reminiscence"
+      "zh": "溯回忆象",
+      "ja": "遡る記憶",
+      "ko": "거슬러올라가는기억",
+      "es": "Reminiscencia pasada",
+      "fr": "Résurgence du passé",
+      "ru": "Ушедшиевоспоминания",
+      "th": "ภาพจำที่ย้อนคืน",
+      "vi": "Ngược Dòng Ký Ức",
+      "de": "Reminiszenz an verflossene Zeiten",
+      "id": "Mengulang Kenangan",
+      "pt": "Reminiscência do Passado"
     },
     "rateUpFive": ["in-the-night"],
     "rateUpFour": [

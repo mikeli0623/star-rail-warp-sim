@@ -57,8 +57,8 @@ const MiniBanner = ({ path, active, handleSelect }) => {
 const bannerTypes = [
   "beginner",
   "char",
-  "weap",
   "rerun-char",
+  "weap",
   "rerun-weap",
   "standard",
 ];
