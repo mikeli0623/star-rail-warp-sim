@@ -3,16 +3,18 @@ import Modal from "react-bootstrap/Modal";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
-import { allVers, json } from "../../util/Constants";
+import { allVers, hidden, json } from "../../util/Constants";
 import VersionInfo from "../VersionInfo";
 import { useTranslation } from "react-i18next";
 import { Scrollbars } from "react-custom-scrollbars-2";
+import Checkbox from "../Checkbox";
 
 export default function VersionModal({
   show,
   setShow,
   currentVers,
   setVers,
+  bannerType,
   setBannerType,
 }) {
   const { sound, useSound } = useContext(SoundContext);
@@ -26,6 +28,10 @@ export default function VersionModal({
   const [selected, setSelected] = useState(currentVers);
 
   const { t } = useTranslation();
+
+  const [showHidden, setShowHidden] = useState(false);
+
+  const handleCheck = () => setShowHidden(!showHidden);
 
   return (
     <Modal
@@ -70,16 +76,21 @@ export default function VersionModal({
           autoHideTimeout={1000}
           autoHideDuration={200}
         >
-          {allVers.map((vers, i) => {
-            return (
-              <VersionInfo
-                key={vers + i}
-                isCurrentSelected={vers === selected}
-                vers={vers}
-                setSelected={setSelected}
-              />
-            );
-          })}
+          {allVers
+            .filter((ver) => {
+              if (showHidden) return true;
+              return !hidden.includes(ver);
+            })
+            .map((vers, i) => {
+              return (
+                <VersionInfo
+                  key={vers + i}
+                  isCurrentSelected={vers === selected}
+                  vers={vers}
+                  setSelected={setSelected}
+                />
+              );
+            })}
         </Scrollbars>
       </Modal.Body>
       <Modal.Footer
@@ -106,11 +117,15 @@ export default function VersionModal({
           size="sm"
           resize={false}
         />
+        {/* <Checkbox
+          text="Hidden"
+          handleCheck={handleCheck}
+          checked={showHidden}
+        /> */}
         <Button
           onClick={() => {
             setVers(selected);
             sessionStorage.setItem("vers", selected);
-            let bannerType = sessionStorage.getItem("bannerType");
             if (bannerType.includes("rerun") && !json.checkRerun(selected)) {
               if (bannerType.includes("char")) setBannerType("char");
               else setBannerType("weap");

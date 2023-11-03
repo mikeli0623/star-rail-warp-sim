@@ -60,14 +60,14 @@ const allChars = [
   "jingliu",
   "topaz-and-numby",
   "guinaifen",
-  // "argenti",
-  // "huohuo",
-  // "hanya",
+  "argenti",
+  "huohuo",
+  "hanya",
 ];
 
 const allWeapons = [
-  // "an-instance-forever-cherished",
-  // "night-of-fright",
+  "an-instance-forever-cherished",
+  "night-of-fright",
   "worrisome-blissful",
   "i-shall-be-my-own-sword",
   "a-secret-vow",
@@ -166,7 +166,9 @@ const allVers = [
   "1.0.1",
 ];
 
-const LATESTVERS = allVers[0];
+const hidden = [""];
+
+const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 
 const asianLang = ["zh", "ko", "ja"];
 
@@ -178,4 +180,5 @@ export {
   allVers,
   asianLang,
   LATESTVERS,
+  hidden,
 };

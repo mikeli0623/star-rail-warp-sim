@@ -21,6 +21,7 @@ const Settings = ({
   setContent,
   showStart,
   bgm,
+  bannerType,
   setBannerType,
 }) => {
   const { getWidth } = useContext(ResizeContext);
@@ -112,6 +113,7 @@ const Settings = ({
         setShow={setShowVersion}
         currentVers={vers}
         setVers={setVers}
+        bannerType={bannerType}
         setBannerType={setBannerType}
       />
       <DataBankOverlay
