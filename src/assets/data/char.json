@@ -12,6 +12,18 @@
     "rarity": 4
   },
   {
+    "name": "Dr. Ratio",
+    "path": "The Hunt",
+    "element": "Imaginary",
+    "rarity": 5
+  },
+  {
+    "name": "Ruan Mei",
+    "path": "Harmony",
+    "element": "Ice",
+    "rarity": 5
+  },
+  {
     "name": "Huohuo",
     "path": "Abundance",
     "element": "Wind",

@@ -1,0 +1,8 @@
+@keyframes huohuo-back-animation {
+  0% {
+    transform: translate(-23.6%, -19.8%);
+  }
+  100% {
+    transform: translate(-15.6%, -19.8%);
+  }
+}

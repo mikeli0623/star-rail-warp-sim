@@ -70,7 +70,7 @@ export default function Banner151() {
           draggable="false"
           style={{
             position: "relative",
-            animation: "topaz-back-animation 3s 200ms 1",
+            animation: "huohuo-back-animation 3s 200ms 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -89,12 +89,12 @@ export default function Banner151() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/rate-up/guinaifen.webp)",
-            width: getWidth(900),
-            height: getWidth(900),
-            backgroundSize: getWidth(900),
+            backgroundImage: "url(../assets/banner/rate-up/dan-heng.webp)",
+            width: getWidth(1100),
+            height: getWidth(1100),
+            backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "guinaifen-animation 1s 1",
+            animation: "dan-heng-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "250ms",
             opacity: "0",
@@ -116,12 +116,12 @@ export default function Banner151() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/rate-up/luka.webp)",
-            width: getWidth(1000),
-            height: getWidth(1000),
-            backgroundSize: getWidth(1000),
+            backgroundImage: "url(../assets/banner/rate-up/arlan.webp)",
+            width: getWidth(1100),
+            height: getWidth(1100),
+            backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "luka-animation 1s 1",
+            animation: "arlan-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "250ms",
             opacity: "0",
@@ -143,12 +143,12 @@ export default function Banner151() {
       >
         <div
           style={{
-            backgroundImage: "url(../assets/banner/rate-up/sushang.webp)",
+            backgroundImage: "url(../assets/banner/rate-up/serval.webp)",
             width: getWidth(1100),
             height: getWidth(1100),
             backgroundSize: getWidth(1100),
             position: "absolute",
-            animation: "sushang-animation 1s 1",
+            animation: "serval-animation 1s 1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "350ms",
             animationFillMode: "both",

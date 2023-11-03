@@ -35,6 +35,8 @@ import Banner151 from "../banners/1.5.1/151";
 import BrilliantFixation151 from "../banners/1.5.1/BrilliantFixation151";
 import Banner152 from "../banners/1.5.2/152";
 import BrilliantFixation152 from "../banners/1.5.2/BrilliantFixation152";
+import RerunChar152 from "../banners/1.5.2/RerunChar152";
+import RerunWeap152 from "../banners/1.5.2/RerunWeap152";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
@@ -160,6 +162,8 @@ export default function Main({
       "1.5.2": {
         char: <Banner152 />,
         weap: <BrilliantFixation152 />,
+        "rerun-char": <RerunChar152 />,
+        "rerun-weap": <RerunWeap152 />,
       },
     };
   }, []);
@@ -318,6 +322,7 @@ export default function Main({
         setContent={setContent}
         showStart={showStart}
         bgm={bgm}
+        bannerType={bannerType}
         setBannerType={setBannerType}
       />
       <div

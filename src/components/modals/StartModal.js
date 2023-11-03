@@ -30,7 +30,6 @@ export default function StartModal({ show, setShow }) {
     fetch("https://api.github.com/repos/mikeli0623/star-rail-warp-sim/commits")
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         let list = [];
         let i = 0;
         while (list.length < 5) {
@@ -39,7 +38,6 @@ export default function StartModal({ show, setShow }) {
           i++;
         }
         setCommits(list);
-        console.log(list);
       });
   }, []);
 

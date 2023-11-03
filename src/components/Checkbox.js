@@ -20,6 +20,9 @@ export default function Checkbox({
         "d-flex justify-content-between align-items-center px-2 checkbox " +
         className
       }
+      style={{
+        borderRadius: 50,
+      }}
       onClick={() => {
         handleCheck();
         if (sound) {
