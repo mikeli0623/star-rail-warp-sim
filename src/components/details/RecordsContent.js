@@ -50,7 +50,7 @@ export default function RecordsContent({ type, history, title }) {
         className="mt-2 mb-0"
         style={{
           fontWeight: "bold",
-          fontSize: getWidth(40, 22),
+          fontSize: getWidth(38, 20),
           alignSelf: "flex-start",
         }}
       >

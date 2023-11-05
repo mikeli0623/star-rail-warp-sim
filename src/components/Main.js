@@ -1,4 +1,4 @@
-import React, { useState, useContext, useMemo, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import SoundContext from "./context/SoundContext";
 import { json, allChars, allWeapons, LATESTVERS } from "../util/Constants";
 import { CalcWarp } from "../util/CalcWarp";
@@ -9,38 +9,12 @@ import Settings from "./Settings";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "./context/ResizeContext";
 import DepartureWarp from "../banners/DepartureWarp";
-import ButterflyOnSwordtip from "../banners/1.0.1/ButterflyOnSwordtip";
-import BrilliantFixationS from "../banners/1.0.1/BrilliantFixationS";
-import BrilliantFixationJY from "../banners/1.0.2/BrilliantFixationJY";
-import SwirlOfHeavenlySpear from "../banners/1.0.2/SwirlOfHeavenlySpear";
-import BrilliantFixationSW from "../banners/1.1.1/BrilliantFixationSW";
-import ContractZero from "../banners/1.1.1/ContractZero";
-import BrilliantFixationL from "../banners/1.1.2/BrilliantFixationL";
-import LaicPursuit from "../banners/1.1.2/LaicPursuit";
-import BrilliantFixationB from "../banners/1.2.1/BrilliantFixationB";
-import ALostSoul from "../banners/1.2.1/ALostSoul";
-import BrilliantFixationK from "../banners/1.2.2/BrilliantFixationK";
-import NessunDorma from "../banners/1.2.2/NessunDorma";
-import EpochalSpectrum from "../banners/1.3.1/EpochalSpectrum";
-import BrilliantFixationI from "../banners/1.3.1/BrilliantFixationI";
-import FFF from "../banners/1.3.2/FFF";
-import BrilliantFixationFX from "../banners/1.3.2/BrilliantFixationFX";
-import GEOTM from "../banners/1.4.1/GEOTM";
-import BrilliantFixationJ from "../banners/1.4.1/BrilliantFixationJ";
-import SunsetClause from "../banners/1.4.2/SunsetClause";
-import BrilliantFixationTAN from "../banners/1.4.2/BrilliantFixationTAN";
-import RerunChar142 from "../banners/1.4.2/RerunChar142";
-import RerunWeap142 from "../banners/1.4.2/RerunWeap142";
-import Banner151 from "../banners/1.5.1/151";
-import BrilliantFixation151 from "../banners/1.5.1/BrilliantFixation151";
-import Banner152 from "../banners/1.5.2/152";
-import BrilliantFixation152 from "../banners/1.5.2/BrilliantFixation152";
-import RerunChar152 from "../banners/1.5.2/RerunChar152";
-import RerunWeap152 from "../banners/1.5.2/RerunWeap152";
 import StellarWarp from "../banners/StellarWarp";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
+import CharBanner from "../banners/CharBanner";
+import WeapBanner from "../banners/WeapBanner";
 
 export default function Main({
   bannerType,
@@ -111,123 +85,78 @@ export default function Main({
     localStorage.setItem("stash", JSON.stringify(stash));
   };
 
-  const allBanners = useMemo(() => {
-    return {
-      "1.0.1": {
-        char: <ButterflyOnSwordtip />,
-        weap: <BrilliantFixationS />,
-      },
-      "1.0.2": {
-        char: <SwirlOfHeavenlySpear />,
-        weap: <BrilliantFixationJY />,
-      },
-      "1.1.1": {
-        char: <ContractZero />,
-        weap: <BrilliantFixationSW />,
-      },
-      "1.1.2": {
-        char: <LaicPursuit />,
-        weap: <BrilliantFixationL />,
-      },
-      "1.2.1": {
-        char: <ALostSoul />,
-        weap: <BrilliantFixationB />,
-      },
-      "1.2.2": {
-        char: <NessunDorma />,
-        weap: <BrilliantFixationK />,
-      },
-      "1.3.1": {
-        char: <EpochalSpectrum />,
-        weap: <BrilliantFixationI />,
-      },
-      "1.3.2": {
-        char: <FFF />,
-        weap: <BrilliantFixationFX />,
-      },
-      "1.4.1": {
-        char: <GEOTM />,
-        weap: <BrilliantFixationJ />,
-      },
-      "1.4.2": {
-        char: <SunsetClause />,
-        weap: <BrilliantFixationTAN />,
-        "rerun-char": <RerunChar142 />,
-        "rerun-weap": <RerunWeap142 />,
-      },
-      "1.5.1": {
-        char: <Banner151 />,
-        weap: <BrilliantFixation151 />,
-      },
-      "1.5.2": {
-        char: <Banner152 />,
-        weap: <BrilliantFixation152 />,
-        "rerun-char": <RerunChar152 />,
-        "rerun-weap": <RerunWeap152 />,
-      },
-    };
-  }, []);
-
-  const currentBanners = {
-    beginner: <DepartureWarp total={totalBeginner} />,
-    char: allBanners[vers]["char"],
-    weap: allBanners[vers]["weap"],
-    "rerun-char": allBanners[vers]["rerun-char"],
-    "rerun-weap": allBanners[vers]["rerun-weap"],
-    standard: <StellarWarp />,
-  };
-
   const bannerBackColor = {
     "1.0.1": {
       char: "#0a162e",
       weap: "#0a162e",
+      gradient: "40, 33, 36",
     },
     "1.0.2": {
       char: "#1f2930",
       weap: "black",
+      gradient: "40, 33, 36",
     },
     "1.1.1": {
       char: "#232a3c",
       weap: "black",
+      gradient: "40, 33, 36",
     },
     "1.1.2": {
       char: "black",
       weap: "black",
+      gradient: "40, 33, 36",
     },
     "1.2.1": {
       char: "black",
       weap: "black",
+      gradient: "27, 33, 49",
     },
     "1.2.2": {
       char: "#241330",
       weap: "#241330",
+      gradient: "40, 33, 36",
     },
     "1.3.1": {
       char: "#0f1222",
       weap: "black",
+      gradient: "40, 33, 36",
     },
     "1.3.2": {
       char: "#17072b",
       weap: "black",
+      gradient: "40, 33, 36",
     },
     "1.4.1": {
       char: "#1c253f",
       weap: "black",
+      gradient: "40, 33, 36",
     },
     "1.4.2": {
       char: "black",
       weap: "black",
       "rerun-char": "#0a162e",
       "rerun-weap": "#0a162e",
+      gradient: "43, 48, 64",
     },
     "1.5.1": {
       char: "#24283b",
       weap: "black",
+      gradient: "40, 33, 36",
     },
     "1.5.2": {
       char: "#43444a",
       weap: "black",
+      gradient: "40, 33, 36",
     },
+  };
+
+  const currentBanners = {
+    beginner: <DepartureWarp total={totalBeginner} />,
+    char: <CharBanner vers={vers} bg={bannerBackColor[vers]["gradient"]} />,
+    weap: <WeapBanner vers={vers} />,
+    "rerun-char": <CharBanner vers={vers} rerun={true} />,
+    "rerun-weap": <WeapBanner vers={vers} rerun={true} />,
+    standard: <StellarWarp />,
   };
 
   const handleWarp = (warps) => {
@@ -369,10 +298,10 @@ export default function Main({
           <div
             id="title"
             style={{
-              fontSize: getWidth(22, 9),
+              fontSize: getWidth(20, 9),
               height: getWidth(24, 11),
               textAlign: "left",
-              marginTop: `-6px`,
+              marginTop: `-3px`,
             }}
           >
             {t("main.title")}
@@ -381,7 +310,7 @@ export default function Main({
             id="warp-type"
             style={{
               textAlign: "left",
-              fontSize: getWidth(24, 11),
+              fontSize: getWidth(22, 11),
               height: getWidth(24, 11),
             }}
           >

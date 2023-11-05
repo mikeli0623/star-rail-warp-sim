@@ -98,7 +98,7 @@ export default function StatsMain({
           backgroundColor: "#f1f1f1",
           width: "70vw",
           height: "75vh",
-          fontSize: getWidth(28, 14),
+          fontSize: getWidth(26, 12),
         }}
       >
         <div

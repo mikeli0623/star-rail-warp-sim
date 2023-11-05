@@ -17,8 +17,8 @@
     "vers": {
       "title": "Pilih versi Anda",
       "vers": "Versi",
-      "event1": "Event Warp Karakter:",
-      "event2": "Event Warp Light Cone:"
+      "event1": "Event Warp Karakter",
+      "event2": "Event Warp Light Cone"
     },
     "rate": {
       "title": {
@@ -62,6 +62,14 @@
       "title": "Warp Keberangkatan",
       "remaining": "Jumlah Tersisa",
       "text": "Ada diskon 20% untuk set 10 Warp, dijamin akan memperoleh karakter <1>5★</1> dalam <1>50</1> Warp"
+    },
+    "char": {
+      "text1": "Setiap <1>10</1> Warp dijamin akan memperoleh item <1>4</1>★ ke atas",
+      "text2": "Persentase Karakter yang ditentukan UP"
+    },
+    "weap": {
+      "text1": "Setiap <1>10</1> Warp dijamin akan memperoleh item <1>4</1>★ ke atas",
+      "text2": "Persentase Light Cone yang ditentukan UP"
     }
   },
   "table": {

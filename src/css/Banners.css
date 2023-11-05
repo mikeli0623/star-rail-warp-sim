@@ -253,18 +253,18 @@
 
 @keyframes cone-1-animation {
   0% {
-    transform: scale(1.2) translate(-270%, -20%) rotate(5deg);
+    transform: translate(-330%, -10%) scale(1.3) rotate(5deg);
     opacity: 0;
   }
   100% {
-    transform: scale(1) translate(-330%, -10%) rotate(5deg);
+    transform: translate(-330%, -10%) scale(1) rotate(5deg);
     opacity: 1;
   }
 }
 
 @keyframes cone-2-animation {
   0% {
-    transform: scale(1.2) translate(-315%, 30%) rotate(20deg);
+    transform: translate(-345%, 40%) scale(1.3) rotate(20deg);
     opacity: 0;
   }
   100% {
@@ -275,7 +275,7 @@
 
 @keyframes cone-3-animation {
   0% {
-    transform: scale(1.2) translate(-370%, 15%) rotate(-10deg);
+    transform: translate(-450%, 25%) scale(1.3) rotate(-10deg);
     opacity: 0;
   }
   100% {
@@ -287,5 +287,63 @@
 @media screen and (max-width: 780px) {
   .beg-description > div {
     padding: 5px;
+  }
+}
+/* Char Banner */
+
+@keyframes char-rate-up-animation {
+  0% {
+    transform: translate(-54.5%, -31%);
+  }
+  100% {
+    transform: translate(-48.5%, -31%);
+    opacity: 1;
+  }
+}
+
+@keyframes char-animation {
+  0% {
+    transform: translate(-41%, -50%);
+  }
+  100% {
+    transform: translate(-33%, -50%);
+  }
+}
+
+@keyframes seele-back-animation {
+  0% {
+    transform: translateX(-11%);
+  }
+  100% {
+    transform: translateX(-3.8%);
+  }
+}
+
+@keyframes huohuo-back-animation {
+  0% {
+    transform: translate(-23.6%, -19.8%);
+  }
+  100% {
+    transform: translate(-15.6%, -19.8%);
+  }
+}
+
+@keyframes argenti-back-animation {
+  0% {
+    transform: translate(-23.6%, -23.3%);
+  }
+  100% {
+    transform: translate(-15.5%, -23.3%);
+  }
+}
+
+/* Weap Banner */
+
+@keyframes weap-back-animation {
+  0% {
+    transform: translate(-3%, -13%) scale(1.1);
+  }
+  100% {
+    transform: translate(0%, -12%) scale(1);
   }
 }

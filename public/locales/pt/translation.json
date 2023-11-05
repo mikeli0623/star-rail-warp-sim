@@ -62,6 +62,14 @@
       "title": "Salto Hiperespacial de Partida",
       "remaining": "Saltos Hiperespaciais restantes",
       "text": "Conjuntos de 10 Saltos Hiperespaciais com 20% de desconto e um personagem <1>5</1> estrelas é garantido em até <1>50</1> Saltos Hiperespaciais."
+    },
+    "char": {
+      "text1": "Cada <1>10</1> Saltos Hiperespaciais garantem uma entidade de <1>4</1> estrelas ou mais",
+      "text2": "Personagens promocionais receberão um aumento de taxa de obtenção"
+    },
+    "weap": {
+      "text1": "Cada <1>10</1> Saltos Hiperespaciais garantem uma entidade de <1>4</1> estrelas ou mais",
+      "text2": "Cones de Luz promocionais recebem um aumento de taxa de obtenção"
     }
   },
   "table": {

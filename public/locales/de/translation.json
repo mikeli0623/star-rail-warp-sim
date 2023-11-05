@@ -62,6 +62,14 @@
       "title": "Starwarp",
       "remaining": "Verbleibende Warps",
       "text": "20 % Rabatt bei 10 Warps und innerhalb von <1>50</1> Warps erhältst du garantiert eine <1>5</1>-Sterne-Figur."
+    },
+    "char": {
+      "text1": "Je <1>10</1> Warps erhältst du garantiert ein Objekt mit <1>4</1> oder mehr Sternen",
+      "text2": "Erhöhte Chance zum Erhalt bestimmter Figuren"
+    },
+    "weap": {
+      "text1": "Je <1>10</1> Warps erhältst du garantiert ein Objekt mit <1>4</1> oder mehr Sternen",
+      "text2": "Erhöhte Chance zum Erhalt bestimmter Lichtkegel"
     }
   },
   "table": {

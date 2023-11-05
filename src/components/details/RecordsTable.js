@@ -11,11 +11,11 @@ const RecordsTable = ({ history, type, title }) => {
 
   const displayHistory = history.map((item, index) => {
     return (
-      <tr key={item + index} style={{ fontSize: getWidth(16) }}>
+      <tr key={item + index} style={{ fontSize: getWidth(14) }}>
         <td
           className="w-20"
           style={{
-            fontSize: getWidth(24, 8),
+            fontSize: getWidth(22, 6),
             verticalAlign: "middle",
             color: "#767676",
           }}
@@ -25,7 +25,7 @@ const RecordsTable = ({ history, type, title }) => {
         <td
           style={{
             width: "30%",
-            fontSize: getWidth(24, 8),
+            fontSize: getWidth(22, 6),
             verticalAlign: "middle",
             color:
               json.getRarity(item.id) === 4
@@ -40,7 +40,7 @@ const RecordsTable = ({ history, type, title }) => {
         <td
           className="w-23"
           style={{
-            fontSize: getWidth(24, 8),
+            fontSize: getWidth(22, 6),
             verticalAlign: "middle",
             color: "#767676",
           }}
@@ -54,7 +54,7 @@ const RecordsTable = ({ history, type, title }) => {
         <td
           style={{
             width: "27%",
-            fontSize: getWidth(24, 8),
+            fontSize: getWidth(22, 6),
             verticalAlign: "middle",
             color: "#767676",
           }}
@@ -68,13 +68,13 @@ const RecordsTable = ({ history, type, title }) => {
   return (
     <section className="w-100">
       <Table bordered>
-        <thead style={{ fontSize: getWidth(16) }}>
+        <thead style={{ fontSize: getWidth(14) }}>
           <tr>
             <th
               style={{
                 backgroundColor: "#e7e7e7",
                 color: "#9d8463",
-                fontSize: getWidth(28, 14),
+                fontSize: getWidth(26, 12),
               }}
             >
               {t("table.entity-type")}
@@ -83,7 +83,7 @@ const RecordsTable = ({ history, type, title }) => {
               style={{
                 backgroundColor: "#e7e7e7",
                 color: "#9d8463",
-                fontSize: getWidth(28, 14),
+                fontSize: getWidth(26, 12),
               }}
             >
               {t("table.entity-name")}
@@ -92,7 +92,7 @@ const RecordsTable = ({ history, type, title }) => {
               style={{
                 backgroundColor: "#e7e7e7",
                 color: "#9d8463",
-                fontSize: getWidth(28, 14),
+                fontSize: getWidth(26, 12),
               }}
             >
               {t("table.warp-type")}
@@ -101,7 +101,7 @@ const RecordsTable = ({ history, type, title }) => {
               style={{
                 backgroundColor: "#e7e7e7",
                 color: "#9d8463",
-                fontSize: getWidth(28, 14),
+                fontSize: getWidth(26, 12),
               }}
             >
               {t("table.warp-time")}

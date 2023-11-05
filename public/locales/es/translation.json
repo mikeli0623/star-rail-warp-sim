@@ -62,6 +62,14 @@
       "title": "Salto de partida",
       "remaining": "Intentos restantes",
       "text": "20% de descuento en series de 10 Saltos. En <1>50</1> Saltos tienes garantizado un personaje de <1>5</1> estrellas."
+    },
+    "char": {
+      "text1": "Con cada <1>10</1> Saltos tienes garantizado un artículo de <1>4</1> estrellas o más",
+      "text2": "¡Los personajes destacados tienen más probabilidades de salir!"
+    },
+    "weap": {
+      "text1": "Con cada  <1>10</1> Saltos tienes garantizado un artículo de <1>4</1> estrellas o más",
+      "text2": "¡Los conos de luz destacados tienen más probabilidades de salir!"
     }
   },
   "table": {
