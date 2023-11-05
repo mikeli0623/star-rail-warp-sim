@@ -58,7 +58,7 @@ export default function RateModal({ show, setShow, vers, type }) {
           flexWrap: "wrap",
           flexDirection: "column",
           color: "#686868",
-          fontSize: "20px",
+          fontSize: 18,
         }}
       >
         {t("modal.rate.rate5")}

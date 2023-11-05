@@ -86,7 +86,7 @@ export default function RateCard({ item, rarity, type, elem = "", path }) {
       )}
       <div
         className="rate-card-name"
-        style={{ fontSize: getWidth(34, 14), padding: `0 ${getWidth(30)}px` }}
+        style={{ fontSize: getWidth(32, 12), padding: `0 ${getWidth(30)}px` }}
       >
         {trans[item][i18n.resolvedLanguage]}
       </div>

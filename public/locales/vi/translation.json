@@ -62,6 +62,14 @@
       "title": "Bước Nhảy Đầu Tiên",
       "remaining": "Số lần cờn lại",
       "text": "10 lần giảm 20%, trong <1>50</1> lần Bước Nhảy chắc chắn nhận được nhân vật <1>5</1> sao"
+    },
+    "char": {
+      "text1": "Mỗi <1>10</1> lần Bước Nhảy chắc chắn nhận đối tượng <1>4</1> sao trở lên",
+      "text2": "Tăng tỷ lệ xuất hiện Nhân Vật chỉ định"
+    },
+    "weap": {
+      "text1": "Mỗi <1>10</1> lần Bước Nhảy chắc chắn nhận đối tượng <1>4</1> sao trở lên",
+      "text2": "Tăng tỷ lệ xuất hiện Nón Ánh Sáng chỉ định"
     }
   },
   "table": {

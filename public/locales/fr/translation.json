@@ -62,6 +62,14 @@
       "title": "Saut hyperespace de départ",
       "remaining": "Tirages de Sauts hyperespaces restants",
       "text": "20 % de réduction sur un ensemble de 10 Sauts hyperespaces, et un personnage <1>5</1> étoiles garanti sur <1>50</1> Sauts hyperespaces."
+    },
+    "char": {
+      "text1": "Entite <1>4</1> étoiles ou plus garantie tous les <1>10</1> Sauts hyperespaces",
+      "text2": "Bonus au taux d'obtention des personnages en vedette"
+    },
+    "weap": {
+      "text1": "Entité <1>4</1> étoiles ou plus garantie tous les <1>10</1> Sauts hyperespaces",
+      "text2": "Bonus au taux d'obtention des cônes de lumière en vedette"
     }
   },
   "table": {

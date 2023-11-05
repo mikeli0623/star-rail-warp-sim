@@ -75,6 +75,16 @@ class ParseJSON {
     }
     return [];
   }
+  getColour(vers) {
+    for (const key of this.bannerJSON) {
+      if (
+        key.vers.includes(vers) &&
+        !["standard", "beginner"].includes(key.type)
+      )
+        return key["colour-type"];
+    }
+    return null;
+  }
   getRerun(vers) {
     for (const key of this.bannerJSON) {
       if (key.vers.includes(vers) && key.type.includes("rerun"))

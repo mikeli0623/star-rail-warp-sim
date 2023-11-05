@@ -34,7 +34,7 @@ export default function DetailsContent({ vers, bannerType, title }) {
         className="mt-2 mb-0"
         style={{
           fontWeight: "bold",
-          fontSize: getWidth(40, 22),
+          fontSize: getWidth(38, 20),
           padding: `0 ${getWidth(50)}px`,
         }}
       >

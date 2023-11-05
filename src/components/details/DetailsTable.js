@@ -11,13 +11,13 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
 
   const tableItem = rateUp.concat(items).map((item, index) => {
     return (
-      <tr key={item + index} style={{ fontSize: getWidth(16, 12) }}>
+      <tr key={item + index} style={{ fontSize: getWidth(14, 10) }}>
         {index < Math.ceil(items.length / 4) ? (
           <>
             <td
               className="w-25"
               style={{
-                fontSize: getWidth(24, 8),
+                fontSize: getWidth(22, 6),
                 verticalAlign: "middle",
                 color: "#767676",
               }}
@@ -39,7 +39,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
             <td
               className="w-25"
               style={{
-                fontSize: getWidth(24, 8),
+                fontSize: getWidth(22, 6),
                 verticalAlign: "middle",
                 color: "#767676",
               }}
@@ -63,7 +63,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
             <td
               className="w-25"
               style={{
-                fontSize: getWidth(24, 8),
+                fontSize: getWidth(22, 6),
                 verticalAlign: "middle",
                 color: "#767676",
               }}
@@ -87,7 +87,7 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
             <td
               className="w-25"
               style={{
-                fontSize: getWidth(24, 8),
+                fontSize: getWidth(22, 6),
                 verticalAlign: "middle",
                 color: "#767676",
               }}
@@ -119,14 +119,14 @@ const DetailsTable = ({ items, rateUp = [], type }) => {
   return (
     <section>
       <Table bordered className="m-0">
-        <thead style={{ fontSize: getWidth(16, 12) }}>
+        <thead style={{ fontSize: getWidth(14, 10) }}>
           <tr>
             <th
               colSpan={4}
               style={{
                 backgroundColor: "#e7e7e7",
                 color: "#9d8463",
-                fontSize: getWidth(28, 14),
+                fontSize: getWidth(26, 12),
               }}
             >
               {type}

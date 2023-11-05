@@ -76,7 +76,7 @@ export default function DetailsMain({ setContent, bannerType, history }) {
           backgroundColor: "#f1f1f1",
           width: "70vw",
           height: "70vh",
-          fontSize: getWidth(28, 14),
+          fontSize: getWidth(26, 12),
         }}
       >
         <nav

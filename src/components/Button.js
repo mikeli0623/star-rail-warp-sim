@@ -28,9 +28,9 @@ export default function Button({
   };
 
   const fontSize = {
-    sm: resize ? getWidth(14) : 14,
-    md: resize ? getWidth(18) : 18,
-    lg: resize ? getWidth(24) : 24,
+    sm: resize ? getWidth(12) : 12,
+    md: resize ? getWidth(16) : 16,
+    lg: resize ? getWidth(22) : 22,
   };
 
   const buttonSizes = {

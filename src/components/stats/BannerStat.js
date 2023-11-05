@@ -281,7 +281,7 @@ export default function BannerStat({
           style={{
             textAlign: "left",
             alignSelf: "flex-start",
-            fontSize: getWidth(40),
+            fontSize: getWidth(38),
           }}
         >
           {type === "beginner"
@@ -305,7 +305,7 @@ export default function BannerStat({
             style={{
               marginBottom: 0,
               color: "#87888a",
-              fontSize: getWidth(28),
+              fontSize: getWidth(26),
             }}
           >
             {t("stats.rateFive")}
@@ -337,7 +337,7 @@ export default function BannerStat({
             style={{
               marginBottom: 0,
               color: "#87888a",
-              fontSize: getWidth(28),
+              fontSize: getWidth(26),
             }}
           >
             {t("stats.rateFour")}
@@ -369,7 +369,7 @@ export default function BannerStat({
             style={{
               marginBottom: 0,
               color: "#87888a",
-              fontSize: getWidth(28),
+              fontSize: getWidth(26),
             }}
           >
             {t("stats.maxPity")}
@@ -395,7 +395,7 @@ export default function BannerStat({
             style={{
               marginBottom: 0,
               color: "#87888a",
-              fontSize: getWidth(28),
+              fontSize: getWidth(26),
             }}
           >
             {t("stats.softPity")}
@@ -421,7 +421,7 @@ export default function BannerStat({
             style={{
               marginBottom: 0,
               color: "#87888a",
-              fontSize: getWidth(28),
+              fontSize: getWidth(26),
             }}
           >
             {t("stats.pityFive")}
@@ -447,7 +447,7 @@ export default function BannerStat({
             style={{
               marginBottom: 0,
               color: "#87888a",
-              fontSize: getWidth(28),
+              fontSize: getWidth(26),
             }}
           >
             {t("stats.pityFour")}
@@ -473,7 +473,7 @@ export default function BannerStat({
             style={{
               marginBottom: 0,
               color: "#87888a",
-              fontSize: getWidth(28),
+              fontSize: getWidth(26),
             }}
           >
             {t("stats.guaranteeFive")}
@@ -493,7 +493,7 @@ export default function BannerStat({
             style={{
               marginBottom: 0,
               color: "#87888a",
-              fontSize: getWidth(28),
+              fontSize: getWidth(26),
             }}
           >
             {t("stats.guaranteeFour")}

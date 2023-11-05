@@ -62,6 +62,14 @@
       "title": "Departure Warp",
       "remaining": "Remaining Warps",
       "text": "20% off for set of 10 Warps, and a <1>5</1>-star character is guaranteed within <1>50</1> Warps."
+    },
+    "char": {
+      "text1": "Every <1>10</1> Warps guarantees a <1>4</1>-star or above entity",
+      "text2": "Featured character receives a drop-rate boost"
+    },
+    "weap": {
+      "text1": "Every <1>10</1> Warps guarantees a <1>4</1>-star or above entity",
+      "text2": "Featured Light Cone receives a drop-rate boost"
     }
   },
   "table": {

@@ -8,13 +8,13 @@
   user-select: none;
 }
 
-html * {
-  font-family: Default_SC;
+body * {
+  font-family: Default_Font;
 }
 
 @font-face {
-  font-family: Default_SC;
-  src: url(../assets/URW-DIN-Arabic-Medium.woff2);
+  font-family: Default_Font;
+  src: url(../assets/font.woff2);
   font-display: swap;
 }
 

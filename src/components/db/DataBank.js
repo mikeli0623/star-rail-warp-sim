@@ -153,10 +153,10 @@ export default function DataBank({ type, setContent, setShowDB }) {
             <div
               id="title"
               style={{
-                fontSize: getWidth(22, 9),
+                fontSize: getWidth(20, 9),
                 height: getWidth(24, 11),
                 textAlign: "left",
-                marginTop: `-6px`,
+                marginTop: `-3px`,
               }}
             >
               {t("db.title")}
@@ -165,7 +165,7 @@ export default function DataBank({ type, setContent, setShowDB }) {
               id="warp-type"
               style={{
                 textAlign: "left",
-                fontSize: getWidth(24, 11),
+                fontSize: getWidth(22, 11),
                 height: getWidth(24, 11),
               }}
             >
@@ -175,7 +175,7 @@ export default function DataBank({ type, setContent, setShowDB }) {
         </div>
         <div
           className="indexed-info"
-          style={{ color: "white", fontSize: getWidth(24, 12) }}
+          style={{ color: "white", fontSize: getWidth(22, 10) }}
         >
           {t("db.indexed")}{" "}
           <span style={{ color: "#face75" }}>

@@ -104,7 +104,7 @@ const WarpSingle = ({
     );
   };
 
-  const textWidth = (text, fontSize = [28, 14]) => {
+  const textWidth = (text, fontSize = [26, 12]) => {
     const multi = asianLang.includes(i18n.resolvedLanguage)
       ? fontSize[0]
       : fontSize[1];
@@ -195,7 +195,7 @@ const WarpSingle = ({
               <div
                 className="single-name"
                 style={{
-                  fontSize: `${getWidth(34, 16)}px`,
+                  fontSize: `${getWidth(32, 14)}px`,
                   color: "white",
                   marginTop: 8,
                 }}
@@ -232,7 +232,7 @@ const WarpSingle = ({
                   80 + textWidth(cleanText(item.path), [12, 6])
                 ),
                 height: getHeight(40, 120, 18, 120),
-                fontSize: getWidth(28, 12),
+                fontSize: getWidth(26, 10),
               }}
             >
               <LazyLoadImage

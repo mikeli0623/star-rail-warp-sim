@@ -188,11 +188,11 @@ const DepartureWarp = ({ total }) => {
           zIndex: "1",
           top: "50%",
           left: "50%",
-          transform: "translate(-110%, 235%)",
+          transform: "translate(-111%, 260%)",
           width: getWidth(500),
           textAlign: "left",
           color: "white",
-          fontSize: getWidth(36),
+          fontSize: getWidth(33),
           textShadow: "0 0 4px black",
         }}
       >
@@ -204,10 +204,10 @@ const DepartureWarp = ({ total }) => {
           zIndex: "1",
           top: "50%",
           left: "50%",
-          transform: "translate(60%, 720%)",
-          width: getWidth(360),
+          transform: "translate(39%, 800%)",
+          width: getWidth(450),
           color: "white",
-          fontSize: getWidth(24),
+          fontSize: getWidth(22),
           textShadow: "0 0 2px black",
         }}
       >
@@ -226,7 +226,7 @@ const DepartureWarp = ({ total }) => {
           width: getWidth(500),
           height: getWidth(110),
           color: "#d5dae0",
-          fontSize: getWidth(24),
+          fontSize: getWidth(22),
           textAlign: "left",
           boxSizing: "border-box",
         }}

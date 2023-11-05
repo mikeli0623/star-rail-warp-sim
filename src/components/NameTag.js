@@ -29,7 +29,7 @@ export default function NameTag({ style, name, bottom = false, anim = true }) {
         ...style,
         width: getWidth(160),
         height: getHeight(70, 160),
-        fontSize: getWidth(24),
+        fontSize: getWidth(22),
       }}
       anim={anim.toString()}
     >

@@ -12,7 +12,7 @@ export default function DetailInfo({ text, rarity, chance }) {
         color: "#767676",
         border: `${getWidth(2, 1)}px solid #e0dace`,
         height: getWidth(50),
-        fontSize: getWidth(26),
+        fontSize: getWidth(24),
       }}
     >
       <div

@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 import Sound from "react-sound";
 
 let fadeInterval;
-const useSoundPlayer = (
+const useBGM = (
   initialTrack,
   path = "/",
   initialVolume = 100,
   type = ".mp3"
 ) => {
-  // gets rid of console logs from react-sound
   useEffect(() => {
     const script1 = document.createElement("script");
     script1.src = "/assets/soundmanager2-nodebug-jsmin.js";
@@ -83,4 +82,4 @@ const useSoundPlayer = (
   };
 };
 
-export default useSoundPlayer;
+export default useBGM;

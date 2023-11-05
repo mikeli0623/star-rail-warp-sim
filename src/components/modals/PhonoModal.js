@@ -204,7 +204,7 @@ export default function PhonoModal({
             </div>
           </div>
           <div style={{ color: "white" }}>
-            <div className="mx-2" style={{ fontSize: 22 }}>
+            <div className="mx-2" style={{ fontSize: 20 }}>
               <em>{trans[chosenAlbum][i18n.resolvedLanguage]}</em>
             </div>
             {BGM[chosenAlbum].map((track) => {

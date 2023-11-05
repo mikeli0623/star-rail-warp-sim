@@ -66,7 +66,7 @@ const allChars = [
 ];
 
 const allWeapons = [
-  "an-instance-forever-cherished",
+  "an-instance-before-a-gaze",
   "night-of-fright",
   "worrisome-blissful",
   "i-shall-be-my-own-sword",
@@ -152,8 +152,8 @@ const BGM = {
 };
 
 const allVers = [
-  // "1.5.2",
-  // "1.5.1",
+  "1.5.2",
+  "1.5.1",
   "1.4.2",
   "1.4.1",
   "1.3.2",
@@ -166,11 +166,18 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = [""];
+const hidden = ["1.5.2", "1.5.1"];
 
 const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 
 const asianLang = ["zh", "ko", "ja"];
+
+const colourMap = {
+  1: "#387ac6",
+  2: "#4c7980",
+  3: "#80466f",
+  4: "#a64e64",
+};
 
 export {
   allChars,
@@ -181,4 +188,5 @@ export {
   asianLang,
   LATESTVERS,
   hidden,
+  colourMap,
 };
