@@ -29,9 +29,16 @@ export default function VersionModal({
 
   const { t } = useTranslation();
 
-  const [showHidden, setShowHidden] = useState(false);
+  const [showHidden, setShowHidden] = useState(
+    localStorage.getItem("hiddenBanners")
+      ? JSON.parse(localStorage.getItem("hiddenBanners"))
+      : false
+  );
 
-  const handleCheck = () => setShowHidden(!showHidden);
+  const handleCheck = () => {
+    localStorage.setItem("hiddenBanners", !showHidden);
+    setShowHidden(!showHidden);
+  };
 
   return (
     <Modal
@@ -117,11 +124,11 @@ export default function VersionModal({
           size="sm"
           resize={false}
         />
-        {/* <Checkbox
+        <Checkbox
           text="Hidden"
           handleCheck={handleCheck}
           checked={showHidden}
-        /> */}
+        />
         <Button
           onClick={() => {
             setVers(selected);

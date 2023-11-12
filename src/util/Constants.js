@@ -166,7 +166,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = ["1.5.2", "1.5.1"];
+const hidden = ["1.5.2"];
 
 const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 
