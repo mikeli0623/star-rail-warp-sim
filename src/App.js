@@ -149,9 +149,10 @@ function App() {
   const [hasFive, setHasFive] = useState(false);
   const [hasFour, setHasFour] = useState(false);
 
-  const handleTrack = (track, loaded = false) => {
+  const handleTrack = (newTrack, loaded = false) => {
+    if (newTrack === track) return;
     setLoaded(loaded);
-    setTrack(track);
+    setTrack(newTrack);
   };
 
   const [playWarpBGM, warpData] = useSound("/assets/audio/bgm/warp-loop.mp3", {

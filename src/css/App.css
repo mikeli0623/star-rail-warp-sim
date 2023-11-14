@@ -10,6 +10,7 @@
 
 body * {
   font-family: Default_Font;
+  letter-spacing: -1px;
 }
 
 @font-face {
@@ -454,8 +455,10 @@ body * {
   /* justify-content: space-between; */
   align-items: center;
   transition: background-color 0.2s;
-  height: 130px;
+  min-height: 130px;
+  max-height: fit-content;
   width: 95%;
+  padding: 4px 0;
 }
 
 .vers-info:hover {
