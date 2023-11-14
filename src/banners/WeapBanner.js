@@ -37,14 +37,14 @@ export default function WeapBanner({ vers, rerun = false }) {
 
   const nameRef = useRef(null);
 
-  const [pathY, setPathY] = useState(80);
+  const [pathY, setPathY] = useState(75);
 
   useEffect(() => {
     const height = Math.round(getHeight(87, 160));
     if (nameRef.current.offsetHeight === height) setPathY(130);
-    else if (nameRef.current.offsetHeight === height / 3) setPathY(80);
+    else if (nameRef.current.offsetHeight === height / 3) setPathY(75);
     else setPathY(105);
-  }, [nameRef.current?.offsetHeight, getHeight]);
+  }, [nameRef.current?.offsetHeight, getHeight, i18n.resolvedLanguage]);
 
   return (
     <React.Fragment>
