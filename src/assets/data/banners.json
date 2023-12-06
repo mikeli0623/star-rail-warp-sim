@@ -2201,8 +2201,12 @@
       "id": "Fiksasi Brilian",
       "pt": "Fixação Brilhante"
     },
-    "rateUpFive": [],
-    "rateUpFour": [],
+    "rateUpFive": ["past-self-in-mirror"],
+    "rateUpFour": [
+      "memories-of-the-past",
+      "make-the-world-clamor",
+      "eyes-of-the-prey"
+    ],
     "poolFiveWeap": [
       "something-irreplaceable",
       "sleep-like-the-dead",
@@ -2231,9 +2235,6 @@
       "qingque"
     ],
     "poolFourWeap": [
-      "memories-of-the-past",
-      "make-the-world-clamor",
-      "eyes-of-the-prey",
       "perfect-timing",
       "under-the-blue-sky",
       "trend-of-the-universal-market",
@@ -2343,8 +2344,12 @@
       "id": "Fiksasi Brilian",
       "pt": "Fixação Brilhante"
     },
-    "rateUpFive": [],
-    "rateUpFour": [],
+    "rateUpFive": ["baptism-of-pure-thought"],
+    "rateUpFour": [
+      "memories-of-the-past",
+      "make-the-world-clamor",
+      "eyes-of-the-prey"
+    ],
     "poolFiveWeap": [
       "something-irreplaceable",
       "sleep-like-the-dead",
@@ -2373,9 +2378,6 @@
       "qingque"
     ],
     "poolFourWeap": [
-      "memories-of-the-past",
-      "make-the-world-clamor",
-      "eyes-of-the-prey",
       "perfect-timing",
       "under-the-blue-sky",
       "trend-of-the-universal-market",

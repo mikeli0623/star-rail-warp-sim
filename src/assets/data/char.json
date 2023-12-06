@@ -24,6 +24,12 @@
     "rarity": 5
   },
   {
+    "name": "Xueyi",
+    "path": "Destruction",
+    "element": "Quantum",
+    "rarity": 4
+  },
+  {
     "name": "Huohuo",
     "path": "Abundance",
     "element": "Wind",

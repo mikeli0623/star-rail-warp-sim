@@ -1,4 +1,32 @@
 {
+  "baptism-of-pure-thought": {
+    "en": "Baptism of Pure Thought",
+    "zh": "Baptism of Pure Thought",
+    "ja": "Baptism of Pure Thought",
+    "ko": "Baptism of Pure Thought",
+    "es": "Baptism of Pure Thought",
+    "fr": "Baptism of Pure Thought",
+    "ru": "Baptism of Pure Thought",
+    "th": "Baptism of Pure Thought",
+    "vi": "Baptism of Pure Thought",
+    "de": "Baptism of Pure Thought",
+    "id": "Baptism of Pure Thought",
+    "pt": "Baptism of Pure Thought"
+  },
+  "past-self-in-mirror": {
+    "en": "Past Self in Mirror",
+    "zh": "Past Self in Mirror",
+    "ja": "Past Self in Mirror",
+    "ko": "Past Self in Mirror",
+    "es": "Past Self in Mirror",
+    "fr": "Past Self in Mirror",
+    "ru": "Past Self in Mirror",
+    "th": "Past Self in Mirror",
+    "vi": "Past Self in Mirror",
+    "de": "Past Self in Mirror",
+    "id": "Past Self in Mirror",
+    "pt": "Past Self in Mirror"
+  },
   "brighter-than-the-sun": {
     "en": "Brighter Than the Sun",
     "zh": "比阳光更明亮的",
@@ -27,6 +55,20 @@
     "id": "Dan Heng · Imbibitor Lunae",
     "pt": "Dan Heng • Embebidor Lunae"
   },
+  "xueyi": {
+    "en": "Xueyi",
+    "zh": "雪衣",
+    "ja": "雪衣",
+    "ko": "설의",
+    "es": "Xueyi",
+    "fr": "Xueyi",
+    "ru": "Сюэи",
+    "th": "Xueyi",
+    "vi": "Xueyi",
+    "de": "Xueyi",
+    "id": "Xueyi",
+    "pt": "Xueyi"
+  },
   "fu-xuan": {
     "en": "Fu Xuan",
     "zh": "符玄",
@@ -48,7 +90,7 @@
     "ko": "Dr.레이시오",
     "es": "Dr Ratio",
     "fr": "Dr Ratio",
-    "ru": "ДокторРацио",
+    "ru": "Доктор Рацио",
     "th": "Dr. Ratio",
     "vi": "Bác Sĩ Chân Lý",
     "de": "Dr. Wahrheit",
