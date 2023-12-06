@@ -63,9 +63,14 @@ const allChars = [
   "argenti",
   "huohuo",
   "hanya",
+  // "dr-ratio",
+  // "ruan-mei",
+  // "xueyi",
 ];
 
 const allWeapons = [
+  // "past-self-in-mirror",
+  // "baptism-of-pure-thought",
   "an-instance-before-a-gaze",
   "night-of-fright",
   "worrisome-blissful",
@@ -152,6 +157,8 @@ const BGM = {
 };
 
 const allVers = [
+  // "1.6.2",
+  // "1.6.1",
   "1.5.2",
   "1.5.1",
   "1.4.2",
@@ -166,7 +173,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = ["1.5.2"];
+const hidden = [];
 
 const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 

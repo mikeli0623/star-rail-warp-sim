@@ -148,6 +148,16 @@ export default function Main({
       weap: "black",
       gradient: "40, 33, 36",
     },
+    "1.6.1": {
+      char: "black",
+      weap: "black",
+      gradient: "40, 33, 36",
+    },
+    "1.6.2": {
+      char: "#1c253f",
+      weap: "black",
+      gradient: "40, 33, 36",
+    },
   };
 
   const currentBanners = {
