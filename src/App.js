@@ -222,7 +222,7 @@ function App() {
     standard: JSON.parse(localStorage.getItem("standHistory")) || [],
   });
 
-  const [showStart, setShowStart] = useState(false);
+  const [showStart, setShowStart] = useState(true);
 
   return (
     <ResizeProvider value={resizeValue}>
