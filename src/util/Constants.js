@@ -64,12 +64,12 @@ const allChars = [
   "huohuo",
   "hanya",
   // "dr-ratio",
-  // "ruan-mei",
-  // "xueyi",
+  "ruan-mei",
+  "xueyi",
 ];
 
 const allWeapons = [
-  // "past-self-in-mirror",
+  "past-self-in-mirror",
   // "baptism-of-pure-thought",
   "an-instance-before-a-gaze",
   "night-of-fright",
@@ -158,7 +158,7 @@ const BGM = {
 
 const allVers = [
   // "1.6.2",
-  // "1.6.1",
+  "1.6.1",
   "1.5.2",
   "1.5.1",
   "1.4.2",
