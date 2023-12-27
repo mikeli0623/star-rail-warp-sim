@@ -1,5 +1,23 @@
 [
   {
+    "name": "Sparkle",
+    "path": "Harmony",
+    "element": "Quantum",
+    "rarity": 5
+  },
+  {
+    "name": "Black Swan",
+    "path": "Nihility",
+    "element": "Wind",
+    "rarity": 5
+  },
+  {
+    "name": "Misha",
+    "path": "Destruction",
+    "element": "Ice",
+    "rarity": 4
+  },
+  {
     "name": "Topaz and Numby",
     "path": "The Hunt",
     "element": "Fire",

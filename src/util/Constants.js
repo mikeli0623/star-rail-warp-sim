@@ -63,14 +63,19 @@ const allChars = [
   "argenti",
   "huohuo",
   "hanya",
-  // "dr-ratio",
   "ruan-mei",
   "xueyi",
+  // "dr-ratio",
+  // "black-swan",
+  // "misha",
+  // "sparkle",
 ];
 
 const allWeapons = [
-  "past-self-in-mirror",
+  // "earthy-escapade",
+  // "reforged-remembrance",
   // "baptism-of-pure-thought",
+  "past-self-in-mirror",
   "an-instance-before-a-gaze",
   "night-of-fright",
   "worrisome-blissful",
@@ -157,7 +162,8 @@ const BGM = {
 };
 
 const allVers = [
-  // "1.6.2",
+  // "2.0.2",
+  // "2.0.1",
   "1.6.1",
   "1.5.2",
   "1.5.1",
@@ -180,10 +186,16 @@ const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 const asianLang = ["zh", "ko", "ja"];
 
 const colourMap = {
+  // blue: seele, silver wolf
   1: "#387ac6",
-  2: "#4c7980",
+  // jing yuan, luocha
+  2: "#4b7982",
+  // purple: kafka
   3: "#80466f",
+  // red: topaz, argenti
   4: "#a64e64",
+  // slate: blade
+  5: "#4a718e",
 };
 
 export {
