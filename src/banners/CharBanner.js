@@ -31,8 +31,6 @@ export default function CharBanner({ bg = "40, 33, 36", vers, rerun = false }) {
     );
   };
 
-  console.log(`../assets/banner/${actualVers}/char-banner-back.webp`);
-
   return (
     <React.Fragment>
       <div
@@ -97,6 +95,22 @@ export default function CharBanner({ bg = "40, 33, 36", vers, rerun = false }) {
         />
       </div>
       <div
+        className="char-shine-container"
+        style={{
+          width: getWidth(72.3),
+          height: getHeight(206.1, 72.3),
+          transform: "translate(-680%, 90%)",
+        }}
+      >
+        <div
+          className="char-shine"
+          style={{
+            animation: "char-rate-up-shine 350ms 125ms 1",
+            animationFillMode: "both",
+          }}
+        />
+      </div>
+      <div
         className="rate-up-char-icons"
         style={{
           width: getWidth(72.3),
@@ -118,6 +132,22 @@ export default function CharBanner({ bg = "40, 33, 36", vers, rerun = false }) {
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "250ms",
             opacity: "0",
+            animationFillMode: "both",
+          }}
+        />
+      </div>
+      <div
+        className="char-shine-container"
+        style={{
+          width: getWidth(72.3),
+          height: getHeight(206.1, 72.3),
+          transform: "translate(-560%, 90%)",
+        }}
+      >
+        <div
+          className="char-shine"
+          style={{
+            animation: "char-rate-up-shine 350ms 200ms 1",
             animationFillMode: "both",
           }}
         />
@@ -145,6 +175,22 @@ export default function CharBanner({ bg = "40, 33, 36", vers, rerun = false }) {
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationDelay: "250ms",
             opacity: "0",
+            animationFillMode: "both",
+          }}
+        />
+      </div>
+      <div
+        className="char-shine-container"
+        style={{
+          width: getWidth(72.3),
+          height: getHeight(206.1, 72.3),
+          transform: "translate(-440%, 90%)",
+        }}
+      >
+        <div
+          className="char-shine"
+          style={{
+            animation: "char-rate-up-shine 350ms 275ms 1",
             animationFillMode: "both",
           }}
         />
