@@ -65,7 +65,7 @@ const allChars = [
   "hanya",
   "ruan-mei",
   "xueyi",
-  // "dr-ratio",
+  "dr-ratio",
   // "black-swan",
   // "misha",
   // "sparkle",
@@ -74,7 +74,7 @@ const allChars = [
 const allWeapons = [
   // "earthy-escapade",
   // "reforged-remembrance",
-  // "baptism-of-pure-thought",
+  "baptism-of-pure-thought",
   "past-self-in-mirror",
   "an-instance-before-a-gaze",
   "night-of-fright",
@@ -164,6 +164,7 @@ const BGM = {
 const allVers = [
   // "2.0.2",
   // "2.0.1",
+  "1.6.2",
   "1.6.1",
   "1.5.2",
   "1.5.1",

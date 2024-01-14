@@ -1,31 +1,31 @@
 {
   "earthly-escapade": {
     "en": "Earthly Escapade",
-    "zh": "Earthly Escapade",
+    "zh": "游戏尘寰",
     "ja": "Earthly Escapade",
     "ko": "Earthly Escapade",
-    "es": "Earthly Escapade",
-    "fr": "Earthly Escapade",
-    "ru": "Earthly Escapade",
+    "es": "Mundo de juegos",
+    "ru": "Мирские шалости",
+    "vi": "Trò Chơi Trần Thế",
+    "pt": "Fuga Terrena",
+    "fr": "Escapade terrestre",
     "th": "Earthly Escapade",
-    "vi": "Earthly Escapade",
-    "de": "Earthly Escapade",
-    "id": "Earthly Escapade",
-    "pt": "Earthly Escapade"
+    "de": "Eskapade auf Erden",
+    "id": "Earthly Escapade"
   },
   "reforged-remembrance": {
     "en": "Reforged Remembrance",
-    "zh": "Reforged Remembrance",
+    "zh": "重塑时光之忆",
     "ja": "Reforged Remembrance",
     "ko": "Reforged Remembrance",
-    "es": "Reforged Remembrance",
-    "fr": "Reforged Remembrance",
-    "ru": "Reforged Remembrance",
-    "th": "Reforged Remembrance",
-    "vi": "Reforged Remembrance",
-    "de": "Reforged Remembrance",
-    "id": "Reforged Remembrance",
-    "pt": "Reforged Remembrance"
+    "es": "Recuerdos reconstruidos",
+    "ru": "Изменённые воспоминания",
+    "vi": "Hun Đúc Ký Ức Thời Gian",
+    "pt": "Recordação Reforjada",
+    "fr": "Souvenirs refaçonnés",
+    "th": "Reforged Memories of Pasts Before",
+    "de": "Restaurierte Erinnerung",
+    "id": "Reforged Remembrance"
   },
   "misha": {
     "en": "Misha",

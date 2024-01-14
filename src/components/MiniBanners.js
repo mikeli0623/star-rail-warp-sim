@@ -4,8 +4,9 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { LATESTVERS, json } from "../util/Constants";
 import ResizeContext from "./context/ResizeContext";
 
-const MiniBanner = ({ path, active, handleSelect }) => {
+const MiniBanner = ({ path, active, handleSelect, lockout }) => {
   const [clicked, setClicked] = useState(false);
+  const [showShine, setShowShine] = useState(false);
   const { getWidth, getHeight } = useContext(ResizeContext);
   return (
     <div
@@ -16,6 +17,18 @@ const MiniBanner = ({ path, active, handleSelect }) => {
         marginBottom: `-${getWidth(15)}px`,
       }}
     >
+      {showShine && (
+        <div
+          className="shine-container"
+          style={{
+            top: getWidth(24, 13.4),
+            height: getHeight(68, 174, 29.5, 76),
+            width: getWidth(174, 76),
+          }}
+        >
+          <div className="shine" onAnimationEnd={() => setShowShine(false)} />
+        </div>
+      )}
       <LazyLoadImage
         effect="opacity-200"
         className="mini-banner-img-active"
@@ -33,7 +46,12 @@ const MiniBanner = ({ path, active, handleSelect }) => {
         width={getWidth(160, 70)}
         draggable="false"
         active={active}
-        onClick={handleSelect}
+        onClick={() => {
+          if (!lockout) {
+            setShowShine(true);
+            handleSelect();
+          }
+        }}
         onMouseDown={() => setClicked(true)}
         onMouseUp={() => setClicked(false)}
         onMouseLeave={() => setClicked(false)}
@@ -104,6 +122,7 @@ export default function MiniBanners({
               handleSelect={() => {
                 handleBannerSelect(type);
               }}
+              lockout={lockout}
               active={(type === bannerType).toString()}
               path={
                 ["char", "weap"].includes(type)

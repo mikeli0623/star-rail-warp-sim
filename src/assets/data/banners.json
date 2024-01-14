@@ -2499,7 +2499,7 @@
       "pt": "Fixação Brilhante"
     },
     "rateUpFive": ["baptism-of-pure-thought"],
-    "rateUpFour": [],
+    "rateUpFour": ["only-silence-remains", "landaus-choice", "perfect-timing"],
     "poolFiveWeap": [
       "something-irreplaceable",
       "sleep-like-the-dead",
@@ -2532,12 +2532,10 @@
       "memories-of-the-past",
       "make-the-world-clamor",
       "eyes-of-the-prey",
-      "perfect-timing",
       "under-the-blue-sky",
       "trend-of-the-universal-market",
       "dance-dance-dance",
       "planetary-rendezvous",
-      "landaus-choice",
       "resolution-shines-as-pearls-of-sweat",
       "the-birth-of-the-self",
       "post-op-conversation",
@@ -2547,7 +2545,6 @@
       "the-moles-welcome-you",
       "subscribe-for-more",
       "swordplay",
-      "only-silence-remains",
       "day-one-of-my-new-life",
       "good-night-and-sleep-well"
     ]
@@ -2697,7 +2694,7 @@
   {
     "vers": ["2.0.1"],
     "type": "char",
-    "colour-type": 2,
+    "colour-type": 3,
     "title": {
       "en": "",
       "zh": "",
@@ -2771,7 +2768,7 @@
   {
     "vers": ["2.0.1"],
     "type": "weap",
-    "colour-type": 2,
+    "colour-type": 3,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
@@ -2843,7 +2840,7 @@
   {
     "vers": ["2.0.2"],
     "type": "char",
-    "colour-type": 2,
+    "colour-type": 1,
     "title": {
       "en": "",
       "zh": "",
@@ -2917,7 +2914,7 @@
   {
     "vers": ["2.0.2"],
     "type": "weap",
-    "colour-type": 2,
+    "colour-type": 1,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",

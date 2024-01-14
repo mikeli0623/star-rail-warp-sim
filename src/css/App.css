@@ -292,6 +292,32 @@ body * {
   z-index: 3;
 }
 
+.shine-container {
+  position: absolute;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.shine {
+  height: 100%;
+  width: 50%;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  animation: animate-shine 0.5s forwards 1;
+}
+
+@keyframes animate-shine {
+  0% {
+    transform: translateX(-50%) skew(-30deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%) skew(-30deg) scaleX(0.5);
+    opacity: 0.2;
+  }
+}
+
 .mini-banner-img {
   filter: brightness(0.7);
   transition: filter 0.2s, opacity 0.4s;
