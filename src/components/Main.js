@@ -146,16 +146,22 @@ export default function Main({
     "1.5.2": {
       char: "#43444a",
       weap: "black",
+      "rerun-char": "#232a3c",
+      "rerun-weap": "black",
       gradient: "40, 33, 36",
     },
     "1.6.1": {
       char: "black",
       weap: "black",
+      "rerun-char": "black",
+      "rerun-weap": "black",
       gradient: "40, 33, 36",
     },
     "1.6.2": {
       char: "#1c253f",
       weap: "black",
+      "rerun-char": "#241330",
+      "rerun-weap": "#241330",
       gradient: "40, 33, 36",
     },
     "2.0.1": {
@@ -241,11 +247,43 @@ export default function Main({
     return `${vers}/${bannerType}`;
   };
 
+  const [direction, setDirection] = useState(1);
+
   const setActiveBanner = (banner) => {
+    const dirMap = {
+      beginner: 0,
+      char: 1,
+      "rerun-char": 2,
+      weap: 3,
+      "rerun-weap": 4,
+      standard: 5,
+    };
     if (bannerType !== banner) {
+      setDirection(dirMap[bannerType] - dirMap[banner]);
       setBannerType(banner);
       sessionStorage.setItem("bannerType", banner);
     }
+  };
+
+  const sliderVariants = {
+    incoming: (direction) => ({
+      y:
+        bannerType === "beginner" ? "-50%" : direction > 0 ? "2000%" : "-2000%",
+      x: "-50%",
+      opacity: 0,
+    }),
+    active: { y: "-50%", scale: 1, opacity: 1, x: "-50%" },
+    exit: (direction) => ({
+      y:
+        bannerType === "beginner" ? "-50%" : direction > 0 ? "-2000%" : "2000%",
+      x: "-50%",
+      opacity: 0,
+    }),
+  };
+
+  const sliderTransition = {
+    duration: 0.5,
+    ease: [0.56, 0.5, 0.12, 1],
   };
 
   return (
@@ -258,7 +296,7 @@ export default function Main({
         backgroundColor: `${
           bannerType === "beginner"
             ? "#1f2322"
-            : bannerBackColor[vers][bannerType]
+            : bannerBackColor[vers][bannerType] ?? "black"
         }`,
       }}
     >
@@ -350,7 +388,6 @@ export default function Main({
         }}
       >
         <MiniBanners
-          vers={vers}
           bannerType={bannerType}
           setBannerType={setBannerType}
           hasBeginner={totalBeginner < 5}
@@ -365,33 +402,16 @@ export default function Main({
           height: getHeight(700, 1200),
         }}
       >
-        <AnimatePresence>
+        <AnimatePresence custom={direction}>
           <motion.div
             className="banner"
             key={bannerType + vers}
-            initial={
-              bannerType === "beginner"
-                ? {}
-                : {
-                    transform: `translate(-50%, 500%)`,
-                    opacity: 0,
-                    transition: { duration: 0.3 },
-                  }
-            }
-            animate={{
-              transform: "translate(-50%,-50%)",
-              opacity: 1,
-              transition: { duration: bannerType === "beginner" ? 0 : 0.3 },
-            }}
-            exit={
-              bannerType === "beginner"
-                ? { opacity: 0 }
-                : {
-                    transform: `translate(-50%, -500%)`,
-                    opacity: 0,
-                    transition: { duration: 0.3 },
-                  }
-            }
+            custom={direction}
+            variants={sliderVariants}
+            initial="incoming"
+            animate="active"
+            exit="exit"
+            transition={sliderTransition}
           >
             {currentBanners[bannerType]}
           </motion.div>

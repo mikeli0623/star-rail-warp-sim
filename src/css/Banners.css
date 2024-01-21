@@ -308,7 +308,7 @@
 
 .char-shine {
   position: absolute;
-  bottom: 0;
+  bottom: -10%;
   width: 100%;
   height: 35%;
   background: rgba(255, 255, 255, 0.8);
@@ -321,7 +321,7 @@
     transform: skewY(30deg) translateY(100%);
   }
   100% {
-    transform: skewY(30deg) translateY(-300%);
+    transform: skewY(30deg) translateY(-330%);
     opacity: 0.8;
   }
 }

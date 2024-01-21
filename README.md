@@ -1,6 +1,6 @@
 
 # Star Rail Warp Simulator
-A React web app that simulates the warp mechanism of Honkai Star Rail
+A React web app that simulates the warp mechanism of Honkai Star Rail, and more!
 
 ## Credits
 
