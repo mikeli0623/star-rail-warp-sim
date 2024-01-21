@@ -5,6 +5,13 @@ import ResizeContext from "../components/context/ResizeContext";
 import { useTranslation, Trans } from "react-i18next";
 import NameTag from "../components/NameTag";
 import { Scrollbars } from "react-custom-scrollbars-2";
+import gepard from "../assets/images/banner/beginner/gepard.webp";
+import yanqing from "../assets/images/banner/beginner/yanqing.webp";
+import bronya from "../assets/images/banner/beginner/bronya.webp";
+import clara from "../assets/images/banner/beginner/clara.webp";
+import himeko from "../assets/images/banner/beginner/himeko.webp";
+import bailu from "../assets/images/banner/beginner/bailu.webp";
+import welt from "../assets/images/banner/beginner/welt.webp";
 
 const DepartureWarp = ({ total }) => {
   const { getWidth } = useContext(ResizeContext);
@@ -23,7 +30,7 @@ const DepartureWarp = ({ total }) => {
     <React.Fragment>
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beginner/gepard.webp"
+        src={gepard}
         width={getWidth(400)}
         alt="gepard"
         draggable="false"
@@ -38,7 +45,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beginner/yanqing.webp"
+        src={yanqing}
         width={getWidth(740)}
         alt="yanqing"
         draggable="false"
@@ -53,7 +60,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beginner/bronya.webp"
+        src={bronya}
         width={getWidth(1100)}
         alt="char"
         draggable="false"
@@ -68,7 +75,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beginner/clara.webp"
+        src={clara}
         width={getWidth(400)}
         alt="char"
         draggable="false"
@@ -83,7 +90,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beginner/himeko.webp"
+        src={himeko}
         width={getWidth(1100)}
         alt="char"
         draggable="false"
@@ -98,7 +105,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beginner/bailu.webp"
+        src={bailu}
         width={getWidth(460)}
         alt="char"
         draggable="false"
@@ -113,7 +120,7 @@ const DepartureWarp = ({ total }) => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/beginner/welt.webp"
+        src={welt}
         width={getWidth(700)}
         alt="char"
         draggable="false"

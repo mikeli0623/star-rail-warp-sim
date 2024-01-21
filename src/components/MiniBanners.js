@@ -82,8 +82,8 @@ const bannerTypes = [
 ];
 export default function MiniBanners({
   bannerType,
-  setBannerType,
   hasBeginner = true,
+  handleSelect,
 }) {
   const { sound, useSound } = useContext(SoundContext);
   const vers = sessionStorage.getItem("vers") || LATESTVERS;
@@ -98,9 +98,8 @@ export default function MiniBanners({
     if (!lockout) {
       if (sound) playMini();
       setLockout(true);
-      setBannerType(type);
-      sessionStorage.setItem("bannerType", type);
-      setTimeout(() => setLockout(false), 300);
+      handleSelect(type);
+      setTimeout(() => setLockout(false), 500);
     }
   };
 

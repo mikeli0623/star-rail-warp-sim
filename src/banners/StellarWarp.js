@@ -4,6 +4,14 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "../components/context/ResizeContext";
 import { useTranslation } from "react-i18next";
 import NameTag from "../components/NameTag";
+import bronyaBack from "../assets/images/banner/standard/bronya-back.webp";
+import bronya from "../assets/images/banner/standard/bronya.webp";
+import gepard from "../assets/images/banner/standard/gepard.webp";
+import himeko from "../assets/images/banner/standard/himeko.webp";
+import himekoBack from "../assets/images/banner/standard/himeko-back.webp";
+import rate1 from "../assets/images/banner/standard/standard-rate-1.webp";
+import rate2 from "../assets/images/banner/standard/standard-rate-2.webp";
+import rate3 from "../assets/images/banner/standard/standard-rate-3.webp";
 
 const StellarWarp = () => {
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -49,7 +57,7 @@ const StellarWarp = () => {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/standard/himeko-back.webp"
+          src={himekoBack}
           width={getWidth(500)}
           alt="char"
           draggable="false"
@@ -64,7 +72,7 @@ const StellarWarp = () => {
         />
         <LazyLoadImage
           effect="opacity"
-          src="../assets/banner/standard/bronya-back.webp"
+          src={bronyaBack}
           width={getWidth(900)}
           alt="char"
           draggable="false"
@@ -95,7 +103,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/standard/standard-rate-1.webp"
+        src={rate1}
         draggable="false"
         alt="Night on the Milky Way"
         width={getWidth(135)}
@@ -109,7 +117,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/standard/standard-rate-2.webp"
+        src={rate2}
         draggable="false"
         alt="But the Battle Isn't Over"
         width={getWidth(108)}
@@ -122,7 +130,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         className="weap-rate-up"
-        src="../assets/banner/standard/standard-rate-3.webp"
+        src={rate3}
         draggable="false"
         alt="Something Irreplaceable"
         width={getWidth(108)}
@@ -145,7 +153,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/standard/himeko.webp"
+        src={himeko}
         width={getWidth(500)}
         alt="char"
         draggable="false"
@@ -160,7 +168,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/standard/gepard.webp"
+        src={gepard}
         width={getWidth(800)}
         alt="char"
         draggable="false"
@@ -176,7 +184,7 @@ const StellarWarp = () => {
       />
       <LazyLoadImage
         effect="opacity"
-        src="../assets/banner/standard/bronya.webp"
+        src={bronya}
         width={getWidth(900)}
         alt="char"
         draggable="false"
