@@ -58,6 +58,13 @@ export default function StatsMain({
   //     setTop(scrollRef.current?.getScrollTop());
   //   };
 
+  const setActiveBanner = (banner) => {
+    if (bannerType !== banner) {
+      setBannerType(banner);
+      sessionStorage.setItem("bannerType", banner);
+    }
+  };
+
   return (
     <motion.main
       key="details"
@@ -83,7 +90,11 @@ export default function StatsMain({
         className="stat-nav"
         style={{ height: getHeight(500, 300, 200), width: getWidth(300) }}
       >
-        <MiniBanners bannerType={bannerType} setBannerType={setBannerType} />
+        <MiniBanners
+          bannerType={bannerType}
+          setBannerType={setBannerType}
+          handleSelect={setActiveBanner}
+        />
         {/* <ScrollProgress
           status={
             top /
