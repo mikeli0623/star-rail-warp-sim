@@ -66,14 +66,22 @@ const allChars = [
   "ruan-mei",
   "xueyi",
   "dr-ratio",
-  // "black-swan",
-  // "misha",
-  // "sparkle",
+  "black-swan",
+  "misha",
+  "sparkle",
 ];
 
 const allWeapons = [
-  // "earthy-escapade",
-  // "reforged-remembrance",
+  "its-showtime",
+  "what-is-real",
+  "the-day-the-cosmos-fell",
+  "destinys-threads-forewoven",
+  "flames-afar",
+  "final-victor",
+  "dreamville-adventure",
+  "indelible-promise",
+  "earthly-escapade",
+  "reforged-remembrance",
   "baptism-of-pure-thought",
   "past-self-in-mirror",
   "an-instance-before-a-gaze",
@@ -162,8 +170,8 @@ const BGM = {
 };
 
 const allVers = [
-  // "2.0.2",
-  // "2.0.1",
+  "2.0.2",
+  "2.0.1",
   "1.6.2",
   "1.6.1",
   "1.5.2",
@@ -180,7 +188,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = [];
+const hidden = ["2.0.2"];
 
 const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 
