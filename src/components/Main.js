@@ -167,11 +167,15 @@ export default function Main({
     "2.0.1": {
       char: "black",
       weap: "black",
+      "rerun-char": "#0f1222",
+      "rerun-weap": "black",
       gradient: "40, 33, 36",
     },
     "2.0.2": {
       char: "#1c253f",
       weap: "black",
+      "rerun-char": "#1f2930",
+      "rerun-weap": "black",
       gradient: "40, 33, 36",
     },
   };
