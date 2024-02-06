@@ -2691,23 +2691,23 @@
   {
     "vers": ["2.0.1"],
     "type": "char",
-    "colour-type": 3,
+    "colour-type": 1,
     "title": {
       "en": "Ripples in Reflection",
-      "zh": "Ripples in Reflection",
-      "ko": "Ripples in Reflection",
-      "ja": "Ripples in Reflection",
-      "es": "Ripples in Reflection",
-      "fr": "Ripples in Reflection",
-      "ru": "Ripples in Reflection",
-      "th": "Ripples in Reflection",
-      "vi": "Ripples in Reflection",
-      "de": "Ripples in Reflection",
-      "id": "Ripples in Reflection",
-      "pt": "Ripples in Reflection"
+      "zh": "镜映婆娑",
+      "ko": "거울에 비치는 잔물결",
+      "ja": "鏡に映る舞",
+      "es": "Ondas en el reflejo",
+      "fr": "Vagues de réfraction",
+      "ru": "Рябь в отражении",
+      "th": "เงาสะท้อนรอยธะตา",
+      "vi": "Trước Gương Soi Thấu",
+      "de": "Wirbelnde Spiegelung",
+      "id": "Riak Takdir dalam Refleksi Cermin",
+      "pt": "Ondulações Refletidas"
     },
     "rateUpFive": ["black-swan"],
-    "rateUpFour": ["misha", "tingyun", "guinaifen"],
+    "rateUpFour": ["misha", "guinaifen", "tingyun"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -2779,7 +2779,7 @@
       "pt": "Espectro Épico"
     },
     "rateUpFive": ["imbibitor-lunae"],
-    "rateUpFour": ["misha", "tingyun", "guinaifen"],
+    "rateUpFour": ["misha", "guinaifen", "tingyun"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -2835,7 +2835,7 @@
   {
     "vers": ["2.0.1"],
     "type": "weap",
-    "colour-type": 3,
+    "colour-type": 1,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
@@ -2852,9 +2852,9 @@
     },
     "rateUpFive": ["reforged-remembrance"],
     "rateUpFour": [
+      "dance-dance-dance",
       "indelible-promise",
-      "resolution-shines-as-pearls-of-sweat",
-      "dance-dance-dance"
+      "resolution-shines-as-pearls-of-sweat"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -2926,9 +2926,9 @@
     },
     "rateUpFive": ["before-dawn"],
     "rateUpFour": [
+      "dance-dance-dance",
       "indelible-promise",
-      "resolution-shines-as-pearls-of-sweat",
-      "dance-dance-dance"
+      "resolution-shines-as-pearls-of-sweat"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",

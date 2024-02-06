@@ -165,8 +165,8 @@ export default function Main({
       gradient: "40, 33, 36",
     },
     "2.0.1": {
-      char: "black",
-      weap: "black",
+      char: "#242534",
+      weap: "#20244c",
       "rerun-char": "#0f1222",
       "rerun-weap": "black",
       gradient: "40, 33, 36",
@@ -272,14 +272,14 @@ export default function Main({
   const sliderVariants = {
     incoming: (direction) => ({
       y:
-        bannerType === "beginner" ? "-50%" : direction > 0 ? "2000%" : "-2000%",
+        bannerType === "beginner" ? "-50%" : direction > 0 ? "-2000%" : "2000%",
       x: "-50%",
       opacity: 0,
     }),
     active: { y: "-50%", scale: 1, opacity: 1, x: "-50%" },
     exit: (direction) => ({
       y:
-        bannerType === "beginner" ? "-50%" : direction > 0 ? "-2000%" : "2000%",
+        bannerType === "beginner" ? "-50%" : direction > 0 ? "2000%" : "-2000%",
       x: "-50%",
       opacity: 0,
     }),
