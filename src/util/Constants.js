@@ -69,6 +69,8 @@ const allChars = [
   "black-swan",
   "misha",
   "sparkle",
+  // "aventurine",
+  // "acheron"
 ];
 
 const allWeapons = [
@@ -188,7 +190,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = ["2.0.2"];
+const hidden = [];
 
 const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 
