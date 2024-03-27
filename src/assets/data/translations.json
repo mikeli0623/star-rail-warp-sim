@@ -1,4 +1,46 @@
 {
+  "along-the-passing-shore": {
+    "en": "Along the Passing Shore",
+    "zh": "行于流逝的岸",
+    "ja": "流れ逝く岸を歩いて",
+    "ko": "흘러가는강가를따라",
+    "es": "En las orillas transitorias",
+    "fr": "Le long de la rive",
+    "ru": "Вдольуходящегоберега",
+    "th": "Along the Passing Shore",
+    "vi": "Bước Theo Bến Bờ Thời Gian",
+    "de": "Entlang am vorbeiziehenden Ufer",
+    "id": "Along the Passing Shore",
+    "pt": "Ao Longo da Margem Transitória"
+  },
+  "inherently-unjust-destiny": {
+    "en": "Inherently Unjust Destiny",
+    "zh": "命运从未公平",
+    "ja": "運命は常に不公平",
+    "ko": "언제나불공평한운명",
+    "es": "El destino nunca es justo",
+    "fr": "Destin injuste",
+    "ru": "Несправедливаясудьба",
+    "th": "Inherently Unjust Destiny",
+    "vi": "Vận Mệnh Chưa Từng Công Bằng",
+    "de": "Ungerechtes Schicksal",
+    "id": "Inherently Unjust Destiny",
+    "pt": "Destino Inerentemente Injusto"
+  },
+  "concert-for-two": {
+    "en": "Concert for Two",
+    "zh": "两个人的演唱会",
+    "ja": "二人だけのコンサート",
+    "ko": "두사람의콘서트",
+    "es": "Concierto para dos",
+    "fr": "Concert pour deux",
+    "ru": "Концертдлядвоих",
+    "th": "Concert for Two",
+    "vi": "Buổi Hòa Nhạc Hai Người",
+    "de": "Konzert für zwei",
+    "id": "Concert for Two",
+    "pt": "Concerto para Dois"
+  },
   "aventurine": {
     "en": "Aventurine",
     "zh": "砂金",
@@ -12,6 +54,20 @@
     "de": "Aventurin",
     "id": "Aventurine",
     "pt": "Aventurine"
+  },
+  "gallagher": {
+    "en": "Gallagher",
+    "zh": "加拉赫",
+    "ja": "ギャラガー",
+    "ko": "갤러거",
+    "es": "Gallagher",
+    "fr": "Gallagher",
+    "ru": "Галлахер",
+    "th": "Gallagher",
+    "vi": "Gallagher",
+    "de": "Gallagher",
+    "id": "Gallagher",
+    "pt": "Gallagher"
   },
   "acheron": {
     "en": "Acheron",
