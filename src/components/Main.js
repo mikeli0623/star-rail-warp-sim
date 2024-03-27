@@ -178,6 +178,20 @@ export default function Main({
       "rerun-weap": "black",
       gradient: "40, 33, 36",
     },
+    "2.1.1": {
+      char: "black",
+      weap: "black",
+      "rerun-char": "black",
+      "rerun-weap": "black",
+      gradient: "40, 33, 36",
+    },
+    "2.1.2": {
+      char: "black",
+      weap: "black",
+      "rerun-char": "black",
+      "rerun-weap": "black",
+      gradient: "40, 33, 36",
+    },
   };
 
   const currentBanners = {

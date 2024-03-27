@@ -69,11 +69,15 @@ const allChars = [
   "black-swan",
   "misha",
   "sparkle",
-  // "aventurine",
-  // "acheron"
+  "aventurine",
+  "acheron",
+  "gallagher",
 ];
 
 const allWeapons = [
+  "inherently-unjust-destiny",
+  "along-the-passing-shore",
+  "concert-for-two",
   "its-showtime",
   "what-is-real",
   "the-day-the-cosmos-fell",
@@ -172,6 +176,8 @@ const BGM = {
 };
 
 const allVers = [
+  "2.1.2",
+  "2.1.1",
   "2.0.2",
   "2.0.1",
   "1.6.2",
@@ -190,7 +196,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = [];
+const hidden = ["2.1.2"];
 
 const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 
@@ -207,6 +213,8 @@ const colourMap = {
   4: "#a64e64",
   // slate: blade
   5: "#4a718e",
+  // unknown
+  6: "#6748c7",
 };
 
 export {

@@ -19,6 +19,7 @@ import StartModal from "./components/modals/StartModal";
 import { BGM } from "./util/Constants";
 
 function App() {
+  // main, data-bank, details,
   const [content, setContent] = useState("main");
 
   const [showStart, setShowStart] = useState(true);

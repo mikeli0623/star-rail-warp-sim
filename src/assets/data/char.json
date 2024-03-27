@@ -6,6 +6,12 @@
     "rarity": 5
   },
   {
+    "name": "Gallagher",
+    "path": "Abundance",
+    "element": "Fire",
+    "rarity": 4
+  },
+  {
     "name": "Acheron",
     "path": "Nihility",
     "element": "Lightning",
