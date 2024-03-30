@@ -6,6 +6,18 @@
     "rarity": 5
   },
   {
+    "name": "Boothill",
+    "path": "The Hunt",
+    "element": "Physical",
+    "rarity": 5
+  },
+  {
+    "name": "Robin",
+    "path": "Harmony",
+    "element": "Physical",
+    "rarity": 5
+  },
+  {
     "name": "Gallagher",
     "path": "Abundance",
     "element": "Fire",
