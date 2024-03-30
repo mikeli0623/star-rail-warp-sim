@@ -3283,7 +3283,7 @@
   {
     "vers": ["2.1.1"],
     "type": "char",
-    "colour-type": 1,
+    "colour-type": 7,
     "title": {
       "en": "Words of Yore",
       "zh": "远辞畴昔",
@@ -3429,7 +3429,7 @@
   {
     "vers": ["2.1.1"],
     "type": "weap",
-    "colour-type": 1,
+    "colour-type": 7,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",

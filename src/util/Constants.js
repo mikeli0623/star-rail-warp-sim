@@ -72,9 +72,13 @@ const allChars = [
   "aventurine",
   "acheron",
   "gallagher",
+  // "robin",
+  // "boothill"
 ];
 
 const allWeapons = [
+  // "sailing-towards-a-second-life",
+  // "flowing-nightglow",
   "inherently-unjust-destiny",
   "along-the-passing-shore",
   "concert-for-two",
@@ -209,12 +213,14 @@ const colourMap = {
   2: "#4b7982",
   // purple: kafka
   3: "#80466f",
-  // red: topaz, argenti
+  // muted red: topaz, argenti
   4: "#a64e64",
   // slate: blade
   5: "#4a718e",
   // unknown
   6: "#6748c7",
+  // bright red
+  7: "#bb323e",
 };
 
 export {

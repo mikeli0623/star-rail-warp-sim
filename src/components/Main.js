@@ -183,7 +183,7 @@ export default function Main({
       weap: "black",
       "rerun-char": "black",
       "rerun-weap": "black",
-      gradient: "40, 33, 36",
+      gradient: "40, 40, 60",
     },
     "2.1.2": {
       char: "black",
