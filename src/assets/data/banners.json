@@ -3581,7 +3581,7 @@
   {
     "vers": ["2.1.2"],
     "type": "char",
-    "colour-type": 6,
+    "colour-type": 2,
     "title": {
       "en": "Gilded Imprisonment",
       "zh": "Gilded Imprisonment",
