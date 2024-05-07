@@ -22,7 +22,7 @@ const chanceFour = (currentPity, baseRate) => {
 
 export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
   const warpChance = Math.random();
-  const rateUpChance = type.includes("char") ? 0.5 : 0.75;
+  const rateUpChance = type.includes("char") ? 0.5625 : 0.78125;
   const rateUp = Math.random() < rateUpChance ? true : false;
   const char = Math.random() < 0.5;
   let warpItem;
