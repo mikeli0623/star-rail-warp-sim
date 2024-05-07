@@ -74,6 +74,8 @@ function App() {
       guaranteeFour: localStorage.getItem("standGuaranteeFour") === "true",
       pityFive: parseInt(localStorage.getItem("standPityFive")) || 0,
       pityFour: parseInt(localStorage.getItem("standPityFour")) || 0,
+      // counts type of 5 star as you can not get more than 3 same type 5 star in a row; LC is -1, Char is +1
+      typeCount: parseInt(localStorage.getItem("standardTypeCount")) || 0,
     },
   });
 
