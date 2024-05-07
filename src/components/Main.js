@@ -250,6 +250,10 @@ export default function Main({
     localStore("GuaranteeFive", bannerState[type].guaranteeFive);
     localStore("GuaranteeFour", bannerState[type].guaranteeFour);
 
+    if (type === "standard") {
+      localStore("TypeCount", bannerState[type].typeCount);
+    }
+
     let historyClone = structuredClone(history);
     historyClone[type] = historyClone[type].concat(
       new History(warpResults).getHistory()

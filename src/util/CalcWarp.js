@@ -54,9 +54,22 @@ export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
       }
     } else {
       if (type === "standard") {
-        if (char) warpItem = randItem(json.getPoolFiveChar(vers, type));
-        else warpItem = randItem(json.getPoolFiveWeap(vers, type));
-      } else warpItem = randItem(json.getPoolFiveChar(vers, type));
+        if (banner.typeCount === -3) {
+          warpItem = randItem(json.getPoolFiveChar(vers, type));
+          banner.typeCount = 1;
+        } else if (banner.typeCount === 3) {
+          warpItem = randItem(json.getPoolFiveWeap(vers, type));
+          banner.typeCount = -1;
+        } else if (char) {
+          warpItem = randItem(json.getPoolFiveChar(vers, type));
+          banner.typeCount++;
+        } else {
+          warpItem = randItem(json.getPoolFiveWeap(vers, type));
+          banner.typeCount--;
+        }
+      }
+      // beginner 5 star always char
+      else warpItem = randItem(json.getPoolFiveChar(vers, type));
     }
   } else if (warpChance < chanceFour(banner.pityFour, banner.rateFour)) {
     // 4 star
