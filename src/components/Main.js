@@ -196,7 +196,16 @@ export default function Main({
 
   const currentBanners = {
     beginner: <DepartureWarp total={totalBeginner} />,
-    char: <CharBanner vers={vers} bg={bannerBackColor[vers]["gradient"]} />,
+    char: (
+      <CharBanner
+        vers={vers}
+        bg={
+          bannerBackColor[vers]
+            ? bannerBackColor[vers]["gradient"]
+            : "40, 33, 36"
+        }
+      />
+    ),
     weap: <WeapBanner vers={vers} />,
     "rerun-char": <CharBanner vers={vers} rerun={true} />,
     "rerun-weap": <WeapBanner vers={vers} rerun={true} />,
@@ -314,7 +323,9 @@ export default function Main({
         backgroundColor: `${
           bannerType === "beginner"
             ? "#1f2322"
-            : bannerBackColor[vers][bannerType] ?? "black"
+            : bannerBackColor[vers]
+            ? bannerBackColor[vers][bannerType]
+            : "black"
         }`,
       }}
     >

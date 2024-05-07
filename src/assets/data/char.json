@@ -12,6 +12,18 @@
     "rarity": 5
   },
   {
+    "name": "Firefly",
+    "path": "Destruction",
+    "element": "Fire",
+    "rarity": 5
+  },
+  {
+    "name": "Jade",
+    "path": "Erudition",
+    "element": "Quantum",
+    "rarity": 5
+  },
+  {
     "name": "Robin",
     "path": "Harmony",
     "element": "Physical",
