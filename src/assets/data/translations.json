@@ -2,30 +2,30 @@
   "boundless-choreo": {
     "en": "Boundless Choreo",
     "zh": "无边曼舞",
-    "ja": "Boundless Choreo",
-    "ko": "Boundless Choreo",
+    "ja": "終わりなき舞踏",
+    "ko": "끝없는춤",
     "es": "Tango ilimitado",
-    "ru": "Безграничный танец",
-    "vi": "Vũ Điệu Vô Biên",
-    "pt": "Dança Ilimitada",
     "fr": "Danse endiablée",
+    "ru": "Безграничный танец",
     "th": "Boundless Choreo",
+    "vi": "Vũ Điệu Vô Biên",
     "de": "Grenzenloser Tanz",
-    "id": "Boundless Choreo"
+    "id": "Boundless Choreo",
+    "pt": "Dança Ilimitada"
   },
   "flowing-nightglow": {
     "en": "Flowing Nightglow",
     "zh": "夜色流光溢彩",
-    "ja": "Flowing Nightglow",
-    "ko": "Flowing Nightglow",
+    "ja": "光あふれる夜",
+    "ko": "찬란하게빛나는밤",
     "es": "Luces de la noche",
-    "ru": "Мимолётные ночные огни",
-    "vi": "Sắc Đêm Rực Sáng",
-    "pt": "Luzes Noturnas",
     "fr": "Lumières nocturnes",
+    "ru": "Мимолётные ночныеогни",
     "th": "Flowing Nightglow",
+    "vi": "Sắc Đêm Rực Sáng",
     "de": "Schillernde Nacht",
-    "id": "Flowing Nightglow"
+    "id": "Flowing Nightglow",
+    "pt": "Luzes Noturnas"
   },
   "robin": {
     "en": "Robin",
