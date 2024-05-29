@@ -4190,7 +4190,7 @@
   {
     "vers": ["2.2.2"],
     "type": "char",
-    "colour-type": 6,
+    "colour-type": 7,
     "title": {
       "en": "Dusty Trail's Lone Star",
       "zh": "扬尘孤星",
