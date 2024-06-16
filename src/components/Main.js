@@ -134,8 +134,7 @@ export default function Main({
     "1.4.2": {
       char: "black",
       weap: "black",
-      "rerun-char": "#0a162e",
-      "rerun-weap": "#0a162e",
+
       gradient: "43, 48, 64",
     },
     "1.5.1": {
@@ -146,50 +145,42 @@ export default function Main({
     "1.5.2": {
       char: "#43444a",
       weap: "black",
-      "rerun-char": "#232a3c",
-      "rerun-weap": "black",
       gradient: "40, 33, 36",
     },
     "1.6.1": {
       char: "black",
       weap: "black",
-      "rerun-char": "black",
-      "rerun-weap": "black",
+
       gradient: "40, 33, 36",
     },
     "1.6.2": {
       char: "#1c253f",
       weap: "black",
-      "rerun-char": "#241330",
-      "rerun-weap": "#241330",
       gradient: "40, 33, 36",
     },
     "2.0.1": {
       char: "#242534",
       weap: "#20244c",
-      "rerun-char": "#0f1222",
-      "rerun-weap": "black",
       gradient: "40, 33, 36",
     },
     "2.0.2": {
       char: "#1c253f",
       weap: "black",
-      "rerun-char": "#1f2930",
-      "rerun-weap": "black",
       gradient: "40, 33, 36",
     },
     "2.1.1": {
       char: "black",
       weap: "black",
-      "rerun-char": "black",
-      "rerun-weap": "black",
       gradient: "40, 40, 60",
     },
-    "2.1.2": {
-      char: "black",
+    "2.3.1": {
+      char: "#a5bdb0",
       weap: "black",
-      "rerun-char": "black",
-      "rerun-weap": "black",
+      gradient: "40, 33, 36",
+    },
+    "2.3.2": {
+      char: "#2c2064",
+      weap: "black",
       gradient: "40, 33, 36",
     },
   };
@@ -328,7 +319,11 @@ export default function Main({
           bannerType === "beginner"
             ? "#1f2322"
             : bannerBackColor[vers]
-            ? bannerBackColor[vers][bannerType]
+            ? bannerType === "rerun-char"
+              ? bannerBackColor[json.getRerun(vers)]["char"]
+              : bannerType === "rerun-weap"
+              ? bannerBackColor[json.getRerun(vers)]["weap"]
+              : bannerBackColor[vers][bannerType]
             : "black"
         }`,
       }}

@@ -9,21 +9,23 @@ import Checkbox from "../Checkbox";
 export default function StartModal({ show, setShow }) {
   const { sound, setSound, setContinueSound, useSound } =
     useContext(SoundContext);
-  const [wantSound, setWantSound] = useState(true);
+  const [wantSound, setWantSound] = useState(
+    sessionStorage.getItem("wantSound")
+      ? JSON.parse(sessionStorage.getItem("wantSound"))
+      : true
+  );
   const handleClose = () => {
     setShow(false);
     setSound(wantSound);
     setContinueSound(wantSound);
+    sessionStorage.setItem("wantSound", wantSound);
   };
   const [playModalClose] = useSound("../assets/audio/sfx/modal-close.mp3");
 
   const { t } = useTranslation();
 
-  const [checked, setChecked] = useState(true);
-
   const handleSound = () => {
     setWantSound(!wantSound);
-    setChecked(!checked);
   };
 
   useEffect(() => {
@@ -98,7 +100,7 @@ export default function StartModal({ show, setShow }) {
       >
         <Checkbox
           handleCheck={handleSound}
-          checked={checked}
+          checked={wantSound}
           text={t("button.sound")}
         />
         <Button
