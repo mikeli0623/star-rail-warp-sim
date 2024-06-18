@@ -19,10 +19,14 @@ import StartModal from "./components/modals/StartModal";
 import { BGM } from "./util/Constants";
 
 function App() {
-  // main, data-bank, details,
-  const [content, setContent] = useState("main");
+  // main, data-bank, details
+  const [content, setContent] = useState(
+    process.env.NODE_ENV === "production" ? "main" : "main"
+  );
 
-  const [showStart, setShowStart] = useState(true);
+  const [showStart, setShowStart] = useState(
+    process.env.NODE_ENV === "production"
+  );
 
   const [bannerType, setBannerType] = useState(
     sessionStorage.getItem("bannerType")

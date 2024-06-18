@@ -363,7 +363,14 @@ body * {
   background-position: center;
   height: 100%;
   width: 100%;
-  transition: background-image 0.2s ease;
+  transition: background-color 0.2s ease;
+}
+
+#main-back-back {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #main-back-cover {

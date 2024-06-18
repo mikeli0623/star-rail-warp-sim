@@ -331,6 +331,7 @@ export default function CharBanner({ bg = "40, 33, 36", vers, rerun = false }) {
         width={getWidth(1200)}
         alt={charName}
         draggable="false"
+        effect="opacity"
         style={{
           position: "absolute",
           top: "50%",

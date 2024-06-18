@@ -1,4 +1,10 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, {
+  useState,
+  useContext,
+  useEffect,
+  useCallback,
+  useMemo,
+} from "react";
 import SoundContext from "./context/SoundContext";
 import { json, allChars, allWeapons, LATESTVERS } from "../util/Constants";
 import { CalcWarp } from "../util/CalcWarp";
@@ -85,105 +91,111 @@ export default function Main({
     localStorage.setItem("stash", JSON.stringify(stash));
   };
 
-  const bannerBackColor = {
-    "1.0.1": {
-      char: "#0a162e",
-      weap: "#0a162e",
-      gradient: "40, 33, 36",
-    },
-    "1.0.2": {
-      char: "#1f2930",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "1.1.1": {
-      char: "#232a3c",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "1.1.2": {
-      char: "black",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "1.2.1": {
-      char: "black",
-      weap: "black",
-      gradient: "27, 33, 49",
-    },
-    "1.2.2": {
-      char: "#241330",
-      weap: "#241330",
-      gradient: "40, 33, 36",
-    },
-    "1.3.1": {
-      char: "#0f1222",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "1.3.2": {
-      char: "#17072b",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "1.4.1": {
-      char: "#1c253f",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "1.4.2": {
-      char: "black",
-      weap: "black",
+  const bannerBackColor = useMemo(() => {
+    return {
+      "1.0.1": {
+        char: "#0a162e",
+        weap: "#0a162e",
+        gradient: "40, 33, 36",
+      },
+      "1.0.2": {
+        char: "#1f2930",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "1.1.1": {
+        char: "#232a3c",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "1.1.2": {
+        char: "black",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "1.2.1": {
+        char: "black",
+        weap: "black",
+        gradient: "27, 33, 49",
+      },
+      "1.2.2": {
+        char: "#241330",
+        weap: "#241330",
+        gradient: "40, 33, 36",
+      },
+      "1.3.1": {
+        char: "#0f1222",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "1.3.2": {
+        char: "#17072b",
+        weap: "#231d2b",
+        gradient: "40, 33, 36",
+      },
+      "1.4.1": {
+        char: "#1c253f",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "1.4.2": {
+        char: "black",
+        weap: "black",
+        gradient: "43, 48, 64",
+      },
+      "1.5.1": {
+        char: "#24283b",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "1.5.2": {
+        char: "#43444a",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "1.6.1": {
+        char: "black",
+        weap: "black",
 
-      gradient: "43, 48, 64",
-    },
-    "1.5.1": {
-      char: "#24283b",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "1.5.2": {
-      char: "#43444a",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "1.6.1": {
-      char: "black",
-      weap: "black",
-
-      gradient: "40, 33, 36",
-    },
-    "1.6.2": {
-      char: "#1c253f",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "2.0.1": {
-      char: "#242534",
-      weap: "#20244c",
-      gradient: "40, 33, 36",
-    },
-    "2.0.2": {
-      char: "#1c253f",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "2.1.1": {
-      char: "black",
-      weap: "black",
-      gradient: "40, 40, 60",
-    },
-    "2.3.1": {
-      char: "#a5bdb0",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-    "2.3.2": {
-      char: "#2c2064",
-      weap: "black",
-      gradient: "40, 33, 36",
-    },
-  };
+        gradient: "40, 33, 36",
+      },
+      "1.6.2": {
+        char: "#1c253f",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "2.0.1": {
+        char: "#242534",
+        weap: "#20244c",
+        gradient: "40, 33, 36",
+      },
+      "2.0.2": {
+        char: "#1c253f",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "2.1.1": {
+        char: "black",
+        weap: "black",
+        gradient: "40, 40, 60",
+      },
+      "2.2.2": {
+        char: "#1c1825",
+        weap: "#212c38",
+        gradient: "40, 40, 60",
+      },
+      "2.3.1": {
+        char: "#a5bdb0",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+      "2.3.2": {
+        char: "#2c2064",
+        weap: "black",
+        gradient: "40, 33, 36",
+      },
+    };
+  }, []);
 
   const currentBanners = {
     beginner: <DepartureWarp total={totalBeginner} />,
@@ -259,7 +271,7 @@ export default function Main({
     setContent("video");
   };
 
-  const getBack = () => {
+  const getBack = useCallback(() => {
     if (bannerType === "beginner") return "beginner/beginner";
     if (bannerType === "standard") return "standard/standard";
     if (bannerType.includes("rerun"))
@@ -267,7 +279,13 @@ export default function Main({
         bannerType.includes("char") ? "char" : "weap"
       }`;
     return `${vers}/${bannerType}`;
-  };
+  }, [bannerType, vers]);
+
+  const [backPath, setBackPath] = useState(getBack());
+
+  useEffect(() => {
+    setBackPath(getBack());
+  }, [vers, bannerType, getBack]);
 
   const [direction, setDirection] = useState(1);
 
@@ -308,26 +326,62 @@ export default function Main({
     ease: [0.56, 0.5, 0.12, 1],
   };
 
+  const [backColor, setBackColor] = useState(
+    `${
+      bannerType === "beginner"
+        ? "#1f2322"
+        : bannerBackColor[vers]
+        ? bannerType === "rerun-char"
+          ? bannerBackColor[json.getRerun(vers)]["char"]
+          : bannerType === "rerun-weap"
+          ? bannerBackColor[json.getRerun(vers)]["weap"]
+          : bannerBackColor[vers][bannerType]
+        : "#1e1e1e"
+    }`
+  );
+
+  useEffect(() => {
+    setBackColor(
+      `${
+        bannerType === "beginner"
+          ? "#1f2322"
+          : bannerType === "standard"
+          ? "#202732"
+          : bannerType === "rerun-char" && bannerBackColor[json.getRerun(vers)]
+          ? bannerBackColor[json.getRerun(vers)]["char"]
+          : bannerType === "rerun-weap" && bannerBackColor[json.getRerun(vers)]
+          ? bannerBackColor[json.getRerun(vers)]["weap"]
+          : bannerBackColor[vers]
+          ? bannerBackColor[vers][bannerType]
+            ? bannerBackColor[vers][bannerType]
+            : "#1e1e1e"
+          : "#1e1e1e"
+      }`
+    );
+  }, [bannerType, bannerBackColor, vers]);
+
   return (
     <motion.section
       key="main"
       exit={{ opacity: 0 }}
       id="main-back"
       style={{
-        backgroundImage: `url(/assets/banner/${getBack()}-back.webp)`,
-        backgroundColor: `${
-          bannerType === "beginner"
-            ? "#1f2322"
-            : bannerBackColor[vers]
-            ? bannerType === "rerun-char"
-              ? bannerBackColor[json.getRerun(vers)]["char"]
-              : bannerType === "rerun-weap"
-              ? bannerBackColor[json.getRerun(vers)]["weap"]
-              : bannerBackColor[vers][bannerType]
-            : "black"
-        }`,
+        backgroundColor: backColor,
       }}
     >
+      <motion.div
+        key={backPath}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
+        <LazyLoadImage
+          effect="opacity"
+          src={`/assets/banner/${backPath}-back.webp`}
+          id="main-back-back"
+          width="100%"
+        />
+      </motion.div>
       <Settings
         vers={vers}
         showDB={showDB}
