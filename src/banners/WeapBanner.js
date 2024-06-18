@@ -87,6 +87,7 @@ export default function WeapBanner({ vers, rerun = false }) {
         />
       </div>
       <LazyLoadImage
+        effect="opacity"
         className="weap-rate-up"
         src={`../assets/banner/rate-up/${rateFour[0]}.webp`}
         alt={rateFour[0]}
@@ -100,6 +101,7 @@ export default function WeapBanner({ vers, rerun = false }) {
         draggable="false"
       />
       <LazyLoadImage
+        effect="opacity"
         className="weap-rate-up"
         src={`../assets/banner/rate-up/${rateFour[1]}.webp`}
         alt={rateFour[1]}
@@ -113,6 +115,7 @@ export default function WeapBanner({ vers, rerun = false }) {
         draggable="false"
       />
       <LazyLoadImage
+        effect="opacity"
         className="weap-rate-up"
         src={`../assets/banner/rate-up/${rateFour[2]}.webp`}
         alt={rateFour[2]}
@@ -225,7 +228,7 @@ export default function WeapBanner({ vers, rerun = false }) {
         </div>
       </Scrollbars>
       <LazyLoadImage
-        effect="opacity"
+        effect="opacity-100"
         className="ring"
         src="/assets/rings.webp"
         alt="rings"
