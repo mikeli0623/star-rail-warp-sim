@@ -124,11 +124,11 @@ export default function VersionModal({
           size="sm"
           resize={false}
         />
-        <Checkbox
+        {/* <Checkbox
           text="Hidden"
           handleCheck={handleCheck}
           checked={showHidden}
-        />
+        /> */}
         <Button
           onClick={() => {
             setVers(selected);
