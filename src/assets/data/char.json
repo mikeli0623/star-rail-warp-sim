@@ -6,6 +6,18 @@
     "rarity": 5
   },
   {
+    "name": "Jiaoqiu",
+    "path": "Nihility",
+    "element": "Fire",
+    "rarity": 5
+  },
+  {
+    "name": "Yunli",
+    "path": "Destruction",
+    "element": "Physical",
+    "rarity": 5
+  },
+  {
     "name": "Boothill",
     "path": "The Hunt",
     "element": "Physical",
