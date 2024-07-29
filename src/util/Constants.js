@@ -76,9 +76,12 @@ const allChars = [
   "boothill",
   "firefly",
   "jade",
+  "yunli",
+  // "jiaoqiu",
 ];
 
 const allWeapons = [
+  "dance-at-sunset",
   "yet-hope-is-priceless",
   "after-the-charmony-fall",
   "boundless-choreo",
@@ -186,6 +189,8 @@ const BGM = {
 };
 
 const allVers = [
+  // "2.4.2",
+  "2.4.1",
   "2.3.2",
   "2.3.1",
   "2.2.2",
