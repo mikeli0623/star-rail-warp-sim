@@ -77,10 +77,18 @@ const allChars = [
   "firefly",
   "jade",
   "yunli",
-  // "jiaoqiu",
+  "jiaoqiu",
+  "feixiao",
+  "lingsha",
+  "moze",
 ];
 
 const allWeapons = [
+  "shadowed-by-night",
+  "i-venture-forth-to-hunt",
+  "scent-alone-stays-true",
+  "those-many-springs",
+  "poised-to-bloom",
   "dance-at-sunset",
   "yet-hope-is-priceless",
   "after-the-charmony-fall",
@@ -189,7 +197,9 @@ const BGM = {
 };
 
 const allVers = [
-  // "2.4.2",
+  // "2.5.2",
+  // "2.5.1",
+  "2.4.2",
   "2.4.1",
   "2.3.2",
   "2.3.1",

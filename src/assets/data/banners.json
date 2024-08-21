@@ -26,7 +26,9 @@
       "2.4.1",
       "2.4.2",
       "2.5.1",
-      "2.5.2"
+      "2.5.2",
+      "2.6.1",
+      "2.6.2"
     ],
     "type": "beginner",
     "title": {
@@ -5134,23 +5136,23 @@
   {
     "vers": ["2.4.1"],
     "type": "char",
-    "colour-type": 7,
+    "colour-type": 2,
     "title": {
       "en": "Earth Hurled, Ether Curled",
-      "zh": "Earth Hurled, Ether Curled",
-      "ja": "Earth Hurled, Ether Curled",
-      "ko": "Earth Hurled, Ether Curled",
-      "es": "Earth Hurled, Ether Curled",
-      "fr": "Earth Hurled, Ether Curled",
-      "ru": "Earth Hurled, Ether Curled",
-      "th": "Earth Hurled, Ether Curled",
-      "vi": "Earth Hurled, Ether Curled",
-      "de": "Earth Hurled, Ether Curled",
-      "id": "Earth Hurled, Ether Curled",
-      "pt": "Earth Hurled, Ether Curled"
+      "zh": "掷山破云",
+      "ja": "擲山破雲",
+      "ko": "산과구름을가르는기세",
+      "es": "Montañas derribadas y nubes reventadas",
+      "fr": "Nuages dispersés par les montagnes",
+      "ru": "Свернутьгоры,рассеятьоблака",
+      "th": "ฝ่าภูผาทะลวงเมฆา",
+      "vi": "Dời Núi Xẻ Mây",
+      "de": "Geworfener Berg, gebrochene Wolke",
+      "id": "Membelah Gunung, Menebas Awan",
+      "pt": "Terra Arremessada, Nuvens Fragmentadas"
     },
     "rateUpFive": ["yunli"],
-    "rateUpFour": ["hanya", "yukong", "lynx"],
+    "rateUpFour": ["lynx", "yukong", "hanya"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -5225,7 +5227,7 @@
       "pt": "Floreio na Escuridão"
     },
     "rateUpFive": ["huohuo"],
-    "rateUpFour": ["hanya", "yukong", "lynx"],
+    "rateUpFour": ["lynx", "yukong", "hanya"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -5284,7 +5286,7 @@
   {
     "vers": ["2.4.1"],
     "type": "weap",
-    "colour-type": 7,
+    "colour-type": 2,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
@@ -5301,9 +5303,9 @@
     },
     "rateUpFive": ["dance-at-sunset"],
     "rateUpFour": [
-      "perfect-timing",
+      "the-moles-welcome-you",
       "the-birth-of-the-self",
-      "the-moles-welcome-you"
+      "perfect-timing"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -5382,9 +5384,9 @@
     },
     "rateUpFive": ["night-of-fright"],
     "rateUpFour": [
-      "perfect-timing",
+      "the-moles-welcome-you",
       "the-birth-of-the-self",
-      "the-moles-welcome-you"
+      "perfect-timing"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -5447,23 +5449,23 @@
   {
     "vers": ["2.4.2"],
     "type": "char",
-    "colour-type": 1,
+    "colour-type": 4,
     "title": {
       "en": "Cauldron Contrivance",
-      "zh": "Cauldron Contrivance",
-      "ja": "Cauldron Contrivance",
-      "ko": "Cauldron Contrivance",
-      "es": "Cauldron Contrivance",
-      "fr": "Cauldron Contrivance",
-      "ru": "Cauldron Contrivance",
-      "th": "Cauldron Contrivance",
-      "vi": "Cauldron Contrivance",
-      "de": "Cauldron Contrivance",
-      "id": "Cauldron Contrivance",
-      "pt": "Cauldron Contrivance"
+      "zh": "鼎中捭阖",
+      "ja": "鼎に見る計略",
+      "ko": "솥에담긴계책",
+      "es": "Maniobras en el caldero",
+      "fr": "Équilibre des saveurs",
+      "ru": "Предназначениекотла",
+      "th": "เตาเนรมิตชีวินสมดุล",
+      "vi": "Đỉnh Trung Tách Hợp",
+      "de": "Strategeme im Kessel",
+      "id": "Dinamika Keseimbangan dalam Tungku",
+      "pt": "Invenções em um Caldeirão"
     },
     "rateUpFive": ["jiaoqiu"],
-    "rateUpFour": ["hook", "guinaifen", "arlan"],
+    "rateUpFour": ["arlan", "hook", "guinaifen"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -5538,7 +5540,7 @@
       "pt": "Esplendor Reluzente"
     },
     "rateUpFive": ["sparkle"],
-    "rateUpFour": ["hook", "guinaifen", "arlan"],
+    "rateUpFour": ["arlan", "hook", "guinaifen"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -5597,7 +5599,7 @@
   {
     "vers": ["2.4.2"],
     "type": "weap",
-    "colour-type": 1,
+    "colour-type": 4,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",

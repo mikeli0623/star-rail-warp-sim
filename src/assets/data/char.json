@@ -1,5 +1,23 @@
 [
   {
+    "name": "Feixiao",
+    "path": "The Hunt",
+    "element": "Wind",
+    "rarity": 5
+  },
+  {
+    "name": "Lingsha",
+    "path": "Abundance",
+    "element": "Fire",
+    "rarity": 5
+  },
+  {
+    "name": "Moze",
+    "path": "The Hunt",
+    "element": "Lightning",
+    "rarity": 4
+  },
+  {
     "name": "Aventurine",
     "path": "Preservation",
     "element": "Imaginary",
