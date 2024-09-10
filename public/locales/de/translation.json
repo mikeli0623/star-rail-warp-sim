@@ -23,7 +23,9 @@
     "rate": {
       "title": {
         "char": "Figuren mit höherer Chance",
-        "weap": "Lichtkegel mit höherer Chance"
+        "weap": "Lichtkegel mit höherer Chance",
+        "reruns-char": "Figuren mit höherer Chance",
+        "reruns-weap": "Lichtkegel mit höherer Chance"
       },
       "rate5": "Erhöhte Chance: 5 Sterne",
       "rate4": "Erhöhte Chance: 4 Sterne"
@@ -70,6 +72,10 @@
     "weap": {
       "text1": "Je <1>10</1> Warps erhältst du garantiert ein Objekt mit <1>4</1> oder mehr Sternen",
       "text2": "Erhöhte Chance zum Erhalt bestimmter Lichtkegel"
+    },
+    "reruns": {
+      "text1": "Klicke auf die Tabs, um zu einem anderen Warp zu wechseln.",
+      "text2": "Je <1>10</1> Warps erhältst du garantiert en Objekt mit <1>4</1> oder mehr Sternen."
     }
   },
   "table": {

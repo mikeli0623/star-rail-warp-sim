@@ -21,7 +21,6 @@ const MiniBanner = ({ path, active, handleSelect, lockout }) => {
         <div
           className="shine-container"
           style={{
-            top: getWidth(24, 13.4),
             height: getHeight(68, 174, 29.5, 76),
             width: getWidth(174, 76),
           }}
@@ -76,8 +75,10 @@ const bannerTypes = [
   "beginner",
   "char",
   "rerun-char",
+  "reruns-char",
   "weap",
   "rerun-weap",
+  "reruns-weap",
   "standard",
 ];
 export default function MiniBanners({
@@ -111,7 +112,11 @@ export default function MiniBanners({
           return type;
         })
         .filter((type) => {
-          if (!json.checkRerun(vers)) return !type.includes("rerun");
+          if (!json.checkRerun(vers)) return !type.includes("rerun-");
+          return type;
+        })
+        .filter((type) => {
+          if (!json.checkReruns(vers)) return !type.includes("reruns-");
           return type;
         })
         .map((type) => {
@@ -126,9 +131,13 @@ export default function MiniBanners({
               path={
                 ["char", "weap"].includes(type)
                   ? vers + "/" + type
-                  : type.includes("rerun")
+                  : type.includes("rerun-")
                   ? json.getRerun(vers) +
                     "/" +
+                    (type.includes("char") ? "char" : "weap")
+                  : type.includes("reruns-")
+                  ? vers +
+                    "/reruns-" +
                     (type.includes("char") ? "char" : "weap")
                   : type
               }

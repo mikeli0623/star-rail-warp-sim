@@ -44,7 +44,15 @@ export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
       if (rateUp || banner.guaranteeFive) {
         // draw from rateUp
         banner.guaranteeFive = false;
-        warpItem = randItem(json.getRateUpFive(vers, type));
+        const rerunType = type.includes("char") ? "char" : "weap";
+        const ratedUp = type.includes("reruns-")
+          ? [
+              json.getRateUpFive(vers, type)[
+                sessionStorage.getItem("rerun-" + rerunType) ?? 0
+              ],
+            ]
+          : json.getRateUpFive(vers, type);
+        warpItem = randItem(ratedUp);
       } else {
         // drawing from normal 5 stars
         warpItem = type.includes("weap")

@@ -21,6 +21,8 @@ import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
 import CharBanner from "../banners/CharBanner";
 import WeapBanner from "../banners/WeapBanner";
+import RerunCharBanner from "../banners/RerunCharBanner";
+import RerunWeapBanner from "../banners/RerunWeapBanner";
 
 export default function Main({
   bannerType,
@@ -197,6 +199,9 @@ export default function Main({
     };
   }, []);
 
+  const [rerunChar, setRerunChar] = useState(0);
+  const [rerunWeap, setRerunWeap] = useState(0);
+
   const currentBanners = {
     beginner: <DepartureWarp total={totalBeginner} />,
     char: (
@@ -212,6 +217,8 @@ export default function Main({
     weap: <WeapBanner vers={vers} />,
     "rerun-char": <CharBanner vers={vers} rerun={true} />,
     "rerun-weap": <WeapBanner vers={vers} rerun={true} />,
+    "reruns-char": <RerunCharBanner vers={vers} setRerun={setRerunChar} />,
+    "reruns-weap": <RerunWeapBanner vers={vers} setRerun={setRerunWeap} />,
     standard: <StellarWarp />,
   };
 
@@ -274,12 +281,16 @@ export default function Main({
   const getBack = useCallback(() => {
     if (bannerType === "beginner") return "beginner/beginner";
     if (bannerType === "standard") return "standard/standard";
-    if (bannerType.includes("rerun"))
+    if (bannerType.includes("rerun-"))
       return `${json.getRerun(vers)}/${
         bannerType.includes("char") ? "char" : "weap"
       }`;
+    if (bannerType.includes("reruns-char"))
+      return `${json.getReruns(vers)[rerunChar]}/char`;
+    if (bannerType.includes("reruns-weap"))
+      return `${json.getReruns(vers)[rerunWeap]}/weap`;
     return `${vers}/${bannerType}`;
-  }, [bannerType, vers]);
+  }, [bannerType, rerunChar, rerunWeap, vers]);
 
   const [backPath, setBackPath] = useState(getBack());
 
@@ -294,15 +305,21 @@ export default function Main({
       beginner: 0,
       char: 1,
       "rerun-char": 2,
-      weap: 3,
-      "rerun-weap": 4,
-      standard: 5,
+      "reruns-char": 3,
+      weap: 5,
+      "rerun-weap": 6,
+      "reruns-weap": 7,
+      standard: 8,
     };
     if (bannerType !== banner) {
       setDirection(dirMap[bannerType] - dirMap[banner]);
       setBannerType(banner);
       sessionStorage.setItem("bannerType", banner);
     }
+    sessionStorage.removeItem("rerun-char");
+    sessionStorage.removeItem("rerun-weap");
+    setRerunChar(0);
+    setRerunWeap(0);
   };
 
   const sliderVariants = {
@@ -464,7 +481,6 @@ export default function Main({
           top: "0",
           left: "0",
           height: getHeight(500, 300, 200),
-          width: getWidth(300),
           transform: "translateY(15%)",
           zIndex: 10000,
         }}

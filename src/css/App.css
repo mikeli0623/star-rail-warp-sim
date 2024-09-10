@@ -295,6 +295,7 @@ body * {
 .shine-container {
   position: absolute;
   left: 0;
+  bottom: 0;
   z-index: 1000;
   overflow: hidden;
 }
@@ -352,6 +353,51 @@ body * {
 
 .mini-banner-img:active {
   filter: brightness(0.7);
+}
+
+.mini-mini-banners {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  z-index: 1000;
+  height: 100%;
+}
+
+.mini-mini-banner-img {
+  filter: brightness(0.7);
+  transition: filter 0.2s, opacity 0.4s;
+  z-index: 0;
+  opacity: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.mini-mini-banner-img[active="false"] {
+  opacity: 1;
+}
+
+.mini-mini-banner-img[active="true"] {
+  opacity: 0;
+}
+
+.mini-mini-banner-img:hover {
+  filter: brightness(1);
+}
+
+.mini-mini-banner-img:active {
+  filter: brightness(0.7);
+}
+
+.mini-mini-banner-highlight {
+  opacity: 0;
+  transition: filter 0.2s, opacity 0.2s;
+  z-index: 200;
+  pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 
 #main-back {

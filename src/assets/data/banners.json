@@ -5756,20 +5756,20 @@
     "colour-type": 2,
     "title": {
       "en": "Stormrider's Bolt",
-      "zh": "Stormrider's Bolt",
-      "ja": "Stormrider's Bolt",
-      "ko": "Stormrider's Bolt",
-      "es": "Stormrider's Bolt",
-      "fr": "Stormrider's Bolt",
-      "ru": "Stormrider's Bolt",
-      "th": "Stormrider's Bolt",
-      "vi": "Stormrider's Bolt",
-      "de": "Stormrider's Bolt",
-      "id": "Stormrider's Bolt",
-      "pt": "Stormrider's Bolt"
+      "zh": "飙驭霆击",
+      "ja": "嵐を統べる豪傑",
+      "ko": "폭풍을 다스리는 기세",
+      "es": "Jinete del huracán",
+      "fr": "Éclair Foule-Orages",
+      "ru": "Грохот божественной колесницы",
+      "th": "วายุโหมอัสนีคำราม",
+      "vi": "Cưỡi Băo Tố, Sấm Vang Rền",
+      "de": "Stürmischer Schlag",
+      "id": "Gelora Pengendara Badai",
+      "pt": "Raio do Cavaleiro da Tempestade"
     },
     "rateUpFive": ["feixiao"],
-    "rateUpFour": ["moze", "asta", "luka"],
+    "rateUpFour": ["asta", "luka", "moze"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -5827,7 +5827,83 @@
       "poised-to-bloom"
     ]
   },
-
+  {
+    "vers": ["2.5.1"],
+    "type": "reruns-char",
+    "reruns-of": ["2.2.1", "2.0.1", "1.2.2"],
+    "title": {
+      "en": "Indelible Coterie",
+      "zh": "铭心之萃",
+      "ja": "銘心の萃",
+      "ko": "결집된명심",
+      "es": "Reuniones inolvidables",
+      "fr": "Figures indélébiles",
+      "ru": "Неизбывные толпы",
+      "th": "รวมพลในใต้หล้า",
+      "vi": "Gặp Gỡ Khó Phai",
+      "de": "Untilgbare Zusammenkunft",
+      "id": "Rekan dalam Sanubari",
+      "pt": "Multidões Indeléveis"
+    },
+    "rateUpFive": ["robin", "black-swan", "kafka"],
+    "rateUpFour": ["asta", "luka", "moze"],
+    "poolFiveChar": [
+      "himeko",
+      "gepard",
+      "yanqing",
+      "welt",
+      "bailu",
+      "clara",
+      "bronya"
+    ],
+    "poolFourChar": [
+      "arlan",
+      "hook",
+      "guinaifen",
+      "hanya",
+      "yukong",
+      "lynx",
+      "serval",
+      "natasha",
+      "gallagher",
+      "misha",
+      "xueyi",
+      "pela",
+      "march-7th",
+      "dan-heng",
+      "qingque",
+      "sampo",
+      "tingyun",
+      "sushang",
+      "herta"
+    ],
+    "poolFourWeap": [
+      "boundless-choreo",
+      "perfect-timing",
+      "post-op-conversation",
+      "shared-feeling",
+      "a-secret-vow",
+      "the-moles-welcome-you",
+      "under-the-blue-sky",
+      "geniuses-repose",
+      "make-the-world-clamor",
+      "the-birth-of-the-self",
+      "dance-dance-dance",
+      "memories-of-the-past",
+      "planetary-rendezvous",
+      "only-silence-remains",
+      "subscribe-for-more",
+      "swordplay",
+      "eyes-of-the-prey",
+      "good-night-and-sleep-well",
+      "resolution-shines-as-pearls-of-sweat",
+      "day-one-of-my-new-life",
+      "landaus-choice",
+      "trend-of-the-universal-market",
+      "indelible-promise",
+      "poised-to-bloom"
+    ]
+  },
   {
     "vers": ["2.5.1"],
     "type": "weap",
@@ -5848,9 +5924,9 @@
     },
     "rateUpFive": ["i-venture-forth-to-hunt"],
     "rateUpFour": [
+      "the-birth-of-the-self",
       "swordplay",
-      "resolution-shines-as-pearls-of-sweat",
-      "the-birth-of-the-self"
+      "resolution-shines-as-pearls-of-sweat"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -5910,7 +5986,92 @@
       "poised-to-bloom"
     ]
   },
-
+  {
+    "vers": ["2.5.1"],
+    "type": "reruns-weap",
+    "reruns-of": ["2.2.1", "2.0.1", "1.2.2"],
+    "title": {
+      "en": "Coalesced Truths",
+      "zh": "真意之汇",
+      "ja": "真心の集",
+      "ko": "취합된진의",
+      "es": "Convergencia verdadera",
+      "fr": "Vérités confluentes",
+      "ru": "Слияние истин",
+      "th": "สรรพสิ่งในดาราจักร",
+      "vi": "Chân Ý Hội Tụ",
+      "de": "Gesammelte Wahrheiten",
+      "id": "Kumpulan Makna Sejati",
+      "pt": "União das Verdades"
+    },
+    "rateUpFive": [
+      "flowing-nightglow",
+      "reforged-remembrance",
+      "patience-is-all-you-need"
+    ],
+    "rateUpFour": [
+      "the-birth-of-the-self",
+      "swordplay",
+      "resolution-shines-as-pearls-of-sweat"
+    ],
+    "poolFiveWeap": [
+      "something-irreplaceable",
+      "sleep-like-the-dead",
+      "time-waits-for-no-one",
+      "night-on-the-milky-way",
+      "but-the-battle-isnt-over",
+      "in-the-name-of-the-world",
+      "moment-of-victory"
+    ],
+    "poolFourChar": [
+      "misha",
+      "pela",
+      "dan-heng",
+      "hanya",
+      "qingque",
+      "sampo",
+      "xueyi",
+      "march-7th",
+      "tingyun",
+      "lynx",
+      "asta",
+      "guinaifen",
+      "luka",
+      "sushang",
+      "hook",
+      "yukong",
+      "serval",
+      "arlan",
+      "natasha",
+      "herta",
+      "gallagher"
+    ],
+    "poolFourWeap": [
+      "eyes-of-the-prey",
+      "a-secret-vow",
+      "poised-to-bloom",
+      "the-moles-welcome-you",
+      "shared-feeling",
+      "trend-of-the-universal-market",
+      "after-the-charmony-fall",
+      "memories-of-the-past",
+      "day-one-of-my-new-life",
+      "geniuses-repose",
+      "landaus-choice",
+      "boundless-choreo",
+      "concert-for-two",
+      "make-the-world-clamor",
+      "planetary-rendezvous",
+      "under-the-blue-sky",
+      "dance-dance-dance",
+      "post-op-conversation",
+      "subscribe-for-more",
+      "only-silence-remains",
+      "good-night-and-sleep-well",
+      "indelible-promise",
+      "poised-to-bloom"
+    ]
+  },
   {
     "vers": ["2.5.2"],
     "type": "char",

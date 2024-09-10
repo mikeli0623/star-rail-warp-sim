@@ -6,7 +6,13 @@ import { json } from "../../util/Constants";
 import { useTranslation } from "react-i18next";
 import RateIcon from "../RateIcon";
 
-export default function RateModal({ show, setShow, vers, type }) {
+export default function RateModal({
+  show,
+  setShow,
+  vers,
+  type,
+  rerunVersion = 0,
+}) {
   const { sound, useSound } = useContext(SoundContext);
   const handleClose = () => setShow(false);
 
@@ -63,7 +69,7 @@ export default function RateModal({ show, setShow, vers, type }) {
       >
         {t("modal.rate.rate5")}
         <RateIcon
-          item={json.getRateUpFive(vers, type)[0]}
+          item={json.getRateUpFive(vers, type)[rerunVersion]}
           rarity="5"
           type={type}
           handleSelect={handleSelect}

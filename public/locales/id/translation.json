@@ -23,7 +23,9 @@
     "rate": {
       "title": {
         "char": "Karakter UP",
-        "weap": "Light Cone UP"
+        "weap": "Light Cone UP",
+        "reruns-char": "Karakter UP",
+        "reruns-weap": "Light Cone UP"
       },
       "rate5": "Peluang UP: 5★",
       "rate4": "Peluang UP: 4★"
@@ -70,6 +72,10 @@
     "weap": {
       "text1": "Setiap <1>10</1> Warp dijamin akan memperoleh item <1>4</1>★ ke atas",
       "text2": "Persentase Light Cone yang ditentukan UP"
+    },
+    "reruns": {
+      "text1": "Tekan tab untuk mengganti ke halaman Warp yang berbeda",
+      "text2": "Setiap <1>10</1> Warp dijamin akan memperoleh item <1>4</1>★ ke atas"
     }
   },
   "table": {

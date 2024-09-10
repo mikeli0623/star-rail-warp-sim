@@ -23,7 +23,9 @@
     "rate": {
       "title": {
         "char": "Tăng Tỷ Lệ Xuất Hiện Nhân Vật",
-        "weap": "Tăng Tỷ Lệ Xuất Hiện Nón Ánh Sáng"
+        "weap": "Tăng Tỷ Lệ Xuất Hiện Nón Ánh Sáng",
+        "reruns-char": "Tăng Tỷ Lệ Xuất Hiện Nhân Vật",
+        "reruns-weap": "Tăng Tỷ Lệ Xuất Hiện Nón Ánh Sáng"
       },
       "rate5": "Tăng Tỷ Lệ Xuất Hiện: 5 Sao",
       "rate4": "Tăng Tỷ Lệ Xuất Hiện: 4 Sao"
@@ -70,6 +72,10 @@
     "weap": {
       "text1": "Mỗi <1>10</1> lần Bước Nhảy chắc chắn nhận đối tượng <1>4</1> sao trở lên",
       "text2": "Tăng tỷ lệ xuất hiện Nón Ánh Sáng chỉ định"
+    },
+    "reruns": {
+      "text1": "Nhấn vào thẻ trang để chuyển đổi giữa các Bước Nhảy khác nhau",
+      "text2": "Mỗi <1>10</1> lần Bước Nhảy chắc chắn nhận đối tượng <1>4</1> sao trở lên"
     }
   },
   "table": {
