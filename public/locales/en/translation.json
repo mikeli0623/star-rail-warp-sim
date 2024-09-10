@@ -18,12 +18,14 @@
       "title": "Choose Your Banner Version",
       "vers": "Version",
       "event1": "Character Event Warp",
-      "event2": "Weapon Event Warp"
+      "event2": "Light Cone Event Warp"
     },
     "rate": {
       "title": {
         "char": "Drop Rate Boosted Characters",
-        "weap": "Drop-Rate Boost: Light Cones"
+        "weap": "Drop-Rate Boost: Light Cones",
+        "reruns-char": "Drop Rate Boosted Characters",
+        "reruns-weap": "Drop-Rate Boost: Light Cones"
       },
       "rate5": "Boosted Drop Rate: 5-star",
       "rate4": "Boosted Drop Rate: 4-star"
@@ -70,6 +72,10 @@
     "weap": {
       "text1": "Every <1>10</1> Warps guarantees a <1>4</1>-star or above entity",
       "text2": "Featured Light Cone receives a drop-rate boost"
+    },
+    "reruns": {
+      "text1": "Click tabs to switch between different Warp banners",
+      "text2": "Every <1>10</1> Warps guarantees a <1>4</1>-star or above entity"
     }
   },
   "table": {

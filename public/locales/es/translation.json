@@ -23,7 +23,9 @@
     "rate": {
       "title": {
         "char": "Personajes con probabilidad aumentada",
-        "weap": "Conos de luz con probabilidad aumentada"
+        "weap": "Conos de luz con probabilidad aumentada",
+        "reruns-char": "Personajes con probabilidad aumentada",
+        "reruns-weap": "Conos de luz con probabilidad aumentada"
       },
       "rate5": "Probabilidad aumentada: 5★",
       "rate4": "Probabilidad aumentada: 4★"
@@ -70,6 +72,10 @@
     "weap": {
       "text1": "Con cada  <1>10</1> Saltos tienes garantizado un artículo de <1>4</1> estrellas o más",
       "text2": "¡Los conos de luz destacados tienen más probabilidades de salir!"
+    },
+    "reruns": {
+      "text1": "Haz clic en las pestañas para cambiar entre los distintos Saltos.",
+      "text2": "Con cada <1>10</1> Saltos tienes garantizado un artículo de <1>4</1> estrellas o más"
     }
   },
   "table": {

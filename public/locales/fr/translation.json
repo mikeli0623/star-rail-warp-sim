@@ -23,7 +23,9 @@
     "rate": {
       "title": {
         "char": "Personnages avec de plus grandes chances d'obtention",
-        "weap": "Cônes de lumière avec de plus grandes chances d'obtention"
+        "weap": "Cônes de lumière avec de plus grandes chances d'obtention",
+        "reruns-char": "Personnages avec de plus grandes chances d'obtention",
+        "reruns-weap": "Cônes de lumière avec de plus grandes chances d'obtention"
       },
       "rate5": "Taux d'obtention augmenté pour : 5 étoiles",
       "rate4": "Taux d'obtention augmenté pour : 4 étoiles"
@@ -70,6 +72,10 @@
     "weap": {
       "text1": "Entité <1>4</1> étoiles ou plus garantie tous les <1>10</1> Sauts hyperespaces",
       "text2": "Bonus au taux d'obtention des cônes de lumière en vedette"
+    },
+    "reruns": {
+      "text1": "Cliquez sur les onglets pour naviguer entre les differénts Sauts hyperespace.",
+      "text2": "Entité <1>4</1> étoiles ou plus garantie tous les <1>10</1> Sauts hyperespace"
     }
   },
   "table": {
