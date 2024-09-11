@@ -20,7 +20,15 @@ const chanceFour = (currentPity, baseRate) => {
   return currentPity < 9 ? baseRate : 1;
 };
 
-export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
+export const CalcWarp = (
+  vers,
+  type,
+  banner,
+  setHasFive,
+  setHasFour,
+  rerunChar,
+  rerunWeap
+) => {
   const warpChance = Math.random();
   const rateUpChance = type.includes("char") ? 0.5 : 0.75;
   const rateUp = Math.random() < rateUpChance ? true : false;
@@ -44,13 +52,9 @@ export const CalcWarp = (vers, type, banner, setHasFive, setHasFour) => {
       if (rateUp || banner.guaranteeFive) {
         // draw from rateUp
         banner.guaranteeFive = false;
-        const rerunType = type.includes("char") ? "char" : "weap";
+        const rerunType = type.includes("char") ? rerunChar : rerunWeap;
         const ratedUp = type.includes("reruns-")
-          ? [
-              json.getRateUpFive(vers, type)[
-                sessionStorage.getItem("rerun-" + rerunType) ?? 0
-              ],
-            ]
+          ? [json.getRateUpFive(vers, type)[rerunType]]
           : json.getRateUpFive(vers, type);
         warpItem = randItem(ratedUp);
       } else {

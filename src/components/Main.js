@@ -217,8 +217,12 @@ export default function Main({
     weap: <WeapBanner vers={vers} />,
     "rerun-char": <CharBanner vers={vers} rerun={true} />,
     "rerun-weap": <WeapBanner vers={vers} rerun={true} />,
-    "reruns-char": <RerunCharBanner vers={vers} setRerun={setRerunChar} />,
-    "reruns-weap": <RerunWeapBanner vers={vers} setRerun={setRerunWeap} />,
+    "reruns-char": (
+      <RerunCharBanner vers={vers} rerun={rerunChar} setRerun={setRerunChar} />
+    ),
+    "reruns-weap": (
+      <RerunWeapBanner vers={vers} rerun={rerunWeap} setRerun={setRerunWeap} />
+    ),
     standard: <StellarWarp />,
   };
 
@@ -247,7 +251,15 @@ export default function Main({
     let banner = bannerState[type];
     for (let i = 0; i < warps; i++)
       warpResults.push(
-        CalcWarp(vers, bannerType, banner, setHasFive, setHasFour)
+        CalcWarp(
+          vers,
+          bannerType,
+          banner,
+          setHasFive,
+          setHasFour,
+          rerunChar,
+          rerunWeap
+        )
       );
 
     warpResults.map((item) => {
@@ -316,8 +328,6 @@ export default function Main({
       setBannerType(banner);
       sessionStorage.setItem("bannerType", banner);
     }
-    sessionStorage.removeItem("rerun-char");
-    sessionStorage.removeItem("rerun-weap");
     setRerunChar(0);
     setRerunWeap(0);
   };
