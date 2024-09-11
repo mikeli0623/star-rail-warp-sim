@@ -10,13 +10,11 @@ import MiniMiniBanners from "../components/MiniMiniBanners";
 import { AnimatePresence, motion } from "framer-motion";
 const trans = require("../assets/data/translations.json");
 
-export default function RerunWeapBanner({ vers, setRerun }) {
+export default function RerunWeapBanner({ vers, rerun, setRerun }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { t, i18n } = useTranslation();
 
-  const [rerunVersion, setRerunVersion] = useState(
-    JSON.parse(sessionStorage.getItem("rerun-weap") ?? 0)
-  );
+  const [rerunVersion, setRerunVersion] = useState(rerun);
 
   const versions = json.getReruns(vers);
 
@@ -33,7 +31,6 @@ export default function RerunWeapBanner({ vers, setRerun }) {
   const handleSelectRerun = (rerun) => {
     setRerunVersion(rerun);
     setRerun(rerun);
-    sessionStorage.setItem("rerun-weap", rerun);
   };
 
   const variants = {
@@ -253,7 +250,6 @@ export default function RerunWeapBanner({ vers, setRerun }) {
           <img
             variants={variants}
             initial="initial"
-            key={`../assets/splash/${weapName}.webp`}
             animate="animate"
             exit="exit"
             transition={{
@@ -302,14 +298,12 @@ export default function RerunWeapBanner({ vers, setRerun }) {
               boxSizing: "border-box",
             }}
             src={`../assets/splash/${weapName}.webp`}
-            key={`../assets/splash/${weapName}.webp`}
             alt={weapName}
             width={getWidth(262)}
             height={getHeight(364, 262)}
             draggable="false"
           />
           <img
-            key={`../assets/splash/${weapName}.webp`}
             variants={variants}
             initial="initial"
             animate="animate"
@@ -478,7 +472,7 @@ export default function RerunWeapBanner({ vers, setRerun }) {
           position: "absolute",
           top: "50%",
           left: "50%",
-          transform: "translate(-200%, -700%)",
+          transform: "translate(-150%, -700%)",
           zIndex: 100,
         }}
         onClick={() => setShow(true)}

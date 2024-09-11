@@ -132,6 +132,7 @@ export default function VersionModal({
         <Button
           onClick={() => {
             setVers(selected);
+            sessionStorage.setItem("vers", selected);
             // current bannerType is a rerun and selected version does not have a rerun
             if (bannerType.includes("rerun-") && !json.checkRerun(selected)) {
               if (

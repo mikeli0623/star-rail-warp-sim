@@ -10,14 +10,12 @@ import { json } from "../util/Constants";
 import { AnimatePresence, motion } from "framer-motion";
 import MiniMiniBanners from "../components/MiniMiniBanners";
 
-export default function RerunCharBanner({ vers, setRerun }) {
+export default function RerunCharBanner({ vers, rerun, setRerun }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
   const { t, i18n } = useTranslation();
   const [show, setShow] = useState(false);
 
-  const [rerunVersion, setRerunVersion] = useState(
-    JSON.parse(sessionStorage.getItem("rerun-char") ?? 0)
-  );
+  const [rerunVersion, setRerunVersion] = useState(rerun);
 
   const versions = json.getReruns(vers);
 
@@ -28,7 +26,6 @@ export default function RerunCharBanner({ vers, setRerun }) {
   const handleSelectRerun = (rerun) => {
     setRerunVersion(rerun);
     setRerun(rerun);
-    sessionStorage.setItem("rerun-char", rerun);
   };
 
   const variants = {
@@ -171,6 +168,7 @@ export default function RerunCharBanner({ vers, setRerun }) {
             width: getWidth(257.6),
             backgroundColor: "rgba(64,64,64,0.6)",
             padding: `0 ${getWidth(4)}px`,
+            marginBottom: 0,
           }}
         >
           <Trans i18nKey="banner.reruns.text2">
