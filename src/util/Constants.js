@@ -246,6 +246,8 @@ const colourMap = {
   6: "#6748c7",
   // bright red
   7: "#bb323e",
+  // brownish red: lingsha 2.5.2
+  8: "#a44d4d",
 };
 
 export {

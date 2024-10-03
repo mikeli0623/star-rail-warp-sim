@@ -6075,7 +6075,7 @@
   {
     "vers": ["2.5.2"],
     "type": "char",
-    "colour-type": 7,
+    "colour-type": 8,
     "title": {
       "en": "Let Scent Sink In",
       "zh": "卧香沉水",
@@ -6091,7 +6091,7 @@
       "pt": "Deixe o Perfume Envolver"
     },
     "rateUpFive": ["lingsha"],
-    "rateUpFour": ["misha", "natasha", "guinaifen"],
+    "rateUpFour": ["natasha", "guinaifen", "misha"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -6168,7 +6168,7 @@
       "pt": "Cláusula do Crepúsculo"
     },
     "rateUpFive": ["topaz-and-numby"],
-    "rateUpFour": ["misha", "natasha", "guinaifen"],
+    "rateUpFour": ["natasha", "guinaifen", "misha"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -6229,7 +6229,7 @@
   {
     "vers": ["2.5.2"],
     "type": "weap",
-    "colour-type": 7,
+    "colour-type": 8,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
@@ -6246,9 +6246,9 @@
     },
     "rateUpFive": ["scent-alone-stays-true"],
     "rateUpFour": [
-      "shadowed-by-night",
       "shared-feeling",
-      "planetary-rendezvous"
+      "planetary-rendezvous",
+      "shadowed-by-night"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -6330,9 +6330,9 @@
     },
     "rateUpFive": ["worrisome-blissful"],
     "rateUpFour": [
-      "shadowed-by-night",
       "shared-feeling",
-      "planetary-rendezvous"
+      "planetary-rendezvous",
+      "shadowed-by-night"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
