@@ -133,27 +133,30 @@ export default function VersionModal({
           onClick={() => {
             setVers(selected);
             sessionStorage.setItem("vers", selected);
+            console.log(
+              "bannerType: %s, rerun: %s, reruns: %s",
+              bannerType,
+              json.checkRerun(selected),
+              json.checkReruns(selected)
+            );
             // current bannerType is a rerun and selected version does not have a rerun
             if (bannerType.includes("rerun-") && !json.checkRerun(selected)) {
-              if (
-                bannerType.includes("reruns-") &&
-                !json.checkReruns(selected)
-              ) {
-                if (bannerType.includes("char")) setBannerType("char");
-                else setBannerType("weap");
-              } else {
+              if (json.checkReruns(selected)) {
                 if (bannerType.includes("char")) setBannerType("reruns-char");
                 else setBannerType("reruns-weap");
+              } else {
+                if (bannerType.includes("char")) setBannerType("char");
+                else setBannerType("weap");
               }
             }
             // current bannerType is a reruns and selected version does not have a reruns
             if (bannerType.includes("reruns-") && !json.checkReruns(selected)) {
-              if (bannerType.includes("rerun-") && !json.checkRerun(selected)) {
-                if (bannerType.includes("char")) setBannerType("char");
-                else setBannerType("weap");
-              } else {
+              if (json.checkRerun(selected)) {
                 if (bannerType.includes("char")) setBannerType("rerun-char");
                 else setBannerType("rerun-weap");
+              } else {
+                if (bannerType.includes("char")) setBannerType("char");
+                else setBannerType("weap");
               }
             }
             handleClose();
