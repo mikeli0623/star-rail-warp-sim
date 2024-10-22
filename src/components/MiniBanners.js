@@ -71,16 +71,6 @@ const MiniBanner = ({ path, active, handleSelect, lockout }) => {
   );
 };
 
-const bannerTypes = [
-  "beginner",
-  "char",
-  "rerun-char",
-  "reruns-char",
-  "weap",
-  "rerun-weap",
-  "reruns-weap",
-  "standard",
-];
 export default function MiniBanners({
   bannerType,
   hasBeginner = true,
@@ -106,17 +96,10 @@ export default function MiniBanners({
 
   return (
     <div className="mini-banners">
-      {bannerTypes
+      {json
+        .getTypes(vers)
         .filter((type) => {
           if (!hasBeginner) return type !== "beginner";
-          return type;
-        })
-        .filter((type) => {
-          if (!json.checkRerun(vers)) return !type.includes("rerun-");
-          return type;
-        })
-        .filter((type) => {
-          if (!json.checkReruns(vers)) return !type.includes("reruns-");
           return type;
         })
         .map((type) => {

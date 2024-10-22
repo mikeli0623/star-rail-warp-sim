@@ -81,9 +81,12 @@ const allChars = [
   "feixiao",
   "lingsha",
   "moze",
+  "rappa",
 ];
 
 const allWeapons = [
+  "ninjutsu-inscription-dazzling-evilbreaker",
+  "dreams-montage",
   "shadowed-by-night",
   "i-venture-forth-to-hunt",
   "scent-alone-stays-true",
@@ -197,6 +200,8 @@ const BGM = {
 };
 
 const allVers = [
+  "2.6.2",
+  "2.6.1",
   "2.5.2",
   "2.5.1",
   "2.4.2",
@@ -225,9 +230,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = [];
-
-const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
+const LATESTVERS = allVers[1];
 
 const asianLang = ["zh", "ko", "ja"];
 
@@ -258,6 +261,5 @@ export {
   allVers,
   asianLang,
   LATESTVERS,
-  hidden,
   colourMap,
 };

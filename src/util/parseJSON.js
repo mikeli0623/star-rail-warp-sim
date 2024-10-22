@@ -111,6 +111,13 @@ class ParseJSON {
     }
     return false;
   }
+  getTypes(vers) {
+    let types = [];
+    for (const key of this.bannerJSON) {
+      if (key.vers.includes(vers)) types.push(key.type);
+    }
+    return types;
+  }
 }
 
 export default ParseJSON;

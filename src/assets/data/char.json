@@ -1,5 +1,11 @@
 [
   {
+    "name": "Rappa",
+    "path": "Erudition",
+    "element": "Imaginary",
+    "rarity": 5
+  },
+  {
     "name": "Feixiao",
     "path": "The Hunt",
     "element": "Wind",
