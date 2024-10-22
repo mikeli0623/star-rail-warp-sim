@@ -40,10 +40,8 @@ export default function WeapBanner({ vers, rerun = false }) {
   const [pathY, setPathY] = useState(75);
 
   useEffect(() => {
-    const height = Math.round(getHeight(87, 160));
-    if (nameRef.current.offsetHeight === height) setPathY(130);
-    else if (nameRef.current.offsetHeight === height / 3) setPathY(75);
-    else setPathY(105);
+    const height = Math.round(getHeight(29, 160));
+    setPathY(75 + 28 * (Math.round(nameRef.current.offsetHeight / height) - 1));
   }, [nameRef.current?.offsetHeight, getHeight, i18n.resolvedLanguage]);
 
   return (

@@ -13,6 +13,48 @@
     "de": "Die Nacht der langen Schatten",
     "id": "Shadowed by Night"
   },
+  "dreams-montage": {
+    "en": "Dream's Montage",
+    "zh": "梦的蒙太奇",
+    "ja": "夢のモンタージュ",
+    "ko": "꿈의몽타주",
+    "es": "Montaje de sueños",
+    "fr": "Montage du rêve",
+    "ru": "Монтаж грёз",
+    "th": "Dream's Montage",
+    "vi": "Dựng Phim Trong Mơ",
+    "de": "Traummontage",
+    "id": "Dream's Montage",
+    "pt": "Montagem do Sonho"
+  },
+  "ninjutsu-inscription-dazzling-evilbreaker": {
+    "en": "Ninjutsu Inscription: Dazzling Evilbreaker",
+    "zh": "忍法帖•缭乱破魔",
+    "ja": "忍法帖・繚乱破魔",
+    "ko": "인법첩•요란파마",
+    "es": "Pergamino ninja: Azote deslumbrante del mal",
+    "fr": "Écritures ninjutsu : Justiceéblouissante",
+    "ru": "Свиток ниндзя: Очищение хаосом",
+    "th": "Ninjutsu Inscription: Dazzling Evilbreaker",
+    "vi": "Bí Kíp Nhẫn Pháp-Dazzling Phá Ma",
+    "de": "Ninja-Kodex: Blendender Schattenbrecher",
+    "id": "Ninjutsu Inscription: Dazzling Evilbreaker",
+    "pt": "Inscrição do Ninjutsu: Destruição Deslumbrante do Mal"
+  },
+  "rappa": {
+    "en": "Rappa",
+    "zh": "乱破",
+    "ja": "乱破",
+    "ko": "라파",
+    "es": "Rappa",
+    "fr": "Rappa",
+    "ru": "Раппа",
+    "th": "Rappa",
+    "vi": "Rappa",
+    "de": "Rappa",
+    "id": "Rappa",
+    "pt": "Rappa"
+  },
   "poised-to-bloom": {
     "en": "Poised to Bloom",
     "zh": "芳华待灼",

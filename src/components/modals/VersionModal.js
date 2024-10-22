@@ -1,13 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef, useEffect } from "react";
 import Modal from "react-bootstrap/Modal";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
-import { allVers, hidden, json } from "../../util/Constants";
+import { allVers, json } from "../../util/Constants";
 import VersionInfo from "../VersionInfo";
 import { useTranslation } from "react-i18next";
 import { Scrollbars } from "react-custom-scrollbars-2";
-import Checkbox from "../Checkbox";
 
 export default function VersionModal({
   show,
@@ -29,16 +28,14 @@ export default function VersionModal({
 
   const { t } = useTranslation();
 
-  const [showHidden, setShowHidden] = useState(
-    localStorage.getItem("hiddenBanners")
-      ? JSON.parse(localStorage.getItem("hiddenBanners"))
-      : false
-  );
+  const scrollbarsRef = useRef(null);
 
-  const handleCheck = () => {
-    localStorage.setItem("hiddenBanners", !showHidden);
-    setShowHidden(!showHidden);
-  };
+  useEffect(() => {
+    if (show && scrollbarsRef.current) {
+      const element = document.getElementsByClassName("vers-info highlight")[0];
+      scrollbarsRef.current.scrollTop(element.offsetTop);
+    }
+  }, [show]);
 
   return (
     <Modal
@@ -75,6 +72,7 @@ export default function VersionModal({
         }}
       >
         <Scrollbars
+          ref={scrollbarsRef}
           style={{
             height: "50vh",
             width: "100%",
@@ -83,21 +81,16 @@ export default function VersionModal({
           autoHideTimeout={1000}
           autoHideDuration={200}
         >
-          {allVers
-            .filter((ver) => {
-              if (showHidden) return true;
-              return !hidden.includes(ver);
-            })
-            .map((vers, i) => {
-              return (
-                <VersionInfo
-                  key={vers + i}
-                  isCurrentSelected={vers === selected}
-                  vers={vers}
-                  setSelected={setSelected}
-                />
-              );
-            })}
+          {allVers.map((vers, i) => {
+            return (
+              <VersionInfo
+                key={vers + i}
+                isCurrentSelected={vers === selected}
+                vers={vers}
+                setSelected={setSelected}
+              />
+            );
+          })}
         </Scrollbars>
       </Modal.Body>
       <Modal.Footer
@@ -124,21 +117,10 @@ export default function VersionModal({
           size="sm"
           resize={false}
         />
-        {/* <Checkbox
-          text="Hidden"
-          handleCheck={handleCheck}
-          checked={showHidden}
-        /> */}
         <Button
           onClick={() => {
             setVers(selected);
             sessionStorage.setItem("vers", selected);
-            console.log(
-              "bannerType: %s, rerun: %s, reruns: %s",
-              bannerType,
-              json.checkRerun(selected),
-              json.checkReruns(selected)
-            );
             // current bannerType is a rerun and selected version does not have a rerun
             if (bannerType.includes("rerun-") && !json.checkRerun(selected)) {
               if (json.checkReruns(selected)) {
