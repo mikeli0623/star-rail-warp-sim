@@ -6287,23 +6287,23 @@
   {
     "vers": ["2.6.1"],
     "type": "char",
-    "colour-type": 7,
+    "colour-type": 8,
     "title": {
       "en": "Eyes of a Ninja",
-      "zh": "Eyes of a Ninja",
-      "ja": "Eyes of a Ninja",
-      "ko": "Eyes of a Ninja",
-      "es": "Eyes of a Ninja",
-      "fr": "Eyes of a Ninja",
+      "zh": "忍视眈眈",
+      "ja": "邪を狙う忍瞳",
+      "ko": "기회를 노리는 닌자",
+      "es": "Mirada de ninja",
+      "fr": "L'œil du ninja",
       "ru": "Взгляд ниндзя",
-      "th": "Eyes of a Ninja",
-      "vi": "Eyes of a Ninja",
-      "de": "Eyes of a Ninja",
-      "id": "Eyes of a Ninja",
-      "pt": "Eyes of a Ninja"
+      "th": "แยงยลกลนินจา",
+      "vi": "Đôi Mắt Ninja",
+      "de": "Augen einer Ninja",
+      "id": "Ketajaman Mata Ninja",
+      "pt": "Olhos Ninja"
     },
     "rateUpFive": ["rappa"],
-    "rateUpFour": ["lynx", "xueyi", "yukong"],
+    "rateUpFour": ["lynx", "yukong", "xueyi"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -6382,7 +6382,7 @@
       "pt": "Espectro Épico"
     },
     "rateUpFive": ["imbibitor-lunae"],
-    "rateUpFour": ["lynx", "xueyi", "yukong"],
+    "rateUpFour": ["lynx", "yukong", "xueyi"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -6444,7 +6444,7 @@
   {
     "vers": ["2.6.1"],
     "type": "weap",
-    "colour-type": 7,
+    "colour-type": 8,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
@@ -6461,9 +6461,9 @@
     },
     "rateUpFive": ["ninjutsu-inscription-dazzling-evilbreaker"],
     "rateUpFour": [
-      "dreams-montage",
+      "under-the-blue-sky",
       "after-the-charmony-fall",
-      "under-the-blue-sky"
+      "dreams-montage"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -6547,9 +6547,9 @@
     },
     "rateUpFive": ["brighter-than-the-sun"],
     "rateUpFour": [
-      "dreams-montage",
+      "under-the-blue-sky",
       "after-the-charmony-fall",
-      "under-the-blue-sky"
+      "dreams-montage"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
