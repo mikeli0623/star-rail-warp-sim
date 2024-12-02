@@ -1,5 +1,17 @@
 [
   {
+    "name": "Sunday",
+    "path": "Harmony",
+    "element": "Imaginary",
+    "rarity": 5
+  },
+  {
+    "name": "Fugue",
+    "path": "Nihility",
+    "element": "Fire",
+    "rarity": 5
+  },
+  {
     "name": "Rappa",
     "path": "Erudition",
     "element": "Imaginary",

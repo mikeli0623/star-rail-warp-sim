@@ -82,9 +82,13 @@ const allChars = [
   "lingsha",
   "moze",
   "rappa",
+  "sunday",
+  "fugue",
 ];
 
 const allWeapons = [
+  "a-grounded-ascent",
+  "long-road-leads-home",
   "ninjutsu-inscription-dazzling-evilbreaker",
   "dreams-montage",
   "shadowed-by-night",
@@ -200,6 +204,8 @@ const BGM = {
 };
 
 const allVers = [
+  "2.7.2",
+  "2.7.1",
   "2.6.2",
   "2.6.1",
   "2.5.2",
@@ -230,7 +236,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const LATESTVERS = allVers[0];
+const LATESTVERS = allVers[1];
 
 const asianLang = ["zh", "ko", "ja"];
 
