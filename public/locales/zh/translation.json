@@ -24,6 +24,8 @@
       "title": {
         "char": "概率提升角色",
         "weap": "概率提升光锥",
+        "rerun-char": "概率提升角色",
+        "rerun-weap": "概率提升光锥",
         "reruns-char": "概率提升角色",
         "reruns-weap": "概率提升光锥"
       },

@@ -24,6 +24,8 @@
       "title": {
         "char": "Tăng Tỷ Lệ Xuất Hiện Nhân Vật",
         "weap": "Tăng Tỷ Lệ Xuất Hiện Nón Ánh Sáng",
+        "rerun-char": "Tăng Tỷ Lệ Xuất Hiện Nhân Vật",
+        "rerun-weap": "Tăng Tỷ Lệ Xuất Hiện Nón Ánh Sáng",
         "reruns-char": "Tăng Tỷ Lệ Xuất Hiện Nhân Vật",
         "reruns-weap": "Tăng Tỷ Lệ Xuất Hiện Nón Ánh Sáng"
       },

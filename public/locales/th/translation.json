@@ -24,6 +24,8 @@
       "title": {
         "char": "เพิ่มโอกาสได้ริบตัวละคร",
         "weap": "เพิ่มโอกาสได้รับ Light Cone",
+        "rerun-char": "เพิ่มโอกาสได้ริบตัวละคร",
+        "rerun-weap": "เพิ่มโอกาสได้รับ Light Cone",
         "reruns-char": "เพิ่มโอกาสได้ริบตัวละคร",
         "reruns-weap": "เพิ่มโอกาสได้รับ Light Cone"
       },

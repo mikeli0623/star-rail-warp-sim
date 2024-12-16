@@ -24,6 +24,8 @@
       "title": {
         "char": "확률 UP 캐릭터",
         "weap": "확률 UP 광추",
+        "rerun-char": "확률 UP 캐릭터",
+        "rerun-weap": "확률 UP 광추",
         "reruns-char": "확률 UP 캐릭터",
         "reruns-weap": "확률 UP 광추"
       },
