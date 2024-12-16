@@ -24,6 +24,8 @@
       "title": {
         "char": "Personajes con probabilidad aumentada",
         "weap": "Conos de luz con probabilidad aumentada",
+        "rerun-char": "Personajes con probabilidad aumentada",
+        "rerun-weap": "Conos de luz con probabilidad aumentada",
         "reruns-char": "Personajes con probabilidad aumentada",
         "reruns-weap": "Conos de luz con probabilidad aumentada"
       },

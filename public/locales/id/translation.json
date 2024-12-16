@@ -24,6 +24,8 @@
       "title": {
         "char": "Karakter UP",
         "weap": "Light Cone UP",
+        "rerun-char": "Karakter UP",
+        "rerun-weap": "Light Cone UP",
         "reruns-char": "Karakter UP",
         "reruns-weap": "Light Cone UP"
       },

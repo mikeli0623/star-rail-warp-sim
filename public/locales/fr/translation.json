@@ -24,6 +24,8 @@
       "title": {
         "char": "Personnages avec de plus grandes chances d'obtention",
         "weap": "Cônes de lumière avec de plus grandes chances d'obtention",
+        "rerun-char": "Personnages avec de plus grandes chances d'obtention",
+        "rerun-weap": "Cônes de lumière avec de plus grandes chances d'obtention",
         "reruns-char": "Personnages avec de plus grandes chances d'obtention",
         "reruns-weap": "Cônes de lumière avec de plus grandes chances d'obtention"
       },

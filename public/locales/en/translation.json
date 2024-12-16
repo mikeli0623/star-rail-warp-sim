@@ -24,6 +24,8 @@
       "title": {
         "char": "Drop Rate Boosted Characters",
         "weap": "Drop-Rate Boost: Light Cones",
+        "rerun-char": "Drop Rate Boosted Characters",
+        "rerun-weap": "Drop-Rate Boost: Light Cones",
         "reruns-char": "Drop Rate Boosted Characters",
         "reruns-weap": "Drop-Rate Boost: Light Cones"
       },

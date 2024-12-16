@@ -364,7 +364,7 @@ export default function WeapBanner({ vers, rerun = false }) {
         alt={path}
         draggable="false"
       />
-      <RateModal show={show} setShow={setShow} vers={vers} type={"weap"} />
+      <RateModal show={show} setShow={setShow} vers={vers} type={type} />
       <Button
         style={{
           position: "absolute",

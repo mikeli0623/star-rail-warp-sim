@@ -24,6 +24,8 @@
       "title": {
         "char": "Figuren mit höherer Chance",
         "weap": "Lichtkegel mit höherer Chance",
+        "rerun-char": "Figuren mit höherer Chance",
+        "rerun-weap": "Lichtkegel mit höherer Chance",
         "reruns-char": "Figuren mit höherer Chance",
         "reruns-weap": "Lichtkegel mit höherer Chance"
       },
