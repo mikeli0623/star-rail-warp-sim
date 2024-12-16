@@ -14,7 +14,6 @@ export default function CharBanner({ bg = "40, 33, 36", vers, rerun = false }) {
   const { t, i18n } = useTranslation();
   const [show, setShow] = useState(false);
 
-  const type = rerun ? "rerun-char" : "char";
   const actualVers = rerun ? json.getRerun(vers) : vers;
 
   const title = json.getTitle(actualVers, "char", i18n.resolvedLanguage);
@@ -341,7 +340,7 @@ export default function CharBanner({ bg = "40, 33, 36", vers, rerun = false }) {
           animationFillMode: "both",
         }}
       />
-      <RateModal show={show} setShow={setShow} vers={vers} type={type} />
+      <RateModal show={show} setShow={setShow} vers={vers} type={"char"} />
       <Button
         style={{
           position: "absolute",
