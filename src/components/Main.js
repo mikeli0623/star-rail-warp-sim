@@ -402,11 +402,11 @@ export default function Main({
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <LazyLoadImage
-          effect="opacity"
-          src={`/assets/banner/${backPath}-back.webp`}
+        <div
           id="main-back-back"
-          width="100%"
+          style={{
+            backgroundImage: `url(/assets/banner/${backPath}-back.webp)`,
+          }}
         />
       </motion.div>
       <Settings
