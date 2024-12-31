@@ -236,7 +236,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const LATESTVERS = allVers[1];
+const LATESTVERS = allVers[0];
 
 const asianLang = ["zh", "ko", "ja"];
 
