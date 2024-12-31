@@ -1,31 +1,31 @@
 {
   "a-grounded-ascent": {
     "en": "A Grounded Ascent",
-    "zh": "A Grounded Ascent",
-    "ja": "A Grounded Ascent",
-    "ko": "A Grounded Ascent",
-    "es": "A Grounded Ascent",
-    "fr": "A Grounded Ascent",
+    "zh": "回到大地的飞行",
+    "ja": "大地より天を目指して",
+    "ko": "대지로 돌아온 비행",
+    "es": "De vuelta a la tierra",
+    "fr": "Ascension terrestre",
     "ru": "Приземлённый полёт",
     "th": "A Grounded Ascent",
     "vi": "Chuyến Bay Trở Về Mặt Đất",
-    "de": "A Grounded Ascent",
+    "de": "Flug zurück zur Erde",
     "id": "A Grounded Ascent",
-    "pt": "A Grounded Ascent"
+    "pt": "Uma Ascensão Aterrada"
   },
   "long-road-leads-home": {
     "en": "Long Road Leads Home",
-    "zh": "Long Road Leads Home",
-    "ja": "Long Road Leads Home",
-    "ko": "Long Road Leads Home",
-    "es": "Long Road Leads Home",
-    "fr": "Long Road Leads Home",
-    "ru": "Long Road Leads Home",
+    "zh": "长路终有归途",
+    "ja": "長途はやがて帰途へと続く",
+    "ko": "먼 길 끝의 귀로",
+    "es": "El largo camino a casa",
+    "fr": "Long est le chemin retour",
+    "ru": "Дом в конце долгого пути",
     "th": "Long Road Leads Home",
-    "vi": "Long Road Leads Home",
-    "de": "Long Road Leads Home",
+    "vi": "Đường Dài Vẫn Có Lối Về",
+    "de": "Rückkehr auf langem Wege",
     "id": "Long Road Leads Home",
-    "pt": "Long Road Leads Home"
+    "pt": "A Longa Estrada Leva para Casa"
   },
   "sunday": {
     "en": "Sunday",
