@@ -215,7 +215,7 @@ const BGM = {
 };
 
 const allVers = [
-  // "3.0.2",
+  "3.0.2",
   "3.0.1",
   "2.7.2",
   "2.7.1",
@@ -249,7 +249,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const LATESTVERS = allVers[0];
+const LATESTVERS = allVers[1];
 
 const asianLang = ["zh", "ko", "ja"];
 
