@@ -227,6 +227,11 @@ export default function DataBank({ type, setContent, setShowDB }) {
             handleSelect={handleFilterSelect}
             active={filter === "Abundance"}
           />
+          <FilterButton
+            text="Remembrance"
+            handleSelect={handleFilterSelect}
+            active={filter === "Remembrance"}
+          />
           <Checkbox
             className="count-check"
             handleCheck={handleCount}

@@ -1,5 +1,23 @@
 [
   {
+    "name": "Aglaea",
+    "path": "Remembrance",
+    "element": "Lightning",
+    "rarity": 5
+  },
+  {
+    "name": "Mydei",
+    "path": "Destruction",
+    "element": "Imaginary",
+    "rarity": 5
+  },
+  {
+    "name": "The Herta",
+    "path": "Erudition",
+    "element": "Ice",
+    "rarity": 5
+  },
+  {
     "name": "Sunday",
     "path": "Harmony",
     "element": "Imaginary",
