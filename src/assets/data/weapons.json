@@ -1,5 +1,35 @@
 [
   {
+    "name": "Victory In a Blink",
+    "path": "Remembrance",
+    "rarity": 4
+  },
+  {
+    "name": "Geniuses' Greetings",
+    "path": "Remembrance",
+    "rarity": 4
+  },
+  {
+    "name": "Reminiscence",
+    "path": "Remembrance",
+    "rarity": 3
+  },
+  {
+    "name": "Shadowburn",
+    "path": "Remembrance",
+    "rarity": 3
+  },
+  {
+    "name": "Time Woven Into Gold",
+    "path": "Remembrance",
+    "rarity": 5
+  },
+  {
+    "name": "Into the Unreachable Veil",
+    "path": "Erudition",
+    "rarity": 5
+  },
+  {
     "name": "A Grounded Ascent",
     "path": "Harmony",
     "rarity": 5
