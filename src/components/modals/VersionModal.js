@@ -3,10 +3,11 @@ import Modal from "react-bootstrap/Modal";
 import SoundContext from "../context/SoundContext";
 import CloseButton from "../CloseButton";
 import Button from "../Button";
-import { allVers, json } from "../../util/Constants";
+import { allVers, hidden, json } from "../../util/Constants";
 import VersionInfo from "../VersionInfo";
 import { useTranslation } from "react-i18next";
 import { Scrollbars } from "react-custom-scrollbars-2";
+import Checkbox from "../Checkbox";
 
 export default function VersionModal({
   show,
@@ -28,14 +29,31 @@ export default function VersionModal({
 
   const { t } = useTranslation();
 
+  const [showHidden, setShowHidden] = useState(
+    localStorage.getItem("hiddenBanners")
+      ? JSON.parse(localStorage.getItem("hiddenBanners"))
+      : false
+  );
+
+  const handleCheck = () => {
+    localStorage.setItem("hiddenBanners", !showHidden);
+    setShowHidden(!showHidden);
+  };
+
   const scrollbarsRef = useRef(null);
 
   useEffect(() => {
     if (show && scrollbarsRef.current) {
       const element = document.getElementsByClassName("vers-info highlight")[0];
-      scrollbarsRef.current.scrollTop(element.offsetTop);
+      if (element) {
+        scrollbarsRef.current.scrollTop(element.offsetTop);
+      }
     }
   }, [show]);
+
+  useEffect(() => {
+    console.log(hidden);
+  });
 
   return (
     <Modal
@@ -81,16 +99,21 @@ export default function VersionModal({
           autoHideTimeout={1000}
           autoHideDuration={200}
         >
-          {allVers.map((vers, i) => {
-            return (
-              <VersionInfo
-                key={vers + i}
-                isCurrentSelected={vers === selected}
-                vers={vers}
-                setSelected={setSelected}
-              />
-            );
-          })}
+          {allVers
+            .filter((ver) => {
+              if (showHidden) return true;
+              return !hidden.includes(ver);
+            })
+            .map((vers, i) => {
+              return (
+                <VersionInfo
+                  key={vers + i}
+                  isCurrentSelected={vers === selected}
+                  vers={vers}
+                  setSelected={setSelected}
+                />
+              );
+            })}
         </Scrollbars>
       </Modal.Body>
       <Modal.Footer
@@ -117,6 +140,7 @@ export default function VersionModal({
           size="sm"
           resize={false}
         />
+        <Checkbox text="WIP" handleCheck={handleCheck} checked={showHidden} />
         <Button
           onClick={() => {
             setVers(selected);

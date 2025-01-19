@@ -12,6 +12,12 @@
     "rarity": 5
   },
   {
+    "name": "Tribbie",
+    "path": "Harmony",
+    "element": "Quantum",
+    "rarity": 5
+  },
+  {
     "name": "The Herta",
     "path": "Erudition",
     "element": "Ice",
