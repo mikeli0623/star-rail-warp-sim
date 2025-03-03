@@ -252,9 +252,9 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = ["3.1.2", "3.1.1"];
+const hidden = [];
 
-const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
+const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[1];
 
 const asianLang = ["zh", "ko", "ja"];
 
@@ -277,6 +277,8 @@ const colourMap = {
   8: "#a44d4d",
   // bright purple: the herta 3.0.1
   9: "#7855cd",
+  // gold
+  10: "#b38a5a",
 };
 
 export {
