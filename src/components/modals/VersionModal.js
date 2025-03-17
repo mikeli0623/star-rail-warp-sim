@@ -51,10 +51,6 @@ export default function VersionModal({
     }
   }, [show]);
 
-  useEffect(() => {
-    console.log(hidden);
-  });
-
   return (
     <Modal
       show={show}
@@ -140,7 +136,7 @@ export default function VersionModal({
           size="sm"
           resize={false}
         />
-        <Checkbox text="WIP" handleCheck={handleCheck} checked={showHidden} />
+        {/* <Checkbox text="WIP" handleCheck={handleCheck} checked={showHidden} /> */}
         <Button
           onClick={() => {
             setVers(selected);

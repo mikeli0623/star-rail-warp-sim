@@ -25,7 +25,7 @@ class ParseJSON {
     const json = this.isChar(item) ? this.charJSON : this.weaponJSON;
     for (const key of json) if (cleanText(key.name) === item) return key.rarity;
   }
-  getPath(item, lang = "en") {
+  getPath(item) {
     const json = this.isChar(item) ? this.charJSON : this.weaponJSON;
     for (const key of json) if (cleanText(key.name) === item) return key.path;
   }
