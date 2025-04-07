@@ -97,10 +97,10 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
             <div
               style={{
                 backgroundImage: `url(../assets/banner/rate-up/${rateFour[0]}-mini.webp)`,
-                width: getWidth(400),
-                height: getWidth(400),
-                backgroundSize: getWidth(400),
-                animation: "char-rate-up-animation 1s 1",
+                width: getWidth(60),
+                height: getWidth(60),
+                backgroundSize: getWidth(60),
+                animation: "char-mini-rate-up-animation 1s 1",
                 animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
                 animationDelay: "400ms",
                 opacity: "0",
@@ -122,10 +122,10 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
             <div
               style={{
                 backgroundImage: `url(../assets/banner/rate-up/${rateFour[1]}-mini.webp)`,
-                width: getWidth(400),
-                height: getWidth(400),
-                backgroundSize: getWidth(400),
-                animation: "char-rate-up-animation 1s 1",
+                width: getWidth(60),
+                height: getWidth(60),
+                backgroundSize: getWidth(60),
+                animation: "char-mini-rate-up-animation 1s 1",
                 animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
                 animationDelay: "475ms",
                 opacity: "0",
@@ -147,10 +147,10 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
             <div
               style={{
                 backgroundImage: `url(../assets/banner/rate-up/${rateFour[2]}-mini.webp)`,
-                width: getWidth(400),
-                height: getWidth(400),
-                backgroundSize: getWidth(400),
-                animation: "char-rate-up-animation 1s 1",
+                width: getWidth(60),
+                height: getWidth(60),
+                backgroundSize: getWidth(60),
+                animation: "char-mini-rate-up-animation 1s 1",
                 animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
                 animationDelay: "550ms",
                 animationFillMode: "both",
