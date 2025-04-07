@@ -1,5 +1,17 @@
 [
   {
+    "name": "Anaxa",
+    "path": "Erudition",
+    "element": "Wind",
+    "rarity": 5
+  },
+  {
+    "name": "Castorice",
+    "path": "Remembrance",
+    "element": "Quantum",
+    "rarity": 5
+  },
+  {
     "name": "Aglaea",
     "path": "Remembrance",
     "element": "Lightning",

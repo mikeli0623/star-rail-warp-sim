@@ -343,6 +343,16 @@
   }
 }
 
+@keyframes char-mini-rate-up-animation {
+  0% {
+    transform: translateX(-30%);
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
 @keyframes char-animation {
   0% {
     transform: translate(-41%, -50%);
