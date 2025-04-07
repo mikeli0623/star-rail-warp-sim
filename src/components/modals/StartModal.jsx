@@ -36,8 +36,8 @@ export default function StartModal({ show, setShow }) {
         let i = 0;
         while (list.length < 5) {
           if (
-            !data[i].commit.message.includes("Merge pull request") ||
-            !data[i].commit.message.includes("chore") ||
+            !data[i].commit.message.includes("Merge pull request") &&
+            !data[i].commit.message.includes("chore") &&
             !data[i].commit.message.includes("bugfix")
           )
             list.push(data[i].commit);
