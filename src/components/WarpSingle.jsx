@@ -5,7 +5,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import ResizeContext from "./context/ResizeContext";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
-const trans = require("../assets/data/translations.json");
+import trans from "../assets/data/translations.json";
 
 const baseDelay = 200;
 const addDelay = 100;

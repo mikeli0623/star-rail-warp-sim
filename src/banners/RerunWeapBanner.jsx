@@ -8,7 +8,7 @@ import RateModal from "../components/modals/RateModal";
 import { json } from "../util/Constants";
 import MiniMiniBanners from "../components/MiniMiniBanners";
 import { AnimatePresence, motion } from "framer-motion";
-const trans = require("../assets/data/translations.json");
+import trans from "../assets/data/translations.json";
 
 export default function RerunWeapBanner({ vers, rerun, setRerun }) {
   const { getWidth, getHeight } = useContext(ResizeContext);

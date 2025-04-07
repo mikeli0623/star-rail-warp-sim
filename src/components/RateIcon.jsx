@@ -1,7 +1,7 @@
 import React from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useTranslation } from "react-i18next";
-const trans = require("../assets/data/translations.json");
+import trans from "../assets/data/translations.json";
 
 export default function RateIcon({ item, rarity, type, handleSelect }) {
   const { i18n } = useTranslation();

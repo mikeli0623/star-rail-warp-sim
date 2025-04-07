@@ -4,7 +4,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import { json, asianLang } from "../util/Constants";
 import { useTranslation } from "react-i18next";
 import ResizeContext from "./context/ResizeContext";
-const trans = require("../assets/data/translations.json");
+import trans from "../assets/data/translations.json";
 
 export default function NameTag({ style, name, bottom = false, anim = true }) {
   const cleanText = (text) => {

@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import PhonoTrack from "../PhonoTrack";
 import Checkbox from "../Checkbox";
-const trans = require("../../assets/data/translations.json");
+import trans from "../../assets/data/translations.json";
 
 export default function PhonoModal({
   show,

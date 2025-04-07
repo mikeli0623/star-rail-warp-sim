@@ -1,4 +1,7 @@
 import { allChars } from "../util/Constants";
+import charJSON from "../assets/data/char.json";
+import weaponJSON from "../assets/data/weapons.json";
+import bannerJSON from "../assets/data/banners.json";
 
 const cleanText = (text) => {
   return text
@@ -9,9 +12,9 @@ const cleanText = (text) => {
 
 class ParseJSON {
   constructor() {
-    this.charJSON = require(`../assets/data/char.json`);
-    this.weaponJSON = require(`../assets/data/weapons.json`);
-    this.bannerJSON = require(`../assets/data/banners.json`);
+    this.charJSON = charJSON;
+    this.weaponJSON = weaponJSON;
+    this.bannerJSON = bannerJSON;
   }
   isChar(item) {
     if (allChars.includes(item)) return true;

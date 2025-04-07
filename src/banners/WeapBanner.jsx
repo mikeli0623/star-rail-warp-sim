@@ -7,7 +7,7 @@ import Button from "../components/Button";
 import RateModal from "../components/modals/RateModal";
 import { colourMap, json } from "../util/Constants";
 import Scrollbars from "react-custom-scrollbars-2";
-const trans = require("../assets/data/translations.json");
+import trans from "../assets/data/translations.json";
 
 export default function WeapBanner({ vers, rerun = false }) {
   const { getWidth, getHeight } = useContext(ResizeContext);

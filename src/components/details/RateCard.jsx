@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import ResizeContext from "../context/ResizeContext";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useTranslation } from "react-i18next";
-const trans = require("../../assets/data/translations.json");
+import trans from "../../assets/data/translations.json";
 
 export default function RateCard({ item, rarity, type, elem = "", path }) {
   const { getWidth, getHeight } = useContext(ResizeContext);

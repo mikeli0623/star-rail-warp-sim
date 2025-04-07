@@ -3,7 +3,7 @@ import { json } from "../../util/Constants";
 import ResizeContext from "../context/ResizeContext";
 import Table from "react-bootstrap/Table";
 import { useTranslation } from "react-i18next";
-const trans = require("../../assets/data/translations.json");
+import trans from "../../assets/data/translations.json";
 
 const RecordsTable = ({ history, type, title }) => {
   const { getWidth } = useContext(ResizeContext);
