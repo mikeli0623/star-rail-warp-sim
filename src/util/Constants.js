@@ -96,7 +96,9 @@ const allChars = [
 
 const allWeapons = [
   "make-farewells-more-beautiful",
-  "life-sShould-be-cast-to-flames",
+  "if-time-were-a-flower",
+  "flame-of-blood-blaze-my-path",
+  "life-should-be-cast-to-flames",
   "victory-in-a-blink",
   "geniuses-greetings",
   "time-woven-into-gold",
