@@ -65,7 +65,10 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
           draggable="false"
           style={{
             position: "relative",
-            animation: `${charName}-back-animation 3s 200ms 1`,
+            animationName: `${charName}-back-animation`,
+            animationDuration: "3s",
+            animationDelay: "200ms",
+            animationIterationCount: "1",
             animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
             animationFillMode: "both",
           }}
@@ -89,9 +92,12 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
             style={{
               width: getWidth(60),
               height: getHeight(60, 60),
-              animation: "appear 50ms 400ms 1",
-              opacity: "0",
+              animationName: "appear",
+              animationDuration: "50ms",
+              animationDelay: "400ms",
+              animationIterationCount: "1",
               animationFillMode: "both",
+              opacity: "0",
             }}
           >
             <div
@@ -100,7 +106,9 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
                 width: getWidth(60),
                 height: getWidth(60),
                 backgroundSize: getWidth(60),
-                animation: "char-mini-rate-up-animation 1s 1",
+                animationName: "char-mini-rate-up-animation",
+                animationDuration: "1s",
+                animationIterationCount: "1",
                 animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
                 animationDelay: "400ms",
                 opacity: "0",
@@ -113,10 +121,12 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
             style={{
               width: getWidth(60),
               height: getHeight(60, 60),
-              animation: "appear 50ms 1",
+              animationName: "appear",
+              animationDuration: "50ms",
               animationDelay: "475ms",
-              opacity: "0",
+              animationIterationCount: "1",
               animationFillMode: "both",
+              opacity: "0",
             }}
           >
             <div
@@ -125,7 +135,9 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
                 width: getWidth(60),
                 height: getWidth(60),
                 backgroundSize: getWidth(60),
-                animation: "char-mini-rate-up-animation 1s 1",
+                animationName: "char-mini-rate-up-animation",
+                animationDuration: "1s",
+                animationIterationCount: "1",
                 animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
                 animationDelay: "475ms",
                 opacity: "0",
@@ -138,10 +150,12 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
             style={{
               width: getWidth(60),
               height: getHeight(60, 60),
-              animation: "appear 50ms 1",
+              animationName: "appear",
+              animationDuration: "50ms",
               animationDelay: "550ms",
-              opacity: "0",
+              animationIterationCount: "1",
               animationFillMode: "both",
+              opacity: "0",
             }}
           >
             <div
@@ -150,7 +164,9 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
                 width: getWidth(60),
                 height: getWidth(60),
                 backgroundSize: getWidth(60),
-                animation: "char-mini-rate-up-animation 1s 1",
+                animationName: "char-mini-rate-up-animation",
+                animationDuration: "1s",
+                animationIterationCount: "1",
                 animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
                 animationDelay: "550ms",
                 animationFillMode: "both",
