@@ -1,5 +1,17 @@
 [
   {
+    "name": "Cipher",
+    "path": "Nihility",
+    "element": "Quantum",
+    "rarity": 5
+  },
+  {
+    "name": "Hyacine",
+    "path": "Remembrance",
+    "element": "Wind",
+    "rarity": 5
+  },
+  {
     "name": "Anaxa",
     "path": "Erudition",
     "element": "Wind",
