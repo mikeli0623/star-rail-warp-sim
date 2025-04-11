@@ -5,7 +5,7 @@ import ResizeContext from "./context/ResizeContext";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "framer-motion";
 
-const WarpButtons = ({ onWarp, event }) => {
+const WarpButtons = ({ onWarp, event, isBannerAnimating }) => {
   const { getWidth } = useContext(ResizeContext);
   const { sound, useSound } = useContext(SoundContext);
   const [play] = useSound("/assets/audio/sfx/button-select.mp3");
@@ -42,7 +42,12 @@ const WarpButtons = ({ onWarp, event }) => {
           animate={{ transition: { duration: 0 } }}
           exit={{ transition: { duration: 0 } }}
         >
-          <div id="warp-button-one-hover">
+          <div
+            id="warp-button-one-hover"
+            style={{
+              opacity: isBannerAnimating ? 0.4 : 1,
+            }}
+          >
             <LazyLoadImage
               effect="opacity"
               className="warp-button one"
@@ -58,7 +63,12 @@ const WarpButtons = ({ onWarp, event }) => {
               draggable="false"
             />
           </div>
-          <div id="warp-button-ten-hover">
+          <div
+            id="warp-button-ten-hover"
+            style={{
+              opacity: isBannerAnimating ? 0.4 : 1,
+            }}
+          >
             <LazyLoadImage
               effect="opacity"
               className="warp-button ten"
