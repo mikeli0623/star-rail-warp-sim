@@ -8116,7 +8116,7 @@
     },
     "rateUpFive": ["time-woven-into-gold"],
     "rateUpFour": [
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance"
     ],
@@ -8207,7 +8207,7 @@
       "incessant-rain"
     ],
     "rateUpFour": [
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance"
     ],
@@ -8490,7 +8490,7 @@
       "moze"
     ],
     "poolFourWeap": [
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",
@@ -8577,7 +8577,7 @@
       "moze"
     ],
     "poolFourWeap": [
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",
@@ -8818,7 +8818,7 @@
       "moze"
     ],
     "poolFourWeap": [
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",
@@ -8905,7 +8905,7 @@
       "moze"
     ],
     "poolFourWeap": [
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",
@@ -8937,7 +8937,7 @@
   {
     "vers": ["3.2.1"],
     "type": "char",
-    "colour-type": 9,
+    "colour-type": 3,
     "title": {
       "en": "Blossom to the Beyond",
       "zh": "冥途生花",
@@ -8953,7 +8953,7 @@
       "pt": "Flores Brotando do Abismo"
     },
     "rateUpFive": ["castorice"],
-    "rateUpFour": ["pela", "gallagher", "lynx"],
+    "rateUpFour": ["pela", "lynx", "gallagher"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -9031,8 +9031,8 @@
       "id": "Rekan dalam Sanubari",
       "pt": "Multidões Indeléveis"
     },
-    "rateUpFive": ["acheron", "jiaoqiu", "fugue"],
-    "rateUpFour": ["pela", "gallagher", "lynx"],
+    "rateUpFive": ["fugue", "jiaoqiu", "acheron"],
+    "rateUpFour": ["pela", "lynx", "gallagher"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -9095,7 +9095,7 @@
   {
     "vers": ["3.2.1"],
     "type": "weap",
-    "colour-type": 9,
+    "colour-type": 3,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
@@ -9153,7 +9153,7 @@
       "perfect-timing",
       "a-secret-vow",
       "memories-of-the-past",
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",
@@ -9203,9 +9203,9 @@
       "long-road-leads-home"
     ],
     "rateUpFour": [
-      "good-night-and-sleep-well",
+      "boundless-choreo",
       "post-op-conversation",
-      "boundless-choreo"
+      "good-night-and-sleep-well"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -9244,7 +9244,7 @@
       "perfect-timing",
       "a-secret-vow",
       "memories-of-the-past",
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",
@@ -9489,7 +9489,7 @@
       "perfect-timing",
       "a-secret-vow",
       "memories-of-the-past",
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",
@@ -9576,7 +9576,7 @@
       "perfect-timing",
       "a-secret-vow",
       "memories-of-the-past",
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",
@@ -9744,7 +9744,7 @@
       "perfect-timing",
       "a-secret-vow",
       "memories-of-the-past",
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",
@@ -9912,7 +9912,7 @@
       "perfect-timing",
       "a-secret-vow",
       "memories-of-the-past",
-      "genuises-greetings",
+      "geniuses-greetings",
       "subscribe-for-more",
       "dance-dance-dance",
       "day-one-of-my-new-life",

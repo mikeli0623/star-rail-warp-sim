@@ -213,6 +213,9 @@ export default function RerunWeapBanner({ vers, rerun, setRerun }) {
         </div>
         <LazyLoadImage
           width={getWidth(140)}
+          style={{
+            opacity: 0.4,
+          }}
           src={`../assets/path-${path}-banner.webp`}
           alt={path}
           draggable="false"
