@@ -387,6 +387,8 @@ export default function Main({
     );
   }, [bannerType, bannerBackColor, vers]);
 
+  const [isBannerAnimating, setIsBannerAnimating] = useState(false);
+
   return (
     <motion.section
       key="main"
@@ -519,6 +521,8 @@ export default function Main({
             initial="incoming"
             animate="active"
             exit="exit"
+            onAnimationStart={() => setIsBannerAnimating(true)}
+            onAnimationComplete={() => setIsBannerAnimating(false)}
             transition={sliderTransition}
           >
             {currentBanners[bannerType]}
@@ -530,6 +534,7 @@ export default function Main({
             bottom: "-1.5%",
             left: "3.5%",
             zIndex: "1000",
+            opacity: isBannerAnimating ? 0.4 : 1,
           }}
           onClick={() => {
             if (sound) playOpenStats();
@@ -543,6 +548,7 @@ export default function Main({
             bottom: "-1.5%",
             left: "25%",
             zIndex: "1000",
+            opacity: isBannerAnimating ? 0.4 : 1,
           }}
           onClick={() => {
             if (sound) playOpenDetails();
@@ -550,7 +556,11 @@ export default function Main({
           }}
           content={t("button.view-details")}
         />
-        <WarpButtons onWarp={handleWarp} event={bannerType} />
+        <WarpButtons
+          onWarp={handleWarp}
+          event={bannerType}
+          isBannerAnimating={isBannerAnimating}
+        />
       </div>
     </motion.section>
   );

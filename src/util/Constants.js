@@ -92,9 +92,13 @@ const allChars = [
   "tribbie",
   "anaxa",
   "castorice",
+  "cipher",
+  "hyacine",
 ];
 
 const allWeapons = [
+  "may-rainbows-remain-in-the-sky",
+  "lies-aflutter-in-the-wind",
   "make-farewells-more-beautiful",
   "if-time-were-a-flower",
   "flame-of-blood-blaze-my-path",
@@ -222,6 +226,8 @@ const BGM = {
 };
 
 const allVers = [
+  "3.3.2",
+  "3.3.1",
   "3.2.2",
   "3.2.1",
   "3.1.2",
@@ -260,7 +266,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = [];
+const hidden = ["3.3.1", "3.3.2"];
 
 const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[1];
 
