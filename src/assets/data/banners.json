@@ -9621,7 +9621,7 @@
       "pt": "Cyber"
     },
     "rateUpFive": ["cipher"],
-    "rateUpFour": [],
+    "rateUpFour": ["natasha", "pela", "hook"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -9637,7 +9637,6 @@
       "moze",
       "arlan",
       "xueyi",
-      "natasha",
       "tingyun",
       "hanya",
       "sushang",
@@ -9645,8 +9644,6 @@
       "guinaifen",
       "asta",
       "luka",
-      "hook",
-      "pela",
       "march-7th",
       "qingque",
       "sampo",
@@ -9703,7 +9700,11 @@
       "pt": "Fixação Brilhante"
     },
     "rateUpFive": ["lies-aflutter-in-the-wind"],
-    "rateUpFour": [],
+    "rateUpFour": [
+      "post-op-conversation",
+      "good-night-and-sleep-well",
+      "the-moles-welcome-you"
+    ],
     "poolFiveWeap": [
       "something-irreplaceable",
       "sleep-like-the-dead",
@@ -9740,7 +9741,6 @@
     "poolFourWeap": [
       "trend-of-the-universal-market",
       "after-the-charmony-fall",
-      "the-moles-welcome-you",
       "perfect-timing",
       "a-secret-vow",
       "memories-of-the-past",
@@ -9752,7 +9752,6 @@
       "make-the-world-clamor",
       "dreams-montage",
       "under-the-blue-sky",
-      "post-op-conversation",
       "shared-feeling",
       "under-the-blue-sky",
       "geniuses-repose",
@@ -9761,7 +9760,6 @@
       "only-silence-remains",
       "swordplay",
       "eyes-of-the-prey",
-      "good-night-and-sleep-well",
       "landaus-choice",
       "poised-to-bloom",
       "shadowed-by-night",
@@ -9789,7 +9787,7 @@
       "pt": "Hiya"
     },
     "rateUpFive": ["hyacine"],
-    "rateUpFour": [],
+    "rateUpFour": ["natasha", "pela", "hook"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -9805,7 +9803,6 @@
       "moze",
       "arlan",
       "xueyi",
-      "natasha",
       "tingyun",
       "hanya",
       "sushang",
@@ -9813,8 +9810,6 @@
       "guinaifen",
       "asta",
       "luka",
-      "hook",
-      "pela",
       "march-7th",
       "qingque",
       "sampo",
@@ -9871,7 +9866,11 @@
       "pt": "Fixação Brilhante"
     },
     "rateUpFive": ["may-rainbows-remain-in-the-sky"],
-    "rateUpFour": [],
+    "rateUpFour": [
+      "post-op-conversation",
+      "good-night-and-sleep-well",
+      "the-moles-welcome-you"
+    ],
     "poolFiveWeap": [
       "something-irreplaceable",
       "sleep-like-the-dead",
@@ -9908,7 +9907,6 @@
     "poolFourWeap": [
       "trend-of-the-universal-market",
       "after-the-charmony-fall",
-      "the-moles-welcome-you",
       "perfect-timing",
       "a-secret-vow",
       "memories-of-the-past",
@@ -9920,7 +9918,6 @@
       "make-the-world-clamor",
       "dreams-montage",
       "under-the-blue-sky",
-      "post-op-conversation",
       "shared-feeling",
       "under-the-blue-sky",
       "geniuses-repose",
@@ -9929,7 +9926,6 @@
       "only-silence-remains",
       "swordplay",
       "eyes-of-the-prey",
-      "good-night-and-sleep-well",
       "landaus-choice",
       "poised-to-bloom",
       "shadowed-by-night",
