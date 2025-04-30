@@ -20,6 +20,9 @@ const WarpButtons = ({ onWarp, event, isBannerAnimating }) => {
           initial={{ transition: { duration: 0 } }}
           animate={{ transition: { duration: 0 } }}
           exit={{ transition: { duration: 0 } }}
+          style={{
+            opacity: isBannerAnimating ? 0.4 : 1,
+          }}
         >
           <LazyLoadImage
             effect="opacity"
