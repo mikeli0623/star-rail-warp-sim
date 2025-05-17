@@ -97,8 +97,8 @@ const allChars = [
 ];
 
 const allWeapons = [
-  "may-rainbows-remain-in-the-sky",
-  "lies-aflutter-in-the-wind",
+  "long-may-rainbows-adorn-the-sky",
+  "lies-dance-on-the-breeze",
   "make-farewells-more-beautiful",
   "if-time-were-a-flower",
   "flame-of-blood-blaze-my-path",
@@ -266,7 +266,7 @@ const allVers = [
   "1.0.1",
 ];
 
-const hidden = ["3.3.1", "3.3.2"];
+const hidden = [];
 
 const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 
