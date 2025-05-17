@@ -268,7 +268,7 @@ const allVers = [
 
 const hidden = [];
 
-const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
+const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[1];
 
 const asianLang = ["zh", "ko", "ja"];
 
