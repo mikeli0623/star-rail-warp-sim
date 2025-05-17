@@ -1,11 +1,11 @@
 [
   {
-    "name": "Lies, Aflutter in the Wind",
+    "name": "Lies Dance on the Breeze",
     "path": "Nihility",
     "rarity": 5
   },
   {
-    "name": "May Rainbows Remain in the Sky",
+    "name": "Long May Rainbows Adorn the Sky",
     "path": "Remembrance",
     "rarity": 5
   },
@@ -333,16 +333,6 @@
     "name": "Defense",
     "path": "Preservation",
     "rarity": 3
-  },
-  {
-    "name": "",
-    "path": "",
-    "rarity": 4
-  },
-  {
-    "name": "",
-    "path": "",
-    "rarity": 4
   },
   {
     "name": "Echoes of the Coffin",
