@@ -6,6 +6,12 @@
     "rarity": 5
   },
   {
+    "name": "Phainon",
+    "path": "Destruction",
+    "element": "Physical",
+    "rarity": 5
+  },
+  {
     "name": "Hyacine",
     "path": "Remembrance",
     "element": "Wind",
