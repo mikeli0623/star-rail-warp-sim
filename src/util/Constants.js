@@ -270,7 +270,7 @@ const allVers = [
 
 const hidden = [];
 
-const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[1];
+const LATESTVERS = allVers.filter((vers) => !hidden.includes(vers))[0];
 
 const asianLang = ['zh', 'ko', 'ja'];
 
@@ -297,6 +297,8 @@ const colourMap = {
   10: '#b38a5a',
   // pink
   11: '#cd6485',
+  // muted blue
+  12: '#5155a5',
 };
 
 export {
