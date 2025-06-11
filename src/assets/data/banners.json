@@ -7941,7 +7941,7 @@
   {
     "vers": ["3.0.2"],
     "type": "char",
-    "colour-type": 2,
+    "colour-type": 10,
     "title": {
       "en": "Tailored Fate",
       "zh": "裁酌天命",
@@ -8099,7 +8099,7 @@
   {
     "vers": ["3.0.2"],
     "type": "weap",
-    "colour-type": 2,
+    "colour-type": 10,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
@@ -9937,7 +9937,7 @@
   {
     "vers": ["3.3.2"],
     "type": "char",
-    "colour-type": 1,
+    "colour-type": 12,
     "title": {
       "en": "Slick and Speedy Steals the Sky",
       "zh": "捷足盗天",
@@ -9953,7 +9953,7 @@
       "pt": "A Ladra Veloz que Rouba o Céu"
     },
     "rateUpFive": ["cipher"],
-    "rateUpFour": ["sushang", "xueyi", "qingque"],
+    "rateUpFour": ["qingque", "xueyi", "sushang"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -10032,7 +10032,7 @@
       "pt": "Costuras do Destino"
     },
     "rateUpFive": ["aglaea"],
-    "rateUpFour": ["sushang", "xueyi", "qingque"],
+    "rateUpFour": ["qingque", "xueyi", "sushang"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -10095,7 +10095,7 @@
   {
     "vers": ["3.3.2"],
     "type": "weap",
-    "colour-type": 1,
+    "colour-type": 12,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
