@@ -13,6 +13,20 @@
     "id": "Cipher",
     "pt": "Cipher"
   },
+  "the-storys-next-page": {
+    "en": "The Story's Next Page",
+    "zh": "故事的下一页",
+    "ja": "The Story's Next Page",
+    "ko": "The Story's Next Page",
+    "es": "The Story's Next Page",
+    "fr": "The Story's Next Page",
+    "ru": "Следующая страница истории",
+    "th": "The Story's Next Page",
+    "vi": "Trang Tiếp Theo Của Câu Chuyện",
+    "de": "The Story's Next Page",
+    "id": "The Story's Next Page",
+    "pt": "The Story's Next Page"
+  },
   "phainon": {
     "en": "Phainon",
     "zh": "白厄",
@@ -29,12 +43,12 @@
   },
   "thus-burns-the-dawn": {
     "en": "Thus Burns the Dawn",
-    "zh": "Thus Burns the Dawn",
+    "zh": "黎明恰如此燃烧",
     "ja": "Thus Burns the Dawn",
     "ko": "Thus Burns the Dawn",
     "es": "Thus Burns the Dawn",
-    "ru": "Thus Burns the Dawn",
-    "vi": "Thus Burns the Dawn",
+    "ru": "Так сгорает рассвет",
+    "vi": "Bình Minh Rực Cháy",
     "pt": "Thus Burns the Dawn",
     "fr": "Thus Burns the Dawn",
     "th": "Thus Burns the Dawn",
