@@ -94,10 +94,11 @@ const allChars = [
   'castorice',
   'cipher',
   'hyacine',
-  // "phainon",
+  'phainon',
 ];
 
 const allWeapons = [
+  'the-storys-next-page',
   'thus-burns-the-dawn',
   'long-may-rainbows-adorn-the-sky',
   'lies-dance-on-the-breeze',
@@ -228,6 +229,8 @@ const BGM = {
 };
 
 const allVers = [
+  // '3.4.2',
+  '3.4.1',
   '3.3.2',
   '3.3.1',
   '3.2.2',
