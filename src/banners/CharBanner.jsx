@@ -294,7 +294,6 @@ export default function CharBanner({ bg = '40, 33, 36', vers, rerun = false }) {
               : getWidth(24),
           lineHeight: `${getWidth(33)}px`,
           zIndex: '100',
-          fontWeight: 'bold',
           textAlign: 'left',
           width: getWidth(270),
           height: getHeight(66, 270),

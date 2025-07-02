@@ -10240,23 +10240,23 @@
   {
     "vers": ["3.4.1"],
     "type": "char",
-    "colour-type": 1,
+    "colour-type": 10,
     "title": {
       "en": "To Evermore Burn as the Sun",
       "zh": "永劫燔阳",
-      "ja": "To Evermore Burn as the Sun",
-      "ko": "To Evermore Burn as the Sun",
-      "es": "To Evermore Burn as the Sun",
-      "fr": "To Evermore Burn as the Sun",
+      "ja": "永遠に燃ゆる太陽",
+      "ko": "영원히 타오르는 태양",
+      "es": "En la perpetuidad de las llamas",
+      "fr": "Feu d'un soleil éternel",
       "ru": "Вечно горящее солнце",
-      "th": "To Evermore Burn as the Sun",
+      "th": "ตะวันผลาญชั่วกัลป์",
       "vi": "Mặt Trời Thiêu Đốt Vĩnh Hằng",
-      "de": "To Evermore Burn as the Sun",
-      "id": "To Evermore Burn as the Sun",
-      "pt": "To Evermore Burn as the Sun"
+      "de": "Ewig brennende Sonne",
+      "id": "Bara Abadi Matahari",
+      "pt": "Chama Solar Perpétua"
     },
     "rateUpFive": ["phainon"],
-    "rateUpFour": ["march-7th", "yukong", "tingyun"],
+    "rateUpFour": ["march-7th", "tingyun", "yukong"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -10335,7 +10335,7 @@
       "pt": "Multidões Indeléveis"
     },
     "rateUpFive": ["tribbie", "sunday", "sparkle"],
-    "rateUpFour": ["march-7th", "yukong", "tingyun"],
+    "rateUpFour": ["march-7th", "tingyun", "yukong"],
     "poolFiveChar": [
       "himeko",
       "gepard",
@@ -10398,7 +10398,7 @@
   {
     "vers": ["3.4.1"],
     "type": "weap",
-    "colour-type": 1,
+    "colour-type": 10,
     "title": {
       "en": "Brilliant Fixation",
       "zh": "流光定影",
@@ -10415,9 +10415,9 @@
     },
     "rateUpFive": ["thus-burns-the-dawn"],
     "rateUpFour": [
-      "the-storys-next-page",
       "planetary-rendezvous",
-      "under-the-blue-sky"
+      "under-the-blue-sky",
+      "the-storys-next-page"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
@@ -10506,9 +10506,9 @@
       "earthly-escapade"
     ],
     "rateUpFour": [
-      "the-storys-next-page",
       "planetary-rendezvous",
-      "under-the-blue-sky"
+      "under-the-blue-sky",
+      "the-storys-next-page"
     ],
     "poolFiveWeap": [
       "something-irreplaceable",
