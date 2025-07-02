@@ -1,14 +1,14 @@
-import React, { useContext, useState } from "react";
-import "../css/Banners.css";
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import ResizeContext from "../components/context/ResizeContext";
-import { useTranslation, Trans } from "react-i18next";
-import NameTag from "../components/NameTag";
-import Button from "../components/Button";
-import RateModal from "../components/modals/RateModal";
-import { json } from "../util/Constants";
-import { AnimatePresence, motion } from "framer-motion";
-import MiniMiniBanners from "../components/MiniMiniBanners";
+import React, { useContext, useState } from 'react';
+import '../css/Banners.css';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import ResizeContext from '../components/context/ResizeContext';
+import { useTranslation, Trans } from 'react-i18next';
+import NameTag from '../components/NameTag';
+import Button from '../components/Button';
+import RateModal from '../components/modals/RateModal';
+import { json } from '../util/Constants';
+import { AnimatePresence, motion } from 'framer-motion';
+import MiniMiniBanners from '../components/MiniMiniBanners';
 
 export default function RerunCharBanner({ vers, rerun, setRerun }) {
   const { getWidth, getHeight } = useContext(ResizeContext);
@@ -19,9 +19,9 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
 
   const versions = json.getReruns(vers);
 
-  const title = json.getTitle(vers, "reruns-char", i18n.resolvedLanguage);
-  const rateFour = json.getRateUpFour(vers, "char");
-  const charName = json.getRateUpFive(versions[rerunVersion], "char")[0];
+  const title = json.getTitle(vers, 'reruns-char', i18n.resolvedLanguage);
+  const rateFour = json.getRateUpFour(vers, 'char');
+  const charName = json.getRateUpFive(versions[rerunVersion], 'char')[0];
 
   const handleSelectRerun = (rerun) => {
     setRerunVersion(rerun);
@@ -46,58 +46,58 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
         style={{
           width: getWidth(764),
           height: getHeight(610.68, 1100),
-          overflow: "hidden",
+          overflow: 'hidden',
           background: `rgba(153, 153, 153, 0.12)`,
-          boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
-          backdropFilter: "blur(2px)",
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-34.5%, -57.5%)",
+          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.1)',
+          backdropFilter: 'blur(2px)',
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-34.5%, -57.5%)',
           borderTopLeftRadius: getWidth(30),
         }}
       >
         <LazyLoadImage
           src={`../assets/banner/${versions[rerunVersion]}/char-banner-back.webp`}
-          onError={(e) => (e.target.style.display = "none")}
+          onError={(e) => (e.target.style.display = 'none')}
           width={getWidth(1200)}
-          alt="right"
-          draggable="false"
+          alt='right'
+          draggable='false'
           style={{
-            position: "relative",
+            position: 'relative',
             animationName: `${charName}-back-animation`,
-            animationDuration: "3s",
-            animationDelay: "200ms",
-            animationIterationCount: "1",
-            animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-            animationFillMode: "both",
+            animationDuration: '3s',
+            animationDelay: '200ms',
+            animationIterationCount: '1',
+            animationTimingFunction: 'cubic-bezier(.27,.42,.2,.97)',
+            animationFillMode: 'both',
           }}
         />
       </div>
       <div
         style={{
-          display: "flex",
-          flexDirection: "column",
+          display: 'flex',
+          flexDirection: 'column',
           gap: getWidth(10),
-          position: "absolute",
-          zIndex: "101",
-          left: "50%",
-          top: "50%",
-          transform: "translate(-95%, 55%)",
+          position: 'absolute',
+          zIndex: '101',
+          left: '50%',
+          top: '50%',
+          transform: 'translate(-95%, 55%)',
         }}
       >
-        <div style={{ display: "flex", gap: getWidth(12) }}>
+        <div style={{ display: 'flex', gap: getWidth(12) }}>
           <div
-            className="mini-rate-up-char-icons"
+            className='mini-rate-up-char-icons'
             style={{
               width: getWidth(60),
               height: getHeight(60, 60),
-              animationName: "appear",
-              animationDuration: "50ms",
-              animationDelay: "400ms",
-              animationIterationCount: "1",
-              animationFillMode: "both",
-              opacity: "0",
+              animationName: 'appear',
+              animationDuration: '50ms',
+              animationDelay: '400ms',
+              animationIterationCount: '1',
+              animationFillMode: 'both',
+              opacity: '0',
             }}
           >
             <div
@@ -106,27 +106,27 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
                 width: getWidth(60),
                 height: getWidth(60),
                 backgroundSize: getWidth(60),
-                animationName: "char-mini-rate-up-animation",
-                animationDuration: "1s",
-                animationIterationCount: "1",
-                animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-                animationDelay: "400ms",
-                opacity: "0",
-                animationFillMode: "both",
+                animationName: 'char-mini-rate-up-animation',
+                animationDuration: '1s',
+                animationIterationCount: '1',
+                animationTimingFunction: 'cubic-bezier(.27,.42,.2,.97)',
+                animationDelay: '400ms',
+                opacity: '0',
+                animationFillMode: 'both',
               }}
             />
           </div>
           <div
-            className="mini-rate-up-char-icons"
+            className='mini-rate-up-char-icons'
             style={{
               width: getWidth(60),
               height: getHeight(60, 60),
-              animationName: "appear",
-              animationDuration: "50ms",
-              animationDelay: "475ms",
-              animationIterationCount: "1",
-              animationFillMode: "both",
-              opacity: "0",
+              animationName: 'appear',
+              animationDuration: '50ms',
+              animationDelay: '475ms',
+              animationIterationCount: '1',
+              animationFillMode: 'both',
+              opacity: '0',
             }}
           >
             <div
@@ -135,27 +135,27 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
                 width: getWidth(60),
                 height: getWidth(60),
                 backgroundSize: getWidth(60),
-                animationName: "char-mini-rate-up-animation",
-                animationDuration: "1s",
-                animationIterationCount: "1",
-                animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-                animationDelay: "475ms",
-                opacity: "0",
-                animationFillMode: "both",
+                animationName: 'char-mini-rate-up-animation',
+                animationDuration: '1s',
+                animationIterationCount: '1',
+                animationTimingFunction: 'cubic-bezier(.27,.42,.2,.97)',
+                animationDelay: '475ms',
+                opacity: '0',
+                animationFillMode: 'both',
               }}
             />
           </div>
           <div
-            className="mini-rate-up-char-icons"
+            className='mini-rate-up-char-icons'
             style={{
               width: getWidth(60),
               height: getHeight(60, 60),
-              animationName: "appear",
-              animationDuration: "50ms",
-              animationDelay: "550ms",
-              animationIterationCount: "1",
-              animationFillMode: "both",
-              opacity: "0",
+              animationName: 'appear',
+              animationDuration: '50ms',
+              animationDelay: '550ms',
+              animationIterationCount: '1',
+              animationFillMode: 'both',
+              opacity: '0',
             }}
           >
             <div
@@ -164,47 +164,47 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
                 width: getWidth(60),
                 height: getWidth(60),
                 backgroundSize: getWidth(60),
-                animationName: "char-mini-rate-up-animation",
-                animationDuration: "1s",
-                animationIterationCount: "1",
-                animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
-                animationDelay: "550ms",
-                animationFillMode: "both",
-                opacity: "0",
+                animationName: 'char-mini-rate-up-animation',
+                animationDuration: '1s',
+                animationIterationCount: '1',
+                animationTimingFunction: 'cubic-bezier(.27,.42,.2,.97)',
+                animationDelay: '550ms',
+                animationFillMode: 'both',
+                opacity: '0',
               }}
             />
           </div>
         </div>
         <p
           style={{
-            color: "#fcfafa",
+            color: '#fcfafa',
             fontSize: getWidth(18),
-            zIndex: "100",
-            textAlign: "left",
+            zIndex: '100',
+            textAlign: 'left',
             width: getWidth(257.6),
-            backgroundColor: "rgba(64,64,64,0.6)",
+            backgroundColor: 'rgba(64,64,64,0.6)',
             padding: `0 ${getWidth(4)}px`,
             marginBottom: 0,
           }}
         >
-          <Trans i18nKey="banner.reruns.text2">
-            Every <span style={{ color: "#d89747" }}>10</span> Warps guarantees
-            a <span style={{ color: "#d89747" }}>4</span>-star or above entity
+          <Trans i18nKey='banner.reruns.text2'>
+            Every <span style={{ color: '#d89747' }}>10</span> Warps guarantees
+            a <span style={{ color: '#d89747' }}>4</span>-star or above entity
           </Trans>
         </p>
       </div>
       <LazyLoadImage
-        effect="opacity-100"
+        effect='opacity-100'
         src={`../assets/banner/reruns-left.webp`}
         width={getWidth(280)}
-        alt="left"
-        draggable="false"
+        alt='left'
+        draggable='false'
         style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-195%, -58%)",
-          zIndex: "100",
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-195%, -58%)',
+          zIndex: '100',
         }}
       />
       <div
@@ -212,36 +212,36 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
           width: getWidth(280),
           height: getHeight(28, 334),
           fontSize: getWidth(14),
-          position: "absolute",
-          color: "black",
-          top: "50%",
-          left: "50%",
+          position: 'absolute',
+          color: 'black',
+          top: '50%',
+          left: '50%',
           zIndex: 100,
-          transform: "translate(-195%, -1200%)",
-          textAlign: "left",
+          transform: 'translate(-195%, -1200%)',
+          textAlign: 'left',
           lineHeight: getWidth(1),
         }}
       >
         <div
-          className="d-flex align-items-center "
+          className='d-flex align-items-center '
           style={{
-            height: "100%",
-            width: "fit-content",
-            borderRadius: "0 100px 100px 0",
-            backgroundColor: "#bca47a",
+            height: '100%',
+            width: 'fit-content',
+            borderRadius: '0 100px 100px 0',
+            backgroundColor: '#bca47a',
             paddingLeft: getWidth(16),
             paddingRight: getWidth(20),
           }}
         >
-          {t("modal.vers.event1")}
+          {t('modal.vers.event1')}
         </div>
       </div>
       <div
         style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-230%, -415%)",
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-230%, -415%)',
           fontSize:
             title.length < 10
               ? getWidth(34)
@@ -249,12 +249,11 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
               ? getWidth(28)
               : getWidth(24),
           lineHeight: `${getWidth(33)}px`,
-          zIndex: "100",
-          fontWeight: "bold",
-          textAlign: "left",
+          zIndex: '100',
+          textAlign: 'left',
           width: getWidth(220),
           height: getHeight(66, 220),
-          color: "white",
+          color: 'white',
         }}
       >
         {title}
@@ -262,55 +261,55 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
       <AnimatePresence initial={false}>
         <motion.img
           variants={variants}
-          initial="initial"
-          animate="animate"
-          exit="exit"
+          initial='initial'
+          animate='animate'
+          exit='exit'
           transition={{
-            type: "tween",
+            type: 'tween',
             duration: 0.2,
           }}
           src={`../assets/banner/${versions[rerunVersion]}/main-char.webp`}
           key={`../assets/banner/${versions[rerunVersion]}/main-char.webp`}
           width={getWidth(1200)}
           alt={charName}
-          draggable="false"
-          effect="opacity"
+          draggable='false'
+          effect='opacity'
           style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            animationName: "char-animation",
-            animationDuration: "3s",
-            animationDelay: "100ms",
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            animationName: 'char-animation',
+            animationDuration: '3s',
+            animationDelay: '100ms',
             animationIterationCount: 1,
-            animationFillMode: "both",
-            animationTimingFunction: "cubic-bezier(.27,.42,.2,.97)",
+            animationFillMode: 'both',
+            animationTimingFunction: 'cubic-bezier(.27,.42,.2,.97)',
           }}
         />
       </AnimatePresence>
       <MiniMiniBanners
         handleSelect={handleSelectRerun}
         rerunVersion={rerunVersion}
-        pool={json.getRateUpFive(vers, "reruns-char")}
+        pool={json.getRateUpFive(vers, 'reruns-char')}
       />
       <div
         style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-233%, 200%)",
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-233%, 200%)',
           fontSize: getWidth(16),
           lineHeight: `${getWidth(24)}px`,
-          zIndex: "100",
-          textAlign: "left",
+          zIndex: '100',
+          textAlign: 'left',
           width: getWidth(220),
           height: getHeight(80, 220),
-          boxSizing: "border-box",
+          boxSizing: 'border-box',
         }}
       >
-        <p style={{ color: "#968464" }}>
-          <Trans i18nKey="banner.reruns.text1">
+        <p style={{ color: '#968464' }}>
+          <Trans i18nKey='banner.reruns.text1'>
             Click tabs to switch between different Warp banners
           </Trans>
         </p>
@@ -319,27 +318,27 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
         show={show}
         setShow={setShow}
         vers={vers}
-        type={"reruns-char"}
+        type={'reruns-char'}
         rerunVersion={rerunVersion}
       />
       <Button
         style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(510%, -260%)",
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(510%, -260%)',
         }}
         onClick={() => setShow(true)}
         rounded
-        size="md"
+        size='md'
         muted
         content={
           <LazyLoadImage
-            effect="opacity"
-            src="../assets/magnify.webp"
+            effect='opacity'
+            src='../assets/magnify.webp'
             width={getWidth(18)}
-            alt="magnify"
-            draggable="false"
+            alt='magnify'
+            draggable='false'
           />
         }
         roundSize={getWidth(40)}
@@ -347,7 +346,7 @@ export default function RerunCharBanner({ vers, rerun, setRerun }) {
       <NameTag
         name={charName}
         bottom={true}
-        style={{ transform: "translate(160%, -150%)" }}
+        style={{ transform: 'translate(160%, -150%)' }}
         anim={false}
       />
     </React.Fragment>

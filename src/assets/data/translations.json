@@ -16,16 +16,16 @@
   "the-storys-next-page": {
     "en": "The Story's Next Page",
     "zh": "故事的下一页",
-    "ja": "The Story's Next Page",
-    "ko": "The Story's Next Page",
-    "es": "The Story's Next Page",
-    "fr": "The Story's Next Page",
+    "ja": "物語をめくって",
+    "ko": "이야기의 다음 페이지",
+    "es": "La siguiente página de la historia",
+    "fr": "Le prochain chapitre",
     "ru": "Следующая страница истории",
     "th": "The Story's Next Page",
     "vi": "Trang Tiếp Theo Của Câu Chuyện",
-    "de": "The Story's Next Page",
+    "de": "Die nächste Seite der Geschichte",
     "id": "The Story's Next Page",
-    "pt": "The Story's Next Page"
+    "pt": "A Próxima Página da História"
   },
   "phainon": {
     "en": "Phainon",
@@ -44,16 +44,16 @@
   "thus-burns-the-dawn": {
     "en": "Thus Burns the Dawn",
     "zh": "黎明恰如此燃烧",
-    "ja": "Thus Burns the Dawn",
-    "ko": "Thus Burns the Dawn",
-    "es": "Thus Burns the Dawn",
+    "ja": "燃え盛る黎明のように",
+    "ko": "이와 같이 타오르는 여명",
+    "es": "Que arda el alba",
+    "fr": "Ainsi s'embrase l'aurore",
     "ru": "Так сгорает рассвет",
-    "vi": "Bình Minh Rực Cháy",
-    "pt": "Thus Burns the Dawn",
-    "fr": "Thus Burns the Dawn",
     "th": "Thus Burns the Dawn",
-    "de": "Thus Burns the Dawn",
-    "id": "Thus Burns the Dawn"
+    "vi": "Bình Minh Rực Cháy",
+    "de": "Wie die Morgendämmerung brennt",
+    "id": "Thus Burns the Dawn",
+    "pt": "Assim Arde a Alvorada"
   },
   "long-may-rainbows-adorn-the-sky": {
     "en": "Long May Rainbows Adorn the Sky",
